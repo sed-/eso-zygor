@@ -1,0 +1,304 @@
+local ZGV = ZygorGuidesViewer
+if not ZGV then return end
+if ZGV.Utils.GetFaction() ~= "AD" then return end
+
+-- 3 diget zone id then 4 diget uniqueid
+-- (.*)=([0-9]*)		->	\2\1=\2
+-- Sort
+--
+
+
+ZGV._QuestData = [[
+Legacy of the Ancestors=0090001
+Exquisite Tears=0090002
+
+House and Home=0110001
+The Unkindest Cut=0110002
+One Fell Swoop=0110003
+The Drublog of Dra'bul=0110004
+The Storm's Call=0110005
+The Show Must Go On=0110006
+Raise the Curtain=0110007
+Nature's Best Friend=0110008
+The Hound's Men=0110009
+The Tale of the Green Lady=0110010
+The Summer Site=0110011
+Reap What Is Sown=0110012
+The Hound's Plan=0110013
+Something Rotten=0110014
+Buyer Beware=0110015
+For Everything a Season=0110016
+The Dangerous Past=0110017
+Shipwrecked Sailors=0110018
+The Maormer's Vessels=0110019
+The Captain's Honor=0110020
+A Father's Promise=0110021
+Arithiel=0110022
+The Soul Trap=1010001
+Payment In Kind=0110023
+Z'en and Mauloch=0110024
+Shock to the System=0110025
+The Prisoner of Jathsogur=0110026
+A Wedding to Attend=0110027
+A Tale Forever Told=0110028
+A Novel Idea=0110029
+Fulfilling One's Fate=0110030
+Back to Rest=0110031
+Valley of Blades=0110032
+Enemy of My Enemy=0110033
+A Tangled Net=0110034
+Awakening=0110035
+The Dark Night of the Soul=0110036
+Sacred Prey, Hunt Profane=0110037
+The Ties that Bind=0110038
+Restore the Silvenar=0110039
+The Misfortunate Minstrels=0110040
+The Dark Mane=0110041
+Proving the Deed=0110042
+The Mad God's Bargain=0110043
+Will of the Council=0110044
+
+The Prismatic Core=0180001
+Harsh Lesson=0180002
+The Racer=0180003
+Throne of the Wilderking=0180004
+The Tharn Speaks=0180005
+The Blacksap's Hold=0180006
+The Orrery of Elden Root=0180007
+Frighten the Fearsome=0180008
+Troublemakers=0180009
+The Artisan=0180010
+Retaking the Pass=0180011
+Audience with the Wilderking=0180012
+The Spinner's Tale=0180013
+Handmade Guardian=0180014
+The Fading Tree=0180015
+The Witch of Silatar=0180016
+A Tangled Knot=0180017
+The Flower of Youth=0180018
+Woodhearth=0180019
+Hunting the Wasp=0180020
+Stone Cold=0180021
+Mist and Shadow=0180022
+Deadly Ambition=0180023
+Lost in the Mist=0180024
+Veil of Illusion=0180025
+Double Jeopardy=0180026
+The Amronal of Valenwood=0180027
+Before the Storm=0180028
+The Flooded Grove=0180029
+Hunting the Troll=0180030
+A Storm Upon the Shore=0180031
+Pelidil's End=0180032
+Report to Marbruk=0180033
+Naemon's Return=0180034
+Shades of Green=0180035
+Mourning the Lost=0180036
+Hunting the Mammoth=0180037
+The Blight of the Bosmer=0180038
+Right of Theft=0180039
+The Falinesti Faithful=0180040
+Beasts of Falinesti=0180041
+Striking at the Heart=0180042
+To Velyn Harbor=0180043
+The Senche=0180044
+Moonhenge's Tear=0180045
+Halls of Torment=0180046
+
+Razor's Edge=0360001
+Force of Nature=0300001
+
+Requests for Aid=0370001
+Welcome to Cyrodiil=0370002
+
+Castle of the Worm=0450001
+
+The Arch-Mage's Boon=0990001
+
+A Beginning at Bleakrock=1090001
+
+The Hollow City=1540001
+The Army of Meridia=1540002
+The Soul-Meld Mage=1540003
+Hall of Judgment=1540004
+Special Blend=1540005
+Vanus Unleashed=1540006
+Breaking the Shackle=1540007
+Through the Daedric Lens=1540008
+Wisdom of the Ages=1540009
+The Library of Dusk=1540010
+Truth, Lies, and Prisoners=1540011
+Into the Woods=1540012
+The Shadow's Embrace=1540013
+Saving Stibbons=1540014
+The Harvest Heart=1540015
+The Citadel Must Fall=1540016
+What the Heart Wants=1540017
+A Graveyard of Ships=1540018
+Between Blood and Bone=1540019
+Old Bones=1540020
+The Final Assault=1540021
+God of Schemes=1540022
+
+Light from the Darkness=1640001
+
+Crossing the Chasm=1720001
+
+Ensuring Security=1780001
+Aicessar's Invitation=1780002
+New in Town=1780003
+Unaccounted Crew=1780004
+One of the Undaunted=1780005
+Anchors from the Harbour=1780006
+Curinure's Invitation=1780007
+Long Lost Lore=1780008
+A Hostile Situation=1780009
+To Tanzelwil=1780010
+Silsailen Rescue=1780011
+Real Marines=1780012
+Teldur's End=1780013
+Plague of Phaer=1780014
+The First Patient=1780015
+In the Name of the Queen=1780016
+Corruption Stones=1780017
+Rites of the Queen=1780018
+To Mathiisen=1780019
+Depths of Madness=1780020
+The Serpent's Beacon=1780021
+Putting the Pieces Together=1780022
+The Unveiling=1780023
+To Skywatch=1780024
+Silent Village=1780025
+A Village Awakened=1780026
+Daughter of Giants=1780027
+Lifting the Veil=1780028
+Spirited Away=1780029
+Assisting the Assistant=1780030
+Wearing the Veil=1780031
+The Veil Falls=1780032
+To Dawnbreak=1780033
+Breaking the Barrier=1780034
+Final Blows=1780035
+The Mallari-Mora=1780036
+An Act of Kindness=1780037
+The Veiled Choice=1780038
+Preventative Measure=1780039
+Through the Ashes=1780040
+Eye of the Ancients=1780041
+Blessings of the Eight=1780042
+Relic Rescue=1780043
+The Wayward Dagger=1780044
+Faith in the Family=1780045
+Eye Spy=1780046
+Rightful Inheritance=1780047
+The Jester's Joke=1780048
+Sever All Ties=1780049
+The Great Tree=1780050
+Chasing Shadows=1780051
+Chateau of the Ravenous Rodent=1780052
+The Weight of Three Crowns=1780053
+Cadwell's Silver=1780054
+
+Oath of Excision=1790001
+The Colovian Occupation=1790002
+Stonefire Machinations=1790003
+To Rawl'kha=1790004
+On the Doorstep=1790005
+Ezreba's Fate=1790006
+The Arbordawn Cult=1790007
+Gentle Gardener=1790008
+Shadow of Sancre Tor=1790009
+A Night to Forget=1790010
+To Honor the Fallen=1790011
+The First Step=1790012
+The Path to Moonmont=2400001
+Fang Collector=1790013
+Questionable Contract=1790014
+Motes in the Moonlight=1790015
+Desecrated Ground=1790016
+The Golden Claw=1790017
+An Offering=1790018
+Into the Vice Den=1790019
+Hadran's Fall=1790020
+Lizard Racing=1790021
+Box of Riddles=1790022
+Baan Dar's Boast=1790023
+Baan Dar's Bash=2410001
+Small Town Problems=1790024
+Ezzag's Bandits=1790025
+Rat Problems=1790026
+Haunting of Kalari=1790027
+Loose Ends=1790028
+A Foot in the Door=1790029
+The Sorcerer Division=1790030
+The Swordmaster Division=1790031
+The Summoner Division=1790032
+The Champion Division=1790033
+A Traitor's Luck=1790034
+An Affront to Mara=1790035
+Council of the Five Companions=1790036
+Messages Across Tamriel=1790037
+
+Unsafe Haven=1800001
+Lost Treasures=1800002
+A Little on the Side=1800003
+Bosmer Insight=1800004
+A Silken Garb=1800005
+Carnival Conundrum=1800006
+Rare Imports=1800007
+Simply Misplaced=1800008
+The Honor of the Queen=1800009
+The Wandering Minstrel=1800010
+Luck of the Albatross=1800011
+Forever Bound=2290001
+Scars Never Fade=1800012
+Keeper of Bones=1800013
+The Grip of Madness=1800014
+Storgh's Bow=1800015
+Fit to Rule=1800016
+Until Death=1800017
+The Unquiet Dead=1800018
+Phantom Guilt=1800019
+Eyes of Azura=1800020
+Pact Advocate=1800021
+Lost in Study=1800022
+The Wounded Wood=1800023
+Blood Hunt=1800024
+Flipping the Coin=1800025
+Forbidden Love=1850001
+Heart of the Matter=1850002
+Enemies at the Gate=1800026
+The Enemy Within=1800027
+A Chief Concern=1800028
+The Innkeeper's Daughter=1800029
+Circus of Cheerful Slaughter=1800030
+The Wakening Dark=1800031
+Ancient Stones, Ancient Words=1800032
+A Lasting Winter=1800033
+Light in the Darkness=1800034
+If the Dead Could Talk=1800035
+
+Take Me Home=1950001
+
+The Staff of Magnus=2250001
+
+Prisoners of the Sphinx=2430001
+
+The Broken Spearhead=2920001
+
+Storm on the Horizon=2940001
+Dark Knowledge=2940002
+Cast Adrift=2940003
+Tears of the Two Moons=2940004
+Moon-Sugar Medicament=2940005
+The Perils of Diplomacy=2940006
+The Tempest Unleashed=2940007
+To Auridon=2940008
+The Harborage=2940009
+A Pinch of Sugar=2940010
+The Root of the Problem=2940011
+The Family Business=2940012
+
+The Serpent Lord=3080001
+
+]]
