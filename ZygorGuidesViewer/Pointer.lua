@@ -1659,7 +1659,7 @@ function Pointer.ArrowFrame_OnUpdate_Common(self,elapsed)
 
 	local safe = true
 
-	local waypoint = ArrowFrame.waypoint or dummy_waypoint
+	local waypoint = ArrowFrame.waypoint
 
 	if not waypoint
 	or not ZGV.db.profile.arrowshow
@@ -4008,6 +4008,7 @@ local function PathFoundHandler(state,path,ext)
 
 		Pointer:ResetFollowing()
 	elseif state=="progress" then
+		Pointer:Debug("Waypoints: Waiting state.")
 		-- DON'T clear anything.
 		Pointer:ShowWaiting(ext and ext.progress or 0)
 	end

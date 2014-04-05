@@ -146,6 +146,12 @@ GOALTYPES['opt'] = {
 	end,
 }
 
+GOALTYPES['future'] = {
+	parse = function(self,params,step,data)
+		self.future = true
+	end,
+}
+
 GOALTYPES['noway'] = {
 	parse = function(self,params,step,data)
 		self.force_noway = true
@@ -742,7 +748,12 @@ function Goal:IsComplete()
 
 		elseif explanation=="future stage"
 		then
-			return false,not not self.future
+			if not self.future then return false,false end
+			-- and if future then fall through
+
+		elseif explanation=="not in journal" then
+			if not self.future then return false,false end
+			-- and if future then fall through
 
 		elseif explanation=="completion"
 		then  -- possible, countable
@@ -757,15 +768,17 @@ function Goal:IsComplete()
 		or explanation=="step overrides cond"
 		then  -- possible, countable
 			return iscomplete,ispossible
-
-		else
+		elseif not self.future then
 			return iscomplete,ispossible
 		end
+
 		-- letting possibles through. They'll be either current-stages-only, or incomplete vague objectives.
+		
 		--[[
 		if self.future then
 			return false,true
 		end
+		-- this is NOT how a .future is to work! It's to ALLOW natural completion of something.
 		--]]
 	end
 

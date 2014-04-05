@@ -68,8 +68,15 @@ local ConditionEnv = {
 		Parser.ConditionEnv.goal=goal
 	end,
 	
-	--[[
 	-- independent data feeds
+	questcomplete = function(id,stage) --stage can be omitted
+		return ZGV.Quests:IsQuestStageComplete(id,stage)
+	end,
+	havequest = function(id)
+		local q=ZGV.Quests[id]
+		return q
+	end,
+	--[[
 		rep = function(faction)
 			if ZGV:GetReputation(faction).friendship then --dummy proof this.
 				return ZGV:GetReputation(faction).friendship
@@ -101,13 +108,6 @@ local ConditionEnv = {
 		end,
 		isevent = function(eventname)
 			return ZGV:FindEvent(eventname)
-		end,
-		completedq = function(id)
-			return ZGV.completedQuests[id]
-		end,
-		havequest = function(id)
-			local q=ZGV.questsbyid[id]
-			return q and q.inlog
 		end,
 		achieved = function(achieveid)
 			return select(4,GetAchievementInfo(achieveid))

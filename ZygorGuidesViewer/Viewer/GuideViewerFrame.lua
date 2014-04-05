@@ -503,7 +503,7 @@ function FrameUI:OnUpdate(time)
 		end
 		self.lastArrowSurfUpdate = time
 	end
-	
+
 	if time - (self.lastUpdate or 0) < UPDATETIME then return end	-- throttle it based on time.
 	self.lastUpdate = time
 
@@ -615,13 +615,15 @@ function Viewer:PrevStepButton_OnClick(but)
 		ZGV:FocusStep(1)
 		ZGV.pause=nil
 	else
-		local count=IsShiftKeyDown() and 10 or 1
+		--local count=IsShiftKeyDown() and 10 or 1
+		local count = 1
 		self:PrevStep_GuideViewer(count,but == RIGHT_MOUSE_BUTTON)
 	end
 end
 
 function Viewer:NextStepButton_OnClick(but)
-	local count=IsShiftKeyDown() and 10 or 1
+	--local count=IsShiftKeyDown() and 10 or 1
+	local count = 1
 	self:NextStep_GuideViewer(count,but == RIGHT_MOUSE_BUTTON)
 end
 

@@ -50,7 +50,7 @@ local OPTIONS_VERT_OFFSET = 5
 
 
 local GuideStatusColor = {
-	["SUGGESTED"]	= "fe6100",
+	["SUGGESTED"]	= "ffcc40",
 	["VALID"]	= "40bf40",
 	["COMPLETE"]	= "808080",
 	["INVALID"] = "e60000",
