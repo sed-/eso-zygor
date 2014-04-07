@@ -9,7 +9,7 @@ goto wailingprison1_base 15.93,34.37
 .' Search the Cell |q Soul Shriven in Coldharbour##3360001/1/1/Search the Cell##1
 step
 goto 15.93,34.37
-.talk 3360001 |q Soul Shriven in Coldharbour##3360001/2/1/Talk to The Prophet##1
+.talk The Prophet##3360001 |q Soul Shriven in Coldharbour##3360001/2/1/Talk to The Prophet##1
 step
 goto 16.36,34.08
 .click The Wailing Prison##3360001
@@ -50,14 +50,14 @@ goto 68.48,48.75
 .' Fight the Skeletal Archer |q Soul Shriven in Coldharbour##3360001/8/1/Fight the Skeletal Archer##1
 step
 goto 72.20,55.45
-.talk 3360006 |q Soul Shriven in Coldharbour##3360001/9/1/Talk to Lyris##1
+.talk Lyris Titanborn##3360006 |q Soul Shriven in Coldharbour##3360001/9/1/Talk to Lyris##1
 step
 goto 85.50,79.33
 .click The Towers of Eyes##3360004
 .' Reach the Towers of Eyes |q Soul Shriven in Coldharbour##3360001/10/1/Reach the Towers of Eyes##1
 step
 goto wailingprison4_base 42.33,25.05
-.talk 3360006 |q Soul Shriven in Coldharbour##3360001/11/2/Talk to Lyris##1
+.talk Lyris Titanborn##3360006 |q Soul Shriven in Coldharbour##3360001/11/2/Talk to Lyris##1
 step
 goto 53.41,42.06
 .' Follow the path up |goto 53.41,42.06 < 10 |c |noway
@@ -79,10 +79,10 @@ goto 47.62,72.95
 .' Reach the Prophet's Cell |q Soul Shriven in Coldharbour##3360001/12/1/Reach the Prophet's Cell##1
 step
 'Next to you:
-.talk 3360006 |q Soul Shriven in Coldharbour##3360001/13/1/Talk to Lyris##1
+.talk Lyris Titanborn##3360006 |q Soul Shriven in Coldharbour##3360001/13/1/Talk to Lyris##1
 step
 goto 58.87,66.23
-.talk 3360010 |q Soul Shriven in Coldharbour##3360001/14/1/Talk to Cadwell##1
+.talk Cadwell##3360010 |q Soul Shriven in Coldharbour##3360001/14/1/Talk to Cadwell##1
 step
 goto 68.06,71.63
 .' Follow the path |goto 68.06,71.63 < 10 |c |noway
@@ -111,7 +111,7 @@ goto wailingprison6_base 38.45,53.65
 .' Find the Prophet |q Soul Shriven in Coldharbour##3360001/17/1/Find The Prophet##1
 step
 goto 40.40,53.20
-.talk 3360006 |q Soul Shriven in Coldharbour##3360001/18/1/Talk to Lyris##1
+.talk Lyris Titanborn##3360006 |q Soul Shriven in Coldharbour##3360001/18/1/Talk to Lyris##1
 step
 goto 50.62,43.64
 .click Daedric Anchor Pinion##3360008
@@ -126,7 +126,7 @@ goto 39.15,53.39
 .' Return to Lyris and Observe the Exchange |q Soul Shriven in Coldharbour##3360001/20/1/Return to Lyris and Observe the Exchange##1
 step
 goto 40.37,53.17
-.talk 3360001 |q Soul Shriven in Coldharbour##3360001/21/1/Talk to The Prophet##1
+.talk The Prophet##3360001 |q Soul Shriven in Coldharbour##3360001/21/1/Talk to The Prophet##1
 step
 goto 71.56,54.20
 .' Follow the path |goto 71.56,54.20 < 10 |c |noway
@@ -145,7 +145,7 @@ goto 49.12,62.60
 .' Defeat the Anchor Guardians |q Soul Shriven in Coldharbour##3360001/24/1/Defeat the Anchor Guardians##1
 step
 'Next to you:
-.talk 3360001 |q Soul Shriven in Coldharbour##3360001/25/1/Talk to The Prophet##1
+.talk The Prophet##3360001 |q Soul Shriven in Coldharbour##3360001/25/1/Talk to The Prophet##1
 step
 goto 49.54,55.58
 .' Watch the dialogue
@@ -164,17 +164,17 @@ goto 49.42,51.19
 .' Use the Rift to Escape to Tamriel |q Soul Shriven in Coldharbour##3360001/29/1/Use the Rift to Escape to Tamriel##1
 step
 goto vulkhelguard_base 66.79,64.58
-.talk 3360001
-..turnin 3360001 |next Aldmeri Dominion Leveling Guides\\Khenarthi's Roost (3-7)
+.talk The Prophet##3360001
+..turnin Soul Shriven in Coldharbour##3360001 |next Aldmeri Dominion Leveling Guides\\Khenarthi's Roost (3-7)
 |only Aldmeri Dominion
 step
 goto davonswatch_base 58.19,65.66
-.talk 3360001
-..turnin 3360001 |next Ebonheart Pact Leveling Guides\\Bleakrock Isle (3-7)
+.talk The Prophet##3360001
+..turnin Soul Shriven in Coldharbour##3360001 |next Ebonheart Pact Leveling Guides\\Bleakrock Isle (3-7)
 |only Ebonheart Pact
 step
 goto daggerfall_base 68.59,60.61
-.talk 3360001
-..turnin 3360001 |next Daggerfall Covenant Leveling Guides\\Stros M'Kai (3-7)
+.talk The Prophet##3360001
+..turnin Soul Shriven in Coldharbour##3360001 |next Daggerfall Covenant Leveling Guides\\Stros M'Kai (3-7)
 |only Daggerfall Covenant
 ]])

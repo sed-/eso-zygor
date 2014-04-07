@@ -4226,7 +4226,7 @@ local _GetPOIMapInfo=GetPOIMapInfo
 function GetPOIMapInfo(map,id,truthful)
 	if truthful then return _GetPOIMapInfo(map,id) end
 	local x,y,typ,tex = _GetPOIMapInfo(map,id)
-	if tex:find("icon_missing") then tex="/esoui/art/icons/poi/poi_town_incomplete.dds" end  --ZygorGuidesViewer/Arrows/Stealth/arrow-back.dds
+	if tex:find("icon_missing") then tex=ZGV.DIR.."/Arrows/Stealth/mapmarker.dds" end  --/esoui/art/icons/poi/poi_town_incomplete.dds
 	if typ==MAP_PIN_TYPE_INVALID then typ=MAP_PIN_TYPE_POI_SEEN end
 	return x,y,typ,tex
 end

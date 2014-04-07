@@ -3,7 +3,8 @@ if not ZGV then return end
 if ZGV:DoMutex("LevelingEP") then return end
 if ZGV.Utils.GetFaction() ~= "EP" then return end
 ZGV:RegisterGuide("Ebonheart Pact Leveling Guides\\Bleakrock Isle (3-7)",[[
-startlevel 2
+startlevel 3
+endlevel 7
 step
 'Save 2 extra skill points, don't spend them yet
 .' You'll be able to invest them into the Intimidate and Persuade skills soon, which will save you a lot of gold and time on certain quests coming up soon.
@@ -472,6 +473,8 @@ goto bleakrock_base 46.85,88.75
 .talk Captain Rana##1090002 |q Escape from Bleakrock##1090013/14/Talk to Captain Rana##1 |next Ebonheart Pact Leveling Guides\\Stonefalls (6-16)
 ]])
 ZGV:RegisterGuide("Ebonheart Pact Leveling Guides\\Stonefalls (6-16)",[[
+startlevel 6
+endlevel 16
 step
 goto balfoyen_base 72.87,57.75
 .talk Captain Rana##1090002
@@ -3957,6 +3960,8 @@ goto 34.61,70.34
 .' Follow the path |goto 34.61,70.34 < 10 |c |noway |next Ebonheart Pact Leveling Guides\\Deeshan (16-24)
 ]])
 ZGV:RegisterGuide("Ebonheart Pact Leveling Guides\\Deeshan (16-24)",[[
+startlevel 16
+endlevel 24
 step
 goto stonefall_base 40.53,75.17
 .' Follow the path |goto deshaan_base 15.74,37.07 < 10 |c |noway
@@ -5035,7 +5040,7 @@ goto 27.63,20.25
 step
 goto 42.56,20.18
 .click Heavy Door##490002
-.' Go through the doorway |goto 42.56,20.18 < 1 |c |noway
+.' Go through the doorway |goto 42.56,20.18 < 3 |c |noway
 step
 goto 63.70,20.13
 .click Heavy Door##490002
@@ -5096,26 +5101,29 @@ goto 37.29,48.53
 .click Ostarand's Diary##490008
 .click Dwarven Chest##490009
 .kill Dwarven Centurion##490007
-.' Retrieve the Crystal and the Tome |q The Dangerous Past##90038/13/1/Retrieve the Crystal and the Tome##1
+.' Retrieve the Crystal and the Tome |q The Dangerous Past##90038/12/1/Retrieve the Crystal and the Tome##1
 step
 goto 37.79,48.53
-.talk Guildmaster Sees-All-Colors##20070 |q The Dangerous Past##90038/14/1/Talk to Guildmaster Sees-All-Colors##1
+.talk Guildmaster Sees-All-Colors##20070 |q The Dangerous Past##90038/13/1/Talk to Guildmaster Sees-All-Colors##1
 step
 goto 36.24,46.02
-.' Wait for Sees-All-Colors |q The Dangerous Past##90038/15/1/Wait for Sees-All-Colors##1
-.talk Jofnir Iceblade##20217 |q The Dangerous Past##90038/16/1/Talk to Jofnir Iceblade##1
+.' Wait for Sees-All-Colors |q The Dangerous Past##90038/14/1/Wait for Sees-All-Colors##1
+step
+goto mzendeldt_base 36.34,46.06
+.talk Jofnir Iceblade##90162 |q The Dangerous Past##90038/15/1/Talk to Jofnir Iceblade##1
 step
 goto 36.69,45.98
 .click Portal to the Guildhall##490001
-.' Meet Merric in the Guildhall |q The Dangerous Past##90038/17/1/Meet Merric in the Guildhall##1
+.' Meet Merric in the Guildhall |q The Dangerous Past##90038/16/1/Meet Merric in the Guildhall##1
 step
 goto deshaan_base 43.48,82.72
 .talk Merric at-Aswala##90084
 ..turnin The Dangerous Past##90038
 step
-goto 41.43,80.51
+goto mournhold_base 40.25,79.93
+.talk Bera Moorsmith##90243
 .click Mournhold##100064
-.' Leave the Fighters Guild |goto 41.06,80.27 < 1 |c |noway
+.' Leave the Fighters Guild |goto mournhold_base 41.06,80.27 < 2 |c |noway
 step
 goto 40.22,79.87
 .talk Bera Moorsmith##90243
@@ -5129,11 +5137,11 @@ goto 68.31,65.33
 .' Enter the Flaming Nix |goto 68.56,65.34 < 1 |c |noway
 step
 goto 71.40,64.88
-.talk Betina Volek##100178 |q Vengeance of the Oppressed##100025/Talk to Betina Volek |sub
+.talk Betina Volek##100178 |q Vengeance of the Oppressed##100025/1/1/Find Betina Volek##1
 ..' Tell her about the ambush
 step
 goto 72.17,65.96
-.talk Naryu Virian##100081 |q A Favor Returned##100023/Talk to Naryu Virian |sub
+.talk Naryu Virian##100081 |q A Favor Returned##100023/7/1/Talk to Naryu Virian##1
 .' Persuade her
 step
 goto 72.51,64.70
@@ -5141,20 +5149,23 @@ goto 72.51,64.70
 step
 goto 71.50,66.19
 .click House Dres Wine##100068
-.' Find the House Dres Wine |q A Favor Returned##100023/Find the House Dres Wine |sub
+.' Find the House Dres Wine |q A Favor Returned##100023/8/1/Find the House Dres Wine##1
 step
 goto 72.38,66.12
 .' Follow the path up |goto 72.38,66.12 < 5 |c |noway
 step
 goto 72.25,65.91
-.talk Naryu Virian##100081 |q A Favor Returned##100023/Talk to Naryu Virian |sub
+.talk Naryu Virian##100081 |q A Favor Returned##100023/9/1/Talk to Naryu Virian##1
+step
+goto mournhold_base 72.07,65.63
+'Wait for Naryu's Signal |q A Favor Returned##100023/10/1/Wait for Naryu's Signal##1
 step
 goto 72.38,66.12
 .' Follow the path up |goto 72.38,66.12 < 5 |c |noway
 step
 goto 71.63,66.69
 .talk Thauravil Dres##100236
-.' Steal the House Dres Key |q A Favor Returned##100023/Steal the House Dres Key |sub
+.' Steal the House Dres Key |q A Favor Returned##100023/11/1/Steal the House Dres Key##1
 step
 goto 68.82,65.37
 .click Mournhold##100064
@@ -5162,16 +5173,16 @@ goto 68.82,65.37
 step
 goto 60.54,58.20
 .talk Betina Volek##100178
-.' Meet Betina at Her Family Home |q Vengeance of the Oppressed##100025/Meet Betina at Her Family Home |sub
+.' Meet Betina at Her Family Home |q Vengeance of the Oppressed##100025/2/1/Meet Betina at Her Family Home##1
 step
 goto 60.18,59.10
 .click Volek House, Abandoned##100065
-.' Enter the Volek House |goto 60.04,59.54 < 1 |c |noway
+.' Enter the Volek House |q Vengeance of the Oppressed##100025/3/1/Enter the Volek Home##1
 step
 goto 59.81,60.24
 .kill Tastes-the-Breeze##100163
 .kill Sar-Keer##100160
-.' Defeat the Argonians |q Vengeance of the Oppressed##100025/Defeat the Argonians |sub
+.' Defeat the Argonians  |q Vengeance of the Oppressed##100025/4/1/Defeat the Argonians##1
 step
 goto 60.00,59.71
 .click Mournhold##100064
@@ -5187,8 +5198,8 @@ step
 goto 29.75,80.82
 .' Follow the path |goto 29.75,80.82 < 10 |c |noway
 step
-goto 41.18,57.38
-.' Follow the path |goto 41.18,57.38 < 10 |c |noway
+goto deshaan_base 41.36,57.65
+'Go to the House Dres Farm |q A Favor Returned##100023/12/1/Go to the House Dres Farm##1
 step
 goto 42.00,59.59
 .click Sathram House##100069
@@ -5196,7 +5207,7 @@ goto 42.00,59.59
 step
 goto 41.66,59.99
 .click Suspicious Rug##100073
-.' Investigate the Dres Farmhouses |q A Favor Returned##100023/Investigate the Dres Farmhouses |sub
+.' Investigate the Dres Farmhouses |q A Favor Returned##100023/13/1/Investigate the Dres Farmhouses##1
 step
 goto 41.89,59.81
 .talk Naryu Virian##100081
@@ -5205,232 +5216,81 @@ goto 41.89,59.81
 step
 goto 41.66,59.99
 .click Mournhold Underground##100074
-.' Enter the Mournhold Underground |goto mournhold_basesewers_base 39.87,84.72 < 1 |c |noway
+.' Enter the Mournhold Underground |q The Mournhold Underground##100028/1/1/Enter the Trap Door##1
 step
-goto 29.50,74.73
+goto mournholdsewers_base 29.58,75.10
 .talk Naryu Virian##100081
-.' Follow Naryu Into the Sewers |q The Mournhold Underground##100028/Follow Naryu Into the Sewers |sub
+.' Follow Naryu Into the Sewers |q The Mournhold Underground##100028/2/2/Talk to Naryu##1
 step
 goto 29.24,71.03
-.' Jump down here |goto 29.24,71.03 < 5 |c |noway
+.' Jump down here |q The Mournhold Underground##100028/3/1/Follow Naryu Into the Sewers##1
 step
 goto 35.78,61.63
 .click Stone Slab##520002
-.' Search for the Hidden Door |q The Mournhold Underground##100028/Search for the Hidden Door |sub
+.' Search for the Hidden Door |q The Mournhold Underground##100028/4/1/Search for the Hidden Door##1
 step
-'ADD COORDS
-.kill Alit##90107+
-.' Collect Alit Grease
-'ADD DETECTION IF POSSIBLE
-step
-goto 30.45,58.75
+goto mournholdsewers_base 34.65,61.74
 .click Stone Lever##520003
-'ADD DETECTION IF POSSIBLE
+.' Loosen the Stuck Lever |q The Mournhold Underground##100028/5/5/Loosen the Stuck Lever##1
 step
-goto 27.93,62.93
+goto 30.54,59.48
+.click Stone Lever##520003
+.' Loosen the Stuck Lever |q The Mournhold Underground##100028/6/5/Loosen the Stuck Lever##1
+step
+goto Mournhold Sewers 27.91,63.00
 .click Ladder##520004
-.' Go up the Ladder |goto 28.00,61.64 < 1 |c |noway
+.click Stone Lever##520003 |q The Mournhold Underground##100028/7/5/Loosen the Stuck Lever##1
 step
-'ADD COORDS
+goto 35.22,61.87
+.kill Alit##90107 |tip Collect Alit Grease then go to the Stone Lever, the Alit are all around the room
 .click Stone Lever##520003
-'ADD DETECTION IF POSSIBLE
-step
-goto 35.88,62.04
-.click Stone Lever##520003
-..' _<Apply Alit Grease>_
-.' Open the Hidden Door |q The Mournhold Underground##100028/Open the Hidden Door |sub
+.' _<Apply Alit Grease>_
+.' Open the Hidden Door |q The Mournhold Underground##100028/7/1/Open the Hidden Door##1
 step
 goto 35.43,61.66
 .click Mournhold Sewer##520005
 .' Go through the doorway |goto 36.86,61.68 < 1 |c |noway
 step
 goto 39.89,57.33
-.talk Naryu Virian##100081 |q The Mournhold Underground##100028/Talk to Naryu |sub
+.talk Naryu Virian##100081 |q The Mournhold Underground##100028/8/1/Talk to Naryu##1
 step
 goto 51.15,58.87
-.' Follow the path down |goto 51.15,58.87 < 10 |c |noway
+.' Follow the path down |goto 51.15,58.87 < 5 |c |noway
 step
 goto 56.19,50.95
-.' Follow the path |goto 56.19,50.95 < 10 |c |noway
+.' Follow the path |goto 56.19,50.95 < 5 |c |noway
 step
 goto 63.10,27.90
-.' Follow the path |goto 63.10,27.90 < 10 |c |noway
+.' Follow the path |goto 63.10,27.90 < 5 |c |noway
 step
 goto 48.13,37.72
+'Find Whoever Activated the Wards |q The Mournhold Underground##100028/9/1/Find Whoever Activated the Wards##1
 .' Kill Maulborn enemies
-.' Defeat the Maulborn Assault |q The Mournhold Underground##100028/Defeat the Maulborn Assault |sub
+.' Defeat the Maulborn Assault |q The Mournhold Underground##100028/10/1/Defeat the Maulborn Assault##1
 step
-goto 69.70,27.13
-.' Follow the path |goto 69.70,27.13 < 10 |c |noway
+goto mournholdsewers_base 61.56,28.60
+.' Follow the path |goto mournholdsewers_base 61.56,28.60 < 10 |c |noway
 step
 goto 70.06,27.17
 .click Deshaan##100045
-.' Leave the Mournhold Sewers |goto deshaan_base < 1 |c |noway
-'ADD COORDS TO DETECTION
+.' Leave the Mournhold Sewers |goto deshaan_base 52.11,47.96 < 1 |c |noway
 step
-goto deshaan_base 29.61,64.12
-.' Enter the Mages Guild |goto deshaan_base 29.61,64.12 < 1 |c |noway
+goto mournhold_base 25.65,70.29
+.talk Farona Telvanni##520001 |q The Mournhold Underground##100028/11/1/Go to the Mages Guild##1
 step
-goto 25.88,70.27
-.talk Farona Telvanni##520001
-.' Go to the Mages Guild |q The Mournhold Underground##100028/Go to the Mages Guild |sub
+goto mournhold_base 29.55,81.04
+.talk Ordinator##90016 |q The Mournhold Underground##100028/12/1/Talk to an Ordinator##1
 step
-goto 23.61,67.51
-.click Mages Guild##90007
-.' Enter the Mages Guild |goto 23.35,67.38 < 1 |c |noway
-step
-goto 22.33,66.36
-.talk Valaste##90042
-..accept Simply Misplaced##100029
-step
-goto 19.92,65.66
-.talk Arch-Mage Shalidor##1130007 |q Simply Misplaced##100029/Talk to Shalidor |sub
-step
-goto 20.88,65.82
-.' Wait for Shalidor to open the portal
-.click Portal to the Shivering Isles##100076
-.' Enter the Portal
-step
-goto carzogsdemise_base 50.15,55.92
-.talk Haskill##480001 |q Simply Misplaced##100029/Talk to Haskill |sub
-step
-goto 49.75,57.47
-.click Portal to Vuldngrav##2960001
-.' Enter the Portal
-step
-goto 49.54,70.66
-.click Vuldngrav Catacombs##2960002
-.' Enter the Vuldngrav Catacombs |goto 49.50,69.02 < 1 |c |noway
-step
-goto 59.08,64.12
-.' Explore Vuldngrav |q Simply Misplaced##100029/Explore Vuldngrav |sub
-step
-goto 60.87,64.10
-.click Chest##3360013
-.' Kill the enemies that attack
-.kill Draugr Wight##2960003
-.' Defeat the Draugr |q Simply Misplaced##100029/Defeat the Draugr |sub
-step
-goto 49.55,59.17
-.click Gate##90172
-.' Enter the gate |goto 49.50,58.11 < 1 |c |noway
-step
-goto 49.37,45.45
-.' Follow the path up |goto 49.37,45.45 < 10 |c |noway
-step
-goto 49.52,26.46
-.kill Korthor##2960006
-.' Retrieve the Fork |q Simply Misplaced##100029/Retrieve the Fork |sub
-step
-goto 49.53,15.82
-.talk Haskill##480001 |q Simply Misplaced##100029/Talk to Haskill |sub
-step
-goto 49.50,14.37
-.click Portal to Asakala##2960003
-.' Enter the Portal
-step
-goto 40.92,22.78
-.talk Arch-Mage Shalidor##1130007 |q Simply Misplaced##100029/Talk to Shalidor |sub
-step
-goto 44.25,33.75
-.' Run into Essences |tip They look like floating orbs of light all around this area.
-.' Collect 4 Essences |q Simply Misplaced##100029/Collect Essence |sub
-step
-goto 40.13,31.33
-.click Scarab Seal##2960004
-.' Activate the Scarab Seal |q Simply Misplaced##100029/Activate a Scarab Seal |sub
-step
-goto 44.25,33.75
-.' Run into Essences |tip They look like floating orbs of light all around this area.
-.' Collect 4 Essences |q Simply Misplaced##100029/Collect Essence |sub
-step
-goto 47.55,29.23
-.click Scarab Seal##2960004
-.' Activate the Scarab Seal |q Simply Misplaced##100029/Activate a Scarab Seal |sub
-step
-'Next to you:
-.talk Arch-Mage Shalidor##1130007 |q Simply Misplaced##100029/Talk to Shalidor |sub
-step
-goto 54.38,40.26
-.' Follow the path down |goto 54.38,40.26 < 10 |c |noway
-step
-goto 62.47,38.39
-.kill Rashomta the Spider##2960010
-.' Collect Rashomta's Essence |q Simply Misplaced##100029/Collect Rashomta's Essence |sub
-step
-goto 54.26,40.43
-.' Leave the tomb |goto 54.26,40.43 < 10 |c |noway
-step
-goto 51.11,45.65
-.click Spider Seal##2960005
-.' Activate the Spider Seal |q Simply Misplaced##100029/18/Activate the Spider Seal##1
-step
-goto 38.82,44.45
-.' Follow the path down |goto 38.82,44.45 < 10 |c |noway
-step
-goto 30.70,46.29
-.kill Sahdina the Scorpion##2960011
-.' Collect Sahdina's Essence |q Simply Misplaced##100029/Collect Sahdina's Essence |sub
-step
-goto 38.89,44.41
-.' Leave the tomb |goto 38.89,44.41 < 10 |c |noway
-step
-goto 44.02,47.46
-.click Scorpion Seal##2960006
-.' Activate the Scorpion Seal |q Simply Misplaced##100029/Activate Scorpion Seal |sub
-step
-goto 45.62,38.58
-.click Key Ritual Orb##2960007
-.' Wait For the Tomb to Open |q Simply Misplaced##100029/Wait For the Tomb to Open |sub
-step
-goto 51.28,64.87
-.click Prince Maleel's Tomb##2960008
-.' Enter Prince Maleel's Tomb |goto 51.34,66.86 < 1 |c |noway
-step
-goto 51.46,84.92
-.kill Maleel al-Akir##2960012
-.' Retrieve the Staff |q Simply Misplaced##100029/Retrieve the Staff |sub
-step
-goto 51.32,66.80
-.click Asakala##2960003
-.' Leave Prince Maleel's Tomb |goto 51.32,64.79 < 1 |c |noway
-step
-goto 49.39,55.31
-.talk Haskill##480001 |q Simply Misplaced##100029/Talk to Haskill |sub
-step
-goto 49.24,54.21
-.click Portal to the Shivering Isles##100076
-.' Return to the Shivering Isles
-step
-goto 50.37,55.96
-.talk Sheogorath##480006 |q Simply Misplaced##100029/Talk to Sheogorath |sub
-step
-goto 58.45,51.00
-.' Equip the Wabbajack in your bags
-.' Left click on Temple Acolytes around this area |tip You must have the Wabbajack equipped.
-.' Perform 5 Tests of the Wabbajack |q Simply Misplaced##100029/Test the Wabbajack |sub
-step
-goto 50.34,55.83
-.talk Sheogorath##480006 |q Simply Misplaced##100029/Talk to Sheogorath |sub
-step
-goto 51.38,56.49
-.click Circus of Cheerful Slaughter##2960009
-.' Collect the Book |q Simply Misplaced##100029/Collect the Book |sub
-step
-goto deshaan_base 22.33,66.37
-.talk Valaste##90042
-..turnin Simply Misplaced##100029
-step
-goto 29.51,81.02
+goto mournhold_base 29.60,81.03
 .talk Temple Ordinator##90016
 ..turnin The Mournhold Underground##100028
 ..accept The Seal of Three##100030
 step
-goto 51.82,45.96
-.' Follow the path up |goto 51.82,45.96 < 10 |c |noway
+goto mournhold_base 43.39,44.94
+.' Follow the path up |goto mournhold_base 43.39,44.94 < 10 |c |noway
 step
 goto 48.03,42.45
-.talk Hand of Almalexia##90054 |q The Seal of Three##100030/Talk to Almalexia |sub
+.talk Hand of Almalexia##90054 |q The Seal of Three##100030/1/1/Talk to Almalexia##1
 step
 goto 48.55,38.46
 .click Tribunal Temple##90060
@@ -5441,7 +5301,7 @@ goto tribunaltemple_base 42.04,70.23
 step
 goto 35.98,68.13
 .click Daedric Portal##480001
-.' Close the Daedric Portal |q The Seal of Three##100030/Close the Daedric Portals |sub
+.' Close the Daedric Portal |q The Seal of Three##100030/3/1/Close the Daedric Portals##1 |count 1
 step
 goto 27.40,63.60
 .' Follow the path |goto 27.40,63.60 < 10 |c |noway
@@ -5451,7 +5311,7 @@ goto 43.84,34.22
 step
 goto 49.84,41.63
 .click Daedric Portal##480001
-.' Close the Daedric Portal |q The Seal of Three##100030/Close the Daedric Portals |sub
+.' Close the Daedric Portall |q The Seal of Three##100030/3/1/Close the Daedric Portals##1 |count 2
 step
 goto 57.20,35.62
 .' Follow the path |goto 57.20,35.62 < 10 |c |noway
@@ -5461,7 +5321,7 @@ goto 69.24,59.61
 step
 goto 67.08,66.85
 .click Daedric Portal##480001
-.' Close the Daedric Portal |q The Seal of Three##100030/Close the Daedric Portals |sub
+.' Close the Daedric Portall |q The Seal of Three##100030/3/1/Close the Daedric Portals##1 |count 3
 step
 goto 52.41,75.29
 .' Follow the path |goto 52.41,75.29 < 10 |c |noway
@@ -5471,75 +5331,74 @@ goto 29.26,77.17
 step
 goto 19.44,77.17
 .click Altar of Almalexia##400003
-.talk Hand of Almalexia##90054 |q The Seal of Three##100030/Talk to Almalexia |sub
+.' Pray at the Almalexia's Altar |q The Seal of Three##100030/4/1/Pray at Almalexia's Altar##1
+step
+goto tribunaltemple_base 21.33,78.35
+.talk Hand of Almalexia##90054 |q The Seal of Three##100030/5/1/Talk to Almalexia##1
 step
 goto 48.82,21.57
 .click Altar of Sotha Sil##400004
-.' Pray at Sotha Sil's Altar |q The Seal of Three##100030/Pray at Sotha Sil's Altar |sub
+.' Pray at Sotha Sil's Altar |q The Seal of Three##100030/6/1/Pray at Sotha Sil's Altar##2
 step
 goto 50.29,27.64
-.talk Hand of Almalexia##90054 |q The Seal of Three##100030/5/Talk to Almalexia##1
+.talk Hand of Almalexia##90054 |q The Seal of Three##100030/7/2/Talk to Almalexia##1
 step
-goto 52.22,39.09
-.click Dwarven Mechanism##400005
-.kill Dwarven Sphere##100119+
-.' Collect 5 Dynamo Cores
-'ADD DETECTION IF POSSIBLE
-step
-goto 48.58,39.11
-.click Dwarven Mechanism##400005
+goto tribunaltemple_base 50.02,38.49
+.' There will be a Dwarvern Mechanism on both yoru sides
+.' Pull each 3 times and collect 5 Dynao Cores and 3 Spinning gears
 .kill Dwarven Spider##1130004+
+.kill Dwarven Sphere##100119+
 .' Collect 3 Spinning Gears
-'ADD DETECTION IF POSSIBLE
-step
-goto 50.25,42.53
+.' Collect 5 Dynamo Cores
 .talk Arbiter of Perfection##400004
 ..' Insert 3 Gears
 ..' Insert 5 Cores
 .kill Arbiter of Perfection##400004
-.talk Enigma of Sotha Sil##400005
-.' Receive Sotha Sil's Blessing |q The Seal of Three##100030/Receive Sotha Sil's Blessing |sub
+.' Pas Sotha Sil's Trial  |q The Seal of Three##100030/8/1/Pass Sotha Sil's Trial##1
+step
+goto tribunaltemple_base 49.78,39.10
+.talk Enigma of Sotha Sil##400005 |q The Seal of Three##100030/9/1/Receive Sotha Sil's Blessing##1
 step
 goto 81.99,75.32
 .click Altar of Vivec##400007
-.' Find Vivec's Cloister |q The Seal of Three##100030/Find Vivec's Cloister |sub
+.' Find Vivec's Cloister |q The Seal of Three##100030/10/1/Find Vivec's Cloister##1
 step
 goto 76.75,73.37
-.talk Hand of Almalexia##90054 |q The Seal of Three##100030/5/Talk to Almalexia##1
+.talk Hand of Almalexia##90054 |q The Seal of Three##100030/11/2/Talk to Almalexia##1
 step
 goto 71.62,68.09
 .talk Vamen##400007
 ..' Tell him it was not his fault
 .talk Belronen Telvanni##400008
-'ADD DETECTION IF POSSIBLE
+.' Investigate the Scene |q The Seal of Three##100030/12/2/Investigate the Scene##1
 step
-goto 71.62,68.09
+goto tribunaltemple_base 67.92,68.12
 .talk Galdsa Dres##400009
 .talk Morami Hlaalu##400010
 .talk Talnus Indoril##400011
 .talk Fenila Redoran##400012
-.' Investigate the Scene |q The Seal of Three##100030/Investigate the Scene |sub
+.' Investigate the Scene |q The Seal of Three##100030/13/2/Investigate the Scene##1
 step
 goto 69.12,69.95
 .talk Morami Hlaalu##400010
 ..' Tell her it was her fault that the murder happened
+.' Uncover the traitor |q The Seal of Three##100030/14/2/Uncover the Traitor##1
+step
+goto tribunaltemple_base 68.56,68.26
 .talk Enigma of Vivec##400013
-.' Receive Vivec's Blessing |q The Seal of Three##100030/Receive Vivec's Blessing |sub
+.' Recieve Vivec's Blessing |q The Seal of Three##100030/15/1/Receive Vivec's Blessing##1
 step
 goto 61.50,51.68
 .click High Chapel of the Three##400002
-.' Enter the High Chapel of the Three |goto 60.35,52.20 < 1 |c |noway
+.' Enter the High Chapel of the Three |q The Seal of Three##100030/16/1/Enter the High Chapel of the Three##1
 step
-'ADD COORDS
+goto tribunaltemple_base 50.84,47.95
 .' Click the Relics in this order:
 .click Relic of Almalexia##400010
 .click Relic of Sotha Sil##400009
-.click Relic of Vivec##400008
-'ADD DETECTION IF POSSIBLE
-step
-goto 51.08,57.88
+.click Relic of Vivec##400008 |tip The Relics are in a circle around the corners of the room
 .kill Sathram##400014
-.' Defeat the Maulborn Priest Sathram |q The Seal of Three##100030/Defeat Maulborn Priest Sathram |sub
+.' Defeat the Maulborn Priest Sathram |q The Seal of Three##100030/17/1/Defeat Maulborn Priest Sathram##1
 step
 goto 59.68,52.63
 .click Tribunal Temple##90060
@@ -5550,17 +5409,20 @@ goto 50.20,75.00
 ..turnin The Seal of Three##100030
 ..accept Chasing the Magistrix##400001
 step
-goto 50.19,81.18
+goto mournhold_base 49.53,39.38
 .click Mournhold##100064
-.' Leave the Tribunal Temple |goto deshaan_base 48.50,38.68 < 1 |c |noway
+.' Leave the Tribunal Temple |goto mournhold_base 48.50,38.67 < 1 |c |noway
 step
-goto deshaan_base 38.65,58.49
-.' Follow the path |goto deshaan_base 38.65,58.49 < 10 |c |noway
+goto mournhold_base 38.65,58.49
+.' Follow the path |goto mournhold_base 38.65,58.49 < 10 |c |noway
 step
-goto 34.65,58.58
-.' Follow the road |goto 34.65,58.58 < 10 |c |noway
+goto mournhold_base 28.94,81.82
+.' Follow the road |goto mournhold_base 28.94,81.82 < 10 |c |noway
 step
-goto 34.55,55.02
+goto deshaan_base 38.80,56.05
+.wayshrine Mournhold Wayshrine
+step
+goto deshaan_base 34.55,55.02
 .talk Raynor Vanos##150270
 ..accept The Dungeon Delvers##100057
 step
@@ -5593,17 +5455,17 @@ step
 goto 61.58,14.03
 .' Click the Dwarven Prism
 .' Keep clicking it until the beam is facing West
-'ADD DETECTION IF POSSIBLE
+.' Move directly to the square when you are ready to continue |goto 61.58,14.03 < 1 |c |noway
 step
 goto 52.08,13.56
 .' Click the Dwarven Prism
 .' Keep clicking it until the beam is facing South
-'ADD DETECTION IF POSSIBLE
+.' Move directly to the square when you are ready to continue |goto 52.08,13.56 < 1 |c |noway
 step
-goto 70.27,32.17
+goto bthanual_base 51.34,23.13
 .' Click the Dwarven Prism
 .' Keep clicking it until the beam is facing East
-'ADD DETECTION IF POSSIBLE
+.' Move directly to the square when you are ready to continue |goto 51.34,23.13 < 1 |c |noway
 step
 goto 70.28,32.09
 .' Click the Dwarven Prism
@@ -5617,6 +5479,8 @@ step
 goto 62.56,46.31
 .' Press _E_ to use the Control Rod on the Greatspider
 .' Use the Rod on the Greatspider |q The Light Fantastic##870001/3/1/Use Rod on Greatspider##1
+step
+goto bthanual_base 61.39,47.86
 .kill Dwarven Greatspider##870003
 .' Defeat and Loot the Greatspider |q The Light Fantastic##870001/4/1/Defeat and Loot Greatspider##1
 step
@@ -5632,30 +5496,39 @@ goto 61.66,33.65
 .talk Kireth Vanos##970002
 ..turnin The Light Fantastic##870001
 step
+goto bthanual_base 48.03,23.12
+'Follow the path |goto bthanual_base 48.03,23.12 < 5 |c |noway
+step
 goto 47.00,94.63
 .click Deshaan##100045
 .' Leave Bthanual |goto deshaan_base 33.10,55.24 < 1 |c |noway
 step
-goto 32.08,60.02
+goto deshaan_base 34.73,58.53
+.' Cross the bridge |goto deshaan_base 34.73,58.53 < 5 |c |noway
+step
+goto deshaan_base 32.08,60.02
 .talk Acolyte Krem##100274
 ..accept Honor Bound##100032
+step
+goto deshaan_base 27.10,54.99
+.wayshrine Muth Gnarr Hills Wayshrine
 step
 goto 24.11,56.62
 .' Follow the road |goto 24.11,56.62 < 10 |c |noway
 step
 goto 25.07,56.99
-.talk Healer Senar##100277 |q Honor Bound##100032/Talk to Healer Senar |sub
+.talk Healer Senar##100277 |q Honor Bound##100032/1/1/Talk to Healer Senar##1
 step
 goto 25.33,57.11
 .talk Hamen Athren##100278
-.' Trade for a Dunmer Relic |q Cultural Exchange##100024/Trade for a Dunmer Relic |sub
+.' Trade for a Dunmer Relic |q Cultural Exchange##100024/1/1/Trade for a Dunmer Relic##3
 step
 goto 27.03,58.95
 .' Follow the path |goto 27.03,58.95 < 10 |c |noway
 step
 goto 26.84,59.50
 .talk Dolril Belvayn##100282
-.' Find Dolril Belvayn |q Honor Bound##100032/Find Dolril Belvayn |sub
+.' Find Dolril Belvayn |q Cultural Exchange##100024/1/1/Trade for a Dunmer Relic##3
 step
 goto 28.24,59.81
 .talk Healer Ravel##100283
@@ -5663,11 +5536,11 @@ goto 28.24,59.81
 step
 goto 28.72,61.02
 .kill Plague Stalker##100032+
-.' Collect 6 Medallions from Husks |q The Medallions of Saint Veloth##100033/Collect Medallions from Husks |sub
+.' Collect 6 Medallions from Husks |q The Medallions of Saint Veloth##100033/1/1/Collect Medallions from Husks##1
 step
-'ADD COORDS, SEPARATE EACH RESCUE INTO A SINGLE STEP, AND OPTIMIZE PATH - HAVE TO RESCUE 5 AROUND THIS AREA IN THE BUILDINGS
+goto deshaan_base 27.86,61.27
 .talk Afflicted Commoner##100281
-.' Rescue the Afflicted Commmoner |q Honor Bound##100032/Rescue Afflicted Commoners and Monks |sub
+.' Rescue the Afflicted Commmoner |q Honor Bound##100032/3/1/Rescue Afflicted Commoners and Monks##1 |count 1
 step
 'Next to you:
 .talk Healer Hlaren##100279 |q Honor Bound##100032/Talk to Healer Hlaren |sub
@@ -7001,8 +6874,156 @@ goto deshaan_base 39.11,58.72
 step
 goto shadowfen_base 57.28,20.73
 .' Find the Shadowfen Border |q Onward to Shadowfen##100055/Find the Shadowfen Border |sub
+step
+goto mournhold_base 23.61,67.51
+.click Mages Guild##90007
+.' Enter the Mages Guild |goto 23.35,67.38 < 1 |c |noway
+step
+goto 22.33,66.36
+.talk Valaste##90042
+..accept Simply Misplaced##100029
+step
+goto 19.92,65.66
+.talk Arch-Mage Shalidor##1130007 |q Simply Misplaced##100029/Talk to Shalidor |sub
+step
+goto 20.88,65.82
+.' Wait for Shalidor to open the portal
+.click Portal to the Shivering Isles##100076
+.' Enter the Portal
+step
+goto carzogsdemise_base 50.15,55.92
+.talk Haskill##480001 |q Simply Misplaced##100029/Talk to Haskill |sub
+step
+goto 49.75,57.47
+.click Portal to Vuldngrav##2960001
+.' Enter the Portal
+step
+goto 49.54,70.66
+.click Vuldngrav Catacombs##2960002
+.' Enter the Vuldngrav Catacombs |goto 49.50,69.02 < 1 |c |noway
+step
+goto 59.08,64.12
+.' Explore Vuldngrav |q Simply Misplaced##100029/Explore Vuldngrav |sub
+step
+goto 60.87,64.10
+.click Chest##3360013
+.' Kill the enemies that attack
+.kill Draugr Wight##2960003
+.' Defeat the Draugr |q Simply Misplaced##100029/Defeat the Draugr |sub
+step
+goto 49.55,59.17
+.click Gate##90172
+.' Enter the gate |goto 49.50,58.11 < 1 |c |noway
+step
+goto 49.37,45.45
+.' Follow the path up |goto 49.37,45.45 < 10 |c |noway
+step
+goto 49.52,26.46
+.kill Korthor##2960006
+.' Retrieve the Fork |q Simply Misplaced##100029/Retrieve the Fork |sub
+step
+goto 49.53,15.82
+.talk Haskill##480001 |q Simply Misplaced##100029/Talk to Haskill |sub
+step
+goto 49.50,14.37
+.click Portal to Asakala##2960003
+.' Enter the Portal
+step
+goto 40.92,22.78
+.talk Arch-Mage Shalidor##1130007 |q Simply Misplaced##100029/Talk to Shalidor |sub
+step
+goto 44.25,33.75
+.' Run into Essences |tip They look like floating orbs of light all around this area.
+.' Collect 4 Essences |q Simply Misplaced##100029/Collect Essence |sub
+step
+goto 40.13,31.33
+.click Scarab Seal##2960004
+.' Activate the Scarab Seal |q Simply Misplaced##100029/Activate a Scarab Seal |sub
+step
+goto 44.25,33.75
+.' Run into Essences |tip They look like floating orbs of light all around this area.
+.' Collect 4 Essences |q Simply Misplaced##100029/Collect Essence |sub
+step
+goto 47.55,29.23
+.click Scarab Seal##2960004
+.' Activate the Scarab Seal |q Simply Misplaced##100029/Activate a Scarab Seal |sub
+step
+'Next to you:
+.talk Arch-Mage Shalidor##1130007 |q Simply Misplaced##100029/Talk to Shalidor |sub
+step
+goto 54.38,40.26
+.' Follow the path down |goto 54.38,40.26 < 10 |c |noway
+step
+goto 62.47,38.39
+.kill Rashomta the Spider##2960010
+.' Collect Rashomta's Essence |q Simply Misplaced##100029/Collect Rashomta's Essence |sub
+step
+goto 54.26,40.43
+.' Leave the tomb |goto 54.26,40.43 < 10 |c |noway
+step
+goto 51.11,45.65
+.click Spider Seal##2960005
+.' Activate the Spider Seal |q Simply Misplaced##100029/18/Activate the Spider Seal##1
+step
+goto 38.82,44.45
+.' Follow the path down |goto 38.82,44.45 < 10 |c |noway
+step
+goto 30.70,46.29
+.kill Sahdina the Scorpion##2960011
+.' Collect Sahdina's Essence |q Simply Misplaced##100029/Collect Sahdina's Essence |sub
+step
+goto 38.89,44.41
+.' Leave the tomb |goto 38.89,44.41 < 10 |c |noway
+step
+goto 44.02,47.46
+.click Scorpion Seal##2960006
+.' Activate the Scorpion Seal |q Simply Misplaced##100029/Activate Scorpion Seal |sub
+step
+goto 45.62,38.58
+.click Key Ritual Orb##2960007
+.' Wait For the Tomb to Open |q Simply Misplaced##100029/Wait For the Tomb to Open |sub
+step
+goto 51.28,64.87
+.click Prince Maleel's Tomb##2960008
+.' Enter Prince Maleel's Tomb |goto 51.34,66.86 < 1 |c |noway
+step
+goto 51.46,84.92
+.kill Maleel al-Akir##2960012
+.' Retrieve the Staff |q Simply Misplaced##100029/Retrieve the Staff |sub
+step
+goto 51.32,66.80
+.click Asakala##2960003
+.' Leave Prince Maleel's Tomb |goto 51.32,64.79 < 1 |c |noway
+step
+goto 49.39,55.31
+.talk Haskill##480001 |q Simply Misplaced##100029/Talk to Haskill |sub
+step
+goto 49.24,54.21
+.click Portal to the Shivering Isles##100076
+.' Return to the Shivering Isles
+step
+goto 50.37,55.96
+.talk Sheogorath##480006 |q Simply Misplaced##100029/Talk to Sheogorath |sub
+step
+goto 58.45,51.00
+.' Equip the Wabbajack in your bags
+.' Left click on Temple Acolytes around this area |tip You must have the Wabbajack equipped.
+.' Perform 5 Tests of the Wabbajack |q Simply Misplaced##100029/Test the Wabbajack |sub
+step
+goto 50.34,55.83
+.talk Sheogorath##480006 |q Simply Misplaced##100029/Talk to Sheogorath |sub
+step
+goto 51.38,56.49
+.click Circus of Cheerful Slaughter##2960009
+.' Collect the Book |q Simply Misplaced##100029/Collect the Book |sub
+step
+goto deshaan_base 22.33,66.37
+.talk Valaste##90042
+..turnin Simply Misplaced##100029
 ]])
 ZGV:RegisterGuide("Ebonheart Pact Leveling Guides\\Shadowfen (24-30)",[[
+startlevel 24
+endlevel 30
 step
 goto shadowfen_base 53.67,22.55
 .' Follow the path |goto shadowfen_base 53.67,22.55 < 10 |c |noway
@@ -9605,6 +9626,8 @@ goto 62.14,68.73
 .talk Muz-Muz##190256 |q Swamp to Snow##190035/Talk to the Boatmaster |sub
 ]])
 ZGV:RegisterGuide("Ebonheart Pact Leveling Guides\\Eastmarch (30-35)",[[
+startlevel 30
+endlevel 35
 step
 goto Windhelm 89.31,42.73
 .talk Vicecanon Heita-Meen##190017
@@ -12022,6 +12045,8 @@ goto 67.26,71.01
 .' Follow this road out to get to The Rift |goto The Rift 68.52,24.53 |c |noway
 ]])
 ZGV:RegisterGuide("Ebonheart Pact Leveling Guides\\The Rift (35-42)",[[
+startlevel 35
+endlevel 42
 step
 goto Shor's Stone 55.73,43.19
 .talk Vigrod Wraithbane##160001 |q Beneath the Stone##150039/Talk to Vigrod Wraithbane |sub
@@ -14955,6 +14980,8 @@ goto 64.40,36.53
 .' Leave Malsia's House |goto 64.41,36.49 |c |noway
 ]])
 ZGV:RegisterGuide("Ebonheart Pact Leveling Guides\\Coldharbour (42-50)",[[
+startlevel 42
+endlevel 50
 step
 goto Coldharbour 52.09,77.35
 .talk Cadwell##3360010
