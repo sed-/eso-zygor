@@ -856,10 +856,6 @@ goto vulkhelguard_base 58.76,41.91
 ..accept Ensuring Security##1780001
 .' Choose to speak with the Advisor first
 step
-goto 75.40,46.73
-.talk Malareth##1780013
-..accept New In Town##1780003
-step
 goto 50.81,58.95
 .talk Advisor Norion##1780014 |q Ensuring Security##1780001/2/1/Talk to Advisor Norion##1
 step
@@ -985,17 +981,8 @@ goto 52.58,69.21
 .talk Captain Erronfaire##1780016
 ..turnin Unaccounted Crew##1780004
 step
-goto 50.31,56.83
-.' Talk to Outlaws, Gamblers, Con Artists and Freebooters |tip They are all around this area.
-..' Persuade, Intimidate, or Fight them to get them to pay you
-.' Remind 5 Debtors |q New in Town##1780003/1/1/Remind Debtors##1
-step
 goto 68.55,43.84
 .talk Steward Eminwe##1780044 |q Ensuring Security##1780001/5/1/Talk to Steward Eminwe##1
-step
-goto 75.45,46.79
-.talk Malareth##1780013
-..turnin New in Town##1780003
 step
 goto 71.15,46.61
 .click Crate##1780020
@@ -7017,108 +7004,79 @@ goto 32.83,40.33
 .' Follow Captain Sarandil to the Mages Guild |q The Staff of Magnus##2250001/2/Follow Captain Sarandil to the Mages Guild##1
 step
 goto 22.51,42.55
-.' Wait for Captain Sarandil to Unlock the Vault |q The Staff of Magnus##2250001/Wait for Captain Sarandil to Unlock the Vault |sub
+.' Wait for Captain Sarandil to Unlock the Vault |q The Staff of Magnus##2250001/3/1/Wait for Captain Sarandil to Unlock the Vault##1
 step
 goto 22.28,42.40
 .click Primary Vault##180001
-.' Enter Marbruk's Vault |q The Staff of Magnus##2250001/2/Enter Marbruk's Vault##1
+.' Enter Marbruk's Vault |q The Staff of Magnus##2250001/4/1/Enter Marbruk's Vault##1
 step
-goto 26.68,26.39
+goto 28.90,26.16
+.click Domica Redwort##180118
+.' Examine the Domica Redwort |q The Staff of Magnus##2250001/5/3/Examine the Domica Redwort##1
+step
+goto 27.83,25.61
+.click Crimson Nirnroot##180119
+.' Examine the Crimson |q The Staff of Magnus##2250001/5/3/Examine the Crimson Nirnroot##3
+step
+goto 27.62,27.81
+.click Gleamblossom##180121
+.' Ecamine the Gleamblossom |q The Staff of Magnus##2250001/5/3/Examine the Gleamblossom##2
+step
+goto 26.76,27.23
+.click Roland's Tear##180120
+.' Examine the Roland's Tear |q The Staff of Magnus##2250001/5/3/Examine the Roland's Tear##4
+step
+goto 26.94,26.41
 .talk Captain Sarandil##180012
-.' Have Captain Sarandil Unlock the Door |q The Staff of Magnus##2250001/Have Captain Sarandil Unlock the Door |sub
-'FIX ME
+.' Have Captain Sarandil Unlock the Door |q The Staff of Magnus##2250001/6/2/Have Captain Sarandil Unlock the Door##1
 step
 goto 26.57,25.87
 .click Relic Room##180002
-.' Enter the Relic Room |q The Staff of Magnus##2250001/2/Enter the Relic Room##1
+.' Enter the Relic Room |goto marbruk_base 25.77,25.3 < 1 |c |noway
 step
-goto 66.51,47.76
+goto 25.10,22.83
+.click Racuvar Bala##180125
+.' Examine the Racuvar Bala |q The Staff of Magnus##2250001/8/3/Examine the Racuvar Bala##1
+step
+goto greenshade_base 66.60,48.07
+.click Gandra-Lye##180126
+.' Examine the Gandra-Lye |q The Staff of Magnus##2250001/8/3/Examine the Gandra-Lye##3
+step
+goto greenshade_base 66.48,48.07
+.click Crown of Nenalata##180127
+.' Examine the Crown of Nenalata |q The Staff of Magnus##2250001/8/3/Examine the Crown of Nenalata##2
+step
+goto greenshade_base 66.54,47.76
 .talk Captain Sarandil##180012
-.' Have Captain Sarandil Unlock the Door |q The Staff of Magnus##2250001/Have Captain Sarandil Unlock the Door |sub
-'FIX ME
+.' Have Captain Sarandil Unlock the Door |q The Staff of Magnus##2250001/9/2/Have Captain Sarandil Unlock the Door##1
 step
-goto 66.48,47.68
+goto greenshade_base 66.48,47.68
 .click Inner Vault##2240001
-.' Enter the Inner Vault |q The Staff of Magnus##2250001/2/Enter the Inner Vault##1
+.' Enter the Inner Vault |goto greenshade_base 66.38,47.60 < 1 |c |noway
 step
 goto 65.86,47.31
 .click Staff of Magnus##180003
-.' Secure the Staff of Magnus |q The Staff of Magnus##2250001/4/Secure the Staff of Magnus##1
+.' Secure the Staff of Magnus |q The Staff of Magnus##2250001/11/1/Secure the Staff of Magnus##1
 step
 goto 66.00,47.33
-.talk Captain Sarandil##180012 |q The Staff of Magnus##2250001/5/Talk to Captain Sarandil##1
+.talk Captain Sarandil##180012 |q The Staff of Magnus##2250001/12/1/Talk to Captain Sarandil##1
 step
 goto 66.40,47.62
 .click Relic Room##180002
 .' Leave the Inner Vault |goto 66.51,47.69 < 1 |c |noway
 step
-goto 26.06,25.51
+goto marbruk_base 26.06,25.51
 .click Primary Vault##180001
 .' Leave the Relic Room |goto 26.82,26.03 < 1 |c |noway
 step
 goto 30.31,28.18
 .click Mages Guild##1780008
-.' Return to the Grand Hall |q The Staff of Magnus##2250001/6/Return to the Grand Hall##1
+.' Return to the Grand Hall |q The Staff of Magnus##2250001/13/1/Return to the Grand Hall##1
 step
 goto 27.24,37.63
-.talk Captain Sarandil##180012
-.' Listen to the Herald |q The Staff of Magnus##2250001/Listen to Herald |sub
-step
-goto 28.91,34.61
-.talk Valaste##1780039 |q Circus of Cheerful Slaughter##1800030/1/Talk to Valaste##1
-step
-goto 28.66,33.46
-.click Circus of Cheerful Slaughter##2960009
-.' Read "Circus of Cheerful Slaughter" |q Circus of Cheerful Slaughter##1800030/2/Read "Circus of Cheerful Slaughter"##1
-step
-goto Circus of Cheerful Slaughter 60.54,73.94
-.talk Sheogorath##480006 |q Circus of Cheerful Slaughter##1800030/3/Talk to Sheogorath##1
-step
-goto 80.58,62.45
-.' Follow the path
-.talk Sheogorath##480006
-.' Watch the dialogue
-.' Find Sheogorath in Heartholdhelm |q Circus of Cheerful Slaughter##1800030/4/Find Sheogorath in Heartholdhelm##1
-step
-goto 80.72,61.47
-.' Kill all the enemies in the area
-.' You will be attacked by a group of 3 more enemies
-.' Kill Ebonheart Pact Actors |q Circus of Cheerful Slaughter##1800030/6/Kill Pact Lead Roles##1
-step
-goto 53.00,25.67
-.talk Sheogorath##480006
-.' Find Sheogorath in Skyroot Hearth |q Circus of Cheerful Slaughter##1800030/7/Find Sheogorath in Skyroot Hearth##1
-step
-goto 53.00,25.67
-.' Watch Queen Ayrenn's Speech
-.' Kill the waves of enemies that attack you
-.' Kill Queen Ayrenn |q Circus of Cheerful Slaughter##1800030/10/Kill Queen Ayrenn##1
-step
-goto 23.95,60.82
-.' Follow the path
-.talk Sheogorath##480006
-.' Watch the dialogue
-.' Find Sheogorath in Daggerwaymore |q Circus of Cheerful Slaughter##1800030/11/Find Sheogorath in Daggerwaymore##1
-step
-goto 23.86,62.13
-.' Kill the enemies on the right first
-.' Kill King Kurog gro-Orsinium in the house to the left second
-.' Kill High King Fahara'jad on the far back platform third
-.' Save the Guild Members |q Circus of Cheerful Slaughter##1800030/12/Save the Guild Members##1
-step
-goto 24.88,64.13
-.kill King Emeric##580016 |q Circus of Cheerful Slaughter##1800030/13/Kill High King Emeric##1
-step
-goto 27.25,69.96
-.talk Sheogorath##480006 |q Circus of Cheerful Slaughter##1800030/14/Talk to Sheogorath##1
-step
-goto 27.16,70.94
-.click Robier's Vegetable Garden##580004
-.' Collect the Book |q Circus of Cheerful Slaughter##1800030/15/Collect the Book##1
-step
-goto Greenshade 28.94,34.57
-.talk Valaste##1780039
-..turnin Circus of Cheerful Slaughter##1800030
+.talk Captain Sarandil##180012 |q The Staff of Magnus##2250001/14/1/Talk to Captain Sarandil##1
+.' Listen to the Herald |q The Staff of Magnus##2250001/15/1/Listen to the Herald##1
+-		.' Watch the dialogue
 step
 goto 32.75,40.13
 .click Marbruk##180007
@@ -7137,7 +7095,8 @@ goto 38.32,36.48
 ..accept Troublemakers##180009
 step
 goto 32.89,45.20
-.kill Rat##2940015+
+.' All around this city
+.kill Rat##2940015+ |tip If you're having trouble finding them, try looking next to crates and barrels.
 .' Collect All of the Rat Parts |q Troublemakers##180009/1/Collect Rat Parts##1
 step
 goto 39.83,60.27
@@ -7152,30 +7111,44 @@ goto 52.12,73.55
 .' Enter the Foundation of Trust |goto 52.23,73.73 < 1 |c |noway
 step
 goto 52.57,75.85
-.talk Talqua##180029 |q The Artisan##180010/Talk to Talqua |sub
+.talk Talqua##180029 |q The Artisan##180010/2/2/Talk to Talqua##1
+step
+goto 52.22,73.68
+.click Marbruk##180007
+.' Leave the Foundation of Trust |goto 52.12,73.44 < 1 |c |noway
+step
+goto 59.93,53.59
+.talk Rilding##180008 |q The Artisan##180010/2/2/Talk to Rilding##3
+step
+goto 52.76,55.55
+.talk Mendreval##180010 |q The Artisan##180010/2/2/Talk to Mendreval##2
+step
+goto 52.12,73.55
+.click The Foundation of Trust##180008
+.' Enter the Foundation of Trust |goto 52.23,73.73 < 1 |c |noway
 step
 goto 52.20,76.01
 .' Go upstairs
 .talk Nidras##180030
-.' Deduce the Artisan's Identity |q The Artisan##180010/2/Deduce the Artisan's Identity##1
+.' Deduce the Artisan's Identity |q The Artisan##180010/3/1/Deduce the Artisan's Identity##1
 step
 goto 52.23,73.68
 .click Marbruk##180007
 .' Leave the Foundation of Trust |goto 52.12,73.44 < 1 |c |noway
 step
 goto 68.94,54.70
-.talk Adamir##180021 |q Troublemakers##180009/2/Talk to Adamir outside the Fighters Guild##1
+.talk Adamir##180021 |q Troublemakers##180009/2/1/Talk to Adamir outside the Fighters Guild##1
 step
 goto 69.07,47.52
 .click Backpack##1830006
-.' Place the Rats in the Bag |q Troublemakers##180009/3/Place Rats in Bag##1
+.' Place the Rats in the Bag |q Troublemakers##180009/3/1/Place Rats in Bag##1
 step
 goto 68.94,54.70
 .talk Adamir##180021
 ..turnin Troublemakers##180009
 step
 goto 39.83,60.28
-.talk Cinnar##180027 |q The Artisan##180010/3/Talk to Cinnar##1
+.talk Cinnar##180027 |q The Artisan##180010/4/1/Talk to Cinnar##1
 step
 goto 38.54,73.91
 .click Calastil's House##180011
@@ -7183,7 +7156,7 @@ goto 38.54,73.91
 step
 goto 39.59,74.20
 .click Hiding Place##180012
-.' Find Earrastel's Item |q The Artisan##180010/4/Find Earrastel's Item##1
+.' Find Earrastel's Item |q The Artisan##180010/5/1/Find Calastil's Item##1
 step
 goto 38.58,74.05
 .click Marbruk##180007
@@ -7195,22 +7168,22 @@ goto 34.76,76.39
 step
 goto 34.91,78.87
 .click Hiding Place##180012
-.' Find Laurosse's Item |q The Artisan##180010/4/Find Laurosse's Item##3
+.' Find Laurosse's Item |q The Artisan##180010/5/1/Find Laurosse's Item##3
 step
 goto 34.75,76.49
 .click Marbruk##180007
 .' Leave Cassirion's House |goto 34.67,76.20 < 1 |c |noway
 step
 goto 26.19,81.16
-.' Follow the path |goto 26.19,81.16 < 1 |c |noway
+.' Follow the path |goto 26.19,81.16 < 20 |c |noway
 step
-goto 67.93,58.07
+goto greenshade_base 67.93,58.07
 .click Earrastell's House##180014
 .' Enter Earrastell's House |goto 67.93,58.07 < 1 |c |noway
 step
 goto 68.41,58.01
 .click Hiding Place##180012
-.' Find Quertasse's Item |q The Artisan##180010/4/Find Quertasse's Item##2
+.' Find Quertasse's Item |q The Artisan##180010/5/1/Find Quertasse's Item##2
 step
 goto 67.91,58.09
 .click Marbruk##180007
@@ -7222,106 +7195,102 @@ goto 67.63,58.92
 step
 goto 67.78,59.24
 .click Hiding Place##180012
-.' Find Calastil's Item |q The Artisan##180010/4/Find Calastil's Item##4
+.' Find Calastil's Item |q The Artisan##180010/5/1/Find Calastil's Item##4
 step
 goto 67.83,59.09
-.talk Hendare##180044 |q The Artisan##180010/5/Talk to Hendare##1
+.talk Hendare##180044 |q The Artisan##180010/6/1/Talk to Hendare##1
 step
 goto 67.63,58.92
 .click Marbruk##180007
 .' Leave Laurosse's House |goto 67.61,58.91 < 1 |c |noway
 step
-goto 26.50,80.67
-.' Follow the path |goto 26.50,80.67 < 1 |c |noway
+goto marbruk_base 26.50,80.67
+.' Follow the path |goto 26.50,80.67 < 20 |c |noway
 step
 goto 39.82,60.29
 .' Watch Hendare Debrief Cinnar
-.' Return to Cinnar |q The Artisan##180010/6/Return to Cinnar##1
+.' Return to Cinnar |q The Artisan##180010/7/1/Return to Cinnar##1
 step
 goto 39.82,60.29
 .talk Cinnar##180027
 ..turnin The Artisan##180010
 step
 goto 26.19,81.16
-.' Follow the path |goto 26.19,81.16 < 1 |c |noway
+.' Follow the path |goto 26.19,81.16 < 20 |c |noway
 step
-goto 66.17,61.57
-.talk Hazazi##180049 |q Frighten the Fearsome##180008/1/Talk to Hazazi##1
-step
-goto 66.38,66.02
-.' Follow the path up |goto 66.38,66.02 < 1 |c |noway
+goto greenshade_base 66.17,61.57
+.talk Hazazi##180049 |q Frighten the Fearsome##180008/1/1/Talk to Hazazi##1
 step
 goto 64.94,66.00
+'Up the ramp
 .click Treethane's Chambers##180017
 .' Enter the Treethane's Chambers |goto 64.87,65.96 < 1 |c |noway
 step
 goto 64.51,65.74
-.talk Treethane Niriel##180054 |q Frighten the Fearsome##180008/2/Talk to the Treethane##1
+.talk Treethane Niriel##180054 |q Frighten the Fearsome##180008/2/1/Talk to the Treethane##1
 step
 goto 64.88,65.96
 .click Elders of Bramblebreach##180018
 .' Leave the Treethane's Chambers |goto 64.94,65.99 < 1 |c |noway
 step
 goto 70.84,64.73
-.' Find the Kollopi Tree |q Frighten the Fearsome##180008/3/Find the Kollopi Tree##1
+.' Find the Kollopi Tree |q Frighten the Fearsome##180008/3/1/Find the Kollopi Tree##1
 step
 goto 71.13,64.93
-.talk Aranias##180053 |q Frighten the Fearsome##180008/4/Talk to Aranias##1
+.talk Aranias##180053 |q Frighten the Fearsome##180008/4/1/Talk to Aranias##1
 step
 goto 71.16,64.88
-.talk Andur##180059 |q Frighten the Fearsome##180008/Talk to Andur |sub
+.talk Andur##180059 |q Frighten the Fearsome##180008/5/2/Talk to Andur##1
 step
 goto 70.87,64.75
 .click Kollopi Tree##180019
-.' Collect Kollopi Seeds |q Frighten the Fearsome##180008/5/Collect Kollopi Seeds##1
-.' Collect Kollopi Essence |q Frighten the Fearsome##180008/5/Collect Kollopi Essence##2
+.' Collect Kollopi Seeds |q Frighten the Fearsome##180008/6/1/Collect Kollopi Seeds##1
+.' Collect Kollopi Essence |q Frighten the Fearsome##180008/6/1/Collect Kollopi Essence##2
 step
 goto 70.68,66.40
 .click Passage to the Wood Orc Camp##180020
 .' Enter the Wood Orc Camp |goto 71.33,66.68 < 1 |c |noway
 step
 goto 74.16,65.82
-.' Follow the path up |goto 74.16,65.82 < 1 |c |noway
+.' Follow the path up |goto 74.16,65.82 < 20 |c |noway
 step
 goto 74.80,63.01
 .click Peat Mound##180022
-.' Plant the Northern Seed |q Frighten the Fearsome##180008/7/Plant Northern Seed##1
+.' Plant the Northern Seed |q Frighten the Fearsome##180008/7/1/Plant Northern Seed##1
 step
 goto 74.44,66.23
-.' Follow the path |goto 74.44,66.23 < 1 |c |noway
+.' Follow the path |goto 74.44,66.23 < 20 |c |noway
 step
 goto 75.54,66.45
 .click Peat Mound##180022
-.' Plant the Northeastern Seed |q Frighten the Fearsome##180008/7/Plant Northeastern Seed##4
+.' Plant the Northeastern Seed |q Frighten the Fearsome##180008/7/1/Plant Northeastern Seed##4
 step
 goto 75.55,67.58
-.' Follow the path up |goto 75.55,67.58 < 1 |c |noway
+.' Follow the path up |goto 75.55,67.58 < 20 |c |noway
 step
 goto 73.70,68.15
 .click Peat Mound##180022
-.' Plant the Central Seed |q Frighten the Fearsome##180008/7/Plant Central Seed##3
+.' Plant the Central Seed |q Frighten the Fearsome##180008/7/1/Plant Central Seed##3
 step
 goto 73.04,70.11
 .click Peat Mound##180022
-.' Plant the Southern Seed |q Frighten the Fearsome##180008/7/Plant Southern Seed##2
+.' Plant the Southern Seed |q Frighten the Fearsome##180008/7/1/Plant Southern Seed##2
 step
 goto 77.10,67.42
-.' Enter the cave |goto 77.10,67.42 < 1 |c |noway
+.' Enter the cave |goto 77.10,67.42 < 20 |c |noway
 step
 goto 79.37,69.02
-.kill Chieftain Thragdosh##180065 |q Frighten the Fearsome##180008/8/Kill the Orc Chieftain##1
+.kill Chieftain Thragdosh##180065 |q Frighten the Fearsome##180008/8/1/Kill the Orc Chieftain##1
 step
 goto 77.10,67.42
-.' Leave the cave |goto 77.10,67.42 < 1 |c |noway
+.' Leave the cave |goto 77.10,67.42 < 20 |c |noway
 step
 goto 71.33,66.68
 .click Bosmer Camp##180024
 .' Leave the Wood Orc Camp |goto 70.69,66.40 < 1 |c |noway
 step
-goto 66.38,66.00
-.' Follow the path up |goto 66.38,66.00 < 1 |c |noway
-step
 goto 64.94,66.00
+'Up the ramp
 .click Treethane's Chambers##180017
 .' Enter the Treethane's Chambers |goto 64.87,65.96 < 1 |c |noway
 step
@@ -7336,255 +7305,185 @@ goto 64.88,65.96
 step
 goto 66.41,69.74
 .click Petitioning Stone##180025
-.' Touch the Petitioning Stone |q Audience with the Wilderking##180012/1/Touch the Petitioning Stone##1
+.' Touch the Petitioning Stone |q Audience with the Wilderking##180012/1/1/Touch the Petitioning Stone##1
 step
 goto 66.41,69.74
-.talk Wilderking##180067 |q Audience with the Wilderking##180012/2/Talk to the Wilderking##1
+.talk Wilderking##180067 |q Audience with the Wilderking##180012/2/1/Talk to the Wilderking##1
 ..' Persuade him
 step
 goto 65.76,70.91
 .click Stone Pillar##180026
 .kill Advisor Norion##1780014
-.' Defeat the Apparition |q Audience with the Wilderking##180012/3/Defeat Apparition##1
+.' Defeat the Apparition |q Audience with the Wilderking##180012/3/1/Defeat Apparition##1
 step
 goto 66.41,69.74
-.talk Wilderking##180067 |q Audience with the Wilderking##180012/4/Talk to the Wilderking##1
+.talk Wilderking##180067 |q Audience with the Wilderking##180012/4/1/Talk to the Wilderking##1
 step
 goto 66.41,69.74
 .click Petitioning Stone##180025
-.' Watch the Vision |q Audience with the Wilderking##180012/5/Watch the Vision##1
+.' Watch the Vision |q Audience with the Wilderking##180012/5/1/Watch the Vision##1
 step
 goto 66.41,69.74
 .talk Wilderking##180067
 ..turnin Audience with the Wilderking##180012
 ..accept The Spinner's Tale##180013
 step
-goto 63.71,68.58
-.talk Benduin##180068
-..accept Handmade Guardian##180014
-step
-goto 64.31,67.03
-.kill Swarming Wasp##180071+ |tip Many of them come out, but they all have pretty low health, but be careful.
-.click Wasp Nest##180027
-.' Collect Hive Seeds |q Handmade Guardian##180014/1/Collect Hive Seeds##3
-step
-goto 62.87,66.36
-.click Rain Flower##180028
-.' Click the Dew Bug that appears
-.' Collect Dew Bugs |q Handmade Guardian##180014/1/Collect Dew Bugs##1
-step
-goto 62.55,66.90
-.kill Thunderbug##2940030
-.' Collect Thunderbug Bellies |q Handmade Guardian##180014/1/Collect Thunderbug Bellies##2
-step
-goto 64.40,67.27
-.' Follow the path |goto 64.40,67.27 < 1 |c |noway
-step
-goto 63.71,68.58
-.talk Benduin##180068 |q Handmade Guardian##180014/2/Talk to Benduin##1
-step
-goto 63.64,68.50
-.talk Guardian##3360011
-..' <Create a Fire Guardian>  |q Handmade Guardian##180014/Create a Fire Guardian |sub
-step
-goto 63.27,68.21
-.' Go to this spot to start the guardian fight
-.' Repeatedly press E to use the Glowing Roots to heal your guardian throughout the fight
-.' Have Your Guardian Defeat Another Guardian |q Handmade Guardian##180014/Have Your Guardian Defeat Two Other Guardians |sub
-'FIX ME
-step
-goto 62.70,69.34
-.' Go to this spot to start the guardian fight
-.' Repeatedly press E to use the Glowing Roots to heal your guardian throughout the fight
-.' Have Your Guardian Defeat Another Guardian |q Handmade Guardian##180014/Have Your Guardian Defeat Two Other Guardians |sub
-'FIX ME
-step
-goto 63.71,68.58
-.talk Benduin##180068
-..turnin Handmade Guardian##180014
-step
-goto 67.19,69.00
-.' Follow the road |goto 67.19,69.00 < 1 |c |noway
-step
 goto 70.48,75.03
 .talk Lataryon##180076
 ..accept The Fading Tree##180015
 step
-goto 70.51,77.35
-.' Enter the cave |goto 70.51,77.35 < 1 |c |noway
-step
 goto 69.96,78.56
+'Inside the cave
 .click Shrouded Hollow##180031
 .' Enter the Shrouded Hollow |goto Shrouded Hollow 70.15,7.08 < 1 |c |noway
 step
-goto Shrouded Hollow 52.35,23.59
+goto shroudedhollowarea1_base 52.35,23.59
 .' Follow the path down
-.' Explore Shrouded Hollow |q The Fading Tree##180015/1/Explore Shrouded Hollow##1
+.' Explore Shrouded Hollow |q The Fading Tree##180015/1/1/Explore Shrouded Hollow##1
 step
 goto 52.20,25.07
 .' She runs up to you
-.talk Laniriel##3020002 |q The Fading Tree##180015/2/Talk to Laniriel##1
+.talk Laniriel##3020002 |q The Fading Tree##180015/2/1/Talk to Laniriel##1
 step
 goto 50.82,35.06
-.' Follow the path up |goto 50.82,35.06 < 1 |c |noway
+.' Follow the path up |goto 50.82,35.06 < 5 |c |noway
 step
 goto 27.91,45.12
 .click Fading Tree##3020001
-.' Enter the Fading Tree |goto 71.10,38.11 < 1 |c |noway
+.' Enter the Fading Tree |goto shroudedhollowcenter_base 39.65,32.10 < 1 |c |noway
 step
-goto 77.48,51.28
-.talk Erunor##3020003 |q The Fading Tree##180015/3/Talk to Erunor##1
+goto 52.15,57.86
+.talk Erunor##3020003 |q The Fading Tree##180015/3/1/Talk to Erunor##1
 step
-goto 77.61,53.50
-.talk Henodras##3020004
+goto 52.32,61.98
+.talk Henodras##3020004 |q The Fading Tree##180015/4/1/Talk to Henodras##1
 .' Watch the dialogue |tip It might take a minute or so to start.
-.' Watch the Choosing of the Caretaker |q The Fading Tree##180015/5/Watch the Choosing of the Caretaker##1
+.' Watch the Choosing of the Caretaker |q The Fading Tree##180015/5/1/Watch the Choosing of the Caretaker##1
 step
-goto 77.38,49.99
+goto 51.73,56.13
 .' She runs up the path
-.talk Laniriel##3020002 |q The Fading Tree##180015/6/Talk to Laniriel##1
+.talk Laniriel##3020002 |q The Fading Tree##180015/6/1/Talk to Laniriel##1
 step
-goto 70.86,38.02
+goto 39.65,32.10
 .click Shrouded Hollow##180031
-.' Leave the Fading Tree |goto 27.68,44.50 < 1 |c |noway
+.' Leave the Fading Tree |goto shroudedhollowarea1_base 27.68,44.50 < 1 |c |noway
 step
-goto 53.28,37.46
-.' Follow the path |goto 53.28,37.46 < 1 |c |noway
-step
-goto 39.01,52.64
-.' Follow the path |goto 39.01,52.64 < 1 |c |noway
+goto 53.27,38.07
+.' Follow the path |goto 53.27,38.07 < 5 |c |noway
 step
 goto 48.69,67.06
-.' Follow the path up |goto 48.69,67.06 < 1 |c |noway
+.' Follow the path up |goto 48.69,67.06 < 5 |c |noway
 step
 goto 56.29,93.55
 .click Greenshade##1800173
 .' Leave the Shrouded Hollow |goto Greenshade 69.32,82.01 < 1 |c |noway
 step
-goto Greenshade 69.04,84.58
-.' Follow the path |goto Greenshade 69.04,84.58 < 1 |c |noway
-step
 goto 69.17,84.97
 .click Tent##180033
-.' Burn the Orc Tent |q The Fading Tree##180015/Burn Orc Tents |sub
-'FIX ME
+.' Burn the Orc Tent |q The Fading Tree##180015/7/1/Burn Orc Tents##2 |count 1
 step
 goto 70.20,84.40
 .click Tent##180033
-.' Burn the Orc Tent |q The Fading Tree##180015/Burn Orc Tents |sub
-'FIX ME
+.' Burn the Orc Tent |q The Fading Tree##180015/7/1/Burn Orc Tents##2 |count 2
 step
 goto 69.18,84.97
 .click Tent##180033 |tip You may have to wait a few seconds for it to reset again.
-.' Burn the Orc Tent |q The Fading Tree##180015/Burn Orc Tents |sub
-'FIX ME
+.' Burn the Orc Tent |q The Fading Tree##180015/7/1/Burn Orc Tents##2 |count 3
 step
 goto 70.96,86.81
 .kill War Captain Muzgash##180078 |q The Fading Tree##180015/7/Kill War Captain Muzgash##1
 step
 goto 68.71,83.42
-.' Enter the cave |goto 68.71,83.42 < 1 |c |noway
+.' Enter the cave |goto 68.71,83.42 < 10 |c |noway
 step
-goto 69.36,82.00
+goto shroudedhollowarea1_base 40.55,62.57
 .click Shrouded Hollow##180031
-.' Return to the Shrouded Hollow |q The Fading Tree##180015/8/Return to Shrouded Hollow##1
+.' Return to the Shrouded Hollow |q The Fading Tree##180015/8/1/Return to Shrouded Hollow##1
 step
-goto Shrouded Hollow 48.59,67.24
-.' Follow the path |goto Shrouded Hollow 48.59,67.24 < 1 |c |noway
-step
-goto 40.38,58.81
+goto shroudedhollowarea1_base 40.72,62.51
 .' She runs up to you
-.talk Laniriel##3020002 |q The Fading Tree##180015/9/Talk to Laniriel##1
+.talk Laniriel##3020002 |q The Fading Tree##180015/9/1/Talk to Laniriel##1
 step
-goto 51.93,35.11
-.' Follow the path up |goto 51.93,35.11 < 1 |c |noway
+goto shroudedhollowarea1_base 47.70,35.28
+.' Follow the path up |goto 51.93,35.11 < 5 |c |noway
 step
 goto 27.98,45.04
 .click Fading Tree##3020001
-.' Enter the Fading Tree |goto 71.10,38.11 < 1 |c |noway
+.' Enter the Fading Tree |goto shroudedhollowcenter_base 39.65,32.10 < 1 |c |noway
 step
-goto 77.87,52.16
-.' Watch the Changing of the Caretaker |q The Fading Tree##180015/10/Watch the Changing of the Caretaker##1
+goto 52.39,59.72
+.' Watch the Changing of the Caretaker |q The Fading Tree##180015/10/1/Watch the Changing of the Caretaker##1
 step
-goto 77.55,53.27
-.talk Erunor##3020003 |q The Fading Tree##180015/11/Talk to Erunor##1
+goto 52.10,61.61
+.talk Erunor##3020003 |q The Fading Tree##180015/11/1/Talk to Erunor##1
 ..' Tell him he should go with his wife
 ..' Tell him it's not an easy decision
 ..' Tell him he needs to take care of his family
 step
-goto 70.97,37.90
+goto shroudedhollowcenter_base 39.28,31.80
 .click Shrouded Hollow##180031
-.' Leave the Fading Tree |goto 27.60,44.83 < 1 |c |noway
+.' Leave the Fading Tree |goto shroudedhollowarea2_base 27.60,44.83 < 1 |c |noway
 step
-goto 52.75,33.83
-.' Follow the path |goto 52.75,33.83 < 1 |c |noway
+goto 53.85,31.80
+.' Follow the path |goto 52.75,33.83 < 5 |c |noway
 step
-goto 58.54,20.29
-.' Watch the dialogue
-.' Meet Erunor inside Shrouded Hollow |q The Fading Tree##180015/12/Meet Erunor inside Shrouded Hollow##1
-step
-goto 59.19,19.23
-.talk Erunor##3020003
+goto 59.39,19.79
+.talk Laniriel##3020002
 ..turnin The Fading Tree##180015
-step
-goto 53.42,15.12
-.' Follow the path up |goto 53.42,15.12 < 1 |c |noway
 step
 goto 37.14,7.16
 .click Greenshade##1800173
 .' Leave the Shrouded Hollow |goto Greenshade 70.03,78.52 < 1 |c |noway
 step
-goto 70.31,76.43
-.' Follow the path |goto 70.31,76.43 < 1 |c |noway
-step
-goto 64.71,76.14
-.' Follow the path |goto 64.71,76.14 < 1 |c |noway
+goto greenshade_base 69.77,76.48
+.' Follow the path |goto greenshade_base 69.77,76.48 < 20 |c |noway
 step
 goto 62.77,73.10
 .wayshrine Labyrinth
 step
-goto 63.31,79.02
-.' Follow the path |goto 63.31,79.02 < 1 |c |noway
+goto greenshade_base 58.02,72.62
+.' Follow the path |goto greenshade_base 58.02,72.62 < 20 |c |noway
 step
 goto 60.97,75.65
 .talk Spinner Maruin##180080
 ..turnin The Spinner's Tale##180013
 ..accept The Witch of Silatar##180016
+.' Talk to Maruin |q The Witch of Silatar##180016/1/1/Talk to Maruin##1
 step
 goto 61.12,75.33
 .talk Spinner Maruin##180080
-.' Ask Maruin to Being the Story |q The Witch of Silatar##180016/2/Ask Maruin to Begin the Story##1
+.' Ask Maruin to Begin the Story |q The Witch of Silatar##180016/2/Ask Maruin to Begin the Story##1
 step
-goto Silatar 41.80,35.28
+goto silatar_base 41.80,35.28
 .click Silatar##3030001
-.' Enter Silatar |goto Silatar 41.95,35.38 < 1 |c |noway
+.' Leave the Manor |goto 41.95,35.38 < 1 |c |noway
 step
 goto 43.11,36.01
-.talk Aranias##180053 |q The Witch of Silatar##180016/3/Talk to Aranias##1
+.talk Aranias##180053 |q The Witch of Silatar##180016/3/1/Talk to Aranias##1
 step
 goto 41.32,73.42
-.' Follow her to the Lighthouse
-.talk Aranias##180053 |q The Witch of Silatar##180016/5/Talk to Aranias##1
+.' Follow her to the Lighthouse |q The Witch of Silatar##180016/4/1/Reach the Lighthouse##1
+.talk Aranias##180053 |q The Witch of Silatar##180016/5/1/Talk to Aranias##1
 step
 goto 72.38,80.44
 .' Jump up into the building here |goto 72.38,80.44 < 1 |c |noway
 step
 goto 72.50,78.04
 .kill Baham##1780299
-.' Clear the Farm of Bandits |q The Witch of Silatar##180016/6/Clear the Farm of Bandits##1
+.' Clear the Farm of Bandits |q The Witch of Silatar##180016/6/1/Clear the Farm of Bandits##1
 step
 'Next to you:
-.talk Aranias##180053 |q The Witch of Silatar##180016/7/Talk to Aranias##1
+.talk Aranias##180053 |q The Witch of Silatar##180016/7/1/Talk to Aranias##1
 step
 goto 71.33,69.70
-.talk Spinner Maruin##180080 |q The Witch of Silatar##180016/8/Talk to Maruin##1
+.talk Spinner Maruin##180080 |q The Witch of Silatar##180016/8/1/Talk to Maruin##1
 step
 goto 41.81,56.88
 .' Watch the dialogue
-.' Witness Arianas' Story |q The Witch of Silatar##180016/9/Witness Arianas' Story##1
+.' Witness Arianas' Story |q The Witch of Silatar##180016/9/1/Witness Arianas' Story##1
 step
 goto 41.07,57.14
-.talk Spinner Maruin##180080 |q The Witch of Silatar##180016/10/Talk to Maruin##1
+.talk Spinner Maruin##180080 |q The Witch of Silatar##180016/10/1/Talk to Maruin##1
 step
 goto 40.14,76.30
 .click Lighthouse##1780061
@@ -7596,7 +7495,7 @@ goto 38.95,74.33
 step
 goto 38.27,75.33
 .' Watch the dialogue
-.' Find the Lighthouse Story |q The Witch of Silatar##180016/11/Find the Lighthouse Story##1
+.' Find the Lighthouse Story |q The Witch of Silatar##180016/11/1/Find the Lighthouse Story##1
 step
 goto 38.81,74.30
 .click Lighthouse##1780061
@@ -7615,127 +7514,118 @@ goto 54.30,33.45
 step
 goto 52.51,27.83
 .' Watch the dialogue
-.' Find the Great Hall Story |q The Witch of Silatar##180016/12/Find the Great Hall Story##1
+.' Find the Great Hall Story |q The Witch of Silatar##180016/12/1/Find the Great Hall Story##1
 step
 goto 52.06,30.58
 .click Dresser##3030002
-.' Use the Dresser to Change Clothes |q The Witch of Silatar##180016/13/Use the Dresser to Change Clothes##1
+.' Use the Dresser to Change Clothes |q The Witch of Silatar##180016/13/1/Use the Dresser to Change Clothes##1
 step
 goto 54.05,32.73
 .click Silatar##3030001
 .' Leave the Manor |goto 54.44,33.91 < 1 |c |noway
 step
 goto 59.33,25.84
-.talk Aranias##180053 |q The Witch of Silatar##180016/14/Talk to Aranias in the Manor Garden##1
+.talk Aranias##180053 |q The Witch of Silatar##180016/14/1/Talk to Aranias in the Manor Garden##1
 step
 goto 51.66,22.15
 .' Watch the dialogue
-.' Eavesdrop on Lady Estre's Conversation |q The Witch of Silatar##180016/Eavesdrop on Lady Estre's Conversation |sub
-step
-goto 48.05,17.87
-.' Watch the dialogue
-.' Eavesdrop on Ondendil's Conversation |q The Witch of Silatar##180016/Eavesdrop on Ondendil's Conversation |sub
+.' Eavesdrop on Lady Estre's Conversation |q The Witch of Silatar##180016/15/2/Eavesdrop on Lady Estre's Conversation##1
 step
 goto 46.96,29.88
 .' Watch the dialogue
-.' Eavesdrop on the Veiled Heritance Party-Goers |q The Witch of Silatar##180016/15/Eavesdrop on Veiled Heritance Party-Goers##1
+.' Eavesdrop on the Veiled Heritance Party-Goers |q The Witch of Silatar##180016/16/1/Eavesdrop on Veiled Heritance Party-Goers##1
 step
-goto 44.49,27.23
-.' Follow the path |goto 44.49,27.23 < 1 |c |noway
+goto 48.05,17.87
+.' Watch the dialogue
+.' Eavesdrop on Ondendil's Conversation |q The Witch of Silatar##180016/17/3/Eavesdrop on Ondendil's Conversation##1
 step
 goto 29.84,39.17
 .talk Andur##180059
-.kill Andur##180059 |q The Witch of Silatar##180016/17/Kill Andur##1
+.kill Andur##180059 |q The Witch of Silatar##180016/19/1
 step
 goto 30.02,38.90
-.talk Salalin##3030004 |q The Witch of Silatar##180016/18/Talk to Salalin##1
+.talk Salalin##3030004 |q The Witch of Silatar##180016/20/1/Talk to Salalin##1
 step
 goto 30.62,39.79
-.talk Spinner Maruin##180080 |q The Witch of Silatar##180016/19/Talk to Maruin##1
+.talk Spinner Maruin##180080 |q The Witch of Silatar##180016/21/1/Talk to Maruin##1
 step
 goto 44.49,27.23
 .' Follow the path |goto 44.49,27.23 < 1 |c |noway
 step
 goto 57.99,23.98
-.' Watch Aranias' Demonstration
-.' THIS QUEST WAS BUGGED, FINISH LATER
+.' Go to this spot
+.' Watch Aranias' Demonstration |q The Witch of Silatar##180016/22/1/Watch Aranias' Demonstration##1
 step
-goto Greenshade 54.76,75.78
-.' Follow the path |goto Greenshade 54.76,75.78 < 1 |c |noway
+goto 58.37,24.18
+.talk Aranias##180053 |q The Witch of Silatar##180016/23/1/Talk to Aranias##1
+step
+goto greenshade_base 60.53,76.19
+.talk Spinner Maruin##180080
+..turnin The Witch of Silatar##180016
 step
 goto 49.99,72.78
 .talk Radreth##180089
 ..accept Hunting the Wasp##180020
 step
 goto 44.24,71.92
-.' Track the Wasp |q Hunting the Wasp##180020/1/Track the Wasp##1
+.' Track the Wasp |q Hunting the Wasp##180020/1/1/Track the Wasp##1
 step
 goto 42.85,71.28
 .kill Giant Wasp##180092
-.' Collect the Wasp's Head |q Hunting the Wasp##180020/2/Collect the Wasp's Head##1
+.' Collect the Wasp's Head |q Hunting the Wasp##180020/2/1/Collect the Wasp's Head##1
 step
 goto 49.97,72.77
 .talk Radreth##180089
 ..turnin Hunting the Wasp##180020
-step
-goto 51.43,70.43
-.' Follow the road |goto 51.43,70.43 < 1 |c |noway
-step
-goto 55.06,68.37
-.' Follow the path |goto 55.06,68.37 < 1 |c |noway
 step
 goto 54.90,67.15
 .talk Anglorn##180093
 ..accept Stone Cold##180021
 step
 goto 53.48,65.59
-.talk Indanas##180094 |q Stone Cold##180021/1/Talk to Indanas##1
+.talk Indanas##180094 |q Stone Cold##180021/1/1/Talk to Indanas##1
 step
 goto 54.61,65.02
-.' Follow the path up |goto 54.61,65.02 < 1 |c |noway
+.' Follow the path up |goto 54.61,65.02 < 15 |c |noway
 step
 goto 56.46,66.04
 .' Press X to Collapse the Hole
-.' Collapse the Southern Hole |q Stone Cold##180021/2/Collapse Southern Hole##3
-step
-goto 55.67,64.95
-.' Follow the path |goto 55.67,64.95 < 1 |c |noway
+.' Collapse the Southern Hole |q Stone Cold##180021/2/1/Collapse Southern Hole##3
 step
 goto 56.00,62.51
 .' Press X to Collapse the Hole
-.' Collapse the Northern Hole |q Stone Cold##180021/2/Collapse Northern Hole##2
-step
-goto 55.08,62.97
-.' Follow the path |goto 55.08,62.97 < 1 |c |noway
+.' Collapse the Northern Hole |q Stone Cold##180021/2/1/Collapse Northern Hole##2
 step
 goto 53.30,63.08
 .' Press X to Collapse the Hole
-.' Collapse the Western Hole |q Stone Cold##180021/2/Collapse Western Hole##1
+.' Collapse the Western Hole |q Stone Cold##180021/2/1/Collapse Western Hole##1
 step
 goto 55.06,61.52
 .click Clan Holdfast##180048
 .' Enter the Clan Holdfast |goto 55.04,58.42 < 1 |c |noway
 step
 goto 55.05,57.04
+.' Go to the Clan Holdfast |q Stone Cold##180021/3/1/Go to the Clan Holdfast##1
 .' Watch the dialogue
-.' Listen to the Hollow Watchman |q Stone Cold##180021/4/Listen to the Hollow Watchman##1
+.' Listen to the Hollow Watchman |q Stone Cold##180021/4/1/Listen to the Hollow Watchman##1
 step
 goto 55.04,56.89
 .click Hole##2940030
 .' Enter the Hole |goto 51.22,65.35 < 1 |c |noway
 step
 goto 49.61,68.70
-.' Follow the path up |goto 49.61,68.70 < 1 |c |noway
+.' Follow the path up |goto 49.61,68.70 < 20 |c |noway
 step
 goto 49.23,69.62
-.talk Hollow Watchman##180098  |q Stone Cold##180021/7/Tell the Hollow Watchman to Let Them Stay##1
+.' Follow Indanas |q Stone Cold##180021/5/1/Follow Indanas##1
+.talk Hollow Watchman##180098  |q Stone Cold##180021/6/1/Tell the Hollow Watchman to Let Them Stay##1
 ..' Tell him "Regardless, that's what's best for the Bosmer"
 step
 goto 47.86,69.96
-.' Follow the path |goto 47.86,69.96 < 1 |c |noway
+.' Follow the path |goto 47.86,69.96 < 20 |c |noway
 step
-goto 11.96,76.49
-.' Enter the cave |goto 11.96,76.49 < 1 |c |noway
+goto hollowlair_base 12.98,77.40
+.' Enter the cave |goto hollowlair_base 12.98,77.40 < 10 |c |noway
 step
 goto 49.79,55.68
 .' Follow the path to the bottom of the cave
@@ -7747,34 +7637,22 @@ goto 59.13,34.63
 .' Find and Destroy the Hollow Watchman |q Stone Cold##180021/8/Find and Destroy the Hollow Watchman##1
 step
 goto 70.08,38.68
-.' Follow the path up |goto 70.08,38.68 < 1 |c |noway
+.' Follow the path up |goto 70.08,38.68 < 10 |c |noway
 step
 goto 91.94,18.98
 .click Shadow's Crawl##180050
-.' Leave the Watchman's Retreat |goto 56.12,57.87 < 1 |c |noway
+.' Leave the Watchman's Retreat |goto greenshade_base 56.12,57.87 < 1 |c |noway
 step
 goto 55.34,57.68
 .talk Indanas##180094
 ..turnin Stone Cold##180021
 step
-goto 55.04,58.42
-.click Shadows Crawl##180051
-.' Enter Shadows Crawl |goto 55.07,61.53 < 1 |c |noway
+'Open your map:
+.' Click the Labyrinth Wayshrine
+.' Travel to the Labyrinth Wayshrine |goto greenshade_base 62.59,73.21 < 1 |c |noway
 step
-goto 57.21,66.88
-.' Follow the path |goto 57.21,66.88 < 1 |c |noway
-step
-goto 58.93,67.77
-.' Follow the road |goto 58.93,67.77 < 1 |c |noway
-step
-goto 50.37,71.58
-.' Follow the path |goto 50.37,71.58 < 1 |c |noway
-step
-goto 58.53,76.38
-.' Follow the road |goto 58.53,76.38 < 1 |c |noway
-step
-goto 60.22,79.24
-.' Follow the path |goto 60.22,79.24 < 1 |c |noway
+goto 57.51,73.40
+.' Follow the road |goto 57.51,73.40 < 30 |c |noway
 step
 goto 59.81,79.34
 .talk Sumiril##180001
@@ -7784,7 +7662,10 @@ step
 .' Read Sumiril's Book
 .' Follow the floating blue letters in the air to where they lead you
 .' Keep repeating this process after each time you teleport |tip Stand on the gray stone squares to be able to read the book.
-.' Read Sumiril's Book |q A Tangled Knot##180017/4/Read Sumiril's Book##1
+.' Read Sumiril's Book |goto 58.64,80.96 < 3 |c |noway
+step
+goto 56.60,81.29
+.talk Sumiril##180001 |q A Tangled Knot##180017/6/1/Talk to Sumiril##1
 step
 goto 56.56,81.30
 .talk Sumiril##180001
@@ -7803,97 +7684,108 @@ goto 53.75,85.18
 .wayshrine Greenheart
 step
 goto 53.41,84.29
-.talk Wilderking##180067 |q Throne of the Wilderking##180004/2/Talk to the Wilderking##1
+.talk Wilderking##180067 |q Throne of the Wilderking##180004/2/1/Talk to the Wilderking##1
 step
 goto 49.93,85.04
 .' Follow the path up
 .click Nereid's Smile##180038
-.' Collect Nereid's Smile Seeds |q The Flower of Youth##180018/Collect Nereid's Smile Seeds |sub
-'FIX ME
+.' Collect Nereid's Smile Seeds |q The Flower of Youth##180018/1/1/Collect Nereid's Smile Seeds##1 |count 1
 step
 goto 50.15,83.61
 .click Nereid's Smile##180038
-.' Collect Nereid's Smile Seeds |q The Flower of Youth##180018/Collect Nereid's Smile Seeds |sub
-'FIX ME
+.' Collect Nereid's Smile Seeds |q The Flower of Youth##180018/1/1/Collect Nereid's Smile Seeds##1 |count 2
 step
 goto 55.52,82.42
 .talk Hartmin##180082
 ..turnin The Flower of Youth##180018
 step
+goto 56.20,83.21
+.talk Hollow Guardian##180084
+..accept Throne of the Wilderking##180004
+step
+goto 53.49,84.27
+.' Follow the Trail of Fire |q Throne of the Wilderking##180004/1/1/Follow the Trail of Fire##1
+step
+goto 53.49,84.27
+.talk Wilderking##180067 |q Throne of the Wilderking##180004/2/1/Talk to the Wilderking##1
+step
 goto 51.02,82.90
-.' Follow the path |goto 51.02,82.90 < 1 |c |noway
+.' Follow the path |goto 51.02,82.90 < 5 |c |noway
 step
 goto 50.63,79.47
-.' Follow the path |goto 50.63,79.47 < 1 |c |noway
+.' Follow the path |goto 50.63,79.47 < 10 |c |noway
 step
-goto 51.08,78.22
-.talk Wilderking##180067 |q Throne of the Wilderking##180004/4/Talk to the Wilderking##1
+goto 51.06,78.23
+.' Follow the Trail of Fire |q Throne of the Wilderking##180004/3/1/Follow the Trail of Fire##1
+step
+goto 51.06,78.23
+.talk Wilderking##180067 |q Throne of the Wilderking##180004/4/1/Talk to the Wilderking##1
 ..' Persuade him
 step
 goto 50.99,78.39
 .click Throne Tunnels##180040
-.' Enter the Throne Tunnels |q Throne of the Wilderking##180004/5/Enter the Throne Tunnels##1
+.' Enter the Throne Tunnels |q Throne of the Wilderking##180004/5/1/Enter the Throne Tunnels##1
 step
 goto 48.20,76.99
-.' Follow the path up |goto 48.20,76.99 < 1 |c |noway
+.' Follow the path up |goto 48.20,76.99 < 10 |c |noway
 step
 goto 46.19,79.60
 .click Throne Plateau##180041
 .' Enter the Throne Plateau |goto 45.46,78.54 < 1 |c |noway
 step
 goto 45.60,78.34
-.' Find Aranias and Andur |q Throne of the Wilderking##180004/6/Find Aranias and Andur##1
+.' Find Aranias and Andur |q Throne of the Wilderking##180004/6/1/Find Aranias and Andur##1
 step
 goto 47.76,79.25
-.' Follow the path up |goto 47.76,79.25 < 1 |c |noway
+.' Follow the path up |goto 47.76,79.25 < 10 |c |noway
 step
 goto 47.57,85.63
-.talk Aranias##180053
+.talk Aranias##180053 |q Throne of the Wilderking##180004/7/1/Talk to Aranias##1
 step
 goto 47.06,86.13
-.' Enter the cave |goto 47.06,86.13 < 1 |c |noway
+.' Enter the cave |goto 47.06,86.13 < 20 |c |noway
 step
 goto 45.65,85.21
 .' Use the Bundle of Roots to Burrow Under Fires
-.' Follow Aranias |q Throne of the Wilderking##180004/8/Follow Aranias##1
+.' Follow Aranias |q Throne of the Wilderking##180004/8/1/Follow Aranias##1
 step
 goto 45.13,85.12
 .click Throne Plateau##180041
 .' Enter the Throne Plateau |goto 46.46,84.73 < 1 |c |noway
 step
 goto 46.92,84.33
-.' Follow the path up |goto 46.92,84.33 < 1 |c |noway
+.' Follow the path up |goto 46.92,84.33 < 20 |c |noway
 step
 goto 46.92,80.57
-.' Find the Wilderking |q Throne of the Wilderking##180004/10/Find the Wilderking##1
+.' Find the Wilderking |q Throne of the Wilderking##180004/10/1/Find the Wilderking##1
 step
 goto 45.55,79.98
-.kill Andur##180059 |q Throne of the Wilderking##180004/11/Kill Andur##1
+.kill Andur##180059 |q Throne of the Wilderking##180004/11/1/Kill Andur##1
 step
 goto 44.67,80.35
-.' Follow the path |goto 44.67,80.35 < 1 |c |noway
+.' Follow the path |goto 44.67,80.35 < 20 |c |noway
 step
 goto 44.81,83.39
 .click Throne Tower##180042
-.' Enter the Throne Tower |q Throne of the Wilderking##180004/12/Enter the Throne Tower##1
+.' Enter the Throne Tower |q Throne of the Wilderking##180004/12/1/Enter the Throne Tower##1
 step
 goto 45.04,83.90
-.talk Wilderking##180067 |q Throne of the Wilderking##180004/13/Talk to the Wilderking##1
+.talk Wilderking##180067 |q Throne of the Wilderking##180004/13/1/Talk to the Wilderking##1
 step
 goto 44.74,84.01
 .click Vine Ladder##180043
-.' Climb up the Tower |q Throne of the Wilderking##180004/14/Climb up the Tower##1
+.' Climb up the Tower |q Throne of the Wilderking##180004/14/1/Climb up the Tower##1
 step
 goto 45.33,83.65
-.talk Aranias##180053 |q Throne of the Wilderking##180004/15/Talk to Aranias##1
+.talk Aranias##180053 |q Throne of the Wilderking##180004/15/1/Talk to Aranias##1
 step
 goto 45.02,83.97
 .click Vine Ladder##180043
-.' Climb up the Tower |q Throne of the Wilderking##180004/16/Climb up the Tower##1
+.' Climb up the Tower |q Throne of the Wilderking##180004/16/1/Climb up the Tower##1
 step
 goto 45.00,83.83
 .click Wilderking's Crown##180044
-.' Place the Wilderking's Crown |q Throne of the Wilderking##180004/16/Place the Wilderking's Crown##2
+.' Place the Wilderking's Crown |q Throne of the Wilderking##180004/16/1/Place the Wilderking's Crown##2
 step
 goto 45.09,83.96
 .talk Wilderqueen##180088

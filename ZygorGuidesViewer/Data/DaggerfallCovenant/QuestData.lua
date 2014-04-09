@@ -265,6 +265,9 @@ Imperial Incursion=0171811
 Temple's Treasures=0171938
 Amputating the Hand=0172068
 Restoring the Ansei Wards=0172384
+The Scholar of Bergama=0172385
+Trouble at Tava's Blessing=0172386
+The Mad God's Bargain=0172387
 
 Kingdom in Mourning=0720049
 

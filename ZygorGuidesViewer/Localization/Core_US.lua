@@ -116,7 +116,7 @@ local wordspecials = {
 ZygorGuidesViewer_L("Main", "enUS", function() local f = {
 
 	-- GENERAL
-	["name"] = "|cffff88Z|cffee66y|cffdd44g|cffcc22o|cffbb00r |cffaa00Guides|r",
+	["name"] = "|cff8800Zygor Guides|r",
 
 	-- STARTUP
 	['welcome_guides'] = "%d guides are loaded.",

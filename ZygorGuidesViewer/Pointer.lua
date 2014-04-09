@@ -3105,10 +3105,11 @@ function Pointer:SurveyStats()
 		if type(v)=="table" and v.scale then scaled=scaled+1 end
 		total=total+1
 	end
-	d(("Map survey stats: |cffffff%d|r maps known, |cffffff%d|r surveyed"):format(total,scaled))
+	if ZGV.DEV then d(("Map survey stats: |cffffff%d|r maps known, |cffffff%d|r surveyed"):format(total,scaled)) end
 end
 
 function Pointer:SurveyMap(specific,justupdate,quiet)
+	if not ZGV.DEV then return end
 	if specific then
 		local map=specific:match("map (%d+)")
 		local zone=specific:match("id (%d+)") or specific:match("zone (%d+)")

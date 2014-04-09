@@ -192,6 +192,7 @@ function Quests:GetCompletionStatus(qname,qid,stagetxt,stagenum,steptxt,stepnum,
 	-- QUEST: COMPLETE? Perhaps it's all done?
 		local compData = svcompletedquests[qid]
 		if compData==true then return true,true,"quest complete" end  -- Whole quest is complete. Cheers.
+		compData = false -- NO stage-completion is to be saved!
 	-- ... if not, keep checking.
 
 	-- TODO: check if that quest's POI is complete!
@@ -217,18 +218,21 @@ function Quests:GetCompletionStatus(qname,qid,stagetxt,stagenum,steptxt,stepnum,
 	-- If all matching stages were already done, then cheers.
 	-- Otherwise, we have a stagenum with unknown completion status, let's keep checking.
 
-	-- STAGE: COMPLETE? Do we have a record of that?
+	-- STAGE: COMPLETE? Do we have a record of that?   ... actually, DON'T. Quests not in log are ZERO COMPLETE, period.
+		--[[
 		local completed_stage = tonumber(compData)
 		if completed_stage and stagenum then
 			if completed_stage>=stagenum then return true,true,"stage completed",nil,nil,completed_stage.." >= "..stagenum end  -- We're past that stage. Cheers.
 			--if completed_stage<stagenum-1 then return false,"before that stage "..completed_stage.." "..stagenum end  -- We're two stages behind. Not complete (unless completion data is old..? let's hope not.)
 			-- ^ That could be unreliable, we could be on stage 6 with 4 recorded, somehow...
 		end
+		--]]
 	-- ... if not, keep digging into currently carried quests.
-
+	
 	-- CURRENT JOURNAL NEEDS CHECKING NOW.
 	-- Is that quest in journal at all?
-		local quest = Quests:GetQuest(qid)   if not quest then return false,false,"not in journal",qid end
+		local quest = Quests:GetQuest(qid)
+		if not quest then return false,false,"not in journal",qid end
 	-- If not, bail out. We (probably) would know if it was completed. For now we'll have to assume it wasn't.
 	-- ... if it is in journal, keep digging!
 
@@ -248,7 +252,6 @@ function Quests:GetCompletionStatus(qname,qid,stagetxt,stagenum,steptxt,stepnum,
 				-- If we were just given numbers, get step/cond from 
 
 	-- (Do some final sanity checks)
-		if not quest or not quest.steps then return false,false,"no quest in journal",qid end
 		if not currentstagenum==stagenum then return false,false,"still not current stage, wtf" end
 		if not currentstagenum then
 			ZGV:Debug("&quest |cff0088Current stage unknown! quest %d %s",qid,quest.name)
@@ -302,10 +305,10 @@ function Quests:GetCompletionStatus(qname,qid,stagetxt,stagenum,steptxt,stepnum,
 
 	local complete,possible,curv,maxv = cond:GetCompletion()
 
-	return complete,possible,"completion",curv,maxv, ("|cffffffq|c00ffaa%s|cffffff/sta|c00ffaa%d|cffffff/s|c00ffaa%d|cffffff/c|c00ffaa%d|r"):format(qid, stagenum, stepnum,condnum)
+	return complete,possible,"cond completion",curv,maxv, ("|cffffffq|c00ffaa%s|cffffff/sta|c00ffaa%d|cffffff/s|c00ffaa%d|cffffff/c|c00ffaa%d|r"):format(qid, stagenum, stepnum,condnum)
 end
 
-function Quests:MarkQuestCompletion(questid,stagenum)  -- stagenum: number or true or nil
+function Quests:MarkQuestCompletion(questid,isComplete)  -- stagenum: number or true or nil
 	if not questid then return end
 	if type(questid)=="string" then questid=ZGV.Data:GetQuestIdByName(questid) end
 	if questid<1000 then
@@ -313,8 +316,8 @@ function Quests:MarkQuestCompletion(questid,stagenum)  -- stagenum: number or tr
 		if not quest then return end
 		questid=quest.id
 	end
-	svcompletedquests[questid]=stagenum
-	d("Marked Quest Completion: "..questid.." = "..tostring(stagenum))
+	svcompletedquests[questid]=isComplete
+	if ZGV.DEV then d("[zgdev] Marked Quest Completion: "..questid.." = "..tostring(isComplete)) end
 end
 
 --PRIVATE
@@ -552,7 +555,8 @@ function Quest:FillFromJournal(journalIndex)
 		--local ss = self.stage_snapshots
 		--ss[currentStage]=ss[currentStage] or {}
 		--tinsert(ss[currentStage],self:GetStageSnapshot())
-		Quests:MarkQuestCompletion(self.id,currentStage-1)
+
+		--Quests:MarkQuestCompletion(self.id,currentStage-1)  -- NO, don't mark partial quest completion.
 	end
 
 	return self
@@ -941,7 +945,7 @@ function Quests:PrintSVStats()
 			end
 		end
 	end end
-	d(("Saved quests: |c00ff00%d|r new, |c00ff88%d|r expanded, |cff0088%d|r updated"):format(qnew,qenhanced,qchanged))
+	if ZGV.DEV then d(("Saved quests: |c00ff00%d|r new, |c00ff88%d|r expanded, |cff0088%d|r updated"):format(qnew,qenhanced,qchanged)) end
 end
 
 -----------------------------------------

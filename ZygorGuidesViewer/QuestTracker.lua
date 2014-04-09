@@ -54,7 +54,7 @@ function QuestTracker:EVENT_QUEST_ADDED(event,journalIndex,questName,objectiveNa
 end
 
 function QuestTracker:EVENT_QUEST_REMOVED(event,isCompleted,journalIndex,questName,zoneIndex,poiIndex)
-	d("REMOVED! journal ".. journalIndex .." isC ".. tostring(isCompleted))
+	if ZGV.DEV then d("QUEST REMOVED! journal ".. journalIndex .." isC ".. tostring(isCompleted)) end
 	ZGV.Quests:MarkQuestCompletion(questName,isCompleted) -- yes, false/nil it if it's removed, as that resets the quest completely anyway.
 	ZGV.Quests:RemoveQuestByName(questName)
 end

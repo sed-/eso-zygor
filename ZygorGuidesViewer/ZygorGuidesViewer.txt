@@ -1,6 +1,6 @@
-## Title: |cff8800Zygor |cddddddGuides|r |c888888v1.0.8754
+## Title: |cff8800Zygor |cddddddGuides|r |c888888v1.0.8804
 ## Author: Erich Weiss for Zygor Guides
-## Version: 1.0.8754
+## Version: 1.0.8804
 ## APIVersion: 100003
 ## SavedVariables: ZygorGuidesViewerSettings
 

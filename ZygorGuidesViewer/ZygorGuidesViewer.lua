@@ -13,8 +13,6 @@ local GetGameTimeMilliseconds = GetGameTimeMilliseconds
 -- LOCAL VARIABLES
 -----------------------------------------
 
-local addonName = "ZygorGuidesViewer"
-
 local ZGV = {}
 ZGV.print = function(...)
 	local s = {...}
@@ -30,6 +28,8 @@ ZGV.inits={}
 ZGV.startuptimes={}
 ZGV.loadtime = GetGameTimeMilliseconds()
 
+ZGV.DIR = "ZygorGuidesViewer"
+
 ZGV.L = ZygorGuidesViewer_L("Main")
 ZGV.O = ZygorGuidesViewer_L("Option")
 
@@ -44,7 +44,7 @@ local L = ZGV.L
 _G['ZygorGuidesViewer']=ZGV
 _G['ZGV']=ZGV
 
-ZGV.DIR = "ZygorGuidesViewer"
+-- LOCALS
 
 ZGV.EM = EVENT_MANAGER
 ZGV.WM = WINDOW_MANAGER
@@ -126,6 +126,10 @@ local function _StartupThread()
 	self:Debug("Loading time - guides: %.2f",self.loading_time_guides or -1)
 	self:Debug("Loading time - DEV: %.2f",self.loading_time_DEV or -1)
 	self:Debug("Loading time - total: %.2f",self.loading_time_total or -1)
+	
+	if ZGV.ERROR_GETDISPLAYNAME_FAIL then
+		self:Error("Couldn't load saved configuration and quest completion history. Please exit the game and try again. We apologize for the inconvenience.")
+	end
 
 	return "end"
 end
@@ -207,8 +211,9 @@ end
 -----------------------------------------
 
 -- TODO Debug messages in here do not get printed. Nothing printed until EVENT_PLAYER_ACTIVATED
+
 local function ZGV_Initialized(eventCode, addOnName)
-	if addOnName ~= addonName then return end
+	if addOnName ~= ZGV.DIR then return end
 	local self = ZGV
 
 	ZGV.starttime = GetGameTimeMilliseconds()

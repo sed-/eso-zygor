@@ -20,7 +20,7 @@ local O = ZGV.O
 -- LOCAL VARIABLES
 -----------------------------------------
 
-local SvName = "ZygorGuidesViewerSettings"
+local SvName = "ZygorGuidesViewerSettings"    if ZGV.DEVSV then SvName=SvName..ZGV.DEVSV end
 local SvVersion = 1				-- Don't use ZGV.Version because every time this version changes it resets the profile
 local SavedVars = {}
 
@@ -477,7 +477,10 @@ end
 --]]
 
 function SavedVars:Setup()
-	if GetDisplayName()=="" then error("ACCOUNT NAME IS EMPTY!") end
+	if GetDisplayName()=="" then
+		ZGV.ERROR_GETDISPLAYNAME_FAIL=true
+	end
+
 	local fac = ZGV.Utils.GetFaction()
 
 	self.char = self.char or ZO_SavedVars:New( SvName , SvVersion , "main" , defaultChar )

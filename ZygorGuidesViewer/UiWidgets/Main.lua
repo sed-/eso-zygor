@@ -18,8 +18,8 @@ local savedwidgets = {}
 local Classes = {}						-- Not available in UI
 
 local FontGName = "ZygorFont"--..size..Reg/Bold
-local FONT = "ZygorGuidesViewer/Viewer/opensans.ttf"
-local BOLD = "ZygorGuidesViewer/Viewer/opensansb.ttf" 
+local FONT = ZGV.DIR.."/Viewer/opensans.ttf"
+local BOLD = ZGV.DIR.."/Viewer/opensansb.ttf" 
 local extras = "soft-shadow-thin"
 
 local REG_FONTS = {}

@@ -16,13 +16,13 @@ goto 16.36,34.08
 .' Leave the Cell |q Soul Shriven in Coldharbour##3360001/3/1/Leave the Cell##1
 step
 goto 37.62,33.98
-.' Follow the path |goto 37.62,33.98 < 10 |c |noway
+.' Follow the path |goto 37.62,33.98 < 10 |c |noway |q 3360001/4
 step
 goto 52.34,49.61
-.' Follow the path |goto 52.34,49.61 < 10 |c |noway
+.' Follow the path |goto 52.34,49.61 < 10 |c |noway |q 3360001/4
 step
 goto 64.18,72.66
-.' Follow the path |goto 64.18,72.66 < 10 |c |noway
+.' Follow the path |goto 64.18,72.66 < 10 |c |noway |q 3360001/4
 step
 goto 79.68,71.20
 .' Choose a weapon:
@@ -60,20 +60,20 @@ goto wailingprison4_base 42.33,25.05
 .talk Lyris Titanborn##3360006 |q Soul Shriven in Coldharbour##3360001/11/2/Talk to Lyris##1
 step
 goto 53.41,42.06
-.' Follow the path up |goto 53.41,42.06 < 10 |c |noway
+.' Follow the path up |goto 53.41,42.06 < 10 |c |noway |q 3360001/11
 step
 goto 61.22,37.74
-.' Follow the path up |goto 61.22,37.74 < 10 |c |noway
+.' Follow the path up |goto 61.22,37.74 < 10 |c |noway |q 3360001/11
 step
 goto 71.59,53.80
 .click Coldharbour Sentinel##3360005
 .' Destroy a Coldharbour Sentinel |q Soul Shriven in Coldharbour##3360001/11/1/Destroy a Coldharbour Sentinel##1
 step
 goto 71.12,47.78
-.' Follow the path down |goto 71.12,47.78 < 10 |c |noway
+.' Follow the path down |goto 71.12,47.78 < 10 |c |noway |q 3360001/12
 step
 goto 57.05,36.74
-.' Follow the path |goto 57.05,36.74 < 10 |c |noway
+.' Follow the path |goto 57.05,36.74 < 10 |c |noway |q 3360001/12
 step
 goto 47.62,72.95
 .' Reach the Prophet's Cell |q Soul Shriven in Coldharbour##3360001/12/1/Reach the Prophet's Cell##1
@@ -85,23 +85,23 @@ goto 58.87,66.23
 .talk Cadwell##3360010 |q Soul Shriven in Coldharbour##3360001/14/1/Talk to Cadwell##1
 step
 goto 68.06,71.63
-.' Follow the path |goto 68.06,71.63 < 10 |c |noway
+.' Follow the path |goto 68.06,71.63 < 10 |c |noway |q 3360001/15/1/Enter the Undercroft##1
 step
 goto 52.36,84.30
 .click The Undercroft##3360006
 .' Enter the Undercroft |q Soul Shriven in Coldharbour##3360001/15/1/Enter the Undercroft##1
 step
 goto wailingprison5_base 45.15,14.29
-.' Follow the path |goto wailingprison5_base 45.15,14.29 < 10 |c |noway
+.' Follow the path |goto wailingprison5_base 45.15,14.29 < 10 |c |noway |q 3360001/16/1
 step
 goto 40.64,31.69
-.' Follow the path |goto 40.64,31.69 < 10 |c |noway
+.' Follow the path |goto 40.64,31.69 < 10 |c |noway |q 3360001/16
 step
 goto 49.39,43.60
-.' Follow the path |goto 49.39,43.60 < 10 |c |noway
+.' Follow the path |goto 49.39,43.60 < 10 |c |noway |q 3360001/16
 step
 goto 50.70,71.03
-.' Follow the path |goto 50.70,71.03 < 10 |c |noway
+.' Follow the path |goto 50.70,71.03 < 10 |c |noway |q 3360001/16
 step
 goto 73.16,68.89
 .click The Prophet's Cell##3360007
@@ -129,7 +129,7 @@ goto 40.37,53.17
 .talk The Prophet##3360001 |q Soul Shriven in Coldharbour##3360001/21/1/Talk to The Prophet##1
 step
 goto 71.56,54.20
-.' Follow the path |goto 71.56,54.20 < 10 |c |noway
+.' Follow the path |goto 71.56,54.20 < 10 |c |noway |q 3360001/22
 step
 goto 89.10,40.38
 .click The Anchor Mooring##3360009

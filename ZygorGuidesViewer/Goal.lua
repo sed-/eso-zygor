@@ -336,7 +336,7 @@ GOALTYPES['goto'] = {
 			end
 		end
 
-		return (self.force_complete or all_gotos)		-- If the goto has a |c then it is completeable. Or if there are only gotos present in this step.
+		return (self.force_complete or all_gotos)		-- If the goto has a |c then it is completable. Or if there are only gotos present in this step.
 	end,
 	iscomplete = function(self)
 		local dist = ZGV.Pointer:GetDistToCoords(self.map,self.x,self.y)
@@ -491,12 +491,12 @@ end
 -----------------------------------------
 
 function Goal:GetQuest()
-	if not self.quest or not self.questid then return end
+	if not self.quest and not self.questid then return end
 	return ZGV.Quests:GetQuest(self.quest or self.questid)
 end
 
 function Goal:GetQuestGoalStatus()
-	if not self.quest or not self.questid then return end
+	if not self.quest and not self.questid then return false,"no quest" end
 	return ZGV.Quests:GetCompletionStatus(self.quest,self.questid, self.queststagetxt,self.queststagenum, self.queststeptxt,self.queststepnum, self.questcondtxt,self.questcondnum)
 	-- complete,possible,expl,curv,maxv,expl2
 end
@@ -728,48 +728,73 @@ end
 -- returns: true = complete, false = incomplete
 -- second return: true = completable, false = incompletable
 function Goal:IsComplete()
-	if not self:IsCompletable() then return false end
-
 	-- If the quest is complete then all related goals are complete.
+	local iscomplete,ispossible,explanation,curv,maxv,debugs
 	if self.questid and self.action~="accept" and self.action~="turnin" then  -- let accept goals complete on their own
+	while 1 do
 		ZGV:Debug("&goal completing..............")
-		local iscomplete,ispossible,explanation,curv,maxv,debugs = ZGV.Quests:GetCompletionStatus(self.quest,self.questid, self.queststagetxt,self.queststagenum, self.queststeptxt,self.queststepnum, self.questcondtxt,self.questcondnum)
+		iscomplete,ispossible,explanation,curv,maxv,debugs = ZGV.Quests:GetCompletionStatus(self.quest,self.questid, self.queststagetxt,self.queststagenum, self.queststeptxt,self.queststepnum, self.questcondtxt,self.questcondnum)
 		ZGV:Debug("&goal completion: complete:|cffffff%s|r, possible:|cffffff%s|r, why:|cffffff%s|r ... match: |cffaaee%s|r",tostring(iscomplete),tostring(ispossible),tostring(explanation),tostring(debugs))
+		
+		if iscomplete then
 
-		if explanation=="quest complete"
-		or explanation=="past stage"
-		or explanation=="stage completed"
-		then
-			return "past",true
+			-- complete means complete, leave it at that!
 
+			if explanation=="quest complete"
+			or explanation=="past stage"
+			--or explanation=="stage completed" )  -- not there anymore, we don't store completed stages now
+			then
+				return "past",true
+			end
+			return true,true,self.count and 1
+
+		--[[ -- not there anymore?
 		elseif explanation=="step END" and self.optstep
 		then
 			return true,true
+		--]]
 
 		elseif explanation=="future stage"
 		then
-			if not self.future then return false,false end
-			-- and if future then fall through
-
+			if self.future then break end  -- fall through
+			return false,false
+			
 		elseif explanation=="not in journal" then
-			if not self.future then return false,false end
-			-- and if future then fall through
+			if self.future then break end  -- fall through
+			return false,false
 
-		elseif explanation=="completion"
+		elseif explanation=="no stagenum"
+		or explanation=="stage completion"
+		then
+			-- quest in journal, but no stage mentioned, and surely not complete
+			-- or, stage mentioned, but it's current, so
+			if self:IsCompletable("by type") then break end  -- fall through
+			return iscomplete,ispossible -- always false,true
+
+		elseif explanation=="step completion"
+		or explanation=="step overrides cond"
+		then
+			if ispossible and self:IsCompletable("by type") then break end  -- fall through
+			return iscomplete,ispossible
+
+		elseif explanation=="cond completion"
 		then  -- possible, countable
 			if self.count and self.count > 0 and curv then		-- If we only want a specific amount of items at this point then allow them to collect 1/5 and complete this step.
 				if curv >= self.count then
 					iscomplete = true
 				end
 			end
-			return iscomplete, ispossible, (curv and curv/(self.count or maxv or 1))
+			if iscomplete then return true, ispossible, (curv and curv/(self.count or maxv or 1)) end
+			if self:IsCompletable("by type") then break end -- let the goto complete it!
+			return false, ispossible, (curv and curv/(self.count or maxv or 1))
+			
+		elseif self.future then -- how did we end up here?
+			break
 
-		elseif explanation=="step completion"
-		or explanation=="step overrides cond"
-		then  -- possible, countable
+		else
+
 			return iscomplete,ispossible
-		elseif not self.future then
-			return iscomplete,ispossible
+
 		end
 
 		-- letting possibles through. They'll be either current-stages-only, or incomplete vague objectives.
@@ -780,23 +805,27 @@ function Goal:IsComplete()
 		end
 		-- this is NOT how a .future is to work! It's to ALLOW natural completion of something.
 		--]]
+	break end
 	end
 
 	-- Not quest related (or fell through) so time to resort to GOALTYPES
 	-- Use the individual goal completion routine
+	
+	--if not self:IsCompletable() then return false,false end
+	local giscomplete,gispossible
 
 	local GOAL = GOALTYPES[self.action]
-	if GOAL and GOAL.iscomplete then return GOAL.iscomplete(self) end
+	if GOAL and GOAL.iscomplete then giscomplete,gispossible = GOAL.iscomplete(self) end
 
-	return false,false
+	return giscomplete or iscomplete,gispossible or ispossible
 end
 
-function Goal:IsCompletable()
+function Goal:IsCompletable(by_type)
 	local GOALTYPE=GOALTYPES[self.action]	-- All goals have goaltypes
 
 	if self.force_nocomplete then return false end	-- the almighty |n
 
-	if self.questid and self.action~="goto" then return true end	-- there is a quest associated with this goal so can be completed. Unless it's a goto. These are only completed by |c.
+	if not by_type and self.questid and self.action~="goto" then return true end	-- there is a quest associated with this goal so can be completed. Unless it's a goto. These are only completed by |c.
 
 	if GOALTYPE.iscompletable then return GOALTYPE.iscompletable(self) end		-- This may or maynot be there if it is only sometimes completable.
 	if --[[exists--]] GOALTYPE.iscomplete then return true end	-- There is a way to complete this goal
@@ -821,20 +850,13 @@ function Goal:GetStatus()		--TODO
 	if self.action=="goto" and self.questid and self.queststepnum and self.questcondnum then
 		local quest = ZGV.Quests[self.questid]
 		if quest then
-			if self.queststepnum==quest:GetCurrentStepNum() then
-				local step = quest:GetCurrentStep()
-				if step then
-					-- TODO substeps abomination
-					--if self.queststepnum>1 then step=step.substeps and step.substeps[request.stepnum-1] end
-					if step then
-						local cond = step.conditions[self.questcondnum]
-						if cond and cond.x and cond.x~=self.x then
-							self.x,self.y=cond.x,cond.y
-							self.m=ZGV.Pointer:GetMapTex()
-
-							ZGV:SetWaypoint()  -- update, really
-						end
-					end
+			if self.queststagenum==quest:GetCurrentStageNum() then
+				--if self.queststepnum>1 then step=step.substeps and step.substeps[request.stepnum-1] end
+				local cond = quest.steps[self.queststepnum].conditions[self.questcondnum]
+				if cond and cond.x and cond.x~=self.x then
+					self.x,self.y=cond.x,cond.y
+					self.m=ZGV.Pointer:GetMapTex()
+					ZGV:SetWaypoint()  -- update, really
 				end
 			end
 		end

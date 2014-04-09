@@ -27,14 +27,14 @@ ZGV.MapData = {
 			["Baandari Trading Post"] = "baandaritradingpost_base",
 			["Bad Man's Hallows"] = [[balfoyen_base]],
 			["Bal Foyen"] = [[balfoyen_base]],
-			["Bangkorai Garrison"] = [[shadowfatecavern_base]],
+			["Bangkorai Garrison"] = [[bangkoraigarrisonl_base]],
 			["Bangkorai"] = [[bangkorai_base]],
 			["Barrow Trench"] = [[barrowtrench_base]],
 			["Bearclaw Mine"] = [[bearclawmine_base]],
 			["Bergama"] = "bergama_base",
 			["Betnikh"] = [[betnihk_base]],
 			["Bewan"] = [[bewan_base]],
-			["Bisnensel"] = [[cathbedraud_base]],
+			["Bisnensel"] = [[bisnensel_base]],
 			["Black Vine Ruins"] = [[blackvineruins_base]],
 			["Blackheart Haven"] = [[volenfell_base]],
 			["Bleakrock Isle"] = [[bleakrock_base]],
@@ -55,12 +55,12 @@ ZGV.MapData = {
 			["Camlorn Keep"] = [[wailingmaw_base]],
 			["Capstone Cave"] = [[capstonecave_base]],
 			["Carac Dena"] = [[caracdena_base]],
-			["Castle of the Worm"] = [[castleoftheworm5_base]],
-			["Cath Bedraud"] = [[cathbedraud_base]],
-			["Cathedral of the Golden Path"] = [[southpoint_base]],
+			["Castle of the Worm"] = [[castleoftheworm4_base]],
+			["Cath Bedraud"] = [[bisnensel_base]],
+			["Cathedral of the Golden Path"] = [[laeloriaruins_base]],
 			["Cave of Broken Sails"] = [[caveofbrokensails_base]],
 			["Cave of Trophies"] = [[depravedgrotto_base]],
-			["Chapel of Light"] = [[theendlessstair_base]],
+			["Chapel of Light"] = [[grundasgatehousemain_base]],
 			["Chateau of the Ravenous Rodent"] = [[chateauravenousrodent_base]],
 			["Cheesemonger's Hollow"] = [[cheesemongershollow_base]],
 			["Chid-Moska Ruins"] = [[chidmoskaruins_base]],
@@ -101,7 +101,7 @@ ZGV.MapData = {
 			["Crypt of Hearts"] = [[cryptofhearts_base]],
 			["Crypt of the Exiles"] = [[cryptoftheexiles_base]],
 			["Cryptwatch Fort"] = [[cryptwatchfort_base]],
-			["Cyrodiil"] = [[ava_whole]],
+			["Cyrodiil"] = [[ava_aldmeri]],
 			["Daggerfall Castle"] = [[wailingmaw_base]],
 			["Daggerfall"] = "daggerfall_base",
 			["Darkshade Caverns"] = [[malabaltor_base]],
@@ -115,9 +115,9 @@ ZGV.MapData = {
 			["Direfrost Keep"] = [[mobarmine_base]],
 			["Divad's Chagrin Mine"] = [[divadschagrinmine_base]],
 			["Do'Krin Temple"] = [[dokrintemple_base]],
-			["Doomcrag"] = "doomcragshroudedpass_base", -- replace craglorn_base
+			["Doomcrag"] = "edraldundercroft_base", -- replace craglorn_base
 			["Dourstone Vault"] = [[buraniim_base]],
-			["Dra'Bul"] = [[theendlessstair_base]],
+			["Dra'Bul"] = [[grundasgatehousemain_base]],
 			["Dragonstar Arena"] = [[craglorn_base]],
 			["Dresan Keep"] = [[chateauravenousrodent_base]],
 			["Dune"] = "dune_base",
@@ -126,16 +126,16 @@ ZGV.MapData = {
 			["Ebon Crypt"] = [[eboncrypt_base]],
 			["Ebonheart"] = "ebonheart_base",
 			["Echo Cave"] = [[echocave_base]],
-			["Edrald Undercroft"] = [[doomcragshroudedpass_base]],
+			["Edrald Undercroft"] = [[edraldundercroft_base]],
 			["Elden Hollow"] = [[rootsunder_base]],
-			["Elden Root"] = "eldenrootgroundfloor_base", -- replace bloodmatronscryptgroup_base
+			["Elden Root"] = "eldenrootcrafting_base", -- replace bloodmatronscryptgroup_base
 			["Emberflint Mine"] = [[emberflintmine_base]],
 			["Emeric's Dream"] = [[emericsdream_base]],
 			["Enduum"] = [[enduum_base]],
 			["Entila's Folly"] = [[entilasfolly_base]],
 			["Erokii Ruins"] = [[erokii_base]],
 			["Evermore"] = "evermore_base",
-			["Eyevea Mages Guild"] = [[sancretor8_base]],
+			["Eyevea Mages Guild"] = [[sancretor6_base]],
 			["Eyevea"] = [[eyevea_base]],
 			["Ezduiin Undercroft"] = [[ezduiin_base]],
 			["Faldar's Tooth"] = [[ebonmeretower_base]],
@@ -162,12 +162,12 @@ ZGV.MapData = {
 			["Grahtwood"] = [[grahtwood_base]],
 			["Greenhill Catacombs"] = [[greenhillcatacombs_base]],
 			["Greenshade"] = [[greenshade_base]],
-			["Grunda's Gatehouse"] = [[theendlessstair_base]],
+			["Grunda's Gatehouse"] = [[grundasgatehousemain_base]],
 			["Guardian's Domain"] = [[craglorn_base]],
 			["Gurzag's Mine"] = [[gurzagsmine_base]],
-			["Haj Uxith Corridors"] = [[sancretor8_base]],
+			["Haj Uxith Corridors"] = [[sancretor6_base]],
 			["Haj Uxith"] = "hajuxith_base",
-			["Hall of Heroes"] = [[nilataruins_base]],
+			["Hall of Heroes"] = [[hallofheroes_base]],
 			["Hall of Trials"] = [[halloftrials_base]],
 			["Hall of the Dead"] = [[hallofthedead_base]],
 			["Hallin's Stand"] = "hallinsstand_base",
@@ -178,7 +178,7 @@ ZGV.MapData = {
 			["Haven"] = "haven_base",
 			["Haynote Cave"] = [[haynotecave_base]],
 			["Heart of the Wyrd Tree"] = [[rendrocaverns_base]],
-			["Heart's Grief"] = [[heartsgrief3_base]],
+			["Heart's Grief"] = [[nchuduabtharthreshold_base]],
 			["Hectahame Grotto"] = [[villageofthelost_base]],
 			["Heimlyn Keep Reliquary"] = [[heimlynkeepreliquary_base]],
 			["Hel Ra Citadel"] = [[craglorn_base]],
@@ -208,17 +208,17 @@ ZGV.MapData = {
 			["Koeglin Village"] = "koeglinvillage_base",
 			["Kozanset"] = "kozanset_base",
 			["Kragenmoor"] = "kragenmoor_base",
-			["Kulati Mines"] = [[salasen_base]],
+			["Kulati Mines"] = [[kulatimines-b_base]],
 			["Kuna's Delve"] = [[kunasdelve_base]],
 			["Lady Llarel's Shelter"] = [[kwamacolony_base]],
-			["Laeloria Ruins"] = [[southpoint_base]],
+			["Laeloria Ruins"] = [[laeloriaruins_base]],
 			["Lair of the Skin Stealer"] = [[tenmaurwolk_base]],
-			["Library of Dusk"] = [[libraryofdusk_base]],
-			["Lightless Cell"] = [[lightlesscell_base]],
-			["Lightless Oubliette"] = [[libraryofdusk_base]],
+			["Library of Dusk"] = [[lightlessoubliettelava_base]],
+			["Lightless Cell"] = [[blackforge_base]],
+			["Lightless Oubliette"] = [[lightlessoubliettelava_base]],
 			["Lipsand Tarn"] = [[lipsandtarn_base]],
 			["Loriasel"] = [[ava_aldmeri]],
-			["Lorkrata Ruins"] = [[doomcragshroudedpass_base]],
+			["Lorkrata Ruins"] = [[edraldundercroft_base]],
 			["Lost City of the Na-Totambu"] = [[lostcity_base]],
 			["Lost Knife Cave"] = [[lostknifecave_base]],
 			["Lower Bthanual"] = [[lowerbthanuel_base]],
@@ -243,17 +243,17 @@ ZGV.MapData = {
 			["Naril Nagaia"] = [[narilnagaia_base]],
 			["Narsis Ruins"] = [[taldeiccrypts_base]],
 			["Narsis"] = "narsis_base",
-			["Nchu Duabthar Threshold"] = [[heartsgrief3_base]],
+			["Nchu Duabthar Threshold"] = [[nchuduabtharthreshold_base]],
 			["Ne Salas"] = [[nesalas_base]],
 			["Nereid Temple Cave"] = [[nereidtemple_base]],
 			["Newt Cave"] = [[newtcave_base]],
-			["Nilata Ruins"] = [[nilataruins_base]],
-			["Nimalten Barrow"] = [[nimaltenpart2_base]],
+			["Nilata Ruins"] = [[hallofheroes_base]],
+			["Nimalten Barrow"] = [[nimaltenpart1_base]],
 			["Nimalten"] = "nimalten_base",
 			["Nisin Cave"] = [[nisincave_base]],
 			["Northern High Rock Gate"] = "northhighrockgate_base",
 			["Northern Morrowind Gate"] = "northmorrowgate_base",
-			["Northpoint"] = "northpoint_base", -- replace doomcragshroudedpass_base
+			["Northpoint"] = "northpoint_base", -- replace edraldundercroft_base
 			["Northwind Mine"] = [[northwindmine_base]],
 			["Norvulk Ruins"] = [[norvulkruins_base]],
 			["Obsidian Scar"] = [[obsidianscar_base]],
@@ -278,12 +278,12 @@ ZGV.MapData = {
 			["Rawl'kha Temple"] = [[rawlkhatemple_base]],
 			["Rawl'kha"] = "rawlkha_base",
 			["Razak's Wheel"] = [[razakswheel_base]],
-			["Reaper's March"] = [[reapersmarch_base]],
+			["Reaper's March"] = [[northernwoods_base]],
 			["Reaver Citadel Pyramid"] = [[thevilelaboratory_base]],
 			["Red Ruby Cave"] = [[redrubycave_base]],
 			["Redfur Trading Post"] = "redfurtradingpost_base",
 			["Reliquary Ruins"] = [[reliquaryofstars_base]],
-			["Reliquary Vault"] = [[southpoint_base]],
+			["Reliquary Vault"] = [[laeloriaruins_base]],
 			["Ren-dro Caverns"] = [[rendrocaverns_base]],
 			["Reservoir of Souls"] = [[welloflostsouls_base]],
 			["Riften"] = "riften_base",
@@ -295,7 +295,7 @@ ZGV.MapData = {
 			["Rulanyil's Fall"] = [[rulanyilsfall_base]],
 			["Salas En"] = [[salasen_base]],
 			["Saltspray Cave"] = [[saltspray_base]],
-			["Sancre Tor"] = [[sancretor8_base]],
+			["Sancre Tor"] = [[sancretor6_base]],
 			["Sandblown Mine"] = [[sandblownmine_base]],
 			["Sanguine's Demesne"] = [[sanguinesdemesne_base]],
 			["Santaki"] = [[santaki_base]],
@@ -306,7 +306,7 @@ ZGV.MapData = {
 			["Serpent's Grotto"] = [[serpentsgrotto_base]],
 			["Shad Astula Underhalls"] = [[shadastula_base]],
 			["Shademist Enclave"] = [[themiddens_base]],
-			["Shadowfate Cavern"] = [[shadowfatecavern_base]],
+			["Shadowfate Cavern"] = [[bangkoraigarrisonl_base]],
 			["Shadowfen"] = [[shadowfen_base]],
 			["Shadowstar"] = [[craglorn_base]],
 			["Shael Ruins"] = [[shaelruins_base]],
@@ -345,7 +345,7 @@ ZGV.MapData = {
 			["Taleon's Crag"] = [[unexploredcrag_base]],
 			["Tamriel"] = [[Tamriel]],
 			["Tempest Island"] = [[tempestisland_base]],
-			["Temple of Auri-El"] = [[heartsgrief3_base]],
+			["Temple of Auri-El"] = [[nchuduabtharthreshold_base]],
 			["Temple of Sul"] = [[templeofsul_base]],
 			["Temple of the Mourning Spring"] = [[templeofthemourningspring_base]],
 			["Temple to the Divines"] = [[mobarmine_base]],
@@ -354,14 +354,14 @@ ZGV.MapData = {
 			["The Ashen Mines"] = [[wailingprison3_base]],
 			["The Banished Cells"] = [[thebanishedcells_base]],
 			["The Bastard's Tomb"] = [[thebastardstomb_base]],
-			["The Black Forge"] = [[lightlesscell_base]],
+			["The Black Forge"] = [[blackforge_base]],
 			["The Bleeding Forge"] = [[wailingprison2_base]],
 			["The Chill Hollow"] = [[thechillhollow_base]],
 			["The Colored Rooms"] = [[bloodmatronscryptgroup_base]],
 			["The Corpse Garden"] = [[corpsegarden_base]],
 			["The Demi-Plane of Jode"] = [[fortsphinxmoth_base]],
-			["The Earth Forge"] = [[theearthforgepublic_base]],
-			["The Endless Stair"] = [[theendlessstair_base]],
+			["The Earth Forge"] = [[theearthforge_base]],
+			["The Endless Stair"] = [[grundasgatehousemain_base]],
 			["The Far Shores"] = [[thefarshores_base]],
 			["The Foundry of Woe"] = [[foundryofwoe_base]],
 			["The Frigid Grotto"] = [[thefrigidgrotto_base]],
@@ -400,7 +400,7 @@ ZGV.MapData = {
 			["Themond Mine"] = [[themondmine_base]],
 			["Thibaut's Cairn"] = [[thibautscairn_base]],
 			["Thizzrini Arena"] = [[fortsphinxmoth_base]],
-			["Toadstool Hollow"] = [[sancretor8_base]],
+			["Toadstool Hollow"] = [[sancretor6_base]],
 			["Tomb of Apostates"] = [[tomboftheapostates_base]],
 			["Tomb of Lost Kings"] = [[tomboflostkings_base]],
 			["Toothmaul Gully"] = [[toothmaulgully_base]],
@@ -459,7 +459,7 @@ ZGV.MapData = {
 			["Temple of the Mourning Springs"] = "templeofthemourningspring_base",
 			["Abandoned Mine"] = "abandonedmine_base",
 			["Hazak's Lair"] = "hazikslair_base",
-			["Torinaan Shrines"] = "torinaan5_base",
+			["Torinaan Shrines"] = "torinaan2_base",
 			["Brackenleaf"] = "brackenleaf_base",
 			["Grey Mire"] = "greymire_base",
 			["Cat's Eye Quay"] = "catseyequay_base",
@@ -487,7 +487,21 @@ ZGV.MapData = {
 			["Craglorn_DD_016"] = "craglorn_base",
 			["Craglorn_DD_017"] = "craglorn_base",
 			["Craglorn_DD_018"] = "craglorn_base",
-			["Goblin Mines"] = "goblinminesstart_base",
+			["Goblin Mines"] = "goblinminesend_base",
+
+
+			["Windridge Cave"] = "windridgecave_base",
+			["Shrouded Pass"] = "shroudedpass_base",
+			["Onsi's Breath Mine"] = "onsisbreathmine_base",
+			["Yokudan Palace"] = "yokudanpalace_base",
+			["Karthdar"] = "karthdar_base",
+			["Tower of the Vale - Despair"] = "despair_base",
+			["Tower of the Vale - Temple"] = "temple_base",
+			["Bone Orchard"] = "boneorchard_base",
+			["Quendeluun South Ruins"] = "southruins_base",
+			["Tower of the Vale - Bliss"] = "blisslower_base",
+			["Tower of the Vale - Rage"] = "rage_base",
+			["Tower of the Vale - Bliss Top"] = "blisstop_base",
 
 
 		},
@@ -772,7 +786,7 @@ ZGV.MapData = {
 					["id"] = 247,
 					["xoffset"] = 0.439423,
 			},
-			["reapersmarch_base"] =
+			["northernwoods_base"] =
 			{
 					["scale"] = 0.132774,
 					["name"] = [[Reaper's March]],
@@ -804,7 +818,7 @@ ZGV.MapData = {
 					["id"] = 248,
 					["xoffset"] = 0.462337,
 			},
-			["shadowfatecavern_base"] =
+			["bangkoraigarrisonl_base"] =
 			{
 					["scale"] = 0.009414,
 					["name"] = [[Shadowfate Cavern]],
@@ -892,7 +906,7 @@ ZGV.MapData = {
 					["xoffset"] = 0.230701,
 					["id"] = 14,
 			},
-			["ava_whole"] =
+			["ava_aldmeri"] =
 			{
 					["scale"] = 0.180001,
 					["name"] = [[Cyrodiil]],
@@ -972,7 +986,7 @@ ZGV.MapData = {
 					["id"] = 125,
 					["xoffset"] = 0.110883,
 			},
-			["theearthforgepublic_base"] =
+			["theearthforge_base"] =
 			{
 					["name"] = [[The Earth Forge]],
 					["id"] = 387,
@@ -1017,7 +1031,7 @@ ZGV.MapData = {
 					["id"] = 115,
 					["xoffset"] = 0.701562,
 			},
-			["sancretor8_base"] =
+			["sancretor6_base"] =
 			{
 					["name"] = [[Sancre Tor]],
 					["id"] = 286,
@@ -1258,7 +1272,7 @@ ZGV.MapData = {
 					["id"] = 249,
 					["xoffset"] = 0.489551,
 			},
-			["nimaltenpart2_base"] =
+			["nimaltenpart1_base"] =
 			{
 					["scale"] = 0.002422,
 					["name"] = [[Nimalten Barrow]],
@@ -1706,6 +1720,14 @@ ZGV.MapData = {
 					["id"] = 73,
 					["xoffset"] = 0.133948,
 			},
+			["kulatimines-b_base"] =
+			{
+					["scale"] = 0.008320,
+					["name"] = [[Salas En]],
+					["yoffset"] = 0.429803,
+					["id"] = 73,
+					["xoffset"] = 0.133948,
+			},
 			["snaplegcave_base"] =
 			{
 					["scale"] = 0.008867,
@@ -1775,7 +1797,7 @@ ZGV.MapData = {
 					["id"] = 52,
 					["xoffset"] = 0.757489,
 			},
-			["heartsgrief3_base"] =
+			["nchuduabtharthreshold_base"] =
 			{
 					["name"] = [[Heart's Grief]],
 					["id"] = 333,
@@ -1999,7 +2021,7 @@ ZGV.MapData = {
 					["id"] = 195,
 					["xoffset"] = 0.159000,
 			},
-			["lightlesscell_base"] =
+			["blackforge_base"] =
 			{
 					["name"] = [[Lightless Cell]],
 					["id"] = 165,
@@ -2184,7 +2206,7 @@ ZGV.MapData = {
 					["id"] = 92,
 					["xoffset"] = 0.573710,
 			},
-			["libraryofdusk_base"] =
+			["lightlessoubliettelava_base"] =
 			{
 					["name"] = [[Library of Dusk]],
 					["id"] = 163,
@@ -2258,7 +2280,7 @@ ZGV.MapData = {
 					["id"] = 188,
 					["xoffset"] = 0.218874,
 			},
-			["southpoint_base"] =
+			["laeloriaruins_base"] =
 			{
 					["scale"] = 0.010156,
 					["name"] = [[Cathedral of the Golden Path]],
@@ -2273,7 +2295,7 @@ ZGV.MapData = {
 					["yoffset"] = 0.792845,
 					["xoffset"] = 0.502253,
 			},
-			["eldenrootgroundfloor_base"] =
+			["eldenrootcrafting_base"] =
 			{
 					["scale"] = 0.030312,
 					["name"] = [[Elden Root]],
@@ -2471,7 +2493,7 @@ ZGV.MapData = {
 					["yoffset"] = 0.366244,
 					["xoffset"] = 0.631563,
 			},
-			["theendlessstair_base"] =
+			["grundasgatehousemain_base"] =
 			{
 					["name"] = [[The Endless Stair]],
 					["id"] = 171,
@@ -2578,7 +2600,7 @@ ZGV.MapData = {
 					["scale"] = 0.010000,
 					["notTamriel"] = true,
 			},
-			["cathbedraud_base"] =
+			["bisnensel_base"] =
 			{
 					["scale"] = 0.013359,
 					["name"] = [[Cath Bedraud]],
@@ -2591,7 +2613,7 @@ ZGV.MapData = {
 					["name"] = [[Abagarlas]],
 					["id"] = 345,
 			},
-			["castleoftheworm5_base"] =
+			["castleoftheworm4_base"] =
 			{
 					["name"] = [[Castle of the Worm]],
 					["id"] = 47,
@@ -2910,7 +2932,7 @@ ZGV.MapData = {
 					["id"] = 88,
 					["xoffset"] = 0.131603,
 			},
-			["doomcragshroudedpass_base"] =
+			["edraldundercroft_base"] =
 			{
 					["scale"] = 0.012382,
 					["name"] = [[Doomcrag]],
@@ -2960,7 +2982,7 @@ ZGV.MapData = {
 					["name"] = [[The Halls of Torment]],
 					["id"] = 57,
 			},
-			["nilataruins_base"] =
+			["hallofheroes_base"] =
 			{
 					["scale"] = 0.009140,
 					["name"] = [[Nilata Ruins]],
@@ -3030,8 +3052,8 @@ ZGV.MapData = {
 			["grundasgatehouseroom_base"] = { notTamriel = true, name = "Grunda's Gatehouse", },
 			["hajuxith_base"] = { notTamriel = true, name = "Haj Uxith", },
 			["hallofheroes_base"] = { scale = 0.005137, yoffset = 0.389615, xoffset = 0.292591, name = "Hall of Heroes", },
-			["kulatimines-a_base"] = { scale = 0.001336, yoffset = 0.402389, xoffset = 0.182758, name = "Kulati Mines", },
-			["kulatimines-b_base"] = { scale = 0.000738, yoffset = 0.403217, xoffset = 0.183133, name = "Kulati Mines", },
+			["kulatimines-a_base"] = { scale = 0.01, yoffset = 0.402389, xoffset = 0.182758, name = "Kulati Mines", },
+			["kulatimines-b_base"] = { scale = 0.006, yoffset = 0.403217, xoffset = 0.183133, name = "Kulati Mines", },
 			["lightlessoubliette_base"] = { notTamriel = true, name = "Lightless Oubliette", },
 			["lightlessoubliettelava_base"] = { notTamriel = true, name = "Lightless Oubliette", },
 			["nchuduabtharthreshold_base"] = { notTamriel = true, name = "Nchu Duabthar Threshold", },
@@ -3077,14 +3099,24 @@ ZGV.MapData = {
 			["torinaan2_base"] = { scale = 0.004375, name = "Torinaan Shrines", yoffset = 0.639453, xoffset = 0.197422, },
 			["torinaan3_base"] = { scale = 0.004375, name = "Torinaan Shrines", yoffset = 0.639453, xoffset = 0.202539, },
 			["torinaan4_base"] = { scale = 0.004375, name = "Torinaan Shrines", yoffset = 0.633008, xoffset = 0.205508, },
-			["torinaan5_base"] = { scale = 0.004375, name = "Torinaan Shrines", yoffset = 0.633008, xoffset = 0.193828, },
+			["torinaan2_base"] = { scale = 0.004375, name = "Torinaan Shrines", yoffset = 0.633008, xoffset = 0.193828, },
 			["visionofthecompanions_base"] = { notTamriel = true, name = "Vision of the Companions", },
 			["wailingprison0_base"] = { scale = 0.01, },
+
+			["chateaumasterbedroom_base"] = { name = "Chateau Master Bedroom", notTamriel = true, },
+			["breaghafinlower_base"] = { xoffset = 0.191473, scale = 0.009141, name = "Breagha-Fin", yoffset = 0.211644, },
+			["lorkrataruinsa_base"] = { xoffset = 0.189194, scale = 0.002432, name = "Lorkrata Ruins", yoffset = 0.232713, },
+			["windridgecave_base"] = { xoffset = 0.179336, scale = 0.010625, name = "Windridge Cave", yoffset = 0.281953, },
+			["edraldundercroftdomed_base"] = { xoffset = 0.192562, scale = 0.008086, name = "Edrald Undercroft", yoffset = 0.228496, },
+			["breaghafinupper_base"] = { xoffset = 0.192254, scale = 0.007852, name = "Breagha-Fin", yoffset = 0.210862, },
+			["spindleclutch_base"] = { name = "Spindleclutch", },
+			["lorkrataruinsb_base"] = { xoffset = 0.191323, scale = 0.002432, name = "Lorkrata Ruins", yoffset = 0.232713, },
+
 
 			-- John
 
 			["bthzark_base"] = { yoffset = 0.542674, xoffset = 0.153949, scale = 0.003429, name = "Bthzark", },
-			["goblinminesstart_base"] = { yoffset = 0.532109, xoffset = 0.165391, scale = 0.0025, name = "Goblin Mines", },
+			["goblinminesend_base"] = { yoffset = 0.532109, xoffset = 0.165391, scale = 0.0025, name = "Goblin Mines", },
 			["goblinminesend_base"] = { yoffset = 0.534375, xoffset = 0.161484, scale = 0.003906, name = "Goblin Mines", },
 
 			["Tamriel"] = { }, -- this one self-fills ingame

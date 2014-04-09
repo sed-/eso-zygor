@@ -87,6 +87,8 @@ Saving the Son=0090134
 Vengeance for House Dres=0090135
 To the Tormented Spire=0090136
 Climbing the Spire=0090137
+Opening the Portal=0090138
+Sadal's Final Defeat=0090139
 
 Bad Medicine=0100001
 Proprietary Formula=0100002
@@ -288,8 +290,15 @@ Circus of Cheerful Slaughter=0190033
 Dreams From the Hist=0190034
 Swamp to Snow=0190035
 King of Dust=0190036
+Buried in the Past=0190037
+The Fangs of Sithis=0190038
+Pull the Last Fang=0190039
 The Tree-Minder's Fate=0190184
 Cold-Blooded Revenge=0190541
+Three Tender Souls=190542
+Unwelcome Guests=0190543
+Getting to the Truth=0190544
+Scouring the Mire=0190545
 
 Welcome to Cyrodiil=0370001
 
@@ -376,9 +385,8 @@ The Anguish Gem=2170001
 
 To Honrich Tower=2230001
 
-Buried in the Past=0190037
-The Fangs of Sithis=0190038
-Pull the Last Fang=0190039
-
 Kings of the Grotto=1160001
+
+Foreign Vintage=0240001
+
 ]]
