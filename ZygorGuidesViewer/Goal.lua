@@ -504,7 +504,7 @@ end
 function Goal:GetQuestGoalCounts()
 	local complete,possible,expl,curv,maxv,expl2 = self:GetQuestGoalStatus()
 
-	if expl~="completion" then return end
+	if expl~="cond completion" then return end
 	if not curv then return end
 
 	local goalcountnow,goalcountneeded,remaining

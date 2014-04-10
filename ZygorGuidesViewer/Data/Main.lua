@@ -103,10 +103,12 @@ local function getCorrectVarsByType(typ)
 end
 
 local function appendSavedVarsByType(typ,entry)
+	if not ZGV.DEV then return end
 	local appendPat = "%s%s\n"
 	if typ == NPC_STR then
 		svdata.npcIds = (appendPat):format(svdata.npcIds,entry)
 	elseif typ == QUEST_STR then
+		ZGV.Utils.ShowFloatingMessage(("New Quest Id! %s"):format(entry))
 		svdata.questIds = (appendPat):format(svdata.questIds,entry)
 	elseif typ == OBJECT_STR then
 		svdata.objectIds = (appendPat):format(svdata.objectIds,entry)

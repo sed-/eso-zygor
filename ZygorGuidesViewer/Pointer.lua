@@ -2952,11 +2952,9 @@ function Pointer:InitMaps()
 	-- initialize saved data
 
 	ZGV.db.profile.Zones = ZGV.db.profile.Zones or {}
-	Pointer.Zones = ZGV.db.profile.Zones
-	local Zones = Pointer.Zones
-
 	ZGV.db.profile.ZoneNameToTex = ZGV.db.profile.ZoneNameToTex or {}
-	Pointer.ZoneNameToTex = ZGV.db.profile.ZoneNameToTex
+
+	local Zones = Pointer.Zones
 
 	-- import basic data
 
@@ -2984,7 +2982,20 @@ function Pointer:InitMaps()
 			Pointer.ZoneNameToTex[nm]=Pointer.ZoneNameToTex[nm] or tx
 			Zones[tx].name = Zones[tx].name or nm
 		end
+	else
+		ZGV:Error("No Map Data. Please report this issue.")
 	end
+
+	-- Now use any SV data to fill data, or overwrite stuff if DEV
+	if ZGV.DEV then
+		for i,v in pairs(ZGV.db.profile.ZoneNameToTex) do
+			Pointer.ZoneNameToTex[i] = v
+		end
+		for i,v in pairs(ZGV.db.profile.Zones) do
+			Zones[i] = v
+		end
+	end
+
 
 	-- grab real data
 
@@ -3122,7 +3133,9 @@ function Pointer:SurveyMap(specific,justupdate,quiet)
 	local PZ
 	if not Z then
 		d(("Recording |cffffff%s|r, texture |c88ffff%s|r"):format(GetMapName(),tex))
-		Pointer.Zones[tex]={name=GetMapName()}
+		-- New zone. Make sure it is in SV.
+		ZGV.db.profile.Zones[tex]={name=GetMapName()}
+		Pointer.Zones[tex] = ZGV.db.profile.Zones[tex]
 		Z=Pointer.Zones[tex]
 	end
 
@@ -3289,12 +3302,21 @@ function Pointer:ZONE_CHANGED(map)
 	if not map or map=="" then map=GetMapName() end
 	local tex=Pointer:GetMapTex()
 	if map~="" and not Pointer.ZoneNameToTex[map] then
-		d(("|cff8800New zone!|r Map |cffffff%s|r previously unknown, recording texture |cffffff%s|r."):format(map,tex))
 		Pointer.ZoneNameToTex[map]=tex
+
+		if ZGV.DEV then
+			d(("|cff8800New zone!|r Map |cffffff%s|r previously unknown, recording texture |cffffff%s|r."):format(map,tex))
+			ZGV.db.profile.ZoneNameToTex[map] = tex
+		end
 	end
 	if tex and tex~="" and not Pointer.Zones[tex] then
-		d(("|cff8800New zone!|r Texture |cffffff%s|r previously unknown, recording."):format(tex))
-		Pointer.Zones[tex]={name=map}
+		if ZGV.DEV then
+			d(("|cff8800New zone!|r Texture |cffffff%s|r previously unknown, recording."):format(tex))
+			ZGV.db.profile.Zones[tex]={name=map}
+			Pointer.Zones[tex] = ZGV.db.profile.Zones[tex]
+		else
+			Pointer.Zones[tex]={name=map}
+		end
 	end
 	if tex and tex~="" and not Pointer.Zones[tex].scale then
 		d(("|cff8800New zone!|r Texture |cffffff%s|r not surveyed, starting survey."):format(tex))

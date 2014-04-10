@@ -3034,7 +3034,7 @@ ZGV.MapData = {
 			-- import from Allen
 
 			["bangkoraigarrisonl_base"] = { scale = 0.009062, yoffset = 0.339102, xoffset = 0.290859, name = "Bangkorai Garrison", },
-			["bisnensel_base"] = { scale = 0.005586, yoffset = 0.282084, xoffset = 0.291588, name = "Bisnensel", },
+			["bisnensel_base"] = { scale = 0.015, yoffset = 0.282084, xoffset = 0.291588, name = "Bisnensel", },
 			["blackforge_base"] = { notTamriel = true, name = "The Black Forge", },
 			["castleoftheworm1_base"] = { notTamriel = true, name = "Castle of the Worm", },
 			["castleoftheworm2_base"] = { notTamriel = true, name = "Castle of the Worm", },

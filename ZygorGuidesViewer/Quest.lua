@@ -111,7 +111,7 @@ end
 
 function Quests:GetJournalIndexByQuestName(questName)
 	if not questName then return end
-	
+
 	for i=1,MAX_JOURNAL_QUESTS do  if IsValidQuestIndex(i) then
 		local name = GetJournalQuestName(i)
 		if name == questName then return i end
@@ -130,7 +130,7 @@ end
 -- Load quest from journal into Quests, so that we can update and check its progress and shit.
 -- Used on startup and in "quest added" events.
 function Quests:GetQuest(journalIndex)
-	if not journalIndex then return end 
+	if not journalIndex then return end
 	local questName,questId
 	if journalIndex>1000 then -- quest ID given instead? try to find it in the journal. Note: Should be safe, even if map 1, quest 1 id would be 1001.
 		questId = journalIndex
@@ -143,7 +143,7 @@ function Quests:GetQuest(journalIndex)
 		questId = Data:GetQuestIdByName(questName)  -- will generate one if needed
 	end
 
-	local quest = Quests[questId] 
+	local quest = Quests[questId]
 	if not quest then
 		-- Quest isn't in our table for this session, lets try to get it from our data first. If not in data (include SV) then create new.
 		quest = Quest:New(journalIndex)
@@ -228,7 +228,7 @@ function Quests:GetCompletionStatus(qname,qid,stagetxt,stagenum,steptxt,stepnum,
 		end
 		--]]
 	-- ... if not, keep digging into currently carried quests.
-	
+
 	-- CURRENT JOURNAL NEEDS CHECKING NOW.
 	-- Is that quest in journal at all?
 		local quest = Quests:GetQuest(qid)
@@ -249,7 +249,7 @@ function Quests:GetCompletionStatus(qname,qid,stagetxt,stagenum,steptxt,stepnum,
 	-- We are either definitely checking THIS stage... or we just have steptxt/condtxt and we're hoping for the best.
 
 			-- STAGE: Done? Good. No? Maybe it doesn't matter, if we have steptxt/condtxt. Keep digging.
-				-- If we were just given numbers, get step/cond from 
+				-- If we were just given numbers, get step/cond from
 
 	-- (Do some final sanity checks)
 		if not currentstagenum==stagenum then return false,false,"still not current stage, wtf" end
@@ -257,10 +257,10 @@ function Quests:GetCompletionStatus(qname,qid,stagetxt,stagenum,steptxt,stepnum,
 			ZGV:Debug("&quest |cff0088Current stage unknown! quest %d %s",qid,quest.name)
 			return false,false,"current stage unknown"
 		end  -- no step/cond details available either
-	
+
 	-- So, if it IS the current stage we're interested in, go into steps and conditions, since we know them.
 	--/dump ZGV.Quests:GetCompletionStatus(nil,3360001, nil,13, nil,nil, nil,nil)
-	
+
 	if not (steptxt or stepnum or condtxt or condnum) then
 		return false,true,"stage completion" end  -- This is where plain section completion checks bail out.
 
@@ -457,6 +457,7 @@ function Quests:GetAllQuestStages(qid)
 end
 
 function Quests:CloneQuestStageDataForEditing(qid)
+	if not ZGV.DEV then return end
 	savedquests[qid] = savedquests[qid] or table.zgclone(self:GetAllQuestStages_Data(qid))
 end
 
@@ -478,7 +479,7 @@ function Quest:New(journalIndex)
 		steps={},
 	}
 	setmetatable(quest,Quest_mt)
-	
+
 	quest:FillFromJournal(journalIndex)
 
 	return quest
@@ -494,14 +495,14 @@ function Quest:FillFromJournal(journalIndex)
 		journalIndex = self:GetJournalIndex()
 		if not journalIndex then self.steps=nil return end
 	end
-	
+
 	local questName, backgroundText, activeStepText, activeStepType, activeStepTrackerOverrideText, completed, tracked, questLevel, pushed, questType = GetJournalQuestInfo(journalIndex)
 	if questName=="" then return false end
 	if questName~=self.name then d("What..? Quest journalIndex="..journalIndex.." has name "..questName..", expected "..(self.name or "?")) return end
 	local questId = Data:GetQuestIdByName(questName)
 	if questId~=self.id then d("What..? Quest journalIndex="..journalIndex.." has name "..questName.." id "..questId..", expected id "..(self.id or "?")) return end
 	--Quests:Debug("Creating New Quest %s##%d",questName,questId)
-	
+
 	self.name = questName
 	self.id = questId   assert(questId,"How can a quest have no ID??")
 	self.level = questLevel
@@ -573,6 +574,7 @@ function Quest:ReplaceStageSnapshot(stagenum,snapshot)
 	snapshot = snapshot or self:GetStageSnapshot()
 	if not snapshot then return false end
 	self:CloneStageDataForEditing() -- now _SV kinda== _Data, or nothing happened if _SV is already present.
+	if not ZGV.DEV then return false end
 	savedquests[self.id][stagenum] = snapshot
 end
 
@@ -639,7 +641,7 @@ function Quest:IsStageMatch(stage,verbose)
 
 	local matches
 	if verbose then matches={} end
-	
+
 	local successes=0
 	local fails=0
 	local compares=0
@@ -813,33 +815,33 @@ function Quest:_FillFromData(questName, questId)
 
 
 	local data = ZGV.Data:GetQuestStepDataByQuestId(questId)
-	
+
 	if data then
 		for stagenum=1,#data do
 			local stage = QuestStage:New()
 			stage.parentQuest = self
 			stage.num = stagenum
 			stage:FillFromData()
-			
+
 			self.stages[stagenum] = stage
 		end
 	end
 
 	return self
-	
+
 	--[=[
 	-- If we still have this quest then we can get extra information
 	local questName, backgroundText, activeStepText, activeStepType, activeStepTrackerOverrideText, completed, tracked, questLevel, pushed, questType
 	if journalIndex then
 		questName, backgroundText, activeStepText, activeStepType, activeStepTrackerOverrideText, completed, tracked, questLevel, pushed, questType  = GetJournalQuestInfo(journalIndex)
-		
+
 		quest.level = questLevel
 		quest.questType = questTypes[questType] or questType
 
 		quest:AddNewStepInfo(journalIndex)
 		--quest:UpdateRewardInfo(journalIndex)
 	end
-	
+
 	-- Update completedness
 	if completed then
 		quest:MarkAsComplete()
@@ -875,7 +877,7 @@ function Quest:FindStepCond(steptxt,stepnum,condtxt,condnum)
 		ZGV:Debug("&quest (matching step? %s",stepnum or "fail")
 	end
 	-- So far we just tried to match whole steps.
-	
+
 	-- Now let's try to match conditions.
 	if condtxt and (not condnum or not stepnum) then
 		for snum,s in ipairs(self.steps) do if not stepnum or stepnum==snum then  -- check all steps, or just the given one
@@ -967,10 +969,10 @@ end
 		journalIndex = journalIndex or Quests:GetJournalIndexByQuestName(self.name)
 		if not journalIndex then return end	-- We don't currently have this quest in our journal
 		local numRewards = GetJournalQuestNumRewards(journalIndex)
-		
+
 		for i=1,numRewards do
 			local reward = QuestReward:New(journalIndex, i)
-			
+
 			if reward then
 				tinsert(self.rewards,reward)
 			end
@@ -1065,7 +1067,7 @@ function QuestStep:FillFromJournal(journalIndex, stepIndex)  -- MAKE SURE WE'RE 
 	self.visibility = stepVisibilityTypes[visibility] or visibility
 	self.trackerText = trackerOverrideText
 	self.num = stepIndex
-	
+
 	self:FillConditionsFromJournal(journalIndex,self.num)
 
 	return self
@@ -1171,7 +1173,7 @@ function QuestCondition:RequestCoords()
 
 	local journalIndex = self:GetQuestJournalIndex()
 	if not journalIndex then return false,"WTF #2" end  -- strange...
-	
+
 	RequestJournalQuestConditionAssistance(self:GetQuestJournalIndex(),self.parentStep.num,self.num)
 	-- the event is handled in QuestTracker
 end
@@ -1352,7 +1354,7 @@ end)
 						-- Part of the Quest data is from our Data. Need to continue tracking data in SV to complete the quest.
 						savedquests[self.id] = savedquests[self.id] or { }
 						self.svref = savedquests[self.id]
-					end	
+					end
 
 					local stepsv = {
 						step.text
