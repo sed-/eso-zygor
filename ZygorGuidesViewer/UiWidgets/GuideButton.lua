@@ -75,7 +75,7 @@ end
 -- Close Button. Default Onclick to hide parent.
 local function Setup_CloseButton(button)
 	CHAIN(button)
-		:SetHandler("OnClicked",function(me) 
+		:SetHandler("OnClicked",function(me)
 			me:GetParent():Hide()
 		end)
 		:SetNormalTexture(TEXTURE)
@@ -85,7 +85,7 @@ end
 -- Left Arrow. No default OnClicked
 local function Setup_LeftButton(button)
 	CHAIN(button)
-		:SetHandler("OnClicked",function(me) 
+		:SetHandler("OnClicked",function(me)
 			print("No Click Handler")
 		end)
 		:SetNormalTexture(TEXTURE)
@@ -95,7 +95,7 @@ end
 -- Right Arrow. No default OnClicked
 local function Setup_RightButton(button)
 	CHAIN(button)
-		:SetHandler("OnClicked",function(me) 
+		:SetHandler("OnClicked",function(me)
 			print("No Click Handler")
 		end)
 		:SetNormalTexture(TEXTURE)
@@ -109,18 +109,18 @@ local function Setup_DownButton(button)
 	button.bd = ui:Create("SecBackdrop",button,name and name.."_BD")
 
 	CHAIN(button)
-		:SetHandler("OnClicked",function(me) 
+		:SetHandler("OnClicked",function(me)
 			print("No Click Handler")
 		end)
 		:SetNormalTexture(TEXTURE)
 		:SetTextureCoords(TexCoordsForSprite(19,NUM_ICONS,1,1))
-		:SetBackdropColor(HTMLColor("#e5661aff"))		-- TODO ACCENT_COLOR
+		:SetBackdropColor(HTMLColor("#fe6100ff"))		-- TODO ACCENT_COLOR
 end
 
 -- Help. No default OnClicked
 local function Setup_HelpButton(button)
 	CHAIN(button)
-		:SetHandler("OnClicked",function(me) 
+		:SetHandler("OnClicked",function(me)
 			print("No Click Handler")
 		end)
 		:SetNormalTexture(TEXTURE)
@@ -130,7 +130,7 @@ end
 -- Info. No default OnClicked
 local function Setup_InfoButton(button)
 	CHAIN(button)
-		:SetHandler("OnClicked",function(me) 
+		:SetHandler("OnClicked",function(me)
 			print("No Click Handler")
 		end)
 		:SetNormalTexture(TEXTURE)
@@ -139,7 +139,7 @@ end
 
 local function Setup_SettingsButton(button)
 	CHAIN(button)
-		:SetHandler("OnClicked",function(me) 
+		:SetHandler("OnClicked",function(me)
 			ZGV.Settings:OpenSettings()	-- By default opens up to main option page. Can overwrite to open to a specific page.
 		end)
 		:SetNormalTexture(TEXTURE)
@@ -149,7 +149,7 @@ end
 -- Debug. No default OnClicked. Probably Zgoo something
 local function Setup_DebugButton(button)
 	CHAIN(button)
-		:SetHandler("OnClicked",function(me) 
+		:SetHandler("OnClicked",function(me)
 			print("No Click Handler") -- By default opens up to main option page. Can overwrite to open to a specific page.
 		end)
 		:SetNormalTexture(TEXTURE)

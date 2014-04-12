@@ -1753,6 +1753,8 @@ function Pointer.ArrowFrame_OnUpdate_Common(self,elapsed)
 
 	dist=dist or 99999999  -- this means FAR or UNKNOWN or whatever. Causes "zone, continent" display.
 
+	self.curdist = dist
+
 	-- trigger rover update if we got 100yd away from current target (are we lost?)
 	if self.initialdist and ZGV.db.profile.pathfinding then
 		self.closingdist = min(self.initialdist,self.closingdist or 9999)
@@ -3323,11 +3325,11 @@ function Pointer:ZONE_CHANGED(map)
 		Pointer:SurveyMap()
 	end
 end
-
-EVENT_MANAGER:RegisterForEvent("ZGVPointer",EVENT_ZONE_CHANGED,function(a,map,c)
-	Pointer:ZONE_CHANGED(map)
+tinsert(ZGV.startups,function(self)
+	EVENT_MANAGER:RegisterForEvent("ZGVPointer",EVENT_ZONE_CHANGED,function(a,map,c)
+		Pointer:ZONE_CHANGED(map)
+	end)
 end)
-
 
 --[[
 EVENT_MANAGER:RegisterForEvent("ZGVPointer",EVENT_ZONE_CHANGED,function(a,b,c)

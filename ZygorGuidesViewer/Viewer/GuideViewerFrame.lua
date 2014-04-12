@@ -70,6 +70,8 @@ local PROG_BAR_TYPE_LEVEL = "level"
 local PROG_BAR_COLOR_STEP = {0.0,0.8,0.0,1.0}
 local PROG_BAR_COLOR_LEVEL = {1/255,162/255,253/255,1.0}
 
+ActionLabels = {} -- filled at startup
+
 local actionicon={
 	["accept"]=5,
 	["turnin"]=6,
@@ -92,6 +94,19 @@ setmetatable(actionicon,{__index=function() return 2 end})
 
 ZGV.Viewer = Viewer
 ZGV.Viewer.name = name
+
+-----------------------------------------
+-- LOCAL FUNCTIONS
+-----------------------------------------
+
+local function setupActionLayers()
+	local num = GetNumActionLayers()
+	for i=1,num do
+		local name, numCata = GetActionLayerInfo(i)
+
+		ActionLabels[i] = name
+	end
+end
 
 -----------------------------------------
 -- CREATION FUNCTIONS
@@ -147,7 +162,7 @@ function Viewer:CreateZGVF()
 		:SetPoint(TOP)
 		:SetSize(fwidth,DEFAULT_HEIGHT)		-- Height doesn't need to be saved because that is based on goals
 		:SetDimensionConstraints(MIN_WIDTH,nil,MAX_WIDTH,nil)
-		:SetResizeHandleSize(MOUSE_CURSOR_RESIZE_EW)
+		:SetResizeHandleSize(4)
 		:SetMouseEnabled(true)	-- Just enable mouse so it can drag master
 		:SetHandler("OnMouseDown",function(me)			-- TODO while draggin all of the OnResizedToFit handlers fire, not a big deal likely, but strange and not needed.
 			Viewer.moving = master:StartMoving()			-- Blocking in stepbox:OnResizedToFit so that viewer isn't resized without need
@@ -157,7 +172,7 @@ function Viewer:CreateZGVF()
 			Viewer.moving = nil
 		end)
 		:SetHandler("OnResizeStop",function(me)
-			Viewer:ResizeAllGoals()										-- TODO shrinking then expanding again doesn't make all goals quite the right size always.
+			Viewer:ResizeToFitSteps()	-- Can't prevent vertical resizing, just make it look normal again when they stop.
 			profile.viewerwidth = me:GetWidth()
 		end)
 		:SetHandler("OnUpdate",function(me,time)
@@ -444,12 +459,8 @@ function Viewer:CreateGoalUI(parent,goalnum)
 		:SetCanWrap(true)
 		:SetText(goalName)
 		:SetHandler("OnTextChanged", function(me)
-			-- This does similar thing to ResizeAllGoals, just only used when the text changes.
-			-- Text changed, so the height of the label could be differt. Set all needed heights to 0 so that SetResizeToFitDescendents can properly expand to it's needed height again.
 			local goalui = me:GetParent()
 			if not goalui.dirty then return end		-- This is needed because sometimes OnTextChanged will trigger multiple times w/o text actually changing and do bad things
-			local stepui = goalui:GetParent()
-			local stepbox = stepui:GetParent()
 
 			Viewer:Debug("%s Changed",me:GetName())
 
@@ -461,9 +472,6 @@ function Viewer:CreateGoalUI(parent,goalnum)
 				goalui.icon:SetPoint(LEFT,GOAL_ICON_PADDING,0)
 			end
 
-			goalui:SetHeight(0)
-			stepui:SetHeight(0)
-			stepbox:SetHeight(0)
 			goalui.dirty = nil
 		end)
 	.__END
@@ -635,20 +643,25 @@ end
 -- VIEWER FUNCTIONS
 -----------------------------------------
 
-function Viewer:Show_GuideViewer()
+-- Can pass a parameter to show/hide to not toggle the main ZGV option. This is done when hid because of an action layer change
+function Viewer:Show_GuideViewer(notoggle)
 	if not self.Frame then self:CreateZGVF() end
 
-	profile.showviewer = true
+	if not notoggle then
+		profile.showviewer = true
+	end
 
 	self.Frame:Show()
 
 	self:Update(1)	-- TODO do we update it here?
 end
 
-function Viewer:Hide_GuideViewer()
+function Viewer:Hide_GuideViewer(notoggle)
 	if not self.Frame then return end
 
-	profile.showviewer = false
+	if not notoggle then
+		profile.showviewer = false
+	end
 
 	self.Frame:Hide()
 end
@@ -725,10 +738,13 @@ function Viewer:Update(full)
 
 					local goalnum = 1	-- goalnum incremented manually so tip lines can be added
 					-- Lets handle goals!
-					for i,goal in ipairs(curStep.goals) do
+					for i,goal in ipairs(curStep.goals) do while(1) do
 						local goalframe = stepframe:GetGoalUI(goalnum)
-						goalnum = goalnum + 1
 						local text = goal:GetText()
+						local status = goal:GetStatus()
+						if status == "hidden" then break end	-- Don't display a hidden goal.
+
+						goalnum = goalnum + 1
 
 						goalframe.goal = goal
 
@@ -766,8 +782,6 @@ function Viewer:Update(full)
 						end
 
 						-- ICONS
-
-						local status = goal:GetStatus()
 
 						if true or self.db.profile.goalicons then  -- TODO make optionable?
 							--label:SetPoint("TOPLEFT",line,"TOPLEFT",icon_indent+2,0)
@@ -819,7 +833,7 @@ function Viewer:Update(full)
 
 
 
-						-- TODO backdrops
+						-- Backdrops
 
 						if goal:IsCompletable() then
 							local complete,possible = goal:IsComplete()
@@ -837,8 +851,9 @@ function Viewer:Update(full)
 						end
 
 
-					end
+					break end end
 
+					-- Hide/Show goals properly.
 					stepframe:HideExtraGoals()
 
 				else
@@ -968,23 +983,6 @@ function Viewer:ResizeToFitSteps()
 		:SetPoint(TOP,frame.master)
 end
 
--- Makes all goals fit their labels because of SetResizeToFitDescendents.. Then step and stepbox do the same after goals.
-function Viewer:ResizeAllGoals()
-	if not self.Frame then return end
-	self:Debug("Resizing All Goals!")
-
-	local frame = self.Frame
-
-	for i,step in ipairs(frame.stepuis) do
-		for k,goal in ipairs(step.goaluis) do
-			goal:SetHeight(0)
-		end
-		step:SetHeight(0)
-	end
-
-	frame.stepbox:SetHeight(0)
-end
-
 function Viewer:SetAlpha(a)
 	if not self.Frame then return end
 
@@ -997,8 +995,6 @@ function Viewer:SetScale(scale)
 	local frame = self.Frame
 
 	frame:SetScale(scale)
-
-	self:ResizeAllGoals()		-- Scale changed so have to adjust the childs.
 end
 
 function Viewer:ResetToDefaultPosition()
@@ -1013,8 +1009,6 @@ function Viewer:ResetToDefaultWidth()
 	profile.viewerwidth = DEFAULT_WIDTH
 
 	Viewer.Frame:SetWidth(profile.viewerwidth)
-
-	self:ResizeAllGoals()
 end
 
 function Viewer:ResetAllViewerSettings()
@@ -1030,7 +1024,92 @@ function Viewer:ResetAllViewerSettings()
 	self:Show_GuideViewer()
 end
 
+function Viewer:HandleActionLayer()
+	local isActive = IsActionLayerActiveByName
+	local l = ActionLabels
 
+	if (( isActive(l[12])			-- GameMenu
+		or isActive(l[2])			-- User Interface Shortcuts
+		or isActive(l[5])			-- Notifications			TODO wtf is this layer? Sounds like we should hide here
+		or isActive(l[3])			-- Siege							TODO wtf is this layer? Sounds like we should hide here
+		or isActive(l[4]) )		-- Dialogs						TODO wtf is this layer? Sounds like we should hide here
+		and ZGV.sv.profile.hideoninventory
+	)
+	or (isActive(l[7])			-- Conversation
+		and (ZGV.sv.profile.hideonguideconv		-- Hide when convo with guide person starts, hide with anyone.
+		or 	(ZGV.sv.profile.hideoninventory and (ZGV.Pointer.curdist and ZGV.Pointer.curdist or 0) > 10) )	-- Don't hide if talking to someone directed by the guide. >10 yd away means they are not in the guide.
+	)
+	then
+		if Viewer:GuideViewer_IsShown() then
+			self.hiddeninlayer = true
+
+			ZGV.Menu:Hide()						-- Hide guide menu. Don't worry about reopening
+			self:Hide_GuideViewer(1)	-- Don't toggle the hide/show viewer option
+		end
+	else
+		if self.hiddeninlayer then
+			self.hiddeninlayer = nil
+
+			self:Show_GuideViewer(1)
+		end
+	end
+end
+
+-----------------------------------------
+-- EVENTS
+-----------------------------------------
+
+--[[
+	1. General							-- Always open, Don't hide
+	2. User Interface Shortcuts	-- Hide
+	3. Siege
+	4. Dialogs
+	5. Notifications
+	6. MouseUIMode					-- Nupe
+	7. Conversation					-- Hide
+	8. Guild
+	9. RadialMenu						-- Don't hide
+	10. Death								-- Don't hide
+	11. Loot								-- Don't hide
+	12. GameMenu						-- Hide
+	13. Keybind Window
+	14. Addons
+	15. OptionsWindow
+
+	If 13/14/15 is open then
+		12 is open
+
+	if 8 is open then
+		2 is open
+--]]
+
+function Viewer:EVENT_ACTION_LAYER_PUSHED(event,layerIndex,activeLayerIndex)
+	--print(ActionLabels[layerIndex],ActionLabels[activeLayerIndex])
+	Viewer:HandleActionLayer()
+end
+
+function Viewer:EVENT_ACTION_LAYER_POPPED(event,layerIndex,activeLayerIndex)
+	--print(ActionLabels[layerIndex],ActionLabels[activeLayerIndex])
+	Viewer:HandleActionLayer()
+end
+
+-- state = true -> Enter Combat
+-- state = false -> Exit Combat
+function Viewer:EVENT_PLAYER_COMBAT_STATE(event,state)
+	if not ZGV.sv.profile.hideincombat then return end
+
+	if state then
+		self.hiddenincombat = true
+
+		ZGV.Menu:Hide()						-- Hide guide menu. Don't worry about reopening
+		self:Hide_GuideViewer(1)	-- Don't toggle the hide/show viewer option
+	elseif self.hiddenincombat then
+		self.hiddenincombat = nil
+
+		self:Show_GuideViewer(1)
+	end
+
+end
 -----------------------------------------
 -- DEBUG
 -----------------------------------------
@@ -1047,4 +1126,10 @@ end
 
 tinsert(ZGV.startups,function(self)
 	profile = ZGV.sv.profile
+
+	self.Events:AddEvent(EVENT_ACTION_LAYER_POPPED, Viewer)
+	self.Events:AddEvent(EVENT_ACTION_LAYER_PUSHED, Viewer)
+	self.Events:AddEvent(EVENT_PLAYER_COMBAT_STATE, Viewer)
+
+	setupActionLayers()
 end)

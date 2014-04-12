@@ -4,7 +4,7 @@ if not ZGV then return end
 -- INFORMATION
 -----------------------------------------
 --[[
-	
+
 --]]
 
 -----------------------------------------
@@ -23,8 +23,9 @@ local ui = ZGV.UI
 local ToggleButton =  ZGV.Class:New("ToggleButton")
 
 local DEFAULT_SIZE = 12
-local ACCENT_COLOR = {HTMLColor("#e5661aff")}
+local ACCENT_COLOR = {HTMLColor("#fe6100ff")}
 local BG_COLOR = {.2,.2,.2,1}	-- Copied from SecBackdrop
+local BG_EDGE_COLOR = {0,0,0,1}
 local DEFAULT_FONT_SIZE = 11
 
 -----------------------------------------
@@ -41,14 +42,15 @@ function ToggleButton:New(parent,name)
 	local but = CHAIN(ui:Create("Button",parent,name))
 		:SetSize(DEFAULT_SIZE,DEFAULT_SIZE)
 		:SetBackdropColor(unpack(BG_COLOR))	-- SecButton is already this button, clarity
+		:SetBackdropEdgeColor(unpack(BG_EDGE_COLOR))	-- Black instead of grey
 		:SetHandler("OnMouseEnter",function(me)
 			me.hilitex:Show()
 		end)	-- Don't change colors. We have a highlight texture
 		:SetHandler("OnMouseExit",function(me)
 			me.hilitex:Hide()
 		end)
-		:SetHandler("OnClicked",function(me) 
-			me:Toggle(not me.curToggle) 
+		:SetHandler("OnClicked",function(me)
+			me:Toggle(not me.curToggle)
 		end)
 	.__END
 

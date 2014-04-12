@@ -43,7 +43,7 @@ end
 
 function Utils.GetFaction(unitTag)
 	unitTag = unitTag or "player"
-	
+
 	local alliance = GetUnitAlliance(unitTag)
 
 	if alliance == ALLIANCE_ALDMERI_DOMINION then
@@ -60,9 +60,9 @@ end
 --TODO better than strings pls
 function Utils.IsFaction(faction)
 	local fac = Utils.GetFaction()
-	if fac == "DC" and faction == "Daggerfall Covenant" 
-	or fac == "EP" and faction == "Ebonheart Pact" 
-	or fac == "AD" and faction == "Aldmeri Dominion" 
+	if fac == "DC" and faction == "Daggerfall Covenant"
+	or fac == "EP" and faction == "Ebonheart Pact"
+	or fac == "AD" and faction == "Aldmeri Dominion"
 	then
 		return true
 	end
@@ -154,7 +154,7 @@ function table.zginherits(self,tbl)
 		and f~="New" then					-- Don't copy :New because those are specific to the Frames and don't want to overwrite them
 			if self[f] then self["saved"..f] = self[f] end	-- Don't strictly overwrite. Save it first incase it is still needed.
 			self[f] = fun
-		elseif f=="class" then 
+		elseif f=="class" then
 			self.class = self.class or fun				-- Don't overwrite class class of orginal obj
 		end
 	end
@@ -262,12 +262,12 @@ function Utils.MakeExcerpt(text)
 		local head = text:sub(1,HEADLEN)
 		while head:sub(-1)~=" " and n>0 do head=head:sub(1,-2) n=n-1 end
 		if #head==0 then head=text:sub(1,HEADLEN) end -- oh well
-	
+
 		local n=TAILLEN/2
 		local tail = text:sub(-TAILLEN)
 		while tail:sub(1,1)~=" " and n>0 do tail=tail:sub(2) n=n-1 end
 		if #tail==0 then tail=text:sub(-TAILLEN) end -- oh well
-		
+
 		text=head.."___"..tail.."<"..#text..">"
 	end
 	return text
@@ -283,7 +283,7 @@ function Utils.MatchExcerpt(exc,text)
 		local txt,len = exc:match("^(.-)%s*<(%d+)>$")
 		if txt then exc=txt end
 		len=len and tonumber(len)
-		
+
 		-- First try parts.
 		local safetext="%{%"..text.."%}%"
 		local parts={zo_strsplit("___","%{%"..exc.."%}%")}
@@ -397,7 +397,7 @@ function MMShow()
 	local width, height = wp:GetDimensions()
 
 	d(tostring(relativeTo))
-	
+
 	wp:ClearAnchors()
 	wp:SetAnchor(TOPRIGHT, relativeTo, TOPRIGHT, -25, -750)
 	wp:Show()
@@ -425,7 +425,90 @@ end
 13. Keybind Window
 14. Addons
 15. OptionsWindow
-16. Add-ons
 --]]
 
 --]=]
+
+--[[
+1. General							-- Always open, Don't hide
+2. User Interface Shortcuts	-- Hide
+3. Siege								-- Hide. Not sure what this is
+4. Dialogs							-- Hide. Not sure what this is
+5. Notifications				-- Hide. Not sure what this is
+6. MouseUIMode
+7. Conversation					-- Hide
+8. Guild
+9. RadialMenu						-- Don't hide
+10. Death								-- Don't hide
+11. Loot								-- Don't hide
+12. GameMenu						-- Hide
+13. Keybind Window
+14. Addons
+15. OptionsWindow
+
+If 13/14/15 is open then
+	12 is open
+
+if 8 is open then
+	2 is open
+
+
+
+
+-- /zgoo GetAllActionLayerInfo()
+
+function GetAllActionLayerInfo()
+	local num = GetNumActionLayers()
+	local table = {}
+	for i=1,num do
+		local layer = {}
+		local name, numCata = GetActionLayerInfo(i)
+
+		layer.name = name
+		layer.active = IsActionLayerActiveByName(name)
+		layer.cata = {}
+
+		layer.tostring = function(self)
+			return self.name..(self.active and " - ACTIVE" or "")
+		end
+
+		table[i] = layer
+
+		-- Do same thing for each catagory
+		for k=1, numCata do
+			local cata = {}
+			local cname, numAction = GetActionLayerCategoryInfo(i,k)
+
+			cata.name = cname
+			cata.actions = {}
+
+			cata.tostring = function(self)
+				return self.name
+			end
+
+			layer.cata[k] = cata
+
+			--Same thing for each action? Woo copy paste.
+			for j=1, numAction do
+				local action = {}
+				local aname, rebind, hidden = GetActionInfo(i,k,j)
+
+				action.name = aname
+				action.rebind = rebind
+				action.hidden = hidden
+
+				action.tostring = function(self)
+					return self.name
+				end
+
+				cata.actions[j] = action
+
+			end
+		end
+	end
+
+	return table
+end
+
+
+--]]

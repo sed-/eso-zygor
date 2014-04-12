@@ -95,6 +95,9 @@ local defaultAccount = {
 		objectIds = [[]],
 	},
 
+	Zones = {},
+	ZoneNameToTex = {},
+
 	-- Real Options?
 	viewerProgBar = "steps",
 
@@ -295,6 +298,15 @@ function SavedVars:InitializeOptions()
 			column = "two",
 			_default = true,
 		})
+		AddOption(nil,{
+			type = "execute",
+			width = 150,
+			name = O["opt_reset"],
+			desc = O["opt_reset_desc"],
+			func = function()
+				 ZGV.Viewer:ResetAllViewerSettings()
+			end,
+		})
 	end
 
 	-- VIEWER
@@ -326,17 +338,30 @@ function SavedVars:InitializeOptions()
 			set = function(i,v) ZGV.Viewer:Update()  end,
 			_default = 11,
 		})
-		AddOption(nil,{
-			type = "execute",
-			width = 150,
-			name = O["opt_reset"],
-			desc = O["opt_reset_desc"],
-			func = function()
-				 ZGV.Viewer:ResetAllViewerSettings()
-			end,
+
+		AddOption(nil,{ type="header", name=O["opt_auto_hiding"] })
+
+		AddOption("hideincombat",{
+			type = "toggle",
+			--set = function(i,v) end,
+			_default = false,
 		})
+		AddOption("hideoninventory",{
+			type = "toggle",
+			set = function(i,v) ZGV.Viewer:HandleActionLayer() end,
+			_default = true,
+			column="two"
+		})
+		AddOption("hideonguideconv",{
+			type = "toggle",
+			set = function(i,v) ZGV.Viewer:HandleActionLayer() end,
+			_default = false,
+			column="three"
+		})
+
 	end
 
+	-- ARROW
 	AddOptionGroup("arrow","Arrow","zgarrow", { })
 	do
 		AddOption('arrowshow',{
@@ -499,7 +524,7 @@ function SavedVars:Setup()
 	self.char.info.faction = fac
 	self.char.info.date = GetDate()	-- TODO format this in a more helpful way?
 	self.char.info.time = GetFormattedTime()	-- TODO format this in a more helpful way?
-	
+
 	--[[
 	if self.char.savedquests then
 		self.faction.savedquests = self.char.savedquests
@@ -510,7 +535,7 @@ function SavedVars:Setup()
 		self.profile.data = nil
 	end
 	--]]
-		
+
 
 	self:InitializeOptions()
 end

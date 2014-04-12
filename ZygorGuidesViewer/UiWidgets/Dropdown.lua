@@ -18,10 +18,10 @@ if not (ZGV and ZGV.UI) then return end
 			for i,v in pairs(items) do
 				me:AddItem(i,v)
 			end
-			
+
 			-- See if the previous value is still available in the table
 			local val = me:HasValue(value)
-			
+
 			-- If it is then set it has the current value again.
 			if val then me:SetValue(value) end
 		end)
@@ -57,7 +57,7 @@ local ITEM_BOX_PADDING = 3
 
 local SECBACKDROP_CENTER_COLOR = {.2,.2,.2,1}	-- TODO copied from backdrop.lua
 
-local ACCENT_COLOR = {HTMLColor("#e5661aff")}
+local ACCENT_COLOR = {HTMLColor("#fe6100ff")}
 local ITEM_BG_COLOR = {.3,.3,.3,1}
 
 -----------------------------------------
@@ -85,7 +85,7 @@ function Dropdown:New(parent,name)
 	dropdown.but = CHAIN(ui:Create("GuideButton",dropdown,name.."_Button","Down"))
 		:SetPoint(RIGHT,dropdown,RIGHT)
 		:SetSize(DEFAULT_HEIGHT,DEFAULT_HEIGHT)
-		:SetHandler("OnClicked",function(me) 
+		:SetHandler("OnClicked",function(me)
 			dropdown:TogglePullout()
 		end)
 	.__END
@@ -100,12 +100,12 @@ function Dropdown:New(parent,name)
 	dropdown.but_cover = CHAIN(ui:Create("InvisButton",dropdown,name.."_ButCover"))
 		:SetPoint(TOPLEFT,dropdown)
 		:SetPoint(BOTTOMRIGHT,dropdown.but,BOTTOMLEFT)
-		:SetHandler("OnClicked",function(me) 
+		:SetHandler("OnClicked",function(me)
 			dropdown:TogglePullout()
 		end)
 	.__END
 
-	dropdown.pullout = CHAIN(ui:Create("Frame",parent,name.."_Pullout",true))		-- TODO parent this to dropdown. 
+	dropdown.pullout = CHAIN(ui:Create("Frame",parent,name.."_Pullout",true))		-- TODO parent this to dropdown.
 		--Run into issues of tier/layer/level issues because  if you try to click items in ZgWriter it will click the other dropdowns.
 		-- I think it is because since both objects are parented to different dropdowns, it can not accurate compare the level of them.
 		:SetAnchor(TOPLEFT,dropdown,BOTTOMLEFT)
@@ -116,12 +116,12 @@ function Dropdown:New(parent,name)
 		:SetResizeToFitDescendents(true)
 		:Hide()
 	.__END
-	
+
 	dropdown.onOpenCallbacks = {}
 	dropdown.items = {}
 	dropdown.pullout.items = dropdown.items
 	dropdown.pullout.parent = dropdown
-	
+
 	return dropdown
 end
 
@@ -143,7 +143,7 @@ end
 function Dropdown:_GetAvailableItem()		-- _Get so Zgoo doesn't call it.
 	local pullout = self.pullout
 	local items = self.items
-	
+
 	local item
 
 	for k,itm in ipairs(items) do
@@ -152,7 +152,7 @@ function Dropdown:_GetAvailableItem()		-- _Get so Zgoo doesn't call it.
 			break
 		end
 	end
-	
+
 	-- No item already available, make a new one
 	if not item then
 		local itemnum = #items + 1
@@ -222,7 +222,7 @@ function Dropdown:UpdatePullout()
 	for i,item in ipairs(items) do
 		-- Get the max length
 		local len = item.label:GetTextWidth()
-		if len > maxlen then 
+		if len > maxlen then
 			maxlen = len + item.label:GetLeft() - item:GetLeft() + 5	-- left of the item to left of the label + label + 5 extra
 		end
 
@@ -268,7 +268,7 @@ function Dropdown:SetValue(item)
 	self:UpdatePullout()	-- Update the status of the items in the dropdown
 end
 
--- Can be either an item or a value. Returns the item for use if needed. 
+-- Can be either an item or a value. Returns the item for use if needed.
 -- Likely better named as Dropdown.pullout:GetItemWithValue(val)
 function Dropdown:HasValue(item)
 	if not item then return end
@@ -356,7 +356,7 @@ function DropdownItem:New(pullout,name)
 		:SetSize(pullout:GetWidth(),ITEM_HEIGHT)
 		--:SetResizeToFitDescendents(true)
 		-- Point set later based on num.
-		:SetHandler("OnClicked",function(me) 
+		:SetHandler("OnClicked",function(me)
 			me:Item_OnClick()
 		end)
 	.__END
@@ -387,7 +387,7 @@ end
 
 -- Item is going to be used, set the values appropriately. Make sure it is the correct height and is shown.
 function DropdownItem:SetupItem(text,value,callback)
-	
+
 	self.callback = callback
 	self.used = true
 
@@ -401,7 +401,7 @@ end
 
 function DropdownItem:SetAsUnused()
 	local dropdown = self.dropdown
-	
+
 	-- Check if this is the currently selected item.
 	if dropdown:GetValue() == self:GetValue()
 	and dropdown.curitem == self		-- Extra sanity check to ensure this item is correct before we unset dropdown
@@ -418,7 +418,7 @@ function DropdownItem:SetAsUnused()
 		:SetSelected(false)
 		:SetHeight(0)
 		:Hide()
-	
+
 	-- Update pullout now.
 	dropdown:UpdatePullout()
 end
@@ -470,7 +470,7 @@ function buildframestart()
 	items = {
 		hi = 5,
 		this = 6,
-		is = 7, 
+		is = 7,
 		a = 8,
 		dropdown = 5,
 	}
@@ -488,10 +488,10 @@ function buildframestart()
 			for i,v in pairs(items) do
 				me:AddItem(i,v)
 			end
-			
+
 			-- See if the previous value is still available in the table
 			local val = me:HasValue(value)
-			
+
 			-- If it is then set it has the current value again.
 			if val then me:SetValue(value) end
 		end)

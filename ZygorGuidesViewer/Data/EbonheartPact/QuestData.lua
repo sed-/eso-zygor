@@ -301,6 +301,15 @@ Getting to the Truth=0190544
 Scouring the Mire=0190545
 Bound to the Bog=0190546
 Overrun=0190547
+Into the Temple=0190548
+And Throw Away The Key=0190549
+The Keystone=0190550
+The Dominion's Alchemist=0190551
+Deep Disturbance=0190552
+Missing in the Mire=0190553
+The Dream of the Hist=0190554
+The Swamp's Embrace=0190555
+Vigil's End=0190556
 
 Welcome to Cyrodiil=0370001
 
@@ -391,4 +400,6 @@ Kings of the Grotto=1160001
 
 Foreign Vintage=0240001
 
+Captured Time=0700001
+The Ones Left Behind=0710001
 ]]

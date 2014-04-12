@@ -314,6 +314,15 @@ Trials and Tribulations=0140916
 To Walk on Far Shores=0140917
 Messages Across Tamriel=0140918
 
+The Posting of the Hunt=0140142
+The True-Told Tale of Hallin, Pt. 1=0140143
+Vital Records, 2E 540—2E 542=0140144
+A Royal Embarrassment=0140145
+Lady Murcien's Folly=0140146
+Fool!=0140147
+Picnic at Pelin (A Horror Story)=0140148
+The Legend of Fallen Grotto=0140149
+
 Sunken Knowledge=0340001
 
 The Hollow City=1540001

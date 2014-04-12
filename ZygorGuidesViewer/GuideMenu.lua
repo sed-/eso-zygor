@@ -47,6 +47,9 @@ local GUIDE_IMAGE_HEIGHT = 200
 local OPTIONS_LEFT_OFFSET = 15
 local OPTIONS_VERT_OFFSET = 5
 
+local DEFAULT_ANCHOR= {
+	CENTER,
+}
 
 
 local GuideStatusColor = {
@@ -126,7 +129,7 @@ function Menu:CreateBaseMenu()
 	if self.Frame then return end
 
 	local frame =  CHAIN(ui:Create("Frame",GuiRoot,name))
-		:SetPoint(TOPLEFT)
+		:SetPoint(unpack(DEFAULT_ANCHOR))
 		:SetCanDrag(1)
 		:SetSize(DEFAULT_WIDTH,DEFAULT_HEIGHT)
 		:SetMouseEnabled(true)
@@ -135,7 +138,7 @@ function Menu:CreateBaseMenu()
 	self.Frame = frame
 
 	frame.version = CHAIN(ui:Create("Label",frame,name.."_VerTitle",12,"bold"))
-		:SetPoint(BOTTOMLEFT,frame,BOTTOMLEFT,10,-5)
+		:SetPoint(BOTTOMLEFT,frame,BOTTOMLEFT,10,-8)	-- TODO y vert distance does not keep centered in footer if footer size changes.
 		:SetText("VER:")
 	.__END
 
@@ -169,8 +172,6 @@ function Menu:CreateBaseMenu()
 		:SetPoint(BOTTOMRIGHT,frame,BOTTOMRIGHT,-1,-FOOTER_HEIGHT)
 		--:SetScript("OnMouseUp",function(this,but) if but=="RightButton" then Menu:NavigateBack() end end)
 	.__END
-
-	GuideMenu:Create()
 
 	self:SetTab(GUIDEMENU_TAB_ID)	-- Set the default tab
 end

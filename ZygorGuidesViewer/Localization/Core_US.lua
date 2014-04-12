@@ -231,6 +231,9 @@ ZygorGuidesViewer_L("Option", "enUS", function() local f = {
 	["opt_canmovemapbutton"] = "Lock onscreen button",
 	["opt_canmovemapbutton_desc"] = "Lock the onscreen button in place.",
 
+	["opt_reset"] = "Reset Window",
+	["opt_reset_desc"] = "Reset Guide Viewer to orginal position and size.",
+
 	------ VIEWER -------
 	["opt_viewer"] = "Guide Viewer",
 	["opt_viewer_desc"] = "Options for modifiying the display of the Zygor Guides Viewer.",
@@ -246,8 +249,16 @@ ZygorGuidesViewer_L("Option", "enUS", function() local f = {
 	["opt_fontsecsize"] = "Secondary text scale",
 	["opt_fontsecsize_desc"] = "Set your preferred secondary text size, used to display additional descriptions and notes.",
 
-	["opt_reset"] = "Reset Window",
-	["opt_reset_desc"] = "Reset Guide Viewer to orginal position and size.",
+	["opt_auto_hiding"] = "Auto Hiding",
+
+	["opt_hideincombat"] = "Hide in combat",
+	["opt_hideincombat_desc"] = "Hide all guide windows during combat, if your screen gets too cramped.",
+
+	["opt_hideoninventory"] = "Hide on inventory",
+	["opt_hideoninventory_desc"] = "Hide the Guide Viewer when inventory/map/options etc are opened.",
+
+	["opt_hideonguideconv"] = "Hide on conversation",
+	["opt_hideonguideconv_desc"] = "Hide the Guide Viewer when entering conversation with npc for the current step.",
 
 	------ ARROW -------
 	['opt_arrow'] = "Waypointing",									['opt_arrow_desc'] = "These settings control the direction arrow",-- and map markers.",

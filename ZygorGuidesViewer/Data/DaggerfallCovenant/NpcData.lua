@@ -3872,4 +3872,12 @@ Iraj=0170596
 Udamaji=0170597
 Sadeq=0170598
 Jahan=0170599
+
+Bugbekh gra-Othmurga=0140359
+Giant=0140360
+Cambio Boulat=0140361
+Thibauld Edilitte=0140362
+Mortine Langey=0140363
+Sluz the Beryl-Chested=0140364
+Bosun Gharn=0140365
 ]]

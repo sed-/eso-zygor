@@ -73,14 +73,12 @@ local function GetMapByID(id) return "(map "..id..")" end
 -----------------------------------------
 -- Pretty much Goal Types, but not exactly.
 
-GOALTYPES['only'] = {	--TODO
+GOALTYPES['only'] = {
 	parse = function(self,params,step,data)
 		--local chunkcount = data.chunkcount
 
 		local cond = params:match("^if%s+(.*)$")
 		if cond then
-			print("NEED TO SUPPORT |ONLY IF. TELL DEV TEAM")
-			--[[
 			-- condition match and is a |only if
 			local subject = chunkcount==1 and step or self	-- If this is the first chunk for this line, then it is a |only if for a step.
 
@@ -89,12 +87,11 @@ GOALTYPES['only'] = {	--TODO
 
 			subject.condition_visible_raw=cond
 			subject.condition_visible=fun
-			--]]
 		else
 				-- Faction only at the moment
 				if self.action~="only" then
 					-- ahhh shit a |only after a goal... do sumthin
-					print("NEED TO SUPPORT THIS |only after a goal. TELL DEV TEAM")
+					ZGV:Error("||only after a goal? Why not use ||only if??")
 				else
 					self.action = nil		-- rip in peace goal. wipe out because this is a command for steps.
 
@@ -155,6 +152,18 @@ GOALTYPES['future'] = {
 GOALTYPES['noway'] = {
 	parse = function(self,params,step,data)
 		self.force_noway = true
+	end,
+}
+
+GOALTYPES['or'] = {
+	parse = function(self,params,step,data)
+		self.orlogic = params and tonumber(params) or 1
+	end,
+}
+
+GOALTYPES['override'] = {
+	parse = function(self,params,step,data)
+		self.override = true
 	end,
 }
 
@@ -725,6 +734,24 @@ function Goal:GetTipText()
 	return text
 end
 
+function Goal:IsVisible()
+--	if not self:IsFitting() then return false end
+	if self.hidden then return false end
+	if self.condition_visible then
+		if self.condition_visible_raw=="default" then
+			-- oo, special case: show this only if no others are visible!
+			for i,goal in ipairs(self.parentStep.goals) do
+				if goal~=self and goal.condition_visible and goal:IsVisible() then return false end
+			end
+			return true
+		else
+			ZGV.Parser.ConditionEnv._SetLocal(self.parentStep.parentGuide,self.parentStep,self)
+			return self.condition_visible()
+		end
+	end
+	return true
+end
+
 -- returns: true = complete, false = incomplete
 -- second return: true = completable, false = incompletable
 function Goal:IsComplete()
@@ -735,7 +762,7 @@ function Goal:IsComplete()
 		ZGV:Debug("&goal completing..............")
 		iscomplete,ispossible,explanation,curv,maxv,debugs = ZGV.Quests:GetCompletionStatus(self.quest,self.questid, self.queststagetxt,self.queststagenum, self.queststeptxt,self.queststepnum, self.questcondtxt,self.questcondnum)
 		ZGV:Debug("&goal completion: complete:|cffffff%s|r, possible:|cffffff%s|r, why:|cffffff%s|r ... match: |cffaaee%s|r",tostring(iscomplete),tostring(ispossible),tostring(explanation),tostring(debugs))
-		
+
 		if iscomplete then
 
 			-- complete means complete, leave it at that!
@@ -758,7 +785,7 @@ function Goal:IsComplete()
 		then
 			if self.future then break end  -- fall through
 			return false,false
-			
+
 		elseif explanation=="not in journal" then
 			if self.future then break end  -- fall through
 			return false,false
@@ -787,7 +814,7 @@ function Goal:IsComplete()
 			if iscomplete then return true, ispossible, (curv and curv/(self.count or maxv or 1)) end
 			if self:IsCompletable("by type") then break end -- let the goto complete it!
 			return false, ispossible, (curv and curv/(self.count or maxv or 1))
-			
+
 		elseif self.future then -- how did we end up here?
 			break
 
@@ -798,7 +825,7 @@ function Goal:IsComplete()
 		end
 
 		-- letting possibles through. They'll be either current-stages-only, or incomplete vague objectives.
-		
+
 		--[[
 		if self.future then
 			return false,true
@@ -810,7 +837,7 @@ function Goal:IsComplete()
 
 	-- Not quest related (or fell through) so time to resort to GOALTYPES
 	-- Use the individual goal completion routine
-	
+
 	--if not self:IsCompletable() then return false,false end
 	local giscomplete,gispossible
 
@@ -862,7 +889,7 @@ function Goal:GetStatus()		--TODO
 		end
 	end
 
-	--if not self:IsShown() then return "hidden" end
+	if not self:IsVisible() then return "hidden" end
 	if not self:IsCompletable() then return "passive" end
 	local iscomplete,ispossible,progress,warn = self:IsComplete()
 	if iscomplete then return "complete" end

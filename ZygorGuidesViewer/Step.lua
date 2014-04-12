@@ -90,9 +90,9 @@ function Step:IsComplete(cache)
 	--local allhidden = true
 	local alloptional = true
 
-	--local orneeded = 0
-	--local orcount = 0
-	--local orcomplete = false
+	local orneeded = 0
+	local orcount = 0
+	local orcomplete = false
 
 	-- prepare statuseses and see if any simple confirm completes are in there.
 	for i,goal in ipairs(self.goals) do
@@ -109,8 +109,7 @@ function Step:IsComplete(cache)
 		return complete,completable
 	end
 
-	-- TODO support ors and hidden goals
-	--[[
+
 	-- check for ORs!
 	local status
 	for i,goal in ipairs(self.goals) do
@@ -133,15 +132,14 @@ function Step:IsComplete(cache)
 		if (goal.status~="hidden" and goal.action) and not goal.temporary then allhidden=false end
 	end
 	if allhidden then return true,true end
-	--]]
-	local status
+
 	for i,goal in ipairs(self.goals) do
 		status = goal.status
 		if status=="complete" or status=="incomplete" then
 			completable = true
-			--if goal.orlogic and orcomplete then
-			--	status="complete" -- don't bother to check, force
-			--end
+			if goal.orlogic and orcomplete then
+				status="complete" -- don't bother to check, force
+			end
 			if status~="complete" and not goal.optional then complete = false  end
 			if not goal.optional then alloptional = false end
 			if status=="incomplete" then  steppossible = true  end
@@ -212,7 +210,7 @@ end
 function Step:GetNext()
 	if self:AreRequirementsMet() then  -- do NOT use jumps in steps that are wrong for some reason.
 		for i,goal in ipairs(self.goals) do
-			if goal.next
+			if goal.next and goal:IsVisible()
 			and (not goal:IsCompletable() or goal:IsComplete()) then
 				StepProto:Debug("Step:GetNext: step %d goal %d \"%s\" says \"%s\"",self.num,i,goal:GetText(),tostring(goal.next))
 				return goal.next

@@ -4,7 +4,7 @@ if not ZGV then return end
 -- INFORMATION
 -----------------------------------------
 --[[
-	
+
 --]]
 -----------------------------------------
 -- LOCAL REFERENCES
@@ -42,6 +42,7 @@ local ConditionEnv = {
 	level=1,
 	intlevel=1,
 	ZGV=ZGV,
+	print=ZGV.print,
 
 	-- these must be assigned in an _Update() call, if "local" scripts are to work. HORRIBLE local-faking.
 	guide=nil,
@@ -53,7 +54,7 @@ local ConditionEnv = {
 		Parser.ConditionEnv.intlevel = floor(Parser.ConditionEnv.level)
 		if ZGV.db.char.fakelevel and ZGV.db.char.fakelevel>0 then Parser.ConditionEnv.level=ZGV.db.char.fakelevel end
 	end,
-	
+
 	--[[
 	_Setup = function()
 		-- reputation 'constants'
@@ -67,7 +68,7 @@ local ConditionEnv = {
 		Parser.ConditionEnv.step=step
 		Parser.ConditionEnv.goal=goal
 	end,
-	
+
 	-- independent data feeds
 	questcomplete = function(id,stage) --stage can be omitted
 		return ZGV.Quests:IsQuestStageComplete(id,stage)
@@ -160,11 +161,11 @@ Parser.ConditionEnv=ConditionEnv  --DEBUG
 -----------------------------------------
 
 --[[
-	GuideCommands 
+	GuideCommands
 	parameters
 	 @ guide		-- current guide
-	 @ params		-- part of a line being parsed	
-	return 
+	 @ params		-- part of a line being parsed
+	return
 	 @ error			-- parserror to throw
 	 @ breakline	-- Break from parsing this line
 	 @ breakall		-- break from parsing this guide.
@@ -182,8 +183,8 @@ GuideCommands['leechsteps'] = function(guide,params)
 	if guide.parsing_fully then
 		-- okay, just do it now.
 		local leechedguide = ZGV:GetGuideByTitle(guide.leechsteps_guide)
-		if not leechedguide then 
-			Parser:Debug("leeched '"..guide.leechsteps_guide.."' not found in "..guide.title) 
+		if not leechedguide then
+			Parser:Debug("leeched '"..guide.leechsteps_guide.."' not found in "..guide.title)
 			return true,true
 		end
 		if not leechedguide.fully_parsed then
@@ -204,25 +205,25 @@ GuideCommands['leechsteps'] = function(guide,params)
 			local step = leechedguide.steps[i]
 			if step then
 				local newstep = ZGV.StepProto:New()
-				
+
 				-- Clone all none function attributes of the step, and all goals.
 				for k,v in pairs(step) do
 					if k=="goals" then
 						for gi,goal in ipairs(v) do
 							local newgoal = ZGV.GoalProto:New()
-								
+
 							for gk,gv in pairs(goal) do
 								if type(gv)~="function" then newgoal[gk]=gv end
 							end
-								
+
 							newstep:AddGoal(newgoal)
 						end
-					elseif type(v)~="function" then 
-						newstep[k]=v 
+					elseif type(v)~="function" then
+						newstep[k]=v
 					end
 				end
 			end
-			
+
 			leeched=leeched+1
 		end
 
@@ -254,7 +255,7 @@ GuideCommands['startlevel'] = function(guide,params)
 	guide.startlevel = level
 end
 
-GuideCommands['endlevel'] = function(guide,params) 
+GuideCommands['endlevel'] = function(guide,params)
 	local level = tonumber(params)
 	if not level then return "bad level number" end
 
@@ -263,11 +264,11 @@ end
 
 GuideCommands['condition'] = function(guide,params)		--TODO
 	local case,cond = params:match("(.-) (.+)$")
-	
-	if case=="suggested" 
-	-- or case=="valid" 
-	-- or case=="invalid" 
-	-- or case=="end" 
+
+	if case=="suggested"
+	-- or case=="valid"
+	-- or case=="invalid"
+	-- or case=="end"
 	then
 		--[[
 		local cond2,msg = cond:match("(.+)!!(.+)")
@@ -299,7 +300,7 @@ end
 -- STEP COMMANDS
 -----------------------------------------
 
-StepCommands['label'] = function(step,params) 
+StepCommands['label'] = function(step,params)
 	params = params:gsub("^\"(.-)\"$","%1") -- strip quotes
 	if params~="" then
 		step.label = params
@@ -362,7 +363,7 @@ function Parser.ParseMapXYDist(text)
 	-- End Time 66.5,79.5 <5
 	map,x,y,disttype,dist = text:match("^(.+)[%s,]+([0-9%.]+),([0-9%.]+)%s*([<>]*)%s*([0-9%.]*)$")
 	if not map then x,y,disttype,dist = text:match("^([0-9%.]+),([0-9%.]+)%s*([<>]*)%s*([0-9%.]*)$") end
-	
+
 	if not x then
 		-- new syntax, or just old without distance: 12.3,44.2 <150
 		_,disttype,dist = text:match("^(.-)%s*([<>])%s*([0-9%.]+)$")	text=_ or text
@@ -383,7 +384,7 @@ function Parser.ParseMapXYDist(text)
 		if mapid then map=mapid else err="ERROR: map '"..map.."' unknown." map=0 end
 	end
 	--]]
-	
+
 	if map and not map:find("_") and not ZGV.Pointer.Zones[map] then err="ERROR: map '"..map.."' unknown." map=nil end  -- _ in map name means it might be a raw texture, just accept it raw
 
 	return map,x,y,dist, err
@@ -402,12 +403,12 @@ end
 -- Using old 3 or 2 sections (quest,step,cond) will make it a "loose match", forcing the quest lookup to try and find the best fit.
 
 function Parser.ParseQuest(text)
-	if not text then return end 
+	if not text then return end
 	local quest,stage,step,cond = text:match("^(.*)/(.*)/(.*)/(.*)$")
 	if not stage then		quest,stage,step = text:match("^(.*)/(.*)/(.*)$")  end
 	if not stage then   quest,stage = text:match("^(.*)/(.*)$")  end
 	if not stage then   quest=text  end
-	
+
 	local questtxt,questid = Parser.ParseId(quest)
 	local stagetxt,stagenum = Parser.ParseId(stage)
 	local steptxt,stepnum = Parser.ParseId(step)
@@ -460,7 +461,7 @@ function Parser:ParseIncludes(text)
 		line = line:gsub("\\,","##COMMA##") :gsub("\\\"","##QUOTE##")
 		line = line:gsub('%s*//.-$',"")
 		line = line:gsub('%s*%-%-.-$',"")
-		
+
 		words={split(",",line)}
 
 		title = tremove(words,1)
@@ -474,7 +475,7 @@ function Parser:ParseIncludes(text)
 
 		inclusion = ZGV.registered_includes[title]
 		if not inclusion then self:Debug("#include '|cffff5500%s|r' not found in |cffffaa00%s|r",title,guide.title) end
-			
+
 		return inclusion and inclusion:GetParsed(params) or ""
 	end
 
@@ -502,7 +503,7 @@ function Parser:ParseEntry(guide,fully_parse,lastparsed)
 	text = text .. "\n"
 
 	guide.parsing_fully = fully_parse
-	
+
 	-------------------
 	-- LOCAL VARIABLES
 	-------------------
@@ -529,14 +530,14 @@ function Parser:ParseEntry(guide,fully_parse,lastparsed)
 		for i=1,#last5lines do chunk=chunk.."\n"..last5lines[i] end
 		return nil,msg,linecount,guide and guide.steps and #guide.steps or 0,chunk
 	end
-	
+
 	-------------------
 	-- TIME TO DO WORK
-	-------------------	
+	-------------------
 
 	-- clear some fields before reparsing
 	guide.description=nil
-	
+
 	-- Pull out the includes since we are parsing fully
 	if guide.parsing_fully  then
 		guide.steps = guide.steps or {}
@@ -552,16 +553,16 @@ function Parser:ParseEntry(guide,fully_parse,lastparsed)
 		local start,endd,line=strfind(text,"%s*(.-)%s*\n",index)
 		if not endd then break end
 		index = endd + 1		-- next start of line will be after this line.
-		
+
 		linecount=linecount+1
 		if linecount>100000 then
 			-- Something went wrong
 			return nil,linecount,"More than 100000 lines!?"
 		end
-		
+
 		lastparsed.linenum=linecount
 		lastparsed.linedata=line
-	
+
 		-- remove comments of the form // or --
 		line = line:gsub("%s*%-%-.*","",1) :gsub("%s*//.*","",1)
 
@@ -580,10 +581,10 @@ function Parser:ParseEntry(guide,fully_parse,lastparsed)
 		-- cloak escaped pipes Then add a pipe for parsing
 		line = line:gsub("\\|","%%PIPE%%")
 		line = line .. "|"
-		
+
 	-- Process the line!
 		-- it's supposedly left- and right-trimmed by the find above..
-		for chunk in line:gmatch("%s*(.-)%s*|+") do if #chunk>0 then 
+		for chunk in line:gmatch("%s*(.-)%s*|+") do if #chunk>0 then
 
 			-- un-cloak escaped pipes
 			chunk = chunk:gsub("%%PIPE%%","|")
@@ -591,13 +592,13 @@ function Parser:ParseEntry(guide,fully_parse,lastparsed)
 			-- we have a trimmed chunk here
 			-- spacify leading quotes only 1 space after a '
 			chunk = chunk:gsub("^'%s*","' ")
-			
+
 			-- Get command and paramas n stuff
 			local cmd,params = chunk:match("^([^%s]*)%s*(.-)$")
 			params=params or ""
 
 			if do_debug then self:Debug(": %s",chunk) end
-			
+
 			--[[
 			-- Eh no leechsteps for now
 			if cmd=="leechsteps" then
@@ -616,7 +617,7 @@ function Parser:ParseEntry(guide,fully_parse,lastparsed)
 					if perror then return parseerror(perror) end		-- Handler gave us an error. abort abort
 				end
 			end
-			
+
 			-- new step line. Make a step then bail
 			if cmd=="step" and (not step or #step.goals>0) then	-- If the previous step doesn't have goals then no reason to make another
 				if not guide.parsing_fully then
@@ -630,9 +631,9 @@ function Parser:ParseEntry(guide,fully_parse,lastparsed)
 
 				break -- We are done with this line. No reason to continue-- TODO this okay?
 			end
-			
+
 		-- Inside a step. Handle the step and the goals
-			if step then	
+			if step then
 				if do_debug then self:Debug("In Step cmd:== %s: [%s]",cmd,params) end
 
 				local cmdHandler = self:GetStepCommandHandler(cmd)
@@ -644,16 +645,17 @@ function Parser:ParseEntry(guide,fully_parse,lastparsed)
 				else
 					-- Wasn't a custom step command. Time to make a goal!
 					goal = goal or ZGV.GoalProto:New()
-					
+
 					if cmd == "'" then cmd = "text" end		-- Change the command so it can be found in the goaltypes
 
 					cmdHandler = self:GetGoalCommandHandler(cmd)
 					if cmdHandler then
 						if goal.action == "text"	-- If we have the chance to overwrite the 'text' action then do it because there was something more important after it.
 						and cmd~= "tip"						-- tip shouldn't overwrite a text action because it won't display the text then.
-						then 
-							goal.action = nil 
-						end		
+						and cmd~= "only"					-- Don't overwrite the goal's action to |only
+						then
+							goal.action = nil
+						end
 						goal.action = goal.action or cmd	-- prefer the first cmd for a goal
 
 						if do_debug then self:Debug("Goal Handler found") end
@@ -665,7 +667,7 @@ function Parser:ParseEntry(guide,fully_parse,lastparsed)
 
 						perror = cmdHandler(goal,params,step,funclocdata)
 						if perror then return parseerror(perror) end	-- Shouldn't add the goal to step... But going to error anyhow.
-						
+
 						-- Used for finding map when only x,y is in guide
 						step.map = goal.map or step.map
 						prevmap = step.map or prevmap
@@ -674,7 +676,7 @@ function Parser:ParseEntry(guide,fully_parse,lastparsed)
 						print(("Command : '%s' not supported"):format(cmd))
 						-- ERROR?
 					end
-					
+
 
 				end
 			end
@@ -683,11 +685,11 @@ function Parser:ParseEntry(guide,fully_parse,lastparsed)
 					return nil,"More than 20 chunks in line",linecount,line
 				end
 		end end
-		
+
 		-- goal and it has stuff in it
 		if goal and goal.action then
 			if not step then return nil,"What? Unknown data before first 'step' tag, or what?",linecount,line end  -- shouldn't happen anymore!
-			
+
 			goal.indent = #indent
 
 			step:AddGoal(goal)
