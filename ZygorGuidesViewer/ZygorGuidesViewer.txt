@@ -1,6 +1,6 @@
-## Title: |cff8800Zygor |cddddddGuides|r |c888888v1.0.8863
+## Title: |cff8800Zygor |cddddddGuides|r |c888888v1.0.8968
 ## Author: Erich Weiss for Zygor Guides
-## Version: 1.0.8863
+## Version: 1.0.8968
 ## APIVersion: 100003
 ## SavedVariables: ZygorGuidesViewerSettings
 
@@ -43,6 +43,7 @@ Travel/Data.lua
 Data/NpcData.lua
 Data/QuestData.lua
 Data/QuestStepData.lua
+Data/QuestPOIData.lua
 Data/ObjectData.lua
 Data/ItemData.lua
 Data/MapData.lua

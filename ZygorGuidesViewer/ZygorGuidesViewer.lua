@@ -252,6 +252,8 @@ end
 function ZGV:Startup()
 	local self = ZGV
 
+	ZGV:GetVersion()  -- bad place to get .version, maybe
+
 	-- startup 'modules'
 	for i,startup in ipairs(self.startups) do
 		startup(self)
@@ -270,3 +272,10 @@ function ZGV:Startup()
 
 end
 
+function ZGV:GetVersion()
+	local dir,title = ZGV.Utils.GetMyAddonInfo()
+	if title then
+		ZGV.version = title:match("v(%d+%.%d+%..*)")
+		return ZGV.version
+	end
+end

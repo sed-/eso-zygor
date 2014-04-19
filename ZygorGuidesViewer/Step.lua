@@ -231,16 +231,16 @@ function Step:GetNextStep(nextlabel)
 		local stepobj = self.parentGuide:GetStep(step)
 	-- step is not validated, validate now
 		if not stepobj and nextlabel~="+1" then
-			ZGV:Print("|cffff4400ERROR!|r Cannot jump from step |cffffff88"..self.num.."|r to label '|cffffff88"..tostring(nextlabel).."|r'. This is guide |cffffff88"..self.parentGuide.title_short.."|r. Please report this, providing a generated Bug Report.")
-			ZGV:Print("Meanwhile, try to navigate to the next step manually, by holding |cff55ff00CTRL+ALT|r and skipping the step.")
+			ZGV:Print("|cff4400ERROR!|r Cannot jump from step |cffff88"..self.num.."|r to label '|cffff88"..tostring(nextlabel).."|r'. This is guide |cffff88"..self.parentGuide.title_short.."|r. Please report this.") --, providing a generated Bug Report.")
+			ZGV:Print("Meanwhile, try to navigate to the next step manually, by holding |c55ff00CTRL+ALT|r and skipping the step.")
 			return self
 		end
 		return stepobj
 	else
 		local gu = ZGV:GetGuideByTitle(guide)
 		if not gu then
-			ZGV:Print("|cffff4400ERROR!|r Cannot jump from step |cffffff88"..self.num.."|r to guide '|cffffff88"..tostring(guide).."|r'. This is guide |cffffff88"..self.parentGuide.title_short.."|r. Please report this, providing a generated Bug Report.")
-			ZGV:Print("Meanwhile, try to navigate to the next step manually, by holding |cff55ff00CTRL+ALT|r and skipping the step.")
+			ZGV:Print("|cff4400ERROR!|r Cannot jump from step |cffff88"..self.num.."|r to guide '|cffff88"..tostring(guide).."|r'. This is guide |cffff88"..self.parentGuide.title_short.."|r. Please report this.") --, providing a generated Bug Report.")
+			ZGV:Print("Meanwhile, try to open another guide by clicking the dropdown arrow on the addon.")
 			return self
 		end
 

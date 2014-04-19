@@ -2,12 +2,8 @@ local ZGV = ZygorGuidesViewer
 if not ZGV then return end
 if ZGV.Utils.GetFaction() ~= "EP" then return end
 
--- 3 diget zone id then 4 diget uniqueid
--- ^([A-Z].*)=([0-9][0-9]*)		->	\2\1=\2
--- Sort
--- \n[0-9]*		->		\n
-
 ZGV._QuestData = [[
+
 Legacy of the Ancestors=0090001
 Exquisite Tears=0090002
 Rudrasa's Invitation=0090003
@@ -147,6 +143,7 @@ Into the Mouth of Madness=0100054
 Onward to Shadowfen=0100055
 The Weight of Three Crowns=0100056
 The Dungeon Delvers=0100057
+Search and Rescue=0100058
 
 Shadows Over Windhelm=0150001
 Party Planning=0150002
@@ -190,6 +187,11 @@ Beneath the Stone=0150039
 Labor Dispute=0150040
 Alchemical Analysis=0150041
 Do Kill the Messenger=0150042
+For Kyne's Honor=0150043
+One Victor, One King=0150044
+A Brother's Revenge=0150045
+Blindsided=0150046
+Sleep for the Dead=0150047
 
 Storming the Hall=0160001
 The Troubleshooter=0160002
@@ -200,7 +202,6 @@ To Vernim Woods=0160006
 Raise the Colors=0160007
 Scouting the Mine=0160008
 Yngrel the Bloody=0160009
-Breaking the Coven=1980001
 Dangerous Union=0160010
 Gift of the Worm=0160011
 Through the Shroud=0160012
@@ -221,7 +222,6 @@ Shroud Hearth Barrow=0160026
 Problems Into Profit=0160027
 Tomb Beneath the Mountain=0160028
 Where the Frostheart Grows=0160029
-Research Subject=2090001
 To Taarengrav=0160030
 The Shackled Guardian=0160031
 The Farmer's Champion=0160032
@@ -295,7 +295,7 @@ The Fangs of Sithis=0190038
 Pull the Last Fang=0190039
 The Tree-Minder's Fate=0190184
 Cold-Blooded Revenge=0190541
-Three Tender Souls=190542
+Three Tender Souls=0190542
 Unwelcome Guests=0190543
 Getting to the Truth=0190544
 Scouring the Mire=0190545
@@ -311,9 +311,15 @@ The Dream of the Hist=0190554
 The Swamp's Embrace=0190555
 Vigil's End=0190556
 
+Foreign Vintage=0240001
+
 Welcome to Cyrodiil=0370001
 
 Chasing the Magistrix=0400001
+
+Captured Time=0700001
+
+The Ones Left Behind=0710001
 
 Dissonant Commands=0810001
 
@@ -322,9 +328,13 @@ The Soldier's Alibi=0820001
 Motive for Heresy=0840001
 The Judgment of Veloth=0840002
 
+Carving Cuttle=0860001
+
 The Light Fantastic=0870001
 
 Mystery Metal=0920001
+
+Kireth's Amazing Plan=0970001
 
 A Beginning at Bleakrock=1090001
 Tracking the Game=1090002
@@ -339,8 +349,6 @@ Lost on Bleakrock=1090010
 The Harborage=1090011
 Sparking the Flame=1090012
 Escape from Bleakrock=1090013
-
-Kireth's Amazing Plan=0970001
 
 If By Sea=1100001
 Finding the Family=1100002
@@ -386,7 +394,11 @@ Evening the Odds=1820002
 Unearthed=1970001
 Move out Miners=1970002
 
+Breaking the Coven=1980001
+
 A Fair Warning=2040001
+
+Research Subject=2090001
 
 Names of the Fallen=2100001
 
@@ -395,11 +407,4 @@ News of Fallen Kin=2160001
 The Anguish Gem=2170001
 
 To Honrich Tower=2230001
-
-Kings of the Grotto=1160001
-
-Foreign Vintage=0240001
-
-Captured Time=0700001
-The Ones Left Behind=0710001
 ]]

@@ -83,7 +83,8 @@ goto 33.93,44.78
 step
 goto 25.46,39.66
 .click Mine Door##1090044
-.' Get Inside the Mine |goto hozzinsfolley_base 71.97,71.95 |noway |c |q Hozzin's Folly##1090009/9
+.' Get Inside the Mine |q Hozzin's Folly##1090009/3
+.'You need to have your disguise on.
 step
 goto hozzinsfolley_base 41.53,12.28
 .' Follow the path |tip Avoid Frostedge Sentries.
@@ -470,7 +471,8 @@ goto 50.33,93.69
 step
 goto bleakrock_base 46.85,88.75
 .' Talk to Captain Rana to leave the Isle
-.talk Captain Rana##1090002 |q Escape from Bleakrock##1090013/14/Talk to Captain Rana##1 |next Ebonheart Pact Leveling Guides\\Stonefalls (6-16)
+.talk Captain Rana##1090002 |q Escape from Bleakrock##1090013/14/Talk to Captain Rana##1
+|next Ebonheart Pact Leveling Guides\\Stonefalls (6-16) 
 ]])
 ZGV:RegisterGuide("Ebonheart Pact Leveling Guides\\Stonefalls (6-16)",[[
 startlevel 6
@@ -676,7 +678,7 @@ goto 26.34,75.93
 step
 goto 28.59,76.18
 .click Fort Zeren##1100005
-.' Leave the Fort Zeren Keep |goto 28.90,76.21 < 1 |c |noway |q Zeren in Peril##1100007/2
+.' Leave the Fort Zeren Keep |goto 28.90,76.21 < 1 |c |noway |q Zeren in Peril##1100007/2 |future
 step
 goto 39.24,79.79
 .click Reinforcement Portal##1100016
@@ -734,9 +736,6 @@ goto davonswatch_base 74.55,74.76
 .talk The Prophet##3360001 |q The Harborage##1090011/1/1/Talk to The Prophet##1 |tip He will appear when you enter the city, some searching may be required
 step
 goto 66.41,66.21
-.' Enter Davon's Watch |q Warning Davon's Watch##1100008/2/1/Enter Davon's Watch##1
-step
-'ADD GOTO
 .talk Holgunn##90003
 ..turnin Warning Davon's Watch##1100008
 ...accept Legacy of the Ancestors##90001
@@ -763,7 +762,7 @@ goto 59.68,50.61
 ..accept Exquisite Tears##90002
 step
 goto 73.64,44.88
-.' Follow the path down |goto 73.64,44.88 < 10 |c |noway |q Exquisite Tears##90002/1
+.' Follow the path down |goto 73.64,44.88 < 10 |c |noway |q Exquisite Tears##90002/5 |future
 step
 goto 79.37,46.24
 .talk Niima##90019
@@ -798,7 +797,7 @@ goto 59.63,50.75
 step
 goto 48.91,49.61
 .click Mages Guild##90007
-.' Enter the Mages Guild |goto 48.91,49.39 < 1 |c |noway |q The Wizard's Tome##90008/1
+.' Enter the Mages Guild |goto 48.91,49.39 < 1 |c |noway |q The Wizard's Tome##90008/1 |future
 step
 goto 48.56,45.03
 .talk Rudrasa##90041
@@ -875,7 +874,7 @@ goto 59.70,33.37
 step
 goto 53.83,38.44
 .click House Indoril Crypt##90013
-.' Enter the Tomb |q Legacy of the Ancestors##90001/4/1/Enter the Tomb##1
+.' Enter the Tomb |goto davonswatchcrypt_base 13.19,18.02 < 1 |noway |c |q Legacy of the Ancestors##90001/5 |future
 step
 goto davonswatchcrypt_base 73.45,58.93
 .' Follow the path to the bottom |goto davonswatchcrypt_base 73.45,58.93 < 5 |c |noway |q Legacy of the Ancestors##90001/5
@@ -891,7 +890,7 @@ goto 13.13,17.77
 step
 goto davonswatch_base 59.38,33.67
 .click Indoril Manor##90012
-.' Enter Indoril Manor |goto stonefalls_base 59.78,33.35 < 1 |c |noway |q Legacy of the Ancestors##90001
+.' Enter Indoril Manor |goto davonswatch_base 59.78,33.35 < 1 |c |noway |q Legacy of the Ancestors##90001
 step
 goto davonswatch_base 60.41,32.74
 .talk Tanval Indoril##90053
@@ -954,7 +953,7 @@ step
 goto visionofthecompanions_base 35.29,59.85
 .' Listen to The Prophet
 .' Learn about the Five Companions
-.talk The Prophet##3360001 |q The Harborage##1090011/7/1/Learn about the Five Companions##1
+.talk The Prophet##3360001 |q The Harborage##1090011/8/1/Learn about the Five Companions##1
 step
 goto Vision of the Companions 48.23,54.53
 'Witness the Five Companions in Action |q The Harborage##1090011/9/1/Witness the Five Companions in Action##1
@@ -982,7 +981,7 @@ goto 76.66,33.63
 step
 goto davonswatch_base 24.52,42.01
 .click Davon's Watch##90009
-.' Enter Davon's Watch |goto stonefalls_base 25.56,40.31 < 1 |c |noway |q Delaying the Daggers##90009
+.' Enter Davon's Watch |goto davonswatch_base 25.56,40.31 < 1 |c |noway |q Delaying the Daggers##90009
 step
 goto davonswatch_base 26.02,39.40
 .talk Holgunn##90003
@@ -991,7 +990,7 @@ goto davonswatch_base 26.02,39.40
 step
 goto 53.83,38.44
 .click House Indoril Crypt##90013
-.' Enter the House Inforil Crypt |q City Under Siege##90010/1/1/Enter the Tomb##1
+.' Enter the House Inforil Crypt |goto davonswatchcrypt_base 13.19,18.02 |noway |c |q City Under Siege##90010/4
 step
 goto davonswatchcrypt_base 72.79,70.29
 .' Find Tanval Indoril |q City Under Siege##90010/2/1/Find Tanval Indoril##1
@@ -1001,7 +1000,7 @@ goto davonswatchcrypt_base 71.82,70.60
 step
 goto 76.52,73.94
 .click Portal##1100016
-.' Leave the House Inforil Crypt |goto stonefalls_base 17.45,29.86 < 1 |c |noway |q City Under Siege##90010/4
+.' Leave the House Inforil Crypt |goto davonswatch_base 17.45,29.86 < 1 |c |noway |q City Under Siege##90010/4
 step
 goto davonswatch_base 14.09,35.63
 .' Investigate the Covenant Camp |q City Under Siege##90010/4/1/Investigate Covenant Camp##1
@@ -1025,14 +1024,14 @@ step
 goto davonswatch_base 54.76,79.47
 'Follow the path to the South West |goto davonswatch_base 54.76,79.47 < 10 |noway |c |q Through the Aftermath##90012/1 |future
 step
-goto stonefalls_base 80.96,41.52
+goto stonefalls_base 84.93,40.63
 .talk Sergeant Rhorlak##90063
 ..accept Through the Aftermath##90012
 step
-goto 80.84,41.52
+goto stonefalls_base 84.71,40.57
 .talk Furon Rii##90068 |q Through the Aftermath##90012/1/1/Talk to Furon Rii##1
 step
-goto 80.77,42.63
+goto 84.45,41.89
 .kill Spectral Warrior##90069
 .' Use the Pendant on a Weakened Spirit |q Through the Aftermath##90012/2/1/Use the Pendant on a Weakened Spirit##1
 step
@@ -1042,14 +1041,14 @@ step
 goto 84.86,40.75
 .talk Reesa##90065 |q Through the Aftermath##90012/4/1/Talk to Reesa##1
 step
-goto 80.77,42.63
+goto 84.45,41.89
 .kill Spectral Warrior##90069
 .' Use the Talisman on a Weakened Spirit |q Through the Aftermath##90012/5/1/Use the Talisman on a Weakened Spirit##1
 step
 goto 84.86,40.75
 .talk Reesa##90065 |q Through the Aftermath##90012/6/1/Talk to Reesa##1
 step
-goto 80.98,41.58
+goto 84.86,40.66
 .talk Sergeant Rhorlak##90063 |q Through the Aftermath##90012/7/1/Talk to Sergeant Rhorlak##1
 .' Choose Reesa's Plan |q Through the Aftermath##90012/8/1/Choose Reesa's Plan##2
 step
@@ -1064,20 +1063,20 @@ step
 .' Kill Spectral Warriors near glowing Argonian Spirits
 |confirm
 step
-goto stonefalls_base 85.90,42.66
+goto stonefalls_base 81.94,40.73
 .click Unearthed Burial Mound##90018
-.' Collect Captain Rysari's Relic |q Through the Aftermath##90012/10/1/Collect Captain Rysari's Relic##3
+.' Collect General Radathren's Relic |q Through the Aftermath##90012/10/1/Collect General Radrathren's Relic##1
 step
 goto stonefalls_base 83.63,43.19
 .click Unearthed Burial Mound##90018
 .' Collect Captain Andrana's Relic |q Through the Aftermath##90012/10/1/Collect Captain Andrana's Relic##2
 step
-goto stonefalls_base 81.94,40.73
+goto stonefalls_base 85.90,42.66
 .click Unearthed Burial Mound##90018
-.' Collect General Radathren's Relic |q Through the Aftermath##90012/10/1/Collect General Radrathren's Relic##1
+.' Collect Captain Rysari's Relic |q Through the Aftermath##90012/10/1/Collect Captain Rysari's Relic##3
 step
-goto stonefalls_base 80.82,42.06
-.' Follow the path up |goto stonefalls_base 80.82,42.06 < 10 |c |noway |q Through the Aftermath##90012/11
+goto stonefalls_base 82.66,42.86
+.' Follow the path up |goto stonefalls_base 82.66,42.86 < 10 |c |noway |q Through the Aftermath##90012/11
 step
 goto stonefalls_base 81.35,43.42
 .click Brazier##90019
@@ -1120,7 +1119,7 @@ goto stonefalls_base 84.52,45.17
 ..turnin Giving for the Greater Good##90014
 step
 goto 88.92,42.85
-.' Follow the path |goto 88.92,42.85 < 10 |c |noway |q Anchors from the Harbour##90005/1
+.' Follow the path |goto 88.92,42.85 < 10 |c |noway |q Anchors from the Harbour##90005/3 |future
 step
 goto stonefalls_base 89.90,43.31
 .talk Merric at-Aswala##90084
@@ -1159,13 +1158,13 @@ step
 goto stonefalls_base 81.22,48.20
 .talk Soft-Scale##90095 |q Proving Trust##90016/2/Talk to Soft-Scale##1
 step
-goto 77.99,50.72
-.talk Peasant##90091
-.' Heal Peasants around this area |q Proving Trust##90016/3/1/Heal Peasants##1
-step
 goto stonefalls_base 80.27,50.90
 .talk Drelden Orn##90093
 ..accept Percussive Ranching##90017
+step
+goto 77.99,50.72
+.talk Peasant##90091
+.' Heal Peasants around this area |q Proving Trust##90016/3/1/Heal Peasants##1
 step
 goto stonefalls_base 80.95,51.70
 .talk Spellwright Girvas##90098 |q Proving Trust##90016/4/Talk to Spellwright Girvas##1
@@ -1178,7 +1177,7 @@ goto 73.59,53.07
 .' Use Drelden's Whistle on their corpses
 .' Use Drelden's Whistle on Kwama |q Percussive Ranching##90017/1/1/Use Drelden's Whistle on Kwama##1
 step
-goto 71.70,52.82
+goto stonefalls_base 74.40,53.31
 .talk Morvani##90100
 .' Find Morvani |q Proving Trust##90016/6/Find Morvani##1
 step
@@ -1213,7 +1212,7 @@ goto 71.40,56.07
 .' Follow the path |goto 71.40,56.07 < 10 |c |noway |q Mystery of Othrenis##90018
 step
 goto stonefalls_base 71.98,59.00
-'Discover the Othrenis Wayshrine |goto stonefalls_base 71.98,59.00 < 10 |noway |c |q Mystery of Othrenis##90018
+.wayshrine Othrenis
 step
 goto stonefalls_base 74.31,57.88
 .talk Onuja##90104
@@ -1263,7 +1262,7 @@ step
 goto stonefalls_base 75.45,48.52
 .talk Hedyn##90108 |q Rending Flames##90020/3/Talk to the Acolyte##1
 step
-goto 71.61,47.97
+goto stonefalls_base 74.39,47.86
 .click South Portal##90030
 .' Shut the Southern Daedric Portal |q Rending Flames##90020/4/Shut Southern Daedric Portal##1
 step
@@ -1439,7 +1438,7 @@ goto 72.97,40.82
 .click Portal##1100016
 .' Enter Ash Mountain |q The Death of Balreth##90025/3/1/Enter Ash Mountain##1
 step
-goto ashMountain_base 57.25,57.12
+goto ashmountain_base 57.25,57.12
 .kill Balreth##90061 |q The Death of Balreth##90025/4/Defeat Balreth##1 |tip Move away from Balreth when he starts casting his ability.  If you need mana, stay close to Garyn. Balreth will periodically run to a pool of lava and heal himself.  Use the quest item to stun him as often as possible to make him easier to kill.
 step
 goto 60.55,61.25
@@ -1482,7 +1481,7 @@ goto 55.79,18.29
 step
 goto 10.50,68.70
 .click Stonefalls##1100019
-.' Leave the Inner Sea Armature |goto stonefalls_base 71.59,39.70 < 1 |c |noway |q Long Lost Lore##90007/4
+.' Leave the Inner Sea Armature |goto stonefalls_base 71.59,39.70 < 1 |c |noway |q Long Lost Lore##90007/3
 step
 goto 65.58,37.46
 .talk Stands-In-Still-Water##90121
@@ -1490,7 +1489,7 @@ goto 65.58,37.46
 step
 'Open your map:
 .' Click the Davon's Watch Wayshrine
-.' Teleport to the Davon's Watch Wayshrine |goto davonswatch_base 57.03,78.00 < 5 |c |noway |q Long Lost Lore##90007/4
+.' Teleport to the Davon's Watch Wayshrine |goto davonswatch_base 57.03,78.00 < 5 |c |noway |q Long Lost Lore##90007/3
 step
 goto davonswatch_base 48.91,49.61
 .click Mages Guild##90007
@@ -1536,7 +1535,7 @@ goto cheesemongershollow_base 3328.20,2347.18
 .talk Haskill##480001 |q Long Lost Lore##90007/14/2/Talk to Haskill##1
 step
 goto 3329.09,2354.33
-.' Follow the path |goto 3329.09,2354.33 < 10 |c |noway |q Long Lost Lore##90007/15
+.' Follow the path |goto 3329.09,2354.33 < 10 |c |noway |q Long Lost Lore##90007/20 |future
 step
 goto 3342.54,2352.91
 .' Follow the path |goto 3342.54,2352.91 < 10 |c |noway |q Long Lost Lore##90007/15
@@ -1597,10 +1596,10 @@ goto 66.38,56.55
 ..turnin Desperate Souls##90027
 step
 goto 67.18,56.38
-.' Follow the path |goto 67.18,56.38 < 10 |c |noway |q Anchors from the Harbour##90005/5
+.' Follow the path |goto 67.18,56.38 < 10 |c |noway |q Anchors from the Harbour##90005/8 |future
 step
 goto 66.34,58.93
-.' Follow the path |goto 66.34,58.93 < 10 |c |noway |q Anchors from the Harbour##90005/5
+.' Follow the path |goto 66.34,58.93 < 10 |c |noway |q Anchors from the Harbour##90005/8 |future
 step
 goto 63.02,56.53
 .' Find Merric and Aelif |q Anchors from the Harbour##90005/5/Find Merric and Aelif##1
@@ -1660,14 +1659,14 @@ step
 'Convince the Nords to unite with the Ebonheart |q Restoring Order##90028/1/1/Convince the Nords##2
 step
 goto 51.66,69.25
-.' Follow the path up |goto 51.66,69.25 < 10 |c |noway |q Taking the Tower##90032/1 |future
+.' Follow the path up |goto 51.66,69.25 < 10 |c |noway |q Anchors from the Harbour##90005/9 |future
 step
 goto ebonheart_base 54.25,61.39
 .talk Naril Heleran##90004
 ..accept Taking the Tower##90032
 step
 goto ebonheart_base 46.42,63.29
-'Discover the Ebonheart Wayshrine |goto ebonheart_base 46.42,63.29 < 10 |noway |c |q Taking the Tower##90032/1
+.wayshrine Ebonheart
 step
 goto 61.88,59.92
 .click Ebony Flask##90055
@@ -1717,7 +1716,7 @@ goto ebonheart_base 54.22,61.34
 step
 goto ebonheart_base 51.88,56.64
 .click Hlaalu House Entrance##90061
-.' Enter the Hlaalu House |goto 51.87,56.49 < 1 |c |noway |q Restoring Order##90028/1
+.' Enter the Hlaalu House |goto 51.87,56.49 < 1 |c |noway |q Restoring Order##90028/2
 step
 goto ebonheart_base 51.86,52.63
 .talk Drathus Othral##90151 |q Restoring Order##90028/1/2/Talk to Drathus Othral##1
@@ -1756,7 +1755,7 @@ goto ebonheart_base 55.88,29.00
 step
 goto ebonheart_base 52.37,39.38
 .click Zasha-Ja's House##90064
-.' Enter Zasha-Ja's House |goto 52.29,39.87 < 1 |c |noway |q The Sapling##90033/4
+.' Enter Zasha-Ja's House |goto 52.29,39.87 < 1 |c |noway |q The Sapling##90033
 step
 goto 52.28,41.57
 .talk Zasha-Ja##90160 |q The Sapling##90033/4/Talk to Zasha-Ja##1
@@ -1834,14 +1833,14 @@ goto 64.61,73.44
 step
 goto stonefalls_base 60.13,54.54
 .click Pile of Offal##90066
-.' Burn the Pile of Offal |q Night of the Soul##90029/3/2/Burn the Pile of Offal##1
+.' Burn the Pile of Offal |q Night of the Soul##90029/6/2/Burn the Pile of Offal##1
 step
 goto 60.09,54.22
 .click Shrine of Almalexia##90071
-.' Pray at Shrine to Almalexia |q Night of the Soul##90029/4/2/Pray at Shrine to Almalexia##1
+.' Pray at Shrine to Almalexia |q Night of the Soul##90029/7/2/Pray at Shrine to Almalexia##1
 step
 goto stonefalls_base 60.02,54.25
-.talk Servant of Almalexia##90167 |q Night of the Soul##90029/5/2/Talk to Servant of Almalexia##1
+.talk Servant of Almalexia##90167 |q Night of the Soul##90029/8/2/Talk to Servant of Almalexia##1
 step
 goto 62.27,55.11
 .kill Varnag##90168
@@ -1849,18 +1848,18 @@ goto 62.27,55.11
 step
 goto 50.56,53.82
 .click Pile of Offal##90066
-.' Burn the Pile of Offal |q Night of the Soul##90029/5/4
+.' Burn the Pile of Offal |q Night of the Soul##90029/10
 step
 goto stonefalls_base 50.45,54.08
 .click Shrine of Vivec##90073
-.' Pray at Shrine to Vivec |q Night of the Soul##90029/6/4/Pray at Shrine to Vivec##1
+.' Pray at Shrine to Vivec |q Night of the Soul##90029/11/4/Pray at Shrine to Vivec##1
 step
 goto stonefalls_base 50.45,54.08
 .talk Servant of Vivec##90169
-.' Seek Vivec's Blessing |q Night of the Soul##90029/7/1/Seek Vivec's Blessing##3
+.' Seek Vivec's Blessing |q Night of the Soul##90029/12/1/Seek Vivec's Blessing##3
 step
 goto stonefalls_base 46.84,56.12
-'Discover Vivec's Antlers Wayshrine |goto stonefalls_base 46.84,56.12 < 10 |noway |c |q Night of the Soul##90029
+.wayshrine Vivec's Antlers
 step
 goto stonefalls_base 46.79,56.11
 .click Vivec's Antlers Wayshrine##90080
@@ -1882,22 +1881,22 @@ goto ebonheart_base 51.90,56.61
 .click Hlaalu House Entrance##90061
 .' Enter the Hlaalu House |goto 51.87,56.49 < 1 |c |noway |q Restoring Order##90028/3
 step
-goto 51.25,39.61
+goto ebonheart_base 51.86,52.66
 .talk Drathus Othral##90151 |q Restoring Order##90028/3/1/Talk to Drathus Othral##1
 step
 goto ebonheart_base 51.85,56.38
 .click Ebonheart##90057
 .' Leave the Hlaalu House |goto 51.91,56.81 < 1 |c |noway |q Restoring Order##90028/4
 step
-goto 45.87,54.11
+goto ebonheart_base 47.47,64.06
 .' Go to Rhavil's House |q Restoring Order##90028/4/1/Go to Rhavil's House##1
 step
-.' Follow Rhavil Urano from a Distance |q Restoring Order##90028/5/1/Follow Rhavil Urano from a Distance##1   |tip Keep him in your sight without him seeing you.
+.' Follow Rhavil Urano from a Distance |q Restoring Order##90028/5/1/Follow Rhavil Urano from a Distance##1 |tip Keep him in your sight without him seeing you.
 step
-goto 35.16,29.53
+goto 36.61,47.20
 .' Wait for Rhavil to Leave |q Restoring Order##90028/6/1/Wait for Rhavil to Leave##1
 step
-goto 35.15,29.53
+goto 39.01,44.76
 .click Supply Shack##90076
 .' Investigate the Supply Shack |q Restoring Order##90028/7/1/Investigate the Shack##1
 step
@@ -1913,7 +1912,7 @@ goto 43.36,65.51
 .click Rhavil Urano's House##90074
 .' Enter Rhavil Urano's House |goto 43.18,66.01 < 1 |c |noway |q Restoring Order##90028/10
 step
-goto 38.60,57.20
+goto 41.89,66.67
 .click Chest of Drawers##90078
 .kill Rhavil Urano##90172
 .' Search Rhavil Urano's House |q Restoring Order##90028/10/1/Search Rhavil Urano's House##1
@@ -1965,7 +1964,7 @@ goto 41.45,43.82
 step
 goto 42.84,44.28
 .click Hold##90081
-.' Enter the Hold |goto stonefalls_base 42.95,44.30 < 1 |noway |c |q The Coral Heart##90035/4
+.' Enter the Hold |goto stonefalls_base 42.93,44.30 < 1 |noway |c |q The Coral Heart##90035/4
 step
 goto stonefalls_base 43.17,44.33
 .talk Lieutenant Galyn##90188
@@ -1994,7 +1993,7 @@ goto 41.56,51.02
 .' Place Egg in Southwest Coral Cluster |q The Coral Heart##90035/6/1/Place Egg in Southwest Coral Cluster##2
 step
 goto 42.46,52.70
-.' Follow the path up |goto 42.46,52.70 < 10 |c |noway |q The Coral Heart##90035/6
+.' Follow the path up |goto 42.46,52.70 < 10 |c |noway |q The Coral Heart##90035
 step
 goto 43.58,54.76
 .click South Coral Cluster##90086
@@ -2002,7 +2001,7 @@ goto 43.58,54.76
 step
 goto 42.11,53.68
 .click Coral Heart Chamber##90087
-.' Enter the Coral Heart Chamber |q The Coral Heart##90035/7/1/Enter Coral Heart Chamber##1
+.' Enter the Coral Heart Chamber |goto coralheartchamber_base 79.76,51.14 |noway |c |q The Coral Heart##90035
 step
 goto coralheartchamber_base 42.15,34.88
 'Find the Coral Heart |q The Coral Heart##90035/8/1/Find the Coral Heart##1
@@ -2188,11 +2187,11 @@ goto 61.52,65.50
 step
 goto 61.60,65.71
 .click Fort Arand##90104
-.' Enter Fort Arand |goto 61.81,66.07 < 1 |c |noway |q Suspicious Silence##90040
+.' Enter Fort Arand |goto 61.81,66.07 < 1 |c |noway |q The Venom of Ahknara##90041 |future
 step
 goto 63.30,68.45
 .click Headquarters##90105
-.' Enter the Headquarters |goto 63.30,68.53 |c |noway |q Suspicious Silence##90040
+.' Enter the Headquarters |goto 63.30,68.53 |c |noway |q The Venom of Ahknara##90041/2 |future
 step
 goto 63.07,69.20
 .talk Captain Llaari##90262
@@ -2200,7 +2199,7 @@ goto 63.07,69.20
 ..accept The Venom of Ahknara##90041
 step
 goto 63.34,69.77
-.' Follow the path up |goto 63.34,69.77 < 5 |c |noway |q The Venom of Ahknara##90041/1
+.' Follow the path up |goto 63.34,69.77 < 5 |c |noway |q The Venom of Ahknara##90041/5 |future
 step
 goto 63.24,69.81
 .click Flasks of Blinding Light##90106
@@ -2222,7 +2221,7 @@ goto 65.05,66.27
 step
 goto 65.24,65.95
 .click Fort Arand Dungeon##90107
-.' Enter the Fort Arand Dungeon |goto fortarand_base 29.55,19.97 < 1 |c |noway |q The Venom of Ahknara##90041/5
+.' Enter the Fort Arand Dungeon |goto fortarand_base 29.55,19.97 < 1 |c |noway |q The Venom of Ahknara##90041/8 |future
 step
 goto fortarand_base 30.56,19.37
 .talk Strikes-from-Shadows##90261 |q The Venom of Ahknara##90041/5/1/Talk to Strikes-from-Shadows##1
@@ -2271,17 +2270,17 @@ goto 63.06,69.24
 step
 goto 63.30,68.52
 .click Fort Arand##90104
-.' Leave the Fort Arand Headquarters |goto 63.29,68.48 < 1 |c |noway |q Window on the Past##90042/1
+.' Leave the Fort Arand Headquarters |goto 63.29,68.48 < 1 |c |noway |q Window on the Past##90042/1 |future
 step
 goto 61.82,66.06
 .click Stonefalls##1100019
-.' Leave Fort Arand |goto 61.62,65.72 < 1 |c |noway |q Window on the Past##90042/1
+.' Leave Fort Arand |goto 61.62,65.72 < 1 |c |noway |q Window on the Past##90042/1 |future
 step
 goto 58.18,64.01
 .' Follow the path up |goto stonefalls_base 58.18,64.01 < 10 |c |noway |q Window on the Past##90042/1 |future
 step
 goto stonefalls_base 53.72,61.02
-'Discover the Brothers of Strife Wayshrine |goto stonefalls_base 53.72,61.02 < 10 |noway |c |q Window on the Past##90042/1 |future
+.wayshrine Brothers of Strife
 step
 goto 51.54,65.19
 .talk Sorcerer Vunal##90268
@@ -2338,19 +2337,19 @@ goto 54.33,67.07
 .talk Sorcerer Turoni##90277 |q The Brothers Will Rise##90043/2/1/Talk to Sorcerer Turoni##1
 step
 goto 56.09,67.74
-.' Follow the path up |goto 56.09,67.74 < 10 |c |noway |q The Brothers Will Rise##90043/3
+.' Follow the path up |goto 56.09,67.74 < 10 |c |noway |q The Brothers Will Rise##90043/6 |future
 step
 goto 55.45,69.31
 .talk Acolyte Vildras##90278
 ..' Tell him to summon Brimstone
 .kill Brimstone##90279
-.' Talk to Acolyte Vildras to Summon Brimstone |q The Brothers Will Rise##90043/3/2/Talk to Acolyte Vildras to Summon Brimstone##1
+.' Collect the Essence of Fire |q The Brothers Will Rise##90043/3/1/Collect the Essence of Fire##1
 step
 goto 55.42,64.88
 .talk Acolyte Vaama##90280
 ..' Tell her to summon Hatewarden
 .kill Hatewarden##90281
-.' Talk to Acolyte Vaama to Summon Hatewarden |q The Brothers Will Rise##90043/3/2/Talk to Acolyte Vaama to Summon Hatewarden##2
+.' Collect the Essence of Wrath |q The Brothers Will Rise##90043/3/1/Collect the Essence of Wrath##2
 step
 goto stonefalls_base 55.05,66.58
 'Go up the ramp here |goto stonefalls_base 55.05,66.58 < 10 |c |noway |q The Brothers Will Rise##90043/4
@@ -2377,10 +2376,10 @@ goto stonefalls_base 53.72,60.87
 .' Fast travel to the Vivec's Antlers Wayshrine |goto 46.64,55.97 < 10 |noway |c |q Recovering the Guar##90063/1
 step
 goto 37.73,54.47
-.' Follow the path |goto 37.73,54.47 < 10 |c |noway |q Recovering the Guar##90063/1
+.' Follow the path |goto 37.73,54.47 < 10 |c |noway |q Recovering the Guar##90063/1 |future
 step
 goto stonefalls_base 34.99,52.91
-'Discover the Sulfur Pools Wayshrine |goto stonefalls_base 34.99,52.91 < 10 |noway |c |q Recovering the Guar##90063/1 |future
+.wayshrine Sulfur Pools
 step
 goto 27.84,44.30
 .talk Cloya##90400
@@ -2472,7 +2471,7 @@ goto 33.29,38.01
 step
 goto 31.99,36.03
 .click Hrogar's Hold##90200
-.' Enter Hrogar's Hold |goto 31.76,36.28 < 1 |c |noway |q Protecting the Hall##90066/5
+.' Enter Hrogar's Hold |goto 31.76,36.28 < 1 |c |noway |q Protecting the Hall##90066/6 |future
 step
 goto 32.53,35.48
 .talk Hrogar##90438 |q Protecting the Hall##90066/5/1/Talk to Hrogar##1
@@ -2618,7 +2617,7 @@ goto 21.81,45.83
 .' Leave Adras Furari's House |goto 21.91,45.81 < 1 |c |noway |q The Curse of Heimlyn Keep##90056/6
 step
 goto 22.38,46.07
-.' Follow the path up |goto 22.38,46.07 < 10 |c |noway |q The Curse of Heimlyn Keep##90056/6
+.' Follow the path up |goto 22.38,46.07 < 10 |c |noway |q What Was Done Must Be Undone##90057 |future
 step
 goto 21.52,47.34
 .click Tower##90056
@@ -2647,7 +2646,7 @@ goto 23.02,47.72
 step
 goto 23.02,49.63
 .click Reliquary##90160
-.' Enter the Reliquary |goto heimlynkeepreliquary_base 31.98,10.56 < 1 |c |noway |q What Was Done Must Be Undone##90057/1
+.' Enter the Reliquary |goto heimlynkeepreliquary_base 31.98,10.56 < 1 |c |noway |q What Was Done Must Be Undone##90057
 step
 goto 32.10,58.32
 .talk Keeper Vildras##780001 |q What Was Done Must Be Undone##90057/1/1/Talk to the Reliquary Keeper##1
@@ -2703,7 +2702,7 @@ goto 23.05,49.39
 ..turnin What Was Done Must Be Undone##90057
 step
 goto 22.90,42.89
-.' Leave Heimlyn Keep |goto 22.90,42.89 < 10 |c |noway |q Hunting Invaders##90058/1
+.' Leave Heimlyn Keep |goto 22.90,42.89 < 10 |c |noway |q Hunting Invaders##90058/1 |future
 step
 goto 24.80,41.62
 .talk Chitakus##90392
@@ -2814,12 +2813,147 @@ goto 22.61,35.03
 .' Follow the path |goto 22.61,35.03 < 10 |c |noway
 step
 goto stonefalls_base 22.43,30.53
-'Discover the Fort Virak Wayshrine |goto stonefalls_base 22.43,30.53 < 10 |noway |c
+.wayshrine Fort Virak
+step
+goto 23.79,26.06
+.talk Sergeant Gjorring##90410
+..turnin To Fort Virak##90039
+..accept Breaking Fort Virak##1820001
+step
+goto 20.46,27.38
+.' Follow the path |goto 20.46,27.38 < 10 |c |noway |q Breaking Fort Virak##1820001/1
+step
+goto 20.30,28.04
+.talk Garyn Indoril##90055 |q Breaking Fort Virak##1820001/1/1/Talk to Garyn Indoril##1
+step
+goto stonefalls_base 22.51,24.52
+.' Kill Covenant enemies
+.' Kill Soldiers and Collect Evidence |q Breaking Fort Virak##1820001/2/1/Kill Soldiers and Collect Evidence##1
+step
+goto 20.29,27.99
+.talk Garyn Indoril##90055 |q Breaking Fort Virak##1820001/3/1/Talk to Garyn Indoril##1
+step
+goto 20.44,27.39
+.' Follow the path |goto 20.44,27.39 < 10 |c |noway |q Evening the Odds##1820002/2 |future
+step
+goto 17.83,26.90
+.click Fort Virak Ruin##90173
+.' Enter the Fort Virak Ruin |goto fortvirakruin_base 88.78,87.89 < 1 |c |noway |q Evening the Odds##1820002/2 |future
+step
+goto 63.54,80.88
+.talk Walks-in-Ash##90099 |q Breaking Fort Virak##1820001/5/1/Talk to Walks-in-Ash##1
+step
+goto 63.54,80.88
+.' Press _E_ to use the Transformation Potion
+.' Use a Transformation Potion |q Breaking Fort Virak##1820001/6/1/Use a Transformation Potion##1
+step
+goto 63.29,78.36
+.click Hole in the Wall##1820002
+.' Pass through the Hole in the Wall |q Breaking Fort Virak##1820001/7/1/Pass through the Wall##1
+step
+goto 64.37,41.29
+.' Sneak past the ghosts
+.' Follow the path |goto 64.37,41.29 < 10 |c |noway |q Breaking Fort Virak##1820001/8
+step
+goto 32.40,74.42
+.' Sneak past the ghosts
+.click Hole in the Wall##1820001
+.' Pass through the Hole in the Wall |q Breaking Fort Virak##1820001/8/1/Sneak through Ruined Corridors##1
+step
+goto 47.58,89.41
+.click Lever##460011
+.' Unlock the Door |q Breaking Fort Virak##1820001/8/1/Unlock the Door##1
+step
+goto 48.63,88.88
+.click Lever##460011
+.talk Walks-in-Ash##90099
+..turnin Breaking Fort Virak##1820001
+..accept Evening the Odds##1820002
+step
+goto 16.42,87.74
+.' Follow the path |goto 16.42,87.74 < 10 |c |noway |q Evening the Odds##1820002/2 |future
+step
+goto 16.02,69.26
+.click Fort Virak##1820003
+.' Leave the Fort Virak Ruin |goto stonefalls_base 16.86,26.10 < 1 |c |noway |q Evening the Odds##1820002/2 |future
+step
+goto 19.61,23.74
+.click South Gate Bar##90173
+.' Unbar the South Gate |q Evening the Odds##1820002/2/Unbar the South Gate##2
+step
+goto 18.23,22.52
+.' Follow the path up |goto 18.23,22.52 < 10 |c |noway |q Evening the Odds##1820002/2
+step
+goto 17.13,20.12
+.click North Gate Bar##90175
+.' Unbar the North Gate |q Evening the Odds##1820002/2/1/Unbar the North Gate##1
+step
+goto 19.98,21.10
+.click Fort Virak Tower##90177
+.' Enter the Fort Virak Tower |goto 20.03,21.01 < 1 |c |noway |q Evening the Odds##1820002/3
+step
+goto 20.04,20.89
+.talk Gugnar##90410
+.' Find General Serien |q Evening the Odds##1820002/3/1/Find General Serien##1
+step
+goto 20.04,20.73
+.click Candle##90178
+.' Collect a Candle |q Evening the Odds##1820002/4/2/Collect a Candle##1
+step
+goto 19.98,20.87
+.click Serien's Journals##90179
+.' Burn Serien's Journals |q Evening the Odds##1820002/5/2/Burn Serien's Journals##1
+step
+goto 20.04,21.00
+.click Fort Virak##1820003
+.' Leave the Fort Virak Tower |q Evening the Odds##1820002/5/1/Leave the Tower##1
+step
+goto 18.96,23.98
+.' Follow the path up |goto 18.96,23.98 < 10 |c |noway |q Evening the Odds##1820002
+step
+goto 17.98,24.82
+.talk Tanval Indoril##90053
+..turnin Evening the Odds##1820002
+..accept The General's Demise##90061
+step
+goto 17.57,24.82
+.' Wait for Indorils Dispel the Ward |q The General's Demise##90061/1/1/Wait for the Indorils to Dispel the Ward##1
+step
+goto 17.32,24.76
+.click Virak Keep##90180
+.' Enter Virak Keep |q The General's Demise##90061/2/1/Enter the Manor Gate##1
+step
+goto 15.88,23.37
+.' Follow the path up |goto 15.88,23.37 < 10 |c |noway |q The General's Demise##90061/3
+step
+goto 15.16,23.53
+.click Virak Keep##90180
+.' Enter the Keep |q The General's Demise##90061/3/1/Enter the Keep##1
+step
+goto stonefalls_base 14.42,23.88
+.kill General Serien##430002 |q The General's Demise##90061/4/1/Kill General Serien##1
+step
+goto 14.42,24.00
+.click Fort Virak##1820003
+.' Leave the Keep |goto stonefalls_base 15.15,23.53 < 1 |c |noway |q The General's Demise##90061
+step
+goto stonefalls_base 15.46,23.46
+.talk Holgunn##90003
+..turnin The General's Demise##90061
+step
+goto 16.95,24.70
+.click Fort Virak##1820003
+.' Leave Virak Keep |goto 17.30,24.75 < 1 |c |noway |q Savages of Stonefalls##90030
+step
+goto 19.66,23.74
+.click South Gate##90172
+.' Leave Fort Virak |goto 20.06,23.94 < 1 |c |noway |q Savages of Stonefalls##90030
+step
+goto 24.30,29.60
+.' Follow the path |goto 24.30,29.60 < 10 |c |noway |q Savages of Stonefalls##90030
 step
 goto Stonefalls 14.72,43.02
-'Discover the Iliath Temple Wayshrine |goto Stonefalls 14.72,43.02 < 10 |c |noway |q One of the Undaunted##90006
-step
-'Open your map and Fast Travel to Hrogar's Hold Wayshrine |goto stonefalls_base 29.64,43.29 < 5 |c |noway |q One of the Undaunted##90006
+.wayshrine Iliath Temple
 step
 goto 14.79,46.77
 .' Follow the path |goto 14.79,46.77 < 10 |c |noway |q One of the Undaunted##90006
@@ -2830,65 +2964,12 @@ step
 goto 10.36,44.90
 .' Follow the path |goto 10.36,44.90 < 10 |c |noway |q One of the Undaunted##90006
 step
-goto 9.34,44.65
-.click Dungeon: Fungal Grotto##90158
-.' Enter the Dungeon: Fungal Grotto |goto balfoyen_base 34.01,81.21 < 1 |c |noway |q One of the Undaunted##90006
+goto Stonefalls 9.45,44.60
+.' Go to the Fungal Grotto |q One of the Undaunted##90006/1/1/Enter Fungal Grotto##1
 step
-goto balfoyen_base 34.01,81.21
-.click Stonefalls##1100019
-.' Leave the Dungeon: Fungal Grotto |goto stonefalls_base 9.34,44.65 < 1 |c |noway |q One of the Undaunted##90006
-step
-goto stonefalls_base 18.89,52.70
-.wayshrine Sathram Plantation Wayshrine
-step
-goto 18.43,53.18
-.talk Caalorne##90346
-..accept Darkvale Brews##90049
-step
-goto 21.19,54.10
-.click Sheogorath's Tongue##90141
-.' Enter Sheogorath's Tongue |goto sheogorathstongue_base 102.17,67.24 < 1|c |noway |q Darkvale Brews##90049/1
-step
-goto sheogorathstongue_base 55.95,71.88
-.' Follow the path up |goto sheogorathstongue_base 55.95,71.88 < 10 |c |noway |q Darkvale Brews##90049/1
-step
-goto 25.65,24.67
-.click Stolen Potion Barrels##1170001
-.' Retrieve Caalorne's Potions |q Darkvale Brews##90049/1/1/Retrieve Caalorne's Potions##1
-step
-goto 42.65,35.61
-.' Follow the path |goto 42.65,35.61 < 10 |c |noway |q Darkvale Brews##90049
-step
-goto 61.96,53.05
-.click Lever##460011
-.' Go through the doorway |goto 62.93,57.03 < 5 |c |noway |q Darkvale Brews##90049
-step
-goto 69.41,67.37
-.' Follow the path |goto 69.41,67.37 < 10 |c |noway |q Darkvale Brews##90049
-step
-goto sheogorathstongue_base 101.12,67.13
-.click Stonefalls##1100019
-.' Leave Sheogorath's Tongue |goto stonefalls_base 21.21,54.11 < 1 |c |noway |q Darkvale Brews##90049
-step
-goto stonefalls_base 18.42,53.14
-.talk Caalorne##90346
-..turnin Darkvale Brews##90049
-step
-goto 16.76,52.19
-.talk Ashlander Scout##90347
+goto stonefalls_base 14.51,44.09
+.talk Ashlander Scout##90347 |tip He walks up to you.
 ..accept From the Wastes##90050
-step
-goto 16.19,49.80
-.' Follow the path up |goto 16.19,49.80 < 10 |c |noway |q From the Wastes##90050/1
-step
-goto 14.99,50.79
-.' Follow the path up |goto 14.99,50.79 < 10 |c |noway |q From the Wastes##90050/1
-step
-goto 14.28,49.49
-.' Follow the path |goto 14.28,49.49 < 10 |c |noway |q From the Wastes##90050/1
-step
-goto 15.55,46.09
-.' Follow the path |goto 15.55,46.09 < 10 |c |noway |q From the Wastes##90050/1
 step
 goto 13.86,44.49
 .talk Hedranna Kaliki##90372 |q From the Wastes##90050/1/1/Talk to Hedranna Kaliki##1
@@ -2911,7 +2992,7 @@ goto 16.56,49.39
 .click Sack of Poppy Extract##90149
 .' Collect the Poppy Extract |q From the Wastes##90050/2/1/Collect Poppy Extract##3
 step
-goto stonefalls_base 16.28,47.19
+goto stonefalls_base 15.54,50.52
 .' Kill Ziddak's enemies
 .' Collect 12 Alchemical Draught |q From the Wastes##90050/2/1/Collect Alchemical Draught##4
 step
@@ -2944,7 +3025,7 @@ goto 10.91,50.01
 .' Pray to the Tribunal |q Divine Favor##90054/1/1/Pray to the Tribunal##1
 step
 goto 10.91,50.84
-.' Follow the path down |goto 10.91,50.84 < 5 |c |noway |q Divine Favor##90054/1
+.' Follow the path down |goto 10.91,50.84 < 5 |c |noway |q Divine Favor##90054/2
 step
 goto 11.14,50.40
 .click Nerathren's Urn##90152
@@ -3045,6 +3126,42 @@ goto stonefalls_base 15.72,52.92
 .talk Hedranna Kaliki##90372
 ..turnin Undermined##90055
 step
+goto stonefalls_base 18.89,52.70
+.wayshrine Sathram Plantation
+step
+goto 18.43,53.18
+.talk Caalorne##90346
+..accept Darkvale Brews##90049
+step
+goto 21.19,54.10
+.click Sheogorath's Tongue##90141
+.' Enter Sheogorath's Tongue |goto sheogorathstongue_base 102.17,67.24 < 1|c |noway |q Darkvale Brews##90049/1
+step
+goto sheogorathstongue_base 55.95,71.88
+.' Follow the path up |goto sheogorathstongue_base 55.95,71.88 < 10 |c |noway |q Darkvale Brews##90049/1
+step
+goto 25.65,24.67
+.click Stolen Potion Barrels##1170001
+.' Retrieve Caalorne's Potions |q Darkvale Brews##90049/1/1/Retrieve Caalorne's Potions##1
+step
+goto 42.65,35.61
+.' Follow the path |goto 42.65,35.61 < 10 |c |noway |q Darkvale Brews##90049
+step
+goto 61.96,53.05
+.click Lever##460011
+.' Go through the doorway |goto 62.93,57.03 < 5 |c |noway |q Darkvale Brews##90049
+step
+goto 69.41,67.37
+.' Follow the path |goto 69.41,67.37 < 10 |c |noway |q Darkvale Brews##90049
+step
+goto sheogorathstongue_base 101.12,67.13
+.click Stonefalls##1100019
+.' Leave Sheogorath's Tongue |goto stonefalls_base 21.21,54.11 < 1 |c |noway |q Darkvale Brews##90049
+step
+goto stonefalls_base 18.42,53.14
+.talk Caalorne##90346
+..turnin Darkvale Brews##90049
+step
 goto 15.86,55.14
 .talk Feldsii Maren##90348
 ..accept An Unwanted Twin##90051
@@ -3084,11 +3201,11 @@ goto 17.05,58.60
 .' Find J'kur |q A Story Told in Footprints##90052/3/1/Find J'kur##1
 step
 goto 17.37,57.89
-.' Enter the building |goto 17.37,57.89 < 10 |c |noway |q An Unwanted Twin##90051/3
+.' Enter the building |goto 17.37,57.89 < 10 |c |noway |q An Unwanted Twin##90051/3 |future
 step
 goto 17.86,58.18
 .click Cellar##90133
-.' Enter the Cellar |goto 9.26,59.40 < 1 |c |noway |q An Unwanted Twin##90051/3
+.' Enter the Cellar |goto 9.26,59.40 < 1 |c |noway |q An Unwanted Twin##90051/3 |future
 step
 goto 9.32,59.24
 .click Meling##90357
@@ -3121,7 +3238,7 @@ goto 13.69,57.07
 step
 goto 14.26,57.36
 .click Sathram Plantation##90130
-.' Leave Ruvali's Home |goto 14.31,57.43 < 1 |c |noway |q An Unwanted Twin##90051/9
+.' Leave Ruvali's Home |goto 14.31,57.43 < 1 |c |noway |q An Unwanted Twin##90051/9 |future
 step
 goto 14.44,57.54
 .talk Ruvali Manothrel##90358 |q An Unwanted Twin##90051/9/1/Talk to Ruvali##1
@@ -3132,21 +3249,21 @@ goto 14.74,57.85
 step
 goto 14.31,57.43
 .click Ruvali's Home##90135
-.' Enter Ruvali's Home |goto 14.25,57.34 < 1 |c |noway |q An Unwanted Twin##90051/12
+.' Enter Ruvali's Home |goto 14.25,57.34 < 1 |c |noway |q An Unwanted Twin##90051/12 |future
 step
 goto 13.80,56.78
-.' Follow the path down |goto 13.80,56.78 < 5 |c |noway |q An Unwanted Twin##90051/12
+.' Follow the path down |goto 13.80,56.78 < 5 |c |noway |q An Unwanted Twin##90051/12 |future
 step
 goto 13.88,56.72
 .click Cellar##90133
-.' Enter the Cellar |goto 7.82,59.39 < 1 |c |noway |q An Unwanted Twin##90051/12
+.' Enter the Cellar |goto 7.82,59.39 < 1 |c |noway |q An Unwanted Twin##90051/12 |future
 step
 goto 7.81,59.00
 .kill Tiril Manothrel##90359 |q An Unwanted Twin##90051/12/1/Kill Tiril's Double##1
 step
 goto 7.82,59.39
 .click Ruvali's Home##90135
-.' Leave the Cellar |goto 13.86,56.67 < 1 |c |noway |q An Unwanted Twin##90051/14
+.' Leave the Cellar |goto 13.86,56.67 < 1 |c |noway |q An Unwanted Twin##90051/14 |future
 step
 goto 13.93,56.73
 .talk Ulov Stormwall##90352 |q An Unwanted Twin##90051/14/1/Talk to Ulov##1
@@ -3173,10 +3290,10 @@ goto stonefalls_base 13.90,59.48
 step
 goto 14.31,57.46
 .click Ruvali's Home##90135
-.' Enter Ruvali's Home |goto 14.25,57.34 < 1 |c |noway |q Shattering Mirror##90053/4
+.' Enter Ruvali's Home |goto 14.25,57.34 < 1 |c |noway |q Shattering Mirror##90053/5 |future
 step
 goto 14.06,56.67
-.' Follow the path up |goto 14.06,56.67 < 5 |c |noway |q Shattering Mirror##90053/4
+.' Follow the path up |goto 14.06,56.67 < 5 |c |noway |q Shattering Mirror##90053/5 |future
 step
 goto 13.68,57.04
 .talk Ruvali Manothrel##90358 |q Shattering Mirror##90053/4/1/Talk to Ruvali##1
@@ -3227,381 +3344,15 @@ goto 15.95,53.74
 .talk Vahara##90361
 ..turnin A Story Told in Footprints##90052
 step
-goto 27.24,56.14
-.talk Dathlyn##90298
-..accept Stem the Tide##90047
+goto stonefalls_base 21.66,58.55
+.talk Duryn Beleran##90483
+..accept Aggressive Negotiations##90132
 step
-goto 29.06,55.86
-.click Softloam Cavern##90128
-.' Enter the Softloam Cavern |goto hightidehollow_base 80.79,13.04 < 1 |c |noway |q Stem the Tide##90047/1
-step
-goto hightidehollow_base 58.66,32.43
-.' Follow the path |goto hightidehollow_base 58.66,32.43 < 10 |c |noway |q Stem the Tide##90047/1
-step
-goto 34.55,43.44
-.' Follow the path |goto 34.55,43.44 < 10 |c |noway |q Stem the Tide##90047/1
-step
-goto 42.03,61.59
-.' Follow the path |goto 42.03,61.59 < 10 |c |noway |q Stem the Tide##90047/1
-step
-goto 64.77,64.83
-.click Crystal##90050
-.' Destroy the Crystal |q Stem the Tide##90047/1/2/Destroy the Crystal##1
-step
-goto hightidehollow_base 65.95,65.59
-.click Crystal##90050
-.' Destroy the Crystal |q Stem the Tide##90047/1/2/Destroy the Crystal##2
-step
-goto 64.06,65.96
-.click Crystal##90050
-.' Close the Portal |q Stem the Tide##90047/1/1/Close the Portal##1
-step
-goto 60.44,61.98
-.' Follow the path up |goto 60.44,61.98 < 10 |c |noway |q Stem the Tide##90047
-step
-goto 60.79,49.29
-.click Door##1090039
-.' Go through the doorway |goto 60.89,47.12 < 1 |c |noway |q Stem the Tide##90047
-step
-goto 61.50,33.06
-.' Follow the path |goto 61.50,33.06 < 10 |c |noway |q Stem the Tide##90047
-step
-goto 81.11,12.93
-.click Stonefalls##1100019
-.' Leave the Softloam Cavern |goto stonefalls_base 29.08,55.85 < 1 |c |noway |q Stem the Tide##90047
-step
-goto stonefalls_base 27.27,56.13
-.talk Dathlyn##90298
-..turnin Stem the Tide##90047
-step
-goto kragenmoor_base 64.08,52.31
-'Go up the stairs |goto kragenmoor_base 64.08,52.31
+goto kragenmoor_base 64.08,52.31 |n
+'Go up the stairs |goto kragenmoor_base 64.08,52.31 |noway |c
 step
 goto 51.12,51.69
-.wayshrine Kragenmoor Wayshrine
-step
-goto stonefalls_base 33.05,62.21
-.' Follow the path |goto 33.05,62.21 < 10 |c |noway |q Savages of Stonefalls##90030/1
-step
-goto 32.74,65.31
-.' Follow the path up |goto 32.74,65.31 < 10 |c |noway |q Savages of Stonefalls##90030/1
-step
-goto 30.09,66.53
-.' Follow the path up |goto 30.09,66.53 < 10 |c |noway |q Savages of Stonefalls##90030/1
-step
-goto stonefalls_base 30.12,67.63
-.kill Gurlisk##90294
-.' Collect Gurlisk's Head |q Savages of Stonefalls##90030/1/Collect Gurlisk's Head##3
-step
-goto 33.54,59.23
-.talk Geron Drothan##90290
-..accept Waylaid Wine Merchant##90044
-step
-goto 32.45,60.39
-.talk Valdam Andoren##90043
-..accept A Goblin's Affection##90045
-step
-goto stonefalls_base 32.67,60.94
-'Discover the Ashen Road Wayshrine |goto stonefalls_base 32.67,60.94 < 10 |noway |c |q Waylaid Wine Merchant##90044/1
-step
-goto 34.81,57.08
-'Press _E_ to use the Shadowsilk Gem
-.' Turn into a Goblin |tip This will make you friendly to the mobs along the path.
-.click Balmora Blue Wine##90114+ |tip They are all around this area.
-.' Collect 10 Balmora Blue Wine |q Waylaid Wine Merchant##90044/1/1/Collect Balmora Blue Wine: 0 / 10##1
-step
-goto 34.52,55.66
-'Press _E_ to use the Shadowsilk Gem
-.' Turn into a Goblin |tip This will make you friendly to the mobs along the path.
-.talk Dithis Romori##90047
-.' Free Dithis Romori |q A Goblin's Affection##90045/1/1/Free Dithis Romori##1
-step
-goto 34.42,55.77
-'Press _E_ to use the Shadowsilk Gem
-.' Turn into a Goblin |tip This will make you friendly to the mobs along the path.
-.kill Chieftain Grimmstal##90291 |q A Goblin's Affection##90045/1/2/Defeat Chieftain Grimmstal##1
-step
-goto 33.54,59.23
-'Press _E_ to use the Shadowsilk Gem
-.' Turn into a Goblin |tip This will make you friendly to the mobs along the path.
-.talk Geron Drothan##90290
-..turnin Waylaid Wine Merchant##90044
-step
-goto 32.44,60.41
-.talk Valdam Andoren##90043
-..turnin A Goblin's Affection##90045
-step
-goto 27.97,58.89
-.talk Shuldrashi##90075
-..turnin The Fate of a Friend##90015
-step
-goto 32.64,60.95
-.click Ashen Road Wayshrine##90121
-'Fast Travel to Fort Virak Wayshrine |goto 22.32,30.32 < 10 |c |noway |q To Fort Virak##90039
-step
-goto 23.79,26.06
-.talk Sergeant Gjorring##90410
-..turnin To Fort Virak##90039
-..accept Breaking Fort Virak##1820001
-step
-goto 20.46,27.38
-.' Follow the path |goto 20.46,27.38 < 10 |c |noway |q Breaking Fort Virak##1820001/1
-step
-goto 20.30,28.04
-.talk Garyn Indoril##90055 |q Breaking Fort Virak##1820001/1/1/Talk to Garyn Indoril##1
-step
-goto stonefalls_base 22.51,24.52
-.' Kill Covenant enemies
-.' Kill Soldiers and Collect Evidence |q Breaking Fort Virak##1820001/2/1/Kill Soldiers and Collect Evidence##1
-step
-goto 20.29,27.99
-.talk Garyn Indoril##90055 |q Breaking Fort Virak##1820001/3/1/Talk to Garyn Indoril##1
-step
-goto 20.44,27.39
-.' Follow the path |goto 20.44,27.39 < 10 |c |noway |q Breaking Fort Virak##1820001/5
-step
-goto 17.83,26.90
-.click Fort Virak Ruin##90173
-.' Enter the Fort Virak Ruin |goto fortvirakruin_base 88.78,87.89 < 1 |c |noway |q Breaking Fort Virak##1820001/5
-step
-goto 63.54,80.88
-.talk Walks-in-Ash##90099 |q Breaking Fort Virak##1820001/5/1/Talk to Walks-in-Ash##1
-step
-goto 63.54,80.88
-.' Press _E_ to use the Transformation Potion
-.' Use a Transformation Potion |q Breaking Fort Virak##1820001/6/1/Use a Transformation Potion##1
-step
-goto 63.29,78.36
-.click Hole in the Wall##1820002
-.' Pass through the Hole in the Wall |q Breaking Fort Virak##1820001/7/1/Pass through the Wall##1
-step
-goto 64.37,41.29
-.' Sneak past the ghosts
-.' Follow the path |goto 64.37,41.29 < 10 |c |noway |q Breaking Fort Virak##1820001/8
-step
-goto 32.40,74.42
-.' Sneak past the ghosts
-.click Hole in the Wall##1820001
-.' Pass through the Hole in the Wall |q Breaking Fort Virak##1820001/8/1/Sneak through Ruined Corridors##1
-step
-goto 47.58,89.41
-.click Lever##460011
-.' Unlock the Door |q Breaking Fort Virak##1820001/8/1/Unlock the Door##1
-step
-goto 48.63,88.88
-.click Lever##460011
-.talk Walks-in-Ash##90099
-..turnin Breaking Fort Virak##1820001
-..accept Evening the Odds##1820002
-step
-goto 16.42,87.74
-.' Follow the path |goto 16.42,87.74 < 10 |c |noway |q Evening the Odds##1820002/2
-step
-goto 16.02,69.26
-.click Fort Virak##1820003
-.' Leave the Fort Virak Ruin |goto stonefalls_base 16.86,26.10 < 1 |c |noway |q Evening the Odds##1820002/2
-step
-goto 19.61,23.74
-.click South Gate Bar##90173
-.' Unbar the South Gate |q Evening the Odds##1820002/2/Unbar the South Gate##2
-step
-goto 18.23,22.52
-.' Follow the path up |goto 18.23,22.52 < 10 |c |noway |q Evening the Odds##1820002/2
-step
-goto 17.13,20.12
-.click North Gate Bar##90175
-.' Unbar the North Gate |q Evening the Odds##1820002/2/1/Unbar the North Gate##1
-step
-goto 19.98,21.10
-.click Fort Virak Tower##90177
-.' Enter the Fort Virak Tower |goto 20.03,21.01 < 1 |c |noway |q Evening the Odds##1820002/3
-step
-goto 20.04,20.89
-.talk Gugnar##90410
-.' Find General Serien |q Evening the Odds##1820002/3/1/Find General Serien##1
-step
-goto 20.04,20.73
-.click Candle##90178
-.' Collect a Candle |q Evening the Odds##1820002/4/2/Collect a Candle##1
-step
-goto 19.98,20.87
-.click Serien's Journals##90179
-.' Burn Serien's Journals |q Evening the Odds##1820002/5/2/Burn Serien's Journals##1
-step
-goto 20.04,21.00
-.click Fort Virak##1820003
-.' Leave the Fort Virak Tower |q Evening the Odds##1820002/5/1/Leave the Tower##1
-step
-goto 18.96,23.98
-.' Follow the path up |goto 18.96,23.98 < 10 |c |noway |q Evening the Odds##1820002
-step
-goto 17.98,24.82
-.talk Tanval Indoril##90053
-..turnin Evening the Odds##1820002
-..accept The General's Demise##90061
-step
-goto 17.57,24.82
-.' Wait for Indorils Dispel the Ward |q The General's Demise##90061/1/1/Wait for the Indorils to Dispel the Ward##1
-step
-goto 17.32,24.76
-.click Virak Keep##90180
-.' Enter Virak Keep |q The General's Demise##90061/2/1/Enter the Manor Gate##1
-step
-goto 15.88,23.37
-.' Follow the path up |goto 15.88,23.37 < 10 |c |noway |q The General's Demise##90061/3
-step
-goto 15.16,23.53
-.click Virak Keep##90180
-.' Enter the Keep |q The General's Demise##90061/3/1/Enter the Keep##1
-step
-goto stonefalls_base 14.42,23.88
-.kill General Serien##430002 |q The General's Demise##90061/4/1/Kill General Serien##1
-step
-goto 14.42,24.00
-.click Fort Virak##1820003
-.' Leave the Keep |goto stonefalls_base 15.15,23.53 < 1 |c |noway |q The General's Demise##90061
-step
-goto stonefalls_base 15.46,23.46
-.talk Holgunn##90003
-..turnin The General's Demise##90061
-step
-goto 16.95,24.70
-.click Fort Virak##1820003
-.' Leave Virak Keep |goto 17.30,24.75 < 1 |c |noway |q Savages of Stonefalls##90030
-step
-goto 19.66,23.74
-.click South Gate##90172
-.' Leave Fort Virak |goto 20.06,23.94 < 1 |c |noway |q Savages of Stonefalls##90030
-step
-goto 24.30,29.60
-.' Follow the path |goto 24.30,29.60 < 10 |c |noway |q Savages of Stonefalls##90030
-step
-goto 25.88,34.42
-.' Follow the path |goto 25.88,34.42 < 10 |c |noway |q Savages of Stonefalls##90030
-step
-goto 22.57,30.48
-.click Fort Virak Wayshrine##90394
-.' Click the Ebon Watch Wayshrine
-.' Travel to the Ebon Watch Wayshrine |goto ebonheart_base 46.41,62.21 < 5 |c |noway |q Savages of Stonefalls##90030
-step
-goto ebonheart_base 46.69,61.51
-.' The Prophet will appear next to you:
-..accept Chasing Shadows##90064
-step
-goto 52.04,70.24
-.' Follow the path |goto 52.04,70.24 < 10 |c |noway |q Savages of Stonefalls##90030
-step
-goto 52.13,82.58
-.' Follow the path |goto 52.13,82.58 < 10 |c |noway |q Savages of Stonefalls##90030
-step
-goto 58.30,83.51
-.talk Shaali Kulun##90131
-..turnin Savages of Stonefalls##90030
-step
-goto 52.11,75.19
-'Go up the stairs |goto 52.11,75.19 < 10 |c |noway |q One of the Undaunted##90006/2
-step
-goto 46.16,63.14
-.click Ebonheart Wayshrine##90054
-.' Travel to the Davon's Watch Wayshrine |goto davonswatch_base 57.04,78.00 < 5 |c |noway |q One of the Undaunted##90006/2
-step
-goto davonswatch_base 69.23,69.26
-.' Follow the path |goto 69.23,69.26 < 10 |c |noway |q One of the Undaunted##90006/2
-step
-goto 67.18,48.97
-.' Follow the path down |goto 67.18,48.97 < 10 |c |noway |q One of the Undaunted##90006/2
-step
-goto 79.99,48.01
-.talk Kailstig the Axe##90024 |q One of the Undaunted##90006/2/1/Talk to Kailstig the Axe in Stonefalls##1
-step
-goto 79.56,47.79
-.' Watch the dialogue
-.' Watch the Initiation |q One of the Undaunted##90006/3/1/Watch Initiation##1
-step
-goto 80.03,47.98
-.talk Kailstig the Axe##90024
-..turnin One of the Undaunted##90006
-step
-goto davonswatch_base 68.04,67.84
-'Go through the gate |goto davonswatch_base 68.04,67.84 < 10 |c |noway |q Chasing Shadows##90064/1
-step
-goto 58.60,77.91
-.click Davon's Watch Wayshrine##90004
-.' Fast Travel to the Harborage |goto stonefalls_base 77.19,36.79 < 15 |c |noway |q Chasing Shadows##90064/1
-step
-goto 77.25,36.54
-.click The Harborage##90016
-.' Go to the Harborage |q Chasing Shadows##90064/1/1/Go to the Harborage##1
-step
-'Follow the path in the Harborage to the small camp:
-.talk The Prophet##3360001 |q Chasing Shadows##90064/2/1/Talk to the Prophet##1
-step
-'Follow the path in the Harborage back to the exit:
-.click Stonefalls##1100019
-.' Leave the Harborage |goto stonefalls_base 77.26,36.55 < 1 |c |noway |q Chasing Shadows##90064/3
-step
-goto davonswatch_base 48.75,71.23
-'Enter Davonswatch |goto davonswatch_base 48.75,71.23 < 10 |c |noway |q Chasing Shadows##90064/3
-step
-goto davonswatch_base 55.55,60.71
-'Cross the bridge |goto davonswatch_base 55.55,60.71 |q Chasing Shadows##90064/3
-step
-goto 66.28,57.70
-.talk Okeeh##90089
-..' Intimidate him |q Chasing Shadows##90064/3/2/Talk to Okeeh##1
-step
-goto 61.21,55.14
-.' Follow the path |goto 61.21,55.14 < 10 |c |noway |q Chasing Shadows##90064/3
-step
-goto 43.38,60.80
-.talk Feduria Llaren##90213
-..' Persuade her |q Chasing Shadows##90064/3/2/Talk to Feduria Llaren##2
-step
-goto davonswatch_base 76.16,58.51
-'Investigate the area |q Chasing Shadows##90064/4/1/Investigate Davon's Watch##1
-step
-goto 76.88,59.64
-.click Abandoned Cellar##90184
-.' Enter the Abandoned Cellar |q Chasing Shadows##90064/5/1/Enter the Cellar##1
-step
-goto thewormsretreat_base 52.20,86.20
-.click Orb of Discourse##3250002
-.' Search the Underground Chamber |q Chasing Shadows##90064/5/1/Search the Underground Chamber##1
-step
-goto 51.75,86.24
-.click Orb of Discourse##3250002
-.talk Abnur Tharn##450003
-..' Persuade him |q Chasing Shadows##90064/7/1/Talk to Abnur Tharn##1
-step
-goto 27.90,17.25
-.click Davon's Watch##90009
-.' Leave the Abandoned Cellar |goto davonswatch_base 76.95,59.72 < 1 |c |noway |q Chasing Shadows##90064/8
-step
-goto 67.70,53.69
-.' Follow the path |goto 67.70,53.69 < 10 |c |noway |q Chasing Shadows##90064/8
-step
-goto 25.61,40.25
-.click Stonefalls##1100019
-.' Follow the path |goto 24.69,41.96 < 10 |c |noway |q Chasing Shadows##90064/8
-step
-goto 15.20,47.23
-.' Follow the path down |goto 15.20,47.23 < 10 |c |noway |q Chasing Shadows##90064/8
-step
-goto 76.30,34.03
-.' Follow the path up |goto 76.30,34.03 < 10 |c |noway |q Chasing Shadows##90064/8
-step
-goto stonefalls_base 77.21,36.57
-.click The Harborage##90016
-.' Return to the Harborage |q Chasing Shadows##90064/8/1/Return to the Harborage##1
-step
-'Follow the path in the Harborage to the small camp:
-.talk The Prophet##3360001 |q Chasing Shadows##90064/9/1/Talk to the Prophet##1
-step
-'In the small camp in the Harborage:
-.talk Lyris Titanborn##3360006
-..turnin Chasing Shadows##90064
-step
-'Open your map and Fast Travel To Kragenmoor |goto kragenmoor_base 50.75,53.11 < 10 |c |noway |q A Gathering of Guar##90048/1 |future
+.wayshrine Kragenmoor
 step
 goto kragenmoor_base 53.62,65.39
 .talk Ral Savani##90312
@@ -3617,40 +3368,39 @@ goto 53.62,65.39
 step
 goto kragenmoor_base 50.78,43.89
 .click Grandmaster's Palace##90397
-.' Enter the Grandmaster's Palace |goto 50.67,43.01 < 1 |c |noway |q Aggressive Negotiations##90132/1 |future
+.' Enter the Grandmaster's Palace |goto 50.67,43.01 < 1 |c |noway |q Aggressive Negotiations##90132/2 |future
 step
 goto 50.46,35.94
-.talk Grandmaster Omin Dres##90485
-..accept Aggressive Negotiations##90132
+.talk Grandmaster Omin Dres##90485 |q Aggressive Negotiations##90132/1/1/Grandmaster Omin Dres##1
 step
 goto kragenmoor_base 53.19,39.75
-.talk Denu Faren##90487 |q Aggressive Negotiations##90132/1/1/Talk to Denu Faren##1
+.talk Denu Faren##90487 |q Aggressive Negotiations##90132/2/1/Talk to Denu Faren##1
 step
 goto 46.74,38.53
-'Go up stairs |goto 46.74,38.53 < 10 |c |noway |q Aggressive Negotiations##90132/2
+'Go up stairs |goto 46.74,38.53 < 10 |c |noway |q Aggressive Negotiations##90132/3
 step
 goto Kragenmoor 50.13,38.37
 .talk Nadras Hlor##90488
-.' Tell him you are going to assault |q Aggressive Negotiations##90132/2/1/Talk to Nadras Hlor##1
+.' Tell him you are going to assault |q Aggressive Negotiations##90132/3/1/Talk to Nadras Hlor##1
 step
 goto kragenmoor_base 50.70,43.24
 .click Kragenmoor##90125
-.' Leave the Grandmaster's Palace |goto 50.65,43.88 < 1 |c |noway |q Aggressive Negotiations##90132/3
+.' Leave the Grandmaster's Palace |goto 50.65,43.88 < 1 |c |noway |q Aggressive Negotiations##90132/4
 step
 goto 74.85,54.36
-'Go through the gate |goto 74.85,54.36 < 10 |c |noway |q Aggressive Negotiations##90132/3
+'Go through the gate |goto 74.85,54.36 < 10 |c |noway |q Aggressive Negotiations##90132/4
 step
 goto stonefalls_base 27.92,63.61
 .click Tanval's Directive##90399
-.' Discover a clue |q Aggressive Negotiations##90132/3/2/Found a Clue##1
+.' Discover a clue |q Aggressive Negotiations##90132/4/2/Found a Clue##1
 step
 goto 29.69,64.00
 .click To the Captain##90400
-.' Discover a clue |q Aggressive Negotiations##90132/3/3/Found a Clue##1
+.' Discover a clue |q Aggressive Negotiations##90132/4/3/Found a Clue##1
 step
 goto stonefalls_base 30.27,63.51
 .click Note from Captain Dunveril##90401
-.' Discover a clue |q Aggressive Negotiations##90132/3/4/Found a Clue##1
+.' Discover a clue |q Aggressive Negotiations##90132/4/4/Found a Clue##1
 step
 goto stonefalls_base 27.90,63.00
 'Go down the stairs |goto stonefalls_base 27.90,63.00 < 10 |c |noway |q Aggressive Negotiations##90132
@@ -3743,21 +3493,131 @@ goto 50.54,35.54
 .talk Sen Dres##90493
 ..accept To the Tormented Spire##90136
 step
-goto 50.75,43.14
-.click Kragenmoor##90125
-.' Leave the Grandmaster's Palace |goto 50.65,43.88 <1 |c |noway |q Vengeance for House Dres##90135/1
-step
-goto kragenmoor_base 63.88,50.12
-'Go down the stairs |goto kragenmoor_base 63.88,50.12 < 5 |c |noway |q Vengeance for House Dres##90135/1
-step
-goto 73.92,54.36
-'Go through the archway |goto 73.92,54.36 < 5 |c |noway |q Vengeance for House Dres##90135/1
-step
 goto stonefalls_base 30.29,63.93
 'Go up the stairs |goto stonefalls_base 30.29,63.93 < 5 |c |noway |q Vengeance for House Dres##90135/1
 step
 goto 29.98,63.00
 .kill Captain Dunveril##90496 |q Vengeance for House Dres##90135/1/1/Kill Captain Dunveril##1
+step
+goto kragenmoor_base 73.92,54.36
+'Go through the archway |goto kragenmoor_base 73.92,54.36 < 5 |c |noway |q Vengeance for House Dres##90135
+step
+goto kragenmoor_base 64.06,52.26
+'Go up the stairs |goto kragenmoor_base 64.06,52.26 < 5 |c |noway |q Vengeance for House Dres##90135
+step
+goto kragenmoor_base 50.63,43.88
+.click Grandmaster's Palace##90397
+.' Enter the Grandmaster's Palace |goto kragenmoor_base 50.69,42.89 < 1 |noway |c |q Vengeance for House Dres##90135
+step
+goto 50.75,35.24
+.talk Grandmaster Omin Dres##90485
+..turnin Vengeance for House Dres##90135
+step
+goto 50.64,43.19
+.click Kragenmoor##90125
+.' Leave the Grandmaster's Palace |goto 50.66,44.15 < 3 |c |noway
+step
+goto stonefalls_base 27.24,56.14
+.talk Dathlyn##90298
+..accept Stem the Tide##90047
+step
+goto 29.06,55.86
+.click Softloam Cavern##90128
+.' Enter the Softloam Cavern |goto hightidehollow_base 80.79,13.04 < 1 |c |noway |q Stem the Tide##90047/1
+step
+goto hightidehollow_base 58.66,32.43
+.' Follow the path |goto hightidehollow_base 58.66,32.43 < 10 |c |noway |q Stem the Tide##90047/1
+step
+goto 34.55,43.44
+.' Follow the path |goto 34.55,43.44 < 10 |c |noway |q Stem the Tide##90047/1
+step
+goto 42.03,61.59
+.' Follow the path |goto 42.03,61.59 < 10 |c |noway |q Stem the Tide##90047/1
+step
+goto 64.77,64.83
+.click Crystal##90050
+.' Destroy the Crystal |q Stem the Tide##90047/1/2/Destroy the Crystal##1
+step
+goto hightidehollow_base 65.95,65.59
+.click Crystal##90050
+.' Destroy the Crystal |q Stem the Tide##90047/1/2/Destroy the Crystal##2
+step
+goto 64.06,65.96
+.click Crystal##90050
+.' Close the Portal |q Stem the Tide##90047/1/1/Close the Portal##1
+step
+goto 60.44,61.98
+.' Follow the path up |goto 60.44,61.98 < 10 |c |noway |q Stem the Tide##90047
+step
+goto 60.79,49.29
+.click Door##1090039
+.' Go through the doorway |goto 60.89,47.12 < 1 |c |noway |q Stem the Tide##90047
+step
+goto 61.50,33.06
+.' Follow the path |goto 61.50,33.06 < 10 |c |noway |q Stem the Tide##90047
+step
+goto 81.11,12.93
+.click Stonefalls##1100019
+.' Leave the Softloam Cavern |goto stonefalls_base 29.08,55.85 < 1 |c |noway |q Stem the Tide##90047
+step
+goto stonefalls_base 27.27,56.13
+.talk Dathlyn##90298
+..turnin Stem the Tide##90047
+step
+goto 33.54,59.23
+.talk Geron Drothan##90290
+..accept Waylaid Wine Merchant##90044
+step
+goto 32.45,60.39
+.talk Valdam Andoren##90043
+..accept A Goblin's Affection##90045
+step
+goto stonefalls_base 32.67,60.94
+.wayshrine Ashen Road
+step
+goto 34.81,57.08
+'Press _E_ to use the Shadowsilk Gem
+.' Turn into a Goblin |tip This will make you friendly to the mobs along the path.
+.click Balmora Blue Wine##90114+ |tip They are all around this area.
+.' Collect 10 Balmora Blue Wine |q Waylaid Wine Merchant##90044/1/1/Collect Balmora Blue Wine: 0 / 10##1
+step
+goto 34.52,55.66
+'Press _E_ to use the Shadowsilk Gem
+.' Turn into a Goblin |tip This will make you friendly to the mobs along the path.
+.talk Dithis Romori##90047
+.' Free Dithis Romori |q A Goblin's Affection##90045/1/1/Free Dithis Romori##1
+step
+goto 34.42,55.77
+'Press _E_ to use the Shadowsilk Gem
+.' Turn into a Goblin |tip This will make you friendly to the mobs along the path.
+.kill Chieftain Grimmstal##90291 |q A Goblin's Affection##90045/1/2/Defeat Chieftain Grimmstal##1
+step
+goto 33.54,59.23
+'Press _E_ to use the Shadowsilk Gem
+.' Turn into a Goblin |tip This will make you friendly to the mobs along the path.
+.talk Geron Drothan##90290
+..turnin Waylaid Wine Merchant##90044
+step
+goto 32.44,60.41
+.talk Valdam Andoren##90043
+..turnin A Goblin's Affection##90045
+step
+goto 27.97,58.89
+.talk Shuldrashi##90075
+..turnin The Fate of a Friend##90015
+step
+goto stonefalls_base 33.05,62.21
+.' Follow the path |goto 33.05,62.21 < 10 |c |noway |q Savages of Stonefalls##90030/1
+step
+goto 32.74,65.31
+.' Follow the path up |goto 32.74,65.31 < 10 |c |noway |q Savages of Stonefalls##90030/1
+step
+goto 30.09,66.53
+.' Follow the path up |goto 30.09,66.53 < 10 |c |noway |q Savages of Stonefalls##90030/1
+step
+goto stonefalls_base 30.12,67.63
+.kill Gurlisk##90294
+.' Collect Gurlisk's Head |q Savages of Stonefalls##90030/1/Collect Gurlisk's Head##3
 step
 goto stonefalls_base 34.84,62.20
 'Follow the path East |goto stonefalls_base 34.84,62.20 < 10 |c |noway |q To the Tormented Spire##90136
@@ -3777,14 +3637,14 @@ goto stonefalls_base 36.33,61.50
 step
 goto 36.59,61.28
 .click Tormented Spire##90405
-.' Enter the Tormented Spire |goto 41.59,70.41 < 5 |c |noway |q Climbing the Spire##90137/3
+.' Enter the Tormented Spire |goto 41.59,70.41 < 5 |c |noway |q Sadal's Final Defeat##90139 |future
 step
 goto 44.01,67.67
 .talk Walks-in-Ash##90099 |q Climbing the Spire##90137/3/1/Find Walks-in-Ash##1
 step
 goto stonefalls_base 44.41,65.62
 .click Southern Ruins##90406
-.' Enter the Southern Ruins |goto 44.54,67.39 < 1 |c |noway |q Climbing the Spire##90137/5
+.' Enter the Southern Ruins |goto 44.54,67.39 < 1 |c |noway |q Climbing the Spire##90137/6 |future
 step
 goto 46.13,68.50
 .click Lord Ward Stone##90407
@@ -3792,14 +3652,14 @@ goto 46.13,68.50
 step
 goto 44.58,67.40
 .click Tormented Spire##90405
-.' Leave the Southern Ruins |q Climbing the Spire##90137/6/1/Leave the Southern Ruins##1
+.' Leave the Southern Ruins |goto stonefalls_base 44.48,65.63 |q Climbing the Spire##90137/6
 step
 goto 41.08,60.77
 'Find the Northern Ruins |q Climbing the Spire##90137/7/1/Find the Northern Ruins##1
 step
 goto 41.08,60.68
 .click Northern Ruins##90408
-.' Enter the Northern Ruins |goto 45.30,66.47 < 1 |c |noway |q Climbing the Spire##90137/9
+.' Enter the Northern Ruins |goto 45.30,66.47 < 1 |c |noway |q Climbing the Spire##90137/9 |future
 step
 goto 46.94,64.97
 .click Lady Ward Stone##90409
@@ -3807,10 +3667,10 @@ goto 46.94,64.97
 step
 goto 45.38,66.47
 .click Tormented Spire##90405
-.' Leave the Northern Ruins |q Climbing the Spire##90137/10/1/Leave the Northern Ruins##1
+.' Leave the Northern Ruins |goto stonefalls_base 41.08,60.60 |q Climbing the Spire##90137/10
 step
 goto stonefalls_base 41.08,61.87
-'Enter the cave |goto stonefalls_base 41.08,61.87 < 5 |c |noway |q Climbing the Spire##90137/11
+'Enter the cave |goto stonefalls_base 41.08,61.87 < 5 |c |noway |q Sadal's Final Defeat##90139 |future
 step
 goto 40.24,63.44
 'Find the Pact Commanders |q Climbing the Spire##90137/11/1/Find the Pact Commanders##1
@@ -3827,7 +3687,7 @@ goto stonefalls_base 38.84,65.67
 step
 goto stonefalls_base 37.45,64.37
 .click Caldera Ruins##90410
-.' Enter the Caldera Ruins |goto 45.38,64.35 < 10 |c |noway |q Climbing the Spire##90137/15
+.' Enter the Caldera Ruins |goto 45.38,64.35 < 10 |c |noway |q Climbing the Spire##90137/16 |future
 step
 goto 43.68,63.07
 .click Shadow Ward Stone##90411
@@ -3933,21 +3793,127 @@ goto 34.20,62.40
 .talk Gorvyn Dran##90295
 ..accept A Letter for Deshaan##90046
 step
-goto 32.79,61.05
+goto Stonefalls 32.80,61.05
 .click Ashen Road Wayshrine##90121
-.' Fast Travel to Kragenmoor |goto kragenmoor_base 50.63,53.13 < 10 |c |noway |q Vengeance for House Dres##90135
+.' Click the Ebonheart Wayshrine
+.' Travel to the Ebonheart Wayshrine |goto ebonheart_base 46.41,62.21 < 5 |c |noway |q Savages of Stonefalls##90030
 step
-goto kragenmoor_base 50.63,43.88
-.click Grandmaster's Palace##90397
-.' Enter the Grandmaster's Palace |goto kragenmoor_base 50.69,42.89 < 1 |noway |c |q Vengeance for House Dres##90135
+goto ebonheart_base 46.69,61.51
+.' The Prophet will appear next to you:
+..accept Chasing Shadows##90064
 step
-goto 50.75,35.24
-.talk Grandmaster Omin Dres##90485
-..turnin Vengeance for House Dres##90135
+goto 52.04,70.24
+.' Follow the path |goto 52.04,70.24 < 10 |c |noway |q Savages of Stonefalls##90030
 step
-goto 50.64,43.19
-.click Kragenmoor##90125
-.' Leave the Grandmaster's Palace |goto 50.66,44.15 < 3 |c |noway
+goto 52.13,82.58
+.' Follow the path |goto 52.13,82.58 < 10 |c |noway |q Savages of Stonefalls##90030
+step
+goto 58.30,83.51
+.talk Shaali Kulun##90131
+..turnin Savages of Stonefalls##90030
+step
+goto 52.11,75.19
+'Go up the stairs |goto 52.11,75.19 < 10 |c |noway |q One of the Undaunted##90006/2
+step
+goto 46.16,63.14
+.click Ebonheart Wayshrine##90054
+.' Travel to the Davon's Watch Wayshrine |goto davonswatch_base 57.04,78.00 < 5 |c |noway |q One of the Undaunted##90006/2
+step
+goto davonswatch_base 69.23,69.26
+.' Follow the path |goto 69.23,69.26 < 10 |c |noway |q One of the Undaunted##90006/2
+step
+goto 67.18,48.97
+.' Follow the path down |goto 67.18,48.97 < 10 |c |noway |q One of the Undaunted##90006/2
+step
+goto 79.99,48.01
+.talk Kailstig the Axe##90024 |q One of the Undaunted##90006/2/1/Talk to Kailstig the Axe in Stonefalls##1
+step
+goto 79.56,47.79
+.' Watch the dialogue
+.' Watch the Initiation |q One of the Undaunted##90006/3/1/Watch Initiation##1
+step
+goto 80.03,47.98
+.talk Kailstig the Axe##90024
+..turnin One of the Undaunted##90006
+step
+goto davonswatch_base 68.04,67.84
+'Go through the gate |goto davonswatch_base 68.04,67.84 < 10 |c |noway |q Chasing Shadows##90064/1
+step
+goto 58.60,77.91
+.click Davon's Watch Wayshrine##90004
+.' Fast Travel to the Harborage |goto stonefalls_base 77.19,36.79 < 15 |c |noway |q Chasing Shadows##90064/1
+step
+goto 77.25,36.54
+.click The Harborage##90016
+.' Go to the Harborage |q Chasing Shadows##90064/1/1/Go to the Harborage##1
+step
+'Follow the path in the Harborage to the small camp:
+.talk The Prophet##3360001 |q Chasing Shadows##90064/2/1/Talk to the Prophet##1
+step
+'Follow the path in the Harborage back to the exit:
+.click Stonefalls##1100019
+.' Leave the Harborage |goto stonefalls_base 77.26,36.55 < 1 |c |noway |q Chasing Shadows##90064/3
+step
+goto davonswatch_base 48.75,71.23
+'Enter Davonswatch |goto davonswatch_base 48.75,71.23 < 10 |c |noway |q Chasing Shadows##90064/3
+step
+goto davonswatch_base 55.55,60.71
+'Cross the bridge |goto davonswatch_base 55.55,60.71 |q Chasing Shadows##90064/3
+step
+goto 66.28,57.70
+.talk Okeeh##90089
+..' Intimidate him |q Chasing Shadows##90064/3/2/Talk to Okeeh##1
+step
+goto 61.21,55.14
+.' Follow the path |goto 61.21,55.14 < 10 |c |noway |q Chasing Shadows##90064/3
+step
+goto 43.38,60.80
+.talk Feduria Llaren##90213
+..' Persuade her |q Chasing Shadows##90064/3/2/Talk to Feduria Llaren##2
+step
+goto davonswatch_base 76.16,58.51
+'Investigate the area |q Chasing Shadows##90064/4/1/Investigate Davon's Watch##1
+step
+goto 76.88,59.64
+.click Abandoned Cellar##90184
+.' Enter the Abandoned Cellar |q Chasing Shadows##90064/5/1/Enter the Cellar##1
+step
+goto thewormsretreat_base 52.20,86.20
+.click Orb of Discourse##3250002
+.' Search the Underground Chamber |q Chasing Shadows##90064/6/1/Search the Underground Chamber##1
+step
+goto 51.75,86.24
+.click Orb of Discourse##3250002
+.talk Abnur Tharn##450003
+..' Persuade him |q Chasing Shadows##90064/7/1/Talk to Abnur Tharn##1
+step
+goto 27.90,17.25
+.click Davon's Watch##90009
+.' Leave the Abandoned Cellar |goto davonswatch_base 76.95,59.72 < 1 |c |noway |q Chasing Shadows##90064/8
+step
+goto 67.70,53.69
+.' Follow the path |goto 67.70,53.69 < 10 |c |noway |q Chasing Shadows##90064/8
+step
+goto 25.61,40.25
+.click Stonefalls##1100019
+.' Follow the path |goto 24.69,41.96 < 10 |c |noway |q Chasing Shadows##90064/8
+step
+goto 76.30,34.03
+.' Follow the path up |goto 76.30,34.03 < 10 |c |noway |q Chasing Shadows##90064/8
+|only if ZGV.guidesets["LevelingDC"]
+step
+goto stonefalls_base 77.21,36.57
+.click The Harborage##90016
+.' Return to the Harborage |q Chasing Shadows##90064/8/1/Return to the Harborage##1
+step
+'Follow the path in the Harborage to the small camp:
+.talk The Prophet##3360001 |q Chasing Shadows##90064/9/1/Talk to the Prophet##1
+step
+'In the small camp in the Harborage:
+.talk Lyris Titanborn##3360006
+..turnin Chasing Shadows##90064
+step
+'Open your map and Fast Travel To Kragenmoor |goto kragenmoor_base 50.75,53.11 < 10 |c |noway |q A Gathering of Guar##90048/1 |future
 step
 'Open your map:
 .' Click the Ashen Roads Wayshrine
@@ -3963,7 +3929,7 @@ ZGV:RegisterGuide("Ebonheart Pact Leveling Guides\\Deeshan (16-24)",[[
 startlevel 16
 endlevel 24
 step
-goto stonefall_base 40.53,75.17
+goto stonefalls_base 40.53,75.17
 .' Follow the path |goto deshaan_base 15.74,37.07 < 10 |c |noway |q A Letter for Deshaan##90046/1
 step
 goto deshaan_base 14.81,37.75
@@ -4032,14 +3998,14 @@ goto 9.30,46.50
 step
 goto 9.32,46.45
 .click Maulborn Quarantine##100006
-.' Enter the Maulborn Quarantine |goto 9.31,46.34 < 1 |c |noway |q Proprietary Formula##100002/1
+.' Enter the Maulborn Quarantine |goto 9.31,46.34 < 1 |c |noway |q Bad Medicine##100001
 step
 goto 9.97,44.12
 .' Follow the path |goto 9.97,44.12 < 10 |c |noway |q Proprietary Formula##100002/1
 step
 goto 8.46,43.69
 .click The Serk Catacombs##100010
-.' Enter the Serk Catacombs |goto quarantineserk_base 9.72,40.45 < 1 |c |noway |q Proprietary Formula##100002/1
+.' Enter the Serk Catacombs |goto quarantineserk_base 9.72,40.45 < 1 |c |noway |q Bad Medicine##100001
 step
 goto quarantineserk_base 19.36,35.81
 .click Maulborn Curative##3820001
@@ -4228,17 +4194,17 @@ goto 12.83,57.10
 step
 goto deshaan_base 12.14,56.93
 .click Boiling Cauldron##100024
-.' Collect Skulls from Cauldrons |q Ritual of Anguish##100007/1/1/Collect Skulls from Cauldrons##1 |count 3 |tip It may take some time for this to spawn
+.' Collect Skulls from Cauldrons |q Ritual of Anguish##100007/1/1/Collect Skulls from Cauldrons##1 |count 2 |tip It may take some time for this to spawn
 step
 goto 11.78,56.68
 .' Kill Oathbound enemies
 .' Collect Treated Kindlepitch |q Oath Breaker##100006/2/1/Collect Treated Kindlepitch##1
+step
+goto 11.78,56.68
 .' Use a Treated Kindlepitch on the Northern Supply Shack
 .' Burn the Northern Supply Shack |q Oath Breaker##100006/3/Burn Northern Supply Shack##1
 step
 goto 12.91,57.54
-.' Kill Oathbound enemies
-.' Collect Treated Kindlepitch
 .' Follow the path |goto 12.91,57.54 < 10 |c |noway |q Ritual of Anguish##100007/1
 step
 goto deshaan_base 14.92,58.80
@@ -4246,14 +4212,10 @@ goto deshaan_base 14.92,58.80
 .' Collect Skulls from the Cauldron |q Ritual of Anguish##100007/1/1/Collect Skulls from Cauldrons##1 |count 6 |tip It may take some time for this to spawn
 step
 goto 14.67,59.52
-.' Kill Oathbound enemies
-.' Collect Treated Kindlepitch
 .' Use a Treated Kindlepitch on the Eastern Supply Shack
 .' Burn the Eastern Supply Shack |q Oath Breaker##100006/3/1/Burn Eastern Supply Shack##2
 step
 goto 14.99,60.07
-.' Kill Oathbound enemies
-.' Collect Treated Kindlepitch
 .' Follow the path up |goto 14.99,60.07 < 10 |c |noway |q Ritual of Anguish##100007/2
 step
 goto deshaan_base 14.85,61.24
@@ -4264,19 +4226,13 @@ goto 14.85,61.24
 .kill Khralek gro-Vortag##100048 |q Ritual of Anguish##100007/2/1/Kill Khralek gro-Vortag##1
 step
 goto 15.28,61.04
-.' Kill Oathbound enemies
-.' Collect Treated Kindlepitch
 .talk Idrasa##100047
 ..turnin Ritual of Anguish##100007
 step
 goto 14.44,59.83
-.' Kill Oathbound enemies
-.' Collect Treated Kindlepitch
 .' Follow the path |goto 14.44,59.83 < 10 |c |noway |q Oath Breaker##100006/3
 step
 goto 13.61,61.90
-.' Kill Oathbound enemies
-.' Collect Treated Kindlepitch
 .' Use the Treated Kindlepitch on the Southern Supply Shack
 .' Burn the Southern Supply Shack |q Oath Breaker##100006/3/1/Burn Southern Supply Shack##3
 step
@@ -4341,7 +4297,7 @@ goto 12.66,51.45
 .' Follow the road |goto 12.66,51.45 < 10 |c |noway |q The Llodos Plague##100004
 step
 goto narsis_base 18.98,49.85
-.wayshrine West Narsis Wayshrine
+.wayshrine West Narsis
 step
 goto 35.09,52.54
 .talk Guard Ren##100052
@@ -4377,7 +4333,7 @@ goto 62.26,65.86
 .' Enter the Sadri House |goto 62.57,66.20 < 1 |c |noway |q For Their Own Protection##100009/3
 step
 goto 66.00,70.73
-.' Follow the path up |goto 66.00,70.73 < 10 |c |noway |q For Their Own Protection##100009/3
+.' Follow the path up |goto 66.00,70.73 < 3 |c |noway |q For Their Own Protection##100009/3
 step
 goto 62.18,70.00
 .click Anonymous Journal##100034
@@ -4424,7 +4380,7 @@ goto 51.73,46.46
 step
 goto 53.77,49.38
 .click Narsis##100031
-.' Leave the Hlaalu Kinhouse |goto 54.07,49.83 < 1 |c |noway
+.' Leave the Hlaalu Kinhouse |goto 54.07,49.83 < 1 |c |noway |q Unwanted Guests##100010/2
 step
 goto 62.26,54.78
 .' Follow the road |goto 62.26,54.78 < 10 |c |noway |q Unwanted Guests##100010/2
@@ -4482,8 +4438,8 @@ step
 goto 57.80,55.59
 .talk Star##100087
 ..' _<Take the Key>_
-.' Look for the Star |q Fighting Back##100011/Look for the Star |sub
-.' Follow Star to the Secret Meeting Place |q Fighting Back##100011/3/1/Look for the Star##1
+.' Look for the Star |q Fighting Back##100011/3/1/Look for the Star##1
+.' Follow Star to the Secret Meeting Place |q Fighting Back##100011/4/1/Look for the Star##1
 step
 goto 31.13,60.57
 .click Tedas House##100013
@@ -4622,7 +4578,7 @@ goto deshaan_base 24.02,50.48
 ..accept The Naked Nord##100015
 step
 goto deshaan_base 26.56,48.29
-.wayshrine Obsidian Gorge Wayshrine
+.wayshrine Obsidian Gorge
 step
 goto 25.02,47.78
 .talk Evigna##100102
@@ -4753,9 +4709,6 @@ goto 42.59,36.12
 .talk Captain Diiril##100105
 .' Report Your Success of the Destroyed Wards |q Payback##100018/2/1/Report Your Success of the Destroyed Wards##1
 step
-goto obsidiangorge_base 42.60,35.87
-.talk Captain Diiril##100105 |q Payback##100018/3/2/Talk to Naryu to Start the Attack##1
-step
 goto deshaan_base 32.92,40.92
 .' Follow the path up |goto deshaan_base 32.92,40.92 < 10 |c |noway |q Payback##100018/3
 step
@@ -4763,7 +4716,7 @@ goto 36.31,42.30
 .' Leave the cave |goto 36.31,42.30 < 10 |c |noway |q Payback##100018/3
 step
 goto 35.88,44.14
-.talk Naryu Virian##100081
+.talk Naryu Virian##100081 |q Payback##100018/3/2/Talk to Naryu to Start the Attack##1
 .' Kill the enemies that attack
 .' Defend the Archers While They Destroy the Crates |q Payback##100018/3/1/Defend the Archers While They Destroy the Crates##1
 step
@@ -4842,10 +4795,10 @@ goto 42.72,40.41
 ..accept That Which Matters Most##100022
 step
 goto deshaan_base 44.12,41.13
-.wayshrine Mzithumz Wayshrine
+.wayshrine Mzithumz
 step
 goto 43.70,39.72
-.' Follow the path up |goto 43.70,39.72 |c |noway |q Mechanical Murder##100021/3
+.' Follow the path up |goto 43.70,39.72 |c |noway |q Mechanical Murder##100021 |future
 step
 goto 43.31,38.30
 .talk Vrali##100126
@@ -4867,7 +4820,7 @@ goto 47.49,39.36
 step
 goto 47.77,39.33
 .click Mzithumz##100057
-.' Enter Mzithumz |goto mzithumz_base 25.62,88.64 < 1 |c |noway |q Dissonant Commands##810001/1 |future
+.' Enter Mzithumz |goto mzithumz_base 25.62,88.64 < 1 |c |noway |q Mechanical Murder##100021 |future
 step
 goto mzithumz_base 34.23,89.08
 .talk Bedyni the Artificer##810001
@@ -4969,7 +4922,7 @@ goto 45.74,57.19
 ..accept Cultural Exchange##100024
 step
 goto 51.56,46.02
-.' Follow the path up |goto 51.56,46.02 < 10 |c |noway |q A Favor Returned##100023/2
+.' Follow the path up |goto 51.56,46.02 < 10 |c |noway |q A Favor Returned##100023/6 |future
 step
 goto mournhold_base 48.07,42.58
 'Go to the Tribunal Temple |q A Favor Returned##100023/2/1/Go to the Tribunal Temple##1
@@ -4978,11 +4931,11 @@ goto 48.44,41.61
 .talk Naryu Virian##100081 |q A Favor Returned##100023/3/1/Talk to Naryu Virian##1
 step
 goto 52.01,40.83
-.' Follow the path up |goto 52.01,40.83 < 10 |c |noway |q A Favor Returned##100023/4
+.' Follow the path up |goto 52.01,40.83 < 10 |c |noway |c |q A Favor Returned##100023/6
 step
 goto 48.56,38.44
 .click Tribunal Temple##90060
-.' Enter the Tribunal Temple |q A Favor Returned##100023/4/1/Enter the Tribunal Temple##1
+.' Enter the Tribunal Temple |goto mournhold_base 49.50,39.12 |noway |c |q A Favor Returned##100023/6
 step
 goto 49.77,37.20
 .talk Almalexia##90054 |q A Favor Returned##100023/5/1/Talk to Almalexia##1
@@ -4992,7 +4945,7 @@ goto 49.45,39.30
 .' Leave the Tribunal Temple |q A Favor Returned##100023/6/1/Leave the Tribunal Temple##1
 step
 goto 43.41,45.22
-.' Follow the path down |goto 43.41,45.22 < 10 |c |noway |q Cultural Exchange##100024/1
+.' Follow the path down |goto 43.41,45.22 < 10 |c |noway |q Message to Mournhold##100020
 step
 goto 31.85,55.03
 .talk Iirila Maleran##100211
@@ -5000,7 +4953,7 @@ goto 31.85,55.03
 step
 goto 40.84,80.07
 .click Fighters Guild##90003
-.' Enter the Fighters Guild |goto 41.16,80.35 < 1 |c |noway |q Message to Mournhold##100020
+.' Enter the Fighters Guild |goto 41.16,80.35 < 1 |c |noway |q The Dangerous Past##90038
 step
 goto 43.31,82.88
 .talk Ordinator Kilao##100225
@@ -5023,41 +4976,41 @@ goto mzendeldt_base 6.54,41.35
 .talk Guildmaster Sees-All-Colors##90014 |q The Dangerous Past##90038/4/2/Talk to Sees-All-Colors##1
 step
 goto 18.15,47.19
-.' Follow the path |goto 18.15,47.19 < 10 |c |noway |q The Dangerous Past##90038/4
+.' Follow the path |goto 18.15,47.19 < 10 |c |noway |q The Dangerous Past##90038/15 |future
 step
 goto 18.32,31.10
 .click Heavy Door##490002
-.' Go through the doorway |goto 18.33,29.97 < 1 |c |noway |q The Dangerous Past##90038/4
+.' Go through the doorway |goto 18.33,29.97 < 1 |c |noway |q The Dangerous Past##90038/15 |future
 step
 goto 18.32,26.86
-.' Watch the dialogue |q The Dangerous Past##90038/4
+.' Watch the dialogue
 .click Curano's Journal##490003
 .' Read the Discarded Journal |q The Dangerous Past##90038/5/3/Read Discarded Journal##1
 step
 goto 27.63,20.25
 .click Heavy Door##490002
-.' Go through the doorway |goto 29.40,20.17 < 1 |c |noway |q The Dangerous Past##90038/6
+.' Go through the doorway |goto 29.40,20.17 < 1 |c |noway |q The Dangerous Past##90038/15 |future
 step
 goto 42.56,20.18
 .click Heavy Door##490002
-.' Go through the doorway |goto 42.56,20.18 < 3 |c |noway |q The Dangerous Past##90038/6
+.' Go through the doorway |goto 42.56,20.18 < 3 |c |noway |q The Dangerous Past##90038/15 |future
 step
 goto 63.70,20.13
 .click Heavy Door##490002
-.' Go through the doorway |goto 65.65,20.20 < 1 |c |noway |q The Dangerous Past##90038/6
+.' Go through the doorway |goto 65.65,20.20 < 1 |c |noway |q The Dangerous Past##90038/15 |future
 step
 goto 68.91,21.95
-.' Follow the path |goto 68.91,21.95 < 10 |c |noway |q The Dangerous Past##90038/6
+.' Follow the path |goto 68.91,21.95 < 10 |c |noway |q The Dangerous Past##90038/15 |future
 step
 goto 83.89,33.29
-.' Follow the path |goto 83.89,33.29 < 10 |c |noway |q The Dangerous Past##90038/6
+.' Follow the path |goto 83.89,33.29 < 10 |c |noway |q The Dangerous Past##90038/15 |future
 step
 goto 83.83,43.04
 .click Heavy Door##490002
-.' Go through the doorway |goto 83.93,45.26 < 1 |c |noway |q The Dangerous Past##90038/6
+.' Go through the doorway |goto 83.93,45.26 < 1 |c |noway |q The Dangerous Past##90038/14 |future
 step
 goto 83.81,46.93
-.' Explore Mzeneldt |q The Dangerous Past##90038/6/1/Explore Mzeneldt##1
+.' Explore Mzeneldt |q The Dangerous Past##90038/5/1/Explore Mzeneldt##1
 .' Watch the dialogue
 .' Witness the Scene |q The Dangerous Past##90038/6/1/Witness the Scene##1
 step
@@ -5070,11 +5023,11 @@ goto 83.23,47.28
 step
 goto 83.99,64.65
 .click Heavy Door##490002
-.' Go through the doorway |goto 83.85,65.52 < 1 |c |noway |q The Dangerous Past##90038/9
+.' Go through the doorway |goto 83.85,65.52 < 1 |c |noway |q The Dangerous Past##90038/15 |future
 step
 goto 62.64,71.91
 .click Heavy Door##490002
-.' Go through the doorway |goto 61.16,71.89 < 1 |c |noway |q The Dangerous Past##90038/9
+.' Go through the doorway |goto 61.16,71.89 < 1 |c |noway |q The Dangerous Past##90038/15 |future
 step
 goto 58.91,71.95
 .' Search Mzeneldt |q The Dangerous Past##90038/9/1/Search Mzeneldt##1
@@ -5091,11 +5044,11 @@ goto 44.87,65.55
 .' Find a Way Through the Doors |q The Dangerous Past##90038/11/1/Find a Way Through the Doors##1
 step
 goto 39.96,71.99
-.' Follow the path |goto 39.96,71.99 < 10 |c |noway |q The Dangerous Past##90038/12
+.' Follow the path |goto 39.96,71.99 < 10 |c |noway |q The Dangerous Past##90038/15 |future
 step
 goto 37.04,63.30
 .click Heavy Door##490002
-.' Go through the doorway |goto 37.11,61.31 < 1 |c |noway |q The Dangerous Past##90038/12
+.' Go through the doorway |goto 37.11,61.31 < 1 |c |noway |q The Dangerous Past##90038/15 |future
 step
 goto 37.29,48.53
 .click Ostarand's Diary##490008
@@ -5116,7 +5069,7 @@ goto 36.69,45.98
 .click Portal to the Guildhall##490001
 .' Meet Merric in the Guildhall |q The Dangerous Past##90038/16/1/Meet Merric in the Guildhall##1
 step
-goto deshaan_base 43.48,82.72
+goto mournhold_base 43.55,82.62
 .talk Merric at-Aswala##90084
 ..turnin The Dangerous Past##90038
 step
@@ -5130,11 +5083,11 @@ goto 40.22,79.87
 ..accept The Prismatic Core##100027
 step
 goto 52.84,79.25
-.' Follow the path up |goto 52.84,79.25 < 10 |c |noway |q Vengeance of the Oppressed##100025/1
+.' Follow the path up |goto 52.84,79.25 < 10 |c |noway |q A Favor Returned##100023/11 |future
 step
 goto 68.31,65.33
 .click The Flaming Nix##100062
-.' Enter the Flaming Nix |goto 68.56,65.34 < 1 |c |noway |q Vengeance of the Oppressed##100025/1
+.' Enter the Flaming Nix |goto 68.56,65.34 < 1 |c |noway |q A Favor Returned##100023/11 |future
 step
 goto 71.40,64.88
 .talk Betina Volek##100178 |q Vengeance of the Oppressed##100025/1/1/Find Betina Volek##1
@@ -5193,17 +5146,17 @@ goto 60.53,58.24
 ..turnin Vengeance of the Oppressed##100025
 step
 goto 49.78,78.43
-.' Follow the road |goto 49.78,78.43 < 10 |c |noway |q A Favor Returned##100023/12
+.' Follow the road |goto 49.78,78.43 < 10 |c |noway |q The Mournhold Underground##100028/11 |future
 step
 goto 29.75,80.82
-.' Follow the path |goto 29.75,80.82 < 10 |c |noway |q A Favor Returned##100023/12
+.' Follow the path |goto 29.75,80.82 < 10 |c |noway |q The Mournhold Underground##100028/11 |future
 step
 goto deshaan_base 41.36,57.65
 'Go to the House Dres Farm |q A Favor Returned##100023/12/1/Go to the House Dres Farm##1
 step
 goto 42.00,59.59
 .click Sathram House##100069
-.' Enter the Sathram House |goto 41.96,59.64 < 1 |c |noway |q A Favor Returned##100023/13
+.' Enter the Sathram House |goto 41.96,59.64 < 1 |c |noway |q The Mournhold Underground##100028/11 |future
 step
 goto 41.66,59.99
 .click Suspicious Rug##100073
@@ -5216,7 +5169,7 @@ goto 41.89,59.81
 step
 goto 41.66,59.99
 .click Mournhold Underground##100074
-.' Enter the Mournhold Underground |q The Mournhold Underground##100028/1/1/Enter the Trap Door##1
+.' Enter the Mournhold Underground |goto mournholdsewers_base 39.87,84.72 |noway |c |q The Mournhold Underground##100028/11 |future
 step
 goto mournholdsewers_base 29.58,75.10
 .talk Naryu Virian##100081
@@ -5249,19 +5202,19 @@ goto 35.22,61.87
 step
 goto 35.43,61.66
 .click Mournhold Sewer##520005
-.' Go through the doorway |goto 36.86,61.68 < 1 |c |noway |q The Mournhold Underground##100028/8
+.' Go through the doorway |goto 36.86,61.68 < 1 |c |noway |q The Mournhold Underground##100028/11 |future
 step
 goto 39.89,57.33
 .talk Naryu Virian##100081 |q The Mournhold Underground##100028/8/1/Talk to Naryu##1
 step
 goto 51.15,58.87
-.' Follow the path down |goto 51.15,58.87 < 5 |c |noway |q The Mournhold Underground##100028/9
+.' Follow the path down |goto 51.15,58.87 < 5 |c |noway |q The Mournhold Underground##100028/11 |future
 step
 goto 56.19,50.95
-.' Follow the path |goto 56.19,50.95 < 5 |c |noway |q The Mournhold Underground##100028/9
+.' Follow the path |goto 56.19,50.95 < 5 |c |noway |q The Mournhold Underground##100028/11 |future
 step
 goto 63.10,27.90
-.' Follow the path |goto 63.10,27.90 < 5 |c |noway |q The Mournhold Underground##100028/9
+.' Follow the path |goto 63.10,27.90 < 5 |c |noway |q The Mournhold Underground##100028/11 |future
 step
 goto 48.13,37.72
 'Find Whoever Activated the Wards |q The Mournhold Underground##100028/9/1/Find Whoever Activated the Wards##1
@@ -5287,7 +5240,7 @@ goto mournhold_base 29.60,81.03
 ..accept The Seal of Three##100030
 step
 goto mournhold_base 43.39,44.94
-.' Follow the path up |goto mournhold_base 43.39,44.94 < 10 |c |noway
+.' Follow the path up |goto mournhold_base 43.39,44.94 < 10 |c |noway |q The Seal of Three##100030
 step
 goto 48.03,42.45
 .talk Hand of Almalexia##90054 |q The Seal of Three##100030/1/1/Talk to Almalexia##1
@@ -5297,37 +5250,37 @@ goto 48.55,38.46
 .' Enter the Tribunal Temple |goto tribunaltemple_base 50.21,80.81 < 1 |c |noway
 step
 goto tribunaltemple_base 42.04,70.23
-.' Follow the path |goto tribunaltemple_base 42.04,70.23 < 10 |c |noway
+.' Follow the path |goto tribunaltemple_base 42.04,70.23 < 10 |c |noway |q The Seal of Three##100030/3
 step
 goto 35.98,68.13
 .click Daedric Portal##480001
 .' Close the Daedric Portal |q The Seal of Three##100030/3/1/Close the Daedric Portals##1 |count 1
 step
 goto 27.40,63.60
-.' Follow the path |goto 27.40,63.60 < 10 |c |noway
+.' Follow the path |goto 27.40,63.60 < 10 |c |noway |q The Seal of Three##100030/3
 step
 goto 43.84,34.22
-.' Follow the path |goto 43.84,34.22 < 10 |c |noway
+.' Follow the path |goto 43.84,34.22 < 10 |c |noway |q The Seal of Three##100030/3
 step
 goto 49.84,41.63
 .click Daedric Portal##480001
 .' Close the Daedric Portall |q The Seal of Three##100030/3/1/Close the Daedric Portals##1 |count 2
 step
 goto 57.20,35.62
-.' Follow the path |goto 57.20,35.62 < 10 |c |noway
+.' Follow the path |goto 57.20,35.62 < 10 |c |noway |q The Seal of Three##100030/3
 step
 goto 69.24,59.61
-.' Follow the path |goto 69.24,59.61 < 10 |c |noway
+.' Follow the path |goto 69.24,59.61 < 10 |c |noway |q The Seal of Three##100030/3
 step
 goto 67.08,66.85
 .click Daedric Portal##480001
 .' Close the Daedric Portall |q The Seal of Three##100030/3/1/Close the Daedric Portals##1 |count 3
 step
 goto 52.41,75.29
-.' Follow the path |goto 52.41,75.29 < 10 |c |noway
+.' Follow the path |goto 52.41,75.29 < 10 |c |noway |q The Seal of Three##100030/4
 step
 goto 29.26,77.17
-.' Follow the path |goto 29.26,77.17 < 10 |c |noway
+.' Follow the path |goto 29.26,77.17 < 10 |c |noway |q The Seal of Three##100030/4
 step
 goto 19.44,77.17
 .click Altar of Almalexia##400003
@@ -5402,25 +5355,25 @@ goto tribunaltemple_base 50.84,47.95
 step
 goto 59.68,52.63
 .click Tribunal Temple##90060
-.' Leave the High Chapel of the Three |goto 61.03,51.83 < 1 |c |noway
+.' Leave the High Chapel of the Three |goto 61.03,51.83 < 1 |c |noway |q The Seal of Three##100030
 step
 goto 50.20,75.00
 .talk Hand of Almalexia##90054
 ..turnin The Seal of Three##100030
 ..accept Chasing the Magistrix##400001
 step
-goto mournhold_base 49.53,39.38
+goto tribunaltemple_base 50.31,81.55
 .click Mournhold##100064
-.' Leave the Tribunal Temple |goto mournhold_base 48.50,38.67 < 1 |c |noway
+.' Leave the Tribunal Temple |goto mournhold_base 48.50,38.67 < 1 |c |noway |q Chasing the Magistrix##400001/1
 step
 goto mournhold_base 38.65,58.49
-.' Follow the path |goto mournhold_base 38.65,58.49 < 10 |c |noway
+.' Follow the path |goto mournhold_base 38.65,58.49 < 10 |c |noway |q Chasing the Magistrix##400001/1
 step
 goto mournhold_base 28.94,81.82
-.' Follow the road |goto mournhold_base 28.94,81.82 < 10 |c |noway
+.' Follow the road |goto mournhold_base 28.94,81.82 < 10 |c |noway |q Chasing the Magistrix##400001/1
 step
 goto deshaan_base 38.80,56.05
-.wayshrine Mournhold Wayshrine
+.wayshrine Mournhold
 step
 goto deshaan_base 34.55,55.02
 .talk Raynor Vanos##150270
@@ -5511,7 +5464,7 @@ goto deshaan_base 32.08,60.02
 ..accept Honor Bound##100032
 step
 goto deshaan_base 27.10,54.99
-.wayshrine Muth Gnarr Hills Wayshrine
+.wayshrine Muth Gnarr Hills
 step
 goto 24.11,56.62
 .' Follow the road |goto 24.11,56.62 < 10 |c |noway |q Honor Bound##100032/1
@@ -5555,7 +5508,7 @@ goto deshaan_base 28.80,62.91
 step
 goto 28.62,63.09
 .talk Afflicted Commoner##100281
-.' Rescue the Afflicted Commmoner  |q Honor Bound##100032/3/1/Rescue Afflicted Commoners and Monks##1 |count 5
+.' Rescue the Afflicted Commmoner |q Honor Bound##100032/3/1/Rescue Afflicted Commoners and Monks##1 |count 5
 step
 'Next to you
 .talk Healer Hlaren##100279 |q Honor Bound##100032/4/1/Talk to Healer Hlaren##1
@@ -5572,7 +5525,7 @@ goto 31.04,60.92
 step
 goto 30.18,62.21
 .click Monastery##100081
-.' Enter the Monastery |goto 30.22,62.26 < 1 |c |noway |q Honor Bound##100032/6
+.' Enter the Monastery |goto 30.22,62.26 < 1 |c |noway |q Honor Bound##100032/9 |future
 step
 goto 30.79,62.73
 'Follow the path down and Find the Tear of Saint Veloth |q Honor Bound##100032/6/1/Find the Tear of Saint Veloth##1
@@ -5639,7 +5592,9 @@ goto 68.35,50.48
 .' Acquire a Shad Astula Invitation |q By Invitation Only##100026/1/1/Acquire a Shad Astula Invitation##1
 step
 goto 71.93,44.23
-.talk The Boatmaster##100204 |q By Invitation Only##100026/2/1/Talk to The Boatmaster##1
+.talk The Boatmaster##100204
+..' Tell him you have an invitation
+.' Take the Boat Across the River |goto deshaan_base 55.54,41.27 < 1 |c |noway |q Vision Quest##100036 |future
 step
 goto deshaan_base 55.98,40.37
 .talk Adras Sarethi##100259
@@ -5648,28 +5603,11 @@ step
 goto deshaan_base 56.03,39.32
 .talk Registrar Bameni##100263 |q By Invitation Only##100026/3/1/Talk to the Registrar##1
 step
-goto 55.55,41.22
-.talk The Boatmaster##100204
-..' Tell him to take you back to Mournhold
-.' Take the Boat Across the River |goto mournhold_base 71.89,44.02 < 1 |c |noway |q Cultural Exchange##100024
-step
-goto mournhold_base 48.66,58.81
-.' Follow the path down |goto 48.66,58.81 < 10 |c |noway |q Cultural Exchange##100024
-step
-goto mournhold_base 45.58,57.23
-.talk Rigurt the Brash##100155
-..turnin Cultural Exchange##100024
-step
-goto 71.93,44.23
-.talk The Boatmaster##100204
-..' Tell him you have an invitation
-.' Take the Boat Across the River |goto deshaan_base 55.54,41.27 < 1 |c |noway |q By Invitation Only##100026/4
-step
 goto 56.12,38.30
 .' Follow the path |goto 56.12,38.30 < 10 |c |noway |q By Invitation Only##100026/4
 step
 goto deshaan_base 58.16,38.53
-.wayshrine Shad Astula Wayshrine
+.wayshrine Shad Astula
 step
 goto 59.70,33.11
 .click Arch-Mage's Office##100091
@@ -5865,6 +5803,13 @@ goto 55.58,41.19
 .talk The Boatmaster##100204
 .' Take the Boat Across the River |goto mournhold_base 71.89,44.02 < 5 |c |noway |q Trade Negotiations##100037/1 |future
 step
+goto mournhold_base 48.66,58.81
+.' Follow the path down |goto 48.66,58.81 < 10 |c |noway |q Cultural Exchange##100024
+step
+goto mournhold_base 45.58,57.23
+.talk Rigurt the Brash##100155
+..turnin Cultural Exchange##100024
+step
 goto mournhold_base 67.38,83.80
 .' Follow the path |goto mournhold_base 67.38,83.80 < 10 |c |noway |q Trade Negotiations##100037/1 |future
 step
@@ -5877,7 +5822,7 @@ goto 58.07,54.04
 .' Find the Hlaalu Trading Post |q Trade Negotiations##100037/1/1/Find the Hlaalu Trading Post##1
 step
 goto 59.96,55.06
-.' Follow the path |goto 59.96,55.06 < 10 |c |noway |q Trade Negotiations##100037/2
+.' Follow the path |goto 59.96,55.06 < 10 |c |noway |q Trade Negotiations##100037
 step
 goto 60.66,56.06
 .talk Gulakhan Harrinat##100387 |q Trade Negotiations##100037/2/1/Talk to Gulakhan Harrinat##1
@@ -5903,10 +5848,10 @@ goto 61.35,55.74
 ..accept The Trial of the Ghost Snake##100038
 step
 goto deshaan_base 61.21,53.57
-.wayshrine Ghost Snake Vale Wayshrine
+.wayshrine Ghost Snake Vale
 step
 goto 62.97,57.16
-.' Follow the path |goto 62.97,57.16 < 10 |c |noway |q The Trial of the Ghost Snake##100038/1
+.' Follow the path |goto 62.97,57.16 < 10 |c |noway |q The Trial of the Ghost Snake##100038/5 |future
 step
 goto 67.55,57.10
 .click Risa's Journal##100106
@@ -5919,7 +5864,7 @@ goto 66.10,56.78
 .' Search Constrictors for an Amulet |q Remembering Risa##100039/1/1/Search Constrictors for an Amulet##1
 step
 goto 71.31,61.71
-.' Follow the path |goto 71.31,61.71 < 10 |c |noway |q The Trial of the Ghost Snake##100038/2
+.' Follow the path |goto 71.31,61.71 < 10 |c |noway |q The Trial of the Ghost Snake##100038/5 |future
 step
 goto 73.12,61.80
 .click Offering Bowl##100108
@@ -5973,7 +5918,7 @@ goto 65.24,50.08
 ..accept Restless Spirits##100040
 step
 goto 69.55,47.38
-.' Follow the path up |goto 69.55,47.38 < 10 |c |noway |q Restless Spirits##100040/1
+.' Follow the path up |goto 69.55,47.38 < 10 |c |noway |q Restless Spirits##100040/4 |future
 step
 goto 70.56,47.77
 .click Selfora Inn##100115
@@ -6100,7 +6045,7 @@ goto 70.64,47.79
 step
 goto 68.88,49.07
 .click Town Hall##100126
-.' Enter the Town Hall |q Rescue and Revenge##100042/6/1/Enter the Town Hall##1
+.' Enter the Town Hall  |goto deshaan_base 68.90,48.98 |q Rescue and Revenge##100042/9 |future
 step
 goto 68.90,48.54
 .' Follow the path down |goto 68.90,48.54 < 5 |c |noway |q Rescue and Revenge##100042/7
@@ -6159,14 +6104,14 @@ goto 77.38,52.85
 .' Follow the path |goto 77.38,52.85 < 10 |c |noway |q The Ravaged Village##100044/1 |future
 step
 goto deshaan_base 82.08,54.68
-.wayshrine Silent Mire Wayshrine
+.wayshrine Silent Mire
 step
 goto 83.15,53.07
 .talk Vara-Zeen##100439
 ..accept The Ravaged Village##100044
 step
 goto 83.47,53.19
-.' Follow the path |goto 83.47,53.19 < 10 |c |noway |q The Ravaged Village##100044/1
+.' Follow the path |goto 83.47,53.19 < 10 |c |noway |q The Ravaged Village##100044
 step
 goto 85.33,53.90
 .talk Leel-Vata##100442 |q The Ravaged Village##100044/1/1/Talk to Leel-Vata##1
@@ -6280,7 +6225,7 @@ goto deshaan_base 84.17,52.52
 step
 goto deshaan_base 84.07,52.32
 .click Seeks-the-Night's Hut##100136
-.' Enter Seeks-the-Night's Hut |q The Saving of Silent Mire##100045/6/2/Enter Seeks-the-Night's Hut##1
+.' Enter Seeks-the-Night's Hut |goto deshaan_base 84.04,52.28 |noway |c |q The Saving of Silent Mire##100045/7 |future
 step
 goto 83.88,51.92
 .kill Shadow of Seeks-the-Night##100443 |q The Saving of Silent Mire##100045/7/1/Kill Seeks-the-Night##1
@@ -6346,7 +6291,7 @@ goto 83.11,53.25
 .' Follow the road |goto 83.11,53.25 < 10 |c |noway |q Bad Soldiers##100049/1 |future
 step
 goto deshaan_base 84.69,45.97
-.wayshrine Tal'Deic Grounds Wayshrine
+.wayshrine Tal'Deic Grounds
 step
 goto 82.85,46.36
 .' Follow the road |goto 82.85,46.36 < 10 |c |noway |q Bad Soldiers##100049/1 |future
@@ -6380,7 +6325,7 @@ goto 77.64,46.60
 step
 goto 76.23,46.40
 .click Tal'Deic Keep##100143
-.' Enter Tal'Deic Keep |goto 76.16,46.40 < 1 |c |noway |q Rules and Regulations##100048/1
+.' Enter Tal'Deic Keep |goto 76.16,46.40 < 1 |c |noway |q Rules and Regulations##100048/7 |future
 step
 goto 74.89,46.40
 .talk General Gavryn Redoran##100468 |q Rules and Regulations##100048/1/1/Talk to General Gavryn Redoran##1
@@ -6392,7 +6337,7 @@ goto 76.11,46.37
 .talk Ragna Stormcrag##100470 |q Rules and Regulations##100048/3/1/Talk to Ragna Stormcrag##1
 step
 goto 75.32,46.79
-.' Follow the path down |goto 75.32,46.79 < 5 |c |noway |q Rules and Regulations##100048/4
+.' Follow the path down |goto 75.32,46.79 < 5 |c |noway |q Rules and Regulations##100048/6 |future
 step
 goto 75.33,46.40
 .talk Defender Furen##100471 |q Rules and Regulations##100048/4/1/Talk to Defender Furen##1
@@ -6440,11 +6385,11 @@ goto 76.14,46.42
 .' Leave Tal'Deic Keep |goto 76.23,46.40 < 1 |c |noway |q What Lies Beneath##100050/1
 step
 goto 76.15,44.48
-.' Follow the path |goto 76.15,44.48 < 10 |c |noway |q What Lies Beneath##100050/1
+.' Follow the path |goto 76.15,44.48 < 10 |c |noway |q What Lies Beneath##100050
 step
 goto 75.36,45.13
 .click Tal'Deic Crypts##100159
-.' Enter the Tal'Deic Crypts |q What Lies Beneath##100050/1/1/Enter the Ruins##1
+.' Enter the Tal'Deic Crypts |goto taldeiccrypts_base 25.53,10.72 |noway |c |q What Lies Beneath##100050
 step
 goto taldeiccrypts_base 19.72,37.38
 .talk Saryvn##820001
@@ -6490,10 +6435,10 @@ goto 75.08,47.57
 .' Retrieve the Daedric Tome |q The Soldier's Alibi##820001/1/1/Retrieve Daedric Tome##1
 step
 goto 38.94,65.60
-.' Follow the path |goto 38.94,65.60 < 10 |c |noway |q The Soldier's Alibi##820001/2
+.' Follow the path |goto 38.94,65.60 < 10 |c |noway |q The Soldier's Alibi##820001
 step
 goto taldeiccrypts_base 25.13,63.95
-'Follow the path |goto taldeiccrypts_base 25.13,63.95 < 10 |c |noway |q The Soldier's Alibi##820001/2
+'Follow the path |goto taldeiccrypts_base 25.13,63.95 < 10 |c |noway |q The Soldier's Alibi##820001
 step
 goto 19.91,37.50
 .talk Saryvn##820001 |q The Soldier's Alibi##820001/2
@@ -6601,7 +6546,7 @@ goto 75.74,37.80
 step
 goto 75.58,37.79
 .click Crypt##90013
-.' Enter the Crypt |goto 75.40,37.19 < 1 |c |noway |q A Saint Asunder##100043/6
+.' Enter the Crypt |goto 75.40,37.19 < 1 |c |noway |q A Saint Asunder##100043/8 |future
 step
 goto 74.17,36.47
 .click Saint Veloth's Skull##100164
@@ -6633,7 +6578,7 @@ goto 81.70,37.50
 .' Follow the road |goto 81.70,37.50 < 10 |c |noway |q Into the Mouth of Madness##100054/1 |future
 step
 goto deshaan_base 82.94,40.78
-.wayshrine Eidolon's Hollow Wayshrine
+.wayshrine Eidolon's Hollow
 step
 goto 85.98,39.65
 .talk Ordinator Gorili##100493
@@ -6659,32 +6604,32 @@ goto 86.65,41.12
 ..turnin Healing Hearts##100052
 step
 goto 84.67,40.11
-.' Follow the path up |goto 84.67,40.11 < 10 |c |noway |q Into the Mouth of Madness##100054/4
+.' Follow the path up |goto 84.67,40.11 < 10 |c |noway |q Into the Mouth of Madness##100054
 step
 goto 86.39,38.99
-.' Follow the path |goto 86.39,38.99 < 10 |c |noway |q Into the Mouth of Madness##100054/4
+.' Follow the path |goto 86.39,38.99 < 10 |c |noway |q Into the Mouth of Madness##100054
 step
 goto 86.23,35.66
-.' Follow the path |goto 86.23,35.66 < 10 |c |noway |q Into the Mouth of Madness##100054/4
+.' Follow the path |goto 86.23,35.66 < 10 |c |noway |q Into the Mouth of Madness##100054
 step
 goto 84.56,37.05
-.' Follow the path up |goto 84.56,37.05 < 10 |c |noway |q Into the Mouth of Madness##100054/4
+.' Follow the path up |goto 84.56,37.05 < 10 |c |noway |q Into the Mouth of Madness##100054
 step
 goto 83.77,36.76
 .click Daedric Ward##100169
 .' Destroy the Ward |q Into the Mouth of Madness##100054/4/1/Destroy the Wards##1 |count 1
 step
 goto 84.91,36.52
-.' Follow the path down |goto 84.91,36.52 < 10 |c |noway |q Into the Mouth of Madness##100054/4
+.' Follow the path down |goto 84.91,36.52 < 10 |c |noway |q Into the Mouth of Madness##100054
 step
 goto 87.49,36.62
-.' Follow the path |goto 87.49,36.62 < 10 |c |noway |q Into the Mouth of Madness##100054/4
+.' Follow the path |goto 87.49,36.62 < 10 |c |noway |q Into the Mouth of Madness##100054
 step
 goto 90.62,39.14
-.' Follow the path |goto 90.62,39.14 < 10 |c |noway |q Into the Mouth of Madness##100054/4
+.' Follow the path |goto 90.62,39.14 < 10 |c |noway |q Into the Mouth of Madness##100054
 step
 goto 90.99,41.83
-.' Follow the path up |goto 90.99,41.83 < 10 |c |noway |q Into the Mouth of Madness##100054/4
+.' Follow the path up |goto 90.99,41.83 < 10 |c |noway |q Into the Mouth of Madness##100054
 step
 goto 90.47,42.43
 .click Maulborn Ward##100053
@@ -6705,7 +6650,7 @@ goto deshaan_base 90.24,36.04
 step
 goto 90.24,36.04
 .click The Hollow Cave##100171
-.' Enter Vox's Cave |q Into the Mouth of Madness##100054/6/1/Enter Vox's Cave##1
+.' Enter Vox's Cave |goto eidolonshollow2_base 53.33,91.88 |noway |c |q The Judgment of Veloth##840002/10 |future
 step
 goto eidolonshollow2_base 53.29,77.76
 .talk Aspera the Forgotten##840001
@@ -6767,7 +6712,7 @@ goto 49.70,9.06
 step
 goto 49.52,6.26
 .click Vox's Hollow##840002
-.' Enter Vox's Hollow |goto deshaan_base 90.08,28.33 < 1 |c |noway |q The Judgment of Veloth##840002/1
+.' Enter Vox's Hollow |goto deshaan_base 90.08,28.33 < 1 |c |noway |q The Judgment of Veloth##840002/10 |future
 step
 goto 90.17,26.09
 'Enter the Hollow |q The Judgment of Veloth##840002/1/1/Enter the Hollow##1
@@ -6850,7 +6795,7 @@ goto 44.09,75.08
 .click Wretched Squalor##470001
 .' Leave the Ruined House |goto 43.70,74.68 < 1 |c |noway |q Castle of the Worm##100031/7
 step
-goto 40.10,70.62
+goto castleoftheworm1_base 52.19,66.89
 .talk Gahznar##470001 |tip He walks up to you on the road.
 .' Speak to Slaves to Get Information |q Castle of the Worm##100031/7/2/Speak to Slaves to Get Information##1
 step
@@ -7087,7 +7032,7 @@ goto Stormhold 50.93,50.68
 .' Leave the Fighters Guild |goto 53.88,53.92 |c |noway
 step
 goto 55.74,34.71
-.' Follow the path |goto 55.74,34.71 |c |noway
+.' Follow the path |goto 55.74,34.71 |c |noway |q Three Tender Souls##190542/1
 step
 goto 42.19,20.23
 .talk Doubts-the-Moon##190044
@@ -7103,11 +7048,11 @@ goto 84.12,55.51
 .talk Veenaza##190052 |q Shadowfen Smorgasbord##190003/1/1/Talk to Veenaza##1
 step
 goto 72.23,50.83
-.' Follow the path |goto 72.23,50.83 |c |noway
+.' Follow the path |goto 72.23,50.83 |c |noway |q Three Tender Souls##190542/3 |future
 step
 goto 60.19,65.48
 .click Mortuary##190006
-.' Enter the Mortuary |goto 59.58,65.98 |c |noway
+.' Enter the Mortuary |goto 59.58,65.98 |c |noway |q Three Tender Souls##190542/3 |future
 step
 goto 59.56,80.16
 .click Eroni Omobar##190057
@@ -7126,14 +7071,14 @@ goto stormhold_base 59.63,75.54
 step
 goto stormhold_base 59.65,65.90
 .click Stormhold##190004
-.' Leave the Mortuary |goto stormhold_base 60.22,65.46 < 1 |c |noway
+.' Leave the Mortuary |goto stormhold_base 60.22,65.46 < 1 |c |noway |q Three Tender Souls##190542/4
 step
 goto 74.11,48.60
 .talk Gethis Omobar##190048 |q Three Tender Souls##190542/4/1/Meet Gethis Omobar at His Home##1
 step
 goto 75.13,48.25
 .click Gethis' House##190007
-.' Enter Gethis' House |goto 75.96,48.25 |c |noway
+.' Enter Gethis' House |goto 75.96,48.25 |c |noway |q Three Tender Souls##190542/5
 step
 goto 77.88,48.12
 .kill Skin-Stealer Pyromage##190063
@@ -7141,11 +7086,11 @@ goto 77.88,48.12
 step
 goto 76.04,48.24
 .click Stormhold##190004
-.' Leave Gethis' House |goto 75.41,48.18 |c |noway
+.' Leave Gethis' House |goto 75.41,48.18 |c |noway |q Three Tender Souls##190542/6
 step
 goto 53.99,53.79
 .click Fighters Guild##90003
-.' Enter the Fighters Guild |goto 50.87,50.38 |c |noway
+.' Enter the Fighters Guild |goto 50.87,50.38 |c |noway |q Three Tender Souls##190542/6
 step
 goto stormhold_base 57.24,57.78
 .' Talk to Vicecanon Hrondar |q Three Tender Souls##190542/6/1/Talk to Vicecanon Hrondar##1
@@ -7157,7 +7102,7 @@ goto 58.37,57.83
 step
 goto 50.86,50.70
 .click Stormhold##190004
-.' Leave the Fighters Guild |goto 53.88,53.92 |c |noway
+.' Leave the Fighters Guild |goto 53.88,53.92 |c |noway |q Unwelcome Guests##190543/1
 step
 goto 42.10,44.16
 .' Follow the path |goto 42.10,44.16 |c |noway
@@ -7251,43 +7196,43 @@ goto 31.49,30.62
 ..accept The Thin Ones##190009
 step
 goto 26.83,36.29
-.' Follow the path |goto 26.83,36.29 |c |noway
+.' Follow the path |goto 26.83,36.29 |c |noway |q The Thin Ones##190009/1
 step
 goto 24.47,35.19
 .talk Chieftain Suhlak##190057 |q The Thin Ones##190009/1/1/Talk to Chieftain Suhlak##1
 step
 goto 24.84,37.30
 .click Storage##190014
-.' Enter the storage cellar |goto 25.00,37.37 |c |noway
+.' Enter the storage cellar |goto 25.00,37.37 |c |noway |q The Thin Ones##190009/2
 step
 goto 25.72,37.18
 .kill Felra##190060 |q The Thin Ones##190009/2/1/Confront Felra##2
 step
 goto 25.04,37.34
 .click Stillrise Village##190015
-.' Leave the cellar |goto 24.84,37.29 |c |noway
+.' Leave the cellar |goto 24.84,37.29 |c |noway |q The Thin Ones##190009/2
 step
 goto 25.69,34.62
 .click Storage##190014
-.' Enter the cellar |goto 25.54,34.73 |c |noway
+.' Enter the cellar |goto 25.54,34.73 |c |noway |q The Thin Ones##190009/2
 step
 goto 25.65,35.34
 .kill Draguar##190064 |q The Thin Ones##190009/2/1/Confront Draguar##3
 step
 goto 25.51,34.80
 .click Stillrise Village##190015
-.' Leave the cellar |goto 25.70,34.61 |c |noway
+.' Leave the cellar |goto 25.70,34.61 |c |noway |q The Thin Ones##190009/2
 step
 goto 23.94,33.93
 .click Storage##190014
-.' Enter the cellar |goto 24.10,34.12 |c |noway
+.' Enter the cellar |goto 24.10,34.12 |c |noway |q The Thin Ones##190009/2
 step
 goto 24.05,34.80
 .kill Gorag##190066 |q The Thin Ones##190009/2/1/Confront Gorag##1
 step
 goto 24.08,34.20
 .click Stillrise Village##190015
-.' Leave the cellar here |goto 23.95,33.95 |c |noway
+.' Leave the cellar here |goto 23.95,33.95 |c |noway |q The Thin Ones##190009/3
 step
 goto 24.47,35.19
 .talk Chieftain Suhlak##190057 |q The Thin Ones##190009/3/1/Talk to Chieftain Suhlak##1
@@ -7311,7 +7256,7 @@ goto 47.62,42.30
 step
 goto 30.53,34.47
 .click Stillrise Village##190015
-.' Leave the Odious Chapel |goto shadowfen_base 20.65,35.53 |c |noway
+.' Leave the Odious Chapel |goto shadowfen_base 20.65,35.53 |c |noway |q The Thin Ones##190009/9
 step
 goto 23.53,34.13
 .talk Acolyte Morag##190065 |q The Thin Ones##190009/9/1/Talk to Acolyte Morag in Stillrise Village##1
@@ -7319,9 +7264,6 @@ step
 goto 23.56,32.49
 .talk Sia##190072
 ..accept Captive Souls##190010
-step
-goto 23.24,31.53
-.' Follow the path |goto 23.24,31.53 |c |noway
 step
 goto 26.26,29.96
 .talk Daeril##190074
@@ -7345,7 +7287,7 @@ goto 28.44,30.56
 .click Soul Gem Array##190018 |q The Thin Ones##190009/10/1/Retrieve the Soul Gem Array##1
 step
 goto 24.57,30.99
-.' Follow the path up |goto 24.57,30.99 |c |noway
+.' Follow the path up |goto 24.57,30.99 |c |noway |q Captive Souls##190010
 step
 goto 23.61,32.50
 .talk Daeril##190074
@@ -7361,11 +7303,11 @@ goto 24.47,35.21
 step
 goto 20.73,35.52
 .click Odious Chapel##190017
-.' Enter the chapel here |q The Bargain's End##190011/2/1/Enter the Odious Chapel##1
+.' Enter the chapel here |goto stillrisevillage_base 30.31,33.79 |noway |c |q The Bargain's End##190011/4 |future
 step
 goto 65.19,42.01
 .click Alimentary Passage##690002
-.' Enter the Alimentary Passage |goto 74.29,42.07 |c |noway
+.' Enter the Alimentary Passage |goto 74.29,42.07 |c |noway |q The Bargain's End##190011/4 |future
 step
 goto 36.90,63.85
 .click Vile Terminus##690003
@@ -7377,14 +7319,14 @@ goto 38.09,84.59
 step
 goto 36.95,91.43
 .click Stillrise Village##190015
-.' Go to Stillrise Village |goto shadowfen_base 23.17,40.04 |c |noway
+.' Go to Stillrise Village |goto shadowfen_base 23.17,40.04 |c |noway |q The Bargain's End##190011
 step
 goto 24.94,35.67
 .talk Chieftain Suhlak##190057
 ..turnin The Bargain's End##190011
 step
 goto shadowfen_base 30.14,35.68
-.wayshrine Stillrise Wayshrine
+.wayshrine Stillrise
 step
 goto shadowfen_base 36.97,35.70
 .talk Teegya##190077
@@ -7425,7 +7367,7 @@ goto 45.23,39.39
 step
 goto 44.07,41.91
 .click Mud Tree Mine##190021
-.' Enter the Mud Tree Mine |q Schism##190013/2/1/Enter the Mud Tree Mine##1
+.' Enter the Mud Tree Mine |goto mudtreemine_base 41.37,27.48 |noway |c |q Schism##190013/3
 step
 goto mudtreemine_base 35.36,54.62
 .talk Lenam Sero##190096
@@ -7445,20 +7387,20 @@ goto 75.59,59.93
 step
 goto 74.63,58.72
 .click Mud Tree Mine##190021
-.' Leave Miharil's Hut |goto 72.91,58.17 |c |noway
+.' Leave Miharil's Hut |goto 72.91,58.17 |c |noway |q Schism##190013/4
 step
 goto 22.26,35.96
-.' Follow the path up |goto 22.26,35.96 |c |noway
+.' Follow the path up |goto 22.26,35.96 |c |noway |q Schism##190013/4
 step
 goto shadowfen_base 42.61,44.27
-.' Leave the mine here |goto shadowfen_base 42.61,44.27 |c |noway
+.' Leave the mine here |goto shadowfen_base 42.61,44.27 |c |noway |q Schism##190013/4
 step
 goto 44.04,44.75
 .talk Hodmar##190100
 ..accept A Last Reminder##190014
 step
 goto shadowfen_base 46.28,44.23
-.' Cross the bridge |goto shadowfen_base 46.28,44.23 < 10 |c |noway
+.' Cross the bridge |goto shadowfen_base 46.28,44.23 < 10 |c |noway |q Schism##190013/4
 step
 goto 45.07,43.13
 .kill Gnaw-Root Warchief##190101
@@ -7477,11 +7419,11 @@ goto 45.90,43.70
 ..' Subdue 6 Goblins |q Schism##190013/6/2/Use the Gnaw-Root Goblin Totem on Weakened Goblins##1
 step
 goto 42.42,44.26
-.' Enter the mine here |goto mudtreemine_base 42.42,44.26 < 5 |c |noway
+.' Enter the mine here |goto mudtreemine_base 42.42,44.26 < 5 |c |noway |q Schism##190013/8
 step
 goto mudtreemine_base 72.02,57.86
 .click Miharil's Hut##190023
-.' Enter Miharil's Hut |goto 73.85,58.46 |c |noway
+.' Enter Miharil's Hut |goto 73.85,58.46 |c |noway |q Schism##190013/8
 step
 goto 76.20,59.89
 .talk Miharil##190099
@@ -7489,11 +7431,11 @@ goto 76.20,59.89
 step
 goto mudtreemine_base 74.15,58.59
 .click Mud Tree Mine##190026
-.' Leave the hut |goto 72.90,58.17 |c |noway
+.' Leave the hut |goto 72.90,58.17 |c |noway |q Schism##190013
 step
 goto 41.43,28.39
 .click Mud Tree Village##190028
-.' Leave the mine |goto shadowfen_base 44.08,41.92 |c |noway
+.' Leave the mine |goto shadowfen_base 44.08,41.92 |c |noway |q Schism##190013
 step
 goto 45.29,39.38
 .talk Napetui##190105
@@ -7978,7 +7920,7 @@ goto altencorimont_base 52.87,82.07
 .' Follow the path |goto altencorimont_base 52.87,82.07 < 10 |c |noway
 step
 goto shadowfen_base 70.14,75.46
-.wayshrine Percolating Mire Wayshrine
+.wayshrine Percolating Mire
 step
 goto shadowfen_base 72.60,74.33
 .talk Luteema##190167
@@ -8319,7 +8261,7 @@ goto shadowfen_base 57.24,78.28
 ..accept A Final Release##190025
 step
 goto Shadowfen 55.84,62.37
-.wayshrine Hatching Pools Wayshrine
+.wayshrine Hatching Pools
 step
 goto 52.18,58.46
 .talk Vicecanon Servyna##190018
@@ -8650,7 +8592,7 @@ goto shadowfen_base 38.10,74.35
 ..accept Overrun##190547
 step
 goto shadowfen_base 43.98,72.36
-.wayshrine Hissmir Wayshrine
+.wayshrine Hissmir
 step
 goto shadowfen_base 48.26,76.36
 .talk Silent-Moss##190196
@@ -8785,18 +8727,17 @@ goto Knife Ear Grotto 50.08,15.95
 .' Follow the path |goto Knife Ear Grotto 50.08,15.95 |c |noway
 step
 goto 80.80,38.04
-.click Daedric Artifact##2040002 |q A Fair Warning##100056/1/Search for an Artifact##1
+.click Daedric Artifact##2040002 |q A Fair Warning##2040001/1/1/Search for an Artifact##1
 step
 goto Knife Ear Grotto 70.53,50.44
-.click Speaking Stone##2040004 |q The Tharn Speaks##190007/Search for Information |sub
-'FIX ME
+.click Speaking Stone##2040004 |q The Tharn Speaks##190007/3
 step
 goto 56.19,45.98
 .click Speaking Stone##2040004
-.' Watch the Vision |q The Tharn Speaks##190007/Watch the Vision |sub
+.' Watch the Vision |q The Tharn Speaks##190007/5/1/Watch the Vision##1
 step
 goto 56.19,45.98
-.talk Abnur Tharn##450003 |q The Tharn Speaks##190007/Talk to Abnur Tharn in Cave |sub
+.talk Abnur Tharn##450003 |q The Tharn Speaks##190007/6/1/Talk to Abnur Tharn##1
 step
 goto 49.00,64.72
 .click Knife Ear Grotto##100175
@@ -8806,9 +8747,9 @@ goto 34.49,93.51
 .click Deshaan##100045
 .' Leave the Grotto |goto deshaan_base 91.27,43.84 |c |noway
 step
-goto 27.15,54.99
-.click Tal'Deic Grounds Wayshrine##100142
-.' Teleport to the Muth Gnarr Hills Wayshrine |goto 24.34,54.10 |c |noway
+goto deshaan_base 82.97,40.75
+.click Eidolon's Hollow Wayshrine##100209
+.' Teleport to the Muth Gnarr Hills Wayshrine |goto 27.09,54.97 < 10 |c |noway
 step
 goto 23.79,52.39
 .talk Aralyon the Scholar##100516
@@ -8820,30 +8761,24 @@ goto 26.95,54.88
 step
 goto 77.24,36.55
 .click The Harborage##90016
-.' Enter the Harborage
+.' Enter the Harborage |goto stonefalls_base 77.25,36.54 < 1 |c |noway
 step
-.talk Varen Aquilarios##450001 |q The Tharn Speaks##190007/Talk to Varen Aquilarios |sub
+.talk Varen Aquilarios##450001 |q The Tharn Speaks##190007/7/1/Talk to Varen Aquilarios##1
 ..turnin The Tharn Speaks##190007
 step
 'Teleport to the Hissmir Wayshrine |goto shadowfen_base 44.07,72.21 |c |noway
 step
-goto 42.33,62.89
+goto shadowfen_base 42.50,62.58
 .' Go in front of the Poison Gas path and use the Enchanted container.
-.click Enchanted Container##190069 |q A Poisoned Heart##190026/Poison Gas |sub
-step
-goto 35.99,58.02
-.' Follow the road here |goto 35.99,58.02 |c |noway
+.click Enchanted Container##190069 |q A Poisoned Heart##190026/5/1/Use the Enchanted Container to Collect Poison Gas##1 |count 1
 step
 goto 36.26,57.10
 .talk Lodyna Arethi##190225
 ..accept King of Dust##190036
 step
-goto 37.02,55.91
-.' Follow the path |goto 37.02,55.91 |c |noway
-step
-goto 36.66,53.78
+goto shadowfen_base 36.61,53.81
 .talk Drillk##190230
-.' Free Drillk |q King of Dust##190036/Free the Kothringi in Zuuk |sub
+.' Free Drillk |q King of Dust##190036/1/1/Free the Kothringi in Zuuk##1
 step
 goto 36.93,54.05
 .click Drillk's House##190071
@@ -8851,7 +8786,7 @@ goto 36.93,54.05
 step
 goto 37.15,54.30
 .talk Drillk##190230
-.' Use the intimidate option when prompted |q King of Dust##190036/Talk to Drillk |sub
+.' Use the intimidate option when prompted |q King of Dust##190036/2/1/Talk to Drillk##1
 step
 goto 37.00,54.15
 .click Dominion Soldier's Journal � Zuuk##190070
@@ -8859,55 +8794,52 @@ goto 37.00,54.15
 step
 goto 33.01,52.52
 .click Scroll of Release##190073
-.' Steal a Scroll of Release |q King of Dust##190036/Steal a Scroll of Release |sub
+.' Steal a Scroll of Release |q King of Dust##190036/3/1/Steal a Scroll of Release##1
 step
 goto shadowfen_base 31.82,52.86
 .' Use the Scroll of Release on Dethrel
-.' Free Dethrel |q King of Dust##190036/4/Free Dethrel##2
+.' Free Dethrel |q King of Dust##190036/4/1/Free Dethrel##2
+step
+goto shadowfen_base 30.78,51.54
+.wayshrine Venomous Fens
 step
 goto 34.18,50.47
 .' Use the Scroll of Release on Sarase
-.' Free Sarase |q King of Dust##190036/4/Free Sarase##3w
+.' Free Sarase |q King of Dust##190036/4/1/Free Sarase##3
 step
 goto 33.75,54.21
 .' Use the Scroll of Release on Lleram
 .' Free Lleram |q King of Dust##190036/4/Free Lleram##1
-step
-goto 34.90,52.90
-.' Follow the path |goto 34.90,52.90 |c |noway
 step
 goto 36.92,54.01
 .click Drillk's House##190071
 .' Enter Drillk's House |goto 36.99,54.13 |c |noway
 step
 goto 37.16,54.30
-.talk Drillk##190230 |q King of Dust##190036/Talk to Drillk |sub
+.talk Drillk##190230 |q King of Dust##190036/5/1/Talk to Drillk##1
 step
 goto 37.02,54.15
 .click Zuuk##190070
 .' Leave Drillk's House |goto 36.95,54.07 |c |noway
 step
-goto 37.11,51.11
-.' Follow the path |goto 37.11,51.11 |c |noway
-step
 goto 37.01,47.81
-.' Escort Drillk to the Tower |q King of Dust##190036/Escort Drillk to the Tower |sub
+.' Escort Drillk to the Tower |q King of Dust##190036/6/1/Escort Drillk to the Tower##1
 step
 goto 37.01,47.85
 .talk Drillk##190230
 ..turnin King of Dust##190036
-..accept Into the Temple##190038
+..accept Into the Temple##190548
 step
 goto 37.29,50.04
 .' Follow the path down |goto 37.29,50.04 |c |noway
 step
 goto 37.22,49.85
 .click Ward##1090020
-.' Speak the first option |q Into the Temple##190038/Break the Ward blocking the Temple of Sul |sub
+.' Speak the first option |q Into the Temple##190548/1/1/Break the Ward Blocking the Temple of Sul##1
 step
 goto 37.22,49.86
 .click Temple of Sul##190074
-.' Enter the Temple of Sul |q Into the Temple##190038/Enter the Temple of Sul |sub
+.' Enter the Temple of Sul |q Into the Temple##190548/2/1/Enter the Temple of Sul##1
 step
 goto Temple of Sul 26.43,28.26
 .click The Temple of Sul##700001
@@ -8915,18 +8847,15 @@ goto Temple of Sul 26.43,28.26
 step
 goto 59.51,27.10
 .click Mathmeld Pilaster##700002
-.' Awaken Ayleid Pilaster |q Captured Time##700001/Awaken Ayleid Pilasters |sub
-'FIX ME
+.' Awaken Ayleid Pilaster |q Captured Time##700001/1/1/Awaken Ayleid Pilasters##1 |count 1
 step
 goto 82.67,43.85
 .click Mathmori Pilaster##700003
-.' Awaken Ayleid Pilaster |q Captured Time##700001/Awaken Ayleid Pilasters |sub
-'FIX ME
+.' Awaken Ayleid Pilaster |q Captured Time##700001/1/1/Awaken Ayleid Pilasters##1 |count 2
 step
 goto 49.91,50.48
 .click Jorane Pilaster##700004
-.' Awaken Ayleid Pilaster |q Captured Time##700001/Awaken Ayleid Pilasters |sub
-'FIX ME
+.' Awaken Ayleid Pilaster |q Captured Time##700001/1/1/Awaken Ayleid Pilasters##1 |count 3
 step
 goto 26.95,53.34
 .' You will need to do this in the proper order as you see listed in this step.
@@ -8934,17 +8863,21 @@ goto 26.95,53.34
 .click The Tower##100085
 .click The Thief##700005
 .click The Lover##90123
-.' Search the Temple of Sul |q Into the Temple##190038/Search the Temple of Sul |sub
+.' Solve the puzzle |q Into the Temple##190548/3/2/Solve the Puzzle##1
+.' Search the Temple of Sul |q Into the Temple##190548/3/1/Search the Temple of Sul##1
 step
 goto 25.40,66.59
 .click Ayleid Gate##700007
 .' Enter the Ayleid Gate |goto 25.39,68.95 |c |noway
 step
+goto templeofsul_base 24.94,83.42
+.' Find the Keystone |q Into the Temple##190548/4/1/Find the Keystone##1
+step
 goto 25.29,86.62
-.talk Morilye##700004 |q Into the Temple##190038/Talk to Morilye |sub
+.talk Morilye##700004 |q Into the Temple##190548/5/1/Talk to Morilye##1
 step
 goto 25.76,77.30
-.kill Morilye##700004 |q Into the Temple##190038/kill ghost |sub
+.kill Morilye##700004 |q Into the Temple##190548/6/3/Kill Ghost##1
 step
 goto 25.55,69.50
 .click Ayleid Gate##700007
@@ -8960,72 +8893,51 @@ goto 25.39,12.35
 step
 goto 36.99,47.83
 .talk Drillk##190230
-.' Let Drillk live |q Into the Temple##190038/Drillk Lives |sub
+.' Let Drillk live |q Into the Temple##190548/6/1/Return to Drillk##1
 step
 goto 36.35,57.10
 .talk Lodyna Arethi##190225
-..turnin Into the Temple##190038
-step
-goto 35.53,58.07
-.' Follow the road here |goto 35.53,58.07 |c |noway
+..turnin Into the Temple##190548
 step
 goto 32.00,63.24
 .' Use the Enchanted Container to Collect the Poison Gas
-.click Enchanted Container##190069 |q A Poisoned Heart##190026/Use the Enchanted Container to Collect Poison Gas |sub
+.click Enchanted Container##190069  |q A Poisoned Heart##190026/5/1/Use the Enchanted Container to Collect Poison Gas##1
 step
 goto 35.60,60.28
 .talk Rhea##190198
 ..turnin A Poisoned Heart##190026
 step
-goto 31.76,54.16
-.talk Gerent Hernik##100513 |tip He will appear in front of you.
-..accept And Throw Away The Key##190037
+goto shadowfen_base 32.55,57.24
+.talk Najeepa##190469 |q A Final Release##190025/1/1/Find Najeepa's Remains##1
 step
-goto 32.52,57.19
-.talk Najeepa##190234 |q A Final Release##190025/Find Najeepa's Remains |sub
+goto shadowfen_base 32.14,56.83
+.talk Gerent Hernik##100513
+..accept And Throw Away The Key##190549
 step
 goto 30.09,56.36
-.talk Marcel##190235 |q And Throw Away The Key##190037/Talk to a Guard |sub
+.talk Marcel##190235 |q And Throw Away The Key##190549/1/2/Talk to Marcel##1
 step
 goto 28.27,59.28
-.talk General Raetus##190237 |q And Throw Away The Key##190037/Talk to General Raetus |sub
-step
-goto 29.48,57.67
-.' Follow the path up |goto 29.48,57.67 |c |noway
+.talk General Raetus##190237 |q And Throw Away The Key##190549/2/1/Talk to General Raetus##1
 step
 goto 30.09,57.14
 .talk Najeepa's Remains##190238 |tip At the top of this tower.
-.' Find the remains of Bezeer's Mother |q A Final Release##190025/Find the Remains of Bezeer's Mother |sub
+.' Find the remains of Bezeer's Mother |q A Final Release##190025/2/1/Find the Remains of Bezeer's Mother##1
 step
-goto 27.89,56.86
-.' Follow the path |goto 27.89,56.86 |c |noway
-step
-goto 28.39,53.87
-.' Follow the path |goto 28.39,53.87 |c |noway
-step
-goto 27.78,52.43
-.click Medical Supplies##190075 |q And Throw Away The Key##190037/Collect Medical Supplies |sub
-step
-goto 27.08,52.21
-.' Follow the path |goto 27.08,52.21 |c |noway
-step
-goto 27.06,53.80
-.' Follow the path |goto 27.06,53.80 |c |noway
+goto shadowfen_base 27.72,52.37
+.click Medical Supplies##190075 |q And Throw Away The Key##190549/3/1/Collect Medical Supplies##1
 step
 goto 25.05,55.10
 .talk Jurni##190241
-..turnin And Throw Away The Key##190037
-..accept The Keystone##190039
-step
-goto 26.57,55.74
-.' Jump down to the path here |goto 26.57,55.74 |c |noway
+..turnin And Throw Away The Key##190549
+..accept The Keystone##190550
 step
 goto 25.28,56.23
 .' Enter the cave |goto 25.28,56.23 |c |noway
 step
 goto 24.89,54.76
 .click White Rose Prison Dungeon##190077
-.' Enter the Dungeon |q The Keystone##190039/Enter the Dungeon |sub
+.' Enter the Dungeon |q The Keystone##190550/1/1/Enter the Dungeon##1
 step
 goto White Rose Prison Dungeon 78.55,69.31
 .talk Erranza##710001
@@ -9038,14 +8950,11 @@ goto 69.65,43.52
 .' Follow the path |goto 69.65,43.52 |c |noway
 step
 goto 63.76,40.64
-.talk Sargon##710002 |q The Keystone##190039/Find Sargon |sub
-step
-goto 67.96,25.20
-.' Follow the path |goto 67.96,25.20 |c |noway
+.talk Sargon##710002 |q The Keystone##190550/2/1/Find Sargon##1
 step
 goto 43.59,17.15
 .click Urn##90152 |tip Underneath the staircase here
-.' Find Zarukhari |q The Ones Left Behind##710001/1/Find Zarukhari##1
+.' Find Zarukhari |q The Ones Left Behind##710001/1/1/Find Zarukhari##1
 step
 goto 48.40,15.62
 .' Follow the path up |goto 48.40,15.62 |c |noway
@@ -9055,7 +8964,7 @@ goto 22.06,27.73
 step
 goto 25.22,35.97
 .click Urn##90152
-.' Find Nuzal |q The Ones Left Behind##710001/Find Nuzal |sub
+.' Find Nuzal |q The Ones Left Behind##710001/1/1/Find Nuzal##2
 step
 goto 21.51,53.29
 .' Enter the narrow path here |goto 21.51,53.29 |c |noway
@@ -9065,32 +8974,32 @@ goto 35.22,49.68
 step
 goto 44.56,44.03
 .click Urn##90152
-..collect Erranza's Remains |q The Ones Left Behind##710001/Collect Erranza's Remains |sub
+..collect Erranza's Remains |q The Ones Left Behind##710001/2/1/Collect Erranza's Remains##1
 step
 goto 59.34,50.63
-.' Find the Warden's Office |q The Keystone##190039/Find the Warden's Office |sub
+.' Find the Warden's Office |q The Keystone##190550/3/1/Find the Warden's Office##1
 step
 goto 59.32,50.58
-.talk Sargon##710002 |q The Keystone##190039/Talk to Sargon |sub
+.talk Sargon##710002 |q The Keystone##190550/4/1/Talk to Sargon##1
 step
 goto 62.35,41.68
 .click Ayleid Chest##710003
-.' Destroy the Keystone |q The Keystone##190039/Free the Prisoners |sub
-.' Survive the Feral Onslaught |q The Keystone##190039/Survive the Feral Onslaught |sub
+.' Destroy the Keystone |q The Keystone##190550/4/1/Talk to Sargon##1
+.' Survive the Feral Onslaught |q The Keystone##190550/6/1/Survive the Feral Onslaught##1
 step
 goto 68.29,56.27
 .' Jump down to the room here |goto 68.29,56.27 |c |noway
 step
 goto 72.77,68.95
 .click White Rose Prison##710004
-.' Leave the Dungeon |q The Keystone##190039/Leave the dungeon |sub
+.' Leave the Dungeon |q The Keystone##190550/7/2/Leave the Dungeon##1
 step
 goto shadowfen_base 24.27,57.07
 .' Follow the path |goto shadowfen_base 24.27,57.07 |c |noway
 step
 goto 24.12,56.55
 .click Burial Mound##90018
-.' Bury the items |q The Ones Left Behind##710001/Bury the Items |sub
+.' Bury the items |q The Ones Left Behind##710001/3/1/Bury the Items##1
 step
 goto 24.15,56.53
 .talk Erranza##710001
@@ -9100,20 +9009,20 @@ goto 25.78,58.30
 .' Follow the path |goto 25.78,58.30 |c |noway
 step
 goto 28.26,59.28
-.talk General Raetus##190237 |q The Keystone##190039/Talk to General Raetus |sub
+.talk General Raetus##190237 |q The Keystone##190550/7/1/Talk to General Raetus##1
 step
 goto 30.01,56.40
 .' Leave the prison here |goto 30.01,56.40 |c |noway
 step
 goto 31.05,56.05
-.talk Gerent Hernik##100513 |q The Keystone##190039/Talk to General Raetus |sub
-..turnin The Keystone##190039
+.talk Gerent Hernik##100513
+..turnin The Keystone##190550
 step
 goto 32.46,57.08
 .talk Najeepa##190234
 ..turnin A Final Release##190025
 step
-'Teleport to the Hissmir Wayshrine |goto 44.07,72.21 |c |noway
+'Open your map and Fast Travel to the Hissmir Wayshrine |goto 44.07,72.21 |c |noway
 step
 goto 38.94,70.97
 .' Follow the path up |goto 38.94,70.97 |c |noway
@@ -9122,73 +9031,79 @@ goto 38.21,71.09
 .talk Neeja-Meen##190248
 ..turnin Captured Time##700001
 step
+goto shadowfen_base 26.85,71.11
+.talk Gerent Nuleem-Malem##190258
+..turnin The Mnemic Egg##190029
+..accept The Dominion's Alchemist##190551
+step
+goto shadowfen_base 23.29,73.44
+.wayshrine Lorisael
+step
 goto 19.62,73.50
 .talk Long-Claw##190157
-..accept Deep Disturbance##190024
+..accept Deep Disturbance##190552
 step
 goto 19.54,76.14
 .click Tree-Minder Nexith's Hut##190042
-.' Enter the hut |goto 19.63,76.19 |c |noway
+.' Enter the hut |goto 19.63,76.19 < 1 |c |noway
 step
 goto 19.76,76.35
-.talk Tree-Minder Nexith##190163 |q Deep Disturbance##190024/Talk to Tree-Minder Nexith |sub
+.talk Tree-Minder Nexith##190163 |q Deep Disturbance##190552/1/1/Talk to Tree-Minder Nexith##1
 step
 goto 19.67,76.25
 .click Xal Ithix##190043
-.' Leave the hut |goto 19.59,76.18 |c |noway
-step
-'As you complete the next steps:
-.kill Strangler##190164
-.' Rescue 3 Scavengers from Stranglers |q Missing in the Mire##190025/Rescue Scavengers from Stranglers |sub
-|confirm
+.' Leave the hut |goto 19.59,76.18 < 1 |c |noway
 step
 goto 18.85,79.20
-.click Northeast Stele##190044 |q Deep Disturbance##190024/2/Place Ritual Potion at Northeast Stele##1
+.click Northeast Stele##190044 |q Deep Disturbance##190552/2/1/Place Ritual Potion at Northeast Stele##1
 step
 goto 17.56,78.80
 .talk Sleeps-with-Open-Eyes##190165
-..accept Missing in the Mire##190025
+..accept Missing in the Mire##190553
+step
+'As you complete the next steps:
+.kill Strangler##190164
+.' Rescue 3 Scavengers from Stranglers  |q Missing in the Mire##190553/1/1/Rescue Scavengers from Stranglers##1
+|confirm
 step
 goto 16.07,79.19
-.click Northwest Stele##190045 |q Deep Disturbance##190024/2/Place Ritual Potion at Northwest Stele##4
+.click Northwest Stele##190045 |q Deep Disturbance##190552/2/1/Place Ritual Potion at Northwest Stele##4
 step
 goto 16.14,82.02
-.click Southwest Stele##190046 |q Deep Disturbance##190024/2/Place Ritual Potion at Southwest Stele##3
+.click Southwest Stele##190046 |q Deep Disturbance##190552/2/1/Place Ritual Potion at Southwest Stele##3
 step
 goto 18.92,81.99
-.click Southeast Stele##190047 |q Deep Disturbance##190024/2/Place Ritual Potion at Southeast Stele##2
+.click Southeast Stele##190047 |q Deep Disturbance##190552/2/1/Place Ritual Potion at Southeast Stele##2
 step
 'All around this area:
 .kill Strangler##190164
-.' Rescue 3 Scavengers from Stranglers |q Missing in the Mire##190025/Rescue Scavengers from Stranglers |sub
+.' Rescue 3 Scavengers from Stranglers |q Missing in the Mire##190553/1/1/Rescue Scavengers from Stranglers##1
 step
 goto shadowfen_base 17.53,78.82
-.talk Sleeps-with-Open-Eyes##190165 |q Missing in the Mire##190025/Talk to Sleeps-with-Open-Eyes |sub
-step
-goto 17.50,79.19
-.' Follow the path up |goto 17.50,79.19 |c |noway
+.talk Sleeps-with-Open-Eyes##190165 |q Missing in the Mire##190553/2/1/Talk to Sleeps-with-Open-Eyes##1
 step
 goto 17.50,80.58
-.talk Tree-Minder Nexith##190163 |q Deep Disturbance##190024/Talk to Tree-Minder Nexith |sub
+.talk Tree-Minder Nexith##190163 |q Deep Disturbance##190552/3/1/Talk to Tree-Minder Nexith##1
 step
-'Wait for Nexith to perform the ritual.
-|confirm
+goto shadowfen_base 17.53,80.56
+.talk Tree-Minder Nexith##190483
+.' Wait for Tree-Minder Nexith to Complete the ritual |q Deep Disturbance##190552/4
 step
-goto 17.50,80.56
-.talk Tree-Minder Nexith##190163 |q Deep Disturbance##190024/Talk to Tree-Minder Nexith |sub
-step
-'As you complete the next steps:
+goto shadowfen_base 14.90,81.14
 .click Trash Pile##190026
-..collect Nimble-Knuckles' Bow |q Missing in the Mire##190025/Search the Trash Piles |sub
+..collect Nimble-Knuckles' Bow |q Missing in the Mire##190553/3/1/Search the Trash Piles##1
+step
+goto shadowfen_base 14.07,80.83
+.' Go to the Hist Tree |q Deep Disturbance##190552/5/1/Go to Hist Tree##1
 step
 goto 11.92,80.90
-.click Buried Artifact##190048 |q Deep Disturbance##190024/Unearth Daedric Relic at the Stele |sub
+.click Buried Artifact##190048 |q Deep Disturbance##190552/6/1/Unearth Daedric Relic at the Stele##1
 step
 goto 11.86,80.90
-.talk Aspect of Namira##190169 |q Deep Disturbance##190024/Talk to Daedra |sub
+.talk Aspect of Namira##190169 |q Deep Disturbance##190552/7/1/Talk to Daedra##1
 step
 goto 12.28,79.01
-.' Enter the cave |q Deep Disturbance##190024/Go to Ritual Site |sub
+.' Enter the cave |q Deep Disturbance##190552/8/1/Go to Ritual Site##1
 step
 goto 11.86,77.02
 .' Follow the path |goto 11.86,77.02 |c |noway
@@ -9197,113 +9112,131 @@ goto 10.85,75.16
 .' Follow the path around |goto 10.85,75.16 |c |noway
 step
 goto 10.42,78.19
-.talk Aspect of Namira##190169 |q Deep Disturbance##190024/Talk to Aspect of Namira at Ritual Site |sub
+.talk Aspect of Namira##190169 |q Deep Disturbance##190552/9/1/Talk to Aspect of Namira at Ritual Site##1
 step
 goto 11.08,78.02
 .' Use the Hand of Namira on the Corruptors surrounding the Aspect of Namira
-.' Disrupt the Ritual |q Deep Disturbance##190024/Disrupt Ritual |sub
+.' Disrupt the Ritual |q Deep Disturbance##190552/10/1/Disrupt Ritual##1
 step
 goto 11.92,78.24
 .talk Tree-Minder Nexith##190163
-..turnin Deep Disturbance##190024
+..turnin Deep Disturbance##190552
 step
 goto 16.63,80.15
 .talk Nimble-Knuckles##190175
-..turnin Missing in the Mire##190025
-step
-goto shadowfen_base 26.87,71.11
-.talk Gerent Nuleem-Malem##190148
-..turnin The Mnemic Egg##190029
-..accept The Dominion's Alchemist##190023
-step
-goto 26.37,71.32
-.' Follow this road up |goto 26.37,71.32 |c |noway
+..turnin Missing in the Mire##190553
 step
 goto 18.90,65.18
-.talk Vicecanon Heita-Meen##190017 |q The Dominion's Alchemist##190023/Talk to Vicecanon Heita-Meen |sub
+.talk Vicecanon Heita-Meen##190017 |q The Dominion's Alchemist##190551/1/1/Talk to Vicecanon Heita-Meen##1
 step
 goto 18.96,65.80
-.click Ruuvitar's Journal##190040 |q The Dominion's Alchemist##190023/Find a Clue in the Camp |sub
-'FIX ME
+.click Ruuvitar's Journal##190040
+.' Find a Clue in the Camp |q The Dominion's Alchemist##190551/2/2/Find a Clue in the Camp##2
 step
 goto 18.53,65.95
-.talk Prisoner##190154 |q The Dominion's Alchemist##190023/Find a Clue in the Camp |sub
-'FIX ME
+.talk Prisoner##190154
+.' Find a Clue in the Camp |q The Dominion's Alchemist##190551/2/2/Find a Clue in the Camp##3
 step
 goto 18.34,65.74
-.click Request Denied##190041 |q The Dominion's Alchemist##190023/Search the Camp for Clues |sub
-'FIX ME
+.click Request Denied##190041
+.' Search the camp for Clues |q The Dominion's Alchemist##190551/2/1/Search the Camp for Clues##1
 step
 goto 19.00,66.11
-.talk Gerent Kepanuu##190155 |q The Dominion's Alchemist##190023/Talk to Gerent Kepanuu |sub
+.talk Gerent Kepanuu##190155 |q The Dominion's Alchemist##190551/3/1/Talk to Gerent Kepanuu##1
 step
 goto 23.09,67.69
 .click Loriasel##190049
-.' Enter the Ruins |goto Loriasel 39.60,96.73 |c |noway
+.' Enter the Ruins |q The Dominion's Alchemist##190551/4/1/Enter the Ruins of Loriasel##1
 step
-goto Loriasel 42.58,48.17
-.talk Kazdi##190177 |q The Dominion's Alchemist##190023/Free Kazdi |sub
+goto loriasellowerlevel_base 42.43,48.72
+.talk Kazdi##190490 |q The Dominion's Alchemist##190551/5/2/Free Kazdi##1
 step
 goto 43.02,29.49
-.talk Kazdi##190177 |q The Dominion's Alchemist##190023/Talk to Kazdi |sub
-.' Talk to Kazdi |q The Dominion's Alchemist##190023/7/Talk to Kazdi##1
+.talk Kazdi##190177 |q The Dominion's Alchemist##190551/7/2/Question Kazdi##1
+.' Find Ruuvitar |q The Dominion's Alchemist##190551/7/1/Find Ruuvitar##1
+step
+goto 42.43,29.57
+.talk Kazdi##190490 |q The Dominion's Alchemist##190551/8/1/Talk to Kazdi##1
+step
+goto loriasellowerlevel_base 42.43,29.57
+.talk Kazdi##190490 |q The Dominion's Alchemist##190551/9/2/Talk to Kazdi##1
 step
 goto 42.87,34.82
-.click Ayleid Crystal##190052 |q The Dominion's Alchemist##190023/Find a Way into the Inner Bailey |sub
+.click Ayleid Crystal##190052
+.' Examine the Crystal  |q The Dominion's Alchemist##190551/10/2/Examine the Crystal in the Central Room##1
+step
+goto loriasellowerlevel_base 43.04,45.42
+.click Keystone Holder##190076 |q The Dominion's Alchemist##190551/11
+step
+goto loriasellowerlevel_base 42.88,22.34
+.' Go to the Unsealed Door |q The Dominion's Alchemist##190551/12/1/Go to the Unsealed Door##1
 step
 goto 85.83,35.23
 .talk Maahi##190179
-..accept The Swamp's Embrace##190026
+..accept The Swamp's Embrace##190555
 step
 goto 76.03,31.29
 .' Follow the path up |goto 76.03,31.29 |c |noway
 step
-goto 56.13,59.38
-.talk Prisoner##190154 |q The Swamp's Embrace##190026/Find the Prisoners' Bodies |sub
-'FIX ME
+goto loriasel_base 55.84,59.64
+.talk Prisoner##150168 |q The Swamp's Embrace##190555/1/1/Find the Prisoners' Bodies##1 |count 1
 step
 goto 54.05,51.65
-.talk Prisoner##190154 |q The Swamp's Embrace##190026/Find the Prisoners' Bodies |sub
-'FIX ME
+.talk Prisoner##190154 |q The Swamp's Embrace##190555/1/1/Find the Prisoners' Bodies##1 |count 2
 step
 goto 62.82,48.39
-.talk Prisoner##190154 |q The Swamp's Embrace##190026/Find the Prisoners' Bodies |sub
-'FIX ME
+.talk Prisoner##190154 |q The Swamp's Embrace##190555/1/1/Find the Prisoners' Bodies##1 |count 3
 step
-goto 78.84,55.24
-.talk Maahi##190179 |q The Swamp's Embrace##190026/Talk to Maahi |sub
+goto loriasel_base 65.92,52.15
+.talk Prisoner##150168 |q The Swamp's Embrace##190555/1/1/Find the Prisoners' Bodies##1 |count 4
+step
+goto loriasel_base 78.94,55.10
+.talk Maahi##190254 |q The Swamp's Embrace##190555/2/1/Talk to Maahi##1
 step
 goto 88.22,51.85
 .kill Lamia Queen##190182
-..collect 4 Argonian Remains |q The Swamp's Embrace##190026/Kill the Lamia Queen and Retrieve the Argonian Remains |sub
+..collect 4 Argonian Remains |q The Swamp's Embrace##190555/3/1/Kill the Lamia Queen and Retrieve the Argonian Remains##1
 step
 goto 64.44,56.80
-.' Follow the path |goto 64.44,56.80 |c |noway
+.' Follow the path |goto loriasel_base 64.54,57.56 < 10 |c |noway
 step
-goto 61.39,69.33
-.' Follow the path |goto 64.44,56.80 |c |noway
+goto 63.56,69.11
+.' Follow the path |goto 63.56,69.11 < 10 |c |noway
 step
-goto 47.64,65.87
-.click Keystone##190054 |q The Dominion's Alchemist##190023/10/Activate the Eastern Keystone##1
+goto loriasel_base 45.26,68.16
+.' Jump off the ledge |goto loriasel_base 45.26,68.16 < 3 |c |noway
+step
+goto loriasellowerlevel_base 44.07,42.79
+.' Take the remains to the Ruins Antechamber |q The Swamp's Embrace##190555/4/1/Take the Remains to the Ruin's Antechamber##1
+step
+goto 43.12,42.70
+.talk Maahi##190254 |q The Swamp's Embrace##190555/4/1/Talk to Maahi##1
+step
+goto 50.36,44.71
+.talk Prisoner##150168 |q The Swamp's Embrace##190555/5/1/Reunite the Bodies##1 |count 1
+step
+goto loriasellowerlevel_base 43.96,44.75
+.talk Prisoner##150168 |q The Swamp's Embrace##190555/5/1/Reunite the Bodies##1 |count 2
+step
+goto 41.66,44.41
+.talk Prisoner##150168 |q The Swamp's Embrace##190555/5/1/Reunite the Bodies##1 |count 3
+step
+goto 39.54,41.81
+.talk Prisoner##150168 |q The Swamp's Embrace##190555/5/1/Reunite the Bodies##1 |count 4
+step
+goto loriasellowerlevel_base 42.81,42.89
+.talk Maahi##190254 |q The Swamp's Embrace##190555/6/1/Talk to Maahi##1
+..turnin The Swamp's Embrace##190555
 step
 goto 32.38,35.20
-.' Jump down and Follow the path |goto 32.38,35.20 |c |noway
+.' Jump down and Follow the path |goto 32.38,35.20 < 10 |c |noway
 step
 goto 21.09,27.01
-.' Follow the path around here |goto 21.09,27.01 |c |noway
+.' Follow the path around here |goto 21.09,27.01 < 10 |c |noway
 step
-goto 9.72,34.03
-.' Follow the path up |goto 9.72,34.03 |c |noway
-step
-goto 23.12,59.09
-.click Sword##190055
-..accept Vigil's End##190027
-step
-'As you continue through the cave:
-.kill Wraith##100407
-.kill Ancient Vanguard##190183
-.kill Ancient Warrior##190178
-..collect Sword Shards |q Vigil's End##190027/Recover the Sword Shards |sub
+goto loriasel_base 23.28,58.74
+.click Sword##3360021
+..accept Vigil's End##190556
 step
 goto 21.89,32.48
 .' Follow the path |goto 21.89,32.48 |c |noway
@@ -9313,200 +9246,190 @@ goto 15.08,39.65
 step
 goto 17.83,40.38
 .click Shield##3360016
-.' Find the Knight's Shield |q Vigil's End##190027/1/Find the Knight's Shield##2
+.' Find the Knight's Shield |q Vigil's End##190556/1/1/Find the Knight's Shield##2
 step
 'All around this area:
 .kill Wraith##100407
 .kill Ancient Vanguard##190183
 .kill Ancient Warrior##190178
-..collect 5 Sword Shards |q Vigil's End##190027/Recover the Sword Shards |sub
+..collect Sword Shards |q Vigil's End##190556/1/1/Recover the Sword Shards##1
 step
 goto 11.05,42.25
 .' Follow the path |goto 11.05,42.25 |c |noway
 step
-goto 11.03,55.61
-.talk Ayleid Knight##190185 |q Vigil's End##190027/Talk to the Ayleid Knight |sub
+goto loriasel_base 11.08,55.54
+.' Find the Ayleid Knight |q Vigil's End##190556/2/1/Find the Ayleid Knight##1
+step
+goto 11.08,55.57
+.talk Ayleid Knight##190498 |q Vigil's End##190556/3/1/Talk to the Ayleid Knight##1
 step
 goto 15.06,53.99
 .' Follow the path |goto 15.06,53.99 |c |noway
 step
 goto 13.96,61.03
 .click Tomb of the Liege Lord##190056
-.' Find the Enchanter |q Vigil's End##190027/Find the Enchanter |sub
+.' Find the Enchanter |q Vigil's End##190556/4/1/Find the Enchanter##1
 step
-goto 9.70,61.09
-.talk Enchanter##190186 |q Vigil's End##190027/Talk to the Enchanter |sub
+goto loriasel_base 9.94,61.02
+.talk Enchanter##190499 |q Vigil's End##190556/5/2/Talk to the Enchanter##1
 step
 goto 9.73,61.02
-.talk Ayleid Knight##190185 |q Vigil's End##190027/3/Talk to the Ayleid Knight##1
+.talk Ayleid Knight##190185 |q Vigil's End##190556/3/Talk to the Ayleid Knight##1
 step
-goto 9.23,60.59
-.talk Ayleid Knight##190185
-.' Tell him the truth |q Vigil's End##190027/Talk to the Ayleid Knight |sub
+goto loriasel_base 9.95,60.75
+.talk Ayleid Knight##190498 |q Vigil's End##190556/6/2/Talk to the Ayleid Knight##1
+.' Persuade him
+.' Investigate the tomb |q Vigil's End##190556/6/1/Investigate the Tomb##1
+step
+goto loriasel_base 9.32,60.99
+.talk Ayleid Knight##190498 |q Vigil's End##190556/8/1/Talk to the Ayleid Knight##1 |tip Tell him he died centuries ago
 step
 goto 9.09,61.02
 .click Phylactery##190057
-..turnin Vigil's End##190027
+..turnin Vigil's End##190556
 step
 goto 12.07,61.21
 .click Loriasel##190049
 .' Leave the Tomb |goto 13.78,61.11 |c |noway
 step
-goto 15.27,63.17
-.' Follow the path |goto 15.27,63.17 |c |noway
+goto loriasel_base 33.90,68.43
+.' Jump down here |goto loriasel_base 33.90,68.43 < 5 |c |noway
 step
-goto 20.52,73.31
-.' Follow the path |goto 20.52,73.31 |c |noway
+goto loriasellowerlevel_base 43.02,20.57
+.talk Vicecanon Heita-Meen##190017 |q The Dominion's Alchemist##190551/13
+.' Say she's a turncoat, then say you leave the decision to the Vicecanon
+..turnin The Dominion's Alchemist##190551
+..accept The Dream of the Hist##190554
 step
-goto Loriasel 31.63,65.92
-.click Keystone##190054
-.' Activate the Western Keystone |q The Dominion's Alchemist##190023/Activate the Western Keystone |sub
-step
-goto 42.97,42.63
-.' Take the Remains to the Ruin's Antechamber |q The Swamp's Embrace##190026/4/Take the Remains to the Ruin's Antechamber##1
-step
-goto Loriasel 43.04,42.75
-.talk Maahi##190179 |q The Swamp's Embrace##190026/Talk to Maahi |sub
-step
-goto 43.96,44.95
-.talk Prisoner##190154 |q The Swamp's Embrace##190026/Reunite the Bodies |sub
-'FIX ME
-step
-goto 41.43,44.21
-.talk Prisoner##190154 |q The Swamp's Embrace##190026/Reunite the Bodies |sub
-'FIX ME
-step
-goto 39.49,41.81
-.talk Prisoner##190154 |q The Swamp's Embrace##190026/Reunite the Bodies |sub
-'FIX ME
-step
-goto 50.38,44.55
-.talk Prisoner##190154 |q The Swamp's Embrace##190026/Reunite the Bodies |sub
-'FIX ME
-step
-goto 42.98,42.99
-.talk Maahi##190179
-..turnin The Swamp's Embrace##190026
-step
-goto 42.91,20.68
-.talk Vicecanon Heita-Meen##190017
-.' Consider leniency, then persuade Heita-Meen to let her go |q The Dominion's Alchemist##190023/Decide Kazdi's Fate |sub
-..turnin The Dominion's Alchemist##190023
-..accept The Dream of the Hist##190028
-step
-goto 42.94,18.86
-.click Loriasel Inner Bailey##190058
-.' Enter the Inner Bailey |goto 42.92,14.50 |c |noway
+goto 43.22,18.88
+.click Loriasel Inner Bailey##190075
+.' Enter the Loriasel Inner Bailey |goto 42.92,14.50 < 1 |c |noway
 step
 goto 40.81,43.06
-.kill Ruuvitar##190187 |q The Dream of the Hist##190028/Kill Ruuvitar |sub
+.kill Ruuvitar##190187 |q The Dream of the Hist##190554/1/1/Kill Ruuvitar##1
 step
-goto 40.70,20.86
-.' Follow Heita-Meen to the Mnemic Egg |q The Dream of the Hist##190028/Find the Mnemic Egg |sub
+goto loriasel_base 40.14,21.29
+.' Find the Mnemic Egg |q The Dream of the Hist##190554/2/1/Find the Mnemic Egg##1
 step
-goto 40.63,20.86
-.talk Vicecanon Heita-Meen##190017 |q The Dream of the Hist##190028/Talk to Vicecanon Heita-Meen |sub
+goto loriasel_base 40.14,21.29
+.talk Vicecanon Heita-Meen##190017 |q The Dream of the Hist##190554/3/3/Talk to Vicecanon Heita-Meen##1
 step
-goto 40.02,20.69
-.talk Gerent Nuleem-Malem##190148 |q The Dream of the Hist##190028/Talk to Gerent Nuleem-Malem |sub
+goto loriasel_base 39.08,20.26
+.talk Gerent Nuleem-Malem##190258 |q The Dream of the Hist##190554/4/1/Talk to Gerent Nuleem-Malem##1
 step
 goto 39.32,21.42
 .click Mnemic Egg##190059
-.' Enter the vision of the hist |goto Vision of the Hist 25.82,16.28
+.' Enter the vision of the hist |goto visionofthehist_base 25.82,16.28 < 10 |c |noway
 step
-goto 46.38,15.62
-.' To solve this puzzle, click all four of the Corner Plumes, then the Center Plume.
-|confirm
+goto visionofthehist_base 45.88,16.61
+.' To solve this puzzle, click all four of the Corner Plumes, then the Center Plume |q The Dream of the Hist##190554/5
+step
+goto visionofthehist_base 54.89,66.39
+.' Explore Deeper into the Dream |q The Dream of the Hist##190554/6/1/Explore Deeper into the Dream##1
 step
 goto Vision of the Hist 56.27,67.47
-.talk Hist-Brother##190188 |tip There are three of them in here.
-|confirm
+.talk Hist-Brother##190188 |q The Dream of the Hist##190554/7/1/Talk to the Hist-Brothers##1
+|tip There are three of them in here
 step
-goto 52.60,16.61
-.click Voice of the Hist##190063 |q The Dream of the Hist##190028/Talk to the Voice of the Hist |sub
+goto visionofthehist_base 52.82,17.19
+.click Voice of the Hist##190169 |q The Dream of the Hist##190554/8
 step
-goto 69.59,67.36
+goto altencorimont_base 69.56,67.58
 .talk Vicecanon Heita-Meen##190017
-..turnin The Dream of the Hist##190028
+..turnin The Dream of the Hist##190554
 ..accept Swamp to Snow##190035
 step
-goto 69.31,66.68
+goto 69.53,66.72
 .click Alten Corimont##190031
 .' Leave the Cabin |goto 71.50,67.41 |c |noway
 step
 'Varen should have appeared to you and given you this quest:
 ..accept Halls of Torment##90065
 step
-goto deshaan_base 38.77,56.05
-.click Mournhold Wayshrine##100086
-.' Teleport to the Harborage |goto stonefalls_base 77.20,36.59 |c |noway
+goto altencorimont_base 32.05,60.99
+.click Alten Corimont Wayshrine##190118
+.' Fast Travel to the Harborage |goto stonefalls_base 77.11,36.71 < 5 |c |noway
 step
-.talk Varen Aquilarios##450001 |q Halls of Torment##90065/Talk to Varen |sub
+goto stonefalls_base 77.25,36.55
+.click The Harborage##90016
+.' Enter the Harborage |goto stonefalls_base 77.25,36.55 < 1 |c |noway
 step
+.' Follow the path to Varen Aquilarious
+.talk Varen Aquilarios##450001 |q Halls of Torment##90065/3
+step
+.' In the small camp in the Harborage:
 .talk Lyris Titanborn##3360006
-.' Choose your companion |q Halls of Torment##90065/Choose Your Companion |sub
+.talk Abnur Tharn##450004
+..' Choose either _Lyris_ or _Abnur_ to help you |tip Lyris is a melee warrior, Abnur is a ranged mage.
+.' Choose Your Companion |q Halls of Torment##90065/4
 step
-.' Wait for Varen to open the portal |q Halls of Torment##90065/Wait for Varen to Open Portal |sub
+.' Wait for Varen to open the portal |q Halls of Torment##90065/5
 step
 .click Portal to Halls of Torment##90185
-.' Enter the Halls of Torment |q Halls of Torment##150005/Enter Halls of Torment |sub
+.' Enter the Halls of Torment |q Halls of Torment##90065/6
+step
+goto hallsoftorment1_base 29.92,27.47
+.' Explore the Halls of Torment |q Halls of Torment##90065/7
 step
 goto The Halls of Torment 31.62,36.92
-.kill Tharn Doppelganger##570003 |q Halls of Torment##90065/Defeat Tharn Doppelganger |sub
+.kill Tharn Doppelganger##570003 |q Halls of Torment##90065/8
 step
 goto 32.00,36.97
-.talk Lyris Titanborn##3360006 |q Halls of Torment##90065/Talk to Your Companion |sub
+.talk Lyris Titanborn##3360006 |q Halls of Torment##90065/9
 step
-goto 32.84,54.82
-.click Brimstone Steppes##570001
-.' Enter the door here |goto 32.80,57.23 |c |noway
+goto 33.26,45.02
+.' Follow the path |goto 33.26,45.02 < 5 |c |noway |q Halls of Torment##90065/10
 step
-goto 47.15,84.50
-.click Chamber of Dark Seduction##570002
-.' Enter the door here |goto 54.74,85.60 |c |noway
+goto 32.93,55.27
+.click Brimstone Steppes##570002
+.' Enter the Brimstone Steppes |goto 32.94,57.25 < 1 |c |noway |q Halls of Torment##90065/10
+step
+goto 47.57,84.43
+.click Chamber of Dark Seduction##570003
+.' Enter the Chamber of Dark Seduction |goto 54.74,85.60 < 1 |c |noway |q Halls of Torment##90065/10
+step
+goto 63.55,85.78
+.' Continue through the Halls of Torment |q Halls of Torment##90065/10
 step
 goto 67.46,90.45
 .click Shielding Stone##570003
-.' You will also need to click the stones at the following locations:
-.' [77.75,90.10]
-.' [77.64,78.80]
-.' [67.00,79.27]
-..' Find a way to destroy Lyris' Shield |q Halls of Torment##90065/Find a Way to Destroy Lyris's Shield |sub
+.' Click the other 3 Shielding Stones in the corners of the room
+.' Find a way to destroy Lyris' Shield |q Halls of Torment##90065/11
 step
 goto 72.53,84.79
-.kill Lyris Doppelganger##570005 |q Halls of Torment##90065/Defeat the Lyris Doppelganger |sub
+.kill Lyris Doppelganger##570005 |q Halls of Torment##90065/12
 step
 goto 72.56,84.20
-.talk Lyris Titanborn##3360006 |q Halls of Torment##90065/Talk to Your Companion |sub
+.talk Lyris Titanborn##3360006 |q Halls of Torment##90065/13
 step
 goto 82.72,83.10
-.' Follow the path |goto 82.72,83.10 |c |noway
+.' Follow the path |goto 82.72,83.10 |c |noway |q Halls of Torment##90065/14
 step
 goto 75.89,63.60
-.' Follow the path |goto 75.89,63.60 |c |noway
+.' Follow the path |goto 75.89,63.60 |c |noway |q Halls of Torment##90065/14
 step
 goto 72.29,54.77
 .click Chamber of Agony##570005
-.' Continue through the halls |q Halls of Torment##90065/Continue through the Halls |sub
+.' Continue through the halls |q Halls of Torment##90065/14
 step
-goto 61.73,38.55
-.kill Varen Doppelganger##570010 |q Halls of Torment##90065/Defeat Sai's Torturers |sub
+goto 61.47,39.77
+.kill Varen Doppelganger##570010+ |tip They will all 3 die by hitting one of them once.
+.' Defeat Sai's Torturers |q Halls of Torment##90065/15
+.kill Duchess of Anguish##570010
+.' Defeat the Duchess of Anguish |q Halls of Torment##90065/16
 step
-goto 61.63,39.92
-.kill Duchess of Anguish##570011 |q Halls of Torment##90065/Defeat the Duchess of Anguish |sub
+goto 61.68,37.51
+.click Sai Sahan##570006
+.' Free Sai Sahan |q Halls of Torment##90065/17
 step
-goto 61.67,37.91
-.talk Sai Sahan##450002
-.' Free Sai Sahan |q Halls of Torment##90065/Free Sai Sahan |sub
+goto 61.69,37.54
+.talk Sai Sahan##450002 |q Halls of Torment##90065/18
 step
-goto 61.65,38.00
-.talk Sai Sahan##450002 |q Halls of Torment##90065/Talk to Sai Sahan |sub
+goto 62.41,35.78
+.click Portal to the Harborage##460011
+.' Return to the Harborage |q Halls of Torment##90065/19
 step
-goto 62.29,36.13
-.click Portal to the Harborage##460001
-.' Leave the Halls of Torment
-step
-.talk Varen Aquilarios##450001 |q Halls of Torment##90065/Talk to Varen |sub
+.talk Varen Aquilarios##450001 |q Halls of Torment##90065/20
 step
 .talk Sai Sahan##450002
 ..turnin Halls of Torment##90065
@@ -9517,7 +9440,7 @@ step
 'Teleport to the Alten Corimont Wayshrine |goto Alten Corimont 30.94,61.12 |c |noway
 step
 goto 62.14,68.73
-.talk Muz-Muz##190256 |q Swamp to Snow##190035/Talk to the Boatmaster |sub
+.talk Muz-Muz##190256 |q Swamp to Snow##190035/1/1/Talk to the Boatmaster##1
 ]])
 ZGV:RegisterGuide("Ebonheart Pact Leveling Guides\\Eastmarch (30-35)",[[
 startlevel 30
@@ -9531,17 +9454,11 @@ goto 84.33,45.18
 .talk Murilam Dalen##150003
 ..accept Shadows Over Windhelm##150001
 step
-goto 73.64,45.32
-.' Follow the path |goto 73.64,45.32 |c |noway
-step
-goto 67.81,58.18
-.' Follow the path up |goto 67.81,58.18 |c |noway
-step
 goto 59.75,41.81
 .' Follow the path up |goto 59.75,41.81 |c |noway
 step
 goto 50.77,42.36
-.talk Thane Mera Stormcloak##150015 |q Shadows Over Windhelm##150001/Talk to Thane Mera Stormcloak |sub
+.talk Thane Mera Stormcloak##150015 |q Shadows Over Windhelm##150001/1/1/Talk to Thane Mera Stormcloak##1
 step
 goto 61.21,62.27
 .click Cold Moon Inn##150001
@@ -9552,7 +9469,7 @@ goto 58.19,63.60
 step
 goto 59.68,60.10
 .click Leimaer the Raven's Journal##150002
-.' Find Evidence |q Shadows Over Windhelm##150001/Find Evidence |sub
+.' Find Evidence |q Shadows Over Windhelm##150001/3/1/Find Evidence##1
 step
 goto 59.71,65.03
 .' Follow the path down |goto 59.71,65.03 |c |noway
@@ -9563,43 +9480,39 @@ goto 60.45,62.27
 step
 goto 68.55,65.72
 .click Hidden Cache##150004
-.' Find Hidden Cache |q Shadows Over Windhelm##150001/Find Hidden Caches |sub
-'FIX ME
+.' Find Hidden Cache |q Shadows Over Windhelm##150001/4/1/Find Hidden Caches##1 |count 1
 step
 goto 56.37,67.57
 .' Follow the path down |goto 56.37,67.57 |c |noway
 step
 goto 55.87,62.19
 .click Hidden Cache##150004
-.' Find Hidden Cache |q Shadows Over Windhelm##150001/Find Hidden Caches |sub
-'FIX ME
+.' Find Hidden Cache |q Shadows Over Windhelm##150001/4/1/Find Hidden Caches##1 |count 2
 step
 goto 55.45,70.58
-.' Follow the path down |goto 55.45,70.58 |c |noway
+.' Follow the path down |goto 55.45,70.58 < 10 |c |noway
 step
 goto 46.62,68.67
 .talk Rigurt the Brash##100155
 ..accept Party Planning##150002
 step
 goto 29.08,59.26
-.' Follow the path up |goto 29.08,59.26 |c |noway
+.' Follow the path up |goto 29.08,59.26 < 10 |c |noway
 step
 goto 15.15,58.37
 .click Hidden Cache##150004
-.' Find Hidden Cache |q Shadows Over Windhelm##150001/Find Hidden Caches |sub
-'FIX ME
+.' Find Hidden Cache |q Shadows Over Windhelm##150001/4/1/Find Hidden Caches##1 |count 3
 step
 goto 26.41,55.01
-.' Follow the path up |goto 26.41,55.01 |c |noway
+.' Follow the path up |goto 26.41,55.01 < 10 |c |noway
 step
 goto 26.62,30.50
 .talk Del Seleth##150043
-.' Intimidate him when prompted |q Party Planning##150002/1/Recover Dunmer Cultural Garb##3
+.' Intimidate him when prompted |q Party Planning##150002/1/1/Recover Dunmer Cultural Garb##3
 step
 goto 20.04,34.98
 .click Hidden Cache##150004
-.' Find Hidden Cache |q Shadows Over Windhelm##150001/Find Hidden Caches |sub
-'FIX ME
+.' Find Hidden Cache |q Shadows Over Windhelm##150001/4/1/Find Hidden Caches##1 |count 4
 step
 goto 49.87,42.37
 .talk Thane Mera Stormcloak##150015
@@ -9607,33 +9520,39 @@ goto 49.87,42.37
 ..accept The Konunleikar##150003
 step
 goto 23.67,56.52
-.' Follow the path up |goto 23.67,56.52 |c |noway
+.' Follow the path up |goto 23.67,56.52 < 10 |c |noway
 step
 goto 18.69,56.89
-.talk Lenning the Hawk##150055 |q The Konunleikar##150003/Talk to Lenning the Hawk |sub
+.talk Lenning the Hawk##150055 |q The Konunleikar##150003/1/1/Talk to Lenning the Hawk##1
 step
 goto 18.07,58.80
-.click Starting Flare##150006 |q The Konunleikar##150003/Light the Starting Flare |sub
+.click Starting Flare##150006 |q The Konunleikar##150003/2/1/Light the Starting Flare##1
 step
+goto windhelm_base 22.53,69.51
 'Begin the race until you reach Hadring the Swift lying on the ground
-|confirm
+.' Reach the First Tower |q The Konunleikar##150003/3/1/Reach the First Tower##1
 step
 goto 69.54,54.76
-.talk Hadring the Swift##150059 |q The Konunleikar##150003/Help Hadring the Swift |sub
+|tip Follow the path along the towers
+.talk Hadring the Swift##150059 |q The Konunleikar##150003/6/1/Help Hadring the Swift##2
 step
 goto 80.23,22.45
-.talk Lenning the Hawk##150055 |q The Konunleikar##150003/Talk to Lenning the Hawk |sub
+|tip Follow the path along the towers
+.talk Lenning the Hawk##150055 |q The Konunleikar##150003/9/1/Talk to Lenning the Hawk##1
 step
 goto 63.81,41.12
-.' Follow the path up |goto 63.81,41.12 |c |noway
+.' Follow the path up |goto 63.81,41.12 < 10 |c |noway
 step
 goto 50.80,42.42
 .talk Thane Mera Stormcloak##150015
 ..turnin The Konunleikar##150003
 ..accept Windhelm's Champion##150004
 step
+goto windhelm_base 50.86,42.07
+.talk Thane Mera Stormcloak##150015 |q Windhelm's Champion##150004/1/1/Talk to Thane Mera Stormcloak##1
+step
 goto 50.64,74.02
-.' Follow the path |goto 50.64,74.02 |c |noway
+.' Follow the path |goto 50.64,74.02 < 10 |c |noway
 step
 goto Eastmarch 50.35,34.78
 .talk Jorygg Bleakdawn##150066
@@ -9645,14 +9564,14 @@ goto 52.52,33.60
 step
 goto 52.70,32.58
 .talk Addald Cold-Eye##150074
-..collect Pickled Fish |q Party Planning##150002/1/Collect Pickled Fish from Lower Yorgrim##1
+..collect Pickled Fish |q Party Planning##150002/1/1/Collect Pickled Fish from Lower Yorgrim##1
 step
 goto 53.33,32.96
 .click Fish Head Tavern##150008
-.' Enter the Fish Head Tavern |goto 53.37,32.99 |c |noway
+.' Enter the Fish Head Tavern |goto 53.37,32.99 < 1 |c |noway
 step
 goto 53.48,33.06
-.talk Eiraki Frostwind##150075 |q Giant Problems##150005/Talk to Eiraki Frostwind |sub
+.talk Eiraki Frostwind##150075 |q Giant Problems##150005/1/1/Talk to Eiraki Frostwind##1
 step
 goto 53.39,33.00
 .click Lower Yorgrim##150009
@@ -9660,155 +9579,138 @@ goto 53.39,33.00
 step
 goto Eastmarch 54.65,30.84
 .click Skorvild's House##150010
-.' Enter Skorvild's House |goto 54.61,30.73 |c |noway
+.' Enter Skorvild's House |goto 54.61,30.73 < 1 |c |noway
 step
 goto 54.48,30.65
-.talk Skorvild Frostwind##150079 |q Giant Problems##150005/Talk to Skorvild Frostwind |sub
+.talk Skorvild Frostwind##150079 |q Giant Problems##150005/2/1/Talk to Skorvild Frostwind##1
 step
 goto 54.62,30.75
 .click Lower Yorgrim##150009
-.' Leave Skorvild's House |goto 54.63,30.80 |c |noway
-step
-'As you complete the next steps:
-.kill Wolf##1090005
-..collect Wolf Pelt |q Collector of Pelts##150006/Collect Wolf Pelts |sub
-.click Militia Supplies##150012
-..collect Militia Supplies |q Giant Problems##150005/Collect Supplies |sub
+.' Leave Skorvild's House |goto 54.63,30.80 < 1 |c |noway
 step
 goto 55.61,29.29
-.talk Villager##90395
-.' Rescue the Villagers |q Giant Problems##150005/Rescue Villagers |sub
-'FIX ME
+.talk Villager##90395 |tip Kill wolves and collect Militia supplies as you see them
+.' Rescue the Villagers |q Giant Problems##150005/3/1/Rescue Villagers##2 |count 1
 step
 goto 56.82,26.98
-.talk Villager##90395
-.' Rescue the Villagers |q Giant Problems##150005/Rescue Villagers |sub
-'FIX ME
-step
-goto 58.67,27.85
-.' Follow the path up |goto 58.67,27.85 |c |noway
+.talk Villager##90395 |tip Kill wolves and collect Militia supplies as you see them
+.' Rescue the Villagers |q Giant Problems##150005/3/1/Rescue Villagers##2 |count 2
 step
 goto 58.57,28.03
-.talk Burj Hammerhurl##150083
-.' Rescue the Villagers |q Giant Problems##150005/Rescue Villagers |sub
-'FIX ME
+.talk Burj Hammerhurl##150083 |tip Kill wolves and collect Militia supplies as you see them
+.' Rescue the Villagers |q Giant Problems##150005/3/1/Rescue Villagers##2 |count 3
 step
-'All around this area:
-.kill Wolf##1090005
-..collect Wolf Pelt |q Collector of Pelts##150006/Collect Wolf Pelts |sub
+goto eastmarch_base 57.04,29.92
+.kill Wolf##1090005 |tip They are located all around this area
+..collect Wolf Pelt |q Collector of Pelts##150006/1/1/Collect Wolf Pelts##1
 .click Militia Supplies##150012
-..collect Militia Supplies |q Giant Problems##150005/Collect Supplies |sub
+..collect Militia Supplies |q Giant Problems##150005/3/1/Collect Supplies##1
 step
 goto Eastmarch 55.23,34.51
 .click Old Manor##150013
-.' Enter the Old Manor here |goto 55.29,34.58 |c |noway
+.' Enter the Old Manor here |goto 55.29,34.58 < 1 |c |noway
 step
 goto 55.32,34.81
 .talk Skorvild Frostwind##150079
-.' <Eat the meat> |q Giant Problems##150005/Talk to Skorvild |sub
+.' <Eat the meat> |q Giant Problems##150005/4/1/Talk to Skorvild##1
 step
 goto 55.31,34.61
 .click Lower Yorgrim##150009
-.' Leave the Old Manor |goto 55.25,34.53 |c |noway
+.' Leave the Old Manor |goto 55.25,34.53 < 1 |c |noway
 step
 goto Eastmarch 59.56,31.44
-.kill Crush##150084 |q Giant Problems##150005/Kill the Giant Leader |sub
+.kill Crush##150084 |q Giant Problems##150005/5/1/Kill the Giant Leader##1
 step
 goto 58.53,31.18
 .talk Skorvild Frostwind##150079
-..turnin Giant Problems##150005
+.turnin Giant Problems##150005
 step
 goto 52.49,33.64
 .talk Hanmaer Furmender##150070
 ..turnin Collector of Pelts##150006
 step
 goto 48.60,36.54
-.' Follow the Assassins |q Windhelm's Champion##150004/Follow the Assassins |sub
+.' Follow the Assassins |q Windhelm's Champion##150004/2/1/Follow the Assassins##1
 step
 goto 47.55,38.09
 .click Orders from Fildgor##150015
-.' Retrieve Assassin's Orders |q Windhelm's Champion##150004/Retrieve Assassin's Orders |sub
+.' Retrieve Assassin's Orders |q Windhelm's Champion##150004/3/1/Retrieve Assassin's Orders##2
+step
+goto eastmarch_base 47.60,39.85
+.wayshrine Kynesgrove Wayshrine
 step
 goto 48.10,40.45
 .talk Kralald##150089
 ..accept Shrine of Corruption##150007
 step
-goto 47.76,42.26
-.' Follow the path up |goto 47.76,42.26 |c |noway
+goto eastmarch_base 47.93,42.73
+.' Find the Missing Brigade |q Shrine of Corruption##150007/1/1/Find the Missing Brigade##1
 step
 goto 47.82,42.70
 .click Keeper's Home##150017
-.' Persuade the brigade when prompted |q Shrine of Corruption##150007/Find the Missing Brigade |sub
+.' Persuade the brigade when prompted |q Shrine of Corruption##150007/2
 step
 goto 47.83,42.69
 .click Keeper's Home##150017
-.' Enter the Keeper's Home |goto 47.76,42.71 |c |noway
+.' Enter the Keeper's Home |goto 47.76,42.71 < 1 |c |noway
 step
 goto 47.64,42.72
-.talk Captain Alhana##150093 |q Shrine of Corruption##150007/Talk to the Soldiers in the House |sub
+.talk Captain Alhana##150093 |q Shrine of Corruption##150007/3/1/Talk to the Soldiers in the House##1
 step
 goto 47.66,42.97
 .talk Fresgil##150094
 ..accept A Cure For Droi##150008
 step
-'As you complete the next steps:
-.kill Muzzled Owl Ice Witch##150005, Muzzled Owl Arcanist##150004, Muzzled Owl Bewitcher##150002, Furykissed Soldier##150001, Furykissed Thrall##150003
-..collect Drawer Key |q Shrine of Corruption##150001/Search for Clues to the Keepers' Whereabouts |sub
+goto eastmarch_base 47.76,42.72
+.click Kynesgrove##150019
+.' Leave the building |goto Eastmarch 47.83,42.70 < 1 |c |noway
 step
 goto Eastmarch 48.40,43.43
-.click Kyne's Breath##150001 |q A Cure For Droi##150002/Collect Kyne's Breath |sub
-'FIX ME
+|tip Kill enemies around this area
+.click Kyne's Breath##150001 |q A Cure For Droi##150008/1/1/Collect Kyne's Breath##1 |count 1
 step
 goto 50.56,44.67
-.click Kyne's Breath##150001 |q A Cure For Droi##150002/Collect Kyne's Breath |sub
-'FIX ME
+|tip Kill enemies around this area
+.click Kyne's Breath##150001 |q A Cure For Droi##150008/1/1/Collect Kyne's Breath##1 |count 2
 step
 goto 50.19,42.70
-.click Kyne's Breath##150001 |q A Cure For Droi##150002/Collect Kyne's Breath |sub
-'FIX ME
+|tip Kill enemies around this area
+.click Kyne's Breath##150001 |q A Cure For Droi##150008/1/1/Collect Kyne's Breath##1 |count 3
 step
 goto 50.86,40.50
-.click Kyne's Breath##150001 |q A Cure For Droi##150002/Collect Kyne's Breath |sub
-'FIX ME
+|tip Kill enemies around this area
+.click Kyne's Breath##150001 |q A Cure For Droi##150008/1/1/Collect Kyne's Breath##1 |count 4
 step
 'All around this area:
 .kill Muzzled Owl Ice Witch##150005, Muzzled Owl Arcanist##150004, Muzzled Owl Bewitcher##150002, Furykissed Soldier##150001, Furykissed Thrall##150003
-..collect Drawer Key |q Shrine of Corruption##150001/Search for Clues to the Keepers' Whereabouts |sub
+..collect Drawer Key |q Shrine of Corruption##150007/4/1/Search for Clues to the Keepers' Whereabouts##1
 step
 goto 47.84,42.70
 .click Keeper's Home##150005
-.' Enter the Keeper's Home |goto 47.78,42.71 |c |noway
+.' Enter the Keeper's Home |goto eastmarch_base 47.76,42.71 < 1 |c |noway
 step
 goto 47.74,42.83
-.click Dresser##100041 |q Shrine of Corruption##150001/Use the Key to Open the Dresser |sub
-step
-goto 47.74,42.83
-.click Huvar's Journal##150007
-.' Gather a clue for the Keepers' Whereabouts |q Shrine of Corruption##150001/Search for Clues to the Keepers' Whereabouts |sub
-'FIX ME
+.click Dresser##100041
+.click Huvar's Journal##150132 |q Shrine of Corruption##150007/5/3/Use the Key to Open the Dresser##1
 step
 goto 47.76,42.71
 .click Kynesgrove##150006
 .' Leave the Keepers' House |goto 47.83,42.70 |c |noway
 step
-goto 51.72,43.16
-.' Follow the path up |goto 51.72,43.16 |c |noway
-step
 goto 51.45,43.87
 .talk Leifnar##150012
-.' Search for clues |q Shrine of Corruption##150001/Search for Clues to the Keepers' Whereabouts |sub
-'FIX ME
+.' Search for clues |q Shrine of Corruption##150007/6
 step
 goto 47.82,42.69
 .click Keeper's Home##150005
-.' Enter the Keeper's Home |goto 47.76,42.71 |c |noway
+.' Enter the Keeper's Home |goto 47.76,42.71 < 1 |c |noway
 step
-goto 47.64,42.74
-.talk Captain Alhana##150008 |q Shrine of Corruption##150001/Talk to Captain Alhana |sub
+goto eastmarch_base 47.63,42.80
+.talk Captain Alhana##150093 |q Shrine of Corruption##150007/7/1/Talk to Captain Alhana##1
 step
 goto 47.66,42.98
 .talk Fresgil##150010
-..turnin A Cure For Droi##150002
+..turnin A Cure For Droi##150008
 step
 goto 47.75,42.72
 .click Kynesgrove##150006
@@ -9816,18 +9718,18 @@ goto 47.75,42.72
 step
 goto 51.18,42.13
 .click Loose Window##150004
-.' Enter the Locked House |q Shrine of Corruption##150001/Enter the Locked House |sub
+.' Enter the Locked House |q Shrine of Corruption##150007/8/1/Enter the Locked House##1
 step
 goto 51.26,41.63
-.click Keeper Ormi's Journal##150011 |q Shrine of Corruption##150001/Search the House for Clues |sub
+.click Keeper Ormi's Journal##150011 |q Shrine of Corruption##150007/9/1/Search the House for Clues##1
 step
 goto 51.05,41.91
 .talk Captain Alhana##150008
-..turnin Shrine of Corruption##150001
-..accept For Kyne's Honor##150006
+..turnin Shrine of Corruption##150007
+..accept For Kyne's Honor##150043
 step
 goto 51.07,41.90
-.' Observe Captain Alhana |q For Kyne's Honor##150006/Observe Captain Alhana |sub
+.' Observe Captain Alhana |q For Kyne's Honor##150043/1/1/Observe Captain Alhana##1
 step
 goto 51.10,42.06
 .click Loose Window##150004
@@ -9835,83 +9737,73 @@ goto 51.10,42.06
 step
 goto 51.37,42.43
 .talk Fresgil##150010
-.' Tell her you will find her son |q For Kyne's Honor##150006/Warn the Nord Soldiers |sub
-step
-goto 48.01,40.42
-.' Follow the path |goto 48.01,40.42 |c |noway
+.' Tell her you will find her son |q For Kyne's Honor##150043/2/1/Talk to Fresgil##1
 step
 goto 49.69,34.66
-.' Follow the path up |goto 49.69,34.66 |c |noway
+.' Follow the path up |goto 49.69,34.66 < 10 |c |noway
 step
-goto Windhelm 53.30,70.44
-.' Follow the path up |goto Windhelm 53.30,70.44 |c |noway
-step
-goto 61.27,62.24
+goto windhelm_base 61.27,62.24
 .click Cold Moon Inn##150012
-.' Enter the Cold Moon Inn |goto 60.69,62.25 |c |noway
+.' Enter the Cold Moon Inn |goto 60.69,62.25  < 10 |c |noway
 step
 goto 58.74,60.46
-.talk Sahun##150026 |q For Kyne's Honor##150006/Find Sahun in Windhelm |sub
+.talk Sahun##150026 |q For Kyne's Honor##150043/3/1/Find Sahun in Windhelm##1
 step
 goto 60.42,62.30
 .click Windhelm##150013
 .' Leave the Cold Moon Inn |goto 61.14,62.26 |c |noway
 step
-goto 52.18,45.41
-.' Follow the path up |goto 52.18,45.41 |c |noway
-step
 goto 50.55,42.15
 .talk Thane Mera Stormcloak##150037
 ..turnin Windhelm's Champion##150004
-..accept One Victor, One King##150007
-step
-goto 74.02,33.26
-.' Follow the path down |goto 74.02,33.26 |c |noway
+..accept One Victor, One King##150044
 step
 goto 84.71,34.07
 .click Hall of Trials##150014
-.' Enter the Hall of Trials |q One Victor, One King##150007/Enter the Hall of Trials |sub
+.' Enter the Hall of Trials |q One Victor, One King##150044/1/1/Enter the Hall of Trials##1
 step
 goto Hall of Trials 51.99,36.57
-.' Observe the Champion |q One Victor, One King##150007/Observe the Champion |sub
+.' Observe the Champion |q One Victor, One King##150044/2/1/Enter the Arena##1
 step
 goto 43.91,35.74
 .kill Stormfist Infantry##1550004, Stormfist Ravager##1550003, Stormfist Striker##1550005, Leimaer the Raven##1550001, Stormfist Slayer##1550006
-.' Defeat the Stormfist Clan |q One Victor, One King##150007/Defeat the Stormfist Clan |sub
+.' Defeat the Stormfist Clan |q One Victor, One King##150044/3/1/Defeat the Stormfist Clan##1
 step
 goto 35.45,36.66
-.talk Jorunn the Skald-King##1550002 |q One Victor, One King##150007/Talk to Jorunn the Skald-King |sub
+.talk Jorunn the Skald-King##1550002 |q One Victor, One King##150044/4/1/Talk to Jorunn the Skald-King##1
 step
 goto 67.35,89.08
 .click Windhelm##150013
-.' Leave the Hall of Trials |goto Windhelm 84.90,33.91 |c |noway
+.' Leave the Hall of Trials |goto Windhelm 84.90,33.91 < 10 |c |noway
 step
 goto 50.58,42.42
 .talk Thane Mera Stormcloak##150037
-..turnin One Victor, One King##150007
-..accept Sounds of Alarm##150008
+..turnin One Victor, One King##150044
+..accept Sounds of Alarm##150010
 step
 goto 50.70,73.07
-.' Follow the path |goto 50.70,73.07 |c |noway
+.' Follow the path |goto 50.70,73.07 < 10 |c |noway
 step
 goto Eastmarch 48.01,40.54
-.' Follow the path |goto Eastmarch 48.01,40.54 |c |noway
+.' Follow the path |goto Eastmarch 48.01,40.54 < 10 |c |noway
 step
 goto 49.12,42.32
-.' Follow the path |goto 49.12,42.32 |c |noway
+.' Follow the path |goto 49.12,42.32 < 10 |c |noway
 step
 goto 51.13,41.21
-.' Follow the path |goto 51.13,41.21 |c |noway
+.' Follow the path |goto 51.13,41.21 < 10 |c |noway
 step
 goto 54.00,42.28
 .kill Keeper Ormi##150056
-.' Confront Ormi at Kynesgrove |q For Kyne's Honor##150006/Confront Ormi at Kynesgrove |sub
+.' Confront Ormi at Kynesgrove |q For Kyne's Honor##150043/4/1/Confront Ormi at Kynesgrove##1
 step
 goto 54.02,42.26
-.talk Sahun##150026 |q For Kyne's Honor##150006/Talk to Sahun |sub
+.talk Sahun##150026 |q For Kyne's Honor##150043/5/1/Talk to Sahun##1
+step
+.' Watch Sahun Pray  |q For Kyne's Honor##150043/6/1/Watch Sahun Pray##1
 step
 goto 54.03,42.23
-.talk Keeper Ormi##150056 |q For Kyne's Honor##150006/Talk to Keeper Ormi |sub
+.talk Keeper Ormi##150056 |q For Kyne's Honor##150043/7
 step
 goto 47.84,42.69
 .click Keeper's Home##150005
@@ -9919,38 +9811,32 @@ goto 47.84,42.69
 step
 goto 47.64,42.74
 .talk Captain Alhana##150008
-..turnin For Kyne's Honor##150006
+..turnin For Kyne's Honor##150043
 step
 goto 47.75,42.72
 .click Kynesgrove##150006
 .' Enter the Keeper's Home |goto 47.83,42.70 |c |noway
 step
-goto 49.01,42.15
-.' Follow the path |goto 49.01,42.15 |c |noway
-step
-goto 48.02,40.32
-.' Follow the path |goto 48.02,40.32 |c |noway
-step
 goto 49.49,34.82
-.' Follow the path |goto 49.49,34.82 |c |noway
+.' Follow the path |goto 49.49,34.82 < 10 |c |noway
 step
-goto 42.33,33.81
-.' Follow the path |goto 42.33,33.81 |c |noway
+goto eastmarch_base 40.78,33.38
+.wayshrine Voljar Meadery Wayshrine
 step
 goto 40.54,30.25
 .talk Fens Snowpeak##150057
 ..accept A Friend in Mead##150009
 step
 goto 38.37,30.28
-.talk Haraldar Snowpeak##150058 |q A Friend in Mead##150009/Talk to Haraldar |sub
+.talk Haraldar Snowpeak##150058 |q A Friend in Mead##150009/1
 step
 goto Eastmarch 37.77,30.53
 .click Voljar Farmhouse##150016
-.' Enter the Voljar Farmhouse |goto 37.72,30.56 |c |noway
+.' Enter the Voljar Farmhouse |goto 37.74,30.55 < 1 |c |noway
 step
 goto 37.49,30.51
 .talk Jafrera Snowpeak##150060
-..collect Voljar Spiced Mead |q Party Planning##150004/Collect Mead from Voljar's Meadery |sub
+..collect Voljar Spiced Mead |q Party Planning##150004/1
 step
 goto 37.70,30.57
 .click Eastmarch##150017
@@ -9962,14 +9848,14 @@ goto 37.39,27.91
 step
 goto 37.09,28.11
 .click Fragrant Herbs##150022
-..collect Fragrant Herbs |q A Friend in Mead##150009/3/Find Fragrant Herbs##1
+..collect Fragrant Herbs |q A Friend in Mead##150009/3/1/Find Fragrant Herbs##1
 step
 goto 36.94,27.88
 .' Follow the path up |goto 36.94,27.88 |c |noway
 step
 goto 37.20,27.82
 .click Voljar's Meadery Recipes##150023
-.' Find the Mead Recipe Book |q A Friend in Mead##150009/Find the Mead Recipe Book |sub
+.' Find the Mead Recipe Book |q A Friend in Mead##150009/3/1/Find the Mead Recipe Book##2
 step
 goto 37.18,27.71
 .click Voljar Meadery##150021
@@ -9977,20 +9863,20 @@ goto 37.18,27.71
 step
 goto 37.19,27.44
 .click Rare Spices##150024
-..collect Rare Spices |q A Friend in Mead##150009/Retrieve Rare Spices from the Storeroom |sub
+..collect Rare Spices |q A Friend in Mead##150009/4
 step
 goto 37.20,27.65
 .click Voljar Meadery##150021
 .' Leave the room here |goto 37.15,27.75 |c |noway
 step
 goto 37.08,27.96
-.talk Haraldar Snowpeak##150058 |q A Friend in Mead##150009/Talk to Haraldar |sub
+.talk Haraldar Snowpeak##150058 |q A Friend in Mead##150009/5/1/Talk to Haraldar##1
 step
 goto 36.98,28.13
 .' Follow the path down |goto 36.98,28.13 |c |noway
 step
 goto 37.28,27.66
-.talk Roruld Snowpeak##150059 |q A Friend in Mead##150009/Talk to Roruld |sub
+.talk Roruld Snowpeak##150059 |q A Friend in Mead##150009/6/1/Talk to Roruld##1
 step
 goto 37.29,27.86
 .click Eastmarch##150017
@@ -9998,53 +9884,56 @@ goto 37.29,27.86
 step
 goto 39.77,29.27
 .talk Yraldar Snowpeak##150076
-..accept A Brother's Revenge##150010
+..accept A Brother's Revenge##150045
 step
 goto 42.04,30.31
-.click Beehive##150025
+.click Beehive##150025 |q A Friend in Mead##150009/7
 .kill Smash-Skull##150077
-..collect Giant's Toe |q A Friend in Mead##150009/Collect Giant's Toe |sub
+..collect Giant's Toe |q A Friend in Mead##150009/8/1/Collect Giant's Toe##1
 step
-goto 41.04,27.10
-.kill Kazok gro-Nogremor##150078 |q A Brother's Revenge##150010/Defeat Kazok gro-Nogremor |sub
+goto eastmarch_base 40.44,26.41
+.' Head for Kazok's Camp |q A Brother's Revenge##150045/1/2/Head for Kazok's Camp##1
+step
+goto 40.11,26.20
+.kill Kazok gro-Nogremor##150343 |q A Brother's Revenge##150045/1/1/Defeat Kazok gro-Nogremor##1
 step
 goto 39.37,29.43
-.talk Yraldar Snowpeak##150076 |q A Brother's Revenge##150010/Talk to Yraldar by the Barn |sub
+.talk Yraldar Snowpeak##150076 |q A Brother's Revenge##150045/2/1/Talk to Yraldar by the Barn##1
 step
 goto 39.33,29.42
-.click Pike##150026 |q A Brother's Revenge##150010/Stick Kazok's Head on a Pike |sub
+.click Pike##150026 |q A Brother's Revenge##150045/3
 step
 goto 39.33,29.42
 .talk Yraldar Snowpeak##150076
-..turnin A Brother's Revenge##150010
+..turnin A Brother's Revenge##150045
 step
 goto 37.38,27.92
 .click Voljar Meadery##150021
 .' Enter the Voljar Meadery |goto 37.32,27.89 |c |noway
 step
 goto 37.29,27.66
-.talk Roruld Snowpeak##150059 |q A Friend in Mead##150009/Give Giant's Toe to Roruld |sub
+.talk Roruld Snowpeak##150059 |q A Friend in Mead##150009/9/1/Give Giant's Toe to Roruld##1
 step
 goto 37.30,27.87
 .click Eastmarch##150017
 .' Leave the Voljar Meadery |goto 37.35,27.90 |c |noway
 step
 goto 40.05,28.35
-.talk Bjoruld Snowpeak##150080 |q A Friend in Mead##150009/Keep an Eye Out for Bjoruld |sub
+.talk Bjoruld Snowpeak##150080 |q A Friend in Mead##150009/10/3/Keep an Eye Out for Bjoruld##1
 step
 goto 39.97,28.00
 .click Appleblossom Honey##150027
-..collect Appleblossom Honey |q A Friend in Mead##150009/Collect Appleblossom Honey |sub
+..collect Appleblossom Honey |q A Friend in Mead##150009/11/1/Collect Appleblossom Honey##1
 step
 goto 37.37,27.91
 .click Voljar Meadery##150021
 .' Enter the Voljar Meadery |goto 37.32,27.89 |c |noway
 step
 goto 37.28,27.68
-.talk Roruld Snowpeak##150059 |q A Friend in Mead##150009/Deliver Honey to Roruld Snowpeak |sub
+.talk Roruld Snowpeak##150059 |q A Friend in Mead##150009/12/1/Deliver Honey to Roruld Snowpeak##1
 step
 goto 37.07,27.69
-.click Giant's Toe Mead##150029 |q A Friend in Mead##150009/Sample Roruld Snowpeak's Newest Mead |sub
+.click Giant's Toe Mead##150029 |q A Friend in Mead##150009/13
 step
 goto 37.06,27.73
 .talk Haraldar Snowpeak##150058
@@ -10052,118 +9941,111 @@ goto 37.06,27.73
 step
 goto 37.30,27.87
 .click Eastmarch##150017
-.' Leave the Voljar Meadery |goto 37.35,27.90 |c |noway
-step
-goto Eastmarch 41.08,31.36
-.' Follow the path |goto Eastmarch 41.08,31.36 |c |noway
+.' Leave the Voljar Meadery |goto 37.35,27.90 < 10 |c |noway
 step
 goto 42.31,34.05
-.' Follow the path |goto 42.31,34.05 |c |noway
+.' Follow the path |goto 42.31,34.05 < 10 |c |noway
 step
 goto 39.95,36.93
-.' Follow the path |goto 39.95,36.93 |c |noway
+.' Follow the path |goto 39.95,36.93 < 10 |c |noway
 step
 goto 38.58,36.29
 .talk Captain Hamar##150087
-..turnin Sounds of Alarm##150008
-..accept Blindsided##150011
+..turnin Sounds of Alarm##150010
+..accept Blindsided##150046
 step
 goto 38.18,37.27
-.' Follow the path up |goto 38.18,37.27 |c |noway
+.' Follow the path up |goto 38.18,37.27 < 10 |c |noway
 step
 goto 36.98,37.57
-.' Enter the Fort |q Blindsided##150011/Enter the Fort |sub
+.' Enter the Fort |q Blindsided##150046/1/3/Enter the Fort##1
 step
 goto 35.98,36.96
 .' Enter the House here |goto 35.98,36.96 |c |noway
 step
 goto 35.83,36.74
 .talk Morvunskar Soldier##150086
-.' Rescue the soldier |q Blindsided##150011/Rescue Soldier |sub
-'FIX ME
+.' Rescue the soldier |q Blindsided##150046/2/1/Rescue Morvunskar Soldiers##1 |count 1
 step
 goto 35.07,37.54
-.' Follow the path up |goto 35.07,37.54 |c |noway
+.' Follow the path up |goto 35.07,37.54 < 10 |c |noway
 step
 goto 34.80,36.36
-.' Follow the path up |goto 34.80,36.36 |c |noway
+.' Follow the path up |goto 34.80,36.36 < 10 |c |noway
 step
 goto 34.90,35.88
 .talk Morvunskar Soldier##150086
-.' Rescue the soldier |q Blindsided##150011/Rescue Soldier |sub
-'FIX ME
+.' Rescue the soldier |q Blindsided##150046/2/1/Rescue Morvunskar Soldiers##1 |count 2
 step
 goto 34.45,39.02
-.' Follow the path |goto 34.45,39.02 |c |noway
+.' Follow the path |goto 34.45,39.02 < 10 |c |noway
 step
 goto 36.41,38.99
-.' Follow the path up |goto 36.41,38.99 |c |noway
+.' Follow the path up |goto 36.41,38.99 < 10 |c |noway
 step
 goto 37.01,39.03
 .talk Morvunskar Soldier##150086
-.' Rescue the Soldier |q Blindsided##150011/Rescue Soldier |sub
-'FIX ME
+.' Rescue the Soldier |q Blindsided##150046/2/1/Rescue Morvunskar Soldiers##1 |count 3
 step
 goto Eastmarch 34.35,39.14
-.' Follow the path |goto Eastmarch 34.35,39.14 |c |noway
+.' Follow the path |goto Eastmarch 34.35,39.14 < 10 |c |noway
 step
 goto 34.19,39.93
-.' Follow the path |goto 34.19,39.93 |c |noway
+.' Follow the path |goto 34.19,39.93 < 10 |c |noway
 step
 goto 34.05,40.38
-.talk Morvunskar Soldier##150086 |q Blindsided##150011/Rescue Morvunskar Soldiers |sub
-'FIX ME
+.talk Morvunskar Soldier##150086 |q Blindsided##150046/2
 step
 goto 34.61,38.32
-.' Follow the path up |goto 34.61,38.32 |c |noway
+.' Follow the path up |goto 34.61,38.32 < 10 |c |noway
 step
 goto 33.95,38.21
-.talk Lieutenant Koruni##150090 |q Blindsided##150011/Talk to Lieutenant Koruni |sub
+.talk Lieutenant Koruni##150090 |q Blindsided##150046/3
 step
 goto 33.88,38.23
 .click Barracks##150030
-.' Enter the barracks |goto 33.81,38.22 |c |noway
+.' Enter the barracks |goto 33.81,38.22 < 1 |c |noway
 step
 goto 33.31,38.62
-.' Follow the path |goto 33.31,38.62 |c |noway
+.' Follow the path |goto 33.31,38.62 < 10 |c |noway
 step
 goto 33.40,37.71
-.' Follow the path |goto 33.40,37.71 |c |noway
+.' Follow the path |goto 33.40,37.71 < 10 |c |noway
 step
 goto 34.15,37.89
 .click Second Floor##150032
-.' Go up the ladder to the second floor |goto 34.10,37.83 |c |noway
+.' Go up the ladder to the second floor |goto 34.10,37.83 < 1 |c |noway
 step
 goto 34.01,38.68
-.kill Warlord Halskar##150091 |q Blindsided##150011/Defeat Warlord Halskar |sub
+.kill Warlord Halskar##150091 |q Blindsided##150046/5
 step
 goto 34.01,38.68
-.click Strongbox##100129 |q Blindsided##150011/Search the Strongbox |sub
+.click Strongbox##100129 |q Blindsided##150046/6
 step
 goto 34.01,38.68
-.talk Queen Nurnhilde##150092 |q Blindsided##150011/Talk to Queen Nurnhilde |sub
+.talk Queen Nurnhilde##150092 |q Blindsided##150046/7
 step
 goto 33.67,38.23
 .talk Lieutenant Koruni##150090
-..turnin Blindsided##150011
-..accept Sleep for the Dead##150012
+..turnin Blindsided##150046
+..accept Sleep for the Dead##150047
 step
 goto 33.80,38.21
 .click Fort Morvunskar##150031
 .' Leave the Barracks |goto 33.88,38.23 |c |noway
 step
 goto 32.29,36.70
-.talk Queen Nurnhilde##150092 |q Sleep for the Dead##150012/Talk to Queen Nurnhilde |sub
+.talk Queen Nurnhilde##150092 |q Sleep for the Dead##150047/1
 step
 goto 32.05,36.69
 .click Royal Tombs##150033
-.' Enter the Royal Tombs |q Sleep for the Dead##150012/Enter the Royal Tombs |sub
+.' Enter the Royal Tombs |q Sleep for the Dead##150047/2
 step
 goto Fort Morvunskar 52.91,21.57
-.' Find the First Burial Chamber |q Sleep for the Dead##150012/Find the First Burial Chamber |sub
+.' Find the First Burial Chamber |q Sleep for the Dead##150047/3
 step
 goto Fort Morvunskar 49.19,28.66
-.click Simple Altar##960003 |q Sleep for the Dead##150012/Return the Old Nord Cup |sub
+.click Simple Altar##960003 |q Sleep for the Dead##150047/4
 step
 goto 54.37,29.63
 .' Follow the path |goto 54.37,29.63 |c |noway
@@ -10175,65 +10057,65 @@ goto 41.33,42.23
 .' Follow the path |goto 41.33,42.23 |c |noway
 step
 goto 41.10,47.19
-.' Find the Second Burial Chamber |q Sleep for the Dead##150012/Find the Second Burial Chamber |sub
+.' Find the Second Burial Chamber |q Sleep for the Dead##150047/5
 step
 goto 38.17,62.50
-.click Dry Page##960008 |q Sleep for the Dead##150012/Dry Page |sub
+.click Dry Page##960008 |q Sleep for the Dead##150047/6/2/Dry Page##3
 step
 goto 41.12,52.37
 .click Book Pedestal##960007
-.' Use the Dry Page on the book and place it on the pedestal |q Sleep for the Dead##150012/Return the Nord Book |sub
+.' Use the Dry Page on the book and place it on the pedestal |q Sleep for the Dead##150047/6/1/Return the Nord Book##1
 step
 goto 37.48,77.75
-.' Find the Final Burial Chamber |q Sleep for the Dead##150012/Find the Final Burial Chamber |sub
+.' Find the Final Burial Chamber |q Sleep for the Dead##150047/7
 step
 goto 37.54,87.25
-.talk Queen Nurnhilde##150092 |q Sleep for the Dead##150012/Talk to Queen Nurnhilde |sub
+.talk Queen Nurnhilde##150092 |q Sleep for the Dead##150047/8/1/Talk to Queen Nurnhilde##1
 step
 goto 53.39,71.44
 .click Eastmarch##150017
-.' Leave the tomb via the tunnel |q Sleep for the Dead##150012/Leave the Tomb Via the Tunnel |sub
+.' Leave the tomb via the tunnel |q Sleep for the Dead##150047/9
 step
-goto 33.51,41.08
-.kill Shukul gro-Agluk##150093 |q Sleep for the Dead##150012/Defeat Shukul gro-Agluk |sub
+goto eastmarch_base 33.51,41.08
+.kill Shukul gro-Agluk##150093 |q Sleep for the Dead##150047/11
 step
 goto 35.10,40.79
 .' Enter the fort |goto 35.10,40.79 |c |noway
 step
 goto 34.55,39.97
-.talk Captain Hamar##150087 |q Sleep for the Dead##150012/Talk to Captain Hamar |sub
+.talk Captain Hamar##150087 |q Sleep for the Dead##150047/12
 step
 goto 34.35,39.78
 .talk Queen Nurnhilde##150092
-..turnin Sleep for the Dead##150012
+..turnin Sleep for the Dead##150047
 step
 goto 34.88,40.53
 .talk Lieutenant Koruni##150090
-..accept Victory at Morvunskar##150013
+..accept Victory at Morvunskar##150011
 step
-goto Eastmarch 40.74,33.38
-.click Voljar Meadery Wayshrine##150021
+goto eastmarch_base 36.91,42.45
+.wayshrine Fort Morvunskar Wayshrine
+step
+goto eastmarch_base 36.91,42.45
+.click Fort Morvunskar Wayshrine##150023
 .' Teleport to the Windhelm Wayshrine |goto Windhelm 46.65,47.52 |c |noway
 step
 goto 46.00,68.10
-.talk Rigurt the Brash##100155 |q Party Planning##150002/Bring Party Items to Rigurt |sub
+.talk Rigurt the Brash##100155 |q Party Planning##150002/2/1/Bring Party Items to Rigurt##1
 step
 goto 46.00,68.10
 .' Use the Dunmer Cultural Garb when prompted
 |confirm
 step
-goto 53.19,70.51
-.' Follow the path up |goto 53.19,70.51 |c |noway
-step
 goto Windhelm 75.00,43.92
-.talk Rigurt the Brash##100155 |q Party Planning##150002/Meet Rigurt Near the Docks |sub |q Party Planning##150002/Greet the Pact Dignitaries |sub
+.talk Rigurt the Brash##100155 |q Party Planning##150002/3/1/Meet Rigurt Near the Docks##1
+step
+goto 74.99,43.76
+.' Greet the Pact Dignitaries |q Party Planning##150002/4/1/Greet the Pact Dignitaries##1 |tip This will take a bit
 step
 goto 74.99,43.76
 .talk Rigurt the Brash##100155
 ..turnin Party Planning##150002
-step
-goto 67.53,58.08
-.' Follow the path up |goto 67.53,58.08 |c |noway
 step
 goto 46.05,47.50
 .click Windhelm Wayshrine##150022
@@ -10244,33 +10126,30 @@ goto 32.21,45.23
 ..accept Strange Allies##150012
 step
 goto 32.16,42.25
-.' Use the Giant-Friend Horn here |q Strange Allies##150012/Use the Horn |sub
+.' Use the Giant-Friend Horn here |q Strange Allies##150012/1
 step
 goto 31.74,42.08
 .click Tree##150024
 .kill Sabre Cat##150087
-.kill Stormfist Scout##150086 |q Strange Allies##150012/Collect Stormfist Scout Orders |sub
+.kill Stormfist Scout##150086 |q Strange Allies##150012/2/1/Collect Stormfist Scout Orders##1 |count 1
 step
 goto 31.64,43.86
 .click Tree##150024
 .kill Sabre Cat##150087
-.kill Stormfist Scout##150086 |q Strange Allies##150012/Collect Stormfist Scout Orders |sub
+.kill Stormfist Scout##150086 |q Strange Allies##150012/2/1/Collect Stormfist Scout Orders##1 |count 2
 step
 goto 30.51,44.73
 .click Tree##150024
 .kill Sabre Cat##150087
-.kill Stormfist Scout##150086 |q Strange Allies##150012/Collect Stormfist Scout Orders |sub
+.kill Stormfist Scout##150086 |q Strange Allies##150012/2/1/Collect Stormfist Scout Orders##1 |count 3
 step
 goto 30.96,45.40
 .click Tree##150024
 .kill Sabre Cat##150087
-.kill Stormfist Scout##150086 |q Strange Allies##150012/Collect Stormfist Scout Orders |sub
+.kill Stormfist Scout##150086 |q Strange Allies##150012/2/1/Collect Stormfist Scout Orders##1 |count 4
 step
-goto 29.53,44.13
-.' Go back up to the road here |goto 29.53,44.13 |c |noway
-step
-goto 25.62,44.70
-.' Follow the path |goto 25.62,44.70 |c |noway
+goto eastmarch_base 24.79,43.34
+.wayshrine Cradlecrush Wayshrine
 step
 goto 23.75,43.61
 .talk Aspera Giant-Friend##150109
@@ -10278,63 +10157,60 @@ goto 23.75,43.61
 ..accept The Siege of Cradlecrush##150013
 step
 goto 23.15,43.92
-.talk Giant##150082 |q The Siege of Cradlecrush##150013/Talk to the Giant |sub
+.talk Giant##150082 |q The Siege of Cradlecrush##150013/1
 step
 goto 22.02,47.13
-.' Get inside the Fort |q The Siege of Cradlecrush##150013/Get Inside the Fort |sub
+.' Get inside the Fort |q The Siege of Cradlecrush##150013/2
 step
 goto Eastmarch 24.01,46.21
-.talk Mammoth##150112 |q The Siege of Cradlecrush##150013/Free the Mammoths |sub
-step
-goto 24.37,45.55
-.' Follow the path up |goto 24.37,45.55 |c |noway
+.talk Mammoth##150112 |q The Siege of Cradlecrush##150013/3/1/Free the Mammoths##1 |count 1
 step
 goto 24.51,45.04
-.click North Gate Lock##150025 |q The Siege of Cradlecrush##150013/Use the Gate Switches |sub
+.click North Gate Lock##150025 |q The Siege of Cradlecrush##150013/3/1/Use the Gate Switches##2 |count 1
 step
 goto 26.72,45.66
 .' Follow the path up |goto 26.72,45.66 |c |noway
 step
 goto 26.74,45.21
-.click North Gate Lock##150025 |q The Siege of Cradlecrush##150013/Use the Gate Switches |sub
+.click North Gate Lock##150025|q The Siege of Cradlecrush##150013/3/1/Use the Gate Switches##2 |count 2
 step
 goto 26.98,46.41
-.talk Mammoth##150112 |q The Siege of Cradlecrush##150013/Free the Mammoths |sub
+.talk Mammoth##150112 |q The Siege of Cradlecrush##150013/3/1/Free the Mammoths##1 |count 2
 step
 goto 26.06,47.58
-.talk Mammoth##150112 |q The Siege of Cradlecrush##150013/Free the Mammoths |sub
+.talk Mammoth##150112 |q The Siege of Cradlecrush##150013/3/1/Free the Mammoths##1 |count 3
 step
 goto 24.52,49.75
-.talk Mammoth##150112 |q The Siege of Cradlecrush##150013/Free the Mammoths |sub
+.talk Mammoth##150112 |q The Siege of Cradlecrush##150013/3/1/Free the Mammoths##1 |count 4
 step
 goto 24.40,50.09
 .' Follow the path up |goto 24.40,50.09 |c |noway
 step
 goto 24.56,50.45
-.click South Gate Lock##1500288 |q The Siege of Cradlecrush##150013/Use the Gate Switches |sub
+.click South Gate Lock##1500288|q The Siege of Cradlecrush##150013/3/1/Use the Gate Switches##2 |count 3
 step
 goto 23.33,50.25
 .' Follow the path up |goto 23.33,50.25 |c |noway
 step
 goto 22.91,50.47
-.click South Gate Lock##150028 |q The Siege of Cradlecrush##150013/Use the Gate Switches |sub
+.click South Gate Lock##150028|q The Siege of Cradlecrush##150013/3/1/Use the Gate Switches##2 |count 4
 step
-goto 25.11,46.67
-.' Follow the path |goto 25.11,46.67 |c |noway
+goto eastmarch_base 28.68,47.96
+.' Go to the Cradlecrush Arena |q The Siege of Cradlecrush##150013/4/1/Go to Cradlecrush Arena##1
 step
 goto 28.72,48.01
-.talk Aspera Giant-Friend##150109 |q The Siege of Cradlecrush##150013/Talk to Aspera Giant-Friend |sub
+.talk Aspera Giant-Friend##150109 |q The Siege of Cradlecrush##150013/5
 step
 goto 28.97,48.07
 .click Cradlecrush Arena##150029
-.' Enter the Cradlecrush Arena |q The Siege of Cradlecrush##150013/Enter Cradlecrush Arena |sub
+.' Enter the Cradlecrush Arena |q The Siege of Cradlecrush##150013/6
 step
 goto giantsrun_base 31.31,79.13
-.' Blow the Horn to issue a challenge |q The Siege of Cradlecrush##150013/Blow the Horn to Challenge Lob |sub
+.' Blow the Horn to issue a challenge |q The Siege of Cradlecrush##150013/7
 step
 goto giantsrun_base 31.31,79.13
 .kill Lob the Cleaver##150118
-.' Survive the Arena Challenge |q The Siege of Cradlecrush##150013/Survive the Arena Challenge |sub
+.' Survive the Arena Challenge |q The Siege of Cradlecrush##150013/8
 step
 goto 31.32,80.15
 .click Cradlecrush##150030
@@ -10348,214 +10224,204 @@ goto 23.75,50.96
 .click South Gate##90172
 .' Leave Cradlecrush |goto 23.73,51.26 |c |noway
 step
-goto 24.57,52.93
-.' Follow the path |goto 24.57,52.93 |c |noway
-step
-goto Fort Amol 16.69,5.99
-.' Follow the path |goto Fort Amol 16.69,5.99 |c |noway
+goto fortamol_base 13.95,12.32
+.wayshrine Fort Amol Wayshrine
 step
 goto 22.91,10.07
 .talk Hokurek##150122
 ..accept Sleeping on the Job##150014
 step
 goto Fort Amol 49.67,34.00
-.talk Commander Yjarnn##150132 |q Sleeping on the Job##150014/Talk to Commander Yjarnn |sub
+.talk Commander Yjarnn##150132 |q Sleeping on the Job##150014/1
 step
 goto 65.84,39.13
-.talk Merric at-Aswala##90084 |q Proving the Deed##190002/Talk to Merric |sub
+.talk Merric at-Aswala##90084 |q Proving the Deed##190002/1/1/Talk to Merric##1
 step
 goto 68.15,37.68
-.talk Odrasa Saram##150135 |q Sleeping on the Job##150014/Talk to Camp Members |sub
+.talk Odrasa Saram##150135 |q Sleeping on the Job##150014/2/2/Talk to Camp Members##1
 step
 goto 70.14,42.63
 .talk Thane Oda Wolf-Sister##150141
-..turnin Victory at Morvunskar##150013
-step
-goto 68.34,23.96
-.' Go underneath the bridge here |goto 68.34,23.96 |c |noway
+..turnin Victory at Morvunskar##150011
 step
 goto 72.42,14.30
-.talk Guard Thod##150148
-.' <Remove the Guard's Uniform> |q Sleeping on the Job##150014/Find Guard Thod |sub
+.talk Guard Thod##150148 |tip Underneath the Bridge
+.' <Remove the Guard's Uniform> |q Sleeping on the Job##150014/3/1/Find Guard Thod##1
 step
 goto 50.80,34.21
-.talk Hloenor Chill-Owl##150131 |q Sleeping on the Job##150014/Find Commander Yjarnn |sub
+.talk Hloenor Chill-Owl##150131 |q Sleeping on the Job##150014/4
 step
-goto 30.53,27.10
-.talk Lord Vurlop##150155 |q Sleeping on the Job##150014/Talk to Lord Vurlop |sub
-step
-goto 35.19,25.00
-.' Hide and wait for Yjarnn to appear |q Sleeping on the Job##150014/Hide and Wait for Yjarnn to Appear |sub
+goto fortamol_base 30.42,26.64
+.' Look for Commander Yjarnn at the Guard House |q Sleeping on the Job##150014/5
 step
 goto 25.74,50.72
-.' Follow Commander Yjarnn here |q Sleeping on the Job##150014/Follow Commander Yjarnn |sub
+.' Follow Commander Yjarnn here |q Sleeping on the Job##150014/6
+step
+goto fortamol_base 35.52,25.18
+.' Hide behind the rocks |q Sleeping on the Job##150014/7
+step
+goto fortamol_base 25.05,46.74
+.' Don't let Yjarnn notice you |q Sleeping on the Job##150014/8/2/Don't Let Yjarnn Notice You##1 |tip Follow Yjarn
 step
 goto 20.89,30.66
-.talk Aelif##90086 |q Proving the Deed##190002/Talk to Aelif |sub
+.talk Aelif##90086 |q Proving the Deed##190002/2/1/Talk to Aelif##1
 step
-goto Eastmarch 22.47,60.40
+goto eastmarch_base 22.47,60.41
 .click Jofnir's Quarters##150032
-.' Enter Jofnir's Quarters |goto Fort Amol 6.38,28.67 |c |noway
+.' Enter Jofnir's Quarters |goto fortamol_base 6.38,28.67 |c |noway
 step
 goto 8.25,29.81
-.click Jofnir's Journal##150037 |q Proving the Deed##190002/Search Jofnir's Quarters |sub
+.click Jofnir's Journal##150037 |q Proving the Deed##190002/3/1/Search Jofnir's Quarters##1
 step
 goto 6.57,28.51
 .talk Aelif##90086
-.' Leave Jofnir's Quarters |goto 6.24,28.82 |c |noway
+.' Leave Jofnir's Quarters |goto 6.24,28.82 < 1 |c |noway
 step
 goto 20.87,30.74
-.talk Aelif##90086 |q Proving the Deed##190002/Report to Aelif |sub
+.talk Aelif##90086 |q Proving the Deed##190002/4
 step
 goto 43.75,23.51
 .click Marla's House##150038
-.' Enter Marla's House |goto 44.25,22.96 |c |noway
+.' Enter Marla's House |goto 44.25,22.96 < 1 |c |noway
 step
 goto 43.17,21.01
-.click Alchemy Report##150039 |q Sleeping on the Job##150014/Search Marla's House |sub
+.click Alchemy Report##150039 |q Sleeping on the Job##150014/9/1/Search Marla's House##1
 step
 goto 44.29,22.80
 .click Fort Amol##150033
-.' Leave Marla's House |goto 43.89,23.29 |c |noway
+.' Leave Marla's House |goto 43.89,23.29 < 1 |c |noway
 step
 goto 50.69,34.19
 .talk Hloenor Chill-Owl##150131
 ..turnin Sleeping on the Job##150014
 ..accept The Pride of a Prince##150015
 step
-'Equip the Fort Amol Guard uniform. You will keep this on for a while.
-|confirm
-step
 goto 30.06,40.92
 .click Deldwine's Inn##150040
 .' Enter the Deldwine's Inn |goto 30.20,41.42 |c |noway
 step
 goto 28.89,44.35
-.talk Lord Vurlop##150155 |q The Pride of a Prince##150015/Talk to Lord Vurlop |sub
+.talk Lord Vurlop##150155 |q The Pride of a Prince##150015/1
 step
 goto 30.32,41.59
 .click Fort Amol##150033
-.' Leave the inn here |goto 30.07,41.00 |c |noway
+.' Leave the inn here |goto 30.07,41.00 < 1 |c |noway
 step
 goto 69.53,42.81
-.talk Thane Harvald##150147 |q The Pride of a Prince##150015/Talk to Thane Harvald |sub
+.talk Thane Harvald##150147 |q The Pride of a Prince##150015/2 |tip There will be some dialogue before you can speak to him
 step
 goto 69.24,29.92
-.talk Naryu Virian##100081 |q The Pride of a Prince##150015/Collect Dunmer Wine |sub
+.talk Naryu Virian##100081 |q The Pride of a Prince##150015/3
+step
+'Equip the Fort Amol Guard uniform. You will keep this on for a while.
+.' Disguise yourself as a guard |q The Pride of a Prince##150015/4
 step
 goto 56.98,25.18
 .talk Cat##1100004
-.' Collect a cat from the Argonian Camp |q The Pride of a Prince##150015/Collect Cat from Argonian Camp |sub
+.' Collect a cat from the Argonian Camp |q The Pride of a Prince##150015/5
 step
 goto 55.15,25.93
-.talk Runs-With-Quickness##150167 |q The Pride of a Prince##150015/Talk to the Argonian Camp |sub
+.talk Runs-With-Quickness##150167 |q The Pride of a Prince##150015/6
 step
 goto 28.12,26.08
 .click Barracks##150041
-.' Enter the barracks |goto 27.63,25.81 |c |noway
+.' Enter the barracks |goto 27.63,25.81 < 1 |c |noway
 step
 goto 24.31,23.83
 .click Dunmer Wine##150042
-.collect Dunmer Wine##150042
-|confirm
+.collect Dunmer Wine##150042 |q The Pride of a Prince##150015/7/3/Collect Dunmer Wine##1 |count 1
 step
 goto 23.68,27.19
 .click Dunmer Wine##150042
-.collect Dunmer Wine##150042
-|confirm
+.collect Dunmer Wine##150042 |q The Pride of a Prince##150015/7/3/Collect Dunmer Wine##1 |count 2
 step
 goto 23.29,25.80
 .' Follow the path up |goto 23.29,25.80 |c |noway
 step
 goto 23.91,25.61
 .click Dunmer Wine##150042
-.collect Dunmer Wine##150042
+.collect Dunmer Wine##150042 |q The Pride of a Prince##150015/7/3/Collect Dunmer Wine##1 |count 3
 step
 goto 24.14,24.42
 .click Crate##90156
 .' Use this crate to distract the guard to get the last Dunmer Wine at [25.67,21.76].
 .click Dunmer Wine##150042
-.collect Dunmer Wine##150042
-|confirm
+.collect Dunmer Wine##150042 |q The Pride of a Prince##150015/7/3/Collect Dunmer Wine##1 |count 4
 step
 goto 27.49,25.86
 .click Fort Amol##150033
-.' Leave the barracks |goto 27.99,26.01 |c |noway
+.' Leave the barracks |goto 27.99,26.01 < 1 |c |noway
 step
 goto 70.05,30.18
-.talk Naryu Virian##100081 |q The Pride of a Prince##150015/Talk to the Pact Delegates |sub
+.talk Naryu Virian##100081 |q The Pride of a Prince##150015/8
 step
-goto Eastmarch 35.68,65.88
-.kill Death-In-Winter##150171 |q The Pride of a Prince##150015/Collect Death-In-Winter's Head |sub
+goto eastmarch_base 35.49,65.50
+.kill Death-In-Winter##150171 |q The Pride of a Prince##150015/9/2/Kill Death-In-Winter##1
 step
-goto Fort Amol 54.98,25.99
-.talk Runs-With-Quickness##150167 |q The Pride of a Prince##150015/Talk to the Pact Delegates |sub
+goto fortamol_base 55.10,26.01
+.talk Runs-With-Quickness##150167 |q The Pride of a Prince##150015/10
 step
 goto 69.53,42.60
 .talk Thane Harvald##150147
 ..turnin The Pride of a Prince##150015
 ..accept The War Council##150016
 step
-goto 49.97,31.33
-.' Follow the path |goto 49.97,31.33 |c |noway
-step
-goto 43.69,42.21
-.' Follow the path |goto 43.69,42.21 |c |noway
-step
-goto 45.29,53.28
-.' Accompany Lord Vurlop to the Keep |q The War Council##150016/Accompany Lord Vurlop to the Keep |sub
+goto fortamol_base 46.36,52.89
+.' Accompany Lord Vurlop to the Keep |q The War Council##150016/1/1/Accompany Lord Vurlop to the Keep##1
 step
 goto 48.22,53.57
-.talk Naryu Virian##100081 |q The War Council##150016/Talk to Naryu |sub
+.talk Naryu Virian##100081 |q The War Council##150016/2 |tip Persuade her when prompted
 step
 goto Fort Amol 45.62,54.21
 .click Amol Keep Courtyard##150047
 .' Enter the Amol Keep Courtyard |goto 45.65,57.28 |c |noway
 step
+goto fortamol_base 38.51,70.47
+.' Kill Stormfists for a key to the Jarl's Manor  |q The War Council##150016/3
+step
 goto 43.42,73.79
 .click Jarl's Manor##150048
-.' Enter the Jarl's Manor |goto 43.47,74.14 |c |noway
+.' Enter the Jarl's Manor |goto 43.47,74.14 < 1 |c |noway
 step
 goto 43.62,77.28
-.talk Naryu Virian##100081 |q The War Council##150016/Talk to Naryu |sub
+.talk Naryu Virian##100081 |q The War Council##150016/5
 step
 goto 41.43,79.51
-.click Note to King Jorunn##150050 |tip On the second floor above you.
-|confirm
+.click Note to King Jorunn##150050 |tip On the second floor above you. |q The War Council##150016/6
 step
 goto 44.79,84.55
-.click The Quiet Room##150051 |q The War Council##150016/Find the Warrior Blowing a Horn |sub
+.click The Quiet Room##150051 |q The War Council##150016/7/2/Find the Warrior Blowing a Horn##1
 step
 goto 47.25,80.47
-.click Argonian Relic##150052 |tip Back on the first floor. |q The War Council##150016/Find a Way to Open the Locked Doors |sub
+.click Argonian Relic##150052 |tip Back on the first floor. |q The War Council##150016/8
 step
 goto 42.20,78.73
 .click Safe Room##150049
-.' Enter the safe room |goto 41.74,78.81 |c |noway
+.' Enter the safe room |goto 41.74,78.81 < 1 |c |noway
 step
 goto 39.87,79.09
-.talk Jorunn the Skald-King##150174 |q The War Council##150016/Enter the Safe Room and Talk to King Joruun |sub
+.talk Jorunn the Skald-King##150174 |q The War Council##150016/9
 step
 goto 41.61,78.84
 .click Jarl's Manor##150048
-.' Leave the safe room |goto 41.99,78.78 |c |noway
+.' Leave the safe room |goto 41.99,78.78 < 1 |c |noway
 step
 goto 44.12,83.77
-.kill Dhalen##150176 |tip Back up on the second floor. |q The War Council##150016/Defeat Dhalen |sub
+.kill Dhalen##150176 |tip Back up on the second floor. |q The War Council##150016/10
 step
 goto 47.11,80.12
 .click Vault##750001
-.' Enter the vault |goto 47.00,79.56 |c |noway
+.' Enter the vault |goto 47.00,79.56 < 1 |c |noway
 step
 goto 47.63,78.25
-.talk Way-with-Words##150178 |q The War Council##150016/Rescue the Pact Leaders |sub
+.talk Way-with-Words##150178 |q The War Council##150016/11
 step
 goto 46.92,79.29
 .click Jarl's Manor##150048
-.' Leave the vault |goto 47.03,80.01 |c |noway
+.' Leave the vault |goto 47.03,80.01 < 1 |c |noway
 step
 goto 45.60,80.37
-.talk Naryu Virian##100081 |q The War Council##150016/Talk to Naryu |sub
+.talk Naryu Virian##100081 |q The War Council##150016/13 |tip Persuade her when prompted
 step
 goto 43.73,76.41
 .talk Prince Irnskar##150145
@@ -10567,17 +10433,17 @@ goto 42.94,75.19
 step
 goto 43.49,74.26
 .click Fort Amol##150033
-.' Leave the Jarl's Manor |goto 43.40,73.69 |c |noway
+.' Leave the Jarl's Manor |goto 43.40,73.69 < 1 |c |noway
 step
 goto 45.65,57.31
 .click Fort Amol##150033
-.' Leave the courtyard |goto 45.70,54.32 |c |noway
+.' Leave the courtyard |goto 45.70,54.32 < 1 |c |noway
 step
-goto Eastmarch 33.13,56.66
-.' Follow the path |goto Eastmarch 33.13,56.66 |c |noway
+goto eastmarch_base 33.13,56.66
+.' Follow the path |goto Eastmarch 33.13,56.66 < 10 |c |noway
 step
 goto 34.58,62.66
-.' Continue around the road and Follow the path |goto 34.58,62.66 |c |noway
+.' Continue around the road and Follow the path |goto 34.58,62.66 < 10 |c |noway
 step
 goto 35.96,67.65
 .' Enter the cave |goto 35.96,67.65 |c |noway
@@ -10586,67 +10452,44 @@ goto 38.16,67.75
 .talk Stormy-Eyes##150181
 ..accept Our Poor Town##150018
 step
-'As you complete the next step:
+goto eastmarch_base 34.22,66.10
 .talk Torchbug##1090003
-..collect 5 Torchbug Wings
-step
-goto 34.50,66.98
-.click Refuse##150059 |q Our Poor Town##150018/Find Stormy-Eye's Key |sub |next "exit"
-.' If the Key is not in this location, click here |confirm |next
-step
-goto Fort Amol 93.24,74.44
-.click Waterlogged Bag##150060 |q Our Poor Town##150018/Find Stormy-Eye's Key |sub |next "exit"
-.' If the Key is not in this location, click here |confirm |next
-step
-goto Eastmarch 34.55,66.07
-.talk Logangar Brittleblade##150190 |q Our Poor Town##150018/Find Stormy-Eye's Key |sub |next "exit"
-.' If the Key is not in this location, click here |confirm |next
+..collect 5 Torchbug Wings |q Our Poor Town##150018/1
 step
 goto 35.92,66.48
-.click Discarded Urn##150062 |q Our Poor Town##150018/Find Stormy-Eye's Key |sub |next "exit"
-step
-'All around this area:
-.talk Torchbug##1090003
-..collect 5 Torchbug Wings |q Our Poor Town##150018/Collect Torchbug Wings |sub
+.click Discarded Urn##150062 |q Our Poor Town##150018/2
 step
 goto Eastmarch 34.31,64.96
 .click Stormy-Eyes' House##150063
-.' Enter Stormy-Eyes' House |goto 34.25,64.98 |c |noway
+.' Enter Stormy-Eyes' House |q Our Poor Town##150018/3
 step
 goto 34.20,65.24
-.talk Asmalah the Caller##150191 |q Our Poor Town##150018/Confront the Stranger in the House |sub
+.talk Asmalah the Caller##150191 |q Our Poor Town##150018/4
 step
 goto 34.24,65.00
 .click Darkwater Crossing##150064
-.' Leave Stormy-Eyes' House |goto 34.29,64.97 |c |noway
+.' Leave Stormy-Eyes' House |goto 34.29,64.97 < 1 |c |noway
 step
 goto 33.88,68.67
-.kill Asmalah the Caller##150191 |q Our Poor Town##150018/Follow Asmalah |sub
+.kill Asmalah the Caller##150191 |q Our Poor Town##150018/5
 step
-goto 33.23,68.80
-.talk Asmalah the Caller##150191 |q Our Poor Town##150018/Follow Asmalah |sub
-step
-goto 34.53,67.66
-.' Enter the ruined house here |goto 34.53,67.66 |c |noway |tip We suggest sneaking to avoid the troll in this house.
-step
-goto 34.13,67.69
-.click Reagent Filled Vase##150065 |q Our Poor Town##150018/Search the Ruined House for the Reagents |sub
+goto eastmarch_base 35.86,67.62
+.' Enter the cave |goto eastmarch_base 35.86,67.62 < 10 |c |noway
 step
 goto 38.15,67.75
-.talk Stormy-Eyes##150181 |q Our Poor Town##150018/Return to Stormy-Eyes |sub
+.talk Stormy-Eyes##150181 |q Our Poor Town##150018/7
 step
 goto 38.12,67.73
-.' Witness the ritual |q Our Poor Town##150018/Watch the Ritual |sub
+.' Witness the ritual |q Our Poor Town##150018/8
 step
 goto 38.14,67.72
 .talk Stormy-Eyes##150181
 ..turnin Our Poor Town##150018
-.' Gain the Help of the Dreamwalker |q Lifeline##150017/1/Get the Help of the Dreamwalker##1
+.' Gain the Help of the Dreamwalker |q Lifeline##150017/2
 step
-goto Eastmarch 22.96,57.88
-.' Follow the path |goto Eastmarch 22.96,57.88 < 5 |c |noway
+.' Open your map and Fast Travel to the Fort Amol Wayshrine |goto fortamol_base 14.77,13.10 |c |noway
 step
-goto 21.32,61.70
+goto eastmarch_base 21.32,61.70
 .talk Kerig##150318
 ..accept Labor Dispute##150040
 step
@@ -10660,22 +10503,20 @@ goto 16.90,59.89
 .click Lost Knife Cave##150127
 .' Enter the Lost Knife Cave |goto Lost Knife Cave 64.97,87.56 < 1 |c |noway
 step
-'As you complete the next steps:
-.kill Stormfist Sentry##920001, Stormfist Striker##150060, Stormfist Savage##150088, Stormfist Shaman##150111, Stormfist Infantry##150110
-..collect 9 Stormfist Weapon |q Labor Dispute##150040/3/1/Collect Stormfist Weapons##1
-step
 goto Lost Knife Cave 55.84,62.29
 .talk Tridi##920003 |q Labor Dispute##150040/3/1/Find Tridi##2
+|tip Kill Stormfists and collect their weapons as you make your way through the mine
 step
-goto 74.70,61.71
+goto lostknifecave_base 79.33,43.06
 .talk Nedrek##920006 |q Labor Dispute##150040/3/1/Find Nedrek##3
+|tip Kill Stormfists and collect their weapons as you make your way through the mine
 step
-'All throughout the cave:
+goto lostknifecave_base 79.39,26.64
 .kill Stormfist Sentry##920001, Stormfist Striker##150060, Stormfist Savage##150088, Stormfist Shaman##150111, Stormfist Infantry##150110
 ..collect 9 Stormfist Weapon |q Labor Dispute##150040/3/1/Collect Stormfist Weapons##1
 step
 goto 72.39,26.89
-.talk Jomund Snowmead##920007
+.talk Jomund Snowmead##920007 |q Labor Dispute##150040/4/1/Talk to Jomund##1
 ..turnin Labor Dispute##150040
 ..accept Mystery Metal##920001
 step
@@ -10692,27 +10533,30 @@ step
 goto 27.40,28.80
 .click Urn##90152 |q Mystery Metal##920001/3/1/Collect Research Notes##2
 step
-goto 36.92,23.75
-.kill Magister Osanne##920009 |q Mystery Metal##920001/1/2/Kill Magister Osanne##1
+goto lostknifecave_base 39.39,27.20
+.click Mysterious Ore##920002 |q Mystery Metal##920001/4/1/Find Ore Sample##1
 step
-goto 39.23,26.04
-.click Mysterious Ore##920002 |q Mystery Metal##920001/1/1/Find Ore Sample##1
+goto lostknifecave_base 31.92,33.56
+.click Door##160100
+.' Go through the Door |goto 32.00,34.97 < 1 |c |noway
 step
-goto 32.02,33.75
-.click Door##1090039
-goto 32.00,34.97
-step
-goto 33.10,38.24
+goto lostknifecave_base 32.50,38.56
 .talk Jomund Snowmead##920007 |q Mystery Metal##920001/5/1/Talk to Jomund##1
 step
-goto 26.34,53.16
+goto lostknifecave_base 15.43,53.96
+.click Mysterious Ore##920002
 .kill Troll##150170
-.click Mysterious Ore##920002 |q Mystery Metal##920001/6/1/Gather More Ore Samples##1
+.' Gather more ore samples |q Mystery Metal##920001/6/1/Gather More Ore Samples##1
 step
-goto 64.80,87.56
-.click Lost Knife Camp##920003 |q Mystery Metal##920001/7/1/Leave the Mine##1
+goto lostknifecave_base 39.45,68.08
+.' Go through the barricade |goto lostknifecave_base 39.45,68.08 < 10 |c |noway
 step
-goto Eastmarch 18.36,59.47
+goto 64.74,87.58
+.click Lost Knife Camp##920003
+.' Leave the Mine |q Mystery Metal##920001/7
+step
+goto eastmarch_base 18.37,59.44
+.talk Jomund Snowmead##920007
 ..turnin Mystery Metal##920001
 ..accept Alchemical Analysis##150041
 step
@@ -10775,7 +10619,7 @@ goto 51.18,40.93
 .click Fort Amol##150033
 .' Leave the Alchemist's Shop here |goto 50.85,40.42 < 1 |c |noway
 step
-goto Eastmarch 36.26,64.55
+goto eastmarch_base 36.26,64.55
 .' Follow the road |goto 36.26,64.55 |c |noway
 step
 goto 39.95,57.17
@@ -10793,12 +10637,15 @@ goto 41.81,55.72
 .click Bonestrewn Crest##150068
 .' Leave the cabin |goto 41.89,55.75 |c |noway
 step
+goto eastmarch_base 43.04,56.54
+.wayshrine Wittestadr Wayshrine
+step
 goto 43.07,54.77
 .' Follow the path |goto 43.07,54.77 |c |noway
 step
 goto Eastmarch 43.15,50.23
 .click Agnedir's Cabin##150070
-goto 43.28,50.25
+.' Enter the Cabin |goto 43.28,50.25 < 1 |c |noway
 step
 goto 43.58,50.50
 .' Find Agnedir |q Dark Deeds##150019/1/Find Agnedir##2
@@ -10808,67 +10655,70 @@ goto 43.27,50.24
 .' Leave the cabin |goto 43.18,50.24 |c |noway
 step
 goto 40.03,51.26
-.' Follow the path |goto 40.03,51.26 |c |noway
+.' Follow the path |goto 40.03,51.26 < 10 |c |noway
 step
 goto 40.21,47.13
-.' Follow the path |goto 40.21,47.13 |c |noway
+.' Follow the path |goto 40.21,47.13 < 10 |c |noway
 step
 goto 38.66,46.73
 .click Jakild's Cabin##150073
 .' Enter the cabin here |goto 38.58,46.76 |c |noway
 step
 goto 38.45,46.81
-.talk Jakild Wood-Hewer##150201 |q Dark Deeds##150019/Find Jakild |sub
+.talk Jakild Wood-Hewer##150201 |q Dark Deeds##150019/1/1/Find Jakild##1
 step
 goto 38.57,46.76
 .click Bonestrewn Crest##150068
 .' Leave the cabin |goto 38.65,46.73 |c |noway
 step
 goto 38.79,46.69
-.talk Selgaard Wood-Hewer##150195 |q Dark Deeds##150019/Talk to Selgaard |sub
+.talk Selgaard Wood-Hewer##150195 |q Dark Deeds##150019/2/1/Talk to Selgaard##1
 step
-goto 39.46,48.68
-.' Follow the path |goto 39.46,48.68 |c |noway
+goto eastmarch_base 38.86,51.25
+.' Find the Mysterious Travelers |q Dark Deeds##150019/3/1/Find the Mysterious Travelers##1
 step
 goto 38.68,51.27
 .click Bonestrewn Barrow##150075
-.' Enter the Bonestrewn Barrow |goto bonestrewncrest_base 36.99,10.11 |c |noway
+.' Enter the Bonestrewn Barrow |q Dark Deeds##150019/4/1/Enter Bonestrewn Barrow##1
 step
-goto 36.90,34.83
-.' Find the Covenant Expedition |q Dark Deeds##150019/Find the Covenant Expedition |sub
+goto bonestrewncrest_base 36.86,34.95
+.' Find the Covenant Expedition |q Dark Deeds##150019/5/1/Find the Covenant Expedition##1
 step
-goto 36.81,36.03
-.click Henri's Journal##930001 |q Dark Deeds##150019/Read Henri's Journal |sub
+goto 36.84,35.35
+.click Henri's Journal##930001 |q Dark Deeds##150019/6
 step
-goto 65.23,40.21
-.' Find the Covenant Camp |q Dark Deeds##150019/Find the Covenant Camp |sub
+goto bonestrewncrest_base 65.53,40.25
+.' Find the Covenant Camp |q Dark Deeds##150019/7/1/Find the Covenant Camp##1
 step
 goto 71.06,40.07
-.click Ophelia's Journal##930002 |q Dark Deeds##150019/Read Ophelia's Journal |sub
+.click Ophelia's Journal##930002 |q Dark Deeds##150019/8
+step
+goto bonestrewncrest_base 70.72,36.91
+.kill Ophelia Ceirans##930002 |q Dark Deeds##150019/9/1/Defeat Ophelia Ceirans##1
 step
 goto 73.83,73.25
 .click Chamber Door##930003
-.' Use Ophelia's Key to enter the chamber door |q Dark Deeds##150019/Use Ophelia's Key |sub
+.' Use Ophelia's Key to enter the chamber door |q Dark Deeds##150019/10
 step
 goto 70.75,83.89
-.talk Owen Pavelle##930003 |q Dark Deeds##150019/Talk to Owen Pavelle |sub
+.talk Owen Pavelle##930003 |q Dark Deeds##150019/11 |tip Intimidate him when prompted
 step
 goto 68.70,84.24
 .click Left Switch##930005
-.' Pull the left switch |q Dark Deeds##150019/Pull the Left Switch |sub
+.' Pull the left switch |q Dark Deeds##150019/12
 step
 goto 63.18,86.05
 .click Chamber Door##930003
-.' Enter the final chamber |q Dark Deeds##150019/Enter the Final Chamber |sub
+.' Enter the final chamber |q Dark Deeds##150019/13
 step
 goto 26.53,74.51
-.kill Sir Valcent Tailies##930004 |q Dark Deeds##150019/Defeat Sir Valcent Tailies |sub
+.kill Sir Valcent Tailies##930004 |q Dark Deeds##150019/14/1/Defeat Sir Valcent Tailies##1
 step
 goto 34.54,66.63
-.' Follow the path up |goto 34.54,66.63 |c |noway
+.' Follow the path up |goto 34.54,66.63 < 5 |c |noway
 step
 goto 27.76,62.45
-.' Follow the path up the ramp here |goto 27.76,62.45 |c |noway
+.' Follow the path up the ramp here |goto 27.76,62.45 < 5 |c |noway
 step
 goto 13.07,49.19
 .click Bonestrewn Crest##150068
@@ -10886,46 +10736,46 @@ goto 38.59,46.75
 .click Bonestrewn Crest##150068
 .' Leave the cabin |goto 38.65,46.73 |c |noway
 step
-goto 39.97,50.93
-.' Follow the path |goto 39.97,50.93 |c |noway
+.' Open your map and Fast Travel to the Wittestadr Wayshrine |goto eastmarch_base 43.03,56.51 |c |noway
 step
-goto 43.79,51.20
-.' Follow the path |goto 43.79,51.20 |c |noway
+goto eastmarch_base 44.47,55.67
+.talk Sena Aralor##150198
+..accept A Right to Live##150020
 step
-goto Eastmarch 52.24,54.67
-.' Follow the path |goto Eastmarch 52.24,54.67 |c |noway
+goto 44.47,55.68
+.talk Sena Aralor##150198 |q A Right to Live##150020/1/1/Talk to Sena Aralor##1
 step
-goto 48.92,56.11
-.' Find Imhey |q A Right to Live##150020/Find Imhey |sub
+goto 48.77,56.04
+.' Find Imhey |q A Right to Live##150020/2/1/Find Imhey##1
 step
-goto 48.95,56.06
-.talk Valeric##150204 |q A Right to Live##150020/Speak to the Stranger Confronting Imhey |sub
+goto eastmarch_base 48.91,56.00
+.talk Valeric##150204 |q A Right to Live##150020/3/1/Speak to the Stranger Confronting Imhey##1
 step
 goto 49.67,54.03
 .kill Bloodfiend##150197
-..collect 5 Bloodfiend Dust |q A Right to Live##150020/Collect Bloodfiend Dust |sub
+..collect 5 Bloodfiend Dust |q A Right to Live##150020/4
 step
 goto 48.53,51.55
 .click Valeric's Manor##150073
-.' Enter Valeric's Manor |q A Right to Live##150020/Enter Valeric's Manor |sub
+.' Enter Valeric's Manor |q A Right to Live##150020/5
 step
 goto 48.18,51.32
 .' Follow the path up |goto 48.18,51.32 |c |noway
 step
 goto 48.64,51.23
-.talk Valeric##150204
+.talk Valeric##150204 |q A Right to Live##150020/7
 ..turnin A Right to Live##150020
 ..accept The Better of Two Evils##150021
 step
 goto 48.69,51.25
-.talk Jaruk##150208 |tip Back on the first floor of the manor. |q The Better of Two Evils##150021/Talk to Jaruk |sub
+.talk Jaruk##150208 |tip Back on the first floor of the manor. |q The Better of Two Evils##150021/1
 step
 goto 48.48,51.48
 .click Wittestadr##150074
 .' Leave the manor |goto 48.52,51.54 |c |noway
 step
 goto 48.71,51.87
-.talk Tunus##150210 |q The Better of Two Evils##150021/Talk to the Stranger |sub
+.talk Tunus##150210 |q The Better of Two Evils##150021/2
 step
 goto 47.40,53.60
 .click Majorn's Manor##150069
@@ -10933,15 +10783,15 @@ goto 47.40,53.60
 step
 goto 46.97,53.84
 .talk Majorn the Ancient##150211
-.' Agree to help Majorn |q The Better of Two Evils##150021/Talk to Majorn the Ancient |sub
+.' Agree to help Majorn |q The Better of Two Evils##150021/3
 step
 goto 47.31,53.64
 .click Wittestadr##150074
-.' Leave the manor |goto 47.39,53.60 |c |noway
+.' Leave the manor |goto 47.39,53.60 < 10 |c |noway
 step
 goto 48.06,53.32
 .kill Bloodfiend##150197
-.' Use a Rune to Capture a Bloodfiend |q The Better of Two Evils##150021/Use the Rune to Capture a Bloodfiend |sub
+.' Use a Rune to Capture a Bloodfiend |q The Better of Two Evils##150021/4/1/Use the Rune to Capture a Bloodfiend##1
 step
 goto 51.94,56.33
 .' Follow the path up to the hunters |goto 51.94,56.33 |c |noway
@@ -10949,14 +10799,14 @@ step
 goto 51.30,57.18
 .kill Winterland Stalker##150202
 .kill Winterland Renegade##150201
-.' Kill 6 Hunters |q The Better of Two Evils##150021/Kill the Hunters |sub
+.' Kill 6 Hunters |q The Better of Two Evils##150021/5
 step
 goto 47.41,53.59
 .click Majorn's Manor##150069
 .' Enter the manor |goto 47.35,53.62 |c |noway
 step
 goto 46.97,53.84
-.talk Majorn the Ancient##150211 |q The Better of Two Evils##150021/Talk to Majorn the Ancient |sub
+.talk Majorn the Ancient##150211 |q The Better of Two Evils##150021/6
 step
 goto 47.24,54.11
 .click Wittestadr Crypts##150076
@@ -10967,32 +10817,32 @@ goto 56.49,50.18
 .' Continue through the door here |goto 54.98,50.18 |c |noway
 step
 goto 23.77,42.91
-.' Follow the path |goto 23.77,42.91 |c |noway
+.' Follow the path |goto 23.77,42.91 < 10  |c |noway
 step
 goto 18.22,18.40
-.kill Valeric##150204 |q The Better of Two Evils##150021/Kill Valeric |sub
+.kill Valeric##150204 |q The Better of Two Evils##150021/7
 step
 goto 25.32,45.35
-.' Follow the path |goto 25.32,45.35 |c |noway
+.' Follow the path |goto 25.32,45.35 < 10  |c |noway
 step
 goto 54.66,50.17
 .click Wittestadr Crypts##150076
 .' Leave the Depths |goto 56.23,50.13 |c |noway
 step
 goto 73.00,57.99
-.' Follow the path up |goto 73.00,57.99 |c |noway
+.' Follow the path up |goto 73.00,57.99 < 10 |c |noway
 step
 goto 66.48,89.53
 .click Majorn's Manor##150069
 .' Leave the Crypts |goto Eastmarch 47.22,54.12 |c |noway
 step
 goto 46.97,53.88
-.talk Majorn the Ancient##150211
+.talk Majorn the Ancient##150211 |q The Better of Two Evils##150021/8
 ..turnin The Better of Two Evils##150021
 step
 goto 46.97,53.88
 .talk Majorn the Ancient##150211
-.' Ask him for Vampire Blood |q Lifeline##150017/Get the Blood of the Vampire from Wittestadr |sub
+.' Ask him for Vampire Blood |q Lifeline##150017/3
 step
 goto 47.32,53.64
 .click Wittestadr##150074
@@ -11002,8 +10852,8 @@ goto 46.75,59.42
 .talk Dralof Waterwalker##150214
 ..accept Bath Time##150022
 step
-goto 47.67,61.45
-.' Go out to the road here |goto 47.67,61.45 |c |noway
+goto eastmarch_base 42.29,62.01
+.' Follow the path up |goto eastmarch_base 42.29,62.01 < 10  |c |noway
 step
 goto Eastmarch 43.41,63.89
 .talk Thane Oda Wolf-Sister##150141
@@ -11014,169 +10864,195 @@ goto 43.58,63.68
 ..accept Eternal Slumber##150023
 step
 goto 46.50,64.34
-.talk Jadvar##150222 |q Eternal Slumber##150023/Talk to Jadvar |sub
+.talk Jadvar##150222 |q Eternal Slumber##150023/1
 step
 goto 46.54,64.31
 .click Portal to Mistwatch##150078
-.' Enter the Ritual Grounds |q Eternal Slumber##150023/Enter the Ritual Grounds |sub
+.' Enter the Ritual Grounds |q Eternal Slumber##150023/2
 step
 goto 45.62,67.45
-.talk High Priest Esling##150224 |q Eternal Slumber##150023/Talk to the High Priest |sub
+.talk High Priest Esling##150224 |q Eternal Slumber##150023/3/1/Talk to the High Priest##1
 step
 goto 45.61,67.46
-.' Observe the Dreamwalker |q Eternal Slumber##150023/Observe the Dreamwalker |sub
+.' Observe the Dreamwalker |q Eternal Slumber##150023/4/1/Observe the Dreamwalker##1
 step
 goto 45.63,67.44
-.talk High Priest Esling##150224 |q Eternal Slumber##150023/Talk to High Priest Esling |sub
+.talk High Priest Esling##150224 |q Eternal Slumber##150023/5/5/Talk to High Priest Esling##1
 step
 goto 46.17,66.68
-.click Totem of the Wolf##150080 |q Eternal Slumber##150023/Pray at the Totems |sub
+.click Totem of the Wolf##150080 |q Eternal Slumber##150023/6/1/Pray at the Totems##1 |count 1
 step
 goto 45.19,66.97
-.click Totem of the Bear##150081 |q Eternal Slumber##150023/Pray at the Totems |sub
+.click Totem of the Bear##150081 |q Eternal Slumber##150023/6/1/Pray at the Totems##1 |count 2
 step
 goto 45.01,67.95
-.click Totem of the Fox##150082 |q Eternal Slumber##150023/Pray at the Totems |sub
+.click Totem of the Fox##150082 |q Eternal Slumber##150023/6/1/Pray at the Totems##1 |count 3
+step
+goto eastmarch_base 45.70,67.50
+.' Return to High Priest Esling |q Eternal Slumber##150023/7/1/Return to High Priest Esling##1
 step
 goto 45.62,67.44
 .talk High Priest Esling##150224
-.' Offer to go into the dream yourself |q Eternal Slumber##150023/7/Talk to High Priest Esling##1
+.' Offer to go into the dream yourself |q Eternal Slumber##150023/8/1/Talk to High Priest Esling##1
 ..turnin Eternal Slumber##150023
 ..accept Gods Save the King##150024
 step
+goto eastmarch_base 45.68,67.39
+.talk High Priest Esling##150224 |q Gods Save the King##150024/1/2/Talk to High Priest Esling##1
+step
 goto 45.19,66.97
 .click Totem of the Bear##150081
-.' Enter the Crevasse |q Gods Save the King##150024/Pray to the Bear |sub
+.' Enter the Crevasse |q Gods Save the King##150024/2
 step
-goto Mistwatch Crevasse 18.43,57.10
-.' Follow the path up |goto Mistwatch Crevasse 18.43,57.10 |c |noway
+goto mistwatchcrevassecrypt_base 17.60,57.28
+.' Follow the path up |goto mistwatchcrevassecrypt_base 17.60,57.28 < 10 |c |noway
 step
 goto 24.02,21.19
-.kill Dream Eater##150228 |q Gods Save the King##150024/Free Fractured Spirit of Jorunn |sub
+.kill Dream Eater##150228 |q Gods Save the King##150024/3
 step
 goto 21.81,9.11
 .click Portal to Mistwatch##150078
 .' Leave the Crevasse |goto Eastmarch 45.29,66.77 |c |noway
 step
 goto 45.61,67.44
-.talk High Priest Esling##150224 |q Gods Save the King##150024/3/Talk to High Priest Esling##1
+.talk High Priest Esling##150224 |q Gods Save the King##150024/4
+step
+goto eastmarch_base 45.59,67.40
+.talk High Priest Esling##150224
+.' Ask about the Fox |q Gods Save the King##150024/5/2/Talk to High Priest Esling##1
 step
 goto 45.01,67.94
 .click Totem of the Fox##150082
-.' Enter the Crevasse |goto Mistwatch Crevasse 79.93,65.29 |c |noway
+.' Enter the Crevasse |q Gods Save the King##150024/6
 step
-goto 78.93,63.04
-.talk Fractured Spirit of Jorunn##150229 |q Gods Save the King##150024/Talk to the Shade of Jorunn |sub
+goto mistwatchtower_base 78.76,62.98
+.talk Fractured Spirit of Jorunn##150229 |q Gods Save the King##150024/7
 step
 goto 50.90,58.05
-.' Go to the first fire here |goto 50.90,58.05 |c |noway
+.' Go to the first fire here |goto 50.90,58.05 < 5 |c |noway
 step
 goto 17.96,54.20
-.' Go to the second fire here |goto 17.96,54.20 |c |noway
+.' Go to the second fire here |goto 17.96,54.20 < 5 |c |noway
+step
+goto mistwatchtower_base 19.58,45.95
+.' Enter the passage here |goto mistwatchtower_base 19.58,45.95 < 5 |c |noway
 step
 goto 48.47,45.47
-.' Go to the third fire here |goto 48.47,45.47 |c |noway
+.' Go to the third fire here |goto 48.47,45.47 < 5 |c |noway
 step
 goto 57.50,55.37
-.' Cross the rock bridge here. |goto 57.50,55.37 |c |noway |tip Make sure you don't fall!
+.' Cross the rock bridge here. |goto 57.50,55.37 < 5 |c |noway |tip Make sure you don't fall!
 step
 goto 87.14,49.43
-.kill Dream Eater##150228 |q Gods Save the King##150024/Free Fractured Spirit of Jorunn |sub
+.kill Dream Eater##150228 |q Gods Save the King##150024/8
 step
 goto 89.07,62.32
 .click Portal to Mistwatch##150078
 .' Leave Mistwatch |goto Eastmarch 45.29,66.77 |c |noway
 step
 goto 45.60,67.43
-.talk High Priest Esling##150224 |q Gods Save the King##150024/7/Talk to High Priest Esling##1
+.talk High Priest Esling##150224 |q Gods Save the King##150024/9
 step
-goto 46.15,66.70
+goto eastmarch_base 45.63,67.35
+.talk High Priest Esling##150224
+.' Ask about the Wolf Totem |q Gods Save the King##150024/10
+step
+goto eastmarch_base 46.14,66.68
 .click Totem of the Wolf##150080
-goto 14.68,49.18
+.' Pray at the Wolf Totem |q Gods Save the King##150024/11
 step
 goto 14.93,49.43
-.talk Stormy-Eyes##150181 |q Gods Save the King##150024/Talk to Stormy-Eyes |sub
+.talk Stormy-Eyes##150181 |q Gods Save the King##150024/12
 step
 goto 15.45,50.22
-.' Follow the path up |goto 15.45,50.22 |c |noway
+.' Follow the path up |goto 15.45,50.22 < 10 |c |noway
 step
 goto 15.55,53.18
-.kill Dream Eater##150228 |q Gods Save the King##150024/Free Fractured Spirit of Jorunn |sub
+.kill Dream Eater##150228 |q Gods Save the King##150024/13
 step
 goto 15.49,54.00
-.talk Jorunn the Skald-King##150174 |q Gods Save the King##150024/Talk to Jorunn the Skald-King |sub
+.talk Jorunn the Skald-King##150174 |q Gods Save the King##150024/14
 step
 goto 15.31,54.05
 .click Portal to Mistwatch##150078
-.' Leave the Dream |goto 45.29,66.77 |c |noway
+.' Leave the Dream |q Gods Save the King##150024/15
 step
 goto 45.76,67.50
-.talk Jorunn the Skald-King##150174
+.talk Jorunn the Skald-King##150174 |q Gods Save the King##150024/16
 ..turnin Gods Save the King##150024
 step
 goto 45.54,67.46
 .talk Stormy-Eyes##150181
 ..accept Of Councils and Kings##150025
 step
+goto eastmarch_base 47.69,66.48
+.wayshrine Mistwatch Wayshrine
+step
 goto 48.12,68.66
 .click Portal to Eastmarch##150079
-.' Go through the portal here |goto 46.47,64.30 |c |noway
+.' Go through the portal here |goto 46.47,64.30 < 10 |c |noway
 step
-goto 43.77,63.78
-.' Leave the cave |goto 43.77,63.78
+goto eastmarch_base 43.77,63.78
+.' Leave the cave |goto eastmarch_base 43.77,63.78
 step
 goto Eastmarch 40.38,61.93
-.' Go back out to the road |goto Eastmarch 40.38,61.93 |c |noway
+.' Go back out to the road |goto Eastmarch 40.38,61.93 < 10  |c |noway
 step
 goto 34.93,63.69
-.' Follow the path |goto 34.93,63.69 |c |noway
+.' Follow the path |goto 34.93,63.69 < 10 |c |noway
 step
 goto 34.64,61.09
 .click Darkwater Apothecary##150083
-.' Enter the Apothecary |q Bath Time##150022/Find Grida Meadmoon |sub
+.' Enter the Apothecary |q Bath Time##150022/1/1/Find Grida Meadmoon##1
 step
 goto 34.41,60.96
 .click Grida's Note##150084
-.' Read Grida's Note |q Bath Time##150022/Read Grida's Note |sub
+.' Read Grida's Note |q Bath Time##150022/2
 step
 goto 34.56,61.04
 .click Eastmarch##190077
 .' Leave the Apothecary |goto 34.62,61.10 |c |noway
 step
 goto 34.53,62.56
-.' Follow the path |goto 34.53,62.56 |c |noway
+.' Follow the path |goto 34.53,62.56 < 10 |c |noway
 step
 goto 35.49,64.54
 .kill Troll##150170
-..collect 2 Troll Fat |q Bath Time##150022/Collect Troll Fat |sub
+..collect 2 Troll Fat |q Bath Time##150022/3/1/Collect Troll Fat##2
 step
-goto Fort Amol 89.63,60.69
+goto fortamol_base 77.71,61.29
 .kill Mudcrab##1090042
-..collect 4 Mudcrab Claws |q Bath Time##150022/Collect Mudcrab Claws |sub
+..collect 4 Mudcrab Claws |q Bath Time##150022/3/1/Collect Mudcrab Claws##1
 step
 goto Eastmarch 38.58,67.80
 .talk Laughs-at-Danger##150183
-.' Intimidate him into giving you the ingredient |q Bath Time##150022/Check Argonian Camp |sub
+.' Intimidate him into giving you the ingredient |q Bath Time##150022/3
 step
 goto 36.54,61.28
-.click Millstone##150085 |q Bath Time##150022/Grind Ingredients at the Mill |sub
+.click Millstone##150085 |q Bath Time##150022/4
 step
 goto 34.53,62.54
-.' Follow the road here |goto 34.53,62.54 |c |noway
+.' Follow the road here |goto 34.53,62.54 < 10  |c |noway
 step
 goto 42.23,60.13
-.' Follow the road here |goto 42.23,60.13 |c |noway
+.' Follow the road here |goto 42.23,60.13 < 10  |c |noway
 step
 goto 46.68,59.49
 .talk Dralof Waterwalker##150214
-.' Give Dralof Bath Salts |q Bath Time##150022/Give Dralof Bath Salts |sub
+.' Give Dralof Bath Salts |q Bath Time##150022/5
 ..turnin Bath Time##150022
 step
 goto 47.91,61.38
-.' Follow the road here |goto 47.91,61.38 |c |noway
+.' Follow the road here |goto 47.91,61.38 < 10 |c |noway
+step
+goto eastmarch_base 58.98,56.84
+.wayshrine Logging Camp Wayshrine
 step
 goto 63.51,63.01
-.' Follow the road here |goto 63.51,63.01 |c |noway
+.' Follow the road here |goto 63.51,63.01 < 10 |c |noway
+step
+goto eastmarch_base 64.95,61.27
+.wayshrine Jorunn's Stand Wayshrine
 step
 goto 66.23,60.51
 .talk Hlotild the Fox##150248
@@ -11186,7 +11062,7 @@ goto 67.88,58.34
 .' Follow the path up |goto 67.88,58.34 |c |noway
 step
 goto 68.19,57.83
-.talk Prince Irnskar##150145 |q Making Amends##150026/Talk to Prince Irnskar |sub
+.talk Prince Irnskar##150145 |q Making Amends##150026/1
 step
 goto 66.07,57.17
 .talk Ula-Reen##150252
@@ -11194,56 +11070,57 @@ goto 66.07,57.17
 step
 goto 66.15,57.31
 .click Campfire##100111
-.' Light the torch |q Security Details##150027/Light the Torch |sub
+.' Light the torch |q Security Details##150027/1
 step
 goto 68.21,57.77
-.' Follow the path |goto 68.21,57.77
+.' Follow the path |goto 68.21,57.77 < 10 |c |noway
 step
 goto 68.47,56.73
-.click Watchfire##150091 |q Security Details##150027/Light the South and East Gate Watchfires |sub
+.click Watchfire##150091 |q Security Details##150027/2/1/Light the South and East Gate Watchfires##1 |count 1
 step
 goto 69.15,58.40
-.click Watchfire##150091 |q Security Details##150027/Light the South and East Gate Watchfires |sub
+.click Watchfire##15009 |q Security Details##150027/2/1/Light the South and East Gate Watchfires##1 |count 2
 step
 goto 68.34,60.60
-.click Watchfire##150091 |q Security Details##150027/Light the South and East Gate Watchfires |sub
+.click Watchfire##150091 |q Security Details##150027/2/1/Light the South and East Gate Watchfires##1 |count 3
 step
 goto 66.32,61.14
-.click Watchfire##150091 |q Security Details##150027/Light the South and East Gate Watchfires |sub
+.click Watchfire##150091 |q Security Details##150027/2/1/Light the South and East Gate Watchfires##1 |count 4
 step
 goto 66.32,60.33
-.' Follow the path |goto 66.32,60.33 |c |noway
+.' Follow the path |goto 66.32,60.33 < 10 |c |noway
 step
 goto 65.93,57.15
-.talk Ula-Reen##150252 |q Security Details##150027/Talk to Ula-Reen |sub
+.talk Ula-Reen##150252 |q Security Details##150027/3
 step
 goto 65.10,57.74
 .talk Eyes-of-Steel##150105
-.' Intimidate her when prompted |q Making Amends##150026/Talk to Eyes-of-Steel |sub
+.' Intimidate her when prompted |q Making Amends##150026/2
 step
 goto 63.89,57.13
-.talk General Yeveth Noramil##150106 |q Making Amends##150026/Talk to General Yeveth Noramil |sub
+.talk General Yeveth Noramil##150106 |q Making Amends##150026/3
 step
-'As you complete the next steps:
+goto 72.73,57.51
+.kill Hald Bitterblade##150261
+.' Get Hald Bitterblade's Head |q Making Amends##150026/4/1/Get Bitterblade's Head##2
+step
+goto 70.71,57.53
 .kill Stormfist Infantry##150110
 .kill Stormfist Shaman##150111
 .kill Stormfist Savage##150088
-.' Charge the Viper's Strike by interacting with their corpses |q Making Amends##150026/Charge Viper's Strike |sub
-step
-goto 72.73,57.51
-.kill Hald Bitterblade##150261 |q Making Amends##150026/Get Bitterblade's Head |sub
+.' Charge the Viper's Strike by interacting with their corpses |q Making Amends##150026/4
 step
 goto 68.25,57.78
-.' Follow the path |goto 68.25,57.78 |c |noway
+.' Follow the path |goto 68.25,57.78 < 10 |c |noway
 step
 goto 64.95,57.89
-.talk Eyes-of-Steel##150105 |q Making Amends##150026/5/Give Bitterblade's Head to Eyes-of-Steel##2
+.talk Eyes-of-Steel##150105 |q Making Amends##150026/5/1/Give Bitterblade's Head to Eyes-of-Steel##2
 step
 goto 63.85,57.19
-.talk General Yeveth Noramil##150106 |q Making Amends##150026/Return Viper's Strike to General Yeveth Noramil |sub
+.talk General Yeveth Noramil##150106 |q Making Amends##150026/5/1/Return Viper's Strike to General Yeveth Noramil##1
 step
 goto 67.61,57.83
-.' Follow the path up |goto 67.61,57.83 |c |noway
+.' Follow the path up |goto 67.61,57.83 < 10 |c |noway
 step
 goto 68.14,57.75
 .talk Prince Irnskar##150145
@@ -11251,51 +11128,52 @@ goto 68.14,57.75
 ..accept A Council of Thanes##150028
 step
 goto 65.45,56.06
-.talk Thane Harvald##150147 |q A Council of Thanes##150028/Talk to Thane Harvald |sub
+.talk Thane Harvald##150147 |q A Council of Thanes##150028/1
 step
 goto Eastmarch 66.52,59.71
-.' Follow the path up |goto Eastmarch 66.52,59.71 |c |noway
+.' Follow the path up |goto Eastmarch 66.52,59.71 < 10 |c |noway
 step
 goto 66.43,60.19
-.talk Jaema##150264 |q A Council of Thanes##150028/Talk to Thane Oda's Housecarl |sub
+.talk Jaema##150264 |q A Council of Thanes##150028/2
 step
 goto 65.67,60.35
-.click Canis Cup Mushroom##150092 |q A Council of Thanes##150028/Mushrooms May Keep Wolves from Attacking |sub
+.click Canis Cup Mushroom##150092 |q A Council of Thanes##150028/3
+step
+goto 68.09,62.08
+.kill Spymaster Ramorgol##150265 |q Security Details##150027/4/1/Kill Spymaster Ramorgol and Recover Orders##1
+step
+.' Standing next to you:
+.talk Speaks-with-Blades##150254 |q Security Details##150027/5/1/Talk to Scout Speaks-with-Blades##1
 step
 goto 69.03,61.48
-.talk Thane Oda Wolf-Sister##150141 |q A Council of Thanes##150028/Talk to Oda Wolf-Sister |sub
+.talk Thane Oda Wolf-Sister##150141 |q A Council of Thanes##150028/4
 step
-goto 68.29,62.14
-.kill Stormfist Infantry##150110
-.kill Spymaster Ramorgol##150265
-.' Recover the orders |q Security Details##150027/Kill Spymaster Ramorgol and Recover Orders |sub
-step
-goto 68.08,61.92
-.talk Speaks-with-Blades##150254 |q Security Details##150027/Talk to Scout Speaks-with-Blades |sub
+goto 69.02,61.51
+.talk Thane Oda Wolf-Sister##150141 |q A Council of Thanes##150028/5/1/Talk to Oda Wolf-Sister##1
 step
 goto 70.06,61.37
 .kill Shaman Moramat##150266
-.kill Stormfist Savage##150088 |q Security Details##150027/Kill Shaman Moramat and Recover Orders |sub
+.kill Stormfist Savage##150088 |q Security Details##150027/6/1/Kill Shaman Moramat and Recover Orders##1
 step
 goto 66.23,60.43
-.' Follow the path |goto 66.23,60.43 |c |noway
+.' Follow the path |goto 66.23,60.43 < 10 |c |noway
 step
 goto 66.27,59.15
-.talk Thane Jeggi Gap-Tooth##150134 |q A Council of Thanes##150028/Talk to Thane Jeggi |sub
+.talk Thane Jeggi Gap-Tooth##150134 |q A Council of Thanes##150028/6/1/Talk to Thane Jeggi##1
 step
 goto 64.11,57.91
 .talk Vala Davel##150260
-.' Persuade her to give you the mead |q A Council of Thanes##150028/Collect Mead for Thane Jeggi |sub
+.' Persuade her to give you the mead |q A Council of Thanes##150028/7
 step
 goto 66.00,57.20
 .talk Ula-Reen##150252
 ..turnin Security Details##150027
 step
 goto 66.23,59.12
-.talk Thane Jeggi Gap-Tooth##150134 |q A Council of Thanes##150028/Deliver Mead to Thane Jeggi |sub
+.talk Thane Jeggi Gap-Tooth##150134 |q A Council of Thanes##150028/8
 step
 goto 64.13,56.37
-.' Observe the War Council |q A Council of Thanes##150028/Observe the War Council |sub
+.' Observe the War Council |q A Council of Thanes##150028/10
 step
 goto 64.07,56.27
 .talk Jorunn the Skald-King##150174
@@ -11306,10 +11184,10 @@ goto 64.09,56.31
 ..accept Sneak Peak##150029
 step
 goto 65.41,55.47
-.' Follow the path |goto 65.41,55.47 | c
+.' Follow the path |goto 65.41,55.47 < 10 | c
 step
 goto 68.11,54.19
-.' Follow the path up the Mountain here |goto 68.11,54.19 |c |noway
+.' Follow the path up the Mountain here |goto 68.11,54.19 < 10 |c |noway
 step
 goto 68.07,51.60
 .talk Scout Snowhunter##150271
@@ -11318,42 +11196,51 @@ goto 68.07,51.60
 step
 goto 68.16,51.45
 .click Hidden Tunnel##150094
-.' Enter the Hidden Tunnel |q Snow and Flame##150031/Enter the Hidden Tunnel |sub
+.' Enter the Hidden Tunnel |q Snow and Flame##150031/1
+step
+goto eastmarch_base 70.15,48.63
+.' Navigate the Tunnel |q Snow and Flame##150031/2
 step
 goto 70.39,48.62
 .click Skuldafn##150095
-.' Leave the Hidden Tunnel |q Snow and Flame##150031/Leave the Hidden Tunnel |sub
+.' Leave the Hidden Tunnel |q Snow and Flame##150031/3
 step
 goto 77.82,49.39
-.talk Thane Mera Stormcloak##150015 |q Snow and Flame##150031/Talk to Thane Mera Stormcloak |sub
+.talk Thane Mera Stormcloak##150015 |q Snow and Flame##150031/4
 step
 goto 77.90,49.66
-.' Follow the path up |goto 77.90,49.66 |c |noway
+.' Follow the path up |goto 77.90,49.66 < 10 |c |noway
+step
+goto eastmarch_base 78.42,48.68
+.click On Stepping Lightly##150096
+step
+goto 78.48,48.10
+.wayshrine Skuldafn Wayshrine
 step
 goto 79.84,48.97
-.' Follow the path up |goto 79.84,48.97 |c |noway
+.' Follow the path up |goto 79.84,48.97 < 10 |c |noway
 step
 goto Eastmarch 80.95,51.11
-.click Weapons Stockpile##150099 |q Snow and Flame##150031/5/Burn the Weapons Stockpile##1
+.click Weapons Stockpile##150099 |q Snow and Flame##150031/5/1/Burn the Weapons Stockpile##1
 step
 goto 82.46,53.98
-.' Follow the path up |goto 82.46,53.98 |c |noway
+.' Follow the path up |goto 82.46,53.98 < 10  |c |noway
 step
 goto 84.17,53.76
-.click Food Stockpile##150100 |q Snow and Flame##150031/5/Burn the Weapons Stockpile##1
+.click Food Stockpile##150100 |q Snow and Flame##150031/5/1/Burn the Food Stockpile##2
 step
 goto 84.37,51.89
-.' Follow the path up |goto 84.37,51.89 |c |noway
+.' Follow the path up |goto 84.37,51.89 < 10 |c |noway
 step
 goto 85.16,51.11
-.click Mead Stockpile##150101 |q Snow and Flame##150031/Burn the Mead Stockpile |sub
+.click Mead Stockpile##150101 |q Snow and Flame##150031/5/1/Burn the Mead Stockpile##3
 step
 goto 82.35,50.55
-.click Signal Fire##1090034 |q Snow and Flame##150031/Light the Signal Fire |sub
+.click Signal Fire##1090034 |q Snow and Flame##150031/6/1/Light the Signal Fire##1
 step
 goto 84.11,50.48
 .click Skuldafn Tombs##150102
-.' Enter the tombs |goto 83.99,49.96 |c |noway
+.' Enter the tombs |q Snow and Flame##150031/7/1/Enter the Skuldafn Tombs##1
 step
 goto 84.01,49.26
 .talk Queen Nurnhilde##150231
@@ -11365,26 +11252,31 @@ goto 83.60,48.88
 .' Leave the tombs |goto 82.98,48.74 |c |noway
 step
 goto 83.05,49.37
-.' Follow the path |goto 83.05,49.37 |c |noway
+.' Follow the path |goto 83.05,49.37 < 10 |c |noway
 step
 goto 84.05,49.73
-.' Follow the path up |goto 84.05,49.73 |c |noway
+.' Follow the path up |goto 84.05,49.73 < 10 |c |noway
 step
 goto 84.07,47.14
-.' Enter the portal to Sovengarde |goto 84.07,46.60 |c |noway
+.' Enter the portal to Sovengarde |q Songs of Sovngarde##150032/1/1/Enter Sovngarde##1
 step
-goto 84.07,46.60
+.' Follow the Path to the East
 .kill Fildgor Orcthane##150275
-.talk Fildgor Orcthane##150275 |q Songs of Sovngarde##150032/Talk to Fildgor Orcthane |sub
+.talk Fildgor Orcthane##150275 |q Songs of Sovngarde##150032/2
 step
-goto 84.07,46.60
-.talk Queen Nurnhilde##150231 |q Songs of Sovngarde##150032/Talk to Queen Nurnhilde |sub
+goto eastmarch_base 84.07,46.60
+.talk Fildgor Orcthane##150275 |q Songs of Sovngarde##150032/3
 step
-' Go back through the green portal to return to Skuldafn's Peak |q Songs of Sovngarde##150032/Return to Skuldafn's Peak |sub
+.talk Queen Nurnhilde##150231  |q Songs of Sovngarde##150032/4 |tip She will appear behind the altar
+step
+.' Follow the path West out of Sovngarde |q Songs of Sovngarde##150032/5
 step
 goto 84.07,47.96
-.talk Jorunn the Skald-King##150174 |q Songs of Sovngarde##150032/Return to Skuldafn's Peak |sub
-.' Witness the Great Moot |q Songs of Sovngarde##150032/Witness the Great Moot |sub
+.talk Jorunn the Skald-King##150174 |q Songs of Sovngarde##150032/6
+.' Witness the execution |q Songs of Sovngarde##150032/7
+step
+goto eastmarch_base 84.00,48.06
+.' Witness the Great Moot |q Songs of Sovngarde##150032/8
 step
 goto 78.06,49.39
 .click Hidden Tunnel##150094
@@ -11403,41 +11295,47 @@ goto Eastmarch 64.97,50.94
 .' Enter Mzulft |goto Mzulft 28.90,20.26 |c |noway
 step
 goto 19.44,23.09
-.click Kireth's Journal, Page 3##970001 |q In Search of Kireth Vanos##150030/Kireth's Journal, Page 3 |sub
+.click Kireth's Journal, Page 3##970001 |q In Search of Kireth Vanos##150030/2/3/Kireth's Journal, Page 3##2
 step
 goto Mzulft 17.59,40.57
-.click Kireth's Journal, Page 7##970002 |q In Search of Kireth Vanos##150030/Kireth's Journal, Page 7 |sub
+.click Kireth's Journal, Page 7##970002 |q In Search of Kireth Vanos##150030/2/3/Kireth's Journal, Page 7##3
 step
 goto 12.67,47.75
-.click Kireth's Journal, Page 10##970003 |q In Search of Kireth Vanos##150030/Kireth's Journal, Page 10 |sub
+.click Kireth's Journal, Page 10##970003 |q In Search of Kireth Vanos##150030/2/3/Kireth's Journal, Page 10##1
 step
 goto 23.90,50.13
-.click Kireth's Journal, Page 12##970004 |q In Search of Kireth Vanos##150030/Kireth's Journal, Page 12 |sub
+.click Kireth's Journal, Page 12##970004 |q In Search of Kireth Vanos##150030/2/3/Kireth's Journal, Page 12##4
 step
 goto 26.60,44.36
 .click Access Tunnel##970005
-.' Enter the access tunnel |goto 27.46,44.34 |c |noway
+.' Enter the access tunnel |goto 27.46,44.34 < 10 |c |noway
 step
 goto 31.40,44.69
-.click Kireth's Journal, Page 19##970007 |q In Search of Kireth Vanos##150030/Kireth's Journal, Page 19 |sub
+.click Kireth's Journal, Page 19##970007 |q In Search of Kireth Vanos##150030/3/3/Kireth's Journal, Page 19##1
 step
 goto 30.76,40.79
-.' Follow the path |goto 30.76,40.79 |c |noway
+.' Follow the path |goto 30.76,40.79 < 10 |c |noway
 step
 goto 35.83,29.92
-.click Kireth's Journal, Page 22##970008 |q In Search of Kireth Vanos##150030/Kireth's Journal, Page 22 |sub
+.click Kireth's Journal, Page 22##970008 |q In Search of Kireth Vanos##150030/3/3/Kireth's Journal, Page 22##2
 step
 goto 47.18,31.84
-.' Follow the path |goto 47.18,31.84 |c |noway
+.' Follow the path |goto 47.18,31.84 < 10  |c |noway
+step
+goto mzulft_base 48.34,46.34
+.click Kireth's Journal, Page 24##970009 |q In Search of Kireth Vanos##150030/4/3/Kireth's Journal, Page 24##1
 step
 goto 54.06,53.93
-.click Kireth's Journal, Page 25##970010 |q In Search of Kireth Vanos##150030/Kireth's Journal, Page 25 |sub
+.click Kireth's Journal, Page 25##970010 |q In Search of Kireth Vanos##150030/4/3/Kireth's Journal, Page 25##2
 step
 goto 52.23,57.06
-.click Kireth's Journal, Page 29##970011 |q In Search of Kireth Vanos##150030/Kireth's Journal, Page 29 |sub
+.click Kireth's Journal, Page 29##970011 |q In Search of Kireth Vanos##150030/4/3/Kireth's Journal, Page 29##3
 step
 goto 48.85,62.13
-.click Kireth's Journal, Page 30##970012 |q In Search of Kireth Vanos##150030/Kireth's Journal, Page 30 |sub
+.click Kireth's Journal, Page 30##970012 |q In Search of Kireth Vanos##150030/4/3/Kireth's Journal, Page 30##4
+step
+goto mzulft_base 47.86,65.87
+.' Find Kireth Vanos |q In Search of Kireth Vanos##150030/4/1/Find Kireth Vanos##1
 step
 goto 47.59,68.62
 .talk Kireth Vanos##970002
@@ -11445,26 +11343,29 @@ goto 47.59,68.62
 ..accept Kireth's Amazing Plan##970001
 step
 goto 54.81,57.35
-.click Ice Tunnels##970014 |q Kireth's Amazing Plan##970001/Enter the Ice Tunnels |sub
+.click Ice Tunnels##970014 |q Kireth's Amazing Plan##970001/1/1/Enter the Ice Tunnels##1
 step
 goto 61.23,47.72
-.' Follow the path |goto 61.23,47.72 |c |noway
+.' Follow the path |goto 61.23,47.72 < 10  |c |noway
 step
 goto 88.34,43.23
-.' Help Kireth Find the Key |q Kireth's Amazing Plan##970001/Help Kireth Find the Key |sub
+.' Help Kireth Find the Key |q Kireth's Amazing Plan##970001/2
+step
+goto mzulft_base 84.51,61.73
+.' Go to the Vault |q Kireth's Amazing Plan##970001/3/1/Go To the Vault##1
 step
 goto 83.97,58.29
-.click Mzulft Researcher's Journal##970015
+.click Mzulft Researcher's Journal##970015 |q Kireth's Amazing Plan##970001/4
 step
 goto 83.59,57.87
-.click Dwemer Vault Sack##970016 |q Kireth's Amazing Plan##970001/Find an Uncharged Dwemer Orb |sub
+.click Dwemer Vault Sack##970016 |q Kireth's Amazing Plan##970001/5
 step
 goto 83.72,57.96
-.' Listen to Kireth and Raynor |q Kireth's Amazing Plan##970001/Listen to Kireth and Raynor |sub
+.' Listen to Kireth and Raynor |q Kireth's Amazing Plan##970001/6
 step
 goto 84.20,53.57
 .talk Kireth Vanos##970002
-.' Support Kireth's idea |q Kireth's Amazing Plan##970001/Support Kireth |sub
+.' Support Kireth's idea |q Kireth's Amazing Plan##970001/7
 step
 goto 84.22,58.07
 .talk Raynor Vanos##150270
@@ -11480,10 +11381,10 @@ goto 58.34,55.45
 step
 goto 56.48,53.22
 .click Logging Cabin##150106
-.' Enter the Logging Cabin |q Land Dispute##150033/Investigate the Logging Cabin |sub
+.' Enter the Logging Cabin |q Land Dispute##150033/1
 step
 goto 56.32,53.32
-.talk Eginir Thistlebreeches##150280 |q Land Dispute##150033/Talk to Eginir |sub
+.talk Eginir Thistlebreeches##150280 |q Land Dispute##150033/2
 step
 goto 56.40,53.30
 .click Thulvald's Logging Camp##150107
@@ -11491,17 +11392,17 @@ goto 56.40,53.30
 step
 goto 60.47,52.21
 .click Logging Chief's Lodge##150108
-.' Enter the Logging Chief's Lodge |q Land Dispute##150033/Investigate the Logging Chief's Lodge |sub
+.' Enter the Logging Chief's Lodge |q Land Dispute##150033/3
 step
 goto 60.62,52.00
-.talk Jafelma##150281 |q Land Dispute##150033/Talk to Jafelma |sub
+.talk Jafelma##150281 |q Land Dispute##150033/4
 step
 goto 60.48,52.12
 .click Thulvald's Logging Camp##150107
 .' Leave the Logging Chief's Lodge |goto 60.47,52.21 |c |noway
 step
 goto 61.88,54.88
-.kill Spriggan Matron##150282 |q Land Dispute##150033/Defeat the Spriggan Matron |sub
+.kill Spriggan Matron##150282 |q Land Dispute##150033/5
 step
 goto Eastmarch 58.35,55.41
 .talk Thulvald Axe-Head##150279
@@ -11512,36 +11413,36 @@ goto 52.11,50.92
 ..accept Merriment and Mystery##150034
 step
 goto 53.86,49.27
-.' Follow the path up |goto 53.86,49.27 |c |noway
+.' Follow the path up |goto 53.86,49.27 < 10 |c |noway
 step
 goto 54.03,49.73
-.talk Berj Stoneheart##150286 |q Merriment and Mystery##150034/Talk to Berj Stoneheart |sub
+.talk Berj Stoneheart##150286 |q Merriment and Mystery##150034/1
 step
 goto 56.65,50.04
 .talk Kalogar Cookpot##150288
-.' Choose the Bear Steaks |q Merriment and Mystery##150034/Grilled Bear Steaks Sound Delicious |sub
+.' Choose the Bear Steaks |q Merriment and Mystery##150034/2
 step
 goto Eastmarch 52.79,45.35
 .click Rock##150110
 .kill Old Ironclaw##150291
-..collect Bear Steaks |q Merriment and Mystery##150034/3/Get Bear Steaks##1 |q Merriment and Mystery##150034/Get Bear Steaks |sub
+..collect Bear Steaks |q Merriment and Mystery##150034/3
 step
 goto 56.59,50.04
-.talk Kalogar Cookpot##150288 |q Merriment and Mystery##150034/Talk to Kalogar |sub
+.talk Kalogar Cookpot##150288 |q Merriment and Mystery##150034/4
 step
 goto 54.46,48.52
-.talk Ralduf Wolf-Kin##150293 |q Merriment and Mystery##150034/Find Ralduf at the Storehouse |sub
+.talk Ralduf Wolf-Kin##150293 |q Merriment and Mystery##150034/5
 step
 goto 54.41,47.03
 .kill Wolf##1090005
-..collect Storehouse Key |q Merriment and Mystery##150034/Find the Wolf with the Key |sub
+..collect Storehouse Key |q Merriment and Mystery##150034/6
 step
 goto 54.06,48.40
 .click Storehouse##150111
 .' Enter the Storehouse |goto 54.07,48.34 |c |noway
 step
 goto 54.23,48.17
-.click Voljar's Spiced Mead##150112 |q Merriment and Mystery##150034/Get Mead for the Party |sub
+.click Voljar's Spiced Mead##150112 |q Merriment and Mystery##150034/7
 step
 goto 54.08,48.31
 .click Cragwallow##150113
@@ -11552,94 +11453,97 @@ goto 56.04,50.33
 .' Enter Mead Hall |goto 56.01,50.37 |c |noway
 step
 goto 55.70,50.19
-.talk Berj Stoneheart##150286 |q Merriment and Mystery##150034/Deliver Mead to Berj |sub
+.talk Berj Stoneheart##150286 |q Merriment and Mystery##150034/8
 step
 goto 55.83,50.73
-.' Go up the stairs |goto 55.83,50.73 |c |noway
+.' Go up the stairs |goto 55.83,50.73 < 5 |c |noway
 step
 goto 55.88,50.43
-.talk Valding the Bard##150301 |q Merriment and Mystery##150034/Ask the Bard to Play |sub
+.talk Valding the Bard##150301 |q Merriment and Mystery##150034/9
 step
 goto 55.71,50.19
-.' Listen to the Bard |q Merriment and Mystery##150034/Listen to the Bard |sub
+.' Listen to the Bard |q Merriment and Mystery##150034/10
 step
 goto 55.72,50.27
-.talk Arvild Gray-Sky##150302 |q Merriment and Mystery##150034/Talk to Arvild Gray-Sky |sub
+.talk Arvild Gray-Sky##150302 |q Merriment and Mystery##150034/11
 step
 goto 55.63,50.34
-.talk Saborm Windcatcher##150295 |q Merriment and Mystery##150034/Talk to a Survivor |sub
+.talk Saborm Windcatcher##150295 |q Merriment and Mystery##150034/12/1/Talk to the Survivors##1 |count 1
 step
 goto 55.61,50.33
-.talk Borahild Winter-Run##150298 |q Merriment and Mystery##150034/Talk to the Survivors |sub
+.talk Borahild Winter-Run##150298 |q Merriment and Mystery##150034/12/1/Talk to the Survivors##1 |count 2
 step
 goto 55.93,50.52
-.talk Jemaar Red-Boot##150296 |q Merriment and Mystery##150034/Talk to the Survivors |sub
+.talk Jemaar Red-Boot##150296 |q Merriment and Mystery##150034/12/1/Talk to the Survivors##1 |count 3
 step
 goto 55.98,50.39
 .click Cragwallow##150113
-.' Leave the Mead Hall |goto 56.03,50.36 |c |noway
+.' Leave the Mead Hall |goto 56.03,50.36 < 1 |c |noway
 step
 goto 56.15,50.37
-.talk Arvild Gray-Sky##150302 |q Merriment and Mystery##150034/Talk to Arvild Gray-Sky |sub
+.talk Arvild Gray-Sky##150302 |q Merriment and Mystery##150034/13
 step
 goto 56.82,48.58
-.click Primitive Blade##150115 |q Merriment and Mystery##150034/Examine the Primitive Blade |sub
+.click Primitive Blade##150115 |q Merriment and Mystery##150034/14/2/Examine the Primitive Blade##2
 step
 goto 58.13,47.24
-.click Primitive Arrows##150116 |q Merriment and Mystery##150034/Examine the Primitive Arrows |sub
+.click Primitive Arrows##150116 |q Merriment and Mystery##150034/14/2/Examine the Primitive Arrows##3
 step
 goto 58.22,47.57
 .talk Lothgar Steady-Hand##150290
 ..accept A Dying Wish##150035
 step
 goto 59.03,48.42
-.click Battered Tankard##150117 |q Merriment and Mystery##150034/Examine the Tankard |sub
+.click Battered Tankard##150117 |q Merriment and Mystery##150034/14/2/Examine the Tankard##1
+step
+goto eastmarch_base 59.68,49.19
+.' Look for clues |q Merriment and Mystery##150034/15
 step
 goto 59.74,49.50
-.talk Vestrek Raven-Eye##150305 |q Merriment and Mystery##150034/Talk to Vestrek Raven-Eye |sub
+.talk Vestrek Raven-Eye##150305 |q Merriment and Mystery##150034/16
 step
 goto 60.47,49.46
 .click Cragwallow Cave##150118
-.' Enter the Cragwallow Cave |goto Cragwallow 48.83,92.34 |c |noway
+.' Enter the Cragwallow Cave |goto Cragwallow_base 48.83,92.34 < 1 |c |noway
 step
 goto 63.99,64.26
-.' Follow the path |goto 63.99,64.26 |c |noway
+.' Follow the path |goto 63.99,64.26 < 10 |c |noway
 step
 goto 52.51,50.88
-.' Follow the path |goto 52.51,50.88 |c |noway
+.' Follow the path |goto 52.51,50.88 < 10 |c |noway
 step
 goto 34.83,61.57
 .click Lothgar's Sword##980002
 ..collect Lothgar's Sword |q A Dying Wish##150035/1/Find Lothgar's Sword##1
 step
 goto 34.17,31.46
-.' Follow the path |goto 34.17,31.46 |c |noway
+.' Follow the path |goto 34.17,31.46 < 10 |c |noway
 step
 goto 49.92,11.91
-.talk Valding the Bard##150301 |q Merriment and Mystery##150034/Find Valding |sub
+.talk Valding the Bard##150301 |q Merriment and Mystery##150034/18
 step
 goto 50.39,24.36
 .click Valding's Lute##980003
-.' Destroy the Lute |q Merriment and Mystery##150034/Destroy the Lute |sub
+.' Destroy the Lute |q Merriment and Mystery##150034/19
 step
 goto 50.41,23.63
 .kill Ice-Biter Chieftain##980004
-..collect Old Key |q Merriment and Mystery##150034/Get the Key from the Riekling Chieftain |sub
+..collect Old Key |q Merriment and Mystery##150034/20
 step
 goto 50.01,11.88
 .talk Valding the Bard##150301
-.' Tell him you will let him go if he turns himself in |q Merriment and Mystery##150034/Free Valding |sub
+.' Tell him you will let him go if he turns himself in |q Merriment and Mystery##150034/21
 step
 goto 50.14,11.68
 .click Cell##3360007
-.' Unlock the cage |q Merriment and Mystery##150034/Unlock the Cage |sub
+.' Unlock the cage |q Merriment and Mystery##150034/22
 step
 goto 71.11,31.20
 .' Follow the path |goto 71.11,31.20 |c |noway
 step
 goto 75.19,40.51
 .click Lothgar's Shield##980004
-..collect Lothgar's Shield |q A Dying Wish##150035/Find Lothgar's Shield |sub
+..collect Lothgar's Shield |q A Dying Wish##150035/1/1/Find Lothgar's Shield##2
 step
 goto 71.06,42.61
 .click Gate##90172
@@ -11660,191 +11564,79 @@ goto 58.24,47.65
 .talk Lothgar Steady-Hand##150290
 ..turnin A Dying Wish##150035
 step
-goto 57.19,48.25
-.' Follow the path |goto 57.19,48.25 |c |noway
-step
-goto 51.86,51.86
-.' Follow the path |goto 51.86,51.86 |c |noway
-step
-goto 44.19,39.76
-.' Follow the path |goto 44.19,39.76 |c |noway
+.' Open your map and Fast Travel to the Kynesgrove Wayshrin |goto eastmarch_base 47.68,39.98 |c |noway
 step
 goto 43.65,38.42
 .talk Imwyn Frost-Tree##150306
 ..accept Nature's Accord##150036
 step
-goto 41.17,43.90
-.click Letter to Imwyn##150120 |q Nature's Accord##150036/Find Imwyn's Sister |sub
+goto eastmarch_base 40.87,44.62
+.click Letter to Imwyn##150120 |q Nature's Accord##150036/1
 step
-goto 50.65,47.30
-.' Follow the Forest Spirit to this point |q Nature's Accord##150036/Follow the Forest Spirit |sub
+goto eastmarch_base 50.53,47.16
+.' Follow the Forest Spirit |q Nature's Accord##150036/2/2/Follow the Forest Spirit##2
 step
-goto 50.64,47.30
-.click Abandoned Pack##150121]
-..collect Sigil of Nature's Accord |q Nature's Accord##150036/Find the Sigil of Nature's Accord |sub
+goto eastmarch_base 50.59,47.20
+.click Abandoned Pack##150121 |q Nature's Accord##150036/3
 step
-goto Eastmarch 47.68,39.97
-.click Kynesgrove Wayshrine##150016
-.' Teleport to the Windhelm Wayshrine |goto Windhelm 46.44,47.49 |c |noway
-step
-goto 49.24,61.88
-.click Mages Guild##90007
-.' Enter the Mages Guild |goto 49.23,60.93 |c |noway
-step
-goto 49.43,53.96
-.talk Valaste##90042
-..accept Chateau of the Ravenous Rodent##160016
-step
-goto 49.31,53.78
-.' Wait for Valaste to Open the Portal |q Chateau of the Ravenous Rodent##160016/2/1/Wait for Valaste to Open the Portal##1
-step
-goto 48.74,53.55
-.click Portal to the Shivering Isles##100076
-.' Go to the Chateau of Ravenous Rodent |goto Chateau of the Ravenous Rodent 27.41,23.69 |c |noway
-step
-goto 27.50,24.14
-.talk Arch-Mage Shalidor##1130007 |q Chateau of the Ravenous Rodent##160016/4/1/Talk to Shalidor##1
-step
-goto 27.44,24.18
-.' Watch Sheogorath and Shalidor |q Chateau of the Ravenous Rodent##160016/5/1/Watch Sheogorath and Shalidor##1
-step
-goto 27.79,24.74
-.talk Sheogorath##480006 |q Chateau of the Ravenous Rodent##160016/6/1/Talk to Sheogorath##1
-step
-goto 35.49,39.20
-.click Chateau Guesthouse##590001
-.' Enter the Chateau Guesthouse |goto 36.31,40.32 |c |noway
-step
-goto 40.90,40.93
-.click Door##1090039 |q Chateau of the Ravenous Rodent##160016/8/1/Evict the Guest That Doesn't Belong##1
-step
-goto 38.42,42.62
-.click Portal to Chateau Gardens##590002 |q Chateau of the Ravenous Rodent##160016/9/1/Enter the Portal##1
-step
-goto 43.02,51.23
-.talk Sheogorath##480006 |q Chateau of the Ravenous Rodent##160016/10/1/Talk to Sheogorath##1
-step
-goto 49.28,60.50
-.' Follow the path |goto 49.28,60.50 |c |noway
-step
-goto 59.84,63.06
-.click Cold Brazier##590003 |q Chateau of the Ravenous Rodent##160016/11/1/Light the Braziers##1
-step
-goto 53.43,62.53
-.' Follow the path |goto 53.43,62.53 |c |noway
-step
-goto 46.28,69.62
-.click Cold Brazier##590003 |q Chateau of the Ravenous Rodent##160016/11/1/Light the Braziers##1
-step
-goto 48.99,66.03
-.' Follow the path |goto 48.99,66.03 |c |noway
-step
-goto 46.77,72.69
-.click Cold Brazier##590003 |q Chateau of the Ravenous Rodent##160016/11/1/Light the Braziers##1
-step
-goto 54.44,70.02
-.' Follow the path |goto 54.44,70.02 |c |noway
-step
-goto 51.45,75.47
-.click Cold Brazier##590003 |q Chateau of the Ravenous Rodent##160016/11/1/Light the Braziers##1
-step
-goto 67.01,72.16
-.' Find the maze exit |q Chateau of the Ravenous Rodent##160016/12/1/Find the Maze Exit##1
-step
-goto 69.76,76.50
-.talk Sheogorath##480006 |q Chateau of the Ravenous Rodent##160016/13/1/Talk to Sheogorath##1
-step
-goto 73.58,77.39
-.click Chateau Manse##590004
-.' Go through the door here |goto 74.36,77.42 |c |noway
-step
-goto 83.35,77.26
-.' Follow the path down |goto 83.35,77.26 |c |noway
-step
-goto 90.92,67.29
-.click Crystal##90050
-.' When looking at the crystals, click the 3rd crystal, then the 2nd crystal, then the 4th crystal.
-.' Light all the heirloom crystals |q Chateau of the Ravenous Rodent##160016/15/1/Light All the Heirlooms##1
-step
-goto 90.15,64.66
-.talk Sheogorath##480006 |q Chateau of the Ravenous Rodent##160016/16/1/Talk to Sheogorath##1
-step
-goto 90.78,64.27
-.click The Master Bedroom##590005
-.' Enter the Master Bedroom |goto chateaumasterbedroom_base 16.24,71.33 |c |noway
-step
-goto 63.50,48.58
-.kill Uncle Leo##-21474836480044 |q Chateau of the Ravenous Rodent##160016/17/1/Kill Uncle Leo##1
-step
-goto 41.58,47.40
-.talk Sheogorath##480006 |q Chateau of the Ravenous Rodent##160016/18/1/Talk to Sheogorath##1
-step
-goto 42.35,48.11
-.click A Gift of Sanctuary##-21474836480003 |q Chateau of the Ravenous Rodent##160016/19/1
-step
-goto Windhelm 49.08,53.57
-.talk Valaste##90042
-..turnin Chateau of the Ravenous Rodent##160016
-step
-goto Windhelm 49.21,61.12
-.click Windhelm##150003
-.' Leave the Mages Guild here |goto 49.22,61.94 |c |noway
+.' Open your map and Fast Travel to Windhelm Wayshrine |goto windhelm_base 46.65,47.52 |c |noway
 step
 goto 60.93,71.08
 .talk Aerana Frost-Tree##150033
 ..turnin Nature's Accord##150036
 step
 goto Eastmarch 49.49,34.33
-.talk Aelif##90086 |q Proving the Deed##190002/Meet Aelif to travel to Ragnthar |sub
+.talk Aelif##90086 |q Proving the Deed##190002/5
 step
-goto 53.00,37.25
-.' Follow Aelif to this point |goto 53.00,37.25 |c |noway
-step
-goto 52.95,38.98
-.' Follow Aelif to Ragnthar |q Proving the Deed##190002/Follow Aelif to Ragnthar |sub
+goto eastmarch_base 52.92,39.01
+.' Follow Aelif to Ragnthar |q Proving the Deed##190002/6/1/Follow Aelif to Ragnthar##1
 step
 goto 52.90,38.95
-.talk Aelif##90086 |q Proving the Deed##190002/Talk to Aelif |sub
+.talk Aelif##90086 |q Proving the Deed##190002/7/1/Talk to Aelif##1
+step
+.' Wait for Aelif to bring down the barrier |q Proving the Deed##190002/8
 step
 goto 52.65,39.11
 .click Ragnthar##150122
-.' Enter Ragnthar |q Proving the Deed##190002/Enter Ragnthar |sub
+.' Enter Ragnthar |q Proving the Deed##190002/9
 step
-goto 62.90,50.61
-.' Search Ragnthar for Clues |q Proving the Deed##190002/Search Ragnthar for Clues |sub
+goto ragnthar_base 62.90,50.61
+.' Search Ragnthar for Clues |q Proving the Deed##190002/10
 step
 goto 62.05,50.46
-.talk Aelif##90086 |q Proving the Deed##190002/Talk to Aelif |sub
+.talk Aelif##90086 |q Proving the Deed##190002/11
+step
+.' Wait for Aelif to Cast her spell |q Proving the Deed##190002/12/1/Wait for Aelif to Cast Her Spell##1
 step
 goto 62.33,46.63
-.click Crystal##90050 |q Proving the Deed##190002/Destroy the Crystals |sub
+.click Crystal##90050 |q Proving the Deed##190002/13/1/Destroy the Crystals##1 |count 1
 step
 goto 69.87,46.19
-.click Crystal##90050 |q Proving the Deed##190002/Destroy the Crystals |sub
+.click Crystal##90050 |q Proving the Deed##190002/13/1/Destroy the Crystals##1 |count 2
 step
 goto 70.75,54.10
-.click Crystal##90050 |q Proving the Deed##190002/Destroy the Crystals |sub
+.click Crystal##90050 |q Proving the Deed##190002/13/1/Destroy the Crystals##1 |count 3
 step
 goto 62.98,54.39
-.click Crystal##90050 |q Proving the Deed##190002/Destroy the Crystals |sub
+.click Crystal##90050 |q Proving the Deed##190002/13/1/Destroy the Crystals##1 |count 4
 step
 goto 65.86,50.27
-.talk Skeletal Remains##1810001 |q Proving the Deed##190002/Discover the Source of the Noise |sub
+.talk Skeletal Remains##1810001 |q Proving the Deed##190002/14/1/Examine the Body##1
 step
 goto 67.28,50.15
 .kill Dwarven Sphere##100119
 .kill Dwarven Spider##1130004
 .kill Auroran Battlemage##1810002
-.' Survive the trap |q Proving the Deed##190002/Survive the Trap |sub
+.' Survive the trap |q Proving the Deed##190002/16
 step
 goto Ragnthar 68.47,49.82
-.talk Aelif##90086 |q Proving the Deed##190002/Talk to Aelif |sub
+.talk Aelif##90086 |q Proving the Deed##190002/17
 step
 goto 69.06,49.43
-.' Witness the testimony |q Proving the Deed##190002/Witness Jofnir Iceblade's Testimony |sub
+.' Witness the testimony |q Proving the Deed##190002/18
 step
 goto 69.06,49.43
-.talk Aelif##90086 |q Proving the Deed##190002/Talk to Aelif |sub
+.talk Aelif##90086 |q Proving the Deed##190002/19
 step
 goto 13.05,50.05
 .click Tamriel##3360012
@@ -11858,71 +11650,82 @@ goto 65.70,39.21
 .talk Merric at-Aswala##90084 |q Proving the Deed##190002/Talk to Merric at-Aswala |sub
 ..turnin Proving the Deed##190002
 step
-'Varen should have appeared to you by this point and talked to you.
-..accept Valley of Blades##150038
+'Follow the path in the Harborage to the small camp:
+.talk Sai Sahan##450002 |q Valley of Blades##150038/2
 step
-goto Fort Amol 14.60,13.08
-.click Fort Amol Wayshrine##150123
-.' Teleport to the Harborage |goto stonefalls_base 77.11,36.71 |c |noway
+'In the small camp in the Harborage:
+.click Portal to Valley of Blades##450009
+.' Travel to the Valley of Blades |q Valley of Blades##150038/3
 step
-.talk Sai Sahan##450002 |q Valley of Blades##150038/Talk to Sai Sahan |sub
+goto valleyofblades1_base 28.22,9.62
+.talk Sai Sahan##450002 |q Valley of Blades##150038/4
 step
-.click Portal to Valley of Blades##90186 |q Valley of Blades##150038/Travel to the Valley of Blades |sub
+goto 26.20,18.90
+.' Follow the path |goto 26.20,18.90 < 5 |c |noway |q Valley of Blades##150038 |future
 step
-goto Valley of Blades 28.47,9.24
-.talk Sai Sahan##450002 |q Valley of Blades##150038/2/Talk to Sai Sahan##1
+goto 34.82,24.26
+.' Enter the Abbey of Blades |q Valley of Blades##150038/5
 step
-goto 37.84,28.60
-.' Follow the path |goto 37.84,28.60 |c |noway
+goto 50.91,45.68
+.' Find Kasura |q Valley of Blades##150038/6
+.' Watch the dialogue
+.' Listen to Kasura |q Valley of Blades##150038/7
 step
-goto 50.32,46.12
-.' Find Kasura |q Valley of Blades##150038/Find Kasura |sub
+goto 44.57,41.83
+.click Sigil Stone##1900001
+.' Destroy the Sigil |q Valley of Blades##150038/8/1/Destroy the Sigils##1 |count 1
 step
-goto 44.77,41.98
-.click Sigil Stone##3260001 |q Valley of Blades##150038/Destroy the Sigils |sub
+goto 47.98,54.42
+.click Sigil Stone##1900001
+.' Destroy the Sigil |q Valley of Blades##150038/8/1/Destroy the Sigils##1 |count 2
 step
-goto 47.92,54.30
-.click Sigil Stone##3260001 |q Valley of Blades##150038/Destroy the Sigils |sub
+goto 58.81,48.94
+.click Sigil Stone##1900001
+.' Destroy the Sigil |q Valley of Blades##150038/8/1/Destroy the Sigils##1 |count 3
 step
-goto 59.55,49.34
-.click Sigil Stone##3260001 |q Valley of Blades##150038/Destroy the Sigils |sub
+goto 55.82,47.93
+.kill Titan##3260003
+.' Defeat the Titan |q Valley of Blades##150038/9
 step
-goto 56.26,47.88
-.kill Titan##3260004 |q Valley of Blades##150038/Defeat the Titan |sub
+goto 50.70,46.47
+.talk Kasura##3260002 |q Valley of Blades##150038/10
 step
-goto 50.91,46.28
-.talk Kasura##3260002 |q Valley of Blades##150038/Talk to Kasura |sub
+goto 58.54,48.89
+.' Follow the path |goto 58.54,48.89 < 5 |c |noway |q Valley of Blades##150038 |future
 step
-goto 74.70,44.76
-.click Ancestral Crypt##3260002
-.' Enter the Ancestral Crypt |goto cncestralcrypt_base 30.27,28.63 |c |noway
+goto 74.43,44.86
+.click Ancestral Crypt##3260001
+.' Enter the Ancestral Crypt |q Valley of Blades##150038/11
 step
-goto 30.05,28.94
-.talk Sai Sahan##450002 |q Valley of Blades##150038/2/Talk to Sai Sahan##1
+goto valleyofblades2_base 30.27,29.75
+.talk Sai Sahan##450002 |q Valley of Blades##150038/12
 step
-goto 41.19,53.26
+goto 30.10,49.60
+.' Follow the path |goto 30.10,49.60 < 10 |c |noway |q Valley of Blades##150038 |future
 step
-goto 76.95,48.19
-.click Chest##3360013 |q Valley of Blades##150038/Find the Ring of Stendarr's Mercy |sub
+goto 77.26,48.08
+.click Chest##3360013
+.' Find the Ring of Stendarr's Mercy |q Valley of Blades##150038/13
 step
-goto 75.91,48.82
-.talk Kasura##3260002 |q Valley of Blades##150038/Talk to Kasura |sub
+goto 75.85,49.29
+.talk Kasura##3260002 |q Valley of Blades##150038/14
 step
-goto 59.90,51.43
-'Fight against the waves of enemies that spawn in this room.
-.' Protect the Ancestral Crypt |q Valley of Blades##150038/Protect the Ancestral Crypt |sub
+goto 59.92,51.37
+.' Kill the many enemies that attack you
+.' Protect the Ancestral Crypt |q Valley of Blades##150038/15
 step
-goto 59.29,51.77
-.talk Sai Sahan##450002 |q Valley of Blades##150038/Talk to Sai Sahan |sub
+goto 60.70,48.09
+.talk Sai Sahan##450002 |q Valley of Blades##150038/16
 step
-goto 71.23,49.42
-.click Portal to the Harborage##460001
-.' Return to the Harborage |q Valley of Blades##150038/Return to the Harborage |sub
+goto 72.65,49.20
+.click Portal to the Harborage##460011
+.' Return to the Harborage |q Valley of Blades##150038/17
 step
+'In the small camp in the Harborage:
 .talk Varen Aquilarios##450001
 ..turnin Valley of Blades##150038
 step
-.' Teleport to the Jorunn's Stand Wayshrine |goto Eastmarch 65.14,61.23 |c |noway
+.' Teleport to the Jorunn's Stand Wayshrine, located in Eastmarch |goto Eastmarch 65.14,61.23 |c |noway
 step
 goto 67.89,58.32
 .talk Prince Irnskar##150145
@@ -11943,58 +11746,66 @@ startlevel 35
 endlevel 42
 step
 goto Shor's Stone 55.73,43.19
-.talk Vigrod Wraithbane##160001 |q Beneath the Stone##150039/Talk to Vigrod Wraithbane |sub
+.talk Vigrod Wraithbane##160001 |q Beneath the Stone##150039/1
 step
 goto 35.34,49.12
-.talk Ree-Zish##160008 |q Beneath the Stone##150039/Talk to Ree-Zish |sub
+.talk Ree-Zish##160008 |q Beneath the Stone##150039/2
 step
 goto 50.34,77.16
 .kill Imbued Corpse##160017 |tip They are scattered around this area.
-.' Collect the pink orbs that appear once you destroy a corpse |q Beneath the Stone##150039/Destroy Corpses and Collect Magicka |sub
+.' Collect the pink orbs that appear once you destroy a corpse |q Beneath the Stone##150039/3
 step
 goto 35.90,49.46
-.talk Ree-Zish##160008 |q Beneath the Stone##150039/Talk to Ree-Zish |sub
+.talk Ree-Zish##160008 |q Beneath the Stone##150039/4
 step
 goto 34.54,48.08
-.click Effigy of Life##160001 |q Beneath the Stone##150039/5/Imbue Effigy of Life##1
+.click Effigy of Life##160001 |q Beneath the Stone##150039/5/1/Imbue Effigy of Life##1
 step
 goto 33.82,49.18
-.click Effigy of Death##160002 |q Beneath the Stone##150039/Imbue Effigy of Death |sub
+.click Effigy of Death##160002 |q Beneath the Stone##150039/5/1/Imbue Effigy of Death##2
 step
 goto 32.79,47.87
 .click Shor's Stone Mine##160003
-.' Enter the mine |q Beneath the Stone##150039/Enter Mine |sub
+.' Enter the mine |q Beneath the Stone##150039/6
 step
 goto Shor's Stone Mine 76.49,43.18
-.talk Foreman Gandis##1970001
+.talk Foreman Gandis##1970001 |q Beneath the Stone##150039/7
 ..turnin Beneath the Stone##150039
 ..accept Unearthed##1970001
 step
 goto 70.43,39.40
-.' Follow the path |goto 70.43,39.40 |c |noway
+.' Follow the path |goto 70.43,39.40 < 5 |c |noway
 step
 goto Shor's Stone Mine 58.38,28.06
 .talk Jaknir##1970002
 ..accept Move out Miners##1970002
 step
-goto Shor's Stone Mine 36.01,23.51
-.click Iron Box##1970002 |q Unearthed##1970001/1/1/Find Relics##1
+goto shorsstonemine_base 38.58,24.68
+.kill Mael Rotvine##1970003 |q Unearthed##1970001/1/5/Kill Mael Rotvine##1
 step
-goto Shor's Stone Mine 59.10,31.43
-.' Follow the path |goto Shor's Stone Mine 59.10,31.43 |c |noway
+goto Shor's Stone Mine 36.01,23.51
+.click Iron Box##1970002 |q Unearthed##1970001/1/1/Find Relics##1 |count 1
+step
+goto shorsstonemine_base 58.95,53.29
+.' Follow the path |goto shorsstonemine_base 58.95,53.29 < 5 |c |noway
 step
 goto Shor's Stone Mine 31.51,66.35
 .talk Adana##1970005
 .' Save Adana |q Move out Miners##1970002/1/1/Save Adana##2
 step
-goto 43.47,46.66
+goto 43.22,46.68
 .talk Narir##1970007 |q Move out Miners##1970002/1/1/Save Narir##3
-goto Shor's Stone Mine 18.19,41.35
+step
+goto shorsstonemine_base 21.25,42.55
+.' Follow the path |goto shorsstonemine_base 21.25,42.55 < 5 |c |noway
+step
+goto shorsstonemine_base 13.14,25.47
+.kill Ambre Gnarltree##1970008 |q Unearthed##1970001/1/5/Kill Ambre Gnarltree##2
 step
 goto 13.82,25.30
-.click Iron Box##1970002 |q Unearthed##1970001/1/1/Find Relics##1
+.click Iron Box##1970002 |q Unearthed##1970001/1/2/Recover Relic##1 |count 2
 step
-goto 8.14,24.98
+goto shorsstonemine_base 7.58,25.39
 .talk Raena##1970009 |q Move out Miners##1970002/1/1/Save Raena##4
 step
 goto 33.97,54.80
@@ -12009,7 +11820,7 @@ goto 34.34,68.87
 step
 goto 45.15,85.18
 .click Sinmur's Tomb##1970004
-.' Go through the door here |goto 47.39,85.04 |c |noway
+.' Go through the door here |q Unearthed##1970001/3/1/Explore the Tomb##1
 step
 goto 62.70,84.86
 .click Sinmur, Giant of Legend##1970005
@@ -12047,7 +11858,7 @@ goto 43.95,52.86
 ..accept The Troubleshooter##160002
 step
 goto 55.92,51.03
-.' Follow the path |goto 55.92,51.03 |c |noway
+.' Follow the path |goto 55.92,51.03 < 5 |c |noway
 step
 goto 77.00,46.91
 .kill Linele Skullcarver##160029 |q The Troubleshooter##160002/1/1/Kill Linele Skullcarver##1
@@ -12057,20 +11868,23 @@ goto 43.70,53.03
 .click Aera's Logbook##160006
 ..turnin The Troubleshooter##160002
 step
-goto 14.95,70.69
-.talk Scout Claurth##160034
-..accept Smoke on the Horizon##160003
-step
 goto 11.92,74.43
 .talk Sigunn##160035
 ..accept Aiding Sigunn##160004
 step
+goto therift_base 61.14,32.69
+.talk Scout Claurth##160034
+..accept Smoke on the Horizon##160003 |tip Tell him you know the way
+step
 goto The Rift 59.61,30.37
 .' Follow the path |goto The Rift 59.61,30.37 |c |noway
 step
+goto therift_base 58.54,28.91
+.' Meet Vigrod at Fallowstone Hall |q Storming the Hall##160001/1
+step
 goto 59.31,28.41
 .talk Vigrod Wraithbane##160001
-.' Persuade him to help you rally the survivors |q Storming the Hall##160001/3/4/Trapped Companion##1
+.' Persuade him to help you rally the survivors |q Storming the Hall##160001/2
 step
 goto 60.77,28.53
 .talk Skald Svari##160039 |q Storming the Hall##160001/3/1/Rally Survivors##1
@@ -12078,8 +11892,14 @@ step
 goto 63.58,27.82
 .talk Vigrod Wraithbane##160001 |q Storming the Hall##160001/4/1/Talk to Vigrod Wraithbane##1
 step
-goto Shor's Stone 61.27,28.99
-.talk Sage Tirora##160044 |q Storming the Hall##160001/5/1/Talk to Sage Tirora##1
+goto 18.90,45.10
+.click Brazier##90019
+.' As soon as you hit this Brazier, hit confirm to continue. You will need to be fast
+|confirm
+step
+goto therift_base 61.31,29.08
+.click Brazier##90019
+.talk Sage Tirora##160044 |q Storming the Hall##160001/5
 step
 goto 63.76,27.51
 .click Fallowstone Hall##160007
@@ -12125,7 +11945,7 @@ goto The Rift 63.26,27.61
 ..turnin Storming the Hall##160001
 ..accept The Rise of Sage Svari##160005
 step
-goto 63.27,27.62
+goto therift_base 63.17,27.84
 .talk Pact Scout##160052
 ..accept To Vernim Woods##160006
 step
@@ -12143,31 +11963,33 @@ goto 60.85,28.33
 .' Accompany Skald Svari to the Shrine of Ylgar |q The Rise of Sage Svari##160005/4/1/Accompany Skald Svari to the Shrine of Ylgar##1
 step
 goto 60.85,28.33
-.' Use the Prayer Beads in this location |q The Rise of Sage Svari##160005/5/2/Use Prayer Beads at Shrine##1
-.' Pray with Skald Svari at the Shrine of Ylgar |q The Rise of Sage Svari##160005/5/1/Pray with Skald Svari at the Shrine of Ylgar##1
+.' Use the Prayer Beads in this location |q The Rise of Sage Svari##160005/6
+.' Pray with Skald Svari at the Shrine of Ylgar |q The Rise of Sage Svari##160005/7
 step
 goto 59.09,26.41
-.' Accompany Skald Svari to the Shrine of Ysgramor |q The Rise of Sage Svari##160005/6/1/Accompany Skald Svari to the Shrine of Ysgramor##1
+.' Accompany Skald Svari to the Shrine of Ysgramor |q The Rise of Sage Svari##160005/8/1/Accompany Skald Svari to the Shrine of Ysgramor##1
 step
 goto 59.09,26.41
-.' Use the Prayer Beads in this location |q The Rise of Sage Svari##160005/7/2/Use Prayer Beads at Shrine##1
-.' Pray with Skald Svari at the Shrine of Ysgramor |q The Rise of Sage Svari##160005/7/1/Pray with Skald Svari at the Shrine of Ysgramor##1
+.' Use the Prayer Beads in this location |q The Rise of Sage Svari##160005/9/2/Use Prayer Beads at Shrine##1
+.' Pray with Skald Svari at the Shrine of Ysgramor |q The Rise of Sage Svari##160005/10
 step
-goto 63.47,27.91
-.talk Skald Svari##160039 |q The Rise of Sage Svari##160005/10/2/Q4171 - Promo 1##1
-'FIX ME
+goto therift_base 63.41,27.94
+.' Meet Skald Svari at the Hall |q The Rise of Sage Svari##160005/11/1/Meet Skald Svari at the Hall##1
 step
-goto 63.54,27.92
-.' Witness the ritual |q The Rise of Sage Svari##160005
+goto 63.45,27.94
+.talk Skald Svari##160039 |q The Rise of Sage Svari##160005/12/1/Give Skald Svari the Prayer Beads##1
+step
+goto therift_base 63.45,27.94
+.' Watch Skald Svari Gain the Title of Sage |q The Rise of Sage Svari##160005/13
+step
 .talk Sage Svari##160053
 ..turnin The Rise of Sage Svari##160005
-'FIX ME
 step
 goto 59.59,28.18
-.' Follow the path |goto 59.59,28.18 |c |noway
+.' Follow the path |goto 59.59,28.18 < 10 |c |noway
 step
 goto 59.63,30.51
-.' Follow the path |goto 59.63,30.51 |c |noway
+.' Follow the path |goto 59.63,30.51 < 10 |c |noway
 step
 goto 56.88,30.39
 .' Follow the path |goto 56.88,30.39 |c |noway
@@ -12179,34 +12001,34 @@ goto 58.23,34.53
 .' Follow the path |goto 58.23,34.53 |c |noway
 step
 goto 59.68,35.81
-.talk Centurion Gjakil##160002
-.' Persuade him to give you the wards |q Smoke on the Horizon##160003/2/2/Q3959 Get Wards 1##1
+.talk Centurion Gjakil##160002 |q Smoke on the Horizon##160003/3/1/Talk to Centurion Gjakil##1
+.' Persuade him to give you the wards |q Smoke on the Horizon##160003/4/2/Q3959 Get Wards 1##1
 step
 goto The Rift 59.11,35.98
-.talk Murmurs-to-Trees##160055 |q Smoke on the Horizon##160003
+.talk Murmurs-to-Trees##160055 |q Smoke on the Horizon##160003/5
 step
 goto 60.18,36.55
 .kill Boneshaper Clanslayer##160018
 .kill Boneshaper Gravesinger##160013
-.' Rescue soldiers from the Reachmen |q Smoke on the Horizon##160003/2/1/Save Soldiers from the Reachmen##1
+.' Rescue soldiers from the Reachmen |q Smoke on the Horizon##160003/6/1/Save Soldiers from the Reachmen##1
 step
 goto 56.87,39.20
 .click Cave##90037
-.' Enter the cave |goto 57.02,39.40 |c |noway
+.' Enter the cave |goto 57.02,39.40 < 1 |c |noway
 step
 goto 57.12,39.47
 .talk Melril##160056
 ..accept Raise the Colors##160007
 step
 goto 57.22,40.01
-.talk Captain Jardirr##160057 |q Smoke on the Horizon##160003/3/1/Talk to Captain Jardirr##1
+.talk Captain Jardirr##160057 |q Smoke on the Horizon##160003/7
 step
 goto 57.04,39.44
 .click Boulderfall Pass##160012
 .' Leave the cave |goto 56.89,39.22 |c |noway
 step
 goto 56.09,37.95
-.' Follow the path |goto 56.09,37.95 |c |noway
+.' Follow the path |goto 56.09,37.95 < 5 |c |noway
 step
 goto 54.64,36.70
 .kill Kevinne Blightheart##160058 |q Raise the Colors##160007/1/1/Kill Kevinne Blightheart##1
@@ -12227,37 +12049,28 @@ goto 52.08,35.42
 step
 goto 52.68,34.70
 .click Signal Fire Starter##160015
-.' Light the Signal Fire |q Smoke on the Horizon##160003/5/1/Light Signal Fire##1
+.' Light the Signal Fire |q Smoke on the Horizon##160003/9/1/Light Signal Fire##1
 step
 goto 53.04,34.58
 .kill Stonetalon Initiate##160064 |tip They spawn all around the fire.
-.' Defend the Signal Fire |q Smoke on the Horizon##160003/6/1/Defend the Signal Fire##1
+.' Defend the Signal Fire |q Smoke on the Horizon##160003/10/1/Defend the Signal Fire##1
 step
 goto The Rift 52.15,35.34
 .click Boulderfall Pass##160012
-goto 52.09,35.41
+.' Go through the gate |goto 52.09,35.41 < 1 |c |noway
 step
 goto 51.81,36.70
-.' Follow the path |goto 51.81,36.70 |c |noway
-step
-goto 54.28,37.18
-.' Follow the path |goto 54.28,37.18 |c |noway
-step
-goto 57.86,36.19
-.' Follow the path |goto 57.86,36.19 |c |noway
+.' Follow the path |goto 51.81,36.70 < 10 |c |noway
 step
 goto 59.34,35.79
-.' Follow the path |goto 59.34,35.79 |c |noway
+.' Follow the path |goto 59.34,35.79 < 5  |c |noway
 step
 goto 58.45,34.65
 .talk Captain Jardirr##160057
 ..turnin Smoke on the Horizon##160003
 step
-goto The Rift 57.41,31.85
-.' Follow the path |goto The Rift 57.41,31.85 |c |noway
-step
-goto 56.44,30.25
-.' Follow the path |goto 56.44,30.25 |c |noway
+goto The Rift 56.44,30.25
+.' Follow the path |goto 56.44,30.25 < 5 |c |noway
 step
 goto 52.13,31.19
 .talk Medveig##160069
@@ -12278,16 +12091,16 @@ goto 52.04,31.18
 ..turnin Yngrel the Bloody##160009
 step
 goto 51.27,27.54
-.' Follow the path |goto 51.27,27.54 |c |noway
+.' Follow the path |goto 51.27,27.54 < 5 |c |noway
 step
 goto 50.16,28.58
-.click A Diet of Eyes##160016 |q Scouting the Mine##160008
+.click A Diet of Eyes##160016 |q Scouting the Mine##160008/1/1/Investigate Camp##1 |count 1
 step
 goto 48.63,27.02
-.click Corpse Cart##160017 |q Scouting the Mine##160008
+.click Corpse Cart##160017 |q Scouting the Mine##160008/1/1/Investigate Camp##1 |count 2
 step
 goto 47.00,28.64
-.click Hagraven Totem##160018 |q Scouting the Mine##160008/1/1/Investigate Camp##1
+.click Hagraven Totem##160018 |q Scouting the Mine##160008/1/1/Investigate Camp##1 |count 3
 step
 goto 49.79,26.46
 .talk Prisoner Tovisa##160067 |q Scouting the Mine##160008/2/1/Talk to Tovisa##1
@@ -12297,23 +12110,26 @@ goto 48.99,26.83
 .' Enter Alona's Sanctum |goto 48.88,26.85 |c |noway
 step
 goto 48.88,26.85
-.' Listen to the plans here |q Scouting the Mine##160008
+.' Listen to the plans here |q Scouting the Mine##160008/3/1/Listen to the Reach Plans##1
 step
 goto 48.81,26.53
-.click Chest##3360013 |q Scouting the Mine##160008/3/1/Get a Northwind Mine Key##1
+.click Chest##3360013 |q Scouting the Mine##160008/3
 step
 goto 48.88,26.78
 .click The Rift##160020
 .' Leave Alona's Sanctum |goto 49.00,26.84 |c |noway
 step
+goto therift_base 49.63,26.46
+.' Talk to Tovisa |q Scouting the Mine##160008/4/1/Talk to Tovisa##1
+step
 goto 49.70,26.42
 .talk Prisoner Gnarled-Root##160078 |q Scouting the Mine##160008/5/1/Talk to Prisoner Gnarled-Root##1
 step
 goto 48.83,26.04
-.' Follow the path |goto 48.83,26.04 |c |noway
+.' Follow the path |goto 48.83,26.04 < 5 |c |noway
 step
 goto 46.61,26.55
-.' Follow the path |goto 46.61,26.55 |c |noway
+.' Follow the path |goto 46.61,26.55 < 5 |c |noway
 step
 goto 45.67,26.16
 .click Northwind Mine##160021
@@ -12327,32 +12143,34 @@ step
 goto 53.10,50.13
 .kill Stonetalon Clanslayer##160062
 .kill Stonetalon Thornslinger##160073
-.kill Stonetalon Sentry##160072 |q Breaking the Coven##1980001
+.kill Stonetalon Sentry##160072 |q Breaking the Coven##1980001/1/2/Use Reachmen's Eyes to Lure Dyta Out##1
 step
 goto 59.82,37.59
+.' Follow the path |goto 59.82,37.59 < 10 |c |noway
 step
 goto 85.10,25.94
 .click Offering Bowl##100108
-.kill Dyta##1980004 |q Breaking the Coven##1980001/1/1/Get the Head of Dyta##1
+.kill Dyta##1980004 |q Breaking the Coven##1980001/2
 step
 goto 60.15,63.15
+.' Follow the path |goto 60.15,63.15 < 10 |c |noway
 step
 goto 39.80,74.72
-.kill Jadwiga##1980001 |q Breaking the Coven##1980001/1/3/Kill Her Attendants to Lure Jadwiga Out##1
-step
-goto 47.89,48.78
+.kill Attendant Brunna##1980002
+.kill Attendant Konia##1980003
+.kill Jadwiga##1980001 |q Breaking the Coven##1980001/3
 step
 goto 24.00,40.45
 .click Pike##1980001
 .click Pike##1980001
-.kill Matriarch Kasmira##1980005 |q Breaking the Coven##1980001/2/1/Kill Matriarch Kasmira##1
+.kill Matriarch Kasmira##1980005 |q Breaking the Coven##1980001/4
 step
 goto 23.64,43.16
-.talk Tovisa##160003 |q Breaking the Coven##1980001/3/1/Talk to Tovisa##1
+.talk Tovisa##160003 |q Breaking the Coven##1980001/5
 step
 goto Northwind Mine 24.76,30.85
 .click Door Barricade##1980003
-.' Unbar the exit |q Breaking the Coven##1980001/4/2/Unbar the Exit##1
+.' Unbar the exit |q Breaking the Coven##1980001/6
 step
 goto 24.76,30.46
 .click The Rift##160020
@@ -12361,6 +12179,9 @@ step
 goto 43.72,26.58
 .talk Tovisa##160003
 ..turnin Breaking the Coven##1980001
+step
+goto therift_base 47.57,32.08
+.wayshrine Northwind Mine Wayshrine##160140
 step
 goto 45.07,29.85
 .talk Bermund##160079
@@ -12404,19 +12225,19 @@ goto 37.26,32.67
 .kill Graveborn Fleshripper##160087 |q Gift of the Worm##160011/4/1/Collect Graveborn Fleshripper's Heart##1
 step
 goto 37.10,36.23
-.' Follow the path |goto 37.10,36.23 |c |noway
+.' Follow the path |goto 37.10,36.23 < 10 |c |noway
 step
 goto 38.27,36.91
 .kill Graveborn Soulrender##160088 |q Gift of the Worm##160011/4/1/Collect Graveborn Soulrender's Heart##2
 step
 goto 40.40,37.31
-.' Follow the path |goto 40.40,37.31 |c |noway
+.' Follow the path |goto 40.40,37.31 < 10 |c |noway
 step
 goto 43.07,35.17
 .kill Graveborn Beheader##160089 |q Gift of the Worm##160011/4/1/Collect Graveborn Beheader's Heart##3
 step
 goto 42.91,33.76
-.' Follow the path |goto 42.91,33.76 |c |noway
+.' Follow the path |goto 42.91,33.76 < 10 |c |noway
 step
 goto 43.13,30.57
 .talk Lieutenant Belron##160083
@@ -12452,7 +12273,7 @@ goto 30.62,65.67
 .kill Stral Blackthroat##890001 |q Through the Shroud##160012/7/1/Kill Stral Blackthroat##1
 step
 goto 29.48,46.70
-.' Follow the path |goto 29.48,46.70 |c |noway
+.' Follow the path |goto 29.48,46.70 < 5 |c |noway
 step
 goto 45.79,32.91
 .click Vaults of Vernim##160023
@@ -12460,13 +12281,13 @@ goto 45.79,32.91
 step
 goto 66.34,57.52
 .click Vernim Wood##890002
-goto The Rift 40.03,33.99
+.' Leave the mine |goto The Rift 40.03,33.99 |c |noway
 step
 goto The Rift 39.79,33.69
-.' Follow the path |goto 42.11,32.45 |c |noway
+.' Follow the path |goto 42.11,32.45 < 10 |c |noway
 step
 goto 42.11,32.45
-.' Follow the path |goto 42.11,32.45 |c |noway
+.' Follow the path |goto 42.11,32.45 < 10 |c |noway
 step
 goto 43.62,30.85
 .talk Orla##160090
@@ -12477,7 +12298,7 @@ goto 43.59,30.80
 ..accept To Nimalten##160013
 step
 goto 41.39,29.52
-.' Follow the path |goto 41.39,29.52 |c |noway
+.' Follow the path |goto 41.39,29.52 < 10 |c |noway
 step
 goto 40.34,28.51
 .talk Helfhild##160091
@@ -12490,23 +12311,26 @@ goto 40.35,28.54
 .talk Helfhild##160091
 ..turnin Kalodar's Farewell##160014
 step
-goto Nimalten 39.76,22.47
-.' Follow the path |goto Nimalten 39.76,22.47 |c |noway
+goto nimalten_base 39.76,22.47
+.' Follow the path |goto Nimalten 39.76,22.47 < 10 |c |noway
 step
 goto 34.50,32.19
-.' Follow the path |goto 34.50,32.19 |c |noway
+.' Follow the path |goto 34.50,32.19 < 10 |c |noway
 step
 goto 42.43,36.93
 .talk Hauting##160095
 ..turnin To Nimalten##160013
 ..accept Concealed Weapons##160015
 step
+goto nimalten_base 38.22,48.57
+.wayshrine Nimalten Wayshrine
+step
 goto 52.58,50.31
-.' Follow the path up |goto 52.58,50.31 |c |noway
+.' Follow the path up |goto 52.58,50.31 < 10 |c |noway
 step
 goto 56.67,59.03
 .click Thane's Hall##160027
-.' Enter the Thane's Hall |goto 56.81,59.30 |c |noway
+.' Enter the Thane's Hall |goto 56.81,59.30 < 1 |c |noway
 step
 goto 58.67,65.07
 .talk Thane Fjora##160113 |q Concealed Weapons##160015/1/1/Talk to Thane Fjora##1
@@ -12517,18 +12341,18 @@ goto 56.86,59.40
 step
 goto 51.58,53.08
 .click Riverside Inn##160029
-.' Enter the Riverside Inn |goto 51.26,53.39 |c |noway
+.' Enter the Riverside Inn |goto 51.26,53.39 < 1 |c |noway
 step
 goto 50.79,55.84
 .talk Advisor Borodin##160118 |tip Up the stairs on the second floor |q Concealed Weapons##160015/2/1/Talk to Borodin at the Inn##2
 step
 goto 51.02,53.63
 .click Nimalten##160028
-.' Leave the Riverside Inn |goto 51.37,53.28 |c |noway
+.' Leave the Riverside Inn |goto 51.37,53.28 < 1 |c |noway
 step
 goto 49.88,43.45
 .click Guild Hall##160030
-.' Enter the Guild Hall |goto 50.12,43.16 |c |noway
+.' Enter the Guild Hall |goto 50.12,43.16 < 1 |c |noway
 step
 goto 51.65,43.11
 .talk Golun Drenduf##160123 |q Concealed Weapons##160015/2/1/Talk to Golun at the Guild Hall##1
@@ -12542,24 +12366,25 @@ goto 50.27,42.92
 step
 goto 44.33,57.60
 .click Betar Nes' House##160031
-.' Enter Betar Nes' House |goto 44.42,57.85 |c |noway
+.' Enter Betar Nes' House |goto 44.42,57.85 < 1 |c |noway
 step
 goto 45.83,58.59
-.click Dark Contract##160033 |q Concealed Weapons##160015/1/1/Investigate Betar-Nes's House##1
+.click Dark Contract##160033 |q Concealed Weapons##160015/4
 step
 goto 44.43,57.90
 .click Nimalten##160028
-.' Leave Betar Nes' House |goto 44.40,57.69 |c |noway
+.' Leave Betar Nes' House |goto 44.40,57.69 < 1 |c |noway
 step
 goto 52.87,50.33
-.' Follow the path up |goto 52.87,50.33 |c |noway
+.' Follow the path up |goto 52.87,50.33 < 10 |c |noway
 step
-goto 56.42,54.87 |q Concealed Weapons##160015/6/1/Talk to Aera##1
-.talk Aera Earth-Turner##1090045
+goto 56.42,54.87
+.' Return to the Thane's Hall |q Concealed Weapons##160015/5/1/Return to Thane's Hall##1
+.talk Aera Earth-Turner##1090045 |q Concealed Weapons##160015/6/1/Talk to Aera##1
 step
 goto 56.71,59.08
 .click Thane's Hall##160027
-.' Enter the Thane's Hall |goto 56.81,59.30 |c |noway
+.' Enter the Thane's Hall |goto 56.81,59.30 < 1 |c |noway
 step
 goto 59.00,65.84
 .talk Golun Drenduf##160123 |q Concealed Weapons##160015/7/1/Investigate Golun's Murder##1
@@ -12572,60 +12397,62 @@ goto 59.10,65.80
 step
 goto 59.38,66.30
 .click Crypt##90013
-.' Enter the crypt |goto 40.98,26.91 |c |noway
+.' Enter the crypt |q Concealed Weapons##160015/10/1/Enter Secret Passage to the Crypt##1
 step
-goto 40.89,30.46
+goto nimaltenpart1_base 40.89,30.46
 .' Enter the Secret Passage and listen to Borodin |q Concealed Weapons##160015/11/1/Listen to Borodin##1
 step
-goto 72.69,27.46
-.' Follow the path |goto 72.69,27.46 |c |noway
+goto nimaltenpart1_base 72.69,27.46
+.' Follow the path |goto 72.69,27.46 < 10 |c |noway
 step
 goto 63.32,33.91
-.' Follow the path |goto 63.32,33.91 |c |noway
+.' Follow the path |goto 63.32,33.91 < 10 |c |noway
 step
 goto 33.47,44.24
-.' Follow the path |goto 33.47,44.24 |c |noway
+.' Follow the path |goto 33.47,44.24 < 10 |c |noway
 step
 goto 15.65,51.59
-.' Follow the path |goto 15.65,51.59 |c |noway
+.' Follow the path |goto 15.65,51.59 < 10 |c |noway
 step
 goto 18.16,79.92
-.' Follow the path |goto 18.16,79.92 |c |noway
+.' Follow the path |goto 18.16,79.92 < 10 |c |noway
 step
 goto 43.56,74.44
 .kill Anchorite Borodin##2070001 |q Concealed Weapons##160015/12/1/Kill Borodin##1
 step
 goto 41.04,58.19
 .click Crypt##90013
-.' Go through the door here |goto 40.91,56.54 |c |noway
+.' Go through the door here |goto 40.91,56.54 < 1 |c |noway
 step
 goto 41.00,27.13
 .click Thane's Hall##160027
-.' Go through the door here |goto 59.37,66.30 |c |noway
+.' Go through the door here |goto 59.37,66.30 < 1 |c |noway
 step
 goto 58.78,64.36
+.' Find Thane Fjora |q Concealed Weapons##160015/13
 .talk Thane Fjora##160113 |q Concealed Weapons##160015/14/1/Talk to the Thane##1
+|tip Go up the stairs
 step
 goto 56.79,59.36
 .click Nimalten##160028
 .' Leave the Thane's Hall |q Concealed Weapons##160015/15/1/Exit Thane's Hall##1
 step
-goto 56.10,57.64
+goto nimalten_base 56.02,57.68
 .talk Nimalten Guard##160094 |q Concealed Weapons##160015/16/1/Talk to the Wounded Guard##1
 step
 goto 56.56,53.81
-.' Follow the path |goto 56.56,53.81 |c |noway
+.' Follow the path |goto 56.56,53.81 < 10 |c |noway
 step
 goto 60.68,55.86
 .click Crypt##90013
-.' Enter the crypt here |goto 91.60,41.07 |c |noway
+.' Enter the crypt here |goto nimaltenpart1_base 91.60,41.07 < 1 |c |noway
 step
-goto 72.77,19.07
+goto nimaltenpart1_base 72.77,19.07
 .click Nimalten Barrow##2070003
-.' Enter the door here |goto 27.34,79.35 |c |noway
+.' Enter the door here |goto nimaltenpart2_base 27.34,79.35 < 1 |c |noway
 step
 goto 48.07,89.46
-.talk Aera Earth-Turner##1090045
+.talk Aera Earth-Turner##1090045 |q Concealed Weapons##160015/18
 .' Tell her to face justice or face her death |q Concealed Weapons##160015/19/1/Arrest Aera Earth-Turner##1
 step
 goto 48.48,87.02
@@ -12641,14 +12468,14 @@ goto 48.94,72.08
 step
 goto 28.76,80.26
 .click Nimalten Barrow##2070003
-.' Go through the door here |goto 71.98,18.83 |c |noway
+.' Go through the door here |goto nimaltenpart1_base 71.98,18.83 |c |noway
 step
 goto 91.55,40.59
 .click Nimalten##160028
-.' Go through the door here |goto 60.60,56.08 |c |noway
+.' Go through the door here |goto nimalten_base 60.60,56.08 |c |noway
 step
 goto 61.85,50.34
-.' Follow the path |goto 61.85,50.34 |c |noway
+.' Follow the path |goto 61.85,50.34 < 10 |c |noway
 step
 goto 56.61,58.88
 .click Thane's Hall##160027
@@ -12664,7 +12491,7 @@ goto 58.88,64.99
 step
 goto 56.88,59.45
 .click Nimalten##160028
-.' Leave the Thane's Hall |goto 56.72,59.02 |c |noway
+.' Leave the Thane's Hall |goto 56.72,59.02 < 1 |c |noway
 step
 goto 54.39,49.98
 .talk Enthis Hlan##160131
@@ -12672,57 +12499,55 @@ goto 54.39,49.98
 step
 goto 51.57,53.01
 .click Riverside Inn##160029
-.' Enter the Riverside Inn |goto 51.26,53.39 |c |noway
+.' Enter the Riverside Inn |goto 51.26,53.39 < 1 |c |noway
 step
 goto 49.78,54.05
-.talk Turil Darothren##160119 |q A Business Proposition##160018/2/2/Intimidate Turil##1
+.talk Turil Darothren##160119 |q A Business Proposition##160018/1
+.' Intimidate Turil |q A Business Proposition##160018/2/2/Intimidate Turil##1
 step
 goto 51.06,53.56
 .click Nimalten##160028
-.' Leave the Riverside Inn |goto 51.37,53.28 |c |noway
+.' Leave the Riverside Inn |goto 51.37,53.28 < 1 |c |noway
 step
-goto The Rift 20.98,42.71
-.' Follow the path |goto The Rift 20.98,42.71 |c |noway
+goto therift_base 20.98,42.71
+.' Follow the path |goto therift_base 20.98,42.71 < 10 |c |noway
 step
 goto 18.61,40.37
-.' Follow the path up |goto 18.61,40.37 |c |noway
+.' Follow the path up |goto 18.61,40.37 < 10 |c |noway
 step
 goto 18.29,40.70
-.click Note in Bag of Vvardenfell Silk##160038 |q A Business Proposition##160018/2/1/Find Silk##1
+.click Note in Bag of Vvardenfell Silk##160038 |q A Business Proposition##160018/3
 step
 goto 19.59,40.24
-.' Follow the path |goto 19.59,40.24 |c |noway
+.' Follow the path |goto 19.59,40.24 < 10 |c |noway
 step
 goto 21.13,42.55
-.' Follow the path |goto 21.13,42.55 |c |noway
+.' Follow the path |goto 21.13,42.55 < 10 |c |noway
 step
-goto Nimalten 45.01,52.84
-.' Follow the path |goto Nimalten 45.01,52.84 |c |noway
+goto nimalten_base 45.01,52.84
+.' Follow the path |goto Nimalten 45.01,52.84 < 10 |c |noway
 step
 goto 51.48,53.13
 .click Riverside Inn##160029
-.' Enter the Riverside Inn |goto 51.26,53.39 |c |noway
+.' Enter the Riverside Inn |goto 51.26,53.39 < 1 |c |noway
 step
 goto 49.22,55.42
 .click Fireplace##160040
-.' Destroy the silk |q A Business Proposition##160018/3/1/Throw Silk in the Fire##3
+.' Destroy the silk |q A Business Proposition##160018/4
 step
 goto 49.49,54.44
-.talk Enthis Hlan##160131
+.talk Enthis Hlan##160131 |q A Business Proposition##160018/5/1/Tell Enthis the Bad News##1
 ..turnin A Business Proposition##160018
 step
 goto 51.17,53.53
 .click Nimalten##160028
 .' Leave the Riverside Inn |goto 51.37,53.28 |c |noway
 step
-goto Nimalten 46.09,42.90
-.' Leave Nimalten here |goto Nimalten 46.09,42.90 |c |noway
-step
 goto 35.53,28.21
-.' Follow the path |goto 35.53,28.21 |c |noway
+.' Follow the path |goto 35.53,28.21 < 10 |c |noway
 step
-goto The Rift 22.77,33.55
-.' Follow the path |goto The Rift 22.77,33.55 |c |noway
+goto therift_base 22.77,33.55
+.' Follow the path |goto therift_base 22.77,33.55 |c |noway
 step
 goto 20.97,32.67
 .talk Runehild##160136
@@ -12738,41 +12563,41 @@ step
 goto 17.52,32.89
 .' Drink the Posioned Mead Outside of the Tent |q Trial of the Spirit##160020/1/1/Drink Widulf's Mead Outside the Tent##1
 step
-goto 17.92,32.69
-.' Reach First Spirit Fire |q Trial of the Spirit##160020/2/1/Reach First Spirit Fire##1
+goto therift_base 17.93,32.69
+.' Pass through the blue flame |goto therift_base 17.93,32.69 < 5 |c |noway
 step
-goto 18.63,32.91
-.' Reach Next Spirit Fire |q Trial of the Spirit##160020/2/1/Reach Next Spirit Fire##1
+goto 18.64,32.92
+.' Pass through the blue flame |goto 18.64,32.92 < 5 |c |noway
 step
-goto 19.50,33.79
-.' Reach Next Spirit Fire |q Trial of the Spirit##160020/2/1/Reach Next Spirit Fire##1
+goto 19.43,33.78
+.' Pass through the blue flame |goto 19.43,33.78 < 5 |c |noway
 step
-goto 20.48,33.86
-.' Reach Next Spirit Fire |q Trial of the Spirit##160020/2/1/Reach Next Spirit Fire##1
+goto 20.53,33.87
+.' Pass through the blue flame |goto 20.53,33.87 < 5 |c |noway
 step
-goto 21.52,33.45
-.' Reach Next Spirit Fire |q Trial of the Spirit##160020/2/1/Reach Next Spirit Fire##1
+goto 21.50,33.46
+.' Pass through the blue flame |goto 21.50,33.46 < 5 |c |noway
 step
-goto 21.95,32.23
-.' Reach Next Spirit Fire |q Trial of the Spirit##160020/2/1/Reach Next Spirit Fire##1
+goto 21.97,32.17
+.' Pass through the blue flame |goto 21.97,32.17 < 5 |c |noway
 step
-goto 21.70,30.84
-.' Reach Next Spirit Fire |q Trial of the Spirit##160020/2/1/Reach Next Spirit Fire##1
+goto 21.70,30.81
+.' Pass through the blue flame |goto 21.70,30.81 < 5 |c |noway
 step
-goto 20.95,29.75
-.' Reach Next Spirit Fire |q Trial of the Spirit##160020/2/1/Reach Next Spirit Fire##1
+goto therift_base 21.05,29.93
+.' Pass through the blue flame |goto therift_base 21.05,29.93 < 5 |c |noway
 step
-goto 19.95,30.01
-.' Reach Next Spirit Fire |q Trial of the Spirit##160020/2/1/Reach Next Spirit Fire##1
+goto 19.89,30.01
+.' Pass through the blue flame |goto 19.89,30.01 < 5 |c |noway
 step
-goto 19.02,29.51
-.' Reach Next Spirit Fire |q Trial of the Spirit##160020/2/1/Reach Next Spirit Fire##1
+goto 19.01,29.54
+.' Pass through the blue flame |goto 19.01,29.54 < 5 |c |noway
 step
-goto 17.83,29.64
-.' Reach Next Spirit Fire |q Trial of the Spirit##160020/2/1/Reach Next Spirit Fire##1
+goto 17.84,29.64
+.' Pass through the blue flame |goto 17.84,29.64 < 5 |c |noway
 step
-goto 18.10,30.28
-.' Reach Final Spirit Fire |q Trial of the Spirit##160020/2/1/Reach Final Spirit Fire##1
+goto therift_base 18.08,30.27
+.' Pass through the blue flame |q Trial of the Spirit##160020/2/1/Reach Final Spirit Fire##1
 step
 goto 18.06,30.41
 .talk Widulf##160141
@@ -12803,30 +12628,37 @@ goto 16.53,32.31
 step
 goto 16.67,31.94
 .talk Keema-Ta##160163
-.' Intimidate Keema-Ta for the answer |q Trial of the Mind##160023/1/3/Talk to Keema-Ta##1
+.' Intimidate Keema-Ta for the answer |q Trial of the Mind##160023/1
 step
 goto 19.18,32.92
 .click Mirror##160047 |q Trial of the Mind##160023/1/1/Find Answer to the First Riddle##1
 step
+goto therift_base 19.16,32.94
+.click Mirror##160047 |q Trial of the Mind##160023/2/1/Find Answer to the First Riddle##1
+step
 goto 16.53,32.31
-.talk Iroda##160161 |q Trial of the Mind##160023/2/1/Talk to Iroda##1
+.talk Iroda##160161 |q Trial of the Mind##160023/3
 step
 goto 16.66,31.94
 .talk Keema-Ta##160163
-.' Intimidate Keema-Ta for the answer |q Trial of the Mind##160023/3/3/Talk to Keema-Ta##1
+.' Intimidate Keema-Ta for the answer |q Trial of the Mind##160023/4
 step
 goto 16.52,33.06
-.' Use the Empty Sack in the lake |q Trial of the Mind##160023/3/1/Find Answer to the Second Riddle##1
+.' Use the Empty Sack in the lake |q Trial of the Mind##160023/5
 step
 goto 16.55,32.29
-.talk Iroda##160161 |q Trial of the Mind##160023/4/1/Talk to Iroda##1
+.talk Iroda##160161 |q Trial of the Mind##160023/6
 step
 goto 16.66,31.93
 .talk Keema-Ta##160163
-.' Intimidate Keema-Ta for the answer |q Trial of the Mind##160023/5/3/Talk to Keema-Ta##1
+.' Intimidate Keema-Ta for the answer |q Trial of the Mind##160023/7
+step
+goto therift_base 16.68,31.94
+.talk Keema-Ta##160163
+.' Intimidate him for information |q Trial of the Mind##160023/8
 step
 goto 17.13,30.55
-.click Map##160048 |q Trial of the Mind##160023/5/1/Find the Answer to the Last Riddle##1
+.click Map##160048 |q Trial of the Mind##160023/9
 step
 goto 16.53,32.31
 .talk Iroda##160161
@@ -12888,6 +12720,9 @@ step
 goto 18.68,29.40
 .' Leave Geirmund's Hall here |goto 18.68,29.40 |c |noway
 step
+goto therift_base 15.39,27.38
+.wayshrine Geirmund's Hall Wayshrine
+step
 goto 15.78,26.15
 .talk Nilwen##160167
 ..accept Fierce Beasts of Ivarstead##160025
@@ -12912,7 +12747,7 @@ goto 15.77,26.16
 ..turnin Fierce Beasts of Ivarstead##160025
 step
 goto 15.77,26.16
-.talk Nilwen##160167
+.talk Nilwen##160167 |q Fierce Beasts of Ivarstead##160025/6/1/Talk to Nilwen##1
 ..turnin Fierce Beasts of Ivarstead##160025
 step
 goto 12.22,29.19
@@ -12924,7 +12759,7 @@ goto 11.24,30.96
 ..accept Problems Into Profit##160027
 step
 goto 11.90,28.26
-.' Follow the path |goto 11.90,28.26 |c |noway
+.' Follow the path |goto 11.90,28.26 < 5 |c |noway
 step
 goto 11.51,26.78
 .talk Deekonus##160175
@@ -12936,35 +12771,23 @@ goto 11.38,26.69
 step
 goto 9.84,29.07
 .click Pilgrim's Rest Inn##160053
-goto 9.80,29.16
+.' Enter the Pilgrim's Rest Inn |goto 9.80,29.16 < 1 |c |noway
 step
 goto 9.86,29.56
 .talk Mizrali##160182
 ..accept Where the Frostheart Grows##160029
 step
-goto 9.84,29.07
-.click Pilgrim's Rest Inn##160053
-.' Enter the Inn |goto 9.80,29.16 |c |noway
-step
-goto 9.86,29.56
-.talk Mizrali##160182
-..accept Where the Frostheart Grows##160029
-step
-goto The Rift 9.71,29.38
+goto therift_base 9.71,29.36
 .click Ivarstead##160054
-goto 9.74,29.29
+.' Leave the Pilgrim's Rest |goto 9.74,29.29 < 1 |c |noway
 step
 goto 12.10,29.19
 .click Pile of Hay##160055
 .click Glowfly##160183
-.' Catch 10 Glowflies|q Problems Into Profit##160027/1/1/Catch Glowflies##1
+.' Catch 10 Glowflies |q Problems Into Profit##160027/1/1/Catch Glowflies##1
 step
 goto 11.29,30.98
 .talk Odunn Gray-Sky##160172 |q Problems Into Profit##160027/2/1/Talk to Odunn Gray-Sky##1
-step
-goto 12.34,31.79
-.talk Ulfslod Gray-Sky##160185
-..turnin Problems Into Profit##160027
 step
 goto 11.29,30.98
 .talk Odunn Gray-Sky##160172 |q Problems Into Profit##160027/2/1/Talk to Odunn Gray-Sky##1
@@ -12974,91 +12797,91 @@ goto 12.34,31.79
 ..turnin Problems Into Profit##160027
 step
 goto 12.83,29.30
-.' Follow the path |goto 12.83,29.30 |c |noway
+.' Follow the path |goto 12.83,29.30 < 10 |c |noway
 step
 goto 13.84,29.55
-.' Follow the path |goto 13.84,29.55 |c |noway
+.' Follow the path |goto 13.84,29.55 < 10 |c |noway
 step
 goto 13.36,29.38
 .click Shroud Hearth Barrow##160057
 .' Enter the Shroud Hearth Barrow |goto Shroud Hearth Barrow 63.20,89.46 |c |noway
 step
 goto 45.95,74.64
-.' Follow the path |goto 45.95,74.64 |c |noway
+.' Follow the path |goto 45.95,74.64 < 10 |c |noway
 step
 goto 24.79,64.09
-.' Follow the path |goto 24.79,64.09 |c |noway
+.' Follow the path |goto 24.79,64.09 < 10 |c |noway
 step
 goto 17.87,37.32
 .talk Brendar##2640001 |q Shroud Hearth Barrow##160026/1/1/Search for Brendar##1
 step
 goto 16.18,47.46
-.' Follow the path |goto 16.18,47.46 |c |noway
+.' Follow the path |goto 16.18,47.46 < 10 |c |noway
 step
 goto 25.02,29.82
-.' Follow the path |goto 25.02,29.82 |c |noway
+.' Follow the path |goto 25.02,29.82 < 10 |c |noway
 step
 goto 45.57,28.95
-.' Follow the path |goto 45.57,28.95 |c |noway
+.' Follow the path |goto 45.57,28.95 < 10 |c |noway
 step
 goto 62.36,38.75
 .click Shroud Hearth Temple##2640001
-.' Enter the Shroud Hearth Temple |goto 62.29,41.32 |c |noway
+.' Enter the Shroud Hearth Temple |goto 62.29,41.32 < 1 |c |noway
 step
 goto 84.42,56.04
 .kill Jakalor##2640003 |q Shroud Hearth Barrow##160026/2/1/Kill the Necromancer##1
 step
 goto 77.66,69.16
 .click Shroud Hearth Catacombs##2640002
-.' Leave the Shroud Hearth Temple here |goto 77.48,71.53 |c |noway
+.' Leave the Shroud Hearth Temple here |goto 77.48,71.53 < 1 |c |noway
 step
 goto 46.89,85.46
-.' Follow the path |goto 46.89,85.46 |c |noway
+.' Follow the path |goto 46.89,85.46 < 10 |c |noway
 step
 goto 62.23,89.46
 .click The Rift##160020
-.' Leave the Shroud Hearth Catacombs |goto The Rift 13.33,29.37 |c |noway
+.' Leave the Shroud Hearth Catacombs |goto The Rift 13.33,29.37 < 1 |c |noway
 step
 goto 10.97,27.54
-.' Follow the path up the Mountain |goto 10.97,27.54 |c |noway
+.' Follow the path up the Mountain |goto 10.97,27.54 < 10 |c |noway
 step
 goto 8.79,28.45
-.' Follow the path up the Mountain |goto 8.79,28.45 |c |noway
+.' Follow the path up the Mountain |goto 8.79,28.45 < 10 |c |noway
 step
 goto 7.73,28.06
-.' Follow the path up the Mountain |goto 7.73,28.06 |c |noway
+.' Follow the path up the Mountain |goto 7.73,28.06 < 10 |c |noway
 step
 goto 8.19,26.15
 .click Frostheart Blossom##160058 |q Where the Frostheart Grows##160029/1/1/Acquire a Frostheart Blossom##1
 step
 goto 7.77,28.07
-.' Follow the path back down the Mountain |goto 7.77,28.07 |c |noway
+.' Follow the path back down the Mountain |goto 7.77,28.07 < 10 |c |noway
 step
 goto 9.84,29.07
 .click Pilgrim's Rest Inn##160053
-.' Go inside the Pilgrim's Rest Inn |goto 9.80,29.16 |c |noway
+.' Go inside the Pilgrim's Rest Inn |goto 9.80,29.16 < 1 |c |noway
 step
 goto 9.84,29.55
 .talk Mizrali##160182 |q Where the Frostheart Grows##160029/2/1/Deliver the Frostheart Blossom to Mizrali##1
 step
 goto 9.70,29.36
 .click Ivarstead##160054
-.' Go out to the balcony |goto 9.74,29.30 |c |noway
+.' Go out to the balcony |goto 9.74,29.30 < 1 |c |noway
 step
 goto 9.81,29.20
 .talk Odvild Wealdwalker##160181
 ..turnin Where the Frostheart Grows##160029
 step
 goto 12.57,24.83
-.' Follow the path |goto 12.57,24.83 |c |noway
+.' Follow the path |goto 12.57,24.83 < 10 |c |noway
 step
 goto 12.21,24.37
 .click Pinepeak Caverns##160059
-.' Enter the Pinepeak Caverns |goto pinepeakcaverns_base 64.53,17.21 |c |noway
+.' Enter the Pinepeak Caverns |goto pinepeakcaverns_base 64.53,17.21 < 1 |c |noway
 step
 goto 60.02,16.14
 .click Corpse##90381
-.' use the Hakra Shard on Cultist Corpse|q Tomb Beneath the Mountain##160028/1/1/Use Hakra Shard on Cultist Corpse##1
+.' use the Hakra Shard on Cultist Corpse |q Tomb Beneath the Mountain##160028/1/1/Use Hakra Shard on Cultist Corpse##1
 step
 goto 59.83,16.10
 .talk Worm Slayer##2090001 |q Tomb Beneath the Mountain##160028/2/1/Talk to Reanimated Corpse##1
@@ -13069,23 +12892,23 @@ goto 48.27,26.87
 .' Persuade Nila not to worry about the equipment |q Research Subject##2090001/1/1/Collect Equipment##2
 step
 goto 62.82,31.96
-.' Follow the path |goto 62.82,31.96 |c |noway
+.' Follow the path |goto 62.82,31.96 < 5 |c |noway
 step
 goto 57.87,41.73
-.' Follow the path |goto 57.87,41.73 |c |noway
+.' Follow the path |goto 57.87,41.73 < 5 |c |noway
 step
 goto 60.89,55.63
-.' Follow the path |goto 60.89,55.63 |c |noway
+.' Follow the path |goto 60.89,55.63 < 5 |c |noway
 step
 goto 66.29,79.02
 .click Urn of Stuhn##2090001
 .' Destroy the Urn of Stuhn |q Tomb Beneath the Mountain##160028/3/1/Destroy Urn of Stuhn##2
 step
 goto 52.58,89.23
-.' Follow the path |goto 52.58,89.23 |c |noway
+.' Follow the path |goto 52.58,89.23 < 5 |c |noway
 step
 goto 42.10,90.45
-.' Find Charadin|q Research Subject##2090001/1/2/Find Charadin##1
+.' Find Charadin |q Research Subject##2090001/1/2/Find Charadin##1
 step
 goto 38.58,86.16
 .click Ritual Pillar##2090002
@@ -13096,42 +12919,42 @@ goto 48.89,68.43
 .' Destroy the Urn of Kyne |q Tomb Beneath the Mountain##160028/3/1/Destroy Urn of Kyne##1
 step
 goto 43.09,49.65
-.' Follow the path |goto 43.09,49.65 |c |noway
+.' Follow the path |goto 43.09,49.65 < 5 |c |noway
 step
 goto 35.74,51.28
 .click Pinepeak Caverns##160059
-.' Enter the door here |goto 34.85,53.42 |c |noway
+.' Enter the door here |goto 34.85,53.42 < 1 |c |noway
 step
 goto 34.78,60.96
-.' Follow the path |goto 34.78,60.96 |c |noway
+.' Follow the path |goto 34.78,60.96 < 5 |c |noway
 step
 goto 54.15,51.24
 .click Urn of Shor##2090004
 .' Destroy the Urn of Shor |q Tomb Beneath the Mountain##160028/4/1/Destroy Urn of Shor##1
 step
 goto 44.20,51.19
-.' Follow the path |goto 44.20,51.19 |c |noway
+.' Follow the path |goto 44.20,51.19 < 5 |c |noway
 step
 goto 30.88,45.38
-.' Follow the path |goto 30.88,45.38 |c |noway
+.' Follow the path |goto 30.88,45.38 < 5 |c |noway
 step
 goto 33.54,37.80
 .click Hakra's Tomb##2090005
-.' Enter Hakra's Tomb |goto 35.05,33.57 |c |noway
+.' Enter Hakra's Tomb |goto 35.05,33.57 < 1 |c |noway
 step
 goto 36.51,28.79
 .kill Hakra##2090003 |q Tomb Beneath the Mountain##160028/5/1/Defeat Hakra##1
 step
 goto 43.24,20.00
-.' Follow the path |goto 43.24,20.00 |c |noway
+.' Follow the path |goto 43.24,20.00 < 5 |c |noway
 step
 goto 50.65,12.34
 .click Pinepeak Caverns##160059
-.' Leave Hakra's Tomb |goto 52.58,12.85 |c |noway
+.' Leave Hakra's Tomb |goto 52.58,12.85 < 1 |c |noway
 step
 goto 64.90,17.46
 .click The Rift##160020
-.' Leave the Pinepeak Caverns |goto The Rift 12.17,24.35 |c |noway
+.' Leave the Pinepeak Caverns |goto The Rift 12.17,24.35 < 1 |c |noway
 step
 goto 12.37,25.77
 .talk Nila Belavel##2090002
@@ -13150,7 +12973,10 @@ goto 10.64,31.57
 ..turnin Shroud Hearth Barrow##160026
 step
 goto 12.86,28.48
-.' Follow the path |goto 12.86,28.48 |c |noway
+.' Follow the path |goto 12.86,28.48 < 5  |c |noway
+step
+goto therift_base 14.25,33.81
+.' Reach the Giant Camp |q Save Your Voice##160024/1/1/Reach Giant Camp##1
 step
 goto 14.16,33.94
 .talk Logod##160194 |q Save Your Voice##160024/2/1/Talk to Logod##1
@@ -13158,8 +12984,15 @@ step
 goto 9.72,35.73
 .talk Skald Jakaral##160195 |q Save Your Voice##160024/3/1/Find Jakaral##1
 step
-goto 14.39,33.69 |q Save Your Voice##160024/4/1/Escort Jakaral to the Bridge##1
+goto therift_base 14.47,33.57
+.' Escort Jakaral to the Bridge |q Save Your Voice##160024/4/1/Escort Jakaral to the Bridge##1
+step
+goto therift_base 15.34,32.25
+.talk Thane Vofknir##160138
 ..turnin Save Your Voice##160024
+step
+goto therift_base 14.21,39.76
+.wayshrine Taarengrav Wayshrine
 step
 goto 13.28,38.24
 .talk Raynor Vanos##150270
@@ -13169,6 +13002,9 @@ goto 12.60,40.75
 .talk Narir##1970007
 ..turnin To Taarengrav##160030
 step
+goto 12.59,40.73
+.talk Narir##1970007 |q The Shackled Guardian##160031/1/1/Talk to Narir##1
+step
 goto 12.42,43.25
 .kill Worm Cult Necromancer##90413, Worm Cult Savage##470006, Worm Cult Assassin##470005
 ..collect 8 Lost Notes |q The Shackled Guardian##160031/2/1/Collect Lost Notes##1
@@ -13176,36 +13012,36 @@ goto 12.42,43.25
 .' Rescue 3 Delvers |q The Shackled Guardian##160031/2/1/Save Captive Delvers##2
 step
 goto The Rift 10.32,43.65
-.' Follow the path |goto The Rift 10.32,43.65 |c |noway
+.' Follow the path |goto The Rift 10.32,43.65 < 5 |c |noway
 step
 goto 10.47,43.73
 .talk Kireth Vanos##970002 |q The Shackled Guardian##160031/3/1/Find Kireth Vanos##1
 step
 goto 11.04,42.86
-.' Follow this staircase down |goto 11.04,42.86 |c |noway
+.' Follow this staircase down |goto 11.04,42.86 < 5 |c |noway
 step
 goto 11.32,42.82
 .click Taarengrav Barrow##160064
-.' Enter the Taarengrav Barrow |goto taarengrav_base 72.81,14.79 |c |noway
+.' Enter the Taarengrav Barrow |goto taarengrav_base 72.81,14.79 < 1 |c |noway
 step
 goto 72.84,18.13
 .talk Valdur##2230001 |q The Shackled Guardian##160031/4/1/Talk to Kireth Vanos##1
 step
 goto 63.09,47.01
 .click Taarengrav Barrow##160064
-.' Enter the Taarengrav Barrow |goto 63.20,48.44 |c |noway
+.' Enter the Taarengrav Barrow |goto 63.20,48.44 < 1 |c |noway
 step
 goto 72.81,71.80
-.' Follow the path |goto 72.81,71.80 |c |noway
+.' Follow the path |goto 72.81,71.80 < 5 |c |noway
 step
 goto 61.99,84.02
-.' Follow the path |goto 61.99,84.02 |c |noway
+.' Follow the path |goto 61.99,84.02 < 5 |c |noway
 step
 goto 47.97,84.22
-.' Follow the path |goto 47.97,84.22 |c |noway
+.' Follow the path |goto 47.97,84.22 < 5 |c |noway
 step
 goto 33.61,86.24
-.' Follow the path up |goto 33.61,86.24 |c |noway
+.' Follow the path up |goto 33.61,86.24 < 5 |c |noway
 step
 goto 39.08,48.80
 .click Taarengrav Barrow##160064

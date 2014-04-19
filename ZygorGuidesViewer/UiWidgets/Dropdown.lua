@@ -184,12 +184,26 @@ function Dropdown:_GetAvailableItem()		-- _Get so Zgoo doesn't call it.
 	return item
 end
 
+function Dropdown:DeleteItem(item)
+	item = self:HasValue(item)		-- If passed a value gets the item, and ensures the item is in the dd
+
+	if item then
+		item:SetAsUnused()
+	end
+end
+
 function Dropdown:ClearItems()
 	local items = self.items
+
+	-- If we are clearing all the items then don't need to Update the Pullout everytime an item is removed so just flag to stop.
+	self.clearing = true
 
 	for i,item in ipairs(items) do
 		item:SetAsUnused()
 	end
+
+	self:UpdatePullout()
+	self.clearing = nil
 end
 
 -- New items at the top instead of at the bottom
@@ -201,12 +215,14 @@ function Dropdown:TogglePullout()
 	local pullout = self.pullout
 
 	pullout.open = not pullout.open
-	self:UpdatePullout()
 
 	if pullout.open then
+		self:UpdatePullout()
+
 		for i,cb in ipairs(self.onOpenCallbacks) do
 			cb(self)
 		end
+
 	end
 
 	pullout:ShowIf(pullout.open)
@@ -219,7 +235,7 @@ function Dropdown:UpdatePullout()
 	if not items then return end
 
 	local maxlen = 0
-	for i,item in ipairs(items) do
+	for i,item in ipairs(items) do if item.used then
 		-- Get the max length
 		local len = item.label:GetTextWidth()
 		if len > maxlen then
@@ -228,7 +244,7 @@ function Dropdown:UpdatePullout()
 
 		-- Only 1 item is selected at a time.
 		item:SetSelected(self.curitem == item)
-	end
+	end end
 
 	pullout:SetWidth(max(maxlen,self:GetWidth()))
 end
@@ -239,9 +255,8 @@ end
 
 -- Can set value using an item or using an item value.
 function Dropdown:SetValue(item)
-
 	if not item then
-		self:SetText(DEFAULT_DROPDOWN_TEXT)
+		self:SetText(self.defaultText or DEFAULT_DROPDOWN_TEXT)
 
 		self.value = nil
 		self.curitem = nil
@@ -313,6 +328,15 @@ end
 function Dropdown:SetSize(x,y)
 	self:SetHeight(x)
 	self:SetWidth(y)
+end
+
+function Dropdown:SetDefaultText(text)
+	if not text then return end
+	self.defaultText = text
+
+	if self:GetText() == DEFAULT_DROPDOWN_TEXT then
+		self:SetText(self.defaultText)
+	end
 end
 
 function Dropdown:AddTooltip(head,msg,owner,onme,x,y,onpt)
@@ -410,6 +434,7 @@ function DropdownItem:SetAsUnused()
 	end
 
 	self.callback = nil
+	self.selected = false
 	self.used = false
 
 	CHAIN(self)
@@ -419,8 +444,10 @@ function DropdownItem:SetAsUnused()
 		:SetHeight(0)
 		:Hide()
 
-	-- Update pullout now.
-	dropdown:UpdatePullout()
+	-- Update pullout now unless we are clearing all items.
+	if not dropdown.clearing then
+		dropdown:UpdatePullout()
+	end
 end
 
 function DropdownItem:SetText(text)
@@ -439,12 +466,15 @@ function DropdownItem:SetValue(val)
 	self.value = val
 end
 
-function DropdownItem:SetSelected(val)	-- TODO this is called often. Might not need to be called as often as it is.
-	self.check:ShowIf(val)
-
-	if val and self.callback then
-		self:callback()
+function DropdownItem:SetSelected(val)
+	if  self.callback and					-- has callback
+	not self.selected and val			-- Wasn't set before, is set now
+	then
+		self:callback(self:GetValue())
 	end
+
+	self.selected = val
+	self.check:ShowIf(val)
 end
 
 function DropdownItem:Item_OnClick()
@@ -452,6 +482,7 @@ function DropdownItem:Item_OnClick()
 	local dropdown = pullout.parent
 
 	dropdown:SetValue(self)
+	self:SetSelected(true)
 
 	-- Close pullout if it is open.
 	if pullout.open then

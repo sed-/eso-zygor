@@ -100,14 +100,6 @@ function Pointer:Startup()
 	--]]
 
 	if self.ArrowFrame then
-		local DEFAULT_ANCHOR = { -- Set point using Top so that goals grow downward properly
-			BOTTOM,
-			ZGV.Viewer.name,
-			TOP,
-			0,
-			-50,
-		}
-
 		CHAIN(self.ArrowFrame)
 			:ClearAllPoints()
 			:SetHandler("OnMoveStop", function(me)
@@ -124,11 +116,7 @@ function Pointer:Startup()
 				end
 			end)
 
-		ZGV.db.profile.arrowanchor = ZGV.db.profile.arrowanchor and #ZGV.db.profile.arrowanchor==5 and ZGV.db.profile.arrowanchor or DEFAULT_ANCHOR
-		local point, relativeTo, relativePoint, offsetX, offsetY = unpack(ZGV.db.profile.arrowanchor)
-		relativeTo = (relativeTo=="GuiRoot" and GuiRoot) or (relativeTo==ZGV.Viewer.name and ZGV.Frame)
-
-		self.ArrowFrame:SetPoint(point, relativeTo, relativePoint, offsetX, offsetY)
+		Pointer:UpdateArrowPosition()
 	end
 
 	--[[
@@ -213,6 +201,33 @@ function Pointer:Startup()
 
 	--hooksecurefunc("WorldMapQuestPOI_OnClick",Pointer.QuestPOI_PointToMe)
 	--hooksecurefunc("WatchFrameQuestPOI_OnClick",Pointer.QuestWatchPOI_PointToMe)
+end
+
+function Pointer:UpdateArrowPosition()
+	local DEFAULT_ANCHOR = { -- Set point using Top so that goals grow downward properly
+		BOTTOM,
+		ZGV.Viewer.name,
+		TOP,
+		0,
+		-50,
+	}
+
+	ZGV.db.profile.arrowanchor = ZGV.db.profile.arrowanchor and #ZGV.db.profile.arrowanchor==5 and ZGV.db.profile.arrowanchor or DEFAULT_ANCHOR
+	local point, relativeTo, relativePoint, offsetX, offsetY = unpack(ZGV.db.profile.arrowanchor)
+	relativeTo = (relativeTo=="GuiRoot" and GuiRoot) or (relativeTo==ZGV.Viewer.name and ZGV.Frame)
+
+	self.ArrowFrame:ClearAllPoints()
+	self.ArrowFrame:SetPoint(point, relativeTo, relativePoint, offsetX, offsetY)
+end
+
+function Pointer:ResetWaypointerSettings()
+	local opt_group = ZGV.Settings:GetOptionGroupByName("arrow")
+
+	opt_group:SetToDefault()	-- Set all options in our setting menu to default.
+
+	ZGV.db.profile.arrowanchor = nil
+
+	self:UpdateArrowPosition()
 end
 
 
@@ -1356,32 +1371,41 @@ end
 
 
 
-local arrowctrl_elapsed=0
-local arrowfps = 1/30
-local forceupdate_elapsed = 0
+local arrowctrl_fps = 1/30
+local arrowctrl_last=0
 
-function Pointer.ArrowFrameControl_OnUpdate(self,elapsed)
-	arrowctrl_elapsed = arrowctrl_elapsed + elapsed
-	if arrowctrl_elapsed >= arrowfps then
+local forceupdate_fps = 3
+local forceupdate_last = 0
+
+local autosurvey_fps = 5
+local autosurvey_last = 0
+
+function Pointer.ArrowFrameControl_OnUpdate(self,msec)
+	if msec-arrowctrl_last >= arrowctrl_fps then
 		-- update skin IF WE HAVE ONE ON only, dammit
-		if Pointer.ArrowFrame then Pointer.ArrowFrame_OnUpdate_Common(Pointer.ArrowFrame,arrowctrl_elapsed) end
-		arrowctrl_elapsed = 0
+		if Pointer.ArrowFrame then Pointer.ArrowFrame_OnUpdate_Common(Pointer.ArrowFrame,msec) end
+		arrowctrl_last=msec
 	end
 
+	-- unthrottled
 	if Pointer.ArrowFrame then
 		local icon=Pointer.ArrowFrame.ArrowIcon
 		if icon and icon:IsVisible() and not ZGV.Pointer.ArrowFrame:IsVisible() then Pointer.ArrowFrame_HideSpellArrow(self) end
 	end
 
 	-- update waypoints periodically, in case some get stuck on player-out-of-map,-go-away state
-	forceupdate_elapsed = forceupdate_elapsed + elapsed
-	if forceupdate_elapsed > 3 then
+	if msec-forceupdate_last >= forceupdate_fps then
 		Pointer:UpdateWaypoints()
-		forceupdate_elapsed = 0
+		forceupdate_last = msec
 	end
 
-	-- surveyer
-	Pointer:SurveyMap("here","justupdate","quiet")
+	-- auto-surveyer
+	if Pointer.do_autosurvey then
+		if msec-autosurvey_last >= autosurvey_fps then
+			Pointer:SurveyMap("here",nil,not ZGV.DEV)
+			autosurvey_last = msec
+		end
+	end
 
 end
 
@@ -1633,6 +1657,44 @@ end
 local noskip_time=0
 
 local dummy_waypoint = {DUMMY=1}
+
+
+--[[
+function Pointer:SetMapOffsets(tex,xoff,yoff,scale)
+	local Z = Pointer.Zones[tex]
+	if not Z then d("Map "..tostring(tex).." unknown.") return end
+	Z.xoffset=xoff
+	Z.yoffset=yoff
+	Z.scale=scale
+end
+--]]
+
+-- /dump ZGV.Pointer:TranslateCoords("bleakrock_base_0",0.7,0.7,"bleakrockvillage_base_0")
+-- /dump ZGV.Pointer:TranslateCoords("deshaan_base",.4053,.7517,"kragenmoor_base")
+function Pointer:TranslateCoords(map1,x,y,map2)
+	if map1==map2 or not (map1 and map2) then return x,y end
+
+	if not x or not y then return nil,nil end
+
+	local Zones=self.Zones
+	local Z1=Zones[map1]
+	local Z2=Zones[map2]
+	if not Z1 then return nil,nil,map1.." unknown" end
+	if not Z2 then return nil,nil,map2.." unknown" end
+	if not Z1.scale then return nil,nil,map1.." not scaled" end
+	if not Z2.scale then return nil,nil,map2.." not scaled" end
+	if Z1.notTamriel then return nil,nil,map1.." not on Tamriel" end
+	if Z2.notTamriel then return nil,nil,map2.." not on Tamriel" end
+	if not Z1.xoffset then return nil,nil,map1.." no X offset" end
+	if not Z2.xoffset then return nil,nil,map2.." no X offset" end
+
+	-- move to world coords
+	x=x*Z1.scale+Z1.xoffset
+	y=y*Z1.scale+Z1.yoffset
+
+	return (x-Z2.xoffset)/Z2.scale,(y-Z2.yoffset)/Z2.scale
+end
+
 --/dump ZGV.Pointer:GetDistToCoords(auridon_base 52.50,91.57)
 --/dump ZGV.Pointer:TranslateCoords("auridon_base",52.50,91.57,"vulkhelguard_base")
 function Pointer:GetDistToCoords(m,x,y)
@@ -1651,6 +1713,8 @@ function Pointer:GetDistToCoords(m,x,y)
 
 	return dist
 end
+
+
 
 function Pointer.ArrowFrame_OnUpdate_Common(self,elapsed)
 	-- NASTY. Replace master object, Indy Jones-style.
@@ -2515,110 +2579,6 @@ local function GenerateSubmapCache()
 	end
 end
 
-local function RestartCorpseSearch(where) -- made it a func not to duplicate code
-	-- WTF, no corpse?
-	Pointer:Debug("SetCorpseArrow, corpse not found anywhere [%s], will retry",where)
-	ZGV:ScheduleTimer(function() ZGV.Pointer:SetCorpseArrow(true) end,1.0)
-end
-
-function Pointer:SetCorpseArrow(reset)
-
-	if self.corpsearrow and not reset then return end
-	if not UnitIsDeadOrGhost("player") then Pointer:Debug("Pointer.SetCorpseArrow: not dead!") return end
-
-	local x=0
-	local y=0
-
-	local origm,origf = GetCurrentMapAreaID(),GetCurrentMapDungeonLevel()
-	local origx,origy=GetCorpseMapPosition()
-	-- some magic here...
-
-	Pointer:Debug("SetCorpseArrow, current map %d/%d, corpse %.1f,%.1f",origm,origf,origx*100,origy*100)
-
-	-- If submap cache is not ready, recreate it
-	if not submap_cache then
-		GenerateSubmapCache()
-		RestartCorpseSearch(1) return -- FIXME temporary workaround the bug giving the body in Dalaran Crater
-	end
-
-	-- We probably want to put a dot on all maps where the corpse is seen, just to look consistent
-	local mapcandidates = {}
-
-	-- Locating the player on the parent level map
-	local system,_,_,_,_,_=Astrolabe:GetMapInfo(origm,origf)
-	if not system then RestartCorpseSearch(2) return end
-
-	SetMapByID(system)
-	--SetDungeonMapLevel(0) -- sanity
-	x,y=GetCorpseMapPosition()
-	if x>0 then
-		Pointer:Debug("SetCorpseArrow, Corpse found in system %s (%s) at %.1f,%.1f",system,Pointer.GetMapNameByID2(system),x*100,y*100)
-		Pointer:Debug("SetCorpseArrow, Searching the best fit among its "..#submap_cache[system].." maps")
-
-		-- Right, so what our criteries are in the order of descending importance
-		-- • The body is seen within the map
-		-- • Map is small(for example Darnassus in Teldrassil)
-		local smallestarea,bestmap,bestfloor,bestx,besty
-		for i,id in ipairs(submap_cache[system]) do -- Also each map includes self in the list
-			SetMapByID(id)
-			local _x, _y
-			local levels = GetNumDungeonMapLevels()
-			for l=levels>0 and 1 or 0,levels do -- perusing the current map dungeon levels  --sinus: 1..max   or just 0
-				SetDungeonMapLevel(l)
-				_x,_y = GetCorpseMapPosition()
-				if _x>0 -- aha, we can see the body on that map, let's note it
-				and (id==origm or _x~=origx) -- AND it's not the SAME position that we saw on "our" map!!!! IMPORTANT!!!   /run SetMapByID(666) print(GetCorpseMapPosition())   you'll see magic happen, it'll return CURRENT map's corpse positions
-				then
-					table.insert(mapcandidates,{mapid=id,floor=l,x=_x,y=_y})
-					local _,_,_w,_h,_,_=Astrolabe:GetMapInfo(id,l)
-					Pointer:Debug("Corpse Candidate on map: %d/%d %.1f,%.1f (size:%d)",id,l,_x*100,_y*100,_w)
-					if not bestmap or smallestarea>_w then -- alex: little overhead here is okay, we don't get more that 4 maps anyway
-						smallestarea=_w
-						bestmap,bestfloor,bestx,besty=id,l,_x,_y
-						--bestfloor=l -- this whole thing is excessive for phased maps, but they aren't numerous in a system set
-						Pointer:Debug("^--- best so far")
-					end -- TODO if somebody wishes to it can be removed for them with some checks
-				end
-			end
-		end
-
-
-		if #mapcandidates==0 then   -- -- sinus>alex: #table can't be <0, can it..?
-			RestartCorpseSearch("no corpses found on maps")
-		else
-			-- Now we have a list of maps where the body is seen and the id of the smallest one
-			self:ClearWaypoints("corpse")
-
-			Pointer:Debug("SetCorpseArrow: *** Pointing to corpse at: |cffffffff%s %d/%d %.1f,%.1f",Pointer.GetMapNameByID2(bestmap),bestmap,bestfloor,bestx*100,besty*100)
-			local way = Pointer:SetWaypoint(bestmap,bestfloor,bestx,besty,{
-				title= ZGV.db.profile.corpsearrowjokes and L["pointer_corpselabel"..math.random(L["pointer_corpselabel#"])] or L["pointer_corpselabel"],
-				type="corpse",
-				icon=Pointer.Icons.greendot,
-				onminimap="always",
-				overworld=true,
-				showonedge=true,
-			})
-
-			--if way then Pointer:FindTravelPath(way) end  -- DON'T Travel.
-
-			self.corpsearrow=true
-
-		end
-	else
-		RestartCorpseSearch("not in system")
-	end
-		--[[
-		if not m then
-			-- failed! set a flag
-			self.corpsewait=true
-		end
-		--]]
-
-	-- Clean up
-	SetMapByID(origm)
-	SetDungeonMapLevel(origf)
-end
-
 
 Pointer.ArrowSkins = {}
 
@@ -2939,28 +2899,91 @@ end
 
 
 
--- Grab all ESO maps
+-- Access tables, actually fronts for using SV data for DEVs before hardcoded zone data before SV data again.
 Pointer.ZoneNameToTex = {}
 Pointer.Zones = {}
 
--- start with some cities hardcoded
+
+Pointer.GetMapNameByID2 = function(tex) return Pointer.Zones[tex] and Pointer.Zones[tex].name or "zone "..tostring(tex).."?" end
+
+
+-- start with some cities hardcoded. That's mostly for testing before Data is loaded, or if that fails.
 local function AddMap(name,tex)
-	Pointer.ZoneNameToTex[name]=tex
-	Pointer.Zones[tex] = Pointer.Zones[tex] or {}
-	Pointer.Zones[tex].name=name
+	if ZGV.MapData.ZoneNameToTex[name]~=tex then ZGV.MapData.ZoneNameToTex[name]=tex end
+	ZGV.MapData.Zones[tex] = ZGV.MapData.Zones[tex] or {}
+	ZGV.MapData.Zones[tex].name=name
 end
 
+-- Grab all ESO maps
 function Pointer:InitMaps()
 	-- initialize saved data
 
 	ZGV.db.profile.Zones = ZGV.db.profile.Zones or {}
 	ZGV.db.profile.ZoneNameToTex = ZGV.db.profile.ZoneNameToTex or {}
 
-	local Zones = Pointer.Zones
 
-	-- import basic data
+	if not ZGV.MapData then
+		ZGV.MapData={Zones={},ZoneNameToTex={}}
+		ZGV:Error("No Map Data. Please report this issue.")
+	end
 
-	if ZGV.MapData then
+
+	-- These are in MapData anyway, they're here just to make sure unit tests are passed.
+	AddMap("Dhalmora","dhalmora_base")
+	AddMap("Bleakrock Village","bleakrockvillage_base")
+	AddMap("Malabal Tor","malabaltor_base")
+
+	ZGV.MapData.Zones["Tamriel"]=ZGV.MapData.Zones["Tamriel"] or {}
+	ZGV.MapData.Zones["Tamriel"].xoffset=0
+	ZGV.MapData.Zones["Tamriel"].yoffset=0
+	ZGV.MapData.Zones["Tamriel"].scale=1
+
+	-- who the fuck accesses this before init!?  die, bitch.
+	Pointer.ZoneNameToTex = {}
+	Pointer.Zones = {}
+
+	setmetatable(Pointer.ZoneNameToTex,{
+		__index=function(z,key)
+			return (ZGV.DEV and ZGV.sv.profile.ZoneNameToTex[key])
+				or ZGV.MapData.ZoneNameToTex[key]
+				or ZGV.sv.profile.ZoneNameToTex[key]
+			end,
+		__newindex=function(z,key,val)
+			ZGV.sv.profile.ZoneNameToTex[key]=val
+		end}
+	)
+
+	function Pointer.Zones:GetAllMaps()
+		local ret = {SV={},Data={}}
+		for k,v in pairs(ZGV.sv.profile.Zones) do ret.SV[k]=v end
+		for k,v in pairs(ZGV.MapData.Zones) do ret.Data[k]=v end
+		return ret
+	end
+	function Pointer.Zones:ClearSV()
+		ZGV.sv.profile.Zones={}
+	end
+
+	-- make it magic!
+	setmetatable(Pointer.Zones,{
+		__index=function(z,key)
+				if not key then return "ERROR" end
+				local zone = (ZGV.DEV and ZGV.sv.profile.Zones[key])
+					or ZGV.MapData.Zones[key]
+					or ZGV.sv.profile.Zones[key]
+				if not zone then  zone = {}  ZGV.sv.profile.Zones[key] = zone  end
+				return zone
+			end,
+		__newindex=function(z,key,val)
+			ZGV.sv.profile.Zones[key]=val
+		end}
+	)
+
+
+
+
+	-- import hardcoded data
+
+	--[[
 		if Zones.version~=ZGV.MapData.version then
 
 			-- clear out
@@ -2984,111 +3007,72 @@ function Pointer:InitMaps()
 			Pointer.ZoneNameToTex[nm]=Pointer.ZoneNameToTex[nm] or tx
 			Zones[tx].name = Zones[tx].name or nm
 		end
-	else
-		ZGV:Error("No Map Data. Please report this issue.")
+	--]]
+
+	-- share names from tex into zones
+	for nm,tx in pairs(ZGV.MapData.ZoneNameToTex) do
+		ZGV.MapData.Zones[tx].name = ZGV.MapData.Zones[tx].name or nm
 	end
 
-	-- Now use any SV data to fill data, or overwrite stuff if DEV
-	if ZGV.DEV then
-		for i,v in pairs(ZGV.db.profile.ZoneNameToTex) do
-			Pointer.ZoneNameToTex[i] = v
-		end
-		for i,v in pairs(ZGV.db.profile.Zones) do
-			Zones[i] = v
-		end
+
+	-- clear redundant SV
+	for nm,tx in pairs(ZGV.MapData.ZoneNameToTex) do
+		if ZGV.sv.profile.ZoneNameToTex[nm]==tx then ZGV.sv.profile.ZoneNameToTex[nm]=nil end
 	end
+	for tx,dz in pairs(ZGV.MapData.Zones) do if type(dz)=="table" then
+		local sz=ZGV.db.profile.Zones[tx]
+		if sz
+		and dz.name==sz.name
+		and dz.xoffset==sz.xoffset
+		and dz.yoffset==sz.yoffset
+		and dz.scale==sz.scale
+		and dz.notTamriel==sz.notTamriel then
+			ZGV.db.profile.Zones[tx]=nil
+		end
+	end end
 
 
 	-- grab real data
-
 	--[[ not now.
+		for id=2,GetNumZones() do  -- 1 is "Clean Test"
+			local name,name2 = GetZoneInfo(id)
+			SetMapToZone(id)
+			local tex = Pointer:GetMapTex()
+			if tex then
+				Pointer.ZoneNameToTex[name]=tex
+				Zones[tex]=Zones[tex] or {}
+				if not Zones[tex].name then
+					Zones[tex].name=name
+					Zones[tex].id=id
+				end
+				-- ignore duplicates, we only care about the texture
+			else d("No tex for zone "..id) end
+		end
 
-	for id=2,GetNumZones() do  -- 1 is "Clean Test"
-		local name,name2 = GetZoneInfo(id)
-		SetMapToZone(id)
-		local tex = Pointer:GetMapTex()
-		if tex then
-			Pointer.ZoneNameToTex[name]=tex
-			Zones[tex]=Zones[tex] or {}
-			if not Zones[tex].name then
-				Zones[tex].name=name
-				Zones[tex].id=id
-			end
-			-- ignore duplicates, we only care about the texture
-		else d("No tex for zone "..id) end
-	end
-
-	for map=1,GetNumMaps() do
-		SetMapByMapListIndex(map)
-		local name = GetMapName()
-		local tex = Pointer:GetMapTex()
-		if tex then
-			Pointer.ZoneNameToTex[name]=tex
-			Zones[tex]=Zones[tex] or {}
-			if not Zones[tex].name then
-				Zones[tex].name=name
-			end
-			Zones[tex].map=map
-		else d("No tex for map "..map) end
-	end
+		for map=1,GetNumMaps() do
+			SetMapByMapListIndex(map)
+			local name = GetMapName()
+			local tex = Pointer:GetMapTex()
+			if tex then
+				Pointer.ZoneNameToTex[name]=tex
+				Zones[tex]=Zones[tex] or {}
+				if not Zones[tex].name then
+					Zones[tex].name=name
+				end
+				Zones[tex].map=map
+			else d("No tex for map "..map) end
+		end
 	--]]
 
-	GetMapNameByTex = function(tex) return Pointer.Zones[tex] or "zone "..tostring(tex).."?" end
-	Pointer.GetMapNameByID2 = GetMapNameByTex
-
-
-	-- These are in MapData anyway, they're here just to make sure unit tests are passed.	AddMap("Dhalmora","dhalmora_base")
-	AddMap("Dhalmora","dhalmora_base")
-	AddMap("Bleakrock Village","bleakrockvillage_base")
-	AddMap("Malabal Tor","malabaltor_base")
-
-	Zones["Tamriel"]=Zones["Tamriel"] or {}
-	Zones["Tamriel"].xoffset=0
-	Zones["Tamriel"].yoffset=0
-	Zones["Tamriel"].scale=1
 
 	-- clear recent scout timestamps, just in case.
-	for k,v in pairs(Zones) do if type(v)=="table" then v.scouttime,v.lx1,v.ly1,v.px1,v.py1=nil end end
+	for k,v in pairs(ZGV.db.profile.Zones) do if type(v)=="table" then v.scouttime,v.lx1,v.ly1,v.px1,v.py1=nil end end
 
 	if ZGV.DEV then Pointer:SurveyStats() end
 
 	SetMapToPlayerLocation()
-end
 
---[[
-function Pointer:SetMapOffsets(tex,xoff,yoff,scale)
-	local Z = Pointer.Zones[tex]
-	if not Z then d("Map "..tostring(tex).." unknown.") return end
-	Z.xoffset=xoff
-	Z.yoffset=yoff
-	Z.scale=scale
-end
---]]
-
--- /dump ZGV.Pointer:TranslateCoords("bleakrock_base_0",0.7,0.7,"bleakrockvillage_base_0")
--- /dump ZGV.Pointer:TranslateCoords("deshaan_base",.4053,.7517,"kragenmoor_base")
-function Pointer:TranslateCoords(map1,x,y,map2)
-	if map1==map2 or not (map1 and map2) then return x,y end
-
-	if not x or not y then return nil,nil end
-
-	local Zones=self.Zones
-	local Z1=Zones[map1]
-	local Z2=Zones[map2]
-	if not Z1 then return nil,nil,map1.." unknown" end
-	if not Z2 then return nil,nil,map2.." unknown" end
-	if not Z1.scale then return nil,nil,map1.." not scaled" end
-	if not Z2.scale then return nil,nil,map2.." not scaled" end
-	if Z1.notTamriel then return nil,nil,map1.." not on Tamriel" end
-	if Z2.notTamriel then return nil,nil,map2.." not on Tamriel" end
-	if not Z1.xoffset then return nil,nil,map1.." no X offset" end
-	if not Z2.xoffset then return nil,nil,map2.." no X offset" end
-
-	-- move to world coords
-	x=x*Z1.scale+Z1.xoffset
-	y=y*Z1.scale+Z1.yoffset
-
-	return (x-Z2.xoffset)/Z2.scale,(y-Z2.yoffset)/Z2.scale
+	Pointer:ZONE_CHANGED()
 end
 
 
@@ -3112,36 +3096,81 @@ function Pointer:SurveyAllMaps(autoclick)
 end
 
 
-function Pointer:SurveyStats()
-	local total,scaled=0,0
-	for k,v in pairs(self.Zones) do
-		if type(v)=="table" and v.scale then scaled=scaled+1 end
-		total=total+1
+local function DEVd(s,...)
+	if ZGV.DEV then
+		s = "|cff8800Z|cff0000DEV|r: "..tostring(s)
+		d(s,...)
 	end
-	if ZGV.DEV then d(("Map survey stats: |cffffff%d|r maps known, |cffffff%d|r surveyed"):format(total,scaled)) end
 end
 
-function Pointer:SurveyMap(specific,justupdate,quiet)
-	if not ZGV.DEV then return end
-	if specific then
-		local map=specific:match("map (%d+)")
-		local zone=specific:match("id (%d+)") or specific:match("zone (%d+)")
-		if map then SetMapByMapListIndex(tonumber(map))
-		elseif zone then SetMapToZone(tonumber(zone))
+
+function Pointer:SurveyStats()
+	local function stat(zones)
+		local total,surveyed=0,0
+		for k,v in pairs(zones) do
+			if type(v)=="table" and v.scale then surveyed=surveyed+1 end
+			total=total+1
 		end
-	else SetMapToPlayerLocation() end
-	local tex = Pointer:GetMapTex()
-	local Z = Pointer.Zones[tex]
-	local PZ
-	if not Z then
-		d(("Recording |cffffff%s|r, texture |c88ffff%s|r"):format(GetMapName(),tex))
-		-- New zone. Make sure it is in SV.
-		ZGV.db.profile.Zones[tex]={name=GetMapName()}
-		Pointer.Zones[tex] = ZGV.db.profile.Zones[tex]
-		Z=Pointer.Zones[tex]
+		return total,surveyed
 	end
 
-	if Pointer.Zones[tex].scale and justupdate then  return  end
+	local total,surveyed = stat(ZGV.MapData.Zones)
+	DEVd(("Map stats - hardcoded |cffffff%d|r known, |cffffff%d|r surveyed"):format(total,surveyed))
+	local total,surveyed = stat(ZGV.db.profile.Zones)
+	DEVd(("Map stats - SV: |cffffff%d|r known, |cffffff%d|r surveyed"):format(total,surveyed))
+end
+
+-- zoom out to Tamriel level
+local function ZoomToTamriel()
+	local count = 0
+	repeat
+		count = count + 1
+		if not MapZoomOut() then return false end
+	until GetMapName()=="Tamriel" or count > 15
+
+	if count > 15 then
+		return false
+	end
+
+	return true
+end
+
+local knownNotTamriel={}
+function Pointer:SurveyMap(specific,force,quiet)
+	if specific then
+		local map=specific:match("map (%d+)")
+		--local zone=specific:match("id (%d+)") or specific:match("zone (%d+)")
+		if map then SetMapToMapListIndex(tonumber(map)) end
+	else SetMapToPlayerLocation() end
+
+	local qd=function(txt) if not quiet then DEVd(txt) end end
+
+	local tex = Pointer:GetMapTex()
+	local Z = Pointer.Zones[tex]
+
+	if Z.scale and not force and not Z.lx1 then  return  end
+	if GetMapName()=="Tamriel" then qd("Can't survey Tamriel itself.") return end
+	if Z.notTamriel then
+		if not knownNotTamriel[Z] then  qd("Can't survey an off-Tamriel map.")  end
+		knownNotTamriel[Z]=true
+		return
+	end
+	local waymode = (GetMapPlayerWaypoint()~=0)
+	if not waymode and Z.scouttime and (GetTimeStamp()-Z.scouttime<4) then
+		qd("|cff0000Surveying too fast?")
+		return
+	end
+
+	-- let's get serious.
+
+	local Z2={}  for k,v in pairs(Z) do Z2[k]=v end  Z=Z2  --clone
+	ZGV.sv.profile.Zones[tex]=Z  --save
+
+	if not Z.name then
+		DEVd(("Surveying |cffffff%s|r (|cffff88%s|r)"):format(tex,GetMapName()))
+		-- New zone. Make sure it is in SV.
+		Z.name=GetMapName()
+	end
 
 	--[[ getting parent... DON'T. Assume maps are on Tamriel.
 	if not Z.parent then
@@ -3153,29 +3182,7 @@ function Pointer:SurveyMap(specific,justupdate,quiet)
 	end
 	--]]
 
-	local qd=function(txt) if not quiet then d(txt) end end
 
-	if GetMapName()=="Tamriel" then qd("We're on Tamriel already!?") return end
-	if Z.notTamriel then qd("This is an off-Tamriel map. Survey it yourself.") return end
-
-	local waymode = GetMapPlayerWaypoint()~=0
-
-	if not waymode and Z.scouttime and GetTimeStamp()-Z.scouttime<5 then qd("|cff0000Surveying too fast?") return end
-
-	-- zoom out to Tamriel level
-	local function ZoomToTamriel()
-		local count = 0
-		repeat
-			count = count + 1
-			if not MapZoomOut() then return false end
-		until GetMapName()=="Tamriel" or count > 15
-
-		if count > 15 then
-			return false
-		end
-
-		return true
-	end
 
 	if not (Z.lx1 and Z.ly1 and Z.px1 and Z.py1) then
 		-- first point
@@ -3188,21 +3195,24 @@ function Pointer:SurveyMap(specific,justupdate,quiet)
 		end
 		Z.lx1,Z.ly1 = lx1,ly1
 		Z.px1,Z.py1 = GetMapPlayerPosition("player")
-		d(("Survey |cffffff%s|r, point A: %.2f,%.2f is world %.2f,%.2f. Now move a bit and /zgsurvey."):format(tex,Z.lx1*100,Z.ly1*100,Z.px1*100,Z.py1*100))
+		DEVd(("Surveying |cffffff%s|r, point A: %.2f,%.2f is world %.2f,%.2f. Now start walking, or set a waypoint elsewhere on the map."):format(tex,Z.lx1*100,Z.ly1*100,Z.px1*100,Z.py1*100))
 
 		Z.scouttime=GetTimeStamp()
 
 	else
 
 		-- second point
-		local lx2,ly2 = GetMapPlayerWaypoint()
-		if lx2==0 then lx2,ly2=GetMapPlayerPosition("player") end
+		local lx2,ly2 = GetMapPlayerWaypoint()  if lx2==0 then lx2,ly2=GetMapPlayerPosition("player") end
+
 		if not lx2 or lx1==0 then qd("|cff0000No player coords on |cff5500"..tex) return end
-		if math.abs(lx2-Z.lx1)<0.05 and math.abs(ly2-Z.ly1)<0.05 then qd("|cff0000Not enough change of coords on |cff5500"..tex)  return  end
+		if math.abs(lx2-Z.lx1)<0.05 and math.abs(ly2-Z.ly1)<0.05 then
+			qd("Still trying to survey, keep walking...")
+			return
+		end
 		if not ZoomToTamriel() then qd("|cff0000Failed to zoom out from |cff5500"..tex.."|r to Tamriel.")  Z.notTamriel=true  return  end
-		local px2,py2 = GetMapPlayerWaypoint()
-		if px2==0 then px2,py2 = GetMapPlayerPosition("player") end
-		d(("Survey |cffffff%s|r, point B: %.2f,%.2f is world %.2f,%.2f"):format(tex,lx2*100,ly2*100,px2*100,py2*100))
+
+		local px2,py2 = GetMapPlayerWaypoint()  if px2==0 then px2,py2 = GetMapPlayerPosition("player") end
+		DEVd(("Surveying |cffffff%s|r, point B: %.2f,%.2f is world %.2f,%.2f"):format(tex,lx2*100,ly2*100,px2*100,py2*100))
 
 		-- calculate!
 
@@ -3219,7 +3229,7 @@ function Pointer:SurveyMap(specific,justupdate,quiet)
 
 		Z.px1,Z.py1,Z.lx1,Z.ly1=nil
 
-		d(("|c88ff88Success! |cffffff%s|r has offsets: %f %f, scale: %f"):format(tex,Z.xoffset,Z.yoffset,Z.scale))
+		DEVd(("|c88ff88Surveyed |cffffff%s|r! Offsets: %.3f %.3f, scale: %.3f"):format(tex,Z.xoffset,Z.yoffset,Z.scale))
 
 		Z.scouttime=GetTimeStamp()
 	end
@@ -3238,15 +3248,15 @@ function Pointer:SurveyClickAllOver(map)
 				local r=ProcessMapClick(x,y)
 				if r==SET_MAP_RESULT_MAP_CHANGED then
 					local tex = self:GetMapTex()
-					d(("Clicked on %s at %d,%d, got %s"):format(starttex,x*100,y*100,tex))
-					self:SurveyMap("here","justupdate","quiet")
+					DEVd(("Clicked on %s at %d,%d, got %s"):format(starttex,x*100,y*100,tex))
+					self:SurveyMap("here",nil,"quiet")
 				end
 			end
 		end
 	end
 end
 
-SLASH_COMMANDS["/zgsurvey"] = function() ZGV.Pointer:SurveyMap() end
+SLASH_COMMANDS["/zgsurvey"] = function() ZGV.Pointer:SurveyMap(nil,"force") end
 
 
 --[[
@@ -3304,31 +3314,24 @@ function Pointer:ZONE_CHANGED(map)
 	if not map or map=="" then map=GetMapName() end
 	local tex=Pointer:GetMapTex()
 	if map~="" and not Pointer.ZoneNameToTex[map] then
-		Pointer.ZoneNameToTex[map]=tex
-
-		if ZGV.DEV then
-			d(("|cff8800New zone!|r Map |cffffff%s|r previously unknown, recording texture |cffffff%s|r."):format(map,tex))
-			ZGV.db.profile.ZoneNameToTex[map] = tex
-		end
+		ZGV.sv.profile.ZoneNameToTex[map]=tex
+		DEVd(("|cff8800New map |cffffff%s|r has name |cffffff%s|r."):format(tex,map))
 	end
-	if tex and tex~="" and not Pointer.Zones[tex] then
-		if ZGV.DEV then
-			d(("|cff8800New zone!|r Texture |cffffff%s|r previously unknown, recording."):format(tex))
-			ZGV.db.profile.Zones[tex]={name=map}
-			Pointer.Zones[tex] = ZGV.db.profile.Zones[tex]
-		else
-			Pointer.Zones[tex]={name=map}
-		end
+	if tex and tex~="" and (not Pointer.Zones[tex] or not Pointer.Zones[tex].name) then
+		ZGV.sv.profile.Zones[tex]={name=map}
+		DEVd(("|cff8800New map |cffffff%s|r coords unknown, initializing."):format(tex))
 	end
 	if tex and tex~="" and not Pointer.Zones[tex].scale then
-		d(("|cff8800New zone!|r Texture |cffffff%s|r not surveyed, starting survey."):format(tex))
-		Pointer:SurveyMap()
+		DEVd(("|cff8800New map |cffffff%s|r not surveyed, surveying."):format(tex))
+		Pointer.do_autosurvey = true
 	end
 end
 tinsert(ZGV.startups,function(self)
-	EVENT_MANAGER:RegisterForEvent("ZGVPointer",EVENT_ZONE_CHANGED,function(a,map,c)
-		Pointer:ZONE_CHANGED(map)
-	end)
+	if ZGV.DEV then
+		EVENT_MANAGER:RegisterForEvent("ZGVPointer",EVENT_ZONE_CHANGED,function(a,map,c)
+			Pointer:ZONE_CHANGED(map)
+		end)
+	end
 end)
 
 --[[
@@ -4262,4 +4265,12 @@ function GetPOIPinType(map,id,truthful)
 	if pin==MAP_PIN_TYPE_INVALID then pin=MAP_PIN_TYPE_POI_SEEN end
 	return pin
 end
-
+if ZGV.DEV then
+	local _GetPOIInfo=GetPOIInfo
+	function GetPOIInfo(map,id,truthful)
+		if truthful then return _GetPOIInfo(map,id) end
+		local text,level,subtextinc,subtextcom = _GetPOIInfo(map,id)
+		text = text .. ("|cffaa00 [%03d%03d]"):format(map or GetCurrentMapZoneInfo(),id or 1)
+		return text,level,subtextinc,subtextcom
+	end
+end

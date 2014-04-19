@@ -21,7 +21,6 @@ local StepUI = ZGV.Class:New("StepUI")
 local GoalUI = ZGV.Class:New("GoalUI")
 
 local name = "ZGVF"
-local profile		-- Saved vars initialized at startup
 
 local DEFAULT_ANCHOR = { -- Set point using Top so that goals grow downward properly
 	TOPRIGHT,
@@ -140,7 +139,7 @@ function Viewer:CreateZGVF()
 			local isValidAnchor, point, relativeTo, relativePoint, offsetX, offsetY = me:GetAnchor()
 
 			if isValidAnchor then
-				profile.vieweranchor = {
+				ZGV.sv.profile.vieweranchor = {
 					point,
 					relativeTo:GetName(),		-- Can not store userdata. Just put a string in and it will be forced to GuiRoot when setting
 					relativePoint,
@@ -152,12 +151,12 @@ function Viewer:CreateZGVF()
 	.__END
 
 	-- Lets set the point! Use either from Saved Vars or default
-	profile.vieweranchor = profile.vieweranchor and #profile.vieweranchor==5 and profile.vieweranchor or DEFAULT_ANCHOR
-	local point, relativeTo, relativePoint, offsetX, offsetY = unpack(profile.vieweranchor)
+	ZGV.sv.profile.vieweranchor = ZGV.sv.profile.vieweranchor and #ZGV.sv.profile.vieweranchor==5 and ZGV.sv.profile.vieweranchor or DEFAULT_ANCHOR
+	local point, relativeTo, relativePoint, offsetX, offsetY = unpack(ZGV.sv.profile.vieweranchor)
 	relativeTo = GuiRoot		-- Force to GuiRoot.
 	master:SetPoint(point, relativeTo, relativePoint, offsetX, offsetY)
 
-	local fwidth = profile.viewerwidth or DEFAULT_WIDTH
+	local fwidth = ZGV.sv.profile.viewerwidth or DEFAULT_WIDTH
 	local frame =  CHAIN(ui:Create("Frame",master,name,"true"))	-- Not toplevel
 		:SetPoint(TOP)
 		:SetSize(fwidth,DEFAULT_HEIGHT)		-- Height doesn't need to be saved because that is based on goals
@@ -173,7 +172,8 @@ function Viewer:CreateZGVF()
 		end)
 		:SetHandler("OnResizeStop",function(me)
 			Viewer:ResizeToFitSteps()	-- Can't prevent vertical resizing, just make it look normal again when they stop.
-			profile.viewerwidth = me:GetWidth()
+			Viewer:UpdateProgressBar()
+			ZGV.sv.profile.viewerwidth = me:GetWidth()
 		end)
 		:SetHandler("OnUpdate",function(me,time)
 			me:OnUpdate(time)
@@ -332,7 +332,7 @@ function Viewer:CreateZGVF()
 	Viewer:CreateMiniMapButton()
 
 	self:UpdateViewer()
-	frame:ShowIf(profile.showviewer)
+	frame:ShowIf(ZGV.sv.profile.showviewer)
 end
 
 -- icon on GuiRoot that users can click to toggle the guide viewer.
@@ -356,13 +356,13 @@ function Viewer:CreateMiniMapButton()
 			local isValidAnchor, point, relativeTo, relativePoint, offsetX, offsetY = me:GetAnchor()
 
 			if isValidAnchor then
-				if profile.minibutanchor[1] ~= point or
-				profile.minibutanchor[3] ~= relativePoint or
-				not zo_floatsAreEqual(profile.minibutanchor[4],offsetX) or
-				not zo_floatsAreEqual(profile.minibutanchor[5],offsetY) then
+				if ZGV.sv.profile.minibutanchor[1] ~= point or
+				ZGV.sv.profile.minibutanchor[3] ~= relativePoint or
+				not zo_floatsAreEqual(ZGV.sv.profile.minibutanchor[4],offsetX) or
+				not zo_floatsAreEqual(ZGV.sv.profile.minibutanchor[5],offsetY) then
 					me.recentlyMoved = true
 
-					profile.minibutanchor = {
+					ZGV.sv.profile.minibutanchor = {
 						point,
 						relativeTo:GetName(),		-- Can not store userdata. Just put a string in and it will be forced to GuiRoot when setting
 						relativePoint,
@@ -374,8 +374,8 @@ function Viewer:CreateMiniMapButton()
 		end)
 	.__END
 
-	profile.minibutanchor = profile.minibutanchor and #profile.minibutanchor==5 and profile.minibutanchor or DEFAULT_MINIMAP_ANCHOR
-	local point, relativeTo, relativePoint, offsetX, offsetY = unpack(profile.minibutanchor)
+	ZGV.sv.profile.minibutanchor = ZGV.sv.profile.minibutanchor and #ZGV.sv.profile.minibutanchor==5 and ZGV.sv.profile.minibutanchor or DEFAULT_MINIMAP_ANCHOR
+	local point, relativeTo, relativePoint, offsetX, offsetY = unpack(ZGV.sv.profile.minibutanchor)
 	relativeTo = GuiRoot		-- Force to GuiRoot.
 	frame:SetPoint(point, relativeTo, relativePoint, offsetX, offsetY)
 
@@ -614,8 +614,8 @@ function Viewer:HelpButton_OnClick()
 			self.HelpPopup = popup
 		end
 
-		self.HelpPopup:SetText(L['static_help'])
-		self.HelpPopup:Show()
+	self.HelpPopup:SetText(L['static_help'])
+	self.HelpPopup:Show()
 end
 
 function Viewer:PrevStepButton_OnClick(but)
@@ -648,7 +648,7 @@ function Viewer:Show_GuideViewer(notoggle)
 	if not self.Frame then self:CreateZGVF() end
 
 	if not notoggle then
-		profile.showviewer = true
+		ZGV.sv.profile.showviewer = true
 	end
 
 	self.Frame:Show()
@@ -660,7 +660,7 @@ function Viewer:Hide_GuideViewer(notoggle)
 	if not self.Frame then return end
 
 	if not notoggle then
-		profile.showviewer = false
+		ZGV.sv.profile.showviewer = false
 	end
 
 	self.Frame:Hide()
@@ -727,7 +727,7 @@ function Viewer:Update(full)
 				Fr.TitleBar.guideLabel:SetText(curGuide.title_short)
 			end
 
-			for stepnum = 1, (profile.numStepShow or 1) do while(1) do		-- TODO handle multiple steps Hiding/Showing and that jazz
+			for stepnum = 1, (ZGV.sv.profile.numStepShow or 1) do while(1) do		-- TODO handle multiple steps Hiding/Showing and that jazz
 				local stepframe = Fr:GetStepUI(stepnum)	-- TODO maybe don't get/create it if we arn't going to display it?
 
 				local isproperStepnum = true
@@ -776,14 +776,14 @@ function Viewer:Update(full)
 							tipframe:SetText(tiptext)
 							tipframe.updated = true
 
-							tipframe.label:SetFontSize(profile.fontsecsize)
+							tipframe.label:SetFontSize(ZGV.sv.profile.fontsecsize)
 						else
-							goalframe.label:SetFontSize(profile.fontsize)
+							goalframe.label:SetFontSize(ZGV.sv.profile.fontsize)
 						end
 
 						-- ICONS
 
-						if true or self.db.profile.goalicons then  -- TODO make optionable?
+						if true or ZGV.db.profile.goalicons then  -- TODO make optionable?
 							--label:SetPoint("TOPLEFT",line,"TOPLEFT",icon_indent+2,0)
 
 							--icon:SetPoint("CENTER",line,"TOPLEFT",self.db.profile.fontsize*0.5+1,-self.db.profile.fontsize*0.5-1)
@@ -872,7 +872,7 @@ function Viewer:Update(full)
 				Fr.TitleBar.guideLabel:SetText(L["guide_notloaded"])
 			end
 
-			for stepnum = 1, (profile.numStepShow or 1) do
+			for stepnum = 1, (ZGV.sv.profile.numStepShow or 1) do
 				local stepframe = Fr:GetStepUI(stepnum)
 				stepframe:HideExtraGoals()
 			end
@@ -884,19 +884,28 @@ end
 
 -- Updates the visuals on the viewer itself.
 function Viewer:UpdateViewer()		-- TODO this probably needs to update more things
-	self:SetAlpha(profile.opacitymain)
-	self:SetScale(profile.framescale)
+	self:SetAlpha(ZGV.sv.profile.opacitymain)
+	self:SetScale(ZGV.sv.profile.framescale)
+
+	ZGV.sv.profile.vieweranchor = ZGV.sv.profile.vieweranchor and #ZGV.sv.profile.vieweranchor==5 and ZGV.sv.profile.vieweranchor or DEFAULT_ANCHOR
+	local point, relativeTo, relativePoint, offsetX, offsetY = unpack(ZGV.sv.profile.vieweranchor)
+	relativeTo = GuiRoot		-- Force to GuiRoot.
+	CHAIN(self.Frame.master)
+		:ClearAllPoints()
+		:SetPoint(point, relativeTo, relativePoint, offsetX, offsetY)
+
+	self:Update()
 end
 
 -- If a mode is passed us that, otherwise just toggle to the next type.	TODO
 function Viewer:ChangeProgressType(mode)
 
 	if mode then
-		profile.viewerProgBar = mode
-	elseif profile.viewerProgBar == PROG_BAR_TYPE_STEP then
-		profile.viewerProgBar = PROG_BAR_TYPE_LEVEL
-	elseif profile.viewerProgBar == PROG_BAR_TYPE_LEVEL then
-		profile.viewerProgBar = PROG_BAR_TYPE_STEP
+		ZGV.sv.profile.viewerProgBar = mode
+	elseif ZGV.sv.profile.viewerProgBar == PROG_BAR_TYPE_STEP then
+		ZGV.sv.profile.viewerProgBar = PROG_BAR_TYPE_LEVEL
+	elseif ZGV.sv.profile.viewerProgBar == PROG_BAR_TYPE_LEVEL then
+		ZGV.sv.profile.viewerProgBar = PROG_BAR_TYPE_STEP
 	end
 
 	-- Update the bar now.
@@ -907,7 +916,7 @@ function Viewer:UpdateProgressBar()
 	if not self.Frame or not self.Frame:IsShown() then return end
 	local progressbar = self.Frame.progress
 	local curGuide = ZGV.CurrentGuide
-	local progBarType = profile.viewerProgBar
+	local progBarType = ZGV.sv.profile.viewerProgBar
 
 	local progressText, tooltip, progress, label
 
@@ -998,17 +1007,17 @@ function Viewer:SetScale(scale)
 end
 
 function Viewer:ResetToDefaultPosition()
-	profile.vieweranchor = DEFAULT_ANCHOR
+	ZGV.sv.profile.vieweranchor = DEFAULT_ANCHOR
 
 	CHAIN(Viewer.Frame.master)
 		:ClearAllPoints()
-		:SetPoint(unpack(profile.vieweranchor))
+		:SetPoint(unpack(ZGV.sv.profile.vieweranchor))
 end
 
 function Viewer:ResetToDefaultWidth()
-	profile.viewerwidth = DEFAULT_WIDTH
+	ZGV.sv.profile.viewerwidth = DEFAULT_WIDTH
 
-	Viewer.Frame:SetWidth(profile.viewerwidth)
+	Viewer.Frame:SetWidth(ZGV.sv.profile.viewerwidth)
 end
 
 function Viewer:ResetAllViewerSettings()
@@ -1125,8 +1134,6 @@ end
 -----------------------------------------
 
 tinsert(ZGV.startups,function(self)
-	profile = ZGV.sv.profile
-
 	self.Events:AddEvent(EVENT_ACTION_LAYER_POPPED, Viewer)
 	self.Events:AddEvent(EVENT_ACTION_LAYER_PUSHED, Viewer)
 	self.Events:AddEvent(EVENT_PLAYER_COMBAT_STATE, Viewer)

@@ -171,7 +171,7 @@ Parser.ConditionEnv=ConditionEnv  --DEBUG
 	 @ breakall		-- break from parsing this guide.
 --]]
 
---[[
+
 GuideCommands['leechsteps'] = function(guide,params)
 	-- works anywhere
 	local fromguide,from,to = params:match("^\"(.+)\"%s-,%s-(.-)%s-,%s-(.-)$")
@@ -232,7 +232,7 @@ GuideCommands['leechsteps'] = function(guide,params)
 
 	return true
 end
---]]
+
 
 GuideCommands['next'] = function(guide,params)
 	params = params:gsub("^\"(.-)\"$","%1")

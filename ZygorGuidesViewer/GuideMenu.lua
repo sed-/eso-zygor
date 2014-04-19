@@ -761,6 +761,7 @@ function Settings:CreateOptionsUI(group)
 
 		if typ ~= "execute"	-- Execute buttons are dumb, they just run a function on clicked.
 		and typ ~= "header"	-- headers are dumber
+		and typ ~= "desc"		-- desc ^^^^
 		then
 			assert(obj.SetValue,"All option objects must have a :SetValue method")
 			obj:SetValue(option:GetValue())
@@ -930,7 +931,10 @@ Settings.OptionUI["dropdown"] = function(self,option,parent)
 	local dropdown = CHAIN(ui:Create("Dropdown",opt_frame,name.."_Dropdown"))
 		:SetPoint(TOPLEFT,label,BOTTOMLEFT)
 		:AddTooltip(option.title,option.desc,opt_frame)
+		:SetDefaultText(option.data.defaultext)
 	.__END
+
+	if option.data.width then dropdown:SetWidth(option.data.width) end
 
 	-- Change the parent of the pullout so that the opt_frame doesn't resize when it is opened. If the pullout is parented to the dropdown then opt_frame will resize when it is opened.
 	dropdown.pullout:SetParent(parent)
@@ -959,7 +963,7 @@ Settings.OptionUI["dropdown"] = function(self,option,parent)
 	end
 
 	local valuetbl = option.data.values
-	if type(valuetbl)=="function" then valuetbl = valuetbl() end
+	if type(valuetbl)=="function" then valuetbl = valuetbl(dropdown) end
 	assert(type(valuetbl)=="table", "Dropdown values must be a table or a function. Not: "..type(valuetbl))
 
 	for value,name in pairs(valuetbl) do
@@ -1127,6 +1131,32 @@ Settings.OptionUI["header"] = function(self,option,parent)
 		:SetPoint(LEFT,label,RIGHT,LINE_PADDING,0)
 		:SetPoint(RIGHT,opt_frame)
 		:SetHeight(1)
+	.__END
+
+	opt_frame.label = label
+
+	-- Stow away a reference
+	label.option = option
+	opt_frame.option = option
+
+	return opt_frame
+end
+
+--[[
+	Relavant data values:
+		- Just a description...
+--]]
+Settings.OptionUI["desc"] = function(self,option,parent)
+	local name = parent:GetName().."_Option"..option.num
+	local LINE_PADDING = 3
+
+	local opt_frame = GetOpinionFrame(parent, name, option, "true")
+
+	local label = CHAIN(ui:Create("Label",opt_frame,name.."_Label",12))
+		:SetPoint(LEFT)
+		:SetPoint(RIGHT)
+		:SetCanWrap(true)
+		:SetText(option.title)
 	.__END
 
 	opt_frame.label = label
@@ -1340,6 +1370,7 @@ function Settings:Refresh()
 	self:RefreshUI()
 end
 
+-- TODO move this into SavedVars
 function Settings:GetOptionGroupByName(name)
 	local opt_group
 

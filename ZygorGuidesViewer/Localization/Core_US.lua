@@ -205,6 +205,13 @@ ZygorGuidesViewer_L("Main", "enUS", function() local f = {
 	["static_endguide"] = "You've reached the end of the current guide.",
 	["static_help"] = "You can set keybindings in Esc-Controls-Keybindings.\n\nPlease visit |cfe6100www.zygorguides.com|r if you need additional assistance.",
 
+	['static_profile'] = "Switch to profile %s?",
+	['static_deleteprofile'] = "Delete profile %s?",
+	['static_reset_profile'] = "Reset profile %s?",
+	['static_newprofile'] = "Select a name for a new profile.",			['static_newprofile_error'] = "|cff0000Name can only contain letters, numbers, and spaces.",
+
+
+
 	-- MINIMAP BUTTON
 	["minimap_tooltip"] = COLOR_TIP_MOUSE.."Click|r to toggle guide window\n"..COLOR_TIP_MOUSE.."Right-click|r to configure\n",
 
@@ -232,7 +239,7 @@ ZygorGuidesViewer_L("Option", "enUS", function() local f = {
 	["opt_canmovemapbutton_desc"] = "Lock the onscreen button in place.",
 
 	["opt_reset"] = "Reset Window",
-	["opt_reset_desc"] = "Reset Guide Viewer to orginal position and size.",
+	["opt_reset_desc"] = "Reset Guide Viewer to original position and size.",
 
 	------ VIEWER -------
 	["opt_viewer"] = "Guide Viewer",
@@ -273,6 +280,23 @@ ZygorGuidesViewer_L("Option", "enUS", function() local f = {
 	['opt_arrowalpha'] = "Opacity",									['opt_arrowalpha_desc'] = "Set the opacity of the waypointing arrow.",
 	['opt_arrowfontsize'] = "Arrow font size",			['opt_arrowfontsize_desc'] = "Set the size of the labels under the arrow.",
 	['opt_arrowmeters'] = "Use metric system",			['opt_arrowmeters_desc'] = "Use meters and kilometers instead of yards and miles.",
+
+	['opt_arrow_reset'] = "Reset Waypointer",				['opt_arrow_reset_desc'] = "Reseting the Waypointer to it's original position and size.",
+
+	------ PROFILE --------
+	['opt_profile'] = "Profiles",										['opt_profile_desc'] = "You can change the active database profile, so you can have different settings for every character.",
+
+	['opt_new_profile'] = "You can either create a new profile by entering a name in the editbox, or choose one of the already existing profiles.",
+	['opt_existing_profiles'] = "Current Profile",	['opt_existing_profiles_desc'] = "You can select a profile to change to it. Some settings may require you to reload to be shown properly.",
+
+	['opt_newprof'] = "New Profile",								['opt_newprof_desc'] = "Create a new Profile",
+
+	['opt_delete_profiles_default'] = "Profiles",
+	['opt_delete_profiles'] = "Delete Profiles",		['opt_delete_profiles_desc'] = "Select a profile to delete. Can not delete your current profile.",
+
+	['opt_profile_reset'] = "Reset Profile",				['opt_profile_reset_desc'] = "Reset this profile to original settings.",
+
+	['opt_char_profiles'] = "Character Profile-DEV ONLY",		['opt_char_profiles_desc'] = "Copy the history from another character. Things like quest history. REQUIRES A RELOAD",
 
 	------ DEVELOPER/DEBUG -------
 	["opt_dev"] = "Developer/Debug",

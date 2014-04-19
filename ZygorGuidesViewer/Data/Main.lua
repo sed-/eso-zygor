@@ -82,6 +82,7 @@ Data.itemData = itemData
 
 -- Returns data,savedvars,lastIds
 local function getCorrectVarsByType(typ)
+	assert(svdata,"svdata not present, did initialization on startup fail?")
 	local comdata,data,saveddata,lastIds
 	if typ == NPC_STR then
 		comdata,data,saveddata,lastIds = npcDataCom,npcData,svdata.npcIds,allLastUsedIds.npc
@@ -138,7 +139,7 @@ function Data:GetIdByNameAndType(typ,name)
 
 	local patname = name:gsub("([%.%-%+%?%*%[%]%^%$%%&%(%)'])","%%%1") -- Fix some possible problems with pattern name. like -
 
-	local p = patname..'=(%d+)\n?'
+	local p = patname..'=(%-?%d+)\n?'
 
 	-- Check in common, then regular, then saved.
 	local id = comdata:match(p) or data:match(p) or saveddata:match(p)

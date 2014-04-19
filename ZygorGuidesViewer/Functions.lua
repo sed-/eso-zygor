@@ -93,6 +93,12 @@ function Utils.GetPlayerPreciseLevel()
 	end
 end
 
+function Utils.GetPlayerName()
+	local name = GetUnitName("player")
+
+	return name
+end
+
 function Utils:IsPlayerInCombat()
 	return ZGV.db.profile.fakecombat or IsUnitInCombat("player")
 end
@@ -140,6 +146,13 @@ function Utils.serialize(tab,indent)
 	break end end
 	s = s .. strrep("    ",indent) .. "}\n"
 	return s
+end
+
+-- Letters, numbers or spaces
+function Utils.IsAlphanumeric(str)
+	if not str then return end
+
+	return not zo_strfind(str,"[^%w ]")
 end
 
 -----------------------------------------
@@ -314,8 +327,41 @@ assert(not MatchExcerpt("Blah___bleh___bloh","bleh, this is bloh because Blah"),
 --assert(not MatchExcerpt("Hello___<6>","Hello"),'Utils:MatchShortText can\'t work with bad length')
 
 
+function Utils.GetMyAddonInfo()
+	local AM=GetAddOnManager()
+	for i=1,AM:GetNumAddOns() do
+		local dir,title,author,_1,_2,_3,_4 = AM:GetAddOnInfo(i)
+		if dir==ZGV.DIR then return dir,title,_1,_2,_3,_4 end
+	end
+end
 
 
+function Utils.IsPOIComplete(map,poi)
+	if type(map)=="string" or (type(map)=="number" and map>1000) then
+		poi = map%1000
+		map = math.floor(map/1000)
+	end
+	if not map then map=GetCurrentMapZoneIndex() end
+	if type(poi)=="string" then
+		for i=1,GetNumPOIs(map) do
+			local text,level,subtextinc,subtextcom = GetPOIInfo(map,i)
+			if text==poi then poi=i break end
+		end
+	end
+	if type(poi)=="number" then
+		local x,y,typ,tex = GetPOIMapInfo(map,poi)
+		return typ==MAP_PIN_TYPE_POI_COMPLETE
+	end
+end
+
+
+
+function Utils.GetPOIForQuest(questid)
+	if not ZGV._QuestPOIData then return "" end
+	if questid<=999999 then questid=("%07d"):format(questid) end
+	poi = ZGV._QuestPOIData:match("(%d+):[^\n]*"..questid)
+	return poi
+end
 
 
 
@@ -406,6 +452,8 @@ function MMShow()
 end
 -- EVENT_ACTION_LAYER_POPPED (luaindex layerIndex, luaindex activeLayerIndex)
 -- EVENT_ACTION_LAYER_PUSHED (luaindex layerIndex, luaindex activeLayerIndex)
+
+
 
 --/run for i=1,16 do n = GetActionLayerInfo(i) d(i.." -  "..n) end
 

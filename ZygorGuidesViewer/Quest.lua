@@ -192,6 +192,7 @@ function Quests:GetCompletionStatus(qname,qid,stagetxt,stagenum,steptxt,stepnum,
 	-- QUEST: COMPLETE? Perhaps it's all done?
 		local compData = svcompletedquests[qid]
 		if compData==true then return true,true,"quest complete" end  -- Whole quest is complete. Cheers.
+		if ZGV.Utils.IsPOIComplete(ZGV.Utils.GetPOIForQuest(qid)) then return true,true,"quest POI complete" end
 		compData = false -- NO stage-completion is to be saved!
 	-- ... if not, keep checking.
 

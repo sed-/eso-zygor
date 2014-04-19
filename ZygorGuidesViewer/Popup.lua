@@ -38,7 +38,7 @@ Popup.private = {}
 local Popup_mt = { __index = Popup }
 
 local PopupHandler = {}
-local Queue = {} 
+local Queue = {}
 
 local DEFAULT_ANCHOR = { TOP, 0, 75 }
 
@@ -129,7 +129,7 @@ function Popup:New(name,ptype)
 		:SetCanWrap(true)
 		:SetText("This is a Zygor Popup with no text")
 	.__END
-	
+
 	-- This text hides unless needed
 	popup.text2 = CHAIN(ui:Create("Label",popup,name.."_SecText",ZGV.db.profile.fontsize,"bold"))	-- TODO make font size dynamically
 		:SetPoint(TOP,popup.text,BOTTOM,0,0)
@@ -146,7 +146,7 @@ function Popup:New(name,ptype)
 		:SetFontSize(ZGV.db.profile.fontsize,true)		-- TODO change size dynamically?
 		:SetHandler("OnClicked",function(me)
 			local pop = me:GetParent()
-			pop.private:Decline(pop) 
+			pop.private:Decline(pop)
 		end)
 	 .__END
 
@@ -154,15 +154,15 @@ function Popup:New(name,ptype)
 		:SetPoint(TOPRIGHT,popup.text2,BOTTOM,-5,BUT_Y_OFFSET)
 		:SetText(L['static_accept'])
 		:SetFontSize(ZGV.db.profile.fontsize,true)	-- TODO change size dynamically?
-		:SetHandler("OnClicked",function(me) 
+		:SetHandler("OnClicked",function(me)
 			local pop = me:GetParent()
-			pop.private:Accept(pop) 
+			pop.private:Accept(pop)
 		end)
 	.__END
 
 	popup.close = CHAIN(ui:Create("GuideButton",popup,name.."_Close","Close"))
 		:SetPoint(TOPRIGHT, popup, -5, 5)
-		:SetHandler("OnClicked",function(me) 
+		:SetHandler("OnClicked",function(me)
 			local pop = me:GetParent()
 			pop.private:Hide(pop)
 		end)
@@ -174,12 +174,12 @@ function Popup:New(name,ptype)
 		:SetPoint(BOTTOMRIGHT, popup, -5, -5)
 		:SetHandler("OnClicked",function(me)
 			local pop = me:GetParent()
-			pop.private:Settings(pop) 
+			pop.private:Settings(pop)
 		end)
 		--:SetScript("OnEnter",function(self) CHAIN(GameTooltip):SetOwner(popup,"ANCHOR_BOTTOM") :SetText(L['static_settings_tip']) :Show() end)
 		--:SetScript("OnLeave",function(self) GameTooltip:Hide() end)
 	.__END
-	
+
 	popup.private = {}
 
 	zginherits(popup,Popup)										-- Get the class
@@ -199,8 +199,8 @@ function Popup:Show() --Overwrite show... !!!! Real show is saved in SavedShow
 end
 
 function Popup:SetText(text,text2)
-	self.text:SetText(text)
-	
+	self.text:SetText(text or "")
+
 	-- Only show text 2 if it is needed
 	if text2 then
 		CHAIN(self.text2)
@@ -209,7 +209,7 @@ function Popup:SetText(text,text2)
 			:Show()
 	else
 		CHAIN(self.text2)
-		:SetHeight(0)
+		:SetHeight(1)
 		:Hide()
 	end
 end

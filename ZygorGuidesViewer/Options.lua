@@ -12,6 +12,7 @@ if not ZGV then return end
 
 local tinsert,tremove,sort,min,max,floor,type,pairs,ipairs,class = table.insert,table.remove,table.sort,math.min,math.max,math.floor,type,pairs,ipairs,class
 local print = ZGV.print
+local CHAIN = ZGV.Utils.ChainCall
 local ui = ZGV.UI
 local L = ZGV.L
 local O = ZGV.O
@@ -21,8 +22,12 @@ local O = ZGV.O
 -----------------------------------------
 
 local SvName = "ZygorGuidesViewerSettings"    if ZGV.DEVSV then SvName=SvName..ZGV.DEVSV end
-local SvVersion = 1				-- Don't use ZGV.Version because every time this version changes it resets the profile
+local PROFILE_VERSION = 1
+local CHAR_VERSION = 1
 local SavedVars = {}
+local DEFAULT_PROFILE = "main"
+
+local INLINE = "inline"
 
 local OptionGroup = ZGV.Class:New("OptionGroup")
 local OptionGroup_meta = {__index = OptionGroup}
@@ -131,6 +136,8 @@ function OptionGroup:New(opt_group_name,data)
 	mostRecentOptGroup = opt_group
 
 	ZGV.Settings:AddOptionGroup(opt_group)--self.opt_groups,opt_group)
+
+	SavedVars.opt_groups = ZGV.Settings.opt_groups
 end
 
 function OptionGroup:AddOption(opt)
@@ -143,6 +150,12 @@ end
 function OptionGroup:SetToDefault()
 	for i,opt in ipairs(self.options) do
 		opt:SetToDefault()
+	end
+end
+
+function OptionGroup:SetupAllValues()
+	for i,opt in ipairs(self.options) do
+		opt:SetupValue()
 	end
 end
 
@@ -162,7 +175,7 @@ end
 			- T/F
 		set - Additional setter mechanism run when the value of the option gets changed.
 			- function(option,value)
-		get - Addiional code ran when the UI gets the value for the option... Is this needed?		-- TODO test this if it is actually used..
+		get - Addiional code ran when the UI gets the value for the option returns a value
 			- function(option)
 		_default - value for default use. Can set here or in appropriate default table above. defaultChar or defaultAccount
 			- W/e is appropriate for that option
@@ -173,13 +186,16 @@ end
 		column - Puts an option in a column.
 			- String - one/two/three. Only creates columns as needed
 		descStyle - How to display the description
-			- String - inline
+			- String - INLINE
+		width - Make it bigger?		-- TODO only dropdown supports atm
+			- Int...
 		--TODO hidden/disable
 
 	Option Types:
 		dropdown -
 			values = table or function that returns a table.
 				table is full of (value = "text") pairs for dropdown options.
+			defaultext = string to set the text of the dd when nothing is selected
 		slider -
 			min - min value for slider
 			max - .... yeah
@@ -198,9 +214,11 @@ end
 
 function Option:New(optname,data)
 	assert(mostRecentOptGroup,"Must create a options group before creating options")
+
 	local opt = {
-		sv = data.char and ZGV.sv.char or ZGV.sv.profile,		-- Reference to our relvant table of saved variables.
+		char = data.char,
 		optname = optname,
+		default = data._default,
 		data = data,
 		set = data.set,
 		get = data.get,
@@ -212,32 +230,50 @@ function Option:New(optname,data)
 	setmetatable(opt,Option_meta)
 	mostRecentOptGroup:AddOption(opt)	-- Put it in whatever the last option group was
 
-	if not opt.optname then return end		-- If no optname then it is just a visual, return here the rest is for options.
+	--opt:SetupValue()
+end
 
-	-- Set the default after so we know what sv table to pull from.
-	opt.default = data._default
-	if opt.default == nil then	-- nil is not fine, try to find a proper value still.
-		opt.default = opt.sv.default[optname]
+-- Handles making sure the current value of the option is valid. If
+function Option:SetupValue()
+	if not (self.optname or self.get) then return end		-- Has an optname or a get to get a current value.
+
+	if self.optname then
+		local defaults = self.char and defaultChar or defaultAccount
+
+		-- Set the default after so we know what sv table to pull from.
+		if self.default == nil then	-- nil is not fine, try to find a proper value still.
+			self.default = defaults[self.optname]
+		end
+
+		defaults[self.optname] = self.default		-- Stick this into the default table for profile reseting
+
+		assert(self.default~=nil,("No default for %s, all options must have a default value"):format(self.optname))
 	end
 
-	opt.sv.default[optname] = opt.default		-- Stick this into the default table for profile reseting
-
-	if mostRecentOptGroup.title ~= "TESTING" then
-	assert(opt.default~=nil,("No default for %s, all options must have a default value"):format(optname))
-	end
-
+	local curValue = self:GetValue()
 	-- Assume a 3 option t/f settings. True/False for on/off. Nil means it hasn't been set yet, so set it to default.
 	-- If the type doesn't match then something is wrong, Force to default
-	local curValue = opt:GetValue()
+	if self.default and type(curValue) ~= type(self.default) then
+		self:SetValue(self.default)
+	else
+		self:SetValue(curValue)
+	end
 
-	if type(curValue) ~= type(opt.default) then
-		opt:SetValue(opt.default)
+	curValue = self:GetValue()
+
+	if self.frame and self.frame.SetValue then
+		-- If this options already has a frame with a SetValue option, set it's value to current.
+		self.frame:SetValue(curValue)
 	end
 end
 
 function Option:SetValue(value)
 	if not self.optname then return end
-	self.sv[self.optname] = value
+	if self.char then
+		SavedVars.char[self.optname] = value
+	else
+		SavedVars.profile[self.optname] = value
+	end
 
 	if self.set then
 		self:set(value)
@@ -245,12 +281,16 @@ function Option:SetValue(value)
 end
 
 function Option:GetValue()
-	if not self.optname then return end
+	if not (self.optname or self.get) then return end
 	if self.get then	-- TODO wtf else goes with a :get
-		self:get()
+		return self:get()
 	end
 
-	return self.sv[self.optname]
+	if self.char then
+		return SavedVars.char[self.optname]
+	else
+		return SavedVars.profile[self.optname]
+	end
 end
 
 function Option:GetDescStyle()
@@ -259,6 +299,8 @@ end
 
 -- If the frame for this option is created then just SetValue there, so it sets it's visual correct and then it will call SetValue
 function Option:SetToDefault()
+	if not self.default then return end
+
 	if self.frame and
 	self.frame.SetValue then
 		self.frame:SetValue(self.default)
@@ -362,7 +404,7 @@ function SavedVars:InitializeOptions()
 	end
 
 	-- ARROW
-	AddOptionGroup("arrow","Arrow","zgarrow", { })
+	AddOptionGroup("arrow")
 	do
 		AddOption('arrowshow',{
 			type = 'toggle',
@@ -419,6 +461,15 @@ function SavedVars:InitializeOptions()
 		AddOption('arrowmeters',{
 			type = 'toggle',
 			_default=false,
+		})
+		AddOption(nil,{
+			type = "execute",
+			width = 150,
+			name = O["opt_arrow_reset"],
+			desc = O["opt_arrow_reset_desc"],
+			func = function()
+				 ZGV.Pointer:ResetWaypointerSettings()
+			end,
 		})
 		--[[
 
@@ -477,6 +528,282 @@ function SavedVars:InitializeOptions()
 		--]]
 	end
 
+	-- PROFILES
+	AddOptionGroup("profile")
+	do
+		AddOption(nil,{ type="desc", name=O["opt_new_profile"] })
+		AddOption(nil,{
+			type = "dropdown",
+			values = function(me)
+				-- Set the callback for adjusting values onopen when needed
+				me:RegisterOnOpenCallback(function(me)
+					local opt = SavedVars:GetOptionObject(nil,O['opt_existing_profiles'])
+					local dropdown = opt.frame and opt.frame.dropdown
+
+					local profiles = SavedVars:GetProfiles()
+					-- Stored the currently selected value before clearing them
+					local value = me:GetValue()
+
+					-- Clear items in pullout
+					me:ClearItems()
+
+					-- Repopulate pullout appropriately.
+					for i,name in ipairs(profiles) do
+						me:AddItem(name,name,function(item,value)
+							if SavedVars.raw.curprofile == value then return end
+
+							SavedVars.ProfilePopup = SavedVars.ProfilePopup or ZGV.Popup:New("Zygor_Change_Profile_Popup")
+
+							SavedVars.ProfilePopup.OnAccept = function(me)
+								SavedVars:SetCurrentProfile(value)
+							end
+
+							SavedVars.ProfilePopup.OnClose = function(me)
+								-- When decline make sure the text of DD is proper
+								if dropdown then dropdown:SetValue(SavedVars.raw.curprofile) end
+							end
+
+							SavedVars.ProfilePopup:SetText(L['static_profile']:format(value))
+							SavedVars.ProfilePopup:Show()
+						end)
+					end
+
+					-- See if the previous value is still available in the table
+					local val = me:HasValue(value)
+
+					-- If it is then set it has the current value again.
+					if val then me:SetValue(value) end
+				end)
+
+				-- Set the initial values too.
+				local profiles = SavedVars:GetProfiles()
+
+				local returns = {}
+
+				for i,name in ipairs(profiles) do
+					returns[name] = name
+				end
+
+				return returns
+			end,
+			get = function() return self.raw.curprofile end,
+			name = O['opt_existing_profiles'],
+			desc = O['opt_existing_profiles_desc'],
+			descStyle = INLINE,
+			width = 150,
+		})
+		AddOption(nil,{
+			type = "execute",
+			width = 150,
+			name = O["opt_newprof"],
+			desc = O["opt_newprof_desc"],
+			func = function()
+				if not SavedVars.NewProfilePopup then
+					local popup = ZGV.Popup:New("Zygor_New_Profile_Popup")
+
+					-- Only allow alphanumeric characters... Don't want to let users screw up their SV files by naming it with strange characters.
+					popup.edit = CHAIN(ui:Create("EditBox",popup,"Zygor_New_Profile_Popup_Edit"))
+						:SetPoint(TOP,popup.text,BOTTOM,0,5)
+						:SetText("Set Name")
+						:HookHandler("OnMouseDown",function(me) me:SelectAll() end)
+						:HookHandler("OnTextChanged",function(me)
+							local text = me:GetText()
+
+							if ZGV.Utils.IsAlphanumeric(text) then
+								popup.text2:Hide()
+								popup.text2:SetHeight(1)
+							else
+								popup.text2:Show()
+								popup.text2:SetCanWrap(true)
+							end
+
+						end)
+					.__END
+
+					CHAIN(popup.text2)
+						:ClearAllPoints()
+						:SetText(L['static_newprofile_error'])
+						:SetPoint(TOP,popup.edit,BOTTOM)
+
+					SavedVars.NewProfilePopup = popup
+				end
+
+				SavedVars.NewProfilePopup.OnAccept = function(me)
+					local name = me.edit:GetText()
+					if not ZGV.Utils.IsAlphanumeric(name) then return end		-- TODO maybe error out? meh just return for now. Should probably disable the button
+
+					local opt = SavedVars:GetOptionObject(nil,O['opt_existing_profiles'])
+
+					if opt.frame and opt.frame.dropdown then
+						-- Fixes the dropdown to have the current profile selected and visually right.
+						local item = opt.frame.dropdown:AddItem(name,name)
+						opt.frame.dropdown:SetValue(item)
+					end
+
+					SavedVars:SetCurrentProfile(name)
+				end
+
+				CHAIN(SavedVars.NewProfilePopup)
+					:SetText(L['static_newprofile'])
+					:Show()
+			end,
+		})
+		AddOption(nil,{
+			type = "execute",
+			width = 150,
+			name = O["opt_profile_reset"],
+			desc = O["opt_profile_reset_desc"],
+			column = "two",
+			func = function()
+
+				SavedVars.ResetProfilePopup = SavedVars.ResetProfilePopup or ZGV.Popup:New("Zygor_Reset_Profile_Popup")
+
+				SavedVars.ResetProfilePopup.OnAccept = function(me)
+					for i,opt_groups in ipairs(SavedVars.opt_groups) do
+						opt_groups:SetToDefault()
+					end
+
+					ZGV.Viewer:ResetAllViewerSettings()
+					ZGV.Pointer:ResetWaypointerSettings()
+				end
+
+				SavedVars.ResetProfilePopup:SetText(L['static_reset_profile']:format(SavedVars.raw.curprofile))
+				SavedVars.ResetProfilePopup:Show()
+			end,
+		})
+		AddOption(nil,{
+			type = "dropdown",
+			values = function(me)
+				-- Set the callback for adjusting values onopen when needed
+				me:RegisterOnOpenCallback(function(me)
+					local profiles = SavedVars:GetProfiles()
+					-- Stored the currently selected value before clearing them
+					local value = me:GetValue()
+
+					-- Clear items in pullout
+					me:ClearItems()
+
+					-- Repopulate pullout appropriately. Don't put the current profile in the list.
+					for i,name in ipairs(profiles) do if name ~= SavedVars.raw.curprofile then
+						me:AddItem(name,name,function(item,value)
+							local opt = SavedVars:GetOptionObject(nil,O['opt_delete_profiles'])
+							local dropdown = opt.frame and opt.frame.dropdown
+
+							SavedVars.DeleteProfilePopup = SavedVars.DeleteProfilePopup or ZGV.Popup:New("Zygor_Delete_Profile_Popup")
+
+							-- Just delete the profile, dd updates properly when next opened.
+							SavedVars.DeleteProfilePopup.OnAccept = function(me)
+								SavedVars:DeleteProfile(value)
+							end
+
+							-- Clear the dd's current item.
+							SavedVars.DeleteProfilePopup.OnClose = function(me)
+								if dropdown then dropdown:SetValue() end
+							end
+
+							SavedVars.DeleteProfilePopup:SetText(L['static_deleteprofile']:format(value))
+							SavedVars.DeleteProfilePopup:Show()
+						end)
+					end end
+
+					-- See if the previous value is still available in the table
+					local val = me:HasValue(value)
+
+					-- If it is then set it has the current value again.
+					if val then me:SetValue(value) end
+				end)
+
+				-- Set the initial values too.
+				local profiles = SavedVars:GetProfiles()
+
+				local returns = {}
+
+				for i,name in ipairs(profiles) do
+					returns[name] = name
+				end
+
+				return returns
+			end,
+			defaultext = O['opt_delete_profiles_default'],
+			name = O['opt_delete_profiles'],
+			desc = O['opt_delete_profiles_desc'],
+			descStyle = INLINE,
+			width = 150,
+		})
+		if ZGV.DEV then
+			-- TODO breaks for not same faction characters
+		AddOption(nil,{
+			type = "dropdown",
+			values = function(me)
+				-- Set the callback for adjusting values onopen when needed
+				me:RegisterOnOpenCallback(function(me)
+					local profiles = SavedVars:GetCharProfiles()
+					-- Stored the currently selected value before clearing them
+					local value = me:GetValue()
+
+					-- Clear items in pullout
+					me:ClearItems()
+
+					-- Repopulate pullout appropriately. Don't put the current profile in the list.
+					for i,name in ipairs(profiles) do if ZGV.Utils.GetPlayerName() ~= name then
+						me:AddItem(name,name,function(item,value)
+							if ZGV.Utils.GetPlayerName() == value then return end
+							local opt = SavedVars:GetOptionObject(nil,O['opt_delete_profiles'])
+							local dropdown = opt.frame and opt.frame.dropdown
+
+							SavedVars.CopyProfilePopup = SavedVars.CopyProfilePopup or ZGV.Popup:New("Zygor_Copy_Profile_Popup")
+
+							-- Just delete the profile, dd updates properly when next opened.
+							SavedVars.CopyProfilePopup.OnAccept = function(me)
+								local prof = SavedVars.raw.characters[value]
+
+								local new = table.zgclone(prof)
+
+								self.char = new
+
+								SavedVars.raw.characters[ZGV.Utils.GetPlayerName()] = new
+							end
+
+							-- Clear the dd's current item.
+							SavedVars.CopyProfilePopup.OnClose = function(me)
+								if dropdown then dropdown:SetValue() end
+							end
+
+							SavedVars.CopyProfilePopup:SetText(("Copy from Character %s"):format(value))
+							SavedVars.CopyProfilePopup:Show()
+
+						end)
+					end end
+
+					-- See if the previous value is still available in the table
+					local val = me:HasValue(value)
+
+					-- If it is then set it has the current value again.
+					if val then me:SetValue(value) end
+				end)
+
+				-- Set the initial values too.
+				local profiles = SavedVars:GetCharProfiles()
+
+				local returns = {}
+
+				for i,name in ipairs(profiles) do
+					returns[name] = name
+				end
+
+				return returns
+			end,
+			defaultext = "Char Profiles",
+			name = O['opt_char_profiles'],
+			desc = O['opt_char_profiles_desc'],
+			descStyle = INLINE,
+			width = 150,
+		})
+		end
+
+
+	end
+
 	-- DEVELOPER
 	if ZGV.DEV then
 	AddOptionGroup("dev")
@@ -486,6 +813,33 @@ function SavedVars:InitializeOptions()
 		})
 	end
 	end
+
+	--[[
+	-- TESTING
+	AddOptionGroup("TESTING",{name = "TESTING",desc = "Settings to just show testing of various option types and positionings."})
+	do
+		AddOption("skin2",{
+			type = "dropdown",
+			values = {
+				s1 = "111",
+				s2 = "2222",
+			},
+			desc = "In line descriptions!",
+			descStyle = INLINE,
+			name = "Hi",
+			column = "one",
+			_default = "s1",
+		})
+		AddOption("accent2",{
+			type = "color",
+			name = "Color Picker!!>",
+			column = "three",
+			desc = "In line descriptions! With Some word wrapping",
+			descStyle = "inline",
+			_default = {r = 0, g = 1, b = 0, a = .3},
+		})
+	end
+	--]]
 
 end
 
@@ -507,17 +861,43 @@ function SavedVars:Setup()
 	end
 
 	local fac = ZGV.Utils.GetFaction()
+	local name = ZGV.Utils.GetPlayerName()
 
-	self.char = self.char or ZO_SavedVars:New( SvName , SvVersion , "main" , defaultChar )
-	self.profile = self.profile or ZO_SavedVars:NewAccountWide( SvName , SvVersion , "main" , defaultAccount )
+	local raw, prof,charProf
 
-	self.raw = _G[SvName]
+	-- If SV does not exist then use ZOS function to create it.
+	if not _G[SvName] then
+		ZO_SavedVars:New(SvName, 1, nil, {})
+	end
 
-	self.raw.global = self.raw.global or {}
+	raw = _G[SvName]
+	if not raw then ZGV:Error("No settings?!?! wtf...") return end
+	self.raw = raw
 
-	self.raw.factions = self.raw.factions or {}
-	self.raw.factions[fac] = self.raw.factions[fac] or {}
-	self.faction = self.faction or self.raw.factions[fac]
+	-- Setup raw tables if needed
+	raw.profiles = raw.profiles or {}
+	raw.characters = raw.characters or {}
+
+	if raw.Default then copySvOldToNew() end	-- 4/14/2014 switch from ZOS SV to our own managed.
+
+	----------------------
+	-- SETUP PROFILE
+	----------------------
+	self:SetCurrentProfile() -- Uses raw.curprofile then if that isn't available uses DEFAULT_PROFILE
+
+	----------------------
+	-- SETUP CHARACTER PROFILE
+	----------------------
+	self:SetCurrentCharacterProfile()
+
+
+
+
+	raw.global = raw.global or {}		-- TODO what is this for...
+
+	raw.factions = raw.factions or {}
+	raw.factions[fac] = raw.factions[fac] or {}
+	self.faction = self.faction or raw.factions[fac]
 
 	-- Store some character information at startup
 	self.char.info.level = ZGV.Utils.GetPlayerPreciseLevel()
@@ -536,9 +916,157 @@ function SavedVars:Setup()
 	end
 	--]]
 
-
 	self:InitializeOptions()
+
+	self.initialized = true
+
+	SavedVars:SetupAllOptionGroups()
 end
+
+-- Creates a new profile in ZGVS.profiles[pname]. Does not assign it to SV.profile. If data is passed uses that, otherwise uses default
+function SavedVars:CreateNewProfile(pname,data)
+	if not pname then return end
+
+	data = data or defaultAccount
+
+	self.raw.profiles[pname] = table.zgclone(data)
+
+	self.raw.profiles[pname].version = PROFILE_VERSION
+
+	return self.raw.profiles[pname]
+end
+
+-- Prefer the passed name, then try to just reset the current profile, worse cause just resort to using default
+function SavedVars:SetCurrentProfile(name)
+	local raw = self.raw
+	local prof
+
+	name = name or raw.curprofile or DEFAULT_PROFILE
+
+	prof = raw.profiles[name]
+
+	if not prof or							-- This does not exist, make it...
+	not prof.version or					-- Profile not properly versioned
+	(prof.version < PROFILE_VERSION)	-- Outdated profile TODO probably shouldn't just overwrite this... Let user copy settings out of the old profile into new? meh
+	then
+		prof = self:CreateNewProfile(name)
+	end
+
+	raw.curprofile = name
+	self.profile = prof
+
+	-- After we are initalized then we are changing a profile so make sure we update every properly.
+	if self.initialized then
+		SavedVars:SetupAllOptionGroups()
+		ZGV.Viewer:UpdateViewer()						-- Update Viewer options
+		ZGV.Pointer:UpdateArrowPosition()		-- Update Waypointer
+	end
+end
+
+function SavedVars:DeleteProfile(name)
+	local raw = self.raw
+
+	if name == raw.curprofile then
+		ZGV:Error("Can not delete your current profile. Change profile before deleting.")
+		return
+	end
+
+	raw.profiles[name] = nil
+end
+
+-- Creates a new profile in ZGVS.characters[charname]. Does not assign it to SV.char. If data is passed uses that, otherwise uses default
+function SavedVars:CreateNewCharProfile(cname,data)
+	if not cname then return end
+
+	data = data or defaultChar
+
+	self.raw.characters[cname] = table.zgclone(data)
+
+	self.raw.characters[cname].version = CHAR_VERSION
+
+	return self.raw.characters[cname]
+end
+
+-- returns a table of profiles that can be iterated with ipairs
+function SavedVars:GetProfiles()
+	local profs = self.raw.profiles
+	local table = {}
+
+	for name,data in pairs(profs) do
+		tinsert(table,name)
+	end
+
+	return table
+end
+
+function SavedVars:GetCurrentProfileName()
+	local curProf = self.raw.curprofile
+
+	return curProf
+end
+
+function SavedVars:GetCharProfiles()
+	local profs = self.raw.characters
+	local table = {}
+
+	for name,data in pairs(profs) do
+		tinsert(table,name)
+	end
+
+	return table
+end
+
+function SavedVars:SetCurrentCharacterProfile()
+	local name = ZGV.Utils.GetPlayerName()
+	local raw = self.raw
+	local charProf
+
+	charProf = raw.characters[name]
+
+	if not charProf or							-- This does not exist, make it...
+	not charProf.version or					-- Profile not properly versioned
+	(charProf.version < CHAR_VERSION)	-- Outdated profile TODO probably shouldn't just overwrite this... Let user copy settings out of the old profile into new? meh
+	then
+		charProf = self:CreateNewCharProfile(name)
+	end
+
+	self.char = charProf
+end
+
+-- Iterates through all options and makes sure they are valid and sets their values
+function SavedVars:SetupAllOptionGroups()
+	for i,opt_group in ipairs(ZGV.Settings.opt_groups) do
+		opt_group:SetupAllValues()
+	end
+end
+
+-- Can get an option by either optname or title.
+function SavedVars:GetOptionObject(optname,title)
+	if not (optname or title) then return end
+
+	for i,optgroup in ipairs(self.opt_groups) do
+		for k, opt in ipairs(optgroup.options) do
+			if (optname and opt.optname == optname) or
+			(title and opt.title == title) then
+				return opt
+			end
+		end
+	end
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
+-- TODO update these. There are options.
 
 function SavedVars:TableToDefault(tab,defaults)
 	tab = getmetatable(tab) and getmetatable(tab).__index or tab
@@ -577,11 +1105,31 @@ function MyObject:Debug(...)
 end
 
 
------------------------------------------
--- STARTUP
------------------------------------------
-
-tinsert(ZGV.startups,function(self)
-
-end)
 --]]
+
+function copySvOldToNew()
+	local raw = _G[SvName]
+	local old = raw.Default
+
+	for actName, t in pairs(old) do if actName~="" then
+		for name, tt in pairs(t) do
+			if name == "$AccountWide" then
+				-- Profile
+				SavedVars:CreateNewProfile(actName,tt.main)
+
+				-- IF this account is our current account, use that profile. Otherwise use w/e name was found first.
+				if actName == GetDisplayName() then
+					raw.curprofile = actName
+				else
+					raw.curprofile = raw.curprofile or actName
+				end
+			else
+				-- Character
+				SavedVars:CreateNewCharProfile(name,tt.main)
+			end
+		end
+	end end
+
+	-- Old settings are copied into new... Get rid of old.. BY FIRE BE PURGED
+	raw.Default = nil
+end

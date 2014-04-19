@@ -768,6 +768,7 @@ function Goal:IsComplete()
 			-- complete means complete, leave it at that!
 
 			if explanation=="quest complete"
+			or explanation=="quest POI complete"
 			or explanation=="past stage"
 			--or explanation=="stage completed" )  -- not there anymore, we don't store completed stages now
 			then
