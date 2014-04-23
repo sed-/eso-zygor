@@ -415,13 +415,16 @@ function Pointer:SetWaypoint (m,f,x,y,data,arrow)
 	--local mapm,mapf = GetCurrentMapAreaID(),GetCurrentMapDungeonLevel()
 	--self:SetBasePhase(mapm)  -- Assuming nobody in their right mind is viewing a wrong-phase map. Calling SetMapByID(phasedmap) WILL break this...
 
-	if m==self:GetMapTex() then
-		PingMap(88,MAP_TYPE_LOCATION_CENTERED,x,y)
+	local tx,ty=Pointer:TranslateCoords(m,x,y,self:GetMapTex())
+	if tx and ty then
+		PingMap(88,MAP_TYPE_LOCATION_CENTERED,tx,ty)
+	else
+		RemovePlayerWaypoint()
 	end
 
 	if not m then
 		--m,f=mapm,mapf  -- Use fresh values, NOT the cached crap. No map means put markers on CURRENTLY DISPLAYED map, not the player's current.
-		SetMapToPlayerLocation()
+		SetMapToPlayerLocation() ZO_WorldMap_UpdateMap() -- hey we trashed it already... why not just be obvious.
 		m,f = self:GetMapTex(),0
 	else
 		--m=self:SanitizePhase(m)  -- de-phase map!
@@ -1683,8 +1686,9 @@ function Pointer:TranslateCoords(map1,x,y,map2)
 	if not Z2 then return nil,nil,map2.." unknown" end
 	if not Z1.scale then return nil,nil,map1.." not scaled" end
 	if not Z2.scale then return nil,nil,map2.." not scaled" end
-	if Z1.notTamriel then return nil,nil,map1.." not on Tamriel" end
-	if Z2.notTamriel then return nil,nil,map2.." not on Tamriel" end
+	if Z1.parentWorld~=Z2.parentWorld then return nil,nil,map1.." and "..map2.." don't share a parent" end
+	if Z1.noParent then return nil,nil,map1.." has no parent" end
+	if Z2.noParent then return nil,nil,map2.." has no parent" end
 	if not Z1.xoffset then return nil,nil,map1.." no X offset" end
 	if not Z2.xoffset then return nil,nil,map2.." no X offset" end
 
@@ -1702,13 +1706,16 @@ function Pointer:GetDistToCoords(m,x,y)
 	local pmap = Pointer:GetMapTex()
 
 	local wx,wy = Pointer:TranslateCoords(m,x,y,pmap)
+	if not wx then return 9999999 end
 	wx = wx or x
 	wy = wy or y
-	local scale = self.Zones[pmap] and self.Zones[pmap].scale or .01
+	local zone = self.Zones[pmap]
+	local scale = zone and zone.scale or .01
 
 	local di = wx and math.sqrt((px-wx)*(px-wx)+(py-wy)*(py-wy)) or 0
 
 	local worldsize = 33440 --Tamriel width, in m
+	if zone and zone.parentWorld=="coldharbour_base" then worldsize=6000 end
 	local dist = worldsize*(scale or 0)*di
 
 	return dist
@@ -2194,12 +2201,9 @@ end
 
 function Pointer.ArrowFrame_Proto_GetFarText(self)
 	local way = self.waypoint
-	local m = way.m or 0
+	local m = way.m or ""
 
-	local lastm = Astrolabe.LastPlayerPosition and Astrolabe.LastPlayerPosition[1]
-	local lastc = Astrolabe.WorldMapSize[lastm].system or 0
-	return (Pointer.GetMapNameByID2(way.m,way.f) or ("(bad map #%d)"):format(way.m))
-		  .. (way.c and way.c~=lastc and way.c>0 and way.c~=way.m and (", " .. (Pointer.GetMapNameByID2(way.c) or "?")) or "")  -- continent, if applicable
+	return Pointer.Zones[m] and Pointer.Zones[m].name or "?"
 end
 
 function Pointer.ArrowFrame_Proto_GetDistTxt(self,dist)
@@ -2937,6 +2941,11 @@ function Pointer:InitMaps()
 	ZGV.MapData.Zones["Tamriel"].xoffset=0
 	ZGV.MapData.Zones["Tamriel"].yoffset=0
 	ZGV.MapData.Zones["Tamriel"].scale=1
+	ZGV.MapData.Zones["coldharbour_base"]=ZGV.MapData.Zones["coldharbour_base"] or {}
+	ZGV.MapData.Zones["coldharbour_base"].xoffset=0
+	ZGV.MapData.Zones["coldharbour_base"].yoffset=0
+	ZGV.MapData.Zones["coldharbour_base"].scale=1
+	ZGV.MapData.Zones["coldharbour_base"].parentWorld="coldharbour_base"
 
 	-- who the fuck accesses this before init!?  die, bitch.
 	Pointer.ZoneNameToTex = {}
@@ -3011,6 +3020,7 @@ function Pointer:InitMaps()
 
 	-- share names from tex into zones
 	for nm,tx in pairs(ZGV.MapData.ZoneNameToTex) do
+		ZGV.MapData.Zones[tx] = ZGV.MapData.Zones[tx] or {}
 		ZGV.MapData.Zones[tx].name = ZGV.MapData.Zones[tx].name or nm
 	end
 
@@ -3021,12 +3031,14 @@ function Pointer:InitMaps()
 	end
 	for tx,dz in pairs(ZGV.MapData.Zones) do if type(dz)=="table" then
 		local sz=ZGV.db.profile.Zones[tx]
+		if sz then sz.noParent=sz.notTamriel  sz.notTamriel=nil  end  --convert
 		if sz
 		and dz.name==sz.name
 		and dz.xoffset==sz.xoffset
 		and dz.yoffset==sz.yoffset
 		and dz.scale==sz.scale
-		and dz.notTamriel==sz.notTamriel then
+		and dz.noParent==sz.noParent
+		then
 			ZGV.db.profile.Zones[tx]=nil
 		end
 	end end
@@ -3070,7 +3082,7 @@ function Pointer:InitMaps()
 
 	if ZGV.DEV then Pointer:SurveyStats() end
 
-	SetMapToPlayerLocation()
+	SetMapToPlayerLocation() ZO_WorldMap_UpdateMap()
 
 	Pointer:ZONE_CHANGED()
 end
@@ -3092,7 +3104,7 @@ function Pointer:SurveyAllMaps(autoclick)
 		if autoclick then self:SurveyClickAllOver(map) end
 	end
 
-	SetMapToPlayerLocation()
+	SetMapToPlayerLocation() ZO_WorldMap_UpdateMap()
 end
 
 
@@ -3121,27 +3133,24 @@ function Pointer:SurveyStats()
 end
 
 -- zoom out to Tamriel level
-local function ZoomToTamriel()
+local function ZoomOutToWorld()
 	local count = 0
+	local tex
 	repeat
-		count = count + 1
-		if not MapZoomOut() then return false end
-	until GetMapName()=="Tamriel" or count > 15
-
-	if count > 15 then
-		return false
-	end
-
-	return true
+		count = count + 1   if count > 15 then  return false  end
+		tex = Pointer:GetMapTex()
+		if tex=="Tamriel" or tex=="coldharbour_base" then return tex end  -- success!
+	until not MapZoomOut()
+	return false
 end
 
-local knownNotTamriel={}
+local knownNoParent={}
 function Pointer:SurveyMap(specific,force,quiet)
 	if specific then
 		local map=specific:match("map (%d+)")
 		--local zone=specific:match("id (%d+)") or specific:match("zone (%d+)")
 		if map then SetMapToMapListIndex(tonumber(map)) end
-	else SetMapToPlayerLocation() end
+	else SetMapToPlayerLocation() ZO_WorldMap_UpdateMap() end
 
 	local qd=function(txt) if not quiet then DEVd(txt) end end
 
@@ -3150,9 +3159,9 @@ function Pointer:SurveyMap(specific,force,quiet)
 
 	if Z.scale and not force and not Z.lx1 then  return  end
 	if GetMapName()=="Tamriel" then qd("Can't survey Tamriel itself.") return end
-	if Z.notTamriel then
-		if not knownNotTamriel[Z] then  qd("Can't survey an off-Tamriel map.")  end
-		knownNotTamriel[Z]=true
+	if Z.noParent then
+		if not knownNoParent[Z] then  qd("Can't survey a non-parented map.")  end
+		knownNoParent[Z]=true
 		return
 	end
 	local waymode = (GetMapPlayerWaypoint()~=0)
@@ -3188,11 +3197,9 @@ function Pointer:SurveyMap(specific,force,quiet)
 		-- first point
 		local lx1,ly1 = GetMapPlayerPosition("player")
 		if not lx1 or lx1==0 then qd("|cff0000No player coords on |cff5500"..tex) return end
-		if not ZoomToTamriel() then
-			qd("|cff0000Failed to zoom out from |cff5500"..tex.."|r to Tamriel.")
-			Z.notTamriel=true
-			return
-		end
+		local parentWorld = ZoomOutToWorld()
+		if not parentWorld then  qd("|cff0000Failed to zoom out from |cff5500"..tex.."|r to a parent world.")  Z.noParent=true  return  end
+		if parentWorld~="Tamriel" then  Z.parentWorld=parentWorld  end
 		Z.lx1,Z.ly1 = lx1,ly1
 		Z.px1,Z.py1 = GetMapPlayerPosition("player")
 		DEVd(("Surveying |cffffff%s|r, point A: %.2f,%.2f is world %.2f,%.2f. Now start walking, or set a waypoint elsewhere on the map."):format(tex,Z.lx1*100,Z.ly1*100,Z.px1*100,Z.py1*100))
@@ -3209,7 +3216,8 @@ function Pointer:SurveyMap(specific,force,quiet)
 			qd("Still trying to survey, keep walking...")
 			return
 		end
-		if not ZoomToTamriel() then qd("|cff0000Failed to zoom out from |cff5500"..tex.."|r to Tamriel.")  Z.notTamriel=true  return  end
+		local parentWorld = ZoomOutToWorld()
+		if not parentWorld then  qd("|cff0000Failed to zoom out from |cff5500"..tex.."|r to a parent world.")  Z.noParent=true  return  end
 
 		local px2,py2 = GetMapPlayerWaypoint()  if px2==0 then px2,py2 = GetMapPlayerPosition("player") end
 		DEVd(("Surveying |cffffff%s|r, point B: %.2f,%.2f is world %.2f,%.2f"):format(tex,lx2*100,ly2*100,px2*100,py2*100))

@@ -239,6 +239,8 @@ Grimmer Still=1790040
 A Door Into Moonlight=1790041
 Gates of Fire=1790042
 Hallowed To Arenthia=1790043
+Spikeball=1790044
+Troll Arena=1790045
 
 Unsafe Haven=1800001
 Lost Treasures=1800002

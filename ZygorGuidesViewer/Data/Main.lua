@@ -131,19 +131,28 @@ end
 		item
 --]]
 
+local function lamehash(s)
+	local sum = 0
+	for i=1,#s do
+		sum = sum + (i*137)*s:byte(i) - 1
+		sum=sum%10000
+	end
+	return sum
+end
+
 function Data:GetIdByNameAndType(typ,name)
 	if not (typ and name) then return end
 	assert(type(name)=="string","Name must be a string")
 
 	local comdata,data,saveddata,lastIds = getCorrectVarsByType(typ)
-
-	local patname = name:gsub("([%.%-%+%?%*%[%]%^%$%%&%(%)'])","%%%1") -- Fix some possible problems with pattern name. like -
+	
+	local patname = name:gsub("([%.%-%+%?%*%[%]%^%$%%&%(%)'])","%%%1") -- Fixes some possible problems with pattern name. like -
 
 	local p = patname..'=(%-?%d+)\n?'
 
 	-- Check in common, then regular, then saved.
 	local id = comdata:match(p) or data:match(p) or saveddata:match(p)
-
+	
 	--[[ fix the code below, and resort to it, if patterns fail totally
 	local match,mfrom,mto
 	if not id then --duh, just looks better
@@ -162,20 +171,24 @@ function Data:GetIdByNameAndType(typ,name)
 		if match then id=tonumber(saveddata:match("^=(%d+)",mto)) end
 	end
 	--]]
-
+	
 
 	if not id then
-		-- Create a new id for it. and stow it in SV
-		SetMapToPlayerLocation()
-		local zoneid = abs(GetCurrentMapZoneIndex())		-- TODO only proves good information when map is closed
+		if not ZGV.DEV then
+			id = 6660000+lamehash(name)   -- fake hashy ID
+		else
+			-- Create a new id for it. and stow it in SV
+			SetMapToPlayerLocation() ZO_WorldMap_UpdateMap()
+			local zoneid = abs(GetCurrentMapZoneIndex())
+	
+			-- increment the current count.
+			lastIds[zoneid] = (lastIds[zoneid] or 0) + 1
 
-		-- increment the current count.
-		lastIds[zoneid] = (lastIds[zoneid] or 0) + 1
+			id = ("%03d%04d"):format(zoneid,lastIds[zoneid])
 
-		id = ("%03d%04d"):format(zoneid,lastIds[zoneid])
-
-		local newentry = ("%s=%s"):format(name,id)
-		appendSavedVarsByType(typ,newentry)
+			local newentry = ("%s=%s"):format(name,id)
+			appendSavedVarsByType(typ,newentry)
+		end
 	end
 
 	return tonumber(id)

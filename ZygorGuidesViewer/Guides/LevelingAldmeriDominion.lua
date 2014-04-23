@@ -2198,29 +2198,6 @@ goto 60.18,47.12
 .click Skywatch##1780094
 .' Leave the Skywatch Manor |goto 59.89,47.11 < 1 |c |noway |q Lifting the Veil##1780028/5
 step
-goto 44.66,62.26
-.talk Firtoril##1780208
-..accept The Racer##180003
-step
-goto 42.68,59.38
-.talk Hadras##1780210
-..' Intimidate him into giving you his frog
-.' Get a Frog |q The Racer##180003/1/1/Get a Frog##1
-step
-goto 44.42,62.19
-.click Bag of Frog Chow##1780102
-..' Take out the Frog
-..' Feed the Frog until it is  Full |tip Examine the frog after each time you feed it until it says the frog looks full.
-.' Go to the other end of the frog race lane
-.click Starting Basket##1780103
-.' Put the Frog in the Starting Basket |q The Racer##180003/2/1/Put Frog in Starting Basket##1
-.' Wait for the race to begin
-.' Win the Race |q The Racer##180003/3/1/Win Race##1
-step
-goto 44.67,62.23
-.talk Firtoril##1780208
-..turnin The Racer##180003
-step
 goto 40.73,65.18
 .' Follow the path down |goto 40.73,65.18 < 5 |c |noway |q Lifting the Veil##1780028/5
 step
@@ -14046,9 +14023,6 @@ step
 goto 54.83,74.38
 .talk Tand##1790200 |q Hadran's Fall##1790020/7
 step
-goto 55.05,72.93
-.' Follow the path |goto 55.05,72.93 < 20 |c |noway
-step
 goto 53.57,73.52
 .kill Hadran##1790191
 .kill Azum##1790186 |tip She heals herself, so just bash her to interupt her when she tries to.
@@ -14065,22 +14039,22 @@ goto 51.75,73.12
 ..turnin Hadran's Fall##1790020
 step
 goto 51.90,71.81
-.' Follow the path down |goto 51.90,71.81 < 1 |c |noway
+.' Follow the path down |goto 51.90,71.81 < 20 |c |noway
 step
 goto 51.10,69.23
-.' Follow the path up |goto 51.10,69.23 < 1 |c |noway
+.' Follow the path up |goto 51.10,69.23 < 20 |c |noway
 step
 goto 47.49,67.06
-.' Follow the path |goto 47.49,67.06 < 1 |c |noway
+.' Follow the path |goto 47.49,67.06 < 20 |c |noway
 step
 goto 41.52,64.31
-.' Jump up the rocks here |goto 41.52,64.31 < 1 |c |noway
+.' Jump up the rocks here |goto 41.52,64.31 < 10 |c |noway
 step
 goto 41.59,64.92
-.' Follow the path |goto 41.59,64.92 < 1 |c |noway
+.' Follow the path |goto 41.59,64.92 < 20 |c |noway
 step
 goto 39.19,67.14
-.' Follow the path |goto 39.19,67.14 < 1 |c |noway
+.' Follow the path |goto 39.19,67.14 < 20 |c |noway
 step
 goto 36.95,69.33
 .talk Daifa##1790204
@@ -14092,124 +14066,114 @@ goto 35.98,67.13
 step
 goto 35.29,68.80
 .' Watch the dialogue
-.' Allow Aniel to Introduce Yanabir-ja |q Baan Dar's Boast##1790023/1/Allow Aniel to Introduce Yanabir-ja##1
+.' Allow Aniel to Introduce Yanabir-ja |q Baan Dar's Boast##1790023/1
 step
 goto 36.41,70.97
 .click Lockbox##1790127
-.' Collect the Riddle Box |q Box of Riddles##1790022/1/Collect Riddle Box##3
+.' Collect the Riddle Box |q Box of Riddles##1790022/1/1/Collect Riddle Box##3
 step
 goto 36.37,71.93
-.' Jump down here |goto 36.37,71.93 < 1 |c |noway
+.' Jump down here |goto 36.37,71.93 < 10 |c |noway
 step
 goto 36.32,72.43
 .click Canis Root##1790128+ |tip They're all around this area.
-.' Collect 3 Canis Roots |q Box of Riddles##1790022/Collect Canis Root |sub
+.' Collect 3 Canis Roots |q Box of Riddles##1790022/1/1/Collect Canis Root##2
 step
 goto 39.72,69.35
-.' Follow the path up |goto 39.72,69.35 < 1 |c |noway
+.' Follow the path up |goto 39.72,69.35 < 20 |c |noway
 step
 goto 40.43,65.86
 .' Watch the dialogue
-.' Allow Aniel to Introduce Dolirdor |q Baan Dar's Boast##1790023/2/Allow Aniel to Introduce Dolirdor##1
+.' Allow Aniel to Introduce Dolirdor |q Baan Dar's Boast##1790023/2
 step
 goto 41.05,65.64
-.' Lead Aniel Away |q Baan Dar's Boast##1790023/3/Lead Aniel Away##1
+.' Lead Aniel Away |q Baan Dar's Boast##1790023/3
 step
 'Next to you:
-.talk Aniel##1790205 |q Baan Dar's Boast##1790023/4/Talk to Aniel##1
+.talk Aniel##1790205 |q Baan Dar's Boast##1790023/4
 step
 goto 41.64,66.62
 .click Empty Rotmeth Barrel##1790129
-.' Collect the Empty Rotmeth Barrel |q Baan Dar's Boast##1790023/5/Collect Empty Rotmeth Barrel##2
+.' Collect the Empty Rotmeth Barrel |q Baan Dar's Boast##1790023/5/1/Collect Empty Rotmeth Barrel##2
 step
 goto 39.41,65.73
 .click Vat of Rotmeth Starter##1790130
-.' Collect the Rotmeth Starter |q Box of Riddles##1790022/1/Collect Rotmeth Starter##1
+.' Collect the Rotmeth Starter |q Box of Riddles##1790022/1
 step
 goto 38.91,66.46
 .click Dolirdor's Pack##1790131
-.' Collect the Dark Poison |q Baan Dar's Boast##1790023/5/Collect Dark Poison##1
+.' Collect the Dark Poison |q Baan Dar's Boast##1790023/5
 step
 goto 41.41,67.11
 .talk Daifa##1790204
-.' Find Daifa in the Bosmer Camp |q Box of Riddles##1790022/2/Find Daifa in the Bosmer Camp##1
+.' Find Daifa in the Bosmer Camp |q Box of Riddles##1790022/2
 step
 goto 41.05,67.33
 .talk Aldeth##1790208
-.' Play a Trick on Aldeth |q Box of Riddles##1790022/3/Play a Trick on Aldeth##1
+.' Play a Trick on Aldeth |q Box of Riddles##1790022/3
 step
 goto 41.41,67.11
 .talk Daifa##1790204
 ..turnin Box of Riddles##1790022
 step
-goto 40.31,68.23
-.' Follow the path down |goto 40.31,68.23 < 1 |c |noway
-step
 goto 39.39,69.64
 .kill Giant Snake##2940032+
-.' Collect 3 Snake Glands |q Baan Dar's Boast##1790023/Collect Snake Glands |sub
+.' Collect 3 Snake Glands |q Baan Dar's Boast##1790023/6/1/Collect Snake Glands##1
+step
+goto 39.39,69.64
 .' Use Dark Poison on Stranglers |tip They look like plants with big red bulbs around this area.
 .kill Strangler##1800010+
-.' Collect 3 Poisoned Strangler Stems |q Baan Dar's Boast##1790023/Collect Poisoned Strangler Stems |sub
-step
-goto 39.72,69.36
-.' Follow the path up |goto 39.72,69.36 < 1 |c |noway
+.' Collect 3 Poisoned Strangler Stems |q Baan Dar's Boast##1790023/7/1/Collect Poisoned Strangler Stems##1
 step
 goto 39.89,66.86
 .click Offering Platform##1790132
-.' Deliver the Filled Barrel to the Bosmer Camp |q Baan Dar's Boast##1790023/Deliver Filled Rotmeth Barrel to the Bosmer camp |sub
+.' Place Barrel on Offering Platform
+.' Deliver the Filled Barrel to the Bosmer Camp |q Baan Dar's Boast##1790023/8/1/Deliver Filled Rotmeth Barrel to the Bosmer Camp##2
 step
 goto 39.18,67.11
-.' Follow the path |goto 39.18,67.11 < 1 |c |noway
+.' Follow the path |goto 39.18,67.11 < 20 |c |noway
 step
 goto 35.19,68.82
-.talk Yanabir-ja##1790206 |q Baan Dar's Boast##1790023/10/Talk to Yanabir-ja##1
-step
-goto 36.91,68.57
-.' Follow the path |goto 36.91,68.57 < 1 |c |noway
+.talk Yanabir-ja##1790206 |q Baan Dar's Boast##1790023/9
 step
 goto 40.97,66.13
-.' Follow Aniel |q Baan Dar's Boast##1790023/11/Follow Aniel##1
+.' Follow Aniel |q Baan Dar's Boast##1790023/10
 step
 goto 41.05,66.00
-.talk Aniel##1790205 |q Baan Dar's Boast##1790023/11/Follow Aniel##1
+.talk Aniel##1790205 |q Baan Dar's Boast##1790023/11
 step
 goto 41.14,66.00
 .click Portal to the Five Finger Dance##1790133
-.' Enter the Five Finger Dance |q Baan Dar's Boast##1790023/13/Enter the Five Finger Dance##1
+.' Enter the Five Finger Dance |q Baan Dar's Boast##1790023/12
 step
-goto Five Finger Dance 41.20,66.01
+'Run out to the front of the building
 .talk Aniel##1790205
 ..turnin Baan Dar's Boast##1790023
 ..accept Baan Dar's Bash##2410001
 step
-goto 41.20,66.01
-.' Use the Wand of Fowlfire on Five Finger Chickens |tip They are all around this area.
+.' Use the Wand of Fowlfire on Five Finger Chickens |tip They are chickens all around the beach in this area.
 .click Five Finger Chicken Dinner##2410002 |tip It might take a few seconds before you can click them.
-.' Cook and Collect 5 Five Finger Chicken Dinners |q Baan Dar's Bash##2410001/Cook and Collect Five Finger Chicken Dinners |sub
+.' Cook and Collect 5 Five Finger Chicken Dinners |q Baan Dar's Bash##2410001/1
 step
-goto 41.20,66.01
-.talk Aniel##1790205 |q Baan Dar's Bash##2410001/2/Talk to Aniel##1
+'Sitting at a wooden table in the small camp on the beach
+.talk Aniel##1790205 |q Baan Dar's Bash##2410001/2
 step
-goto 41.20,66.01
+'Behind the bar area on the beach
 .click Baan Dar Stout Keg##2410003
-.' Tap the Baan Dar Stout Keg |q Baan Dar's Bash##2410001/3/Tap the Baan Dar Stout Keg##1
+.' Tap the Baan Dar Stout Keg |q Baan Dar's Bash##2410001/3
 step
-goto 41.20,66.01
+'Stay behind the bar
 .' The people around the bar will randomly shout orders
 .' Look at the compass bar to know which one to serve |tip They will also motion you to come over.
 .' Look at them and Press E to serve them Stout or Chicken
-.' Serve the Bar for Baan Dar |q Baan Dar's Bash##2410001/4/Serve the Bar for Baan Dar##1
+.' Serve the Bar for Baan Dar |q Baan Dar's Bash##2410001/4/1/Serve Bar for Baan Dar##1
+.'
+..' Once you have served all the customers, run up the beach to the right
+.talk Aniel##1790205 |q Baan Dar's Bash##2410001/2
 step
-goto 41.20,66.01
-.talk Aniel##1790205 |q Baan Dar's Bash##2410001/2/Talk to Aniel##1
-step
-goto 41.20,66.01
-.' Enter the building |goto 41.20,66.01 < 1 |c |noway
-step
-goto 41.20,66.01
+'Go back to the house at the front of the beach
 .click Portal to Thormar##2410001
-.' Leave the Party |q Baan Dar's Bash##2410001/5/Leave the Party##1
+.' Leave the Party |q Baan Dar's Bash##2410001/5
 step
 goto Reaper's March 40.66,66.40
 .talk Aniel##1790205
@@ -14220,10 +14184,10 @@ step
 .' Travel to the Willowgrove Wayshrine |goto 45.42,74.07 < 1 |c |noway
 step
 goto 44.94,72.78
-.' Follow the road |goto 44.94,72.78 < 1 |c |noway
+.' Follow the road |goto 44.94,72.78 < 20 |c |noway
 step
 goto 54.30,59.21
-.' Follow the road |goto 54.30,59.21 < 1 |c |noway
+.' Follow the road |goto 54.30,59.21 < 20 |c |noway
 step
 goto 56.42,58.09
 .talk Tazia##1790209
@@ -14251,14 +14215,11 @@ goto 61.79,59.30
 .' Kill the waves of enemies that attack you
 .' Investigate the Field |q Ezzag's Bandits##1790025/1/Investigate the Field##1
 step
-goto 61.67,59.95
-.' Follow the path up |goto 61.67,59.95 < 1 |c |noway
-step
 goto 63.84,60.77
 .click Cave##1880001
 .' Find the Bandit's Hideout |q Ezzag's Bandits##1790025/2/Find the Bandit's Hideout##1
 step
-goto 54.89,61.06
+goto sren-ja1_base 54.89,61.06
 .' Explore the Cave |q Ezzag's Bandits##1790025/3/Explore the Cave##1
 step
 goto 55.13,50.97
@@ -14267,7 +14228,7 @@ goto 55.13,50.97
 step
 goto 35.23,89.93
 .click S'ren-ja##1790136
-.' Leave the Bandit's Hideout |goto 63.85,60.77 < 1 |c |noway
+.' Leave the Bandit's Hideout |goto reapersmarch_base 63.85,60.77 < 1 |c |noway
 step
 goto 62.50,57.64
 .talk Ezzag##1790215
@@ -14279,7 +14240,7 @@ goto 64.44,55.34
 .' Enter Milk Eyes' House |goto 64.66,55.38 < 1 |c |noway
 step
 goto 64.78,55.34
-.talk Milk Eyes##1790229 |q Rat Problems##1790026/1/Talk to Milk Eyes##1
+..accept Rat Problems##1790026
 step
 goto 64.63,55.43
 .click S'ren-ja##1790136
@@ -14287,41 +14248,37 @@ goto 64.63,55.43
 step
 goto 64.52,55.81
 .click Well##1780052
-.' Enter the Well |q Rat Problems##1790026/2/Enter the Well##1
+.' Enter the Well |q Rat Problems##1790026/1
 step
-goto 31.99,41.47
-.talk Tazia##1790209 |q Rat Problems##1790026/3/Talk to Tazia##1
+goto sren-ja2_base 31.99,41.47
+.talk Tazia##1790209 |q Rat Problems##1790026/2
 step
 goto 49.75,28.23
 .click Skooma Lab##1790142
-.' Smash the Lab Table |q Rat Problems##1790026/Smash Lab Tables |sub
-'FIX ME
+.' Smash the Lab Table |q Rat Problems##1790026/3/1/Smash Lab Tables##1 |count 1
 step
 goto 75.96,40.53
 .click Skooma Lab##1790142
-.' Smash the Lab Table |q Rat Problems##1790026/Smash Lab Tables |sub
-'FIX ME
+.' Smash the Lab Table |q Rat Problems##1790026/3/1/Smash Lab Tables##1 |count 2
 step
 goto 76.96,48.93
 .click Skooma Lab##1790142
-.' Smash the Lab Table |q Rat Problems##1790026/Smash Lab Tables |sub
-'FIX ME
+.' Smash the Lab Table |q Rat Problems##1790026/3/1/Smash Lab Tables##1 |count 3
 step
 goto 54.32,64.42
 .click Skooma Lab##1790142
-.' Smash the Lab Table |q Rat Problems##1790026/Smash Lab Tables |sub
-'FIX ME
+.' Smash the Lab Table |q Rat Problems##1790026/3/1/Smash Lab Tables##1 |count 4
 step
 goto 69.20,69.91
 .click Lamp##1790143
-.' Burn the Lab
-.' Exit the Lab |q Rat Problems##1790026/6/Exit the Lab##1
+.' Burn the Lab |q Rat Problems##1790026/4
+.' Exit the Lab |q Rat Problems##1790026/5
 step
-goto 63.83,57.87
-.talk Tazia##1790209 |q Rat Problems##1790026/7/Talk to Tazia##1
+goto reapersmarch_base 63.81,57.89
+.talk Tazia##1790209 |q Rat Problems##1790026/6
 step
 goto 63.20,56.28
-.' Follow the path |goto 63.20,56.28 < 1 |c |noway
+.' Follow the path |goto 63.20,56.28 < 20 |c |noway
 step
 goto 64.44,55.33
 .click Milk Eyes' House##1790140
@@ -14336,20 +14293,20 @@ goto 64.63,55.43
 .' Leave Milk Eyes' House |goto 64.41,55.37 < 1 |c |noway
 step
 goto 59.79,56.77
-.talk Kalari##1790220 |q Haunting of Kalari##1790027/1/Talk to Kalari##1
+.talk Kalari##1790220 |q Haunting of Kalari##1790027/1
 step
 goto 59.84,57.06
 .click Kalari's House##1790137
-.' Enter Kalari's House |q Haunting of Kalari##1790027/2/Enter Kalari's House##1
+.' Enter Kalari's House |q Haunting of Kalari##1790027/2
 step
 goto 59.75,57.40
 .' Go upstairs
 .click Wardrobe##1780083
-.' Search the House |q Haunting of Kalari##1790027/3/Search the House##1
+.' Search the House |q Haunting of Kalari##1790027/3
 step
 goto 59.86,57.82
 .click For Mathal##1790149
-.' Search the Hidden Room |q Haunting of Kalari##1790027/4/Search the Hidden Room##1
+.' Search the Hidden Room |q Haunting of Kalari##1790027/4
 step
 goto 59.86,57.61
 .click Secret Door##1790147
@@ -14361,23 +14318,23 @@ goto 59.84,57.08
 .' Leave Kalari's House |goto 59.83,57.04 < 1 |c |noway
 step
 goto 59.78,56.78
-.talk Kalari##1790220 |q Haunting of Kalari##1790027/5/Talk to Kalari##1
+.talk Kalari##1790220 |q Haunting of Kalari##1790027/5
 step
 goto 58.42,56.04
 .click Rakhad's House##1790138
-.' Confront Mathal in Rakhad's House |q Haunting of Kalari##1790027/6/Confront Mathal in Rakhad's House##1
+.' Confront Mathal in Rakhad's House |q Haunting of Kalari##1790027/6
 step
 goto 57.93,56.05
 .click Simple Illusion Magic##1790151
-.' Read the Nearby Book |q Haunting of Kalari##1790027/Read Nearby Book |sub
+.' Read the Nearby Book |q Haunting of Kalari##1790027/7/5/Read Nearby Book##1
 step
 goto 57.97,56.13
 .' Click each Crystal until they make a sound
-.' Stop the Ritual |q Haunting of Kalari##1790027/7/Stop the Ritual##1
+.' Stop the Ritual |q Haunting of Kalari##1790027/8
 step
 goto 58.16,56.01
 .click Letter from Rakhad##1790152
-.' Read the Note |q Haunting of Kalari##1790027/9/Read Note##1
+.' Read the Note |q Haunting of Kalari##1790027/9
 step
 goto 58.39,56.05
 .click S'ren-ja##1790136
@@ -14387,6 +14344,7 @@ goto 59.78,56.78
 .talk Kalari##1790220
 ..' [Lie] Tell her Mathal left to spare her
 ..turnin Haunting of Kalari##1790027
+..accept Loose Ends##1790028
 step
 goto 62.18,54.09
 .click Clanmother's House##1790134
@@ -14401,15 +14359,12 @@ goto 61.57,54.34
 .click S'ren-ja##1790136
 .' Leave the Clanmother's House |goto 62.13,54.12 < 1 |c |noway
 step
-goto 62.07,55.09
-.' Follow the path |goto 62.07,55.09 < 1 |c |noway
-step
 goto 64.38,53.85
 .click Cave##1880001
 .' Find Rakhad's Cave |q Loose Ends##1790028/2/Find Rakhad's Cave##1
 step
-goto 52.71,11.77
-.' Follow the path |goto 52.71,11.77 < 1 |c |noway
+goto sren-ja_base 52.71,11.77
+.' Follow the path |goto 52.71,11.77 < 10 |c |noway
 step
 goto 28.98,32.81
 .click Rakhad's Hideout##1790153
@@ -14425,15 +14380,9 @@ goto 43.51,58.79
 .click Cave##1880001
 .' Leave Rakhad's Hideout |goto 49.54,58.36 < 1 |c |noway
 step
-goto 55.93,67.16
-.' Follow the path up |goto 55.93,67.16 < 1 |c |noway
-step
 goto 55.66,90.10
 .click S'ren-ja##1790136
-.' Leave the Cave |goto 64.37,53.82 < 1 |c |noway
-step
-goto 61.50,55.06
-.' Follow the path |goto 61.50,55.06 < 1 |c |noway
+.' Leave the Cave |goto reapersmarch_base 64.37,53.82 < 1 |c |noway
 step
 goto 62.18,54.09
 .click Clanmother's House##1790134
@@ -14453,10 +14402,7 @@ goto 61.57,54.34
 .' Leave the Clanmother's House |goto 62.13,54.12 < 1 |c |noway
 step
 goto 58.97,54.17
-.' Follow the road |goto 58.97,54.17 < 1 |c |noway
-step
-goto 55.95,48.59
-.' Follow the path |goto 55.95,48.59 < 1 |c |noway
+.' Follow the road |goto 58.97,54.17 < 20 |c |noway
 step
 goto 58.44,48.77
 .wayshrine Sren-ja
@@ -14465,99 +14411,74 @@ goto 51.17,44.17
 .talk Balag##1790235
 ..accept A Foot in the Door##1790029
 step
-goto 51.23,43.32
-.' Follow the path down |goto 51.23,43.32 < 1 |c |noway
-step
 goto 49.06,41.35
-.talk Malarel##1790240 |q A Foot in the Door##1790029/Talk to Malarel |sub
+.talk Malarel##1790240 |q A Foot in the Door##1790029/1
 step
 goto 49.82,41.22
 .talk Sorcerer Combatant##1790239
 .kill Sorcerer Combatant##1790239
-.' Spar with a Sorceror Division Combatant |q A Foot in the Door##1790029/Spar with Sorceror Division Combatants |sub
-step
-goto 49.06,41.35
+.' Spar with a Sorceror Division Combatant |q A Foot in the Door##1790029/2/3/Spar with Sorceror Division Combatants##1
+..' After you are done sparring:
 .talk Malarel##1790240
-.' Gain the Sorcerer Division Credentials |q A Foot in the Door##1790029/1/Gain Sorcerer Division Credentials##2
-step
-goto 50.14,41.80
-.' Follow the path up |goto 50.14,41.80 < 1 |c |noway
+.' Gain the Sorcerer Division Credentials |q A Foot in the Door##1790029/1/1/Gain Sorcerer Division Credentials##2
 step
 goto 51.54,43.26
-.' Follow the path |goto 51.54,43.26 < 1 |c |noway
+.' Follow the path |goto 51.54,43.26 < 20 |c |noway
 step
 goto 52.36,41.99
-.talk Tholbor##1790242 |q A Foot in the Door##1790029/Talk to Tholbor |sub
+.talk Tholbor##1790242 |q A Foot in the Door##1790029/3/2/Talk to Tholbor##1
 step
 goto 53.18,42.02
 .talk Summoner Combatant##1790236
 .kill Summoner Combatant##1790236
-.' Spar with a Summoner Division Combatant |q A Foot in the Door##1790029/Spar with a Summoner Division Combatant |sub
-step
-goto 52.36,41.99
+.' Spar with a Summoner Division Combatant |q A Foot in the Door##1790029/4
+..' After you are done sparring:
 .talk Tholbor##1790242
-.' Gain the Summoner Division Credentials |q A Foot in the Door##1790029/1/Gain Summoner Division Credentials##1
-step
-goto 53.45,41.29
-.' Follow the path |goto 53.45,41.29 < 1 |c |noway
+.' Gain the Summoner Division Credentials |q A Foot in the Door##1790029/3/2/Talk to Tholbor##1
 step
 goto 52.31,38.66
-.talk Zara##1790245 |q A Foot in the Door##1790029/Talk to Zara |sub
+.talk Zara##1790245 |q A Foot in the Door##1790029/5/4/Talk to Zara##1
 step
 goto 52.69,39.15
 .talk Swordmaster Combatant##1790244
 .kill Swordmaster Combatant##1790244
-.' Spar with a Swordmaster Division Combatant |q A Foot in the Door##1790029/Spar with Swordmaster Division Combatants |sub
-step
-goto 52.31,38.66
+.' Spar with a Swordmaster Division Combatant |q A Foot in the Door##1790029/6/4/Spar with Swordmaster Division Combatants##1
+..' After you are done sparring:
 .talk Zara##1790245
-.' Gain the Swordmaster Division Credentials |q A Foot in the Door##1790029/1/Gain Swordmaster Division Credentials##3
-step
-goto 51.24,38.39
-.' Follow the path down |goto 51.24,38.39 < 1 |c |noway
+.' Gain the Swordmaster Division Credentials |q A Foot in the Door##1790029/5/4/Talk to Zara##1
 step
 goto 49.03,38.49
 .talk Feluni##1790251
 ..turnin A Foot in the Door##1790029
 ..accept The Sorcerer Division##1790030
 step
-goto 48.05,39.31
-.' Follow the path down |goto 48.05,39.31 < 1 |c |noway
-step
 goto 49.04,41.35
-.talk Malarel##1790240 |q The Sorcerer Division##1790030/1/Talk to Malarel##1
+.talk Malarel##1790240 |q The Sorcerer Division##1790030/1
 step
 goto 49.13,41.74
 .click Sorcerer Arena##1790156
-.' Enter the Sorcerer Division Arena |q The Sorcerer Division##1790030/2/Enter Sorcerer Division Arena##1
+.' Enter the Sorcerer Division Arena |q The Sorcerer Division##1790030/2
 step
-goto Thizzrini Arena 23.91,55.27
+'Go to the middle of the Arena
 .kill Ravius##2440002
 .kill Norirtil the Nefarious##2440003
 .kill Einnel##2440004
-.' Defeat the Sorcerer Division Contenders |q The Sorcerer Division##1790030/3/Defeat the Sorcerer Division Contenders##1
+.' Defeat the Sorcerer Division Contenders |q The Sorcerer Division##1790030/3
 step
-goto 23.73,54.59
 .click Reaper's March##110152
 .' Leave the Sorcerer Division Arena |goto Reaper's March 49.10,41.74 < 1 |c |noway
 step
 goto Reaper's March 49.05,41.36
-.talk Malarel##1790240 |q The Sorcerer Division##1790030/4/Talk to Malarel##1
+.talk Malarel##1790240 |q The Sorcerer Division##1790030/4
 step
-goto 48.55,41.13
-.' Follow the path up |goto 48.55,41.13 < 1 |c |noway
-step
-goto 49.04,38.06
 .click Arena of Thizzrini##1790157
-.' Enter the Arena of Thizzrini |q The Sorcerer Division##1790030/5/Enter the Arena of Thizzrini##1
+.' Enter the Arena of Thizzrini |q The Sorcerer Division##1790030/5
 step
-goto Thizzrini Arena 22.73,48.28
 .talk Irgun##2440005
 .kill Malarel##1790240
 .kill Linihar##2440006
-.' Defeat the Champion of the Sorcerer Division |q The Sorcerer Division##1790030/6/Defeat the Champion of the Sorcerer Division##1
+.' Defeat the Champion of the Sorcerer Division |q The Sorcerer Division##1790030/6
 step
-goto 23.53,48.94
 .click Reaper's March##110152
 .' Leave the Arena of Thizzrini |goto Reaper's March 49.10,38.03 < 1 |c |noway
 step

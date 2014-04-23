@@ -243,8 +243,8 @@ Plateau=0090425
 To My Pash-Riha=0090426
 Argonians Among Us=0090427
 Varieties of Faith: The Nords=0090428
-Portal to Valley of Blades=0090429
 Mystery Meat=0090429
+Portal to Valley of Blades=0090429
 Origin of the Mages Guild=0090430
 
 Hlan House=0100001
@@ -469,6 +469,7 @@ Manual of Spellcraft=0100219
 General Redoran's Dispatch=0100220
 Kwama Mining for Fun and Profit=0100221
 Deepcrag Den=0100222
+A Pocket Guide to Mournhold=0100223
 
 Cold Moon Inn=0150001
 Leimaer the Raven's Journal=0150002
@@ -945,6 +946,12 @@ Heart Plume=0190168
 Voice of the Hist=0190169
 Vivec and Mephala=0190170
 Mine Hut=0190171
+Tree-Minder's Journal=0190172
+The Strange Case of Ja-Reet=0190173
+Spirit of the Daedra=0190174
+Articles of the Sakkr-al-Behr=0190175
+The Wayward Pilgrim=0190176
+Hidden-Hands' Journal=0190177
 
 Transitus Shrine=0370001
 North Morrowind Wayshrine=0370002
@@ -1475,6 +1482,7 @@ The Will of Drulshasa=2040004
 Daedric Artifact=2040005
 The Unbreakable Redguard=2040006
 The Chim-El Adabal=2040007
+A Warning and an Offer=2040008
 
 Borodin's Lair=2070001
 Half-Burned Note to Borodin=2070002

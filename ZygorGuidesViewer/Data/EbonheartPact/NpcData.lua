@@ -8,9 +8,10 @@ Uncle Leo=-21474836480050
 Sen Dres=-21474836480008
 Taril Randoro=-21474836480003
 Doril Randoro=-21474836480002
-Vanguard Cryomancer=-21474836480001
-The Spider's Essence=-21474836480001
 Geril Randoro=-21474836480001
+The Spider's Essence=-21474836480001
+The Scorpion's Essence=-21474836480001
+Vanguard Cryomancer=-21474836480001
 
 Balzag gro-Gruumsh=0020502
 Balrook gro-Mak=0020503
@@ -1447,8 +1448,8 @@ Rorthor=0150322
 Baxrold=0150323
 Lobamob gra-Bar=0150324
 Aleeto=0150325
-Khizuna=0150326
 Frena Firecloak=0150326
+Khizuna=0150326
 Gudaric the Silent=0150327
 Sergeant Yringor=0150328
 Juda=0150329
@@ -2350,6 +2351,18 @@ Jomathak=0190504
 Gaddan=0190505
 Llodus=0190506
 Aide Pideelus=0190507
+Chilwir=0190508
+Wonders-at-Stars=0190509
+Fish-Whispers=0190510
+Nokama=0190511
+Vuh-Dimik=0190512
+Private Glalor=0190513
+Mujeen=0190514
+Nijuna=0190515
+Melil Beleth=0190516
+Villa=0190517
+Owai-La=0190518
+Shadowscale Deadeye=0190519
 
 Seducer Trilvath=0240001
 Honest-Feet=0240002
@@ -2474,6 +2487,7 @@ Madwoman=0590002
 Madman=0590003
 
 Skin-Stealer Cutthroat=0670001
+Skin-Stealer Mender=0670002
 
 Lyranth=0680001
 Bijot=0680002
@@ -2483,6 +2497,8 @@ Chirah's Skirmisher=0690002
 
 Ayleid Scholar=0700001
 Morilye=0700002
+Skeletal Infernal=0700003
+Ayleid Noble=0700004
 
 Erranza=0710001
 Sargon=0710002

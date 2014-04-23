@@ -75,7 +75,7 @@ local function GetMapByID(id) return "(map "..id..")" end
 
 GOALTYPES['only'] = {
 	parse = function(self,params,step,data)
-		--local chunkcount = data.chunkcount
+		local chunkcount = data.chunkcount
 
 		local cond = params:match("^if%s+(.*)$")
 		if cond then
@@ -99,6 +99,27 @@ GOALTYPES['only'] = {
 				end
 
 				--params = params:gsub("%s*,%s*",",")
+		end
+	end,
+}
+
+GOALTYPES['complete'] = {
+	parse = function(self,params,step,data)
+		--local chunkcount = data.chunkcount
+
+		local cond = params:match("^if%s+(.*)$")
+		if cond then
+			-- condition match and is a |only if
+			local subject = self	-- If this is the first chunk for this line, then it is a |only if for a step.
+
+			local fun,err = MakeCondition(cond,true)
+			if not fun then return err end
+
+			subject.condition_complete_raw=cond
+			subject.condition_complete=fun
+		else
+			ZGV:Error("||complete needs 'if'. because.")
+			self.action = nil		-- rip in peace goal. wipe out because this is a command for steps.
 		end
 	end,
 }
@@ -746,7 +767,8 @@ function Goal:IsVisible()
 			return true
 		else
 			ZGV.Parser.ConditionEnv._SetLocal(self.parentStep.parentGuide,self.parentStep,self)
-			return self.condition_visible()
+			local ok,ret = pcall(self.condition_visible)
+			if ok then return ret else ZGV:Error("Error in step %s, goal %s, only if %s: %s", self.parentStep.num, self.num, self.condition_visible_raw or "", ret) end
 		end
 	end
 	return true
@@ -757,6 +779,13 @@ end
 function Goal:IsComplete()
 	-- If the quest is complete then all related goals are complete.
 	local iscomplete,ispossible,explanation,curv,maxv,debugs
+
+	if self.condition_complete then
+		ZGV.Parser.ConditionEnv._SetLocal(self.parentStep.parentGuide,self.parentStep,self)
+		local ok,ret = pcall(self.condition_complete)
+		if ok then return ret,true else ZGV:Error("Error in step %s, goal %s, complete if %s: %s", self.parentStep.num, self.num, self.condition_complete_raw or "", ret) return false,false end
+	end
+
 	if self.questid and self.action~="accept" and self.action~="turnin" then  -- let accept goals complete on their own
 	while 1 do
 		ZGV:Debug("&goal completing..............")
@@ -852,6 +881,7 @@ function Goal:IsCompletable(by_type)
 	local GOALTYPE=GOALTYPES[self.action]	-- All goals have goaltypes
 
 	if self.force_nocomplete then return false end	-- the almighty |n
+	if self.condition_complete then return true end  -- we have a script, so obey
 
 	if not by_type and self.questid and self.action~="goto" then return true end	-- there is a quest associated with this goal so can be completed. Unless it's a goto. These are only completed by |c.
 

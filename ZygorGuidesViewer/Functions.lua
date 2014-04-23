@@ -7,6 +7,7 @@ if not ZGV then return end
 
 local tinsert,tremove,sort,min,max,floor,type,pairs,ipairs = table.insert,table.remove,table.sort,math.min,math.max,math.floor,type,pairs,ipairs
 --local create,resume,status,yield = coroutine.create,coroutine.resume,coroutine.status,coroutine.yield
+local print = ZGV.print
 
 -----------------------------------------
 -- LOCAL VARIABLES
@@ -106,8 +107,8 @@ end
 function Utils.ShowFloatingMessage(msg,event,font,sound)
 	if ZGV.DEV then
 		ZO_CenterScreenAnnounce_GetAnnounceObject():AddMessage(event or EVENT_OBJECTIVE_COMPLETED,font or CSA_EVENT_SMALL_TEXT,sound or SOUNDS.QUEST_OBJECTIVE_STARTED,"|cffaa00[|cf8fbffZ|cffaa00]|r "..msg)
+		print(msg)
 	end
-	d(msg)
 end
 
 function Utils.escape(s)
@@ -362,120 +363,6 @@ function Utils.GetPOIForQuest(questid)
 	poi = ZGV._QuestPOIData:match("(%d+):[^\n]*"..questid)
 	return poi
 end
-
-
-
-
---[=[
-
--- Layer testing
-
-local layers = {
-	[1] = "General",
-	[2] = "User Interface Shortcuts",
-	[3] = "Siege",
-	[4] = "Dialogs",
-	[5] = "Notifications",
-	[6] = "MouseUIMode",
-	[7] = "Conversation",
-	[8] = "Guild",
-	[9] = "RadialMenu",
-	[10] = "Death",
-	[11] = "Loot",
-	[12] = "GameMenu",
-	[13] = "Keybind Window",
-	[14] = "Addons",
-	[15] = "OptionsWindow",
-	[16] = "Add-ons",
-}
-
-Layer_Stack = {}
-
-A = {Layer_Stack}
-
-local function EventPush(event, layer, activeLayer)
-	tinsert(Layer_Stack,layers[layer])
-
-	Layer_Stack.cur = layers[activeLayer]
-end
-
-local function EventPop(event, layer, activeLayer)
-	local function findLayer(index)
-		for i,event in ipairs(Layer_Stack) do
-			if event == layers[index] then
-				return i
-			end
-		end
-	end
-
-	tremove(Layer_Stack,findLayer(layer))
-
-	Layer_Stack.cur = layers[activeLayer]
-end
-
-ZGV.EM:RegisterForEvent("ZGV", EVENT_ACTION_LAYER_PUSHED, EventPush)
-ZGV.EM:RegisterForEvent("ZGV", EVENT_ACTION_LAYER_POPPED, EventPop)
-
-
---ZO_WorldMap_OnShow()
---ZO_WorldMap_OnHide()
---ZO_WorldMap_PanToPlayer()
-
-local wmShow = ZO_WorldMap_OnShow
-
-function ZO_WorldMap_OnShow()
-	d("s")
-end
-
---ZO_WorldMap_OnHide()
---ZO_WorldMap_PanToPlayer()
-
-local wmHide = ZO_WorldMap_OnHide
-
-function ZO_WorldMap_OnHide()
-	d("h")
-end
-
-function MMShow()
-	local wp = ZO_WorldMap
-
-	local isValidAnchor, point, relativeTo, relativePoint, offsetX, offsetY = wp:GetAnchor(0)
-	local width, height = wp:GetDimensions()
-
-	d(tostring(relativeTo))
-
-	wp:ClearAnchors()
-	wp:SetAnchor(TOPRIGHT, relativeTo, TOPRIGHT, -25, -750)
-	wp:Show()
-	wp:SetSize(100,100)
-	wp:SetMouseEnabled(false)
-end
--- EVENT_ACTION_LAYER_POPPED (luaindex layerIndex, luaindex activeLayerIndex)
--- EVENT_ACTION_LAYER_PUSHED (luaindex layerIndex, luaindex activeLayerIndex)
-
-
-
---/run for i=1,16 do n = GetActionLayerInfo(i) d(i.." -  "..n) end
-
---[[
-1. General
-2. User Interface Shortcuts
-3. Siege
-4. Dialogs
-5. Notifications
-6. MouseUIMode
-7. Conversation
-8. Guild
-9. RadialMenu
-10. Death
-11. Loot
-12. GameMenu
-13. Keybind Window
-14. Addons
-15. OptionsWindow
---]]
-
---]=]
 
 --[[
 1. General							-- Always open, Don't hide

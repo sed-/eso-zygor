@@ -499,9 +499,15 @@ function Quest:FillFromJournal(journalIndex)
 
 	local questName, backgroundText, activeStepText, activeStepType, activeStepTrackerOverrideText, completed, tracked, questLevel, pushed, questType = GetJournalQuestInfo(journalIndex)
 	if questName=="" then return false end
-	if questName~=self.name then d("What..? Quest journalIndex="..journalIndex.." has name "..questName..", expected "..(self.name or "?")) return end
+	if questName~=self.name then
+		if ZGV.DEV then d("What..? Quest journalIndex="..journalIndex.." has name "..questName..", expected "..(self.name or "?")) end
+		return
+	end
 	local questId = Data:GetQuestIdByName(questName)
-	if questId~=self.id then d("What..? Quest journalIndex="..journalIndex.." has name "..questName.." id "..questId..", expected id "..(self.id or "?")) return end
+	if questId~=self.id then
+		if ZGV.DEV then d("What..? Quest journalIndex="..journalIndex.." has name "..questName.." id "..questId..", expected id "..(self.id or "?")) end
+		return
+	end
 	--Quests:Debug("Creating New Quest %s##%d",questName,questId)
 
 	self.name = questName

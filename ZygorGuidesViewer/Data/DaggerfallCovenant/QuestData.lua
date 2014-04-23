@@ -297,6 +297,8 @@ Kingdom in Mourning=0720049
 
 The Oldest Orc=0730001
 
+The Arch-Mage's Boon=0990001
+
 Word from the Dead=1320001
 
 Fadeel's Freedom=1340001
@@ -328,6 +330,8 @@ What the Heart Wants=1540020
 A Graveyard of Ships=1540021
 Old Bones=1540022
 The Final Assault=1540023
+The Endless War=1540024
+A Thorn in Your Side=1540025
 
 The Broken Spearhead=2920001
 Sphere Assembly=2920002

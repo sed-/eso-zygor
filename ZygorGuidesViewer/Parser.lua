@@ -77,6 +77,11 @@ local ConditionEnv = {
 		local q=ZGV.Quests[id]
 		return q
 	end,
+	dist = function(map,x,y)
+		if x>1 then x=x/100 end
+		if y>1 then y=y/100 end
+		return ZGV.Pointer:GetDistToCoords(map,x,y)
+	end
 	--[[
 		rep = function(faction)
 			if ZGV:GetReputation(faction).friendship then --dummy proof this.
@@ -514,6 +519,7 @@ function Parser:ParseEntry(guide,fully_parse,lastparsed)
 	local perror
 	local breakout
 	local prevmap
+	local funclocdata = {}
 
 	local do_debug	= 1
 
@@ -660,10 +666,8 @@ function Parser:ParseEntry(guide,fully_parse,lastparsed)
 
 						if do_debug then self:Debug("Goal Handler found") end
 
-						local funclocdata = {	-- TODO This isn't very efficient. But want to be able to pass needed information around instead of everything in this function... ehhhh not ideal
-							prevmap = prevmap,
-							chunkcount = chunkcount,
-						}
+						funclocdata.prevmap = prevmap
+						funclocdata.chunkcount = chunkcount
 
 						perror = cmdHandler(goal,params,step,funclocdata)
 						if perror then return parseerror(perror) end	-- Shouldn't add the goal to step... But going to error anyhow.
@@ -671,7 +675,7 @@ function Parser:ParseEntry(guide,fully_parse,lastparsed)
 						-- Used for finding map when only x,y is in guide
 						step.map = goal.map or step.map
 						prevmap = step.map or prevmap
-
+						
 					else
 						print(("Command : '%s' not supported"):format(cmd))
 						-- ERROR?

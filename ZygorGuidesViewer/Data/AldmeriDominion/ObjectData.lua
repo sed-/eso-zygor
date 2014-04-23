@@ -5,10 +5,10 @@ if ZGV.Utils.GetFaction() ~= "AD" then return end
 ZGV._ObjectData = [[
 
 Shrine to Stendarr=-21474836480001
-Vuldngrav Great Hall=-21474836480001
+Dark Source=-21474836480001
 Ruined Door=-21474836480001
 Corrupted Guardian Senche=-21474836480001
-Dark Source=-21474836480001
+Vuldngrav Great Hall=-21474836480001
 Fort Grimwatch=-21474836480001
 
 The Reality of Spirits=0020147
@@ -963,8 +963,8 @@ Portal to Stirk=1780260
 Gilded Letter=1780260
 A Clothier's Primer=1780261
 Starfall Arcana=1780261
-Centurion Control Lever=1780262
 Woodworking For Simpletons=1780262
+Centurion Control Lever=1780262
 Blacksmithing Station (Death's Wind)=1780263
 Clothing Station (Death's Wind)=1780274
 Woodworking Station (Death's Wind)=1780286
@@ -1181,6 +1181,7 @@ The Moon Cats and Their Dance=1790196
 Bridgewatch Tower=1790197
 The March Explored VI=1790198
 The Lusty Argonian Maid, Vol. 1=1790199
+Tales of the Two-Moons Path Vol. 3=1790200
 
 Prowler Deck=1800001
 High Iron Ore=1800002
@@ -1699,8 +1700,8 @@ Servant's Clothing=2940087
 Apothecary's Ledger=2940088
 Alchemy Station=2940089
 Dockmaster's Lament=2940090
-Basic Provisioning Guide=2940091
 Alchemy For My Apprentice=2940091
+Basic Provisioning Guide=2940091
 Alchemy For My Apprentice=2940092
 
 Bloodthorn Satchel=2950010
