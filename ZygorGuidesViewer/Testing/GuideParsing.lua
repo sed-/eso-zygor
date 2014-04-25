@@ -145,6 +145,8 @@ function Parsing.TestMapParsing()
 	if map~="malabaltor_base" or isnot(x,0.123) or isnot(y,0.128) or dist~=nil then return cleanUpTestAndReturn(false,"ParseMapXYDist fail #4") end
 	map,x,y,dist = ParseMapXYDist("Malabal Tor 12.3,12.8 >5")
 	if map~="malabaltor_base" or isnot(x,0.123) or isnot(y,0.128) or dist~=-5 then return cleanUpTestAndReturn(false,"ParseMapXYDist fail #5") end
+	map,x,y,dist = ParseMapXYDist("Malabal Tor 12.3,12.8 < 20")
+	if map~="malabaltor_base" or isnot(x,0.123) or isnot(y,0.128) or dist~=20 then return cleanUpTestAndReturn(false,"ParseMapXYDist fail #6") end
 	--[[
 	map,x,y,dist = ParseMapXYDist("504")
 	if map~=504 or x~=nil or y~=nil or dist~=nil then return cleanUpTestAndReturn(false,"ParseMapXYDist fail #6") end

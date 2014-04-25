@@ -70,18 +70,29 @@ local ConditionEnv = {
 	end,
 
 	-- independent data feeds
-	questcomplete = function(id,stage) --stage can be omitted
+	completedquest = function(id,stage) --stage can be omitted
+		local _  if type(id)=="string" then _,id,_,stage=Parser.ParseQuest(id) end
 		return ZGV.Quests:IsQuestStageComplete(id,stage)
 	end,
 	havequest = function(id)
+		local _  if type(id)=="string" then _,id=Parser.ParseQuest(id) end
 		local q=ZGV.Quests[id]
 		return q
 	end,
 	dist = function(map,x,y)
+		local step=Parser.ConditionEnv.step
+		local goal=Parser.ConditionEnv.goal
+		if not y then
+			map,x,y = ((goal and goal.map) or (step and step.map)),map,x
+		end
+		if not x and not y and goal and goal.x then x,y=goal.x,goal.y end
+		if not x and not y and step and step.goals then
+			for gi,go in ipairs(step.goals) do if go.x then map,x,y=go.map,go.x,go.y break end end
+		end
 		if x>1 then x=x/100 end
 		if y>1 then y=y/100 end
 		return ZGV.Pointer:GetDistToCoords(map,x,y)
-	end
+	end,
 	--[[
 		rep = function(faction)
 			if ZGV:GetReputation(faction).friendship then --dummy proof this.
@@ -227,9 +238,10 @@ GuideCommands['leechsteps'] = function(guide,params)
 						newstep[k]=v
 					end
 				end
-			end
 
-			leeched=leeched+1
+				guide:AddStep(newstep)
+				leeched=leeched+1
+			end
 		end
 
 		Parser:Debug("Leeched "..leeched.." steps, total now "..(#guide.steps)..".")
@@ -313,6 +325,22 @@ StepCommands['label'] = function(step,params)
 		return "label without text"
 	end
 end
+
+StepCommands['only'] = function(step,params)
+	local cond = params:match("^if%s+(.*)$")
+	if cond then
+		-- condition match and is a |only if
+		local fun,err = Parser.MakeCondition(cond,true)
+		if not fun then return err end
+
+		step.condition_visible_raw=cond
+		step.condition_visible=fun
+	else
+		step.requirement = params
+		--params = params:gsub("%s*,%s*",",")
+	end
+end
+
 
 -----------------------------------------
 -- GOAL COMMANDS
@@ -605,15 +633,18 @@ function Parser:ParseEntry(guide,fully_parse,lastparsed)
 
 			if do_debug then self:Debug(": %s",chunk) end
 
-			--[[
+			local cmd_parsed
+
 			-- Eh no leechsteps for now
 			if cmd=="leechsteps" then
-				perror, breakLine, breakAll = Commands[cmd](guide,params)
-				if breakLine then break end
+				local cmdHandler = self:GetGuideCommandHandler(cmd)
+				if cmdHandler then
+					local okay, perror = cmdHandler(guide,params)
+					if perror then return parseerror(perror) end		-- Handler gave us an error. abort abort
+					break
+				end
 			end
-			--]]
 
-			local cmd_parsed
 
 			-- guide parameters only found before the first step in a guide
 			if not step then -- all-guide tags
@@ -642,8 +673,14 @@ function Parser:ParseEntry(guide,fully_parse,lastparsed)
 			if step then
 				if do_debug then self:Debug("In Step cmd:== %s: [%s]",cmd,params) end
 
+				local is_goal_cmd
+
+				if cmd=="only" then  -- THIS IS A MESS.
+					if goal or chunkcount>1 then is_goal_cmd=true end  -- "yes, this is a step command too, but IGNORE IT, handle it like a goal command"
+				end
+
 				local cmdHandler = self:GetStepCommandHandler(cmd)
-				if cmdHandler then
+				if cmdHandler and not is_goal_cmd then
 					-- Step specifc command
 					if do_debug then self:Debug("Step Handler found") end
 					perror = cmdHandler(step,params)
@@ -675,7 +712,7 @@ function Parser:ParseEntry(guide,fully_parse,lastparsed)
 						-- Used for finding map when only x,y is in guide
 						step.map = goal.map or step.map
 						prevmap = step.map or prevmap
-						
+
 					else
 						print(("Command : '%s' not supported"):format(cmd))
 						-- ERROR?

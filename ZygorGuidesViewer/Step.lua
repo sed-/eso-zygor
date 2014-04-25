@@ -30,6 +30,10 @@ local StepProto_mt = { __index=Step }
 local visited_steps={}
 local visited_path={}
 
+local STEPTAGS = {}
+ZGV.STEPTAGS = STEPTAGS
+-- for the future, just in case
+
 
 -----------------------------------------
 -- SAVED REFERENCES
@@ -150,9 +154,19 @@ function Step:IsComplete(cache)
 	return completable and complete and not alloptional, steppossible
 end
 
-function Step:AreRequirementsMet()	-- TODO any time a step isn't valid?
+function Step:AreRequirementsMet()
 	if self.requirement then
 		return ZGV.Utils.IsFaction(self.requirement)
+	end
+
+	if self.condition_visible then
+		ZGV.Parser.ConditionEnv._SetLocal(self.parentGuide,self,nil)
+		local ok,ret = pcall(self.condition_visible)
+		if ok then
+			return ret
+		else
+			ZGV:Error("Error in step %s, only if %s: %s", self.num, self.condition_visible_raw or "", ret:gsub("\n.*",""))
+		end
 	end
 
 	return true

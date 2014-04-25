@@ -320,7 +320,7 @@ function ZGV:TryToCompleteStep(force)
 		completeionInterval = LONG_STEP_INTERVAL
 		self.pause = nil
 	end
-
+	
 	-- Is one of the goals a confirm that is not completed?
 	for i,goal in ipairs(self.CurrentStep.goals) do
 		if goal.action == "confirm" and goal.always then
@@ -367,7 +367,7 @@ function ZGV:TryToCompleteStep(force)
 			end
 
 			PlaySound(SOUNDS.POSITIVE_CLICK)
-
+	
 			-- A step was completed, update the ProgressBar
 			Viewer:UpdateProgressBar()
 		else
@@ -385,6 +385,7 @@ function ZGV:TryToCompleteStep(force)
 	--self:MaybeSuggestNextGuide()
 
 	Viewer:Update()		-- TODO does this need to be ran every time? Could it be only ran when a step is completed to minimize work done?
+		--~~ it makes the display update for 0/5 counts etc...
 end
 
 -----------------------------------------
@@ -539,9 +540,8 @@ function ZGV:SetGuide(name,step)
 		guide=name  --omg, object
 	end
 
-	assert(class(guide)=="Guide","Must be a Guide object to set guide.")
-
 	if guide then
+		assert(class(guide)=="Guide","Must be a Guide object to set guide.")
 		local status,msg = guide:GetStatus()
 		-- Use title_short instead of title because matching with backslashes in it seems off?
 		if status=="INVALID" and not ZGV.db.char.goodbadguides[guide.title_short] then
@@ -613,7 +613,7 @@ function ZGV:SetGuide(name,step)
 	end
 
 	if err then
-		self:Print("Unable to load guide "..(guide and guide.title or name)..": "..err)
+		self:Print("Unable to load guide "..(guide and type(guide)=="table" and guide.title or name)..": "..err)
 		self.sv.char.guide = nil
 		self.sv.char.step = nil
 		self.CurrentGuide = nil

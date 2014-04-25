@@ -1231,6 +1231,17 @@ tinsert(ZGV.startups,function(self)
 	savedquests = svchardata.savedquests	-- Used for collect new data on quests
 	svcompletedquests = svchardata.completedquests
 
+	local fac = ZGV.Utils.GetFaction()
+	fac = (fac=="AD" and 1) or (fac=="DC" and 2) or (fac=="EP" and 3) or 0
+
+	if ZGV.DEV then d("Converting completed quests to faction "..fac) end	
+	for qid,qdata in pairs(svcompletedquests) do
+		if tostring(qid):match("0...$") then
+			svcompletedquests[qid]=nil
+			svcompletedquests[tonumber(qid)+fac*1000]=qdata
+		end
+	end
+
 	-- clear empty savedquests
 	for qid,qdata in pairs(savedquests) do if type(qdata)=="table" then
 		if #qdata==0 then savedquests[qid]=nil end

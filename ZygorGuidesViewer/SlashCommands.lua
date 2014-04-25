@@ -4,7 +4,7 @@ if not ZGV then return end
 -- INFORMATION
 -----------------------------------------
 --[[
-	
+
 --]]
 -----------------------------------------
 -- LOCAL REFERENCES
@@ -42,9 +42,11 @@ end
 
 function ZGV.SlashCommandHandler(text)		--TODO
 	local self = ZGV
-	
+
 	if text=="debug" then
 		self.sv.profile.debug = not self.sv.profile.debug
+
+		ZGV:Print(("Debug is %s"):format(self.sv.profile.debug and "on" or "off"))
 	elseif text=="error" then
 		self.sv.profile.ignoreErrors = not self.sv.profile.ignoreErrors
 		ZGV:Print("Please reload for errors to get handled properly.")

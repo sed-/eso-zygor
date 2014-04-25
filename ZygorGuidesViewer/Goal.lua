@@ -73,10 +73,10 @@ local function GetMapByID(id) return "(map "..id..")" end
 -----------------------------------------
 -- Pretty much Goal Types, but not exactly.
 
-GOALTYPES['only'] = {
+GOALTYPES['only'] = {  -- |only, |only if
 	parse = function(self,params,step,data)
 		local chunkcount = data.chunkcount
-
+		
 		local cond = params:match("^if%s+(.*)$")
 		if cond then
 			-- condition match and is a |only if
@@ -87,18 +87,11 @@ GOALTYPES['only'] = {
 
 			subject.condition_visible_raw=cond
 			subject.condition_visible=fun
+
+			return false,"cancel goal"
 		else
-				-- Faction only at the moment
-				if self.action~="only" then
-					-- ahhh shit a |only after a goal... do sumthin
-					ZGV:Error("||only after a goal? Why not use ||only if??")
-				else
-					self.action = nil		-- rip in peace goal. wipe out because this is a command for steps.
-
-					step.requirement = params
-				end
-
-				--params = params:gsub("%s*,%s*",",")
+			goal.requirement = params
+			--params = params:gsub("%s*,%s*",",")
 		end
 	end,
 }
@@ -567,7 +560,7 @@ function Goal:GetText()
 	_done = complete and "_done" or ""
 
 	if self.text then		--TODO expand on this if straight self.text doesn't cut it. And what is it doing?
-		--[[
+									--~~ This handles {scriptable text entries} in goal texts.
 		local nsub=1
 		-- Generates a parser proc with said behaviour, to evade calling loadstring too much
 		local function make_parser(parser) -- function to generate code
@@ -579,12 +572,17 @@ function Goal:GetText()
 					self.textsubs[nsub]=f
 				end
 				nsub=nsub+1
-				return type(f)=="function" and tostring(f()) or tostring(f)
+				if type(f)=="function" then
+					ZGV.Parser.ConditionEnv._SetLocal(self.parentStep.parentGuide,self.parentStep,self)
+					return tostring(f())
+				else
+					return tostring(f)
+				end
 			end
 		end
 
 		local function parser_simple(s)
-			local fun,err = loadstring(s:find("return") and s or "return "..s)
+			local fun,err = zo_loadstring(s:find("return") and s or "return "..s)
 			if fun then
 				setfenv(fun,ZGV.Parser.ConditionEnv)
 				return fun
@@ -596,7 +594,7 @@ function Goal:GetText()
 		local function parser_ternary(s)
 			local condcode,a,b=s:match("(.*)%?%?(.*)::(.*)")
 			if condcode and a and b then
-				local condfun,err = loadstring(condcode:find("return") and condcode or "return "..condcode)
+				local condfun,err = zo_loadstring(condcode:find("return") and condcode or "return "..condcode)
 				if condfun then
 					local fun = function() -- Generating a real worker function
 						return condfun() and a or b
@@ -610,12 +608,12 @@ function Goal:GetText()
 				return "(Wrong conditional syntax)"
 			end
 		end
-		--]]
+		
 		-- TODO support nesting of conditionals
 		text = self.text
-			--:gsub("{=(.-)=}",make_parser(parser_ternary))
-			--:gsub("{(.-)}",make_parser(parser_simple))
-			--:gsub("#(%d+)#",COLOR_COUNT(remaining))
+			:gsub("{([^}]-%?%?[^}]-::[^}]-)}",make_parser(parser_ternary))
+			:gsub("{(.-)}",make_parser(parser_simple))
+			:gsub("#(%d+)#",COLOR_COUNT(remaining))
 
 	elseif self.action=="tip" then
 		text = self.tooltip
@@ -768,8 +766,11 @@ function Goal:IsVisible()
 		else
 			ZGV.Parser.ConditionEnv._SetLocal(self.parentStep.parentGuide,self.parentStep,self)
 			local ok,ret = pcall(self.condition_visible)
-			if ok then return ret else ZGV:Error("Error in step %s, goal %s, only if %s: %s", self.parentStep.num, self.num, self.condition_visible_raw or "", ret) end
+			if ok then return ret else ZGV:Error("Error in step %s, goal %s, only if %s: %s", self.parentStep.num, self.num, self.condition_visible_raw or "", ret:gsub("\n.*","")) end
 		end
+	end
+	if self.requirement then
+		return ZGV.Utils.IsFaction(self.requirement)
 	end
 	return true
 end
@@ -781,9 +782,17 @@ function Goal:IsComplete()
 	local iscomplete,ispossible,explanation,curv,maxv,debugs
 
 	if self.condition_complete then
-		ZGV.Parser.ConditionEnv._SetLocal(self.parentStep.parentGuide,self.parentStep,self)
-		local ok,ret = pcall(self.condition_complete)
-		if ok then return ret,true else ZGV:Error("Error in step %s, goal %s, complete if %s: %s", self.parentStep.num, self.num, self.condition_complete_raw or "", ret) return false,false end
+		ZGV.Parser.ConditionEnv._SetLocal(self.parentStep.parentGuide, self.parentStep, self)
+		local ok,iscomplete = pcall(self.condition_complete)
+		if ok then
+			if iscomplete then
+				return true,true
+			else
+				-- fall through!
+			end
+		else
+			ZGV:Error("Error in step %s, goal %s, complete if %s: %s", self.parentStep.num, self.num, self.condition_complete_raw or "", iscomplete:gsub("\n.*",""))
+		end
 	end
 
 	if self.questid and self.action~="accept" and self.action~="turnin" then  -- let accept goals complete on their own

@@ -45,6 +45,8 @@ end
 function Utils.GetFaction(unitTag)
 	unitTag = unitTag or "player"
 
+	if unitTag=="player" and ZGV.FAKE_FACTION then return ZGV.FAKE_FACTION end
+
 	local alliance = GetUnitAlliance(unitTag)
 
 	if alliance == ALLIANCE_ALDMERI_DOMINION then

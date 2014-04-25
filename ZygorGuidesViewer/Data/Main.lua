@@ -140,6 +140,14 @@ local function lamehash(s)
 	return sum
 end
 
+local function faction_to_num(fac)
+	if not fac then fac=ZGV.Utils.GetFaction() end
+	if fac=="AD" then return 1
+	elseif fac=="DC" then return 2
+	elseif fac=="EP" then return 3
+	else return 0 end
+end
+
 function Data:GetIdByNameAndType(typ,name)
 	if not (typ and name) then return end
 	assert(type(name)=="string","Name must be a string")
@@ -179,12 +187,18 @@ function Data:GetIdByNameAndType(typ,name)
 		else
 			-- Create a new id for it. and stow it in SV
 			SetMapToPlayerLocation() ZO_WorldMap_UpdateMap()
-			local zoneid = abs(GetCurrentMapZoneIndex())
+			local zone = abs(GetCurrentMapZoneIndex())
+			if zone>999 then zone=999 end
+			local zoneid = ("%03d"):format(zone)
+			
+			local fac = faction_to_num()
+
+			local zone_fac = zoneid..fac
 	
 			-- increment the current count.
-			lastIds[zoneid] = (lastIds[zoneid] or 0) + 1
+			lastIds[zone_fac] = (lastIds[zone_fac] or 0) + 1
 
-			id = ("%03d%04d"):format(zoneid,lastIds[zoneid])
+			id = zone_fac..("%03d"):format(lastIds[zone_fac])
 
 			local newentry = ("%s=%s"):format(name,id)
 			appendSavedVarsByType(typ,newentry)
@@ -198,19 +212,19 @@ function Data:GetNameByIdAndType(typ,id)
 	if not (typ and id) then return end
 	local comdata,data,saveddata = getCorrectVarsByType(typ)
 
-	id = ("%07d"):format(abs(id))	-- Make sure we have as many leading 0s as needed
+	id = ("%07d"):format(abs(tonumber(id)))	-- Make sure we have as many leading 0s as needed
 
-	local p = '(%u[^=]+)='..id..'\n?'	-- Pattern matching is hard... Uppercase letter followed by any char. If a = is found then that means we are from a different line. -- TODO a better pattern that will also always work? regardless of a \n at the start
+	local p = '([^=\r\n]+)='..id	-- A series of non-special chars, then =, then ID.
 
 	local name = comdata:match(p) or data:match(p) or saveddata:match(p)
 	--local name1 = comdata:match(p)
 	--local name2 = data:match(p)
 	--local name3 = saveddata:match(p)
 	--name = name1 or name2 or name3
-
+	
 	if not name then
 		-- Might just be a different faction
-		self:Debug("Id tested. No Name matched wtf... type:%s , id:%d",typ,id)
+		self:Debug("No name found for type:%s, id:%s",typ,id)
 	end
 
 	return name
@@ -228,13 +242,13 @@ function Data:UpdateLastIds(typ)
 		while( e ) do
 			-- Get the id and then split it.
 			local id = loopdata:match(p,s)
-			local zoneid,num = id:match("(%d%d%d)(%d+)")
-			zoneid,num = tonumber(zoneid), tonumber(num)
+			local zoneid_fac,num = id:match("(%d%d%d%d)(%d+)")
+			num = tonumber(num)
 
 			-- Ids are all incremental so the highest one is the correct one.
-			if not lastIds[zoneid] then lastIds[zoneid] = 0 end
+			if not lastIds[zoneid_fac] then lastIds[zoneid_fac] = 0 end
 
-			if num > lastIds[zoneid] then lastIds[zoneid] = num end
+			if num > lastIds[zoneid_fac] then lastIds[zoneid_fac] = num end
 
 			s,e = loopdata:find(p,e)
 		end

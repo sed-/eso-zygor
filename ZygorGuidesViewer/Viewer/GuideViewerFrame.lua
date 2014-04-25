@@ -1062,6 +1062,8 @@ function Viewer:HandleActionLayer()
 			self:Show_GuideViewer(1)
 		end
 	end
+
+	ZO_WorldMap_UpdateMap()	-- TODO temp fix for world map sometimes not updating properly
 end
 
 -----------------------------------------

@@ -3,7 +3,7 @@ if not ZGV then return end
 if ZGV.Utils.GetFaction() ~= "AD" then return end
 
 ZGV._QuestStepData = {
-	[0110001] = {
+	[0111001] = {
 		[1]={
 			[[Q1 Redguard invaders and Wood Orcs from ___ take back the city.<142>]],
 			[[S1 The only remaining officer in Velyn ___ the Fighters Guild.<216>]],
@@ -40,7 +40,7 @@ ZGV._QuestStepData = {
 			[[S1C0 Talk to Lieutenant Ehran]],
 		},
 	},
-	[0110002] = {
+	[0111002] = {
 		[1]={
 			[[Q1 Angardil isn't a resident of Velyn ___ in their problems.<85>]],
 			[[S1 He's very anxious about the tools of ___ residential area.<175>]],
@@ -60,7 +60,7 @@ ZGV._QuestStepData = {
 			[[S1C2 Kill Dh'andsa]],
 		},
 	},
-	[0110003] = {
+	[0111003] = {
 		[1]={
 			[[Q1 The battle for Velyn Harbor continues. ___ from the town.<151>]],
 			[[S1 Chief Makhug killed Lieutenant Ehran. I ___ lieutenant's death.<107>]],
@@ -97,7 +97,7 @@ ZGV._QuestStepData = {
 			[[S1C1 Get to the Docks]],
 		},
 	},
-	[0110013] = {
+	[0111013] = {
 		[1]={
 			[[Q1 Shaman Glazulg told me his clan had a ___ by the Hound.<93>]],
 			[[S1 With the Green Lady off to confront the ___ or his capture.<148>]],
@@ -110,7 +110,7 @@ ZGV._QuestStepData = {
 			[[S2C1 Find the Silvenar in Jathsogur]],
 		},
 	},
-	[0110015] = {
+	[0111015] = {
 		[1]={
 			[[Q1 A Khajiiti merchant calling himself ___ Ayleid ruin.<116>]],
 			[[S1 I should speak with Jurak-dar and see ___ to his claims.<74>]],
@@ -188,7 +188,7 @@ ZGV._QuestStepData = {
 			[[S1C0 Talk to Jurak-dar]],
 		},
 	},
-	[0110022] = {
+	[0111022] = {
 		[1]={
 			[[Q1 The Worm Cult ambushed and captured ___ for a dark ritual.<111>]],
 			[[S1 The Worm Cult captured a Wood Elf named ___ camps in Abamath.<161>]],
@@ -288,7 +288,7 @@ ZGV._QuestStepData = {
 			[[S1C0 Talk to Arithiel]],
 		},
 	},
-	[0110023] = {
+	[0111023] = {
 		[1]={
 			[[Q1 A recent conflict between the Wood ___ end in bloodshed.<108>]],
 			[[S1 Mathragor asked me to speak with his ___ Bloodtoil Valley.<213>]],
@@ -358,7 +358,7 @@ ZGV._QuestStepData = {
 			[[S1C0 Talk to Mathragor]],
 		},
 	},
-	[0110024] = {
+	[0111024] = {
 		[1]={
 			[[Q1 I found a journal written by a priest ___ of the journals.<189>]],
 			[[S1 I should search the area for the ___ journal I found.<89>]],
@@ -380,7 +380,7 @@ ZGV._QuestStepData = {
 			[[S1C0 Talk to Spinner Sandaenion]],
 		},
 	},
-	[0110025] = {
+	[0111025] = {
 		[1]={
 			[[Q1 While exploring along the river, I ___ on how to help him.<157>]],
 			[[S1 The journal instructed me to find the ___ table there.<164>]],
@@ -418,7 +418,7 @@ ZGV._QuestStepData = {
 			[[S1C0 Talk to Yinz-Hei]],
 		},
 	},
-	[0110026] = {
+	[0111026] = {
 		[1]={
 			[[Q1 The Drublog clan of Wood Orcs captured ___ to free him.<124>]],
 			[[S1 According to the Silvenar's Psijic ___ free them first.<155>]],
@@ -515,7 +515,7 @@ ZGV._QuestStepData = {
 			[[S1C0 Talk to The Silvenar]],
 		},
 	},
-	[0110027] = {
+	[0111027] = {
 		[1]={
 			[[Q1 The Silvenar assures me he will recover ___ the Green Lady.<189>]],
 			[[S1 I need to travel to the town of ___ and the Green Lady.<98>]],
@@ -527,7 +527,7 @@ ZGV._QuestStepData = {
 			[[S1C0 Talk to The Silvenar in Silvenar]],
 		},
 	},
-	[0110028] = {
+	[0111028] = {
 		[1]={
 			[[Q1 I've found the temple of the spinners ___ away from them.<100>]],
 			[[S1 A Khajiit bard asked for help ___ more about it.<132>]],
@@ -677,7 +677,7 @@ ZGV._QuestStepData = {
 			[[S1C0 Talk to Spinner Parwaen]],
 		},
 	},
-	[0110029] = {
+	[0111029] = {
 		[1]={
 			[[Q1 A spinner in Valeguard wants to finally ___ difficulties.<105>]],
 			[[S1 Farandor needs some unusual materials ___ called "Old Tusk."<169>]],
@@ -715,7 +715,7 @@ ZGV._QuestStepData = {
 			[[S1C0 Talk to Shandi]],
 		},
 	},
-	[0110030] = {
+	[0111030] = {
 		[1]={
 			[[Q1 The Worm Cult invaded Ouze and captured ___ Spinner Indinael.<80>]],
 			[[S1 I need to find Spinner Indinael and ___ stop the Worm Cult.<84>]],
@@ -801,7 +801,7 @@ ZGV._QuestStepData = {
 			[[S1C0 Talk to Spinner Gwilon]],
 		},
 	},
-	[0110031] = {
+	[0111031] = {
 		[1]={
 			[[Q1 The Worm Cult is trying to enslave the spirits of Ouze.]],
 			[[S1 An oathbreaker spirit of Ouze is ___ it from its prison.<129>]],
@@ -832,7 +832,7 @@ ZGV._QuestStepData = {
 			[[S1C1 Talk to the Voice of Ouze]],
 		},
 	},
-	[0110032] = {
+	[0111032] = {
 		[1]={
 			[[Q1 Varen has asked me to accompany Sai ___ into Sancre Tor.<154>]],
 			[[S1 A projection of Varen appeared to me ___ see what he wants.<106>]],
@@ -935,7 +935,7 @@ ZGV._QuestStepData = {
 			[[S1C0 Give the Ring of Stendarr's Mercy to Varen]],
 		},
 	},
-	[0110033] = {
+	[0111033] = {
 		[1]={
 			[[Q1 Baandari traders in Malabal Tor are ___ Coast mercenaries.<97>]],
 			[[S1 Tabil asked me to speak to the ___ named Eraral-dro.<89>]],
@@ -1025,7 +1025,7 @@ ZGV._QuestStepData = {
 			[[S1C1 Talk to Eraral-dro by the Gates]],
 		},
 	},
-	[0110034] = {
+	[0111034] = {
 		[1]={
 			[[Q1 Eraral-dro wants to neutralize the Gold ___ safe from reprisal.<114>]],
 			[[S1 Though many of the Gold Coast ___ effectiveness.<196>]],
@@ -1113,7 +1113,7 @@ ZGV._QuestStepData = {
 			[[S1C1 Talk to Eraral-dro at the Gates]],
 		},
 	},
-	[0110035] = {
+	[0111035] = {
 		[1]={
 			[[Q1 Finoriell needs to join her fellow ___ prevents her.<84>]],
 			[[S1 Finoriell asked me to seek out the ___ what's going on.<124>]],
@@ -1179,7 +1179,7 @@ ZGV._QuestStepData = {
 			[[S1C0 Talk to Hengekeeper Lara]],
 		},
 	},
-	[0110036] = {
+	[0111036] = {
 		[1]={
 			[[Q1 Finoriell must take root in Treehenge ___ corrupt her soul.<80>]],
 			[[S1 The cultists are destroying the ___ it's too late.<128>]],
@@ -1246,7 +1246,7 @@ ZGV._QuestStepData = {
 			[[S1C1 Talk to Finoriell]],
 		},
 	},
-	[0110037] = {
+	[0111037] = {
 		[1]={
 			[[Q1 An Altmer doing research in Treehenge ___ at the shrine.<90>]],
 			[[S1 Before she was killed by the Worm ___ ivory they took.<109>]],
@@ -1278,7 +1278,7 @@ ZGV._QuestStepData = {
 			[[S1C0 Talk to Vanendil]],
 		},
 	},
-	[0110038] = {
+	[0111038] = {
 		[1]={
 			[[Q1 Fists of Thalmor were attacked by ___ may be survivors.<114>]],
 			[[S1 Sergeant Dagla asked me to keep an eye ___ there, as well.<196>]],
@@ -1368,7 +1368,7 @@ ZGV._QuestStepData = {
 			[[S1C0 Talk to Captain Trelano]],
 		},
 	},
-	[0110039] = {
+	[0111039] = {
 		[1]={
 			[[Q1 Indaenir, the new Silvenar, traveled ___ usurp his position.<209>]],
 			[[S1 The Houndsmen, corrupted servants of ___ beneath the town.<207>]],
@@ -1462,7 +1462,7 @@ ZGV._QuestStepData = {
 			[[S1C0 Talk to Spinner Dothriel]],
 		},
 	},
-	[0110040] = {
+	[0111040] = {
 		[1]={
 			[[Q1 People from across the Aldmeri Dominion ___ the Doorwalker.<222>]],
 			[[S1 The minstrels scattered throughout the ___ at their camp.<164>]],
@@ -1500,7 +1500,7 @@ ZGV._QuestStepData = {
 			[[S1C0 Talk to Laen]],
 		},
 	},
-	[0110041] = {
+	[0111041] = {
 		[1]={
 			[[Q1 The Mane, on his way to the Handfasting ___ me to find him.<158>]],
 			[[S1 I should wait for Lord Gharesh-ri to ___ start looking.<76>]],
@@ -1517,7 +1517,7 @@ ZGV._QuestStepData = {
 			[[S1C0 Go to Fort Grimwatch]],
 		},
 	},
-	[0110042] = {
+	[0111042] = {
 		[1]={
 			[[Q1 The Council of Province Generals has ___ Jofnir Iceblade.<120>]],
 			[[S1 I have been asked to report to Merric.  ___ soon as possible.<78>]],
@@ -1645,14 +1645,14 @@ ZGV._QuestStepData = {
 			[[S1C0 Talk to Merric at-Aswala]],
 		},
 	},
-	[0110044] = {
+	[0111044] = {
 		[1]={
 			[[Q1 The Fighters Guild has sentenced ___ of Jofnir Iceblade.<92>]],
 			[[S1 I've been asked to report to Aelif as soon as possible.]],
 			[[S1C1 Talk to Aelif]],
 		},
 	},
-	[0180001] = {
+	[0181001] = {
 		[1]={
 			[[Q1 Guildmaster Sees-All-Colors has plans ___ depths of Mzeneldt.<109>]],
 			[[S1 I have been asked to report to ___ make my way to her.<82>]],
@@ -1764,7 +1764,7 @@ ZGV._QuestStepData = {
 			[[S1C0 Talk to Sees-All-Colors]],
 		},
 	},
-	[0180002] = {
+	[0181002] = {
 		[1]={
 			[[Baham told me to begin my investigation by talking to Tanion, the headmaster of the College. I imagine I could also ask Baham some follow-up questions as well.]],
 			[[Talk to Tanion]],
@@ -1837,7 +1837,7 @@ ZGV._QuestStepData = {
 			[[I should report back to Baham outside of Saltspray Cave.]],
 		},
 	},
-	[0180003] = {
+	[0181003] = {
 		[1]={
 			[[Q1 Firtoril has offered me a chance to ente___ere is a cash prize.<99>]],
 			[[S1 I should get a frog from someone here at the race.]],
@@ -1865,7 +1865,7 @@ ZGV._QuestStepData = {
 			[[S1C5 Win Race]],
 		},
 	},
-	[0180004] = {
+	[0181004] = {
 		[1]={
 			[[Q1 Aranias and Andur were sent by the ___'s throne.<158>]],
 			[[S1 I should follow the trail of fire to search for the pair.]],
@@ -1955,7 +1955,7 @@ ZGV._QuestStepData = {
 			[[S1C0 Talk to the Wilderqueen]],
 		},
 	},
-	[0180005] = {
+	[0181005] = {
 		[1]={
 			[[Q1 Abnur Tharn seeks an audience with me ___ see what he wants.<90>]],
 			[[S1 A small, summoned Daedric creature told ___ Tharn's servants.<150>]],
@@ -2006,7 +2006,7 @@ ZGV._QuestStepData = {
 			[[S1C0 Talk to Varen Aquilarios]],
 		},
 	},
-	[0180006] = {
+	[0181006] = {
 		[1]={
 			[[Q1 The Vinedusk Rangers want me to help qua___ominion's formation.<147>]],
 			[[S1 Forinor, one of the Vinedusk, appeared o___ base of operations.<112>]],
@@ -2148,7 +2148,7 @@ ZGV._QuestStepData = {
 			[[S1C0 Talk to Maeroth]],
 		},
 	},
-	[0180007] = {
+	[0181007] = {
 		[1]={
 			[[Q1 If Queen Ayrenn is to prove herself ___ … or empress.<232>]],
 			[[S1 I should head to the Orrery and speak with Conservator Daraneth.]],
@@ -2209,7 +2209,7 @@ ZGV._QuestStepData = {
 			[[S1C0 Talk to Queen Ayrenn]],
 		},
 	},
-	[0180008] = {
+	[0181008] = {
 		[1]={
 			[[Q1 The Bosmer in this part of the ___ to Queen Ayrenn.<160>]],
 			[[S1 I should search for a soldier named ___ach tribe.<90>]],
@@ -2267,7 +2267,7 @@ ZGV._QuestStepData = {
 			[[S1C0 Talk to the Treethane]],
 		},
 	},
-	[0180009] = {
+	[0181009] = {
 		[1]={
 			[[Q1 A Bosmer named Adamir, and his ___ of rodent parts.<105>]],
 			[[S1 They need a few more rodent parts, and ___ what Adamir needs.<87>]],
@@ -2291,7 +2291,7 @@ ZGV._QuestStepData = {
 			[[S1C0 Talk to Adamir]],
 		},
 	},
-	[0180010] = {
+	[0181010] = {
 		[1]={
 			[[Q1 An undercover agent named Cinnar asked ___ around Marbruk.<158>]],
 			[[S1 I should start by reading Cinnar's notes.]],
@@ -2362,7 +2362,7 @@ ZGV._QuestStepData = {
 			[[S1C0 Talk to Cinnar]],
 		},
 	},
-	[0180011] = {
+	[0181011] = {
 		[1]={
 			[[Q1 An undead army surges through Driladan ___ of Prince Naemon.<110>]],
 			[[S1 I've been asked to rescue Mane ___ Imperial Tunnel.<106>]],
@@ -2469,7 +2469,7 @@ ZGV._QuestStepData = {
 			[[S1C0 Talk to Bodring]],
 		},
 	},
-	[0180012] = {
+	[0181012] = {
 		[1]={
 			[[Q1 To learn why the Bosmer in this part of ___ the Wilderking.<162>]],
 			[[S1 The Treethane says that all I need to ___ is the only way.<193>]],
@@ -2505,14 +2505,14 @@ ZGV._QuestStepData = {
 			[[S1C0 Talk to the Wilderking]],
 		},
 	},
-	[0180013] = {
+	[0181013] = {
 		[1]={
 			[[Q1 Though Aranias was sent by the Veiled ___ are intertwined.<166>]],
 			[[S1 The Wilderking asked me to seek out the ___ story should be.<205>]],
 			[[S1C0 Talk to Maruin]],
 		},
 	},
-	[0180015] = {
+	[0181015] = {
 		[1]={
 			[[Q1 A merchant in the Shrouded Vale reports ___ in a nearby cave.<118>]],
 			[[S1 I should see the village and find out ___ view within a cave.<91>]],
@@ -2579,7 +2579,7 @@ ZGV._QuestStepData = {
 			[[S1C1  Return to Shrouded Hollow]],
 		},
 	},
-	[0180016] = {
+	[0181016] = {
 		[1]={
 			[[Q1 The Veiled Heritants plan to harm the ___ change her future.<123>]],
 			[[S1 Maruin can explain to me how I will change Aranias' story.]],
@@ -2724,7 +2724,7 @@ ZGV._QuestStepData = {
 			[[S1C0 Talk to Maruin]],
 		},
 	},
-	[0180017] = {
+	[0181017] = {
 		[1]={
 			[[Q1 A stone being named Sumiril carries a ___ how he came to be.<89>]],
 			[[S1 I should speak to Sumiril.]],
@@ -2771,7 +2771,7 @@ ZGV._QuestStepData = {
 			[[S2C1 TRACKER GOAL TEXT]],
 		},
 	},
-	[0180018] = {
+	[0181018] = {
 		[1]={
 			[[Q1 An aging Bosmer named Hartmin brought ___ from their youth.<126>]],
 			[[S1 Hartmin was disappointed to discover ___ sow in the grove.<191>]],
@@ -2792,7 +2792,7 @@ ZGV._QuestStepData = {
 			[[S1C0 Talk to Hartmin]],
 		},
 	},
-	[0180019] = {
+	[0181019] = {
 		[1]={
 			[[Q1 Before losing Aranias' memories, the ___ city of Woodhearth.<178>]],
 			[[S1 I should travel to Woodhearth and ___ activity there.<105>]],
@@ -2804,7 +2804,7 @@ ZGV._QuestStepData = {
 			[[S1C0 Talk to Yanaril]],
 		},
 	},
-	[0180020] = {
+	[0181020] = {
 		[1]={
 			[[Q1 Radreth, a new member of the hunting ___ a giant wasp.<99>]],
 			[[S1 I must follow the wasp's trail in the ___ looking carefully.<173>]],
@@ -2823,7 +2823,7 @@ ZGV._QuestStepData = {
 			[[S1C0 Talk to Radreth]],
 		},
 	},
-	[0180021] = {
+	[0181021] = {
 		[1]={
 			[[Q1 Fleeing undead to the north, a clan of ___ and attacked.<155>]],
 			[[S1 I've agreed to find the Bosmer leader, ___ against the Hollow.<82>]],
@@ -2882,7 +2882,7 @@ ZGV._QuestStepData = {
 			[[S1C0 Talk to Indanas]],
 		},
 	},
-	[0180022] = {
+	[0181022] = {
 		[1]={
 			[[Q1 Something strange is happening in ___ might be behind it.<130>]],
 			[[S1 The residents of Longhaven report that ___ more information.<153>]],
@@ -2937,7 +2937,7 @@ ZGV._QuestStepData = {
 			[[S1C0 Talk to Breduin]],
 		},
 	},
-	[0180023] = {
+	[0181023] = {
 		[1]={
 			[[Q1 I discovered the remains of a mage ___ the rest of them.<223>]],
 			[[S1 I found a note next to the corpse of ___ guildmembers here.<129>]],
@@ -2958,7 +2958,7 @@ ZGV._QuestStepData = {
 			[[S1C0 Find Lucretia Fortunatus in Longhaven]],
 		},
 	},
-	[0180024] = {
+	[0181024] = {
 		[1]={
 			[[Q1 Destroying the cursed skull held by the ___ and never returned.<164>]],
 			[[S1 Thorinor wants me to search Shademist ___ she is dead.<102>]],
@@ -2996,7 +2996,7 @@ ZGV._QuestStepData = {
 			[[S1C0 Talk to Elsenia]],
 		},
 	},
-	[0180025] = {
+	[0181025] = {
 		[1]={
 			[[Q1 After the death of Prince Naemon, ___ area of Woodhearth.<191>]],
 			[[S1 I should speak to Razum-dar to find out ___ Pelidil's plans.<80>]],
@@ -3049,7 +3049,7 @@ ZGV._QuestStepData = {
 			[[S1C0 Talk to Treethane Fariel]],
 		},
 	},
-	[0180026] = {
+	[0181026] = {
 		[1]={
 			[[Q1 Evidence suggests that Vicereeve ___ city of Woodhearth.<113>]],
 			[[S1 To find Pelidil's locatiuon, I must ___ Thalmor Residence.<183>]],
@@ -3102,7 +3102,7 @@ ZGV._QuestStepData = {
 			[[S2C1 TRACKER GOAL TEXT]],
 		},
 	},
-	[0180027] = {
+	[0181027] = {
 		[1]={
 			[[Q1 It appears a hunting band was overcome ___ about the mire.<116>]],
 			[[S1 Elaldor wants me to defeat the ___ the marshes nearby.<101>]],
@@ -3114,7 +3114,7 @@ ZGV._QuestStepData = {
 			[[S1C0 Talk to Elaldor]],
 		},
 	},
-	[0180028] = {
+	[0181028] = {
 		[1]={
 			[[Q1 Pelidil's plans to lead the Maormer in ___ Maormer invasion.<175>]],
 			[[S1 The fastest way to the sanctuary is ___ where I need to go.<88>]],
@@ -3131,7 +3131,7 @@ ZGV._QuestStepData = {
 			[[S1C0 Talk to Major Cirenwe]],
 		},
 	},
-	[0180029] = {
+	[0181029] = {
 		[1]={
 			[[Q1 I need to find out what's happening in ___ into Greenshade.<101>]],
 			[[S1 Fongoth saw a priest in the middle of ___ what's happening.<113>]],
@@ -3231,7 +3231,7 @@ ZGV._QuestStepData = {
 			[[S1C0 Activate Herma-Mora's Shrine]],
 		},
 	},
-	[0180030] = {
+	[0181030] = {
 		[1]={
 			[[Q1 Ledronor, a member of a hunting order ___ in hunting a troll.<94>]],
 			[[S1 I must follow Manglemaw's trail in the ___ looking carefully.<185>]],
@@ -3250,7 +3250,7 @@ ZGV._QuestStepData = {
 			[[S1C0 Talk to Ledronor]],
 		},
 	},
-	[0180031] = {
+	[0181031] = {
 		[1]={
 			[[Q1 Vicereeve Pelidil and his Maormer ___ Seaside Sanctuary.<95>]],
 			[[S1 The first order of business is to free ___ up the tasks.<163>]],
@@ -3293,7 +3293,7 @@ ZGV._QuestStepData = {
 			[[S1C0 Talk to Captain Jimila at the Prowler]],
 		},
 	},
-	[0180032] = {
+	[0181032] = {
 		[1]={
 			[[Q1 Seaside Sanctuary is back in the ___ a Maormer vessel.<124>]],
 			[[S1 Captain Jimila is preparing the Prowler to sail after Vicereeve Pelidil.]],
@@ -3344,7 +3344,7 @@ ZGV._QuestStepData = {
 			[[S1C0 Talk to Captain Jimila]],
 		},
 	},
-	[0180033] = {
+	[0181033] = {
 		[1]={
 			[[Q1 I've been given a letter to deliver to ___ Vicereeve Pelidil.<163>]],
 			[[S1 The queen is currently in Marbruk. I ___ and speak with her.<74>]],
@@ -3356,14 +3356,14 @@ ZGV._QuestStepData = {
 			[[S1C0 Talk to Queen Ayrenn]],
 		},
 	},
-	[0180034] = {
+	[0181034] = {
 		[1]={
 			[[Q1 It seems that Prince Naemon has indeed ___ gates of Marbruk.<142>]],
 			[[S1 I should speak with Scout Catannie at ___ see how I can help.<74>]],
 			[[S1C0 Talk to Scout Catannie at Driladan Pass]],
 		},
 	},
-	[0180035] = {
+	[0181035] = {
 		[1]={
 			[[Q1 The Shade of Prince Naemon is spreading ___ the corruption.<114>]],
 			[[S1 I should visit Driladan Pass, Verrant ___ those areas.<95>]],
@@ -3384,7 +3384,7 @@ ZGV._QuestStepData = {
 			[[S1C0 Talk to Queen Ayrenn at Hectahame]],
 		},
 	},
-	[0180036] = {
+	[0181036] = {
 		[1]={
 			[[Q1 I've met Laurosse, a lovelorn Altmer, ___ has been kidnapped.<93>]],
 			[[S1 I should play the flute Laurosse gave ___ can locate Erinel.<94>]],
@@ -3413,7 +3413,7 @@ ZGV._QuestStepData = {
 			[[S1C0 Talk to Laurosse]],
 		},
 	},
-	[0180037] = {
+	[0181037] = {
 		[1]={
 			[[Q1 Narion, a member of a hunting order ___ a timber mammoth.<101>]],
 			[[S1 I need to find the mammoth by following ___ around me.<220>]],
@@ -3439,7 +3439,7 @@ ZGV._QuestStepData = {
 			[[S1C0 Return to Narion]],
 		},
 	},
-	[0180038] = {
+	[0181038] = {
 		[1]={
 			[[Q1 Most of the Bosmer entering Verrant ___ Shade of Naemon.<174>]],
 			[[S1 The corruption is coming from the ___ of the forest.<160>]],
@@ -3496,7 +3496,7 @@ ZGV._QuestStepData = {
 			[[S1C0 Talk to Indaenir]],
 		},
 	},
-	[0180039] = {
+	[0181039] = {
 		[1]={
 			[[Q1 The Shade of Prince Naemon and the ___ Clan from the dead.<130>]],
 			[[S1 I was told that Indaenir may have a ___ with Indaenir.<127>]],
@@ -3608,7 +3608,7 @@ ZGV._QuestStepData = {
 			[[S1C0 Talk to Indaenir]],
 		},
 	},
-	[0180040] = {
+	[0181040] = {
 		[1]={
 			[[Q1 A small group of Wood Elves entered the ___ still in the camp.<239>]],
 			[[S1 Egannor said his friends Halalin, ___ are still alive.<136>]],
@@ -3672,7 +3672,7 @@ ZGV._QuestStepData = {
 			[[S1C0 Talk to Fanrel]],
 		},
 	},
-	[0180041] = {
+	[0181041] = {
 		[1]={
 			[[Q1 Thonoras and his wife, Pariel, were ___ Spring Site.<234>]],
 			[[S1 Pariel fled into a cave beneath the ___ for her there.<96>]],
@@ -3735,7 +3735,7 @@ ZGV._QuestStepData = {
 			[[S1C0 Search Backpack]],
 		},
 	},
-	[0180042] = {
+	[0181042] = {
 		[1]={
 			[[Q1 The Shade of Prince Naemon has seized ___ in defeating him.<167>]],
 			[[S1 I should speak to Indaenir. Queen ___ gate to Hectahame.<85>]],
@@ -3908,7 +3908,7 @@ ZGV._QuestStepData = {
 			[[S1C0 Talk to Queen Ayrenn]],
 		},
 	},
-	[0180043] = {
+	[0181043] = {
 		[1]={
 			[[Q1 With Prince Naemon deadâ€”againâ€”and ___ Silvenar.<238>]],
 			[[S1 I should travel to Velyn Harbor in Malabal Tor.]],
@@ -3920,7 +3920,7 @@ ZGV._QuestStepData = {
 			[[S1C0 Talk to Someone In Charge]],
 		},
 	},
-	[0180044] = {
+	[0181044] = {
 		[1]={
 			[[Q1 Haras, the hunter, has asked me to hunt ___ the pale senche.<111>]],
 			[[S1 I must find the corpse of a Hound ___ the pale senche.<113>]],
@@ -3946,7 +3946,7 @@ ZGV._QuestStepData = {
 			[[S1C0 Talk to Haras]],
 		},
 	},
-	[0180045] = {
+	[0181045] = {
 		[1]={
 			[[Q1 I need to halt the Daedric invasion from Moonhenge.]],
 			[[S1 Dominion scouts have been captured by ___ I should free them.<86>]],
@@ -4067,7 +4067,7 @@ ZGV._QuestStepData = {
 			[[S1C1 Talk to Sergeant Galandir]],
 		},
 	},
-	[0180046] = {
+	[0181046] = {
 		[1]={
 			[[Q1 Varen and Abnur Tharn have found the ___ missing companion.<159>]],
 			[[S1 A projection of Varen appeared to me ___ see what he wants.<108>]],
@@ -4079,8 +4079,140 @@ ZGV._QuestStepData = {
 			[[S1 Varen has beckoned me to the Harborage. ___ and speak with him.<77>]],
 			[[S1C1 Enter the Harborage]],
 		},
+		[3]={
+			[[Q1 Varen and Abnur Tharn have found the ___ missing companion.<159>]],
+			[[S1 I've made it to the Harborage. I should speak with Varen.]],
+			[[S1C1 Talk to Varen]],
+			[[S2 NO TEXT]],
+			[[S2C1 TRACKER GOAL TEXT]],
+			[[S2C2 TRACKER GOAL TEXT]],
+			[[S2C3 TRACKER GOAL TEXT]],
+		},
+		[4]={
+			[[Q1 Varen and Abnur Tharn have found the ___ missing companion.<159>]],
+			[[S1 Varen is ready to open the portal to ___ me for the journey.<144>]],
+			[[S1C1 Choose Your Companion]],
+			[[S2 NO TEXT]],
+			[[S2C1 == Talk to Abnur Tharn]],
+			[[S3 NO TEXT]],
+			[[S3C1 == Talk to Lyris]],
+		},
+		[5]={
+			[[Q1 Varen and Abnur Tharn have found the ___ missing companion.<159>]],
+			[[S1 I've chosen my companion for the ___ to open the portal.<85>]],
+			[[S1C1 Wait for Varen to Open Portal]],
+			[[S1C2 ]],
+			[[S1C3 ]],
+			[[S2 NO TEXT]],
+			[[S2C1 TRACKER GOAL TEXT]],
+		},
+		[6]={
+			[[Q1 Varen and Abnur Tharn have found the ___ missing companion.<159>]],
+			[[S1 Varen opened the portal to the Halls of ___ and save Sai Sahan.<88>]],
+			[[S1C1 Enter Halls of Torment]],
+		},
+		[7]={
+			[[Q1 Varen and Abnur Tharn have found the ___ missing companion.<159>]],
+			[[S1 I've landed in the Halls of Torment ___ Sai is being held.<115>]],
+			[[S1C1 Explore the Halls of Torment]],
+			[[S2 NO TEXT]],
+			[[S2C1 TRACKER GOAL TEXT]],
+			[[S2C2 TRACKER GOAL TEXT]],
+			[[S2C3 TRACKER GOAL TEXT]],
+			[[S2C4 TRACKER GOAL TEXT]],
+		},
+		[8]={
+			[[Q1 Varen and Abnur Tharn have found the ___ missing companion.<159>]],
+			[[S1 I found a shade of Abnur Tharn mocking ___ and get to Sai.<92>]],
+			[[S1C1 Defeat Tharn Doppelganger]],
+		},
+		[9]={
+			[[Q1 Varen and Abnur Tharn have found the ___ missing companion.<159>]],
+			[[S1 I defeated the shade of Abnur Tharn, ___ our next move is.<136>]],
+			[[S1C1 Talk to Your Companion]],
+		},
+		[10]={
+			[[Q1 Varen and Abnur Tharn have found the ___ missing companion.<159>]],
+			[[S1 I should continue to explore the Halls ___ for Sai Sahan.<74>]],
+			[[S1C1 Continue through Halls of Torment]],
+			[[S2 NO TEXT]],
+			[[S2C1 TRACKER GOAL TEXT]],
+			[[S3 NO TEXT]],
+			[[S3C1 TRACKER GOAL TEXT]],
+			[[S3C2 TRACKER GOAL TEXT]],
+			[[S3C3 TRACKER GOAL TEXT]],
+			[[S3C4 TRACKER GOAL TEXT]],
+		},
+		[11]={
+			[[Q1 Varen and Abnur Tharn have found the ___ missing companion.<159>]],
+			[[S1 I found a shade of Lyris Titanborn ___ that barrier.<149>]],
+			[[S1C1 Find a Way to Destroy Lyris's Shield]],
+			[[S2 NO TEXT]],
+			[[S2C1 Destroy the Shielding Stones]],
+		},
+		[12]={
+			[[Q1 Varen and Abnur Tharn have found the ___ missing companion.<159>]],
+			[[S1 I've removed the shield around the ___ I can get to Sai.<99>]],
+			[[S1C1 Defeat the Lyris Doppelganger]],
+		},
+		[13]={
+			[[Q1 Varen and Abnur Tharn have found the ___ missing companion.<159>]],
+			[[S1 I defeated the shade of Lyris, but once ___ the situation.<136>]],
+			[[S1C1 Talk to Your Companion]],
+		},
+		[14]={
+			[[Q1 Varen and Abnur Tharn have found the ___ missing companion.<159>]],
+			[[S1 I should continue to explore the Halls ___ of Sai Sahan.<73>]],
+			[[S1C1 Continue through the Halls]],
+			[[S2 NO TEXT]],
+			[[S2C1 TRACKER GOAL TEXT]],
+			[[S2C2 TRACKER GOAL TEXT]],
+			[[S2C3 TRACKER GOAL TEXT]],
+		},
+		[15]={
+			[[Q1 Varen and Abnur Tharn have found the ___ missing companion.<159>]],
+			[[S1 I've found Sai Sahan in a room as he is ___ should defeat them.<95>]],
+			[[S1C1 Defeat Sai's Torturers]],
+		},
+		[16]={
+			[[Q1 Varen and Abnur Tharn have found the ___ missing companion.<159>]],
+			[[S1 I've defeated the atronachs torturing ___ end Sai's torment.<150>]],
+			[[S1C1 Defeat the Duchess of Anguish]],
+		},
+		[17]={
+			[[Q1 Varen and Abnur Tharn have found the ___ missing companion.<159>]],
+			[[S1 I've defeated the Duchess of Anguish, ___ from his bondage.<102>]],
+			[[S1C1 Free Sai Sahan]],
+		},
+		[18]={
+			[[Q1 Varen and Abnur Tharn have found the ___ missing companion.<159>]],
+			[[S1 I've freed Sai Sahan. Now I should talk to him to ensure his safety.]],
+			[[S1C1 Talk to Sai Sahan]],
+		},
+		[19]={
+			[[Q1 Varen and Abnur Tharn have found the ___ missing companion.<159>]],
+			[[S1 After speaking with Sai, the Prophet ___ with The Prophet.<147>]],
+			[[S1C1 Return to the Harborage]],
+		},
+		[20]={
+			[[Q1 Varen and Abnur Tharn have found the ___ missing companion.<159>]],
+			[[S1 I've returned to the Harborage with Sai ___ to see what's next.<90>]],
+			[[S1C1 Talk to Varen]],
+		},
+		[21]={
+			[[Q1 Varen and Abnur Tharn have found the ___ missing companion.<159>]],
+			[[S1 I should speak with Sai Sahan in the ___ and well-being.<83>]],
+			[[S1C0 Talk to Sai Sahan]],
+			[[S1C1 Talk to Sai Sahan]],
+			[[S1C2 Talk to Sai Sahan]],
+		},
+		[22]={
+			[[Q1 Varen and Abnur Tharn have found the ___ missing companion.<159>]],
+			[[S1 I should speak with Sai Sahan in the Harborage.]],
+			[[S1C0 Talk to Sai Sahan]],
+		},
 	},
-	[0450001] = {
+	[0451001] = {
 		[1]={
 			[[Q1 I must find a way into the Castle of the___ sure I am prepared.<115>]],
 			[[S1 The Prophet has summoned me to the Harborage. I should go there at once.]],
@@ -4266,7 +4398,7 @@ ZGV._QuestStepData = {
 			[[S1C0 Talk to the Prophet]],
 		},
 	},
-	[1010001] = {
+	[1011001] = {
 		[1]={
 			[[Q1 Someone's soul is trapped in an Ayleid ___ her from escaping.<101>]],
 			[[S1 I must figure out the puzzle trapping ___ about the Warrior.<131>]],
@@ -4297,7 +4429,7 @@ ZGV._QuestStepData = {
 			[[S1C0 Talk to Khanni]],
 		},
 	},
-	[1780001] = {
+	[1781001] = {
 		[1]={
 			[[Q1 I've arrived in the city of Vulkhel Guar___a public appearance.<171>]],
 			[[S1 I should speak to Watch Captain Astanya at the docks.]],
@@ -4385,7 +4517,7 @@ ZGV._QuestStepData = {
 			[[S1C0 Talk to Watchman Heldil]],
 		},
 	},
-	[1780002] = {
+	[1781002] = {
 		[1]={
 			[[Q1 The Hall Steward Aicessar has asked I sp___hel Guard guildhall.<109>]],
 			[[S1 I should find out what I can about the F___the Guild is for me.<89>]],
@@ -4397,7 +4529,7 @@ ZGV._QuestStepData = {
 			[[S1C0 Talk to Aicessar]],
 		},
 	},
-	[1780003] = {
+	[1781003] = {
 		[1]={
 			[[Q1 I've met a business-minded Bosmer named ___w forgetful debtors.<143>]],
 			[[S1 I've offered to help Malareth with her c___se forgetful people.<107>]],
@@ -4409,7 +4541,7 @@ ZGV._QuestStepData = {
 			[[S1C0 Talk to Malareth]],
 		},
 	},
-	[1780004] = {
+	[1781004] = {
 		[1]={
 			[[Q1 Captain Erronfaire is desperate to leave___il for Velyn Harbor.<147>]],
 			[[S1 I've volunteered to help find the crew. ___now where Degail is.<223>]],
@@ -4437,19 +4569,14 @@ ZGV._QuestStepData = {
 			[[S1C0 Talk to Captain Erronfaire]],
 		},
 	},
-	[1780005] = {
+	[1781005] = {
 		[1]={
-			[[Q1 The Khajiit, Turuk Redclaws, has invited___alled the Undaunted.<96>]],
+			[[Q1 The Khajiit, Turuk Redclaws, has ___ the Undaunted.<96>]],
 			[[S1 I should enter the Banished Cells to prove myself to Turuk Redclaws.]],
 			[[S1C1 Enter the Banished Cells]],
 		},
-		[2]={
-			[[Q1 The Khajiit, Turuk Redclaws, has ___ the Undaunted.<96>]],
-			[[S1 I agreed to meet Turuk Redclaws at the ___ into the Undaunted.<113>]],
-			[[S1C1 Talk to Turuk Redclaws in Auridon]],
-		},
 	},
-	[1780006] = {
+	[1781006] = {
 		[1]={
 			[[Q1 The Guildmaster of the Fighters Guild wa___form a task for her.<73>]],
 			[[S1 I'm supposed to meet with Merric and Ael___nchor near the city.<140>]],
@@ -4537,7 +4664,7 @@ ZGV._QuestStepData = {
 			[[S1C0 Report to Sees-All-Colors]],
 		},
 	},
-	[1780007] = {
+	[1781007] = {
 		[1]={
 			[[Q1 The Magister Curinure has asked I speak ___hel Guard guildhall.<102>]],
 			[[S1 I should find out what I can about the M___the Guild is for me.<86>]],
@@ -4549,7 +4676,7 @@ ZGV._QuestStepData = {
 			[[S1C0 Talk to Curinure]],
 		},
 	},
-	[1780008] = {
+	[1781008] = {
 		[1]={
 			[[Q1 A high-ranking member of the Mages Guild___form a task for her.<85>]],
 			[[S1 I must find a ruin nearby, which Valaste___f ancient knowledge.<84>]],
@@ -4592,90 +4719,99 @@ ZGV._QuestStepData = {
 			[[S1C2 ]],
 			[[S1C3 ]],
 			[[S2 I should follow Valaste.]],
-			[[S2C1 Follow Valaste]],
+			[[S2C1 == Follow Valaste]],
 		},
 		[8]={
+			[[Q1 A high-ranking member of the Mages Guild___form a task for her.<85>]],
+			[[S1 Valaste believes she knows how to summon Arch-Mage Shalidor.]],
+			[[S1C1 Summon Arch-Mage Shalidor]],
+			[[S1C2 ]],
+			[[S1C3 ]],
+			[[S2 I should use the attunement crystal Valaste has summoned.]],
+			[[S2C1 Use the Ritual Orb]],
+		},
+		[9]={
 			[[Q1 A high-ranking member of the Mages Guild___form a task for her.<85>]],
 			[[S1 We've summoned Arch-Mage Shalidor. I sho___t he wants me to do.<88>]],
 			[[S1C1 Talk to Arch-Mage Shalidor]],
 		},
-		[9]={
+		[10]={
 			[[Q1 A high-ranking member of the Mages Guild___form a task for her.<85>]],
 			[[S1 I should enter the portal to Sheogorath's shrine.]],
 			[[S1C1 Enter the Portal to Sheogorath's Shrine]],
 		},
-		[10]={
+		[11]={
 			[[Q1 A high-ranking member of the Mages Guild___form a task for her.<85>]],
 			[[S1 I should speak to Haskill about the location of the tomes.]],
 			[[S1C1 == Talk to Haskill]],
 		},
-		[11]={
+		[12]={
 			[[Q1 A high-ranking member of the Mages Guild___form a task for her.<85>]],
 			[[S1 Haskill said he won't let me pass unless___tal to prove myself.<102>]],
 			[[S1C1 == Close the Portal]],
 		},
-		[12]={
+		[13]={
 			[[Q1 A high-ranking member of the Mages Guild___form a task for her.<85>]],
 			[[S1 Now that the portal is closed, I should speak to Haskill.]],
 			[[S1C1 Talk to Haskill]],
 		},
-		[13]={
+		[14]={
 			[[Q1 A high-ranking member of the Mages Guild___form a task for her.<85>]],
 			[[S1 I need to wait for Haskill to unlock the___ Hollow any further.<101>]],
 			[[S1C1 Wait for Haskill to Open the Door]],
 		},
-		[14]={
+		[15]={
 			[[Q1 A high-ranking member of the Mages Guild___form a task for her.<85>]],
 			[[S1 Haskill said to follow the path outside ___ed are hidden there.<102>]],
 			[[S1C1 Explore the Hollow]],
 			[[S2 I could speak to this Haskill person, as___o, before I move on.<89>]],
 			[[S2C1 == Talk to Haskill]],
 		},
-		[15]={
+		[16]={
 			[[Q1 A high-ranking member of the Mages Guild___form a task for her.<85>]],
 			[[S1 Haskill said to follow the path outside ___ed are hidden there.<102>]],
 			[[S1C1 Explore the Hollow]],
 			[[S2 NO TEXT]],
 		},
-		[16]={
+		[17]={
 			[[Q1 A high-ranking member of the Mages Guild___form a task for her.<85>]],
 			[[S1 A monster bars my way to the spellbooks.]],
 			[[S1C1 Kill Gutsripper]],
 		},
-		[17]={
+		[18]={
 			[[Q1 A high-ranking member of the Mages Guild___form a task for her.<85>]],
 			[[S1 I've done it. I need to grab one of the books set out on the stands.]],
 			[[S1C1 Take the Tomes]],
 			[[S2 NO TEXT]],
 			[[S2C1 TRACKER GOAL TEXT]],
 		},
-		[18]={
+		[19]={
 			[[Q1 A high-ranking member of the Mages Guild___form a task for her.<85>]],
 			[[S1 After I took one of the tomes, Sheogorat___d out what he wants.<124>]],
 			[[S1C1 Talk to Sheogorath]],
 		},
-		[19]={
+		[20]={
 			[[Q1 A high-ranking member of the Mages Guild___form a task for her.<85>]],
 			[[S1 Sheogorath has summoned Arch-Mage Shalid___d prove interesting.<99>]],
 			[[S1C1 Observe the Conversation]],
 		},
-		[20]={
+		[21]={
 			[[Q1 A high-ranking member of the Mages Guild___form a task for her.<85>]],
 			[[S1 Sheogorath disappeared after speaking to___ak to the Arch-Mage.<93>]],
 			[[S1C1 Talk to Arch-Mage Shalidor]],
 		},
-		[21]={
+		[22]={
 			[[Q1 A high-ranking member of the Mages Guild___form a task for her.<85>]],
 			[[S1 I've retrieved the book. I should return___nd speak to Valaste.<79>]],
 			[[S1C1 Talk to Valaste at the Mages Guild]],
 		},
-		[22]={
+		[23]={
 			[[Q1 A high-ranking member of the Mages Guild___form a task for her.<85>]],
 			[[S1 I should speak to Valaste]],
 			[[S1C0 Talk to Valaste]],
 		},
 	},
-	[1780009] = {
+	[1781009] = {
 		[1]={
 			[[Q1 At the request of the captain of the Vul___he Veiled Heritance.<245>]],
 			[[S1 I need to discover if Fasion's claims ar___ear the manor house.<99>]],
@@ -4698,71 +4834,83 @@ ZGV._QuestStepData = {
 			[[S1 Razum-dar indicated I'll need to slip pa___rst Auridon Marines.<229>]],
 			[[S1C1 Get Past the Manor Guards]],
 			[[S2 Raz may have more information on the situation at hand.]],
-			[[S2C1 Talk to Razum-dar]],
+			[[S2C1 == Talk to Razum-dar]],
 			[[S3 NO TEXT]],
 			[[S3C1 == Talk to Eshaba in the Marketplace]],
 		},
 		[5]={
-			[[Q1 At the request of the captain of the Vul___he Veiled Heritance.<245>]],
-			[[S1 Razum-dar indicated I'll need to slip pa___rst Auridon Marines.<229>]],
+			[[Q1 At the request of the captain of the ___ Veiled Heritance.<245>]],
+			[[S1 Razum-dar indicated I'll need to slip ___ Auridon Marines.<229>]],
 			[[S1C1 Get Past the Manor Guards]],
 			[[S2 NO TEXT]],
+			[[S2C1 == EMPTY]],
 			[[S3 NO TEXT]],
-			[[S3C1 == Get the Disguise from the Merchant's Chest]],
+			[[S3C1 == Talk to Eshaba in the Marketplace]],
 		},
 		[6]={
 			[[Q1 At the request of the captain of the Vul___he Veiled Heritance.<245>]],
 			[[S1 Razum-dar indicated I'll need to slip pa___rst Auridon Marines.<229>]],
 			[[S1C1 Get Past the Manor Guards]],
 			[[S2 NO TEXT]],
+			[[S2C1 == EMPTY]],
 			[[S3 NO TEXT]],
+			[[S3C1 == Get the Disguise from the Merchant's Chest]],
 		},
 		[7]={
+			[[Q1 At the request of the captain of the Vul___he Veiled Heritance.<245>]],
+			[[S1 Razum-dar indicated I'll need to slip pa___rst Auridon Marines.<229>]],
+			[[S1C1 Get Past the Manor Guards]],
+			[[S2 NO TEXT]],
+			[[S2C1 == EMPTY]],
+			[[S3 NO TEXT]],
+			[[S3C1 == EMPTY]],
+		},
+		[8]={
 			[[Q1 At the request of the captain of the Vul___he Veiled Heritance.<245>]],
 			[[S1 I've made it into the Temple district. I___t what I've learned.<122>]],
 			[[S1C1 Talk to Battlereeve Urcelmo Near the Temple]],
 		},
-		[8]={
+		[9]={
 			[[Q1 At the request of the captain of the Vul___he Veiled Heritance.<245>]],
 			[[S1 I should allow Battlereeve Urcelmo and Queen Ayrenn to consult.]],
 			[[S1C1 Allow Urcelmo and Ayrenn to Consult]],
 			[[S1C2 ]],
 			[[S1C3 ]],
 		},
-		[9]={
+		[10]={
 			[[Q1 At the request of the captain of the Vul___he Veiled Heritance.<245>]],
 			[[S1 NO TEXT]],
 			[[S1C1 Enter the Temple]],
 		},
-		[10]={
+		[11]={
 			[[Q1 At the request of the captain of the Vul___he Veiled Heritance.<245>]],
 			[[S1 The Battlereeve has ordered me to follow___ead into the temple.<75>]],
 			[[S1C1 Examine the Temple]],
 		},
-		[11]={
+		[12]={
 			[[Q1 At the request of the captain of the Vul___he Veiled Heritance.<245>]],
 			[[S1 This is it! If I can foil Astanya's plan___afe for another day.<107>]],
 			[[S1C1 Defeat the Assassins]],
 		},
-		[12]={
+		[13]={
 			[[Q1 At the request of the captain of the Vul___he Veiled Heritance.<245>]],
 			[[S1 Time to report back to Queen Ayrenn.]],
 			[[S1C1 Talk to Queen Ayrenn]],
 		},
-		[13]={
+		[14]={
 			[[Q1 At the request of the captain of the Vul___he Veiled Heritance.<245>]],
 			[[S1 I need to give my answer to the Queen about her generous offer.]],
 			[[S1C0 Talk to Queen Ayrenn]],
 		},
 	},
-	[1780010] = {
+	[1781010] = {
 		[1]={
 			[[Q1 Queen Ayrenn has asked me to accompany h___y see complications.<139>]],
 			[[S1 I should make haste for Tanzelwil, and s___e Queen's entourage.<83>]],
 			[[S1C0 Find the Queen's Entourage at Tanzelwil]],
 		},
 	},
-	[1780011] = {
+	[1781011] = {
 		[1]={
 			[[Q1 The town of Silsailen is under attack by___he Veiled Heritance.<181>]],
 			[[S1 Sarodor asked me to speak to Elenwen about helping in Silsailen.]],
@@ -4793,7 +4941,7 @@ ZGV._QuestStepData = {
 			[[S1C0 Speak to Elenwen]],
 		},
 	},
-	[1780012] = {
+	[1781012] = {
 		[1]={
 			[[Q1 While in Silsailen, I learned that the i___don Marines captive.<89>]],
 			[[S1 The Marines are being held in a cellar nearby. I should seek them out.]],
@@ -4824,7 +4972,7 @@ ZGV._QuestStepData = {
 			[[S1C0 Speak to Tendil]],
 		},
 	},
-	[1780013] = {
+	[1781013] = {
 		[1]={
 			[[Q1 Teldur has kidnapped Canonreeve Valano and taken him into the manor.]],
 			[[S1 I need to stop Teldur. He was last seen entering the manor.]],
@@ -4868,7 +5016,7 @@ ZGV._QuestStepData = {
 			[[S1C0 Speak to Elenwen]],
 		},
 	},
-	[1780014] = {
+	[1781014] = {
 		[1]={
 			[[Q1 The town of Phaer is beset by a mysterio___ps to treat the ill.<112>]],
 			[[S1 Hendil is using a barn near the edge of ___d to find him there.<117>]],
@@ -4893,22 +5041,29 @@ ZGV._QuestStepData = {
 			[[S1 I need to grab the salve from the workbench in Hendil's hospice.]],
 			[[S1C1 Collect Salloweed Aloe]],
 			[[S2 NO TEXT]],
-			[[S2C1 Wait for Amuur to Prepare Aloe]],
+			[[S2C1 == Wait for Amuur to Prepare Aloe]],
 		},
 		[5]={
+			[[Q1 The town of Phaer is beset by a ___ to treat the ill.<112>]],
+			[[S1 I need to grab the salve from the workbench in Hendil's hospice.]],
+			[[S1C1 Collect Salloweed Aloe]],
+			[[S2 NO TEXT]],
+			[[S2C1 == EMPTY]],
+		},
+		[6]={
 			[[Q1 The town of Phaer is beset by a mysterio___ps to treat the ill.<112>]],
 			[[S1 Hendil and Amuur are still very busy. Th___ villagers of Phaer.<110>]],
 			[[S1C1 Give Aloe to Eryeril]],
 			[[S1C2 Give Aloe to Nelulin]],
 			[[S1C3 Give Aloe to Aninwe]],
 		},
-		[6]={
+		[7]={
 			[[Q1 The town of Phaer is beset by a mysterio___ps to treat the ill.<112>]],
 			[[S1 I've delivered the salve to the villager___port back to Hendil.<83>]],
 			[[S1C0 Talk to Hendil]],
 		},
 	},
-	[1780015] = {
+	[1781015] = {
 		[1]={
 			[[Q1 Velatosse is suspicious about the plague___ mysterious illness.<118>]],
 			[[S1 Velatosse is very upset that the mercena___an alternate way in.<219>]],
@@ -4964,7 +5119,7 @@ ZGV._QuestStepData = {
 			[[S3 NO TEXT]],
 			[[S3C1 TRACKER GOAL TEXT]],
 			[[S4 NO TEXT]],
-			[[S4C1 TRACKER GOAL TEXT]],
+			[[S4C1 == TRACKER GOAL TEXT]],
 			[[S4C2 ]],
 		},
 		[8]={
@@ -5043,7 +5198,7 @@ ZGV._QuestStepData = {
 			[[S1C0 Speak to Netanwe]],
 		},
 	},
-	[1780016] = {
+	[1781016] = {
 		[1]={
 			[[Q1 Queen Ayrenn seeks to perform rituals ho___angered and violent.<144>]],
 			[[S1 The Queen prepares for her rituals withi___should seek her out.<75>]],
@@ -5062,7 +5217,7 @@ ZGV._QuestStepData = {
 			[[S2 NO TEXT]],
 			[[S2C1 == Aid the Priestess at the Western Ritual Site]],
 			[[S3 NO TEXT]],
-			[[S3C1 Aid the Priestess at the Northern Ritual Site]],
+			[[S3C1 == Aid the Priestess at the Northern Ritual Site]],
 		},
 		[4]={
 			[[Q1 Queen Ayrenn seeks to perform rituals ho___angered and violent.<144>]],
@@ -5073,7 +5228,7 @@ ZGV._QuestStepData = {
 			[[S2C1 == Talk to the Priestess]],
 			[[S2C2 ]],
 			[[S3 NO TEXT]],
-			[[S3C1 Aid the Priestess at the Northern Ritual Site]],
+			[[S3C1 == Aid the Priestess at the Northern Ritual Site]],
 		},
 		[5]={
 			[[Q1 Queen Ayrenn seeks to perform rituals ho___angered and violent.<144>]],
@@ -5083,24 +5238,48 @@ ZGV._QuestStepData = {
 			[[S2 NO TEXT]],
 			[[S2C1 == Defeat the Spirit Guarding the Ritual Site]],
 			[[S3 NO TEXT]],
-			[[S3C1 Aid the Priestess at the Northern Ritual Site]],
+			[[S3C1 == Aid the Priestess at the Northern Ritual Site]],
 		},
 		[6]={
+			[[Q1 Queen Ayrenn seeks to perform rituals ___ and violent.<144>]],
+			[[S1 The Queen wants me to defend the ___ ancient rituals.<81>]],
+			[[S1C1 Aid the Priestess at the West Ritual Site]],
+			[[S1C2 Aid the Priestess at the Northern Ritual Site]],
+			[[S2 NO TEXT]],
+			[[S2C1 == Wait for Priestess to Perform Ritual]],
+			[[S2C2 ]],
+			[[S3 NO TEXT]],
+			[[S3C1 == Aid the Priestess at the Northern Ritual Site]],
+		},
+		[7]={
 			[[Q1 Queen Ayrenn seeks to perform rituals ho___angered and violent.<144>]],
 			[[S1 The Queen wants me to defend the prieste___the ancient rituals.<81>]],
 			[[S1C1 Aid the Priestess at the West Ritual Site]],
 			[[S1C2 Aid the Priestess at the Northern Ritual Site]],
 			[[S2 NO TEXT]],
+			[[S2C1 == EMPTY]],
 			[[S3 NO TEXT]],
-			[[S3C1 Aid the Priestess at the Northern Ritual Site]],
+			[[S3C1 == Aid the Priestess at the Northern Ritual Site]],
 		},
-		[7]={
+		[8]={
+			[[Q1 Queen Ayrenn seeks to perform rituals ___ and violent.<144>]],
+			[[S1 The Queen wants me to defend the ___ ancient rituals.<81>]],
+			[[S1C1 Aid the Priestess at the West Ritual Site]],
+			[[S1C2 Aid the Priestess at the Northern Ritual Site]],
+			[[S2 NO TEXT]],
+			[[S2C1 == EMPTY]],
+			[[S3 NO TEXT]],
+			[[S3C1 == Defend the Priestess as She Performs the Ritual]],
+			[[S3C2 ]],
+			[[S3C3 ]],
+		},
+		[9]={
 			[[Q1 Queen Ayrenn seeks to perform rituals ho___angered and violent.<144>]],
 			[[S1 I have defended the priestesses as they ___mpleted their tasks.<124>]],
 			[[S1C0 Speak to Queen Ayrenn]],
 		},
 	},
-	[1780017] = {
+	[1781017] = {
 		[1]={
 			[[Q1 Strange stones emanating necromantic ene___e Ancestral Spirits.<190>]],
 			[[S1 Priestess Langwe provided me with an Alt___he mysterious stone.<87>]],
@@ -5137,7 +5316,7 @@ ZGV._QuestStepData = {
 			[[C0 Talk to Priestess Langwe]],
 		},
 	},
-	[1780018] = {
+	[1781018] = {
 		[1]={
 			[[Q1 Queen Ayrenn must perform the final ritu___torous Norion lurks.<166>]],
 			[[S1 Ayrenn and I are to enter the crypts. I ___ what we might face.<107>]],
@@ -5186,14 +5365,14 @@ ZGV._QuestStepData = {
 			[[C0 Talk to Queen Ayrenn]],
 		},
 	},
-	[1780019] = {
+	[1781019] = {
 		[1]={
 			[[Q1 Battlereeve Urcelmo has asked that I mee___iled Heritance plot.<159>]],
 			[[S1 I should speak with Razum-dar and see what he has to say.]],
 			[[C0 Meet with Razum-dar near Mathiisen]],
 		},
 	},
-	[1780020] = {
+	[1781020] = {
 		[1]={
 			[[Q1 I've found a lost member of the Queen's ___parently holds them.<209>]],
 			[[S1 Eminelya's directed me through a tunnel ___er companions there.<117>]],
@@ -5227,9 +5406,9 @@ ZGV._QuestStepData = {
 			[[S3 NO TEXT]],
 			[[S3C1 == Enter Minatelle's Rage]],
 			[[S4 NO TEXT]],
-			[[S4C1 Enter Nuulehtel's Despair]],
+			[[S4C1 == Enter Nuulehtel's Despair]],
 			[[S5 NO TEXT]],
-			[[S5C1 Enter Merion's Bliss]],
+			[[S5C1 == Enter Merion's Bliss]],
 		},
 		[5]={
 			[[Q1 I've found a lost member of the Queen's ___parently holds them.<209>]],
@@ -5250,9 +5429,9 @@ ZGV._QuestStepData = {
 			[[S3C1 == Find Minantille]],
 			[[S3C2 ]],
 			[[S4 NO TEXT]],
-			[[S4C1 Enter Nuulehtel's Despair]],
+			[[S4C1 == Enter Nuulehtel's Despair]],
 			[[S5 NO TEXT]],
-			[[S5C1 Enter Merion's Bliss]],
+			[[S5C1 == Enter Merion's Bliss]],
 		},
 		[6]={
 			[[Q1 I've found a lost member of the Queen's ___parently holds them.<209>]],
@@ -5273,9 +5452,9 @@ ZGV._QuestStepData = {
 			[[S3C1 == Aid Minantille]],
 			[[S3C2 ]],
 			[[S4 NO TEXT]],
-			[[S4C1 Enter Nuulehtel's Despair]],
+			[[S4C1 == Enter Nuulehtel's Despair]],
 			[[S5 NO TEXT]],
-			[[S5C1 Enter Merion's Bliss]],
+			[[S5C1 == Enter Merion's Bliss]],
 		},
 		[7]={
 			[[Q1 I've found a lost member of the Queen's ___parently holds them.<209>]],
@@ -5296,9 +5475,9 @@ ZGV._QuestStepData = {
 			[[S3C1 == Talk to Minantille]],
 			[[S3C2 ]],
 			[[S4 NO TEXT]],
-			[[S4C1 Enter Nuulehtel's Despair]],
+			[[S4C1 == Enter Nuulehtel's Despair]],
 			[[S5 NO TEXT]],
-			[[S5C1 Enter Merion's Bliss]],
+			[[S5C1 == Enter Merion's Bliss]],
 		},
 		[8]={
 			[[Q1 I've found a lost member of the Queen's ___parently holds them.<209>]],
@@ -5316,13 +5495,35 @@ ZGV._QuestStepData = {
 			[[S2C7 ]],
 			[[S2C8 ]],
 			[[S3 The teleportation scroll has seen Minant___e her realm of rage.<100>]],
-			[[S3C1 Leave Minatelle's Rage]],
+			[[S3C1 == Leave Minatelle's Rage]],
 			[[S4 NO TEXT]],
-			[[S4C1 Enter Nuulehtel's Despair]],
+			[[S4C1 == Enter Nuulehtel's Despair]],
 			[[S5 NO TEXT]],
 			[[S5C1 == Enter Merion's Bliss]],
 		},
 		[9]={
+			[[Q1 I've found a lost member of the Queen's ___ holds them.<209>]],
+			[[S1 Overconfident, Sanessalmo has offered ___ Queen's entourage.<159>]],
+			[[S1C1 Rescue Minantille]],
+			[[S1C2 Rescue Merion]],
+			[[S1C3 Rescue Nuulehtel]],
+			[[S2 NO TEXT]],
+			[[S2C1 Step 1a Tracker (Rage): 2 / 99]],
+			[[S2C2 Step 1b Tracker (Bliss): 0 / 99]],
+			[[S2C3 Step 1c Tracker (Melancholy): 0 / 99]],
+			[[S2C4 Step1b Spore Tracker (Bliss)]],
+			[[S2C5 ]],
+			[[S2C6 ]],
+			[[S2C7 ]],
+			[[S2C8 ]],
+			[[S3 NO TEXT]],
+			[[S3C1 == EMPTY]],
+			[[S4 NO TEXT]],
+			[[S4C1 == Enter Nuulehtel's Despair]],
+			[[S5 NO TEXT]],
+			[[S5C1 == Enter Merion's Bliss]],
+		},
+		[10]={
 			[[Q1 I've found a lost member of the Queen's ___parently holds them.<209>]],
 			[[S1 Overconfident, Sanessalmo has offered me___e Queen's entourage.<159>]],
 			[[S1C1 Rescue Minantille]],
@@ -5338,13 +5539,14 @@ ZGV._QuestStepData = {
 			[[S2C7 ]],
 			[[S2C8 ]],
 			[[S3 NO TEXT]],
+			[[S3C1 == EMPTY]],
 			[[S4 NO TEXT]],
 			[[S4C1 Enter Nuulehtel's Despair]],
 			[[S5 == I've entered a strange cavern full of mu___on as soon as I can.<107>]],
 			[[S5C1 == Talk to Merion]],
 			[[S5C2 ]],
 		},
-		[10]={
+		[11]={
 			[[Q1 I've found a lost member of the Queen's ___parently holds them.<209>]],
 			[[S1 Overconfident, Sanessalmo has offered me___e Queen's entourage.<159>]],
 			[[S1C1 Rescue Minantille]],
@@ -5360,13 +5562,14 @@ ZGV._QuestStepData = {
 			[[S2C7 ]],
 			[[S2C8 ]],
 			[[S3 NO TEXT]],
+			[[S3C1 == EMPTY]],
 			[[S4 NO TEXT]],
-			[[S4C1 Enter Nuulehtel's Despair]],
+			[[S4C1 == Enter Nuulehtel's Despair]],
 			[[S5 Talking to Merion was singularly unhelpf___ind anything useful.<207>]],
 			[[S5C1 == Search Merion's Backpack]],
 			[[S5C2 ]],
 		},
-		[11]={
+		[12]={
 			[[Q1 I've found a lost member of the Queen's ___parently holds them.<209>]],
 			[[S1 Overconfident, Sanessalmo has offered me___e Queen's entourage.<159>]],
 			[[S1C1 Rescue Minantille]],
@@ -5382,15 +5585,16 @@ ZGV._QuestStepData = {
 			[[S2C7 ]],
 			[[S2C8 ]],
 			[[S3 NO TEXT]],
+			[[S3C1 == EMPTY]],
 			[[S4 NO TEXT]],
-			[[S4C1 Enter Nuulehtel's Despair]],
+			[[S4C1 == Enter Nuulehtel's Despair]],
 			[[S5 It seems I need to find mushroom spores ___s, and collect them.<168>]],
 			[[S5C1 == Collect Bloodcrown Spores]],
-			[[S5C2 Collect Lavendercap Mushrooms]],
-			[[S5C3 Collect Gleamcap Spores]],
+			[[S5C2 == Collect Lavendercap Mushrooms]],
+			[[S5C3 == Collect Gleamcap Spores]],
 			[[S5C4 ]],
 		},
-		[12]={
+		[13]={
 			[[Q1 I've found a lost member of the Queen's ___parently holds them.<209>]],
 			[[S1 Overconfident, Sanessalmo has offered me___e Queen's entourage.<159>]],
 			[[S1C1 Rescue Minantille]],
@@ -5406,32 +5610,11 @@ ZGV._QuestStepData = {
 			[[S2C7 ]],
 			[[S2C8 ]],
 			[[S3 NO TEXT]],
+			[[S3C1 == EMPTY]],
 			[[S4 NO TEXT]],
-			[[S4C1 Enter Nuulehtel's Despair]],
+			[[S4C1 == Enter Nuulehtel's Despair]],
 			[[S5 I should be able to dispel Malevolent Sp___e to make use of it.<92>]],
 			[[S5C1 == Dispel Malevolent Spirit]],
-			[[S5C2 ]],
-		},
-		[13]={
-			[[Q1 I've found a lost member of the Queen's ___parently holds them.<209>]],
-			[[S1 Overconfident, Sanessalmo has offered me___e Queen's entourage.<159>]],
-			[[S1C1 Rescue Minantille]],
-			[[S1C2 Rescue Merion]],
-			[[S1C3 Rescue Nuulehtel]],
-			[[S2 NO TEXT]],
-			[[S2C1 Step 1a Tracker (Rage): 2 / 99]],
-			[[S2C2 Step 1b Tracker (Bliss): 4 / 99]],
-			[[S2C3 Step 1c Tracker (Melancholy): 0 / 99]],
-			[[S2C4 Step1b Spore Tracker (Bliss)]],
-			[[S2C5 ]],
-			[[S2C6 ]],
-			[[S2C7 ]],
-			[[S2C8 ]],
-			[[S3 NO TEXT]],
-			[[S4 NO TEXT]],
-			[[S4C1 Enter Nuulehtel's Despair]],
-			[[S5 == Merion seems to be more lucid. I should speak to him.]],
-			[[S5C1 == Talk to Merion]],
 			[[S5C2 ]],
 		},
 		[14]={
@@ -5450,12 +5633,81 @@ ZGV._QuestStepData = {
 			[[S2C7 ]],
 			[[S2C8 ]],
 			[[S3 NO TEXT]],
+			[[S3C1 == EMPTY]],
+			[[S4 NO TEXT]],
+			[[S4C1 ==Enter Nuulehtel's Despair]],
+			[[S5 Merion seems to be more lucid. I should speak to him.]],
+			[[S5C1 == Talk to Merion]],
+			[[S5C2 ]],
+		},
+		[15]={
+			[[Q1 I've found a lost member of the Queen's ___parently holds them.<209>]],
+			[[S1 Overconfident, Sanessalmo has offered me___e Queen's entourage.<159>]],
+			[[S1C1 Rescue Minantille]],
+			[[S1C2 Rescue Merion]],
+			[[S1C3 Rescue Nuulehtel]],
+			[[S2 NO TEXT]],
+			[[S2C1 Step 1a Tracker (Rage): 2 / 99]],
+			[[S2C2 Step 1b Tracker (Bliss): 4 / 99]],
+			[[S2C3 Step 1c Tracker (Melancholy): 0 / 99]],
+			[[S2C4 Step1b Spore Tracker (Bliss)]],
+			[[S2C5 ]],
+			[[S2C6 ]],
+			[[S2C7 ]],
+			[[S2C8 ]],
+			[[S3 NO TEXT]],
+			[[S3C1 == EMPTY]],
 			[[S4 NO TEXT]],
 			[[S4C1 == Enter Nuulehtel's Despair]],
 			[[S5 I've used the telport scroll to evacuate___eave Merion's Bliss.<80>]],
-			[[S5C1 Leave Merion's Bliss]],
+			[[S5C1 == Leave Merion's Bliss]],
 		},
-		[15]={
+		[16]={
+			[[Q1 I've found a lost member of the Queen's ___ holds them.<209>]],
+			[[S1 Overconfident, Sanessalmo has offered ___ Queen's entourage.<159>]],
+			[[S1C1 Rescue Minantille]],
+			[[S1C2 Rescue Merion]],
+			[[S1C3 Rescue Nuulehtel]],
+			[[S2 NO TEXT]],
+			[[S2C1 Step 1a Tracker (Rage): 2 / 99]],
+			[[S2C2 Step 1b Tracker (Bliss): 4 / 99]],
+			[[S2C3 Step 1c Tracker (Melancholy): 0 / 99]],
+			[[S2C4 Step1b Spore Tracker (Bliss)]],
+			[[S2C5 ]],
+			[[S2C6 ]],
+			[[S2C7 ]],
+			[[S2C8 ]],
+			[[S3 NO TEXT]],
+			[[S3C1 == EMPTY]],
+			[[S4 NO TEXT]],
+			[[S4C1 == Enter Nuulehtel's Despair]],
+			[[S5 NO TEXT]],
+			[[S5C1 == EMPTY]],
+		},
+		[17]={
+			[[Q1 I've found a lost member of the Queen's ___ holds them.<209>]],
+			[[S1 Overconfident, Sanessalmo has offered ___ Queen's entourage.<159>]],
+			[[S1C1 Rescue Minantille]],
+			[[S1C2 Rescue Merion]],
+			[[S1C3 Rescue Nuulehtel]],
+			[[S2 NO TEXT]],
+			[[S2C1 Step 1a Tracker (Rage): 2 / 99]],
+			[[S2C2 Step 1b Tracker (Bliss): 4 / 99]],
+			[[S2C3 Step 1c Tracker (Melancholy): 0 / 99]],
+			[[S2C4 Step1b Spore Tracker (Bliss)]],
+			[[S2C5 ]],
+			[[S2C6 ]],
+			[[S2C7 ]],
+			[[S2C8 ]],
+			[[S3 NO TEXT]],
+			[[S3C1 == EMPTY]],
+			[[S4 == I've entered a strange world of ice and ___ as soon as I can.<96>]],
+			[[S4C1 == Talk to Nuulehtel]],
+			[[S4C2 ]],
+			[[S5 NO TEXT]],
+			[[S5C1 == EMPTY]],
+		},
+		[18]={
 			[[Q1 I've found a lost member of the Queen's ___parently holds them.<209>]],
 			[[S1 Overconfident, Sanessalmo has offered me___e Queen's entourage.<159>]],
 			[[S1C1 Rescue Minantille]],
@@ -5471,14 +5723,15 @@ ZGV._QuestStepData = {
 			[[S2C7 ]],
 			[[S2C8 ]],
 			[[S3 NO TEXT]],
+			[[S3C1 == EMPTY]],
 			[[S4 Nuulehtel is delusional. He says he's fr___'d listen to reason.<208>]],
 			[[S4C1 == Collect Straw]],
-			[[S4C2 Collect Flint and Tinder]],
-			[[S4C3 Collect Oil]],
+			[[S4C2 == Collect Flint and Tinder]],
+			[[S4C3 == Collect Oil]],
 			[[S4C4 ]],
 			[[S5 NO TEXT]],
 		},
-		[16]={
+		[19]={
 			[[Q1 I've found a lost member of the Queen's ___parently holds them.<209>]],
 			[[S1 Overconfident, Sanessalmo has offered me___e Queen's entourage.<159>]],
 			[[S1C1 Rescue Minantille]],
@@ -5494,12 +5747,14 @@ ZGV._QuestStepData = {
 			[[S2C7 ]],
 			[[S2C8 ]],
 			[[S3 NO TEXT]],
+			[[S3C1 == EMPTY]],
 			[[S4 I have the materials I need to start a f___n talk to Nuulehtel.<98>]],
 			[[S4C1 == Start a Fire]],
 			[[S4C2 ]],
 			[[S5 NO TEXT]],
+			[[S5C1 == EMPTY]],
 		},
-		[17]={
+		[20]={
 			[[Q1 I've found a lost member of the Queen's ___parently holds them.<209>]],
 			[[S1 Overconfident, Sanessalmo has offered me___e Queen's entourage.<159>]],
 			[[S1C1 Rescue Minantille]],
@@ -5515,17 +5770,19 @@ ZGV._QuestStepData = {
 			[[S2C7 ]],
 			[[S2C8 ]],
 			[[S3 NO TEXT]],
-			[[S4 Nuulehtel seems to be warming up. I shou___ returned to sanity.<89>]],
+			[[S3C1 == EMPTY]],
+			[[S4 == Nuulehtel seems to be warming up. I shou___ returned to sanity.<89>]],
 			[[S4C1 == Talk to Nuulehtel]],
 			[[S4C2 ]],
 			[[S5 NO TEXT]],
+			[[S5C1 == EMPTY]],
 		},
-		[18]={
+		[21]={
 			[[Q1 I've found a lost member of the Queen's ___parently holds them.<209>]],
 			[[S1 I've freed the members of Queen Ayrenn's___mad Mage Sanessalmo.<120>]],
 			[[S1C1 Confront Sanessalmo]],
 		},
-		[19]={
+		[22]={
 			[[Q1 I've found a lost member of the Queen's ___parently holds them.<209>]],
 			[[S1 The mad Mage of Glister Vale is dead. I ___know the good knows.<134>]],
 			[[S1C1 Return to Eminelya]],
@@ -5533,13 +5790,13 @@ ZGV._QuestStepData = {
 			[[S2C1 Use the Teleport Scroll]],
 			[[S2C2 ]],
 		},
-		[20]={
+		[23]={
 			[[Q1 I've found a lost member of the Queen's ___parently holds them.<209>]],
 			[[S1 I've returned to Eminelya's side. I should speak to her one last time.]],
 			[[S1C0 Talk to Eminelya]],
 		},
 	},
-	[1780021] = {
+	[1781021] = {
 		[1]={
 			[[Q1 Maormer pirates took the lighthouse at S___rt of Vulkhel Guard.<177>]],
 			[[S1 I need to break through the Maormer beachhead and find Captain Ciranya.]],
@@ -5564,9 +5821,9 @@ ZGV._QuestStepData = {
 			[[S1C1 Collect Fire Starters]],
 			[[S1C2 Collect Fire Starters]],
 			[[S2 NO TEXT]],
-			[[S2C1 Collect Tildur's Kindlepitch]],
+			[[S2C1 == Collect Tildur's Kindlepitch]],
 			[[S3 NO TEXT]],
-			[[S3C1 Collect Maormer Fire Salts]],
+			[[S3C1 == Collect Maormer Fire Salts]],
 		},
 		[5]={
 			[[Q1 Maormer pirates took the lighthouse at S___rt of Vulkhel Guard.<177>]],
@@ -5574,7 +5831,8 @@ ZGV._QuestStepData = {
 			[[S1C0 Collect Fire Starters]],
 			[[S1C1 Collect Fire Starters]],
 			[[S2 NO TEXT]],
-			[[S2C1 Collect Tildur's Kindlepitch]],
+			[[S2C1 == Collect Tildur's Kindlepitch]],
+			[[S3C1 == EMPTY]],
 		},
 		[6]={
 			[[Q1 Maormer pirates took the lighthouse at S___rt of Vulkhel Guard.<177>]],
@@ -5615,7 +5873,7 @@ ZGV._QuestStepData = {
 			[[S1C0 Talk to Captain Ciranya]],
 		},
 	},
-	[1780022] = {
+	[1781022] = {
 		[1]={
 			[[Q1 I'm working with Razum-dar, at the town ___ce for Queen Ayrenn.<121>]],
 			[[S1 Raz is worried about being recognized in___is agents, Fistalle.<107>]],
@@ -5638,28 +5896,35 @@ ZGV._QuestStepData = {
 			[[S1 The note on Fistalle's body mentioned th___r information there.<107>]],
 			[[S1C1 Search the Forge]],
 			[[S2 NO TEXT]],
-			[[S2C1 Enter the Forge Area]],
+			[[S2C1 == Enter the Forge Area]],
 		},
 		[5]={
 			[[Q1 I'm working with Razum-dar, at the town ___ce for Queen Ayrenn.<121>]],
-			[[S1 I've uncovered evidence implicating Cond___mation to Razum-dar.<109>]],
-			[[S1C1 Talk to Razum-dar]],
+			[[S1 The note on Fistalle's body mentioned th___r information there.<107>]],
+			[[S1C1 Search the Forge]],
+			[[S2 NO TEXT]],
+			[[S2C1 == EMPTY]],
 		},
 		[6]={
 			[[Q1 I'm working with Razum-dar, at the town ___ce for Queen Ayrenn.<121>]],
-			[[S1 Razum-dar suspects that the canonreeve o___on with kindlepitch.<189>]],
-			[[S1C1 Search Malanie's House]],
-			[[S2 NO TEXT]],
-			[[S2C1 == Gather Kindlepitch from Barrel]],
+			[[S1 I've uncovered evidence implicating Cond___mation to Razum-dar.<109>]],
+			[[S1C1 Talk to Razum-dar]],
 		},
 		[7]={
 			[[Q1 I'm working with Razum-dar, at the town ___ce for Queen Ayrenn.<121>]],
 			[[S1 Razum-dar suspects that the canonreeve o___on with kindlepitch.<189>]],
 			[[S1C1 Search Malanie's House]],
 			[[S2 NO TEXT]],
-			[[S2C1 == Use Kindlepitch to Create Distraction]],
+			[[S2C1 == Gather Kindlepitch from Barrel]],
 		},
 		[8]={
+			[[Q1 I'm working with Razum-dar, at the town ___ce for Queen Ayrenn.<121>]],
+			[[S1 Razum-dar suspects that the canonreeve o___on with kindlepitch.<189>]],
+			[[S1C1 Search Malanie's House]],
+			[[S2 NO TEXT]],
+			[[S2C1 == Use Kindlepitch to Create Distraction]],
+		},
+		[9]={
 			[[Q1 I'm working with Razum-dar, at the town ___ce for Queen Ayrenn.<121>]],
 			[[S1 Razum-dar suspects that the canonreeve o___on with kindlepitch.<189>]],
 			[[S1C1 Search Malanie's House]],
@@ -5667,7 +5932,7 @@ ZGV._QuestStepData = {
 			[[S2C1 == Enter Malanie's House]],
 			[[S2C2 ]],
 		},
-		[9]={
+		[10]={
 			[[Q1 I'm working with Razum-dar, at the town ___ce for Queen Ayrenn.<121>]],
 			[[S1 Razum-dar suspects that the canonreeve o___on with kindlepitch.<189>]],
 			[[S1C1 Search Malanie's House]],
@@ -5675,67 +5940,99 @@ ZGV._QuestStepData = {
 			[[S2C1 == Search the Dresser]],
 			[[S2C2 ]],
 		},
-		[10]={
+		[11]={
 			[[Q1 I'm working with Razum-dar, at the town ___ce for Queen Ayrenn.<121>]],
 			[[S1 Malanie would appear to lead the Heritan___ld report in to Raz.<83>]],
 			[[S1C1 Talk to Razum-dar]],
 		},
-		[11]={
+		[12]={
 			[[Q1 I'm working with Razum-dar, at the town ___ce for Queen Ayrenn.<121>]],
 			[[S1 I need to speak with Raz one more time, plan for our next move.]],
 			[[S1C0 Talk to Razum-dar]],
 		},
 	},
-	[1780023] = {
+	[1781023] = {
 		[1]={
-			[[Razum-dar has asked me to trust him, and do something seemingly foolish. I'm to openly accuse Malanie of treason in front of her men. I'll need to enter the barracks first.]],
-			[[Enter the Barracks]],
+			[[Q1 I've uncovered evidence linking ___ to them directly.<154>]],
+			[[S1 Razum-dar has asked me to trust him, ___ the barracks first.<172>]],
+			[[S1C1 Enter the Barracks]],
+			[[S2 NO TEXT]],
+			[[S2C1 TRACKER GOAL TEXT]],
+			[[S3 NO TEXT]],
+			[[S3C1 == Talk to Guard]],
 		},
 		[2]={
-			[[I need to confront Malanie about her involvement with the Veiled Heritance. And hope Raz keeps up his end of the deal.]],
-			[[Confront Malanie]],
+			[[Q1 I've uncovered evidence linking ___ to them directly.<154>]],
+			[[S1 Razum-dar has asked me to trust him, ___ the barracks first.<172>]],
+			[[S1C1 Enter the Barracks]],
+			[[S2 NO TEXT]],
+			[[S3 NO TEXT]],
+			[[S3C0 Enter the Barracks]],
 		},
 		[3]={
-			[[I've woken in a cell under the barracks. Raz, as promised, awaits me outside.]],
-			[[Talk to Razum-dar]],
+			[[Q1 I've uncovered evidence linking ___ to them directly.<154>]],
+			[[S1 I need to confront Malanie about her ___ end of the deal.<118>]],
+			[[S1C1 Confront Malanie]],
 		},
 		[4]={
-			[[Raz has tasked me with taking on the Forgemaster, Condalin, on my own. I need to leave the barracks and seek him out.]],
-			[[Leave the Barracks]],
+			[[Q1 I've uncovered evidence linking ___ to them directly.<154>]],
+			[[S1 I've woken in a cell under the ___ awaits me outside.<77>]],
+			[[S1C1 Talk to Razum-dar]],
 		},
 		[5]={
-			[[I must find Condalin, and destroy him.]],
-			[[Defeat Condalin]],
+			[[Q1 I've uncovered evidence linking ___ to them directly.<154>]],
+			[[S1 Raz has tasked me with taking on the ___ and seek him out.<117>]],
+			[[S1C1 Leave the Barracks]],
+			[[S2 NO TEXT]],
+			[[S2C1 == Wait for Razum-dar to Open the Door]],
 		},
 		[6]={
-			[[I need to find Raz, so that together we might put an end to this treacherous Heirtance cell once and for all.]],
-			[[Talk to Razum-dar]],
+			[[Q1 I've uncovered evidence linking ___ to them directly.<154>]],
+			[[S1 Raz has tasked me with taking on the ___ and seek him out.<117>]],
+			[[S1C1 Leave the Barracks]],
+			[[S2 NO TEXT]],
+			[[S2C1 == Use the Cell Door]],
 		},
 		[7]={
-			[[This is it. Raz and I are going to kill Malanie and put an end to the cell here in Mathiisen.]],
-			[[Defeat Malanie]],
+			[[Q1 I've uncovered evidence linking ___ to them directly.<154>]],
+			[[S1 Raz has tasked me with taking on the ___ and seek him out.<117>]],
+			[[S1C1 Leave the Barracks]],
+			[[S2 NO TEXT]],
 		},
 		[8]={
-			[[We've done it. Malanie and Condalin are dead. I should speak again with Raz outside the forge area.]],
-			[[Meet Razrum-dar outside Armory]],
+			[[Q1 I've uncovered evidence linking ___ to them directly.<154>]],
+			[[S1 I must find Condalin, and destroy him.]],
+			[[S1C1 Defeat Condalin]],
 		},
 		[9]={
-			[[I should speak with Raz once more to end our business in Mathiisen.]],
+			[[Q1 I've uncovered evidence linking ___ to them directly.<154>]],
+			[[S1 I need to find Raz, so that together we ___ once and for all.<109>]],
+			[[S1C1 Talk to Razum-dar]],
 		},
 		[10]={
-			[[Q1 I've uncovered evidence linking importan___ht to them directly.<154>]],
-			[[S1 We did it. Malanie and Condalin are dead___side the forge area.<95>]],
-			[[C1 Meet Razum-dar Outside the Armory]],
+			[[Q1 I've uncovered evidence linking ___ to them directly.<154>]],
+			[[S1 This is it. Raz and I are going to kill ___ here in Mathiisen.<93>]],
+			[[S1C1 Defeat Malanie]],
+		},
+		[11]={
+			[[Q1 I've uncovered evidence linking ___ to them directly.<154>]],
+			[[S1 We did it. Malanie and Condalin are ___ the forge area.<95>]],
+			[[S1C1 Meet Razum-dar Outside the Armory]],
+		},
+		[12]={
+			[[Q1 I've uncovered evidence linking ___ to them directly.<154>]],
+			[[S1 I should speak with Raz once more to end our business in Mathiisen.]],
+			[[S1C0 Talk to Razum-dar]],
 		},
 	},
-	[1780024] = {
+	[1781024] = {
 		[1]={
 			[[Q1 I have purged the Veiled Heritance from ___eiled Heritance has.<150>]],
 			[[S1 I should head to Skywatch and speak to C___ect me to Razum-dar.<97>]],
 			[[S1C0 Talk to Captain Tendil]],
 		},
 	},
-	[1780025] = {
+	[1781025] = {
 		[1]={
 			[[Q1 I've come across a statue outside the sm___son turned to stone.<122>]],
 			[[S1 Something must have happened to that poo___nd out more in town?<88>]],
@@ -5789,7 +6086,7 @@ ZGV._QuestStepData = {
 			[[S1C0 Speak to Merormo]],
 		},
 	},
-	[1780026] = {
+	[1781026] = {
 		[1]={
 			[[Q1 Merormo senses that a powerful Daedra ha___eeing the villagers.<153>]],
 			[[S1 I need to find the cave Merormo told me about.]],
@@ -5845,81 +6142,91 @@ ZGV._QuestStepData = {
 			[[S1 I have spoken to Merormo, who claimed th___anonreeve Pinanande.<125>]],
 			[[S1C0 Speak to Canonreeve Pinanande]],
 		},
+		[10]={
+			[[Q1 Merormo senses that a powerful Daedra ___ the villagers.<153>]],
+			[[S1 I have spoken to Canonreeve Pinanande, ___ him for my reward.<126>]],
+			[[S1C0 Speak to Merormo]],
+		},
 	},
-	[1780027] = {
+	[1781027] = {
 		[1]={
+			[[Q1 The Prophet has contacted me across grea___e important purpose.<78>]],
+			[[S1 I must seek out the Prophet and speak with him.]],
+			[[S1C1 Go to the Harborage]],
+		},
+		[2]={
 			[[Q1 The Prophet has contacted me across grea___e important purpose.<78>]],
 			[[S1 I must seek out the Prophet and speak with him.]],
 			[[S1C1 Talk to the Prophet]],
 		},
-		[2]={
+		[3]={
 			[[Q1 The Prophet has contacted me across grea___e important purpose.<78>]],
 			[[S1 The Prophet has opened a gateway to Obli___litating our escape.<123>]],
 			[[S1C1 Enter Coldharbour]],
 		},
-		[3]={
+		[4]={
 			[[Q1 The Prophet has contacted me across grea___e important purpose.<78>]],
 			[[S1 I can already see Lyris nearby. I need to speak to her.]],
 			[[S1C1 Talk to Lyris]],
 		},
-		[4]={
+		[5]={
 			[[Q1 The Prophet has contacted me across grea___e important purpose.<78>]],
 			[[S1 Lyris is unable to leave Oblivion due to___before we can leave.<149>]],
 			[[S1C1 Advance into the Foundry]],
 			[[S2 NO TEXT]],
 			[[S2C1 Lyris Forge Chatter]],
 		},
-		[5]={
+		[6]={
 			[[Q1 The Prophet has contacted me across grea___e important purpose.<78>]],
 			[[S1 Lyris has deep regrets about leaving hom___r from this shackle.<127>]],
 			[[S1C1 Settle Lyris's Regret]],
 			[[S2 NO TEXT]],
 			[[S2C1 Speak to Lyris's Father]],
 		},
-		[6]={
+		[7]={
 			[[Q1 The Prophet has contacted me across grea___e important purpose.<78>]],
 			[[S1 I have aided Lyris in overcoming her big___ should continue on.<75>]],
 			[[S1C1 Advance into the Foundry]],
 			[[S2 NO TEXT]],
 			[[S2C1 Lyris Pre-Camp Chatter]],
 		},
-		[7]={
-			[[Q1 The Prophet has contacted me across grea___e important purpose.<78>]],
-			[[S1 Lyris was always made to feel alone ever___and steal her armor.<184>]],
-			[[S1C1 Assuage Lyris's Solitude]],
-			[[S2 NO TEXT]],
-			[[S2C1 Find Lyris's Gauntlets]],
-			[[S2C2 Find Lyris's Greaves]],
-			[[S2C3 == Find Lyris's Breastplate]],
-			[[S3 NO TEXT]],
-			[[S3C1 Wait for Clues]],
-		},
 		[8]={
 			[[Q1 The Prophet has contacted me across grea___e important purpose.<78>]],
 			[[S1 Lyris was always made to feel alone ever___and steal her armor.<184>]],
 			[[S1C1 Assuage Lyris's Solitude]],
-			[[S2 I've found Lyris's armor. I need to give it to her and see if it helps.]],
-			[[S2C1 Give the Armor to Lyris]],
+			[[S2 == NO TEXT]],
+			[[S2C1 == Find Lyris's Gauntlets]],
+			[[S2C2 == Find Lyris's Greaves]],
+			[[S2C3 == Find Lyris's Breastplate]],
 			[[S3 NO TEXT]],
+			[[S3C1 Wait for Clues]],
 		},
 		[9]={
+			[[Q1 The Prophet has contacted me across grea___e important purpose.<78>]],
+			[[S1 Lyris was always made to feel alone ever___and steal her armor.<184>]],
+			[[S1C1 Assuage Lyris's Solitude]],
+			[[S2 == I've found Lyris's armor. I need to give it to her and see if it helps.]],
+			[[S2C1 == Give the Armor to Lyris]],
+			[[S3 NO TEXT]],
+		},
+		[10]={
 			[[Q1 The Prophet has contacted me across grea___e important purpose.<78>]],
 			[[S1 I've recovered Lyris's armor, and with i___ should continue on.<96>]],
 			[[S1C1 Advance into the Foundry]],
 			[[S2 NO TEXT]],
 			[[S2C1 Lyris Post-Camp Chatter]],
 		},
-		[10]={
+		[11]={
 			[[Q1 The Prophet has contacted me across grea___e important purpose.<78>]],
 			[[S1 Lyris has been confronted with a vision ___n on the cliff face.<73>]],
 			[[S1C1 Resolve Lyris's Uncertainty]],
 		},
-		[11]={
+		[12]={
 			[[Q1 The Prophet has contacted me across grea___e important purpose.<78>]],
 			[[S1 Lyris has reclaimed her axe and wants to speak with me.]],
 			[[S1C1 Talk to Lyris]],
 		},
-		[12]={
+		[13]={
 			[[Q1 The Prophet has contacted me across grea___e important purpose.<78>]],
 			[[S1 Lyris has overcome her fears and reclaim___need to continue on.<82>]],
 			[[S1C1 Advance into the Foundry]],
@@ -5928,7 +6235,7 @@ ZGV._QuestStepData = {
 			[[S3 NO TEXT]],
 			[[S3C1 Lyris Post-Rockslide Chatter]],
 		},
-		[13]={
+		[14]={
 			[[Q1 The Prophet has contacted me across grea___e important purpose.<78>]],
 			[[S1 Lyris has overcome her fears and reclaim___need to continue on.<82>]],
 			[[S1C1 Advance into the Foundry]],
@@ -5937,21 +6244,27 @@ ZGV._QuestStepData = {
 			[[S3 NO TEXT]],
 			[[S3C1 Lyris Post-Rockslide Chatter]],
 		},
-		[14]={
+		[15]={
 			[[Q1 The Prophet has contacted me across grea___e important purpose.<78>]],
 			[[S1 Lyris and I witnessed a projected image of Sai Sahan being tortured.]],
 			[[S1C1 Investigate the Chamber]],
 			[[S2 NO TEXT]],
 			[[S2C1 Lyris Scene Gate]],
 		},
-		[15]={
+		[16]={
 			[[Q1 The Prophet has contacted me across grea___e important purpose.<78>]],
 			[[S1 Lyris and I saw a vision of Sai Sahan be___ell him what we saw.<114>]],
 			[[S1C1 Advance into the Foundry]],
 			[[S2 NO TEXT]],
-			[[S2C1 Use Door Lever]],
+			[[S2C1 == Use Door Lever]],
 		},
-		[16]={
+		[17]={
+			[[Q1 The Prophet has contacted me across grea___e important purpose.<78>]],
+			[[S1 Lyris and I saw a vision of Sai Sahan be___ell him what we saw.<114>]],
+			[[S1C1 Advance into the Foundry]],
+			[[S2 NO TEXT]],
+		},
+		[18]={
 			[[Q1 The Prophet has contacted me across grea___e important purpose.<78>]],
 			[[S1 Lyris's growing terror is being made man___es ahead and escape.<103>]],
 			[[S1C1 Vanquish Lyris's Terror]],
@@ -5960,7 +6273,7 @@ ZGV._QuestStepData = {
 			[[S3 NO TEXT]],
 			[[S3C1 Lyris Spots Overseer]],
 		},
-		[17]={
+		[19]={
 			[[Q1 The Prophet has contacted me across grea___e important purpose.<78>]],
 			[[S1 Lyris has reclaimed her memories. It is ___ Prophet has opened.<106>]],
 			[[S1C0 Escape the Foundry of Woe]],
@@ -5968,7 +6281,7 @@ ZGV._QuestStepData = {
 			[[S1C2 Escape the Foundry of Woe]],
 			[[S1C3 Escape the Foundry of Woe]],
 		},
-		[18]={
+		[20]={
 			[[Q1 The Prophet has contacted me across grea___e important purpose.<78>]],
 			[[S1 We've returned to the Harborage. Lyris a___t are commiserating.<73>]],
 			[[S1C1 Watch the Exchange]],
@@ -5976,18 +6289,18 @@ ZGV._QuestStepData = {
 			[[S2 NO TEXT]],
 			[[S2C1 Approach the Prophet]],
 		},
-		[19]={
+		[21]={
 			[[Q1 The Prophet has contacted me across grea___e important purpose.<78>]],
 			[[S1 Lyris and I are back in the Harborage. I should speak to the Prophet.]],
 			[[S1C1 Talk to the Prophet]],
 		},
-		[20]={
+		[22]={
 			[[Q1 The Prophet has contacted me across grea___e important purpose.<78>]],
 			[[S1 Lyris Titanborn is freed from her prison. I must speak to the Prophet.]],
 			[[S1C0 Talk to the Prophet]],
 		},
 	},
-	[1780028] = {
+	[1781028] = {
 		[1]={
 			[[Q1 I've arrived in Skywatch to find it abuz___ at the royal manse.<113>]],
 			[[S1 I need to find Razum-dar at the royal manse.]],
@@ -6046,18 +6359,22 @@ ZGV._QuestStepData = {
 			[[S1C0 Speak to Palomir]],
 		},
 	},
-	[1780029] = {
+	[1781029] = {
 		[1]={
-			[[There's a marker near Vulkhel Guard, Tanzelwil, Phaer, and Castle Rilis.]],
-			[[Pray for Ancalin's Children: 0 / 4]],
-		},
-		[2]={
-			[[Q1 Ancalin, an old Altmer woman, asked me t___ive them some peace.<155>]],
-			[[S1 I should return to Ancalin and let her k___ildren are at peace.<75>]],
-			[[S1C0 Return to Ancalin]],
+			[[Q1 Ancalin, an old Altmer woman, asked me ___ them some peace.<155>]],
+			[[S1 There's a marker near Vulkhel Guard, Tanzelwil, Phaer, and Castle Rilis.]],
+			[[S1C1 Pray for Ancalin's Children]],
+			[[S2 NO TEXT]],
+			[[S2C1 Pray at Marker near Vulkhel Guard]],
+			[[S3 NO TEXT]],
+			[[S3C1 Pray at Tanzelwil Marker]],
+			[[S4 NO TEXT]],
+			[[S4C1 Pray at Castle Rilis Marker]],
+			[[S5 NO TEXT]],
+			[[S5C1 Pray at Marker Outside Phaer]],
 		},
 	},
-	[1780030] = {
+	[1781030] = {
 		[1]={
 			[[Q1 Neetra's pet—a Dwarven construct—has___t she can repair it.<108>]],
 			[[S1 I need to collect a Dwemer Ring, a Dweme___ houses in Skywatch.<100>]],
@@ -6083,6 +6400,7 @@ ZGV._QuestStepData = {
 			[[S1C2 Collect Dwemer Gear]],
 			[[S1C3 Collect Dwemer Tube]],
 			[[S2 NO TEXT]],
+			[[S2C1 == EMPTY]],
 		},
 		[4]={
 			[[Q1 Neetra's pet—a Dwarven construct—has___t she can repair it.<108>]],
@@ -6090,7 +6408,7 @@ ZGV._QuestStepData = {
 			[[S1C0 Talk to Neetra]],
 		},
 	},
-	[1780031] = {
+	[1781031] = {
 		[1]={
 			[[Q1 I've discovered the secret island strong___nds behind the Veil.<155>]],
 			[[S1 For my first trial, I must prove my inte___to begin this trial.<96>]],
@@ -6101,12 +6419,30 @@ ZGV._QuestStepData = {
 			[[S1C4 Talk to Ohmonir]],
 		},
 		[2]={
+			[[Q1 I've discovered the secret island ___ behind the Veil.<155>]],
+			[[S1 The clue is: "My life is measured in ___ slow, What am I?"<116>]],
+			[[S1C1 Select Your Answer]],
+			[[S1C2 ]],
+		},
+		[3]={
+			[[Q1 I've discovered the secret island strong___nds behind the Veil.<155>]],
+			[[S1 The clue is: "I say much, but you cann___by my face. What am I?"]],
+			[[S1C1 Select Your Answer]],
+			[[S1C2 ]],
+		},
+		[4]={
 			[[Q1 I've discovered the secret island strong___nds behind the Veil.<155>]],
 			[[S1 The clue is: "When young, I'm sweet in t___absence. What am I?"<187>]],
 			[[S1C1 Select Your Answer]],
 			[[S1C2 ]],
 		},
-		[3]={
+		[5]={
+			[[Q1 I've discovered the secret island strong___nds behind the Veil.<155>]],
+			[[S1 The clue is: "Two bodies have I, two joined int___me with dread. What am I?"]],
+			[[S1C1 Select Your Answer]],
+			[[S1C2 ]],
+		},
+		[6]={
 			[[Q1 I've discovered the secret island strong___nds behind the Veil.<155>]],
 			[[S1 NO TEXT]],
 			[[S1C0 Talk to Ohmonir]],
@@ -6114,23 +6450,35 @@ ZGV._QuestStepData = {
 			[[S1C2 Talk to Ohmonir]],
 			[[S1C3 Talk to Ohmonir]],
 		},
-		[4]={
+		[7]={
+			[[Q1 I've discovered the secret island strong___nds behind the Veil.<155>]],
+			[[S1 The clue is: "Friend to soliders, guardsm___m behind. What am I?"]],
+			[[S1C1 Select Your Answer]],
+			[[S1C2 ]],
+		},
+		[8]={
 			[[Q1 I've discovered the secret island strong___nds behind the Veil.<155>]],
 			[[S1 The clue is: "I attend every battle. I a___s cruel. What am I?"<107>]],
 			[[S1C1 Select Your Answer]],
 			[[S1C2 ]],
 		},
-		[5]={
+		[9]={
+			[[Q1 I've discovered the secret island ___ behind the Veil.<155>]],
+			[[S1 The clue is: "I'm always smiling, but I ___ to me. What am I?"<179>]],
+			[[S1C1 Select Your Answer]],
+			[[S1C2 ]],
+		},
+		[10]={
 			[[Q1 I've discovered the secret island strong___nds behind the Veil.<155>]],
 			[[S1 I have answered the riddles and should speak to Ohmonir.]],
 			[[S1C1 Talk to Ohmonir]],
 		},
-		[6]={
+		[11]={
 			[[Q1 I've discovered the secret island strong___nds behind the Veil.<155>]],
 			[[S1 My next trial is of endurance. I need to speak to Varustante to begin.]],
 			[[S1C1 Talk to Varustante]],
 		},
-		[7]={
+		[12]={
 			[[Q1 I've discovered the secret island strong___nds behind the Veil.<155>]],
 			[[S1 Why am I reading my journal when I should be running a race?]],
 			[[S1C1 Complete the Race]],
@@ -6138,28 +6486,28 @@ ZGV._QuestStepData = {
 			[[S2 NO TEXT]],
 			[[S2C1 Reach Next Marker]],
 		},
-		[8]={
+		[13]={
 			[[Q1 I've discovered the secret island strong___nds behind the Veil.<155>]],
 			[[S1 I win, I win. I should speak to Varustante now.]],
 			[[S1C1 Talk to Varustante]],
 		},
-		[9]={
+		[14]={
 			[[Q1 I've discovered the secret island strong___nds behind the Veil.<155>]],
 			[[S1 The final trial is of strength. I need to speak to Alandare to begin.]],
 			[[S1C1 Talk to Alandare]],
 		},
-		[10]={
+		[15]={
 			[[Q1 I've discovered the secret island strong___nds behind the Veil.<155>]],
 			[[S1 I must defeat my foes.]],
 			[[S1C1 Defeat the Other Initiates]],
 		},
-		[11]={
+		[16]={
 			[[Q1 I've discovered the secret island strong___nds behind the Veil.<155>]],
 			[[S1 I have completed my final trial. I shoul___ medal or something.<97>]],
 			[[S1C0 Return to Alandare]],
 		},
 	},
-	[1780032] = {
+	[1781032] = {
 		[1]={
 			[[Q1 I'm now a full member of the Veiled Heri___eiled Queen herself!<170>]],
 			[[S1 I should head into the Veiled Keep, and ___ads behind the Veil.<75>]],
@@ -6221,42 +6569,23 @@ ZGV._QuestStepData = {
 			[[S1C0 Speak to Queen Ayrenn]],
 		},
 	},
-	[1780033] = {
+	[1781033] = {
 		[1]={
-			[[Q1 I revealed High Kinlady Estre is the Vei___ntinue her campaign.<137>]],
-			[[S1 I must journey to the town of Dawnbreak ___he Veiled Heritance.<180>]],
+			[[Q1 I revealed High Kinlady Estre is the ___ her campaign.<137>]],
+			[[S1 I must journey to the town of Dawnbreak ___ Veiled Heritance.<180>]],
 			[[S1C0 Talk to Canonreeve Sinyon in Dawnbreak]],
 		},
 	},
-	[1780034] = {
+	[1781034] = {
 		[1]={
-			[[Q1 Razum-dar has asked me to travel to Firs___ plans for the city.<115>]],
+			[[Q1 Razum-dar has asked me to travel to ___ plans for the city.<115>]],
 			[[S1 I should find Battlereeve Urcelmo in Firsthold and offer to help.]],
 			[[S1C1 Speak to Battlereeve Urcelmo]],
-			[[S2 To get to Urcelmo, I'll need to get to t___he north in Auridon.<95>]],
+			[[S2 To get to Urcelmo, I'll need to get to ___ north in Auridon.<95>]],
 			[[S2C1 Reach Firsthold's Front Gate]],
 		},
-		[2]={
-			[[Q1 Razum-dar has asked me to travel to Firs___ plans for the city.<115>]],
-			[[S1 I should enter the Mages Guild and speak___urrounds the castle.<156>]],
-			[[S1C1 Talk to Sinien]],
-		},
-		[3]={
-			[[Q1 Razum-dar has asked me to travel to Firs___ plans for the city.<115>]],
-			[[S1 I need to find the two wards that create___estroy it from afar.<175>]],
-			[[S1C1 Use the Runed Talisman on the Wards]],
-			[[S2 NO TEXT]],
-			[[S2C1 West Ward]],
-			[[S3 NO TEXT]],
-			[[S3C1 East Ward]],
-		},
-		[4]={
-			[[Q1 Razum-dar has asked me to travel to Firs___ plans for the city.<115>]],
-			[[S1 Now that the wards are destroyed, I shou___mewhere in the city.<90>]],
-			[[S1C0 Speak to Razum-dar]],
-		},
 	},
-	[1780035] = {
+	[1781035] = {
 		[1]={
 			[[Q1 A list of various Veiled Heritance membe___ brought to justice.<115>]],
 			[[S1 I need to search Auridon for four member___ensure they're dead.<90>]],
@@ -6276,7 +6605,7 @@ ZGV._QuestStepData = {
 			[[S1C0 Return to Egranor]],
 		},
 	},
-	[1780036] = {
+	[1781036] = {
 		[1]={
 			[[Q1 I've come upon a High Elven dig site, run by a scholar named Telenger.]],
 			[[S1 I should speak to Telenger at the main camp.]],
@@ -6385,7 +6714,7 @@ ZGV._QuestStepData = {
 			[[S1C0 Talk to Telenger the Artificer]],
 		},
 	},
-	[1780037] = {
+	[1781037] = {
 		[1]={
 			[[Q1 In the ruins of Ezduiin, I found an ente___to lay them to rest.<179>]],
 			[[S1 Sirinque gave me a magical crystal. I ne___m back to Aetherius.<171>]],
@@ -6436,7 +6765,7 @@ ZGV._QuestStepData = {
 			[[S1C0 Talk to Sirinque]],
 		},
 	},
-	[1780038] = {
+	[1781038] = {
 		[1]={
 			[[Q1 I met an mer named Rolancano near the ru___ed them to the site.<143>]],
 			[[S1 I've agreed to find Rolancano's daughter___ond the nearby cave.<109>]],
@@ -6537,7 +6866,7 @@ ZGV._QuestStepData = {
 			[[S1C0 Talk to Rolancano]],
 		},
 	},
-	[1780039] = {
+	[1781039] = {
 		[1]={
 			[[Q1 I met an Argonian named Delves-Deeply in___ secure her freedom.<111>]],
 			[[S1 Delves-Deeply gave me a crystal, and tol___n unstable reaction.<159>]],
@@ -6576,7 +6905,7 @@ ZGV._QuestStepData = {
 			[[S1C0 Talk to Delves-Deeply]],
 		},
 	},
-	[1780040] = {
+	[1781040] = {
 		[1]={
 			[[Q1 The town of Dawnbreak has been overrun w___ved to aid the town.<116>]],
 			[[S1 I need to search Dawnbreak for survivors, get them mustered out.]],
@@ -6651,7 +6980,7 @@ ZGV._QuestStepData = {
 			[[S1C0 Talk to Captain Landare]],
 		},
 	},
-	[1780041] = {
+	[1781041] = {
 		[1]={
 			[[Scout Lorumel may be the only person alive that knows how to activate the device. I need to find her.]],
 			[[Find Scout Lorumel]],
@@ -6700,7 +7029,7 @@ ZGV._QuestStepData = {
 			[[C0 Talk to Captain Cirenwe]],
 		},
 	},
-	[1780042] = {
+	[1781042] = {
 		[1]={
 			[[Q1 Torinaan is a holy site dedicated to the___ cleansing the area.<143>]],
 			[[S1 There are several shrines scattered acro___n to leave the site.<135>]],
@@ -6858,7 +7187,7 @@ ZGV._QuestStepData = {
 			[[S1C0 Speak to Aldarch Colaste]],
 		},
 	},
-	[1780043] = {
+	[1781043] = {
 		[1]={
 			[[Q1 Torinaan's strange little relic-keeper w___by Daedric energies.<101>]],
 			[[S1 Nenaron wants me to find and remove reli___otect the treasures.<154>]],
@@ -6880,7 +7209,7 @@ ZGV._QuestStepData = {
 			[[S1C0 Talk to Nenaron]],
 		},
 	},
-	[1780044] = {
+	[1781044] = {
 		[1]={
 			[[Q1 A Covenant officer and her husband attem___to capture the Orcs.<204>]],
 			[[S1 I need to board the Covenant ship and find the defecting officer.]],
@@ -6924,7 +7253,7 @@ ZGV._QuestStepData = {
 			[[S1C0 Talk to Lakhazga gro-Rimat]],
 		},
 	},
-	[1780045] = {
+	[1781045] = {
 		[1]={
 			[[Q1 Monastic Earrel wants me to rescue wound___r for a short while.<155>]],
 			[[S1 I need to rescue Monastic Falen, who is somewhere around the docks.]],
@@ -6938,7 +7267,7 @@ ZGV._QuestStepData = {
 			[[S1C0 Find Monastic Earrel]],
 		},
 	},
-	[1780046] = {
+	[1781046] = {
 		[1]={
 			[[There are some Covenant uniforms in a supply hut near North Beacon. Arfanel wants me to grab them.]],
 			[[Grab Covenant Uniforms]],
@@ -6987,7 +7316,7 @@ ZGV._QuestStepData = {
 			[[S1C0 Talk to Arfanel on the Bluff]],
 		},
 	},
-	[1780047] = {
+	[1781047] = {
 		[1]={
 			[[Q1 Elanwe's son, Sorondil, is the illegitim___ve a great treasure.<150>]],
 			[[S1 Elanwe asked me to protect her son. She ___trance to the vault.<104>]],
@@ -7048,7 +7377,7 @@ ZGV._QuestStepData = {
 			[[S1C0 Talk to Elanwe]],
 		},
 	},
-	[1780048] = {
+	[1781048] = {
 		[1]={
 			[[Lisondor told me to collect his soul totem from his body. I can use the totem to collect his soul.]],
 			[[Collect Soul Totem]],
@@ -7070,7 +7399,7 @@ ZGV._QuestStepData = {
 			[[S1 NO TEXT]],
 		},
 	},
-	[1780049] = {
+	[1781049] = {
 		[1]={
 			[[Q1 In order to save Firsthold and all of Au___e defeated for good.<135>]],
 			[[S1 I should enter the Oblivion portals and ___the portal for good.<161>]],
@@ -7228,7 +7557,7 @@ ZGV._QuestStepData = {
 			[[S1C0 Talk to Queen Ayrenn]],
 		},
 	},
-	[1780050] = {
+	[1781050] = {
 		[1]={
 			[[Q1 Queen Ayrenn has heard rumblings of disc___ssess the situation.<155>]],
 			[[S1 I should find Captain Jimila in Skywatch and book passage to Haven.]],
@@ -7249,7 +7578,7 @@ ZGV._QuestStepData = {
 			[[S1C0 Talk to King Camoran Aeradan in Elden Root]],
 		},
 	},
-	[1780051] = {
+	[1781051] = {
 		[1]={
 			[[Q1 The Prophet and I are seeking a way to r___the Amulet of Kings.<103>]],
 			[[S1C1 == Go to the Harborage]],
@@ -7310,7 +7639,31 @@ ZGV._QuestStepData = {
 			[[S1C0 Talk to Lyris]],
 		},
 	},
-	[1790001] = {
+	[1781054] = {
+		[1]={
+			[[Q1 Cadwell has approached me and offered ___ Coldharbour.<173>]],
+			[[S1 Cadwell's portal has taken me to the ___ Reaper's March.<184>]],
+			[[S1C1 Experience the Aldmeri Dominion]],
+		},
+	},
+	[1781055] = {
+		[1]={
+			[[Q1 A courier came to me with an urgent ___ back to Bergama.<171>]],
+			[[S1 I must speak with Captain Rawan and ask ___ back to Bergama.<101>]],
+			[[S1C0 Talk to Captain Rawan]],
+		},
+	},
+	[1781056] = {
+		[1]={
+			[[Q1 Fallen Grotto is under the control of Brinarch and his Reachmen.]],
+			[[S1 I've been placed in a hunting area ___ myself to him.<187>]],
+			[[S1C1 Defeat Hircine's Aspect of Speed]],
+			[[S1C2 Defeat Hircine's Aspect of Strength]],
+			[[S1C3 Defeat Hircine's Aspect of Guile]],
+			[[S2 Before Nyronie left, she told me how I ___ finding his camp.<194>]],
+		},
+	},
+	[1791001] = {
 		[1]={
 			[[Q1 The Vinedusk Rangers are under siege by ___ to join the fight.<114>]],
 			[[S1 I should speak with Captain Odreth, the ___ help his unit out.<116>]],
@@ -7364,7 +7717,7 @@ ZGV._QuestStepData = {
 			[[S1C0 Report to Captain Odreth]],
 		},
 	},
-	[1790002] = {
+	[1791002] = {
 		[1]={
 			[[Q1 The town of Arenthia has been occupied ___ resistance force.<139>]],
 			[[S1 Cariel has asked me to find one of the ___ up against here.<160>]],
@@ -7505,7 +7858,7 @@ ZGV._QuestStepData = {
 			[[S2C1 == EMPTY]],
 		},
 	},
-	[1790003] = {
+	[1791003] = {
 		[1]={
 			[[Q1 According to Centurion Gavo's ___ within Arenthia.<114>]],
 			[[S1 I should enter the Temple District and put an end to the ritual.]],
@@ -7542,14 +7895,14 @@ ZGV._QuestStepData = {
 			[[S1C0 Talk to Kazirra]],
 		},
 	},
-	[1790004] = {
+	[1791004] = {
 		[1]={
 			[[Q1 Clanmother Kazirra told me to travel to ___ change of heart.<106>]],
 			[[S1 I should find a member of the lunar clergy in Rawl'kha to speak with.]],
 			[[S1C0 Speak to a Moon Priest of Rawl'kha]],
 		},
 	},
-	[1790005] = {
+	[1791005] = {
 		[1]={
 			[[Q1 As I arrived at the town of Greenhill, ___ strangers in town.<116>]],
 			[[S1 I've decided to humor Halindor by looking in on his friend Gonlas.]],
@@ -7667,7 +8020,7 @@ ZGV._QuestStepData = {
 			[[S1C0 Talk to Bowenas]],
 		},
 	},
-	[1790006] = {
+	[1791006] = {
 		[1]={
 			[[Q1 Bowenas, the Treethane of Greenhill, is ___ against her will.<186>]],
 			[[S1 Bowenas has asked that I speak to ___ Ezreba's fate.<135>]],
@@ -7704,7 +8057,7 @@ ZGV._QuestStepData = {
 			[[S1C0 Talk to Bowenas]],
 		},
 	},
-	[1790007] = {
+	[1791007] = {
 		[1]={
 			[[Q1 Telenger the Artificer, a reknowned ___ seeking answers.<96>]],
 			[[S1 I was told to destroy the corruption ___ have left behind.<210>]],
@@ -7792,7 +8145,7 @@ ZGV._QuestStepData = {
 			[[S1C0 Talk to Telenger]],
 		},
 	},
-	[1790008] = {
+	[1791008] = {
 		[1]={
 			[[Q1 I met a Bosmer named Ongalion at the ___ the city is away.<129>]],
 			[[S1 Ongalion asked me to search the root, ___ the site is.<113>]],
@@ -7814,7 +8167,7 @@ ZGV._QuestStepData = {
 			[[S1C0 Talk to Ongalion in Camp]],
 		},
 	},
-	[1790009] = {
+	[1791009] = {
 		[1]={
 			[[Q1 Sai Sahan has recovered from his ___ Imperial catacomb.<186>]],
 			[[S1 A projection of Varen appeared to me ___ see what he wants.<108>]],
@@ -7827,21 +8180,89 @@ ZGV._QuestStepData = {
 			[[S1C1 Enter the Harborage]],
 		},
 	},
-	[1790010] = {
+	[1791010] = {
 		[1]={
 			[[Q1 I ran into a very hung-over Mage in ___ the Artificer.<179>]],
 			[[S1 Rollin wants me to find those artifacts ___ should head inside.<198>]],
 			[[S1C1 Enter the Waxing Crescent Inn]],
 		},
+		[2]={
+			[[Q1 I ran into a very hung-over Mage in ___ the Artificer.<179>]],
+			[[S1 I've made it inside the Waxing Crescent ___ speak to him.<166>]],
+			[[S1C0 Talk to Duzal-ja]],
+			[[S1C1 Talk to Duzal-ja]],
+			[[S1C2 Talk to Duzal-ja]],
+		},
+		[3]={
+			[[Q1 I ran into a very hung-over Mage in ___ the Artificer.<179>]],
+			[[S1 The bartender, Duzal-ja, told me that ___ Rawl'kha Guildhall.<138>]],
+			[[S1C1 Find Darius]],
+		},
+		[4]={
+			[[Q1 I ran into a very hung-over Mage in ___ the Artificer.<179>]],
+			[[S1 I've found the Hall, now to speak to ___ of Rollin's relics.<78>]],
+			[[S1C1 Talk to Darius]],
+		},
+		[5]={
+			[[Q1 I ran into a very hung-over Mage in ___ the Artificer.<179>]],
+			[[S1 The Mage, Darius, wants me to collect ___ point his crystal.<166>]],
+			[[S1C1 Capture Wisps with the Crystal]],
+		},
+		[6]={
+			[[Q1 I ran into a very hung-over Mage in ___ the Artificer.<179>]],
+			[[S1 I've done as the Mage asked and ___ at the Guildhall.<105>]],
+			[[S1C1 Talk to Darius]],
+		},
+		[7]={
+			[[Q1 I ran into a very hung-over Mage in ___ the Artificer.<179>]],
+			[[S1 Darius has said I can take the urn, and ___ it and move on.<113>]],
+			[[S1C1 Take the Urn]],
+		},
+		[8]={
+			[[Q1 I ran into a very hung-over Mage in ___ the Artificer.<179>]],
+			[[S1 Darius said a Khajiiti girl named Khuzi ___ marketplace.<124>]],
+			[[S1C1 Find Khuzi]],
+		},
+		[9]={
+			[[Q1 I ran into a very hung-over Mage in ___ the Artificer.<179>]],
+			[[S1 I've found Khuzi right where Darius ___ Rollin gave her.<106>]],
+			[[S1C1 Talk to Khuzi]],
+		},
+		[10]={
+			[[Q1 I ran into a very hung-over Mage in ___ the Artificer.<179>]],
+			[[S1 The Khajiit named Khuzi told me she ___ catch up to him.<168>]],
+			[[S1C1 Talk to Atrius]],
+		},
+		[11]={
+			[[Q1 I ran into a very hung-over Mage in ___ the Artificer.<179>]],
+			[[S1 Atrius the merchant was attacked by a ___ I found Atrius.<202>]],
+			[[S1C1 Find Weeping Wind Cave]],
+		},
+		[12]={
+			[[Q1 I ran into a very hung-over Mage in ___ the Artificer.<179>]],
+			[[S1 I've made it inside the Weeping Wind ___ of Hircine worship.<158>]],
+			[[S1C1 Find Claw Necklace]],
+		},
+		[13]={
+			[[Q1 I ran into a very hung-over Mage in ___ the Artificer.<179>]],
+			[[S1 I have all three relics Rollin was ___ have these relics.<211>]],
+			[[S1C1 Talk to Rollin]],
+			[[S1C2 Talk to Apprentice Meldil]],
+		},
+		[14]={
+			[[Q1 I ran into a very hung-over Mage in ___ the Artificer.<179>]],
+			[[S1 I've decided to back Rollin in his goal ___ to him once more.<97>]],
+			[[S1C0 Talk to Rollin]],
+		},
 	},
-	[1790011] = {
+	[1791011] = {
 		[1]={
 			[[Q1 I've been asked by a moon priestess ___ battle sites.<217>]],
 			[[S1 Felari has asked me to speak to her ___ named Nethrin.<87>]],
 			[[S1C1 Talk to Nethrin]],
 		},
 	},
-	[1790012] = {
+	[1791012] = {
 		[1]={
 			[[Q1 I've traveled to the city of Rawl'kha, ___ spiritual journey.<107>]],
 			[[S1 A priest at the Rawl'kha temple says ___ into the temple.<105>]],
@@ -8010,7 +8431,7 @@ ZGV._QuestStepData = {
 			[[S1C0 Talk to Kauzanabi-jo]],
 		},
 	},
-	[1790013] = {
+	[1791013] = {
 		[1]={
 			[[Q1 I've found the body of a hunter in the ___ Senche Tiger Fangs.<118>]],
 			[[S1 I should kill Senche and collect their fangs.]],
@@ -8024,7 +8445,7 @@ ZGV._QuestStepData = {
 			[[S1C0 Talk to Panreth]],
 		},
 	},
-	[1790014] = {
+	[1791014] = {
 		[1]={
 			[[Q1 The Bosmer brewing town of Willowgrove ___ some difficulties.<179>]],
 			[[S1 The Willowgrove townsperson I spoke to ___ Treethane.<98>]],
@@ -8168,7 +8589,7 @@ ZGV._QuestStepData = {
 			[[S1C0 Talk to Ranneth]],
 		},
 	},
-	[1790015] = {
+	[1791015] = {
 		[1]={
 			[[Q1 After the ritual at Rawl'kha, I've ___ we must destroy it.<201>]],
 			[[S1 I should find the Champions near the main entrance to Moonmont.]],
@@ -8182,20 +8603,78 @@ ZGV._QuestStepData = {
 			[[S1C3 Purify the SE Beacon]],
 			[[S1C4 Purify the SW Beacon]],
 			[[S2 NO TEXT]],
-			[[S2C1 == Talk to Shazah]],
+			[[S2C1 Approach Shazah]],
 		},
 		[3]={
 			[[Q1 After the ritual at Rawl'kha, I've ___ we must destroy it.<201>]],
-			[[S1 Shazah told me that there's a kind of ___ the temple grounds.<157>]],
-			[[S1C1 Purify the NE Beacon]],
-			[[S1C2 Purify the NW Beacon]],
-			[[S1C3 Purify the SE Beacon]],
-			[[S1C4 Purify the SW Beacon]],
+			[[S1 I've cleansed the moonlight beacons ___ on the temple door.<124>]],
+			[[S1C1 Dispel the Temple Ward]],
 			[[S2 NO TEXT]],
-			[[S2C1 Approach Shazah]],
+			[[S2C1 == Talk to Khali]],
+		},
+		[4]={
+			[[Q1 After the ritual at Rawl'kha, I've ___ we must destroy it.<201>]],
+			[[S1 I've cleansed the moonlight beacons ___ on the temple door.<124>]],
+			[[S1C1 Dispel the Temple Ward]],
+			[[S2 NO TEXT]],
+			[[S2C1 == EMPTY]],
+		},
+		[5]={
+			[[Q1 After the ritual at Rawl'kha, I've ___ we must destroy it.<201>]],
+			[[S1 Shazah cracked the ward open with an ___ should head inside.<88>]],
+			[[S1C1 Enter Moonmont]],
+		},
+		[6]={
+			[[Q1 After the ritual at Rawl'kha, I've ___ we must destroy it.<201>]],
+			[[S1 We need to find the Dark Mane. I should ___ with the Champions.<86>]],
+			[[S1C1 Explore the Temple]],
+		},
+		[7]={
+			[[Q1 After the ritual at Rawl'kha, I've ___ we must destroy it.<201>]],
+			[[S1 I need to find some way to enter the inner chamber at Moonmont.]],
+			[[S1C1 Enter Moonmont's Inner Chamber]],
+			[[S2 The spirit of the First Mane has ___ speak to him.<75>]],
+			[[S2C1 == Talk to Rid-Thar-ri'Datta]],
+		},
+		[8]={
+			[[Q1 After the ritual at Rawl'kha, I've ___ we must destroy it.<201>]],
+			[[S1 I need to find some way to enter the inner chamber at Moonmont.]],
+			[[S1C1 Enter Moonmont's Inner Chamber]],
+			[[S2 Rid-Thar told me that I'll need the ___ might help me.<169>]],
+			[[S2C1 == Align the Lunar Altars]],
+		},
+		[9]={
+			[[Q1 After the ritual at Rawl'kha, I've ___ we must destroy it.<201>]],
+			[[S1 We've made it inside. Now we need to find the Dark Mane.]],
+			[[S1C1 Find the Dark Mane]],
+		},
+		[10]={
+			[[Q1 After the ritual at Rawl'kha, I've ___ we must destroy it.<201>]],
+			[[S1 The Dark Mane has trapped the Champions ___ must defend myself.<78>]],
+			[[S1C1 Defeat the Dark Mane]],
+		},
+		[11]={
+			[[Q1 After the ritual at Rawl'kha, I've ___ we must destroy it.<201>]],
+			[[S1 Rid-Thar has appeared once again, ___ speak to him.<100>]],
+			[[S1C1 Talk to Rid-Thar-ri'Datta]],
+		},
+		[12]={
+			[[Q1 After the ritual at Rawl'kha, I've ___ we must destroy it.<201>]],
+			[[S1 Rid-Thar told me that someone must stay ___ spiritual life.<240>]],
+			[[S1C1 Choose Shazah to Contain the Dark Mane]],
+			[[S1C2 Choose Khali to Contain the Dark Mane]],
+			[[S2 NO TEXT]],
+			[[S2C1 Shaza Initial Greet]],
+			[[S3 NO TEXT]],
+			[[S3C1 Khali Initial Greet]],
+		},
+		[13]={
+			[[Q1 After the ritual at Rawl'kha, I've ___ we must destroy it.<201>]],
+			[[S1 I've chosen Khali to hold the Dark ___ speak to her.<93>]],
+			[[S1C0 Talk to Shazah]],
 		},
 	},
-	[1790016] = {
+	[1791016] = {
 		[1]={
 			[[Q1 In the wake of a Dro-m'Athra attack, a ___ behind Moonmont.<122>]],
 			[[S1 I'll need to fight my way past the dark ___ Rid-Thar's ring.<76>]],
@@ -8219,7 +8698,7 @@ ZGV._QuestStepData = {
 			[[S1C0 Talk to Fihada]],
 		},
 	},
-	[1790017] = {
+	[1791017] = {
 		[1]={
 			[[Q1 The lunar priests at the Do'Krin ___ The Golden Claw.<163>]],
 			[[S1 To take the Claw from the depths of ___ their blessings.<155>]],
@@ -8307,7 +8786,7 @@ ZGV._QuestStepData = {
 			[[S1C0 Talk to Azahrr]],
 		},
 	},
-	[1790018] = {
+	[1791018] = {
 		[1]={
 			[[Q1 I've found the body of a Khajiiti woman ___ the Bright Moons.<151>]],
 			[[S1 A spirit appeared beside me after I ___ me to talk to her.<93>]],
@@ -8329,7 +8808,7 @@ ZGV._QuestStepData = {
 			[[S1C0 Light a Candle at the Waning Moon Shrine]],
 		},
 	},
-	[1790019] = {
+	[1791019] = {
 		[1]={
 			[[Q1 A Khajiit named Tand has gone missing ___ to me for help.<165>]],
 			[[S1 Sind told me of a woman who apparently ___ seek out this Azum.<130>]],
@@ -8452,7 +8931,7 @@ ZGV._QuestStepData = {
 			[[S1C0 Talk to Azum]],
 		},
 	},
-	[1790020] = {
+	[1791020] = {
 		[1]={
 			[[Q1 Hadran, the slave dealer who runs ___ to eliminate him.<193>]],
 			[[S1 Before I eliminate Hadran I need to ___ help them escape.<123>]],
@@ -8537,7 +9016,7 @@ ZGV._QuestStepData = {
 			[[S1C0 Return to Sind]],
 		},
 	},
-	[1790022] = {
+	[1791022] = {
 		[1]={
 			[[Q1 Daifa wants my help to prank her Subtle ___ last four years.<119>]],
 			[[S1 I need to collect a Riddle Box, some ___ a few Canis Root.<74>]],
@@ -8561,7 +9040,7 @@ ZGV._QuestStepData = {
 			[[S1C0 Talk to Daifa]],
 		},
 	},
-	[1790023] = {
+	[1791023] = {
 		[1]={
 			[[Q1 I've met a strange old Bosmer woman ___ in all the worlds."<150>]],
 			[[S1 Aniel has asked me to accompany her ___ Khajiit Yanabir-ja.<172>]],
@@ -8640,7 +9119,7 @@ ZGV._QuestStepData = {
 			[[S1C0 Talk to Aniel]],
 		},
 	},
-	[1790024] = {
+	[1791024] = {
 		[1]={
 			[[Q1 Clanmother Shuzura has apparently been ___ I could help out.<176>]],
 			[[S1 I'll need to speak to Clanmother ___ going on in town.<79>]],
@@ -8660,7 +9139,7 @@ ZGV._QuestStepData = {
 			[[S1C0 Speak to Ezzag]],
 		},
 	},
-	[1790025] = {
+	[1791025] = {
 		[1]={
 			[[Q1 Word around town is that the farmer ___ in his fields.<74>]],
 			[[S1 Ezzag has asked me to investigate his ___ stealing his crops.<84>]],
@@ -8700,7 +9179,7 @@ ZGV._QuestStepData = {
 			[[S1C0 Speak to Ezzag]],
 		},
 	},
-	[1790026] = {
+	[1791026] = {
 		[1]={
 			[[Q1 Milk Eyes has been having problems with rats down his well.]],
 			[[S1 I should head out to Milk Eyes's well and see about these rats.]],
@@ -8757,7 +9236,7 @@ ZGV._QuestStepData = {
 			[[S1C0 Speak to Milk Eyes]],
 		},
 	},
-	[1790027] = {
+	[1791027] = {
 		[1]={
 			[[Q1 The rumor around town is that Kalari's new house is haunted.]],
 			[[S1 I'll need to talk to Kalari to see what's really going on.]],
@@ -8855,7 +9334,7 @@ ZGV._QuestStepData = {
 			[[S1C0 Speak to Kalari]],
 		},
 	},
-	[1790028] = {
+	[1791028] = {
 		[1]={
 			[[Q1 I've helped the people of S'ren-ja with their many and varied problems.]],
 			[[S1 I should speak with Clanmother Shuzura ___ that's happened.<83>]],
@@ -8887,7 +9366,7 @@ ZGV._QuestStepData = {
 			[[S1C0 Talk to Tazia]],
 		},
 	},
-	[1790029] = {
+	[1791029] = {
 		[1]={
 			[[Q1 Thizzrini Arena is host to numerous ___ proper credentials.<188>]],
 			[[S1 I should speak with each of the three ___ in Thizzrini Arena.<129>]],
@@ -8981,7 +9460,7 @@ ZGV._QuestStepData = {
 			[[S1C0 Talk to Feluni]],
 		},
 	},
-	[1790030] = {
+	[1791030] = {
 		[1]={
 			[[Q1 I am competing in the Sorcerer Division ___ Division Champion.<149>]],
 			[[S1 I've been directed to speak to Malarel. ___ Division trials.<89>]],
@@ -9012,8 +9491,317 @@ ZGV._QuestStepData = {
 			[[S1 I must defeat Malarel in the main arena ___ Division Champion.<109>]],
 			[[S1C1 Defeat the Champion of the Sorcerer Division]],
 		},
+		[7]={
+			[[Q1 I am competing in the Sorcerer Division ___ Division Champion.<149>]],
+			[[S1 I should talk to Feluni outside of ___ Division Champion.<112>]],
+			[[S1C0 Talk to Feluni outside of Arena]],
+		},
 	},
-	[1790038] = {
+	[1791031] = {
+		[1]={
+			[[Q1 I am competing in the Swordmaster ___ Division Champion.<167>]],
+			[[S1 I've been directed to speak to Zara. ___ Division trials.<89>]],
+			[[S1C1 Talk to Zara]],
+		},
+		[2]={
+			[[Q1 I am competing in the Swordmaster ___ Division Champion.<167>]],
+			[[S1 I should enter the Swordmaster Arena in ___ Division.<97>]],
+			[[S1C1 Enter Swordmaster Arena]],
+		},
+		[3]={
+			[[Q1 I am competing in the Swordmaster ___ Division Champion.<167>]],
+			[[S1 I must defeat all the contenders in the ___ in the main arena.<110>]],
+			[[S1C1 Defeat the Contenders in the Swordmaster Arena]],
+		},
+		[4]={
+			[[Q1 I am competing in the Swordmaster ___ Division Champion.<167>]],
+			[[S1 I should speak with Zara, the ___ in the main arena.<97>]],
+			[[S1C1 Talk to Zara]],
+		},
+		[5]={
+			[[Q1 I am competing in the Swordmaster ___ Division Champion.<167>]],
+			[[S1 I should enter the main arena in order ___ Division Champion.<81>]],
+			[[S1C1 Enter the Arena of Thizzrini]],
+		},
+		[6]={
+			[[Q1 I am competing in the Swordmaster ___ Division Champion.<167>]],
+			[[S1 I must defeat Zara, the Swordmaster ___ Division Champion.<145>]],
+			[[S1C1 Become the Swordmaster Division Champion]],
+		},
+		[7]={
+			[[Q1 I am competing in the Swordmaster ___ Division Champion.<167>]],
+			[[S1 I should talk to Feluni outside the ___ Division Champion.<111>]],
+			[[S1C0 Talk to Feluni outside of Arena]],
+		},
+	},
+	[1791032] = {
+		[1]={
+			[[Q1 I am competing in the Summoner Division ___ in the main arena.<190>]],
+			[[S1 I've been directed to speak to Tholbor. ___ Division trials.<88>]],
+			[[S1C1 Talk to Tholbor]],
+		},
+		[2]={
+			[[Q1 I am competing in the Summoner Division ___ in the main arena.<190>]],
+			[[S1 I should enter the Summoner Arena at Thizzrini Arena.]],
+			[[S1C1 Enter the Summoner Arena]],
+		},
+		[3]={
+			[[Q1 I am competing in the Summoner Division ___ in the main arena.<190>]],
+			[[S1 I must defeat the contenders in the ___ Championship.<93>]],
+			[[S1C1 Defeat the Summoner Contenders]],
+		},
+		[4]={
+			[[Q1 I am competing in the Summoner Division ___ in the main arena.<190>]],
+			[[S1 I have defeated the challengers at the ___ in the main event.<117>]],
+			[[S1C1 Talk to Tholbor]],
+		},
+		[5]={
+			[[Q1 I am competing in the Summoner Division ___ in the main arena.<190>]],
+			[[S1 I should enter the main arena in ___ Championships<107>]],
+			[[S1C1 Enter the Arena of Thizzrini]],
+		},
+		[6]={
+			[[Q1 I am competing in the Summoner Division ___ in the main arena.<190>]],
+			[[S1 I must defeat Tholbor in the main arena ___ Division Champion.<109>]],
+			[[S1C1 Defeat the Champions of the Summoner Division]],
+		},
+		[7]={
+			[[Q1 I am competing in the Summoner Division ___ in the main arena.<190>]],
+			[[S1 I should talk to Feluni outside of the ___ Division Champion.<106>]],
+			[[S1C0 Talk to Feluni outside of Arena]],
+		},
+	},
+	[1791033] = {
+		[1]={
+			[[Q1 I have defeated the champions of the ___ of Thizzrini Arena.<159>]],
+			[[S1 I should talk to Ishalga, the Grand ___ Championships.<123>]],
+			[[S1C1 Talk to Ishalga]],
+		},
+		[2]={
+			[[Q1 I have defeated the champions of the ___ of Thizzrini Arena.<159>]],
+			[[S1 Ishalga asked that I retrieve some skooma for her in Feluni's office.]],
+			[[S1C1 Go to Feluni's Office]],
+		},
+		[3]={
+			[[Q1 I have defeated the champions of the ___ of Thizzrini Arena.<159>]],
+			[[S1 I should retrieve some skooma for Ishalga in Feluni's office.]],
+			[[S1C1 Collect Skooma]],
+			[[S2 NO TEXT]],
+			[[S2C1 Defeat Thugs]],
+		},
+		[4]={
+			[[Q1 I have defeated the champions of the ___ of Thizzrini Arena.<159>]],
+			[[S1 I should report back to Ishalga and ___ in Feluni's office.<101>]],
+			[[S1C1 Talk to Ishalga]],
+		},
+		[5]={
+			[[Q1 I have defeated the champions of the ___ of Thizzrini Arena.<159>]],
+			[[S1 I should enter Thizzrini Arena in order ___ Championship match.<88>]],
+			[[S1C1 Enter Thizzrini Arena]],
+		},
+		[6]={
+			[[Q1 I have defeated the champions of the ___ of Thizzrini Arena.<159>]],
+			[[S1 I must defeat Ishalga in the main arena ___ of Thizzrini Arena.<97>]],
+			[[S1C1 Defeat the Grand Champion]],
+		},
+		[7]={
+			[[Q1 I have defeated the champions of the ___ of Thizzrini Arena.<159>]],
+			[[S1 I should talk to Feluni outside of ___ of Thizzrini Arena.<119>]],
+			[[S1C0 Talk to Feluni outside of Arena]],
+		},
+	},
+	[1791034] = {
+		[1]={
+			[[Q1 A hidden note in a bottle has lead me ___ town of Pa'alat.<74>]],
+			[[S1 I've found a mysterious note in a ___ it was doing there.<95>]],
+			[[S1C1 Read the Note]],
+		},
+		[2]={
+			[[Q1 A hidden note in a bottle has lead me ___ town of Pa'alat.<74>]],
+			[[S1 The note from the bottle has ___ of Pa'alat.<142>]],
+			[[S1C1 Talk to the Spy]],
+		},
+		[3]={
+			[[Q1 A hidden note in a bottle has lead me ___ town of Pa'alat.<74>]],
+			[[S1 I should follow Cariel into town.]],
+			[[S1C1 Follow Cariel]],
+			[[S1C2 ]],
+			[[S1C3 ]],
+		},
+		[4]={
+			[[Q1 A hidden note in a bottle has lead me ___ town of Pa'alat.<74>]],
+			[[S1 Cariel and I have reached the center of ___ to work out a plan.<98>]],
+			[[S1C1 Talk to Cariel]],
+		},
+		[5]={
+			[[Q1 A hidden note in a bottle has lead me ___ town of Pa'alat.<74>]],
+			[[S1 First, Cariel wants me to investigate ___ past the guards.<144>]],
+			[[S1C1 Search an Ebonheart Pact Lodge]],
+			[[S2 NO TEXT]],
+			[[S2C1 == Convince Andwulf]],
+			[[S2C2 ]],
+			[[S3 NO TEXT]],
+			[[S3C1 Talk to Irvina]],
+			[[S3C2 ]],
+			[[S4 NO TEXT]],
+			[[S4C1 Talk to Ebonheart Pact Guards]],
+			[[S5 NO TEXT]],
+			[[S5C1 Lodge 1 Pre-IO Tracker]],
+			[[S5C2 ]],
+		},
+		[6]={
+			[[Q1 A hidden note in a bottle has lead me ___ town of Pa'alat.<74>]],
+			[[S1 First, Cariel wants me to investigate ___ past the guards.<144>]],
+			[[S1C1 Search an Ebonheart Pact Lodge]],
+			[[S2 NO TEXT]],
+			[[S2C1 == Find Pact Evidence]],
+			[[S3 NO TEXT]],
+			[[S4 NO TEXT]],
+			[[S5 NO TEXT]],
+			[[S5C1 Pact Lodge IO 1]],
+			[[S5C2 Pact Lodge IO 2]],
+			[[S5C3 Pact Lodge IO 3]],
+		},
+		[7]={
+			[[Q1 A hidden note in a bottle has lead me ___ town of Pa'alat.<74>]],
+			[[S1 Next is the Daggerfall Covenenat. ___ speak with her.<140>]],
+			[[S1C1 Talk to Cariel]],
+		},
+		[8]={
+			[[Q1 A hidden note in a bottle has lead me ___ town of Pa'alat.<74>]],
+			[[S1 Having searched the Ebonheart Pact ___ past the guards.<176>]],
+			[[S1C1 Search a Daggerfall Covenant Lodge]],
+			[[S2 NO TEXT]],
+			[[S2C1 == Convince Seyran Persuade]],
+			[[S2C2 ]],
+			[[S2C3 ]],
+			[[S3 NO TEXT]],
+			[[S3C1 Pre-IO Tracker]],
+			[[S4 NO TEXT]],
+			[[S4C1 Talk to Daggerfall Covenant Guards]],
+		},
+		[9]={
+			[[Q1 A hidden note in a bottle has lead me ___ town of Pa'alat.<74>]],
+			[[S1 Having searched the Ebonheart Pact ___ past the guards.<176>]],
+			[[S1C1 Search a Daggerfall Covenant Lodge]],
+			[[S2 NO TEXT]],
+			[[S2C1 == Find Covenant Evidence]],
+			[[S3 NO TEXT]],
+			[[S3C1 Lodge 3 IO 1]],
+			[[S3C2 Lodge 3 IO 2]],
+			[[S3C3 Lodge 3 IO 3]],
+			[[S4 NO TEXT]],
+		},
+		[10]={
+			[[Q1 A hidden note in a bottle has lead me ___ town of Pa'alat.<74>]],
+			[[S1 Both lodges have been searched. I should speak to Cariel.]],
+			[[S1C1 Talk to Cariel]],
+		},
+		[11]={
+			[[Q1 A hidden note in a bottle has lead me ___ town of Pa'alat.<74>]],
+			[[S1 In order to create a distraction and ___ fires in Pa'alat.<103>]],
+			[[S1C1 Set Fires]],
+			[[S2 NO TEXT]],
+			[[S2C1 TRACKER GOAL TEXT]],
+			[[S2C2 TRACKER GOAL TEXT]],
+			[[S2C3 TRACKER GOAL TEXT]],
+			[[S2C4 TRACKER GOAL TEXT]],
+			[[S3 NO TEXT]],
+			[[S3C1 TRACKER GOAL TEXT]],
+			[[S3C2 TRACKER GOAL TEXT]],
+			[[S3C3 TRACKER GOAL TEXT]],
+			[[S4 NO TEXT]],
+			[[S4C1 Camp A Off]],
+			[[S5 NO TEXT]],
+			[[S5C1 Camp B Off]],
+		},
+		[12]={
+			[[Q1 A hidden note in a bottle has lead me ___ town of Pa'alat.<74>]],
+			[[S1 Pa'alat is sufficiently distracted. I ___ way to the mansion.<80>]],
+			[[S1C1 Enter Krin Ren-dro's Mansion]],
+		},
+		[13]={
+			[[Q1 A hidden note in a bottle has lead me ___ town of Pa'alat.<74>]],
+			[[S1 I should help Cariel search the mansion at Pa'alat.]],
+			[[S1C1 Search Krin Ren-dro's Mansion]],
+			[[S2 NO TEXT]],
+			[[S2C1 Find Dominion Intelligence File]],
+			[[S3 NO TEXT]],
+			[[S3C1 Find Dominion Intelligence File]],
+			[[S3C2 Find Dominion Intelligence File]],
+			[[S3C3 Find Dominion Intelligence File]],
+		},
+		[14]={
+			[[Q1 A hidden note in a bottle has lead me ___ town of Pa'alat.<74>]],
+			[[S1 We've sufficiently searched the ___ outside, out back.<142>]],
+			[[S1C1 Talk to Cariel Behind the Mansion]],
+		},
+		[15]={
+			[[Q1 A hidden note in a bottle has lead me ___ town of Pa'alat.<74>]],
+			[[S1 Cariel has found a secret cave behind the mansion. We should head in.]],
+			[[S1C1 Enter Krin Ren-dro's Secret Lair]],
+		},
+		[16]={
+			[[Q1 A hidden note in a bottle has lead me ___ town of Pa'alat.<74>]],
+			[[S1 Somewhere in this cave is Krin Ren-dro. I need to find him.]],
+			[[S1C1 Find Krin Ren-dro]],
+		},
+		[17]={
+			[[Q1 A hidden note in a bottle has lead me ___ town of Pa'alat.<74>]],
+			[[S1 Krin Ren-dro's corruption has been more ___ Cariel finish him.<96>]],
+			[[S1C1 Kill Krin Ren-dro]],
+		},
+		[18]={
+			[[Q1 A hidden note in a bottle has lead me ___ town of Pa'alat.<74>]],
+			[[S1 With Krin Ren-dro dead, there is no ___ cave with Cariel.<95>]],
+			[[S1C1 Exit Secret Cave]],
+		},
+		[19]={
+			[[Q1 A hidden note in a bottle has lead me ___ town of Pa'alat.<74>]],
+			[[S1 I've helped Cariel be rid of Krin Ren-dro. I should speak with her.]],
+			[[S1C0 Talk to Cariel]],
+		},
+	},
+	[1791035] = {
+		[1]={
+			[[Q1 Bandits attacked a chapel just over the ___ of Fort Sphinxmoth.<158>]],
+			[[S1 I should speak to Priestess Marcella.]],
+			[[S1C1 Talk to Priestess Marcella]],
+		},
+		[2]={
+			[[Q1 Bandits attacked a chapel just over the ___ of Fort Sphinxmoth.<158>]],
+			[[S1 I've been asked to enter the ruins seeking the stolen relics.]],
+			[[S1C1 Enter Fort Sphinxmoth]],
+		},
+		[3]={
+			[[Q1 Bandits attacked a chapel just over the ___ of Fort Sphinxmoth.<158>]],
+			[[S1 I should search Fort Sphinxmoth for the stolen relics.]],
+			[[S1C1 Find Phylactery of Mara]],
+			[[S1C2 Find Circlet of Mara]],
+			[[S1C3 Find Dagger of Mara]],
+			[[S1C4 Find Chalice of Mara]],
+			[[S2 NO TEXT]],
+			[[S2C1 TRACKER GOAL TEXT]],
+		},
+		[4]={
+			[[Q1 Bandits attacked a chapel just over the ___ of Fort Sphinxmoth.<158>]],
+			[[S1 I recovered all of the relics stolen ___ to the priestess.<95>]],
+			[[S1C1 Exit Fort Sphinxmoth]],
+		},
+		[5]={
+			[[Q1 Bandits attacked a chapel just over the ___ of Fort Sphinxmoth.<158>]],
+			[[S1 I recovered all four stolen relics. I ___ Marcella Ammianus.<88>]],
+			[[S1C0 Talk to Marcella Ammianus]],
+		},
+	},
+	[1791037] = {
+		[1]={
+			[[Q1 Vanus Galerion of the Mages Guild has a ___ Coldharbour.<208>]],
+			[[S1 I need to speak to Razum-dar in the ___ Vanus Galerion.<103>]],
+			[[S1C1 Talk to Razum-dar in Skywatch]],
+		},
+	},
+	[1791038] = {
 		[1]={
 			[[Q1 With the Colovians removed from the ___ and take them out.<190>]],
 			[[S1 I should meet with Sergeant Herdor, who ___ this operation.<79>]],
@@ -9128,7 +9916,7 @@ ZGV._QuestStepData = {
 			[[S1C0 Report to Captain Odreth]],
 		},
 	},
-	[1790039] = {
+	[1791039] = {
 		[1]={
 			[[Q1 The Mane has released Dro-m'athra ___ the creatures.<150>]],
 			[[S1 I should follow Englor to meet with one ___ at Fort Grimwatch.<83>]],
@@ -9191,7 +9979,7 @@ ZGV._QuestStepData = {
 			[[S1C0 Speak to Khali]],
 		},
 	},
-	[1790040] = {
+	[1791040] = {
 		[1]={
 			[[Q1 I've worked with the Lunar Champion ___ Khajiiti temple.<175>]],
 			[[S1 A dark fire barrier is sealing the ___ to find out.<200>]],
@@ -9271,7 +10059,7 @@ ZGV._QuestStepData = {
 			[[S1C0 Speak to Khali]],
 		},
 	},
-	[1790041] = {
+	[1791041] = {
 		[1]={
 			[[Q1 I have been sent to the Moonlit ___ the Moon Hallowed.<135>]],
 			[[S1 The Clearing is just north of Senalana. I should make my way there.]],
@@ -9298,7 +10086,7 @@ ZGV._QuestStepData = {
 			[[S1C0 Talk to Kauzanabi-jo]],
 		},
 	},
-	[1790042] = {
+	[1791042] = {
 		[1]={
 			[[Q1 I've come upon an active battlefield, ___ Dominion soldiers.<111>]],
 			[[S1 Centurion Burri has tasked me with ___ attacked this ruin.<149>]],
@@ -9405,28 +10193,354 @@ ZGV._QuestStepData = {
 			[[S1C0 Talk to Razum-dar]],
 		},
 	},
-	[1790043] = {
+	[1791043] = {
 		[1]={
 			[[Q1 The priestess Kauzanabi-jo told me my ___ of the city.<168>]],
 			[[S1 The priestess told me to seek out a ___ set me on my path.<122>]],
 			[[S1C0 Talk to Cariel in Arenthia]],
 		},
 	},
-	[1790044] = {
+	[1791044] = {
 		[1]={
 			[[Q1 I'm now participating in Spikeball, a ___ to stun opponents.<96>]],
 			[[S1 I need to talk to Bunul to start the race.]],
 			[[S1C1 Talk to Bunul]],
 		},
 	},
-	[1790045] = {
+	[1791045] = {
 		[1]={
 			[[Q1 I'm now betting on the Troll Arena, ___ wins the fight.<85>]],
 			[[S1 I need to talk to Khaba to bet on a troll.]],
 			[[S1C1 Talk to Khaba]],
 		},
 	},
-	[1800001] = {
+	[1791046] = {
+		[1]={
+			[[Q1 A mysterious Khajiit named Hunal spoke ___ known as Moonmont.<147>]],
+			[[S1 I should find someone to let me in on ___ temple of Moonmont.<84>]],
+			[[S1C0 Talk to Someone at Moonmont]],
+			[[S1C1 Talk to Someone at Moonmont]],
+			[[S1C2 Talk to Someone at Moonmont]],
+		},
+		[2]={
+			[[Q1 A mysterious Khajiit named Hunal spoke ___ known as Moonmont.<147>]],
+			[[S1 The Lunar Champions were awaiting my ___ the lunar priest.<122>]],
+			[[S1C0 Talk to Khali]],
+		},
+	},
+	[1791047] = {
+		[1]={
+			[[Q1 After a vicious fight with the Dark ___ the Two Moons Path.<193>]],
+			[[S1 I should make my way to Dune. The next Mane will be awaiting me there.]],
+			[[S1C1 Reach the City of Dune]],
+		},
+		[2]={
+			[[Q1 After a vicious fight with the Dark ___ the Two Moons Path.<193>]],
+			[[S1 I've made my way to Dune, but the city ___ the situation here.<123>]],
+			[[S1C0 Investigate the Attack]],
+		},
+	},
+	[1791048] = {
+		[1]={
+			[[Q1 I've arrived at the city of Dune to ___ of Javad Tharn.<96>]],
+			[[S1 The Queen said that the Champion has ___ I should find her.<100>]],
+			[[S1C1 Find the Champion]],
+			[[S2 NO TEXT]],
+			[[S2C1 TRACKER GOAL TEXT]],
+		},
+		[2]={
+			[[Q1 I've arrived at the city of Dune to ___ of Javad Tharn.<96>]],
+			[[S1 I found the Champion and was given an ___ to charge the Fang.<213>]],
+			[[S1C1 Charge the Fang]],
+		},
+		[3]={
+			[[Q1 I've arrived at the city of Dune to ___ of Javad Tharn.<96>]],
+			[[S1 The Fang is charged with Daedric ___ close the portal.<77>]],
+			[[S1C1 Close the Portal]],
+		},
+		[4]={
+			[[Q1 I've arrived at the city of Dune to ___ of Javad Tharn.<96>]],
+			[[S1 The portal is closed. I need to talk to ___ what to do next.<76>]],
+			[[S1C1 Talk to the Champion]],
+		},
+		[5]={
+			[[Q1 I've arrived at the city of Dune to ___ of Javad Tharn.<96>]],
+			[[S1 The Champion asked me to check on Esan. ___ the Mages Guild.<75>]],
+			[[S1C1 Find Esan]],
+			[[S2 NO TEXT]],
+			[[S2C1 Go to Mages Guild]],
+		},
+		[6]={
+			[[Q1 I've arrived at the city of Dune to ___ of Javad Tharn.<96>]],
+			[[S1 The Mages Guild is barricaded by a ___ sealing the hall.<153>]],
+			[[S1C1 Defeat Bayya]],
+		},
+		[7]={
+			[[Q1 I've arrived at the city of Dune to ___ of Javad Tharn.<96>]],
+			[[S1 I've defeated Bayya, the former leader ___ the Mages Guild.<118>]],
+			[[S1C1 Destroy the Totem]],
+		},
+		[8]={
+			[[Q1 I've arrived at the city of Dune to ___ of Javad Tharn.<96>]],
+			[[S1 A new portal has opened outside the ___ portal to close it.<97>]],
+			[[S1C1 Close the Portal]],
+			[[S2 NO TEXT]],
+			[[S2C1 == TRACKER GOAL TEXT]],
+		},
+		[9]={
+			[[Q1 I've arrived at the city of Dune to ___ of Javad Tharn.<96>]],
+			[[S1 A new portal has opened outside the ___ portal to close it.<97>]],
+			[[S1C1 Close the Portal]],
+			[[S2 NO TEXT]],
+			[[S2C1 == Defeat Nuvondo]],
+		},
+		[10]={
+			[[Q1 I've arrived at the city of Dune to ___ of Javad Tharn.<96>]],
+			[[S1 A new portal has opened outside the ___ portal to close it.<97>]],
+			[[S1C1 Close the Portal]],
+			[[S2 NO TEXT]],
+			[[S2C1 == Use the Fang on the Portal]],
+		},
+		[11]={
+			[[Q1 I've arrived at the city of Dune to ___ of Javad Tharn.<96>]],
+			[[S1 I should see if the mages are safe in the Mages Guild.]],
+			[[S1C1 Check on the Mages]],
+			[[S2 NO TEXT]],
+			[[S2C1 Enter Mages Guild]],
+		},
+		[12]={
+			[[Q1 I've arrived at the city of Dune to ___ of Javad Tharn.<96>]],
+			[[S1 The mages sensed corruption in the ___ what to do next.<118>]],
+			[[S1C1 Find the Champion in the Temple District]],
+		},
+		[13]={
+			[[Q1 I've arrived at the city of Dune to ___ of Javad Tharn.<96>]],
+			[[S1 I should pray at the shrines of Jone and Jode in order to cleanse them.]],
+			[[S1C1 Cleanse Shrine of Jone]],
+			[[S1C2 Cleanse Shrine of Jode]],
+			[[S2 NO TEXT]],
+			[[S2C1 TRACKER GOAL TEXT]],
+			[[S2C2 TRACKER GOAL TEXT]],
+		},
+		[14]={
+			[[Q1 I've arrived at the city of Dune to ___ of Javad Tharn.<96>]],
+			[[S1 I should meet the Champion at the shrine of Lorkhaj as she instructed.]],
+			[[S1C1 Find the Champion]],
+		},
+		[15]={
+			[[Q1 I've arrived at the city of Dune to ___ of Javad Tharn.<96>]],
+			[[S1 A dark anchor fell as I made my way to ___ corrupts the city.<109>]],
+			[[S1C1 Face Down Javad Tharn]],
+		},
+		[16]={
+			[[Q1 I've arrived at the city of Dune to ___ of Javad Tharn.<96>]],
+			[[S1 I defeated the dark anchor. I should ___ if she's all right.<84>]],
+			[[S1C1 Talk to the Champion]],
+		},
+		[17]={
+			[[Q1 I've arrived at the city of Dune to ___ of Javad Tharn.<96>]],
+			[[S1 I should follow the Champion to the Two Moons Temple.]],
+			[[S1C0 Follow the Champion]],
+			[[S1C1 Follow the Champion]],
+			[[S1C2 Follow the Champion]],
+			[[S1C3 Follow the Champion]],
+			[[S2 NO TEXT]],
+			[[S2C1 Follow the Champion]],
+			[[S3 NO TEXT]],
+			[[S3C1 Vinedusk]],
+		},
+		[18]={
+			[[Q1 I've arrived at the city of Dune to ___ of Javad Tharn.<96>]],
+			[[S1 I should talk to Shazah and prepare for the Two Moons Path.]],
+			[[S1C0 Talk to Shazah]],
+		},
+	},
+	[1791049] = {
+		[1]={
+			[[Q1 I've saved Dune from the plots of Javad ___ annoint new Mane.<165>]],
+			[[S1 The Champion is ready to walk the Two ___ begin the journey.<110>]],
+			[[S1C1 Enter the Temple]],
+		},
+		[2]={
+			[[Q1 I've saved Dune from the plots of Javad ___ annoint new Mane.<165>]],
+			[[S1 Rid-Thar-ri'Datta has appeared at the ___ to talk to us.<104>]],
+			[[S1C1 Talk to Rid-Thar-ri'Datta]],
+		},
+		[3]={
+			[[Q1 I've saved Dune from the plots of Javad ___ annoint new Mane.<165>]],
+			[[S1 Rid-Thar-ri'Datta told us we need to ___ see these visions.<174>]],
+			[[S1C1 Align the Reflectors]],
+			[[S2 NO TEXT]],
+			[[S2C1 Align the Reflector]],
+			[[S3 NO TEXT]],
+			[[S3C1 Align the Reflector]],
+			[[S4 NO TEXT]],
+			[[S4C1 Align the Reflector]],
+		},
+		[4]={
+			[[Q1 I've saved Dune from the plots of Javad ___ annoint new Mane.<165>]],
+			[[S1 The moons have shown me visions through ___ upon the temple.<146>]],
+			[[S1C1 Align the Final Reflector]],
+			[[S2 NO TEXT]],
+			[[S2C1 Restore the Central Lunar Reflector]],
+		},
+		[5]={
+			[[Q1 I've saved Dune from the plots of Javad ___ annoint new Mane.<165>]],
+			[[S1 We have witnessed the scenes in the ___ the Two Moons Path.<131>]],
+			[[S1C1 Enter the Portal]],
+		},
+		[6]={
+			[[Q1 I've saved Dune from the plots of Javad ___ annoint new Mane.<165>]],
+			[[S1 We have entered a mystical plane of ___ like to go next.<122>]],
+			[[S1C1 Talk to the Champion]],
+		},
+		[7]={
+			[[Q1 I've saved Dune from the plots of Javad ___ annoint new Mane.<165>]],
+			[[S1 The vision ran up the path and into a ___ meant to follow.<86>]],
+			[[S1C1 Follow the Path]],
+		},
+		[8]={
+			[[Q1 I've saved Dune from the plots of Javad ___ annoint new Mane.<165>]],
+			[[S1 A woman lies on the path ahead of us, ___ what's going on.<116>]],
+			[[S1C1 Talk to Spinner Elilor]],
+		},
+		[9]={
+			[[Q1 I've saved Dune from the plots of Javad ___ annoint new Mane.<165>]],
+			[[S1 I should follow the Silvenar and Green ___ the feral Bosmer.<82>]],
+			[[S1C1 Defend the Silvenar and Green Lady]],
+		},
+		[10]={
+			[[Q1 I've saved Dune from the plots of Javad ___ annoint new Mane.<165>]],
+			[[S1 I should talk with the Green Lady and ___ they are all right.<76>]],
+			[[S1C1 Talk to The Green Lady]],
+		},
+		[11]={
+			[[Q1 I've saved Dune from the plots of Javad ___ annoint new Mane.<165>]],
+			[[S1 Something is happening to the Silvenar. ___ it resolves itself.<84>]],
+			[[S1C1 Wait for The Silvenar]],
+		},
+		[12]={
+			[[Q1 I've saved Dune from the plots of Javad ___ annoint new Mane.<165>]],
+			[[S1 The Silvenar turned into a werewolf. I ___ against his wrath.<99>]],
+			[[S1C1 Kill the Silvenar]],
+		},
+		[13]={
+			[[Q1 I've saved Dune from the plots of Javad ___ annoint new Mane.<165>]],
+			[[S1 I've defeated the Silvenar. I should ___ ensure her safety.<81>]],
+			[[S1C1 Talk to The Green Lady]],
+		},
+		[14]={
+			[[Q1 I've saved Dune from the plots of Javad ___ annoint new Mane.<165>]],
+			[[S1 I should return to the exterior of the ___ the Lunar Champion.<86>]],
+			[[S1C1 Return to the Temple]],
+		},
+		[15]={
+			[[Q1 I've saved Dune from the plots of Javad ___ annoint new Mane.<165>]],
+			[[S1 I should confer with the Lunar Champion outside the Moon Temple.]],
+			[[S1C1 Talk to the Champion]],
+		},
+		[16]={
+			[[Q1 I've saved Dune from the plots of Javad ___ annoint new Mane.<165>]],
+			[[S1 The second vision ran up the path and ___ meant to follow.<93>]],
+			[[S1C1 Follow the Path]],
+		},
+		[17]={
+			[[Q1 I've saved Dune from the plots of Javad ___ annoint new Mane.<165>]],
+			[[S1 Cariel is kneeling on the ground in front of us. I should speak to her.]],
+			[[S1C1 Talk to Cariel]],
+		},
+		[18]={
+			[[Q1 I've saved Dune from the plots of Javad ___ annoint new Mane.<165>]],
+			[[S1 Cariel told me to find Razum-dar, ___ and look for him.<91>]],
+			[[S1C1 Find Raz]],
+		},
+		[19]={
+			[[Q1 I've saved Dune from the plots of Javad ___ annoint new Mane.<165>]],
+			[[S1 I came upon the scene of Battlereeve ___ he's all right.<138>]],
+			[[S1C1 Talk to Razum-dar]],
+		},
+		[20]={
+			[[Q1 I've saved Dune from the plots of Javad ___ annoint new Mane.<165>]],
+			[[S1 I should follow Urcelmo to the site of Ayrenn's last stand.]],
+			[[S1C1 Find the Queen]],
+		},
+		[21]={
+			[[Q1 I've saved Dune from the plots of Javad ___ annoint new Mane.<165>]],
+			[[S1 Urcelmo chased the Queen into an ___ from his treachery.<121>]],
+			[[S1C1 Save the Queen]],
+		},
+		[22]={
+			[[Q1 I've saved Dune from the plots of Javad ___ annoint new Mane.<165>]],
+			[[S1 I've saved the Queen, but she left the ___ with her outside.<77>]],
+			[[S1C1 Talk to Queen Ayrenn]],
+		},
+		[23]={
+			[[Q1 I've saved Dune from the plots of Javad ___ annoint new Mane.<165>]],
+			[[S1 I should return to the exterior of the Moon Temple.]],
+			[[S1C0 Return to the Temple]],
+			[[S1C1 Return to the Temple]],
+		},
+		[24]={
+			[[Q1 I've saved Dune from the plots of Javad ___ annoint new Mane.<165>]],
+			[[S1 I should talk to the Lunar Champion to determine our next steps.]],
+			[[S1C0 Talk to the Lunar Champion]],
+			[[S1C1 Talk to the Lunar Champion]],
+			[[S1C2 Talk to the Lunar Champion]],
+		},
+	},
+	[1791050] = {
+		[1]={
+			[[Q1 I have completed the first part of the ___ mystical journey.<157>]],
+			[[S1 The Lunar Champion ran after a ___ should follow her.<77>]],
+			[[S1C1 Follow the Projection to the Portal]],
+			[[S2 NO TEXT]],
+			[[S2C1 TRACKER GOAL TEXT]],
+		},
+		[2]={
+			[[Q1 I have completed the first part of the ___ mystical journey.<157>]],
+			[[S1 I should talk to the Lunar Champion ___ the Den of Lorkhaj.<73>]],
+			[[S1C1 Talk to the Lunar Champion]],
+		},
+		[3]={
+			[[Q1 I have completed the first part of the ___ mystical journey.<157>]],
+			[[S1 The Lunar Champion is ready to enter ___ her in there.<86>]],
+			[[S1C1 Enter the Portal to Den of Lorkhaj]],
+		},
+		[4]={
+			[[Q1 I have completed the first part of the ___ mystical journey.<157>]],
+			[[S1 Inside the Den of Lorkhaj, the Lunar ___ should follow her.<114>]],
+			[[S1C1 Follow the Lunar Champion]],
+		},
+		[5]={
+			[[Q1 I have completed the first part of the ___ mystical journey.<157>]],
+			[[S1 I must defend the Lunar Champion and put down any who attack her.]],
+			[[S1C1 Protect the Lunar Champion]],
+		},
+		[6]={
+			[[Q1 I have completed the first part of the ___ mystical journey.<157>]],
+			[[S1 I should wait while the Lunar Champion confronts her dead sister.]],
+			[[S1C1 Wait for the Lunar Champion to Complete the Ritual]],
+		},
+		[7]={
+			[[Q1 I have completed the first part of the ___ mystical journey.<157>]],
+			[[S1 The Two Moons Path is complete. I ___ and return to Dune.<77>]],
+			[[S1C1 Return to Dune]],
+		},
+		[8]={
+			[[Q1 I have completed the first part of the ___ mystical journey.<157>]],
+			[[S1 I should talk to the Lunar Champion in Dune.]],
+			[[S1C1 Talk to the Lunar Champion]],
+		},
+		[9]={
+			[[Q1 I have completed the first part of the ___ mystical journey.<157>]],
+			[[S1 The ceremony has begun. I should watch ___ the new Mane.<78>]],
+			[[S1C1 Witness the Mane's Ascension]],
+			[[S1C2 ]],
+			[[S2 NO TEXT]],
+			[[S2C1 Witness the Mane's Ascension]],
+		},
+	},
+	[1801001] = {
 		[1]={
 			[[Q1 Haven, the largest port on the Long Coas___ful band of pirates!<88>]],
 			[[S1 There's a Khajiiti soldier on the beach ___now what's going on.<105>]],
@@ -9516,7 +10630,7 @@ ZGV._QuestStepData = {
 			[[S1C0 Talk to Lord Gharesh-ri]],
 		},
 	},
-	[1800002] = {
+	[1801002] = {
 		[1]={
 			[[Q1 Eryarion and some of his inn workers wer___e lost in the marsh.<169>]],
 			[[S1 I should keep an eye out for the missing___le to get to safety.<139>]],
@@ -9528,7 +10642,7 @@ ZGV._QuestStepData = {
 			[[S1C0 Talk to Khezuli]],
 		},
 	},
-	[1800003] = {
+	[1801003] = {
 		[1]={
 			[[Q1 Khezuli wants my help to keep her "side ___technically illegal.<101>]],
 			[[S1 Khezuli asked me to find moon sugar cane___es left in the area.<162>]],
@@ -9557,7 +10671,7 @@ ZGV._QuestStepData = {
 			[[S1C0 Meet the Buyer on the Beach]],
 		},
 	},
-	[1800004] = {
+	[1801004] = {
 		[1]={
 			[[Q1 I've discovered an order of hunters call___eation of the world.<145>]],
 			[[S1 I need to speak with the leader of the Brackenleaf's Briars, Glaras.]],
@@ -9680,7 +10794,7 @@ ZGV._QuestStepData = {
 			[[S1C0 Talk to Glaras]],
 		},
 	},
-	[1800006] = {
+	[1801006] = {
 		[1]={
 			[[Q1 Sarandel's Carnival came from the Summer___ Elves of Grahtwood.<173>]],
 			[[S1 Sarandel said I should speak with her performers to get more details.]],
@@ -9794,7 +10908,7 @@ ZGV._QuestStepData = {
 			[[S1C0 Talk to Sarandel]],
 		},
 	},
-	[1800007] = {
+	[1801007] = {
 		[1]={
 			[[Q1 Enthoras needs couriers to make deliveries around Grahtwood.]],
 			[[S1 I should speak with him about this opportunity.]],
@@ -9840,7 +10954,7 @@ ZGV._QuestStepData = {
 			[[S1C0 Talk to Alyxe]],
 		},
 	},
-	[1800008] = {
+	[1801008] = {
 		[1]={
 			[[Q1 My first trial in Sheogorath's realm ___ where I need to go.<125>]],
 			[[S1 Shalidor appeared and told me Valaste ___ Mages Guildhall.<121>]],
@@ -10005,7 +11119,7 @@ ZGV._QuestStepData = {
 			[[S1C0 Talk to Valaste]],
 		},
 	},
-	[1800009] = {
+	[1801009] = {
 		[1]={
 			[[Q1 All is not well in Elden Root. The Khaji___he Aldmeri Dominion.<135>]],
 			[[S1 King Camoran Aeradan says the discontent___mon to find out why.<204>]],
@@ -10132,7 +11246,7 @@ ZGV._QuestStepData = {
 			[[S1C0 Talk to Prince Naemon]],
 		},
 	},
-	[1800010] = {
+	[1801010] = {
 		[1]={
 			[[Q1 Enda's husband, a minstrel named Sorion,___help track him down.<125>]],
 			[[S1 Enda told me Sorion was supposed to play___let her inside town.<106>]],
@@ -10173,7 +11287,7 @@ ZGV._QuestStepData = {
 			[[S1C0 Talk to Enda]],
 		},
 	},
-	[1800011] = {
+	[1801011] = {
 		[1]={
 			[[Q1 Brauti Bloodshark led a mutiny against t___or ancient treasure.<140>]],
 			[[S1 == The captain of the Albatross can tell me___ould speak with her.<120>]],
@@ -10290,7 +11404,7 @@ ZGV._QuestStepData = {
 			[[S1C0 Talk to Bulag]],
 		},
 	},
-	[1800012] = {
+	[1801012] = {
 		[1]={
 			[[Q1 Dominion soldiers erected barricades aro___rgonians' situation.<161>]],
 			[[S1 A Dominion soldier told me Officer Parwi___what she has to say.<101>]],
@@ -10449,7 +11563,7 @@ ZGV._QuestStepData = {
 			[[S1C0 Talk to Officer Parwinel]],
 		},
 	},
-	[1800013] = {
+	[1801013] = {
 		[1]={
 			[[Q1 I found a talking skull named Dringoth n___ultists in the area.<144>]],
 			[[S1 Dringoth claims the Worm Cultists are us___d in the risen dead.<219>]],
@@ -10539,7 +11653,7 @@ ZGV._QuestStepData = {
 			[[S1C0 Talk to Dringoth]],
 		},
 	},
-	[1800014] = {
+	[1801014] = {
 		[1]={
 			[[Q1 Southpoint's citizens are killing one an___ need of assistance.<138>]],
 			[[S1 I should speak with Captain Elonthor, th___orces at Southpoint.<96>]],
@@ -10697,7 +11811,7 @@ ZGV._QuestStepData = {
 			[[S1C0 Talk to Sheogorath]],
 		},
 	},
-	[1800015] = {
+	[1801015] = {
 		[1]={
 			[[Q1 I met a Wood Elf named Orthelos who ___ retrieve his bow.<126>]],
 			[[S1 I should search for caves east of Elden ___ headed there.<81>]],
@@ -10714,7 +11828,7 @@ ZGV._QuestStepData = {
 			[[S1C0 Deliver the Bow to Orthelos]],
 		},
 	},
-	[1800016] = {
+	[1801016] = {
 		[1]={
 			[[Q1 Queen Ayrenn must complete the ratificat___ent Ayleid artifact.<191>]],
 			[[S1 Prince Naemon asked me to speak with Meleras, an expert on the Orrery.]],
@@ -10741,7 +11855,7 @@ ZGV._QuestStepData = {
 			[[S1C0 Talk to Meleras]],
 		},
 	},
-	[1800017] = {
+	[1801017] = {
 		[1]={
 			[[Q1 Mizahabi has lost track of her husband a___ok for both of them.<99>]],
 			[[S1 I should head to the fork in the road and try to call Eat Eat.]],
@@ -10767,7 +11881,7 @@ ZGV._QuestStepData = {
 			[[S1C0 Talk to Ninglenel]],
 		},
 	},
-	[1800018] = {
+	[1801018] = {
 		[1]={
 			[[Q1 Explorers from the Mages Guild awoke an ___in their expedition.<151>]],
 			[[S1 Some Mages Guild acolytes were captured ___ caused all of this.<123>]],
@@ -10891,7 +12005,7 @@ ZGV._QuestStepData = {
 			[[S1C0 Talk to Calion]],
 		},
 	},
-	[1800019] = {
+	[1801019] = {
 		[1]={
 			[[Q1 I found a strange glowing amulet on a corpse in the woods.]],
 			[[S1 The amulet is clearly magical, but I ___ person's demise.<135>]],
@@ -10953,7 +12067,7 @@ ZGV._QuestStepData = {
 			[[S1C0 Talk to Rondrin]],
 		},
 	},
-	[1800020] = {
+	[1801020] = {
 		[1]={
 			[[Q1 Culanwe, a priestess of Azura, has long ___d ruin in Grahtwood.<178>]],
 			[[S1 I should investigate Laeloria and see if___ruth to Afwa's tale.<75>]],
@@ -11161,7 +12275,7 @@ ZGV._QuestStepData = {
 			[[S2C1 == Pursue Irrai]],
 		},
 	},
-	[1800021] = {
+	[1801021] = {
 		[1]={
 			[[I've been directed to speak with the Treethane of Karthdar to get details on what's happening. He and the rest of the town are holed up in a nearby cave.]],
 			[[Talk to Treethane Rolon]],
@@ -11253,7 +12367,7 @@ ZGV._QuestStepData = {
 			[[S1C0 Return to Treethane Rolon]],
 		},
 	},
-	[1800022] = {
+	[1801022] = {
 		[1]={
 			[[Q1 The Mages Guild is investigating a stran___ than in years past.<118>]],
 			[[S1 Nondor asked me to check in with Laranal___ Reliquary of Stars.<103>]],
@@ -11422,7 +12536,7 @@ ZGV._QuestStepData = {
 			[[S1C0 Talk to Laranalda]],
 		},
 	},
-	[1800023] = {
+	[1801023] = {
 		[1]={
 			[[Q1 I met a priest of Y'ffre who seeks to ___ her in her task.<191>]],
 			[[S1 First I must fill a vial from the waters at the shrine.]],
@@ -11441,7 +12555,7 @@ ZGV._QuestStepData = {
 			[[S1C0 Talk to Erthonor]],
 		},
 	},
-	[1800024] = {
+	[1801024] = {
 		[1]={
 			[[Q1 A group of vampire hunters has come to ___ for my assistance.<150>]],
 			[[S1 I've agreed to assist the vampire ___ with him further.<118>]],
@@ -11524,7 +12638,7 @@ ZGV._QuestStepData = {
 			[[S1C0 Talk to Sabonn]],
 		},
 	},
-	[1800025] = {
+	[1801025] = {
 		[1]={
 			[[Q1 On approaching Redfur Trading Post, I ___ local authorities.<109>]],
 			[[S1 I have agreed to speak to the guard pursuing Cinder-Tail.]],
@@ -11653,7 +12767,7 @@ ZGV._QuestStepData = {
 			[[S1C0 Talk to Valirr]],
 		},
 	},
-	[1800026] = {
+	[1801026] = {
 		[1]={
 			[[Q1 I found bandit orders detailing a plan ___ the bandit attacks.<137>]],
 			[[S1 I should go to Barkbite Stronghold and see if they need any help.]],
@@ -11722,7 +12836,7 @@ ZGV._QuestStepData = {
 			[[S1C0 Give the Venom Sac to Shaman Bogham]],
 		},
 	},
-	[1800027] = {
+	[1801027] = {
 		[1]={
 			[[Q1 I've helped track down the source of ___ culprit to justice.<175>]],
 			[[S1 Shaman Bogham suggested talking to ___ Stronghold.<119>]],
@@ -11757,7 +12871,7 @@ ZGV._QuestStepData = {
 			[[S1C0 Tell Moramat that Rakhaz was the Poisoner]],
 		},
 	},
-	[1800028] = {
+	[1801028] = {
 		[1]={
 			[[Q1 Moramat has asked me to find and deal ___ Stronghold.<108>]],
 			[[S1 She suggested I investigate a nearby ruined Imperial tower.]],
@@ -11808,7 +12922,7 @@ ZGV._QuestStepData = {
 			[[S1C0 Return to Gargak]],
 		},
 	},
-	[1800029] = {
+	[1801029] = {
 		[1]={
 			[[Q1 Nellor, an innkeeper in Redfur Trading ___ her home safely.<141>]],
 			[[S1 I should head to where Nellor believes Larasel is being held.]],
@@ -11846,14 +12960,14 @@ ZGV._QuestStepData = {
 			[[S1C0 Speak to Captain Halakalal About Reward]],
 		},
 	},
-	[1800030] = {
+	[1801030] = {
 		[1]={
 			[[Q1 Sheogorath's book is supposed to lead ___ for me this time.<152>]],
 			[[S1 I should talk to Valaste at the Mages Guild.]],
 			[[S1C1 Talk to Valaste]],
 		},
 	},
-	[1800031] = {
+	[1801031] = {
 		[1]={
 			[[Q1 The ruins of the ancient Wood Elf ___ to their schemes.<190>]],
 			[[S1 A group of Dark Elves recently came ___ help finding them.<238>]],
@@ -11890,7 +13004,7 @@ ZGV._QuestStepData = {
 			[[S1C0 Talk to High Ordinator Danys]],
 		},
 	},
-	[1800032] = {
+	[1801032] = {
 		[1]={
 			[[Q1 Eminaire, a scholar studying dialects ___ her research.<179>]],
 			[[S1 I should make for the coast to the west ___ might be found.<115>]],
@@ -11905,7 +13019,7 @@ ZGV._QuestStepData = {
 			[[S1C0 Talk to Eminaire]],
 		},
 	},
-	[1800033] = {
+	[1801033] = {
 		[1]={
 			[[Q1 The Falinesti Winter Site, one of the ___ an excavation.<171>]],
 			[[S1 Brelor seems very concerned with ___ him and learn why.<95>]],
@@ -12047,7 +13161,7 @@ ZGV._QuestStepData = {
 			[[S1C0 Talk to Brelor]],
 		},
 	},
-	[1800034] = {
+	[1801034] = {
 		[1]={
 			[[Q1 I met an old scholar near the Ayleid ___ with Worm Cultists.<137>]],
 			[[S1 Archimbert Dantaine gave me a crystal ___ light to fill it.<201>]],
@@ -12059,7 +13173,7 @@ ZGV._QuestStepData = {
 			[[S1C0 Talk to Archimbert Dantaine]],
 		},
 	},
-	[1800035] = {
+	[1801035] = {
 		[1]={
 			[[Q1 A research team from Elden Root has redi___f her dead comrades.<226>]],
 			[[S1 Research journals remain to be found in Root Sunder.]],
@@ -12072,7 +13186,7 @@ ZGV._QuestStepData = {
 			[[S4C1 Tancano's Journal]],
 		},
 	},
-	[1850001] = {
+	[1851001] = {
 		[1]={
 			[[Q1 I found an ancient letter in the Reliqua___ent, forbidden love.<93>]],
 			[[S1 The letter speaks of a second page. If i___ange piece of metal.<113>]],
@@ -12094,7 +13208,7 @@ ZGV._QuestStepData = {
 			[[S1C0 Talk to the Spirit of Erraduure]],
 		},
 	},
-	[1850002] = {
+	[1851002] = {
 		[1]={
 			[[Q1 Laranalda uncovered information proving ___ in recovering it.<150>]],
 			[[S1 However, Laranalda seems concerned ___ distance from camp.<109>]],
@@ -12172,14 +13286,14 @@ ZGV._QuestStepData = {
 			[[S1C2 Bring the Heart of Anumaril to Laranalda]],
 		},
 	},
-	[1950001] = {
+	[1951001] = {
 		[1]={
 			[[Q1 Deep inside a dungeon called Mehrunes' S___ a mage in Skywatch.<129>]],
 			[[S1 I should find this Gaireth in Skywatch, ___ by the inscription.<98>]],
 			[[S1C0 Talk to Gaireth in Skywatch]],
 		},
 	},
-	[2250001] = {
+	[2251001] = {
 		[1]={
 			[[Q1 Queen Ayrenn must deal with the ___ from its vault.<214>]],
 			[[S1 My first task is to meet Captain Sarandil in the city of Marbruk.]],
@@ -12308,7 +13422,7 @@ ZGV._QuestStepData = {
 			[[S1C0 Talk to Queen Ayrenn]],
 		},
 	},
-	[2290001] = {
+	[2291001] = {
 		[1]={
 			[[Q1 A polite spirit named Decius haunts the ___ him to this place.<147>]],
 			[[S1 The skulls of three Imperial mages who ___ for the skulls.<158>]],
@@ -12359,14 +13473,14 @@ ZGV._QuestStepData = {
 			[[S1C0 Talk to Decius]],
 		},
 	},
-	[2400001] = {
+	[2401001] = {
 		[1]={
 			[[Q1 Lunar Priestess Kauzanabi-jo has ___ will join me there.<152>]],
 			[[S1 I should speak to the Champions when I arrive at the temple.]],
 			[[S1C0 Meet the Champions at Moonmont]],
 		},
 	},
-	[2410001] = {
+	[2411001] = {
 		[1]={
 			[[Q1 After our tricks at Thormar, Aniel has ___ Five Finger Dance.<95>]],
 			[[S1 Aniel wants me to worship Baan Dar ___ on chickens.<146>]],
@@ -12412,7 +13526,81 @@ ZGV._QuestStepData = {
 			[[S1C0 Talk to Aniel]],
 		},
 	},
-	[2940001] = {
+	[2431001] = {
+		[1]={
+			[[Q1 Within Fort Sphinxmoth I encountered ___ in the complex.<141>]],
+			[[S1 I should find the other surviving guards within the ruins of Sphinxmoth.]],
+			[[S1C1 Rescue Eliana Salvius]],
+			[[S1C2 Rescue Decanus Vulso]],
+			[[S1C3 Rescue Veranus Macatus]],
+			[[S2 I should free Elaina from her chains.]],
+			[[S2C1 Free Eliana from Her Chains]],
+			[[S3 I should ask Veranaus how I can help him.]],
+			[[S3C1 == Talk to Veranus]],
+			[[S4 I should talk to Decanus to see how I can help him.]],
+			[[S4C1 Talk to Decanus]],
+		},
+		[2]={
+			[[Q1 Within Fort Sphinxmoth I encountered ___ in the complex.<141>]],
+			[[S1 I should find the other surviving guards within the ruins of Sphinxmoth.]],
+			[[S1C1 Rescue Eliana Salvius]],
+			[[S1C2 Rescue Decanus Vulso]],
+			[[S1C3 Rescue Veranus Macatus]],
+			[[S2 NO TEXT]],
+			[[S3 I should light the braziers as quickly as possible to release Vernaus.]],
+			[[S3C1 == Light the Braziers to Free Veranus]],
+			[[S3C2 ]],
+			[[S3C3 ]],
+			[[S4 I should talk to Decanus to see how I can help him.]],
+			[[S4C1 Talk to Decanus]],
+		},
+		[3]={
+			[[Q1 Within Fort Sphinxmoth I encountered ___ in the complex.<141>]],
+			[[S1 I should find the other surviving guards within the ruins of Sphinxmoth.]],
+			[[S1C1 Rescue Eliana Salvius]],
+			[[S1C2 Rescue Decanus Vulso]],
+			[[S1C3 Rescue Veranus Macatus]],
+			[[S2 NO TEXT]],
+			[[S3 NO TEXT]],
+			[[S4 I should talk to Decanus to see how I can help him.]],
+			[[S4C1 == Talk to Decanus]],
+		},
+		[4]={
+			[[Q1 Within Fort Sphinxmoth I encountered ___ in the complex.<141>]],
+			[[S1 I should find the other surviving guards within the ruins of Sphinxmoth.]],
+			[[S1C1 Rescue Eliana Salvius]],
+			[[S1C2 Rescue Decanus Vulso]],
+			[[S1C3 Rescue Veranus Macatus]],
+			[[S2 NO TEXT]],
+			[[S3 NO TEXT]],
+			[[S4 I must figure out which panels I need to touch to exit the chamber.]],
+			[[S4C1 == Touch the Proper Three Panels]],
+			[[S4C2 ]],
+		},
+		[5]={
+			[[Q1 Within Fort Sphinxmoth I encountered ___ in the complex.<141>]],
+			[[S1 I should find the other surviving guards within the ruins of Sphinxmoth.]],
+			[[S1C1 Rescue Eliana Salvius]],
+			[[S1C2 Rescue Decanus Vulso]],
+			[[S1C3 Rescue Veranus Macatus]],
+			[[S2 NO TEXT]],
+			[[S3 NO TEXT]],
+			[[S4 I should pull the lever to exit the chamber.]],
+			[[S4C1 Use Lever to Exit Pit]],
+			[[S4C2 ]],
+		},
+		[6]={
+			[[Q1 Within Fort Sphinxmoth I encountered ___ in the complex.<141>]],
+			[[S1 Now that I've found all the missing ___ of the Fort safely.<147>]],
+			[[S1C1 Leave Fort Sphinxmoth]],
+		},
+		[7]={
+			[[Q1 Within Fort Sphinxmoth I encountered ___ in the complex.<141>]],
+			[[S1 I have located all of the guardians. I ___ Fort Sphinxmoth.<90>]],
+			[[S1C0 Talk to Eliana Salvius]],
+		},
+	},
+	[2941001] = {
 		[1]={
 			[[Q1 An Aldmeri Dominion fleet was shipwrecke___ the chaos as cover.<132>]],
 			[[S1 If I want to meet Razum-dar on Khenarthi___le to take me there.<150>]],
@@ -12469,7 +13657,7 @@ ZGV._QuestStepData = {
 			[[S3C1 Sea Vipers Can Create Storms with Ritual Magic]],
 		},
 	},
-	[2940002] = {
+	[2941002] = {
 		[1]={
 			[[Q1 A spirit named Cartirinque warned me of ___n Khenarthi's Roost.<169>]],
 			[[S1 I should speak with Cartirinque about wh___done with the books.<81>]],
@@ -12504,15 +13692,12 @@ ZGV._QuestStepData = {
 			[[C2 Burn the Tomes in the Shrine's Brazier]],
 		},
 		[7]={
-			[[After she offered to pay me for the forbidden tomes, I gave them to Sahira-daro. I should see what she has to offer.]],
-		},
-		[8]={
 			[[Q1 A spirit named Cartirinque warned me of ___n Khenarthi's Roost.<169>]],
 			[[S1 I destroyed the tomes as Cartirinque ask___e that must be done.<120>]],
 			[[C0 Talk to Cartirinque]],
 		},
 	},
-	[2940003] = {
+	[2941003] = {
 		[1]={
 			[[Q1 The shoreline of Khenarthi's Roost is li___red along the beach.<160>]],
 			[[S1 Sergeant Firion was wounded in the shipw___d to treat injuries.<222>]],
@@ -12591,17 +13776,12 @@ ZGV._QuestStepData = {
 			[[C2 Free Suhr]],
 		},
 		[13]={
-			[[I should free the captured Prowler sailors to disrupt the ritual.]],
-			[[Free Virkvild]],
-			[[Free Suhr]],
-		},
-		[14]={
 			[[Q1 The shoreline of Khenarthi's Roost is li___red along the beach.<160>]],
 			[[S1 I stopped the Sea Vipers' weather ritual___form Captain Jimila.<99>]],
 			[[C0 Return to Captain Jimila at the Prowler]],
 		},
 	},
-	[2940004] = {
+	[2941004] = {
 		[1]={
 			[[Q1 A powerful mage named Rurelion went miss___signs of her master.<165>]],
 			[[S1 We should enter the temple courtyard and___an find of Rurelion.<74>]],
@@ -12712,10 +13892,22 @@ ZGV._QuestStepData = {
 			[[S2C2 TRACKER GOAL TEXT]],
 		},
 		[14]={
+			[[Q1 A powerful mage named Rurelion went ___ of her master.<165>]],
+			[[S1 I decided to bring Rurelion with me to ___ both away forever.<120>]],
+			[[S1C1 Seal Uldor's Tomb]],
+			[[S2 == Once Uldor attempts to claim Rurelion ___ both in the tomb.<173>]],
+			[[S2C1 == Let Uldor Claim Rurelion]],
+			[[S3 NO TEXT]],
+			[[S3C1 TRACKER GOAL TEXT]],
+			[[S3C2 Tomb of the Waning Moons Door]],
+			[[S4 NO TEXT]],
+			[[S4C1 TRACKER GOAL TEXT]],
+		},
+		[15]={
 			[[Q1 A powerful mage named Rurelion went miss___signs of her master.<165>]],
 			[[S1 I decided to bring Rurelion with me to U___m both away forever.<120>]],
 			[[S1C1 Seal Uldor's Tomb]],
-			[[S2 NO TEXT]],
+			[[S2 == NO TEXT]],
 			[[S2C1 New Moons Pedestal]],
 			[[S2C2 Crescent Moons Pedestal]],
 			[[S2C3 Gibbous Moons Pedestal]],
@@ -12724,18 +13916,18 @@ ZGV._QuestStepData = {
 			[[S4 I need to place the Tears of the Two Moo___ Uldor away forever.<111>]],
 			[[S4C1 Place the Tears of the Two Moons on Pedestals]],
 		},
-		[15]={
+		[16]={
 			[[Q1 A powerful mage named Rurelion went miss___signs of her master.<165>]],
 			[[S1 I placed the Tears of the Two Moons in t___ion before I depart.<132>]],
 			[[S1C1 Talk to Rurelion]],
 		},
-		[16]={
+		[17]={
 			[[Q1 A powerful mage named Rurelion went miss___signs of her master.<165>]],
 			[[S1 Uldor and Rurelion are now sealed in the___wen before I depart.<109>]],
 			[[S1C1 Talk to Gathwen at the Central Ruins]],
 		},
 	},
-	[2940005] = {
+	[2941005] = {
 		[1]={
 			[[Q1 I found a note in a smuggler camp. A you___e Crosstree Bandits.<117>]],
 			[[S1 The note says the Khajiit was taken to H___ts kill the Khajiit.<121>]],
@@ -12772,7 +13964,7 @@ ZGV._QuestStepData = {
 			[[S1C1 Enter Hazak's Lair]],
 			[[S2 NO TEXT]],
 			[[S3 NO TEXT]],
-			[[S3C1 Enter Hazak's Lair]],
+			[[S3C1 == Enter Hazak's Lair]],
 			[[S4 NO TEXT]],
 		},
 		[6]={
@@ -12796,37 +13988,50 @@ ZGV._QuestStepData = {
 			[[S1C0 Talk to Zulana]],
 		},
 	},
-	[2940006] = {
+	[2941006] = {
 		[1]={
-			[[Q1 The Aldmeri Dominion seeks to secure the___ormer prevents this.<120>]],
-			[[S1 Razum-dar gave me a token to hand to the___his delicate matter.<175>]],
+			[[Q1 The Aldmeri Dominion seeks to secure ___ prevents this.<120>]],
+			[[S1 Razum-dar gave me a token to hand to ___ delicate matter.<175>]],
 			[[S1C1 Talk to the Silvenar]],
 			[[S2 NO TEXT]],
-			[[S2C1 TRACKER GOAL TEXT]],
+			[[S2C1 == TRACKER GOAL TEXT]],
 		},
 		[2]={
-			[[Q1 The Aldmeri Dominion seeks to secure the___ormer prevents this.<120>]],
-			[[S1 The Silvenar has been unable to review a___ change their minds.<148>]],
-			[[S1C1 Investigate the Chancery]],
+			[[Q1 The Aldmeri Dominion seeks to secure ___ prevents this.<120>]],
+			[[S1 Razum-dar gave me a token to hand to ___ delicate matter.<175>]],
+			[[S1C1 Talk to the Silvenar]],
 			[[S2 NO TEXT]],
-			[[S2C1 == Talk to Harrani]],
-			[[S2C2 == Talk to Ulondil]],
+			[[S2C1 == Talk to Vicereeve Pelidil]],
 		},
 		[3]={
-			[[Q1 The Aldmeri Dominion seeks to secure the___ormer prevents this.<120>]],
-			[[S1 The Silvenar has been unable to review a___ change their minds.<148>]],
-			[[S1C1 Investigate the Chancery]],
-			[[S2 If neither is willing to produce a copy, I should inform the Silvenar.]],
-			[[S2C1 Talk to the Silvenar]],
+			[[Q1 The Aldmeri Dominion seeks to secure ___ prevents this.<120>]],
+			[[S1 Razum-dar gave me a token to hand to ___ delicate matter.<175>]],
+			[[S1C1 Talk to the Silvenar]],
+			[[S2 NO TEXT]],
 		},
 		[4]={
-			[[Q1 The Aldmeri Dominion seeks to secure the___ormer prevents this.<120>]],
-			[[S1 Neither Ulondil nor Harrani would produc___in access to a copy.<165>]],
-			[[S1C1 Talk to Razum-dar]],
+			[[Q1 The Aldmeri Dominion seeks to secure ___ prevents this.<120>]],
+			[[S1 The Silvenar has been unable to review ___ change their minds.<148>]],
+			[[S1C1 Investigate the Chancery]],
+			[[S2 == NO TEXT]],
+			[[S2C1 Talk to Harrani]],
+			[[S2C2 Talk to Ulondil]],
 		},
 		[5]={
-			[[Q1 The Aldmeri Dominion seeks to secure the___ormer prevents this.<120>]],
-			[[S1 Razum-dar discovered the Maormer stole H___eed to use trickery.<203>]],
+			[[Q1 The Aldmeri Dominion seeks to secure ___ prevents this.<120>]],
+			[[S1 The Silvenar has been unable to review ___ change their minds.<148>]],
+			[[S1C1 Investigate the Chancery]],
+			[[S2 == If neither is willing to produce a copy, I should inform the Silvenar.]],
+			[[S2C1 == Talk to the Silvenar]],
+		},
+		[6]={
+			[[Q1 The Aldmeri Dominion seeks to secure ___ prevents this.<120>]],
+			[[S1 Neither Ulondil nor Harrani would ___ access to a copy.<165>]],
+			[[S1C1 Talk to Razum-dar]],
+		},
+		[7]={
+			[[Q1 The Aldmeri Dominion seeks to secure ___ prevents this.<120>]],
+			[[S1 Razum-dar discovered the Maormer stole ___ to use trickery.<203>]],
 			[[S1C1 Sneak into the Maormer Embassy's Private Quarters]],
 			[[S2 NO TEXT]],
 			[[S2C1 == Sneak into the Maormer Embassy]],
@@ -12840,12 +14045,12 @@ ZGV._QuestStepData = {
 			[[S5C1 Talk to the Clerk]],
 			[[S5C2 Talk to the Off Duty Guard]],
 		},
-		[6]={
-			[[Q1 The Aldmeri Dominion seeks to secure the___ormer prevents this.<120>]],
-			[[S1 Razum-dar discovered the Maormer stole H___eed to use trickery.<203>]],
+		[8]={
+			[[Q1 The Aldmeri Dominion seeks to secure ___ prevents this.<120>]],
+			[[S1 Razum-dar discovered the Maormer stole ___ to use trickery.<203>]],
 			[[S1C1 Sneak into the Maormer Embassy's Private Quarters]],
 			[[S2 NO TEXT]],
-			[[S2C1 == Find a Way to Incapacitate the Guard]],
+			[[S2C1 Find a Way to Incapacitate the Guard]],
 			[[S3 NO TEXT]],
 			[[S3C1 == Find the Moon Sugar]],
 			[[S3C2 ]],
@@ -12856,14 +14061,14 @@ ZGV._QuestStepData = {
 			[[S5C1 Talk to the Clerk]],
 			[[S5C2 Talk to the Off Duty Guard]],
 		},
-		[7]={
-			[[Q1 The Aldmeri Dominion seeks to secure the___ormer prevents this.<120>]],
-			[[S1 Razum-dar discovered the Maormer stole H___eed to use trickery.<203>]],
+		[9]={
+			[[Q1 The Aldmeri Dominion seeks to secure ___ prevents this.<120>]],
+			[[S1 Razum-dar discovered the Maormer stole ___ to use trickery.<203>]],
 			[[S1C1 Sneak into the Maormer Embassy's Private Quarters]],
 			[[S2 NO TEXT]],
-			[[S2C1 Find a Way to Incapacitate the Guard]],
-			[[S3 I found a small amount of moon-sugar in ___or's guard to sleep.<117>]],
-			[[S3C1 == Add Moon-Sugar to the Guard's Drink]],
+			[[S2C1 == Find a Way to Incapacitate the Guard]],
+			[[S3 I found a small amount of moon-sugar in ___ guard to sleep.<117>]],
+			[[S3C1 Add Moon-Sugar to the Guard's Drink]],
 			[[S3C2 ]],
 			[[S4 NO TEXT]],
 			[[S4C1 Find the Love Letter]],
@@ -12872,12 +14077,12 @@ ZGV._QuestStepData = {
 			[[S5C1 Talk to the Clerk]],
 			[[S5C2 Talk to the Off Duty Guard]],
 		},
-		[8]={
-			[[Q1 The Aldmeri Dominion seeks to secure the___ormer prevents this.<120>]],
-			[[S1 Razum-dar discovered the Maormer stole H___eed to use trickery.<203>]],
+		[10]={
+			[[Q1 The Aldmeri Dominion seeks to secure ___ prevents this.<120>]],
+			[[S1 Razum-dar discovered the Maormer stole ___ to use trickery.<203>]],
 			[[S1C1 Sneak into the Maormer Embassy's Private Quarters]],
 			[[S2 NO TEXT]],
-			[[S3 I figured out how to get the guard away ___'s private quarters.<79>]],
+			[[S3 I figured out how to get the guard away ___ private quarters.<79>]],
 			[[S3C1 == Give the Drugged Drink to the Guard]],
 			[[S3C2 ]],
 			[[S4 NO TEXT]],
@@ -12887,9 +14092,9 @@ ZGV._QuestStepData = {
 			[[S5C1 Talk to the Clerk]],
 			[[S5C2 Talk to the Off Duty Guard]],
 		},
-		[9]={
-			[[Q1 The Aldmeri Dominion seeks to secure the___ormer prevents this.<120>]],
-			[[S1 Razum-dar discovered the Maormer stole H___eed to use trickery.<203>]],
+		[11]={
+			[[Q1 The Aldmeri Dominion seeks to secure ___ prevents this.<120>]],
+			[[S1 Razum-dar discovered the Maormer stole ___ to use trickery.<203>]],
 			[[S1C1 Sneak into the Maormer Embassy's Private Quarters]],
 			[[S2 NO TEXT]],
 			[[S3 NO TEXT]],
@@ -12898,74 +14103,48 @@ ZGV._QuestStepData = {
 			[[S5C1 Talk to the Clerk]],
 			[[S5C2 Talk to the Off Duty Guard]],
 		},
-		[10]={
-			[[Q1 The Aldmeri Dominion seeks to secure the___ormer prevents this.<120>]],
-			[[S1 I've located the missing copy of the tre___ious of my presence.<118>]],
+		[12]={
+			[[Q1 The Aldmeri Dominion seeks to secure ___ prevents this.<120>]],
+			[[S1 I've located the missing copy of the ___ of my presence.<118>]],
 			[[S1C1 Take the Treaty of Khenarthi's Roost from the Maormer Embassy]],
 		},
-		[11]={
-			[[Q1 The Aldmeri Dominion seeks to secure the___ormer prevents this.<120>]],
+		[13]={
+			[[Q1 The Aldmeri Dominion seeks to secure ___ prevents this.<120>]],
 			[[S1 I now possess a copy of the treaty. I should bring it to Razum-dar.]],
 			[[S1C1 Bring the Treaty to Razum-dar]],
 		},
-		[12]={
-			[[Q1 The Aldmeri Dominion seeks to secure the___ormer prevents this.<120>]],
-			[[S1 The Silvenar can challenge Ambassador Ul___ted above the forge.<213>]],
+		[14]={
+			[[Q1 The Aldmeri Dominion seeks to secure ___ prevents this.<120>]],
+			[[S1 The Silvenar can challenge Ambassador ___ above the forge.<213>]],
 			[[S1C1 Talk to the Silvenar]],
 			[[S2 NO TEXT]],
 			[[S2C1 The Silvenar Is at Ladrelas the Armorer's House.]],
 		},
-		[13]={
-			[[Q1 The Aldmeri Dominion seeks to secure the___ormer prevents this.<120>]],
-			[[S1 Someone murdered the Silvenar! I should ___if she saw anything.<79>]],
+		[15]={
+			[[Q1 The Aldmeri Dominion seeks to secure ___ prevents this.<120>]],
+			[[S1 Someone murdered the Silvenar! I should ___ she saw anything.<79>]],
 			[[S1C1 Talk to The Green Lady]],
 			[[S2 NO TEXT]],
 			[[S2C1 Allow The Green Lady to Mourn]],
 		},
-		[14]={
-			[[Q1 The Aldmeri Dominion seeks to secure the___ormer prevents this.<120>]],
-			[[S1 When the Green Lady discovered the Silve___own kind of justice.<185>]],
+		[16]={
+			[[Q1 The Aldmeri Dominion seeks to secure ___ prevents this.<120>]],
+			[[S1 When the Green Lady discovered the ___ kind of justice.<185>]],
 			[[S1C1 Talk to Harrani]],
 		},
-		[15]={
-			[[Q1 The Aldmeri Dominion seeks to secure the___ormer prevents this.<120>]],
-			[[S1 Harrani seemed shocked to learn of the S___ctivity in the city.<220>]],
+		[17]={
+			[[Q1 The Aldmeri Dominion seeks to secure ___ prevents this.<120>]],
+			[[S1 Harrani seemed shocked to learn of the ___ in the city.<220>]],
 			[[S1C1 Examine Harrani's Report]],
 		},
-		[16]={
-			[[Q1 The Aldmeri Dominion seeks to secure the___ormer prevents this.<120>]],
-			[[S1 Notes taken by the Mistral guard mention___e Silvenar's killer.<142>]],
+		[18]={
+			[[Q1 The Aldmeri Dominion seeks to secure ___ prevents this.<120>]],
+			[[S1 Notes taken by the Mistral guard ___ Silvenar's killer.<142>]],
 			[[S1C1 Continue Harrani's Investigation in Mistral]],
-			[[S2 I should take a stealthy approach in the___ch anyone off-guard.<87>]],
+			[[S2 I should take a stealthy approach in ___ anyone off-guard.<87>]],
 			[[S2C1 == Stake Out the Warehouse]],
 			[[S3 NO TEXT]],
-			[[S3C1 Investigate the Apothecary]],
-			[[S4 NO TEXT]],
-			[[S4C1 Talk to the Ship Captain]],
-			[[S5 NO TEXT]],
-			[[S5C1 Search the Serpent's Kiss]],
-			[[S5C2 ]],
-		},
-		[17]={
-			[[Q1 The Aldmeri Dominion seeks to secure the___ormer prevents this.<120>]],
-			[[S1 Notes taken by the Mistral guard mention___e Silvenar's killer.<142>]],
-			[[S1C1 Continue Harrani's Investigation in Mistral]],
-			[[S2 While in a warehouse, I discovered a Mao___n unknown recipient.<105>]],
-			[[S2C1 == EMPTY]],
-			[[S3 NO TEXT]],
 			[[S3C1 == Investigate the Apothecary]],
-			[[S4 NO TEXT]],
-			[[S4C1 Talk to the Ship Captain]],
-			[[S5 NO TEXT]],
-			[[S5C1 Search the Serpent's Kiss]],
-			[[S5C2 ]],
-		},
-		[18]={
-			[[Q1 The Aldmeri Dominion seeks to secure the___ormer prevents this.<120>]],
-			[[S1 Notes taken by the Mistral guard mention___e Silvenar's killer.<142>]],
-			[[S1C1 Continue Harrani's Investigation in Mistral]],
-			[[S2 While in a warehouse, I discovered a Mao___n unknown recipient.<105>]],
-			[[S3 I've found a suspicious listing of sales___o unknown customers.<149>]],
 			[[S4 NO TEXT]],
 			[[S4C1 == Talk to the Ship Captain]],
 			[[S5 NO TEXT]],
@@ -12973,82 +14152,111 @@ ZGV._QuestStepData = {
 			[[S5C2 ]],
 		},
 		[19]={
-			[[Q1 The Aldmeri Dominion seeks to secure the___ormer prevents this.<120>]],
-			[[S1 Notes taken by the Mistral guard mention___e Silvenar's killer.<142>]],
+			[[Q1 The Aldmeri Dominion seeks to secure ___ prevents this.<120>]],
+			[[S1 Notes taken by the Mistral guard ___ Silvenar's killer.<142>]],
 			[[S1C1 Continue Harrani's Investigation in Mistral]],
-			[[S2 While in a warehouse, I discovered a Mao___n unknown recipient.<105>]],
-			[[S3 I've found a suspicious listing of sales___o unknown customers.<149>]],
+			[[S2 While in a warehouse, I discovered a ___ unknown recipient.<105>]],
+			[[S2C1 == EMPTY]],
+			[[S3 NO TEXT]],
+			[[S3C1 == Investigate the Apothecary]],
 			[[S4 NO TEXT]],
-			[[S4C1 Talk to the Ship Captain]],
+			[[S4C1 == Talk to the Ship Captain]],
+			[[S5 NO TEXT]],
+			[[S5C1 == Search the Serpent's Kiss]],
+			[[S5C2 ]],
+		},
+		[20]={
+			[[Q1 The Aldmeri Dominion seeks to secure ___ prevents this.<120>]],
+			[[S1 Notes taken by the Mistral guard ___ Silvenar's killer.<142>]],
+			[[S1C1 Continue Harrani's Investigation in Mistral]],
+			[[S2 While in a warehouse, I discovered a ___ unknown recipient.<105>]],
+			[[S2C1 == EMPTY]],
+			[[S3 I've found a suspicious listing of ___ unknown customers.<149>]],
+			[[S3C1 == EMPTY]],
+			[[S4 NO TEXT]],
+			[[S4C1 == Talk to the Ship Captain]],
+			[[S5 NO TEXT]],
+			[[S5C1 == Search the Serpent's Kiss]],
+			[[S5C2 ]],
+		},
+		[21]={
+			[[Q1 The Aldmeri Dominion seeks to secure ___ prevents this.<120>]],
+			[[S1 Notes taken by the Mistral guard ___ Silvenar's killer.<142>]],
+			[[S1C1 Continue Harrani's Investigation in Mistral]],
+			[[S2 While in a warehouse, I discovered a ___ unknown recipient.<105>]],
+			[[S2C1 == EMPTY]],
+			[[S3 I've found a suspicious listing of ___ unknown customers.<149>]],
+			[[S3C1 == EMPTY]],
+			[[S4 NO TEXT]],
+			[[S4C1 == Talk to the Ship Captain]],
 			[[S5 NO TEXT]],
 			[[S5C1 == Find a Way into the Serpent's Kiss]],
 		},
-		[20]={
-			[[Q1 The Aldmeri Dominion seeks to secure the___ormer prevents this.<120>]],
-			[[S1 Notes taken by the Mistral guard mention___e Silvenar's killer.<142>]],
+		[22]={
+			[[Q1 The Aldmeri Dominion seeks to secure ___ prevents this.<120>]],
+			[[S1 Notes taken by the Mistral guard ___ Silvenar's killer.<142>]],
 			[[S1C1 Continue Harrani's Investigation in Mistral]],
-			[[S2 While in a warehouse, I discovered a Mao___n unknown recipient.<105>]],
-			[[S3 I've found a suspicious listing of sales___o unknown customers.<149>]],
+			[[S2 While in a warehouse, I discovered a ___ unknown recipient.<105>]],
+			[[S3 I've found a suspicious listing of ___ unknown customers.<149>]],
 			[[S4 NO TEXT]],
-			[[S4C1 == EMPTY]],
 			[[S5 NO TEXT]],
 			[[S5C1 Search the Serpent's Kiss]],
 			[[S5C2 ]],
 		},
-		[21]={
-			[[Q1 The Aldmeri Dominion seeks to secure the___ormer prevents this.<120>]],
-			[[S1 I explored all the leads in the Mistral ___what he makes of it.<123>]],
+		[23]={
+			[[Q1 The Aldmeri Dominion seeks to secure ___ prevents this.<120>]],
+			[[S1 I explored all the leads in the Mistral ___ he makes of it.<123>]],
 			[[S1C1 Bring Evidence to Razum-dar]],
 		},
-		[22]={
-			[[Q1 The Aldmeri Dominion seeks to secure the___ormer prevents this.<120>]],
-			[[S1 Razum-dar believes the Silvenar was pois___e to the Green Lady.<112>]],
+		[24]={
+			[[Q1 The Aldmeri Dominion seeks to secure ___ prevents this.<120>]],
+			[[S1 Razum-dar believes the Silvenar was ___ to the Green Lady.<112>]],
 			[[S1C1 Talk to the Green Lady]],
 		},
-		[23]={
-			[[Q1 The Aldmeri Dominion seeks to secure the___ormer prevents this.<120>]],
-			[[S1 The Green Lady used the poison to detect___e Silvenar's killer.<174>]],
+		[25]={
+			[[Q1 The Aldmeri Dominion seeks to secure ___ prevents this.<120>]],
+			[[S1 The Green Lady used the poison to ___ Silvenar's killer.<174>]],
 			[[S1C1 Follow the Trail through Mistral]],
 		},
-		[24]={
-			[[Q1 The Aldmeri Dominion seeks to secure the___ormer prevents this.<120>]],
-			[[S1 I followed the Green Lady to an abandone___ills the Green Lady.<154>]],
+		[26]={
+			[[Q1 The Aldmeri Dominion seeks to secure ___ prevents this.<120>]],
+			[[S1 I followed the Green Lady to an ___ the Green Lady.<154>]],
 			[[S1C1 Destroy the Maormer Ritual]],
 		},
-		[25]={
-			[[Q1 The Aldmeri Dominion seeks to secure the___ormer prevents this.<120>]],
-			[[S1 I ended the ritual and subdued the assas___he Silvenar's death.<101>]],
+		[27]={
+			[[Q1 The Aldmeri Dominion seeks to secure ___ prevents this.<120>]],
+			[[S1 I ended the ritual and subdued the ___ Silvenar's death.<101>]],
 			[[S1C1 Interrogate the Assassin]],
 		},
-		[26]={
-			[[Q1 The Aldmeri Dominion seeks to secure the___ormer prevents this.<120>]],
-			[[S1 The assassin confessed that Ulondil orde___ront the ambassador.<204>]],
+		[28]={
+			[[Q1 The Aldmeri Dominion seeks to secure ___ prevents this.<120>]],
+			[[S1 The assassin confessed that Ulondil ___ the ambassador.<204>]],
 			[[S1C1 Confront Ulondil]],
 		},
-		[27]={
-			[[Q1 The Aldmeri Dominion seeks to secure the___ormer prevents this.<120>]],
-			[[S1 Ulondil fled when I revealed the evidenc___e of this treachery.<146>]],
+		[29]={
+			[[Q1 The Aldmeri Dominion seeks to secure ___ prevents this.<120>]],
+			[[S1 Ulondil fled when I revealed the ___ of this treachery.<146>]],
 			[[S1C1 Talk to Harrani]],
 		},
-		[28]={
-			[[Q1 The Aldmeri Dominion seeks to secure the___ormer prevents this.<120>]],
-			[[S1 Ulondil fled when I revealed the evidenc___threat as I see fit.<191>]],
+		[30]={
+			[[Q1 The Aldmeri Dominion seeks to secure ___ prevents this.<120>]],
+			[[S1 Ulondil fled when I revealed the ___ as I see fit.<191>]],
 			[[S1C1 Follow Ulondil]],
 		},
-		[29]={
-			[[Q1 The Aldmeri Dominion seeks to secure the___ormer prevents this.<120>]],
-			[[S1 I found Ulondil and the Green Lady in th___en Lady's vengeance.<159>]],
+		[31]={
+			[[Q1 The Aldmeri Dominion seeks to secure ___ prevents this.<120>]],
+			[[S1 I found Ulondil and the Green Lady in ___ Lady's vengeance.<159>]],
 			[[S1C0 Deal with Ulondil in the Embassy]],
 			[[S1C1 Deal with Ulondil in the Embassy]],
 			[[S1C2 Deal with Ulondil in the Embassy]],
 		},
-		[30]={
-			[[Q1 The Aldmeri Dominion seeks to secure the___ormer prevents this.<120>]],
-			[[S1 I took Ulondil into custody, preventing ___her town any longer.<156>]],
+		[32]={
+			[[Q1 The Aldmeri Dominion seeks to secure ___ prevents this.<120>]],
+			[[S1 I took Ulondil into custody, preventing ___ town any longer.<156>]],
 			[[S1C1 Talk to Harrani]],
 		},
 	},
-	[2940007] = {
+	[2941007] = {
 		[1]={
 			[[Q1 The Maormer seek to prevent the Dominion___k on Cat's Eye Quay.<147>]],
 			[[S1 Dominion Commander Karinith needs help h___th her at the docks.<121>]],
@@ -13157,24 +14365,45 @@ ZGV._QuestStepData = {
 			[[S1C0 Talk to Razum-dar]],
 		},
 	},
-	[2940008] = {
+	[2941008] = {
 		[1]={
-			[[Q1 After defeating the Maormer assault on K___ty of Vulkhel Guard.<153>]],
-			[[S1 The Khajiit suggested I board the Prowle___great southern port.<92>]],
+			[[Q1 After defeating the Maormer assault on ___ of Vulkhel Guard.<153>]],
+			[[S1 The Khajiit suggested I board the ___ southern port.<92>]],
+			[[S1C0 Board the Skiff]],
+			[[S1C1 Board the Skiff]],
+			[[S1C2 Board the Skiff]],
+			[[S2 Perhaps Razum-dar may have a few more things to say before I depart.]],
+			[[S2C1 == Talk to Razum-dar]],
+			[[S3 I could talk to Captain Jimila once ___ Khenarthi's Roost.<75>]],
+			[[S3C1 == Talk to Captain Jimila]],
+		},
+		[2]={
+			[[Q1 After defeating the Maormer assault on ___ of Vulkhel Guard.<153>]],
+			[[S1 The Khajiit suggested I board the ___ southern port.<92>]],
 			[[S1C0 Board the Skiff]],
 			[[S1C1 Board the Skiff]],
 			[[S1C2 Board the Skiff]],
 			[[S2 NO TEXT]],
-			[[S3 I could talk to Captain Jimila once more___t Khenarthi's Roost.<75>]],
-			[[S3C1 Talk to Captain Jimila]],
+			[[S2C1 == EMPTY]],
+			[[S3 I could talk to Captain Jimila once ___ Khenarthi's Roost.<75>]],
+			[[S3C1 == Talk to Captain Jimila]],
 		},
-		[2]={
-			[[Q1 After defeating the Maormer assault on K___ty of Vulkhel Guard.<153>]],
-			[[S1 Now that I've made it to Vulkhel Guard, ___ing to Queen Ayrenn.<177>]],
+		[3]={
+			[[Q1 After defeating the Maormer assault on ___ of Vulkhel Guard.<153>]],
+			[[S1 The Khajiit suggested I board the ___ southern port.<92>]],
+			[[S1C0 Board the Skiff]],
+			[[S1C1 Board the Skiff]],
+			[[S1C2 Board the Skiff]],
+			[[S2 NO TEXT]],
+			[[S3 NO TEXT]],
+		},
+		[4]={
+			[[Q1 After defeating the Maormer assault on ___ of Vulkhel Guard.<153>]],
+			[[S1 Now that I've made it to Vulkhel Guard, ___ to Queen Ayrenn.<177>]],
 			[[S1C0 Talk to Watch Captain Astanya]],
 		},
 	},
-	[2940009] = {
+	[2941009] = {
 		[1]={
 			[[Q1 The Prophet contacted me through a magic___ure that he is safe.<182>]],
 			[[S1 NO TEXT]],
@@ -13252,7 +14481,7 @@ ZGV._QuestStepData = {
 			[[S1C0 Talk to The Prophet]],
 		},
 	},
-	[2940010] = {
+	[2941010] = {
 		[1]={
 			[[Q1 Awash in a sea of rats, Laughing Moons P___ith the infestation.<135>]],
 			[[S1 Cinder-Tail may know how mere rats have ___senche watch tigers.<73>]],
@@ -13291,7 +14520,7 @@ ZGV._QuestStepData = {
 			[[S1C0 Talk to Juranda-ra]],
 		},
 	},
-	[2940011] = {
+	[2941011] = {
 		[1]={
 			[[Q1 There's a crisis at Windcatcher Plantati___rom a cave below it.<198>]],
 			[[S1 Spinner Benieth sent a spirit below to h___d the cave entrance.<160>]],
@@ -13314,61 +14543,83 @@ ZGV._QuestStepData = {
 			[[S1C0 Talk to Spinner Benieth]],
 		},
 	},
-	[2940012] = {
+	[2941012] = {
 		[1]={
-			[[Q1 A moon-sugar plantation suffered a terri___ from their tragedy.<132>]],
-			[[S1 Azbi-ra asked me to salvage any alchemic___to save her husband.<169>]],
-			[[C1 Salvage Alchemical Tools]],
+			[[Q1 A moon-sugar plantation suffered a ___ from their tragedy.<132>]],
+			[[S1 Azbi-ra asked me to salvage any ___ save her husband.<169>]],
+			[[S1C1 Salvage Alchemical Tools]],
 			[[S2 NO TEXT]],
+			[[S2C1 Scorched Workbench]],
+			[[S2C2 Smoldering Alchemical Tools]],
+			[[S2C3 Charred Workbench]],
 			[[S3 NO TEXT]],
+			[[S3C1 == Talk to Officer Lorin]],
 		},
 		[2]={
-			[[Q1 A moon-sugar plantation suffered a terri___ from their tragedy.<132>]],
-			[[S1 While searching for alchemical tools in ___d to the plantation.<172>]],
-			[[C0 Talk to Zaban-ma]],
-			[[C1 Talk to Zaban-ma]],
-			[[C2 Talk to Zaban-ma]],
-			[[C3 Talk to Zaban-ma]],
+			[[Q1 A moon-sugar plantation suffered a ___ from their tragedy.<132>]],
+			[[S1 Azbi-ra asked me to salvage any ___ save her husband.<169>]],
+			[[S1C1 Salvage Alchemical Tools]],
 			[[S2 NO TEXT]],
-			[[C1 Talk to Zaban-ma]],
+			[[S2C1 Scorched Workbench]],
+			[[S2C2 Smoldering Alchemical Tools]],
+			[[S2C3 Charred Workbench]],
 			[[S3 NO TEXT]],
-			[[C1 Talk to Zaban-ma]],
 		},
 		[3]={
-			[[Q1 A moon-sugar plantation suffered a terri___ from their tragedy.<132>]],
-			[[S1 Zaban-ma discovered his sister Azbi-ra b___ collect it for him.<208>]],
-			[[C1 Find the Skooma]],
+			[[Q1 A moon-sugar plantation suffered a ___ from their tragedy.<132>]],
+			[[S1 While searching for alchemical tools in ___ to the plantation.<172>]],
+			[[S1C0 Talk to Zaban-ma]],
+			[[S1C1 Talk to Zaban-ma]],
+			[[S1C2 Talk to Zaban-ma]],
+			[[S1C3 Talk to Zaban-ma]],
 			[[S2 NO TEXT]],
+			[[S2C1 Talk to Zaban-ma]],
 			[[S3 NO TEXT]],
-			[[C1 TRACKER GOAL TEXT]],
+			[[S3C1 Talk to Zaban-ma]],
 		},
 		[4]={
-			[[Q1 A moon-sugar plantation suffered a terri___ from their tragedy.<132>]],
-			[[S1 When I recovered the skooma from the bea___one with the skooma.<159>]],
-			[[C1 Talk to Zaban-ma]],
+			[[Q1 A moon-sugar plantation suffered a ___ from their tragedy.<132>]],
+			[[S1 Zaban-ma discovered his sister Azbi-ra ___ collect it for him.<208>]],
+			[[S1C1 Find the Skooma]],
+			[[S2 NO TEXT]],
+			[[S2C1 Bandit C]],
+			[[S3 NO TEXT]],
+			[[S3C1 TRACKER GOAL TEXT]],
 		},
 		[5]={
-			[[Q1 A moon-sugar plantation suffered a terri___ from their tragedy.<132>]],
-			[[S1 When I returned to Zaban-ma, I encounter___ing with the skooma.<144>]],
-			[[C0 Talk to Officer Lorin]],
-			[[C1 Talk to Officer Lorin]],
+			[[Q1 A moon-sugar plantation suffered a ___ from their tragedy.<132>]],
+			[[S1 When I recovered the skooma from the ___ with the skooma.<159>]],
+			[[S1C1 Talk to Zaban-ma]],
 		},
 		[6]={
-			[[Q1 A moon-sugar plantation suffered a terri___ from their tragedy.<132>]],
-			[[S1 Officer Lorin believes I'm involved in a___use to say anything.<142>]],
-			[[C0 Decide the Fate of the Family]],
-			[[C1 Decide the Fate of the Family]],
-			[[C2 Decide the Fate of the Family]],
-			[[S2 NO TEXT]],
-			[[C1 TRACKER GOAL TEXT]],
+			[[Q1 A moon-sugar plantation suffered a ___ from their tragedy.<132>]],
+			[[S1 When I returned to Zaban-ma, I ___ with the skooma.<144>]],
+			[[S1C0 Talk to Officer Lorin]],
+			[[S1C1 Talk to Officer Lorin]],
 		},
 		[7]={
-			[[Q1 A moon-sugar plantation suffered a terri___ from their tragedy.<132>]],
-			[[S1 I gave the skooma to Officer Lorin. I sh___zbi-ra and Zaban-ma.<115>]],
-			[[C0 Talk to Officer Lorin]],
+			[[Q1 A moon-sugar plantation suffered a ___ from their tragedy.<132>]],
+			[[S1 Officer Lorin believes I'm involved in ___ to say anything.<142>]],
+			[[S1C0 Decide the Fate of the Family]],
+			[[S1C1 Decide the Fate of the Family]],
+			[[S1C2 Decide the Fate of the Family]],
+			[[S2 NO TEXT]],
+			[[S2C1 TRACKER GOAL TEXT]],
+		},
+		[8]={
+			[[Q1 A moon-sugar plantation suffered a ___ from their tragedy.<132>]],
+			[[S1 I gave the skooma to Officer Lorin. I ___ and Zaban-ma.<115>]],
+			[[S1C1 Talk to Officer Lorin]],
 		},
 	},
-	[3080001] = {
+	[2942001] = {
+		[1]={
+			[[Q1 An Aldmeri Dominion fleet was ___ the chaos as cover.<132>]],
+			[[S1 I'm stranded on an unknown island. The ___ at Eagle's Strand.<97>]],
+			[[S1C1 Talk to Razum-dar]],
+		},
+	},
+	[3081001] = {
 		[1]={
 			[[Q1 Sea Elves have entered Serpent's ___ here for centuries.<143>]],
 			[[S1 Priestess Sendel gave me a blood rune. ___ have broken.<152>]],
