@@ -4258,26 +4258,26 @@ end
 
 
 -- FOGLIGHT!!
-local _GetPOIMapInfo=GetPOIMapInfo
+_GetPOIMapInfo_ORIG_ZGV=GetPOIMapInfo
 function GetPOIMapInfo(map,id,truthful)
-	if truthful then return _GetPOIMapInfo(map,id) end
-	local x,y,typ,tex = _GetPOIMapInfo(map,id)
+	if truthful then return _GetPOIMapInfo_ORIG_ZGV(map,id) end
+	local x,y,typ,tex = _GetPOIMapInfo_ORIG_ZGV(map,id)
 	if tex:find("icon_missing") then tex=ZGV.DIR.."/Arrows/Stealth/mapmarker.dds" end  --/esoui/art/icons/poi/poi_town_incomplete.dds
 	if typ==MAP_PIN_TYPE_INVALID then typ=MAP_PIN_TYPE_POI_SEEN end
 	return x,y,typ,tex
 end
-local _GetPOIPinType=GetPOIPinType
+_GetPOIPinType_ORIG_ZGV=GetPOIPinType
 function GetPOIPinType(map,id,truthful)
-	if truthful then return _GetPOIPinType(map,id) end
-	local pin = _GetPOIPinType(map,id)
+	if truthful then return _GetPOIPinType_ORIG_ZGV(map,id) end
+	local pin = _GetPOIPinType_ORIG_ZGV(map,id)
 	if pin==MAP_PIN_TYPE_INVALID then pin=MAP_PIN_TYPE_POI_SEEN end
 	return pin
 end
 if ZGV.DEV then
-	local _GetPOIInfo=GetPOIInfo
+	_GetPOIInfo_ORIG_ZGV=GetPOIInfo
 	function GetPOIInfo(map,id,truthful)
-		if truthful then return _GetPOIInfo(map,id) end
-		local text,level,subtextinc,subtextcom = _GetPOIInfo(map,id)
+		if truthful then return _GetPOIInfo_ORIG_ZGV(map,id) end
+		local text,level,subtextinc,subtextcom = _GetPOIInfo_ORIG_ZGV(map,id)
 		text = text .. ("|cffaa00 [%03d%03d]"):format(map or GetCurrentMapZoneInfo(),id or 1)
 		return text,level,subtextinc,subtextcom
 	end

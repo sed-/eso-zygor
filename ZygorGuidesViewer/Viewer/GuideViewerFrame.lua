@@ -1063,7 +1063,7 @@ function Viewer:HandleActionLayer()
 		end
 	end
 
-	ZO_WorldMap_UpdateMap()	-- TODO temp fix for world map sometimes not updating properly
+--	ZO_WorldMap_UpdateMap()	-- TODO temp fix for world map sometimes not updating properly
 end
 
 -----------------------------------------

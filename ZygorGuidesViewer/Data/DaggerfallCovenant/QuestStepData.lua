@@ -331,31 +331,31 @@ ZGV._QuestStepData = {
 	},
 	[0022007] = {
 		[1]={
+			[[Q1 Mighty Mordra, an Orc woman, has ___ the Undaunted.<96>]],
+			[[S1 I should continue my conversation with Mighty Mordra.]],
+			[[S1C1 Talk to Mighty Mordra]],
+		},
+		[2]={
 			[[Q1 Mighty Mordra, an Orc woman, has invited___alled the Undaunted.<96>]],
 			[[S1 I should enter the cave called Spindlecl___lf to Mighty Mordra.<78>]],
 			[[S1C1 Enter Spindleclutch]],
 		},
-		[2]={
+		[3]={
 			[[Q1 Mighty Mordra, an Orc woman, has invited___alled the Undaunted.<96>]],
 			[[S1 I agreed to meet Mighty Mordra at Rosy L___ into the Undaunted.<99>]],
 			[[S1C1 Talk to Mighty Mordra in Daggerfall]],
 		},
-		[3]={
+		[4]={
 			[[Q1 Mighty Mordra, an Orc woman, has invited___alled the Undaunted.<96>]],
 			[[S1 Mighty Mordra wants to initiate me into the Undaunted.]],
 			[[S1C1 Become Initiated]],
 			[[S2 NO TEXT]],
 			[[S2C1 TRACKER GOAL TEXT]],
 		},
-		[4]={
+		[5]={
 			[[Q1 Mighty Mordra, an Orc woman, has invited___alled the Undaunted.<96>]],
 			[[S1 I agreed to meet Mighty Mordra at Dagger___ into the Undaunted.<98>]],
 			[[S1C0 Talk to Mighty Mordra in Daggerfall]],
-		},
-		[5]={
-			[[Q1 Mighty Mordra, an Orc woman, has invited___alled the Undaunted.<96>]],
-			[[S1 I should continue my conversation with Mighty Mordra.]],
-			[[S1C1 Talk to Mighty Mordra]],
 		},
 	},
 	[0022008] = {
@@ -17606,6 +17606,13 @@ ZGV._QuestStepData = {
 		},
 		[2]={
 			[[Q1 Captain Kaleen wants me to locate Crafty___oin in on the heist.<89>]],
+			[[S1 Crafty Lerisa suggested I loot Sea Drake___ not the alert ones.<151>]],
+			[[S1C0 Take Sea Drake Uniform]],
+			[[S1C1 Take Sea Drake Uniform]],
+			[[S1C2 Take Sea Drake Uniform]],
+		},
+		[3]={
+			[[Q1 Captain Kaleen wants me to locate Crafty___oin in on the heist.<89>]],
 			[[S1 I must search Saintsport for the crew of___he larger buildings.<101>]],
 			[[S1C1 Release Crenard Dortene]],
 			[[S1C2 Release Haerdon]],
@@ -17617,34 +17624,34 @@ ZGV._QuestStepData = {
 			[[S4 NO TEXT]],
 			[[S4C1 Visit Captain Helane]],
 		},
-		[3]={
+		[4]={
 			[[Q1 Captain Kaleen wants me to locate Crafty___oin in on the heist.<89>]],
 			[[S1 Lerisa said to meet her behind the rocks___r rescuing her crew.<83>]],
 			[[S1C1 Meet Lerisa]],
 		},
-		[4]={
+		[5]={
 			[[Q1 Captain Kaleen wants me to locate Crafty___oin in on the heist.<89>]],
 			[[S1 Deregor is belowdecks in Captain Helane'___ey in the back room.<115>]],
 			[[S1C1 Get Key to Storeroom]],
 		},
-		[5]={
+		[6]={
 			[[Q1 Captain Kaleen wants me to locate Crafty___oin in on the heist.<89>]],
 			[[S1 I've got the storeroom key. Time to rescue Deregor.]],
 			[[S1C1 Save Deregor]],
 		},
-		[6]={
+		[7]={
 			[[Q1 Captain Kaleen wants me to locate Crafty___oin in on the heist.<89>]],
 			[[S1 Deregor is free. He asked me to check on___ront Captain Helane.<85>]],
 			[[S1C1 Enter Captain Helane's Cabin]],
 		},
-		[7]={
+		[8]={
 			[[Q1 Captain Kaleen wants me to locate Crafty___oin in on the heist.<89>]],
 			[[S1 Crafty Lerisa has poisoned Captain Helan___crew remain captive.<99>]],
 			[[S1C1 Talk to Crafty Lerisa]],
 			[[S1C2 ]],
 			[[S1C3 ]],
 		},
-		[8]={
+		[9]={
 			[[Q1 Captain Kaleen wants me to locate Crafty___oin in on the heist.<89>]],
 			[[S1 Captain Helane is dying from poison. I c___to die in her cabin.<98>]],
 			[[S1C1 Give Helane the Antidote]],
@@ -17652,24 +17659,17 @@ ZGV._QuestStepData = {
 			[[S2 Captain Helane keeps the poison antidote on her nightstand.]],
 			[[S2C1 Collect Antidote]],
 		},
-		[9]={
+		[10]={
 			[[Q1 Captain Kaleen wants me to locate Crafty___oin in on the heist.<89>]],
 			[[S1 Crafty Lerisa said to meet her on the beach off Saintsport to settle up.]],
 			[[S1C0 Talk to Crafty Lerisa]],
 			[[S1C1 Talk to Crafty Lerisa]],
 			[[S1C2 Talk to Crafty Lerisa]],
 		},
-		[10]={
+		[11]={
 			[[Q1 Captain Kaleen wants me to locate Crafty___oin in on the heist.<89>]],
 			[[S1 I left Captain Helane to die. I should f___tain Kaleen's heist.<133>]],
 			[[S1C0 Talk to Crafty Lerisa]],
-		},
-		[11]={
-			[[Q1 Captain Kaleen wants me to locate Crafty___oin in on the heist.<89>]],
-			[[S1 Crafty Lerisa suggested I loot Sea Drake___ not the alert ones.<151>]],
-			[[S1C0 Take Sea Drake Uniform]],
-			[[S1C1 Take Sea Drake Uniform]],
-			[[S1C2 Take Sea Drake Uniform]],
 		},
 	},
 	[2922004] = {
@@ -17952,9 +17952,16 @@ ZGV._QuestStepData = {
 			[[S1 Talk to Jakarn at the inn.]],
 			[[S1C1 Meet Jakarn at the Inn]],
 			[[S2 NO TEXT]],
-			[[S2C1 Talk to Irien]],
+			[[S2C1 == Talk to Irien]],
 		},
 		[19]={
+			[[Q1 A man named Jakarn was thrown into the ___ a valuable gem.<149>]],
+			[[S1 Talk to Jakarn at the inn.]],
+			[[S1C1 Meet Jakarn at the Inn]],
+			[[S2 NO TEXT]],
+			[[S2C1 == EMPTY]],
+		},
+		[20]={
 			[[Q1 A man named Jakarn was thrown into the G___ling a valuable gem.<149>]],
 			[[S1 I should talk to ___ Jakarn. He's at the inn.]],
 			[[S1C0 Talk to Jakarn]],
@@ -18155,9 +18162,18 @@ ZGV._QuestStepData = {
 			[[S1C1 Talk to Dugroth]],
 			[[S1C2 Talk to Dugroth]],
 			[[S2 NO TEXT]],
-			[[S2C1 TRACKER GOAL TEXT]],
+			[[S2C1 == TRACKER GOAL TEXT]],
 		},
 		[7]={
+			[[Q1 Dugroth was sent by his mother to prove ___ me to help him.<78>]],
+			[[S1 Dugroth ran off. I should track him down.]],
+			[[S1C0 Talk to Dugroth]],
+			[[S1C1 Talk to Dugroth]],
+			[[S1C2 Talk to Dugroth]],
+			[[S2 NO TEXT]],
+			[[S2C1 == EMPTY]],
+		},
+		[8]={
 			[[Q1 Dugroth was sent by his mother to prove ___like me to help him.<78>]],
 			[[S1 Dugroth wants my advice on whether he ha___ll him what I think.<108>]],
 			[[S1C0 Talk to Dugroth]],
@@ -18825,6 +18841,217 @@ ZGV._QuestStepData = {
 			[[Q1 My actions have convinced Chief Tazgol to join the Daggerfall Covenant.]],
 			[[S1 I must talk to Sir Landis Shaldon to inf___oining the Covenant.<96>]],
 			[[S1C0 Talk to Sir Lanis Shaldon]],
+		},
+	},
+	[3360001] = {
+		[1]={
+			[[Q1 I died, but___eternity.<241>]],
+			[[S1 I awoke to a strange voice in some kind ___y to find a way out.<87>]],
+			[[S1C1 Search the Cell]],
+			[[S1C2 ]],
+			[[S2 NO TEXT]],
+			[[S2C1 TRACKER GOAL TEXT]],
+			[[S3 NO TEXT]],
+			[[S3C1 TRACKER GOAL TEXT]],
+		},
+		[2]={
+			[[Q1 I died, but___eternity.<241>]],
+			[[S1 I've been confronted by the shade of a s___should speak to him.<80>]],
+			[[S1C1 Talk to The Prophet]],
+			[[S1C2 ]],
+		},
+		[3]={
+			[[Q1 I died, but___eternity.<241>]],
+			[[S1 A lizard-man, an Argonian, unlocked my c___ and see where I am.<114>]],
+			[[S1C1 Leave the Cell]],
+			[[S1C2 ]],
+		},
+		[4]={
+			[[Q1 I died, but___eternity.<241>]],
+			[[S1 I need to find a weapon. There are some ___. I should take one.<84>]],
+			[[S1C1 Take and Equip a Weapon]],
+			[[S2 NO TEXT]],
+			[[S2C1 Equip a Sword]],
+			[[S2C2 Equip an Axe]],
+			[[S2C3 Equip a Staff]],
+			[[S2C4 Equip a Bow]],
+			[[S3 NO TEXT]],
+			[[S3C1 Equip a Maul]],
+			[[S3C2 Equip a Healing Staff]],
+		},
+		[5]={
+			[[Q1 I died, but___eternity.<241>]],
+			[[S1 I found a weapon in what looks like a sl___y out of this place.<113>]],
+			[[S1C1 Escape the Prison]],
+		},
+		[6]={
+			[[Q1 I died, but___eternity.<241>]],
+			[[S1 Molag Bal commands me to return to my ce___ sent to capture me.<98>]],
+			[[S1C1 Fight the Skeletal Warrior]],
+		},
+		[7]={
+			[[Q1 I died, but___eternity.<241>]],
+			[[S1 I destroyed the skeleton, but there may ___for an escape route.<103>]],
+			[[S1C1 Continue through the Bleeding Forge]],
+		},
+		[8]={
+			[[Q1 I died, but___eternity.<241>]],
+			[[S1 Another skeleton has emerged from the ground. I should destroy it.]],
+			[[S1C1 Fight the Skeletal Archer]],
+		},
+		[9]={
+			[[Q1 I died, but___eternity.<241>]],
+			[[S1 A Nord woman has entered the Bleeding Forge. I should talk to her.]],
+			[[S1C1 Talk to Lyris]],
+		},
+		[10]={
+			[[Q1 I died, but___eternity.<241>]],
+			[[S1 It looks like we're going to have to fig___ should lead us out.<124>]],
+			[[S1C1 Reach the Towers of Eyes]],
+		},
+		[11]={
+			[[Q1 I died, but___eternity.<241>]],
+			[[S1 Lyris said the Coldharbour Sentinels are___ne of the Sentinels.<197>]],
+			[[S1C0 Destroy a Coldharbour Sentinel]],
+			[[S1C1 Destroy a Coldharbour Sentinel]],
+			[[S1C2 Destroy a Coldharbour Sentinel]],
+			[[S2 We've entered a new area. I should see what Lyris knows.]],
+			[[S2C1 == Talk to Lyris]],
+		},
+		[12]={
+			[[Q1 I died, but that was only the beginning ___ for all eternity.<241>]],
+			[[S1 Lyris said the Coldharbour Sentinels ___ of the Sentinels.<197>]],
+			[[S1C0 Destroy a Coldharbour Sentinel]],
+			[[S1C1 Destroy a Coldharbour Sentinel]],
+			[[S1C2 Destroy a Coldharbour Sentinel]],
+			[[S2 We've entered a new area. I should see what Lyris knows.]],
+			[[S2C1 == EMPTY]],
+		},
+		[13]={
+			[[Q1 I died, but___eternity.<241>]],
+			[[S1 The sentinel is destroyed. We should mak___ the Prophet's Cell.<81>]],
+			[[S1C1 Reach the Prophet's Cell]],
+		},
+		[14]={
+			[[Q1 I died, but___eternity.<241>]],
+			[[S1 The door to the Prophet's Cell is sealed___how we might get in.<97>]],
+			[[S1C1 Talk to Lyris]],
+		},
+		[15]={
+			[[Q1 I died, but___eternity.<241>]],
+			[[S1 Lyris knows someone named Cadwell who mi___d see what he knows.<121>]],
+			[[S1C1 Talk to Cadwell]],
+		},
+		[16]={
+			[[Q1 I died, but___eternity.<241>]],
+			[[S1 Cadwell told us of another way into the ___nter the Undercroft.<129>]],
+			[[S1C1 Enter the Undercroft]],
+		},
+		[17]={
+			[[Q1 I died, but___eternity.<241>]],
+			[[S1 The Undercroft reeks of death. We should___ the Prophet's Cell.<101>]],
+			[[S1C1 Enter the Prophet's Cell]],
+		},
+		[18]={
+			[[Q1 I died, but___eternity.<241>]],
+			[[S1 We've entered the Cell. The Prophet should be in here somewhere.]],
+			[[S1C1 Find The Prophet]],
+		},
+		[19]={
+			[[Q1 I died, but___eternity.<241>]],
+			[[S1 Lyris ran to some kind of altar. I should ask what she's doing.]],
+			[[S1C1 Talk to Lyris]],
+			[[S1C2 ]],
+			[[S1C3 ]],
+			[[S1C4 ]],
+		},
+		[20]={
+			[[Q1 I died, but___eternity.<241>]],
+			[[S1 Lyris has asked me to manipulate the dev___ the Prophet's Cell.<82>]],
+			[[S1C1 Disable North Anchor Pinion]],
+			[[S1C2 Disable South Anchor Pinion]],
+			[[S1C3 ]],
+			[[S1C4 ]],
+			[[S1C5 ]],
+		},
+		[21]={
+			[[Q1 I died, but___eternity.<241>]],
+			[[S1 Lyris has to trade places with the Proph___mplete the exchange.<112>]],
+			[[S1C1 Return to Lyris and Observe the Exchange]],
+			[[S1C2 ]],
+			[[S1C3 ]],
+			[[S1C4 ]],
+			[[S2 NO TEXT]],
+			[[S2C1 TRACKER GOAL TEXT]],
+			[[S3 NO TEXT]],
+			[[S3C1 Return to Lyris and Observe the Exchange]],
+		},
+		[22]={
+			[[Q1 I died, but___eternity.<241>]],
+			[[S1 The Prophet is free, but Lyris is now tr___ind out what's next.<113>]],
+			[[S1C1 Talk to The Prophet]],
+		},
+		[23]={
+			[[Q1 I died, but___eternity.<241>]],
+			[[S1 The Prophet knows of a Daedric Anchor we___ld leave this place.<98>]],
+			[[S1C1 Enter the Anchor Mooring]],
+		},
+		[24]={
+			[[Q1 I died, but___eternity.<241>]],
+			[[S1 We've made our way to the Dark Anchor. T___ the Anchor Mooring.<107>]],
+			[[S1C0 Get to the Anchor Base]],
+			[[S1C1 Get to the Anchor Base]],
+			[[S1C2 Get to the Anchor Base]],
+		},
+		[25]={
+			[[Q1 I died, but___eternity.<241>]],
+			[[S1 Molag Bal has appeared, threatening me. ___ if we're to escape.<126>]],
+			[[S1C1 Defeat the Anchor Guardians]],
+			[[S1C2 ]],
+			[[S1C3 ]],
+			[[S2 Skeletons appeared at the Mooring's Base___in order to move on.<84>]],
+			[[S2C1 Defeat the Skeletons]],
+			[[S3 NO TEXT]],
+			[[S3C1 Kill Skeletons]],
+		},
+		[26]={
+			[[Q1 I died, but___eternity.<241>]],
+			[[S1 We made it to the Anchor Mooring. I should talk to the Prophet.]],
+			[[S1C1 Talk to The Prophet]],
+		},
+		[27]={
+			[[Q1 I died, but___eternity.<241>]],
+			[[S1 The Prophet said we'll need a Skyshard i___ollect the Skyshard.<137>]],
+			[[S1C1 Collect the Skyshard]],
+			[[S2 NO TEXT]],
+			[[S2C1 TRACKER GOAL TEXT]],
+		},
+		[28]={
+			[[Q1 I died, but___eternity.<241>]],
+			[[S1 The Prophet has begun summoning somethin___ complete the spell.<118>]],
+			[[S1C1 Wait for the Prophet]],
+			[[S2 NO TEXT]],
+			[[S2C1 TRACKER GOAL TEXT]],
+		},
+		[29]={
+			[[Q1 I died, but___eternity.<241>]],
+			[[S1 The spell is complete! I should make my way to the portal.]],
+			[[S1C1 Approach the Portal]],
+		},
+		[30]={
+			[[Q1 I died, but___eternity.<241>]],
+			[[S1 The way to Tamriel is open! I must enter the rift to escape!]],
+			[[S1C1 Use the Rift to Escape to Tamriel]],
+		},
+		[31]={
+			[[Q1 I died, but___eternity.<241>]],
+			[[S1 I've emerged from the rift in an unfamil___ould speak with him.<142>]],
+			[[S1C1 Talk to the Prophet]],
+		},
+		[32]={
+			[[Q1 I died, but___eternity.<241>]],
+			[[S1 I've shown up in an unfamiliar place. Th___here I must go next.<128>]],
+			[[S1C0 Talk to the Prophet]],
 		},
 	},
 }

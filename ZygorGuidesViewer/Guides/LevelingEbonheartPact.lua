@@ -3,8 +3,6 @@ if not ZGV then return end
 if ZGV:DoMutex("LevelingEP") then return end
 if ZGV.Utils.GetFaction() ~= "EP" then return end
 ZGV:RegisterGuide("Ebonheart Pact Leveling Guides\\Bleakrock Isle (3-7)",[[
-startlevel 3
-endlevel 7
 step
 'Save 2 extra skill points, don't spend them yet
 .' You'll be able to invest them into the Intimidate and Persuade skills soon, which will save you a lot of gold and time on certain quests coming up soon.
@@ -475,8 +473,6 @@ goto bleakrock_base 46.85,88.75
 |next Ebonheart Pact Leveling Guides\\Stonefalls (6-16) 
 ]])
 ZGV:RegisterGuide("Ebonheart Pact Leveling Guides\\Stonefalls (6-16)",[[
-startlevel 6
-endlevel 16
 step
 goto balfoyen_base 72.87,57.75
 .talk Captain Rana##1093002
@@ -3926,8 +3922,6 @@ goto 34.61,70.34
 .' Follow the path |goto 34.61,70.34 < 10 |c |noway |next Ebonheart Pact Leveling Guides\\Deeshan (16-24)
 ]])
 ZGV:RegisterGuide("Ebonheart Pact Leveling Guides\\Deeshan (16-24)",[[
-startlevel 16
-endlevel 24
 step
 goto stonefalls_base 40.53,75.17
 .' Follow the path |goto deshaan_base 15.74,37.07 < 10 |c |noway |q A Letter for Deshaan##90046/1 |future
@@ -6927,8 +6921,6 @@ goto shadowfen_base 57.28,20.73
 .' Find the Shadowfen Border |q Onward to Shadowfen##0103055/1/1/Find the Shadowfen Border##1
 ]])
 ZGV:RegisterGuide("Ebonheart Pact Leveling Guides\\Shadowfen (24-30)",[[
-startlevel 24
-endlevel 30
 step
 goto shadowfen_base 53.67,22.55
 .' Follow the path |goto shadowfen_base 53.67,22.55 < 10 |c |noway
@@ -9449,8 +9441,6 @@ goto 62.14,68.73
 .talk Muz-Muz##0193256 |q Swamp to Snow##0193035/1/1/Talk to the Boatmaster##1
 ]])
 ZGV:RegisterGuide("Ebonheart Pact Leveling Guides\\Eastmarch (30-35)",[[
-startlevel 30
-endlevel 35
 step
 goto Windhelm 89.31,42.73
 .talk Vicecanon Heita-Meen##0193017
@@ -10507,7 +10497,7 @@ goto 18.39,59.48
 step
 goto 16.90,59.89
 .click Lost Knife Cave##0153127
-.' Enter the Lost Knife Cave |goto Lost Knife Cave 64.97,87.56 < 1 |c |noway
+.' Enter the Lost Knife Cave |goto Lost Knife Cave 64.97,87.56 < 1 |c |noway |q Mystery Metal##0923001/7
 step
 goto Lost Knife Cave 55.84,62.29
 .talk Tridi##0923003 |q Labor Dispute##0153040/3/1/Find Tridi##2
@@ -10534,32 +10524,38 @@ goto Lost Knife Cave 75.07,24.08
 .' Equip the Stormfist Disguise in your bags |q Mystery Metal##0923001/2/4/Equip the Stormfist Disguise##1
 step
 goto 46.51,20.69
-.' Follow the path up |goto 46.51,20.69 < 5 |c |noway
+.' Follow the path up |goto 46.51,20.69 < 5 |c |noway |q Mystery Metal##0923001/7 |future
 step
 goto 27.40,28.80
 .click Urn##0093152 |q Mystery Metal##0923001/3/1/Collect Research Notes##2
+.' If you lose your disguise, pick one up nearby and equip it. |q Mystery Metal##0923001/2/4/Equip the Stormfist Disguise##1
 step
 goto lostknifecave_base 39.39,27.20
 .click Mysterious Ore##0923002 |q Mystery Metal##0923001/4/1/Find Ore Sample##1
+.' If you lose your disguise, pick one up nearby and equip it. |q Mystery Metal##0923001/2/4/Equip the Stormfist Disguise##1
 step
 goto lostknifecave_base 31.92,33.56
 .click Door##0163100
 .' Go through the Door |goto 32.00,34.97 < 1 |c |noway
+.' If you lose your disguise, pick one up nearby and equip it. |q Mystery Metal##0923001/2/4/Equip the Stormfist Disguise##1
 step
 goto lostknifecave_base 32.50,38.56
 .talk Jomund Snowmead##0923007 |q Mystery Metal##0923001/5/1/Talk to Jomund##1
+.' If you lose your disguise, pick one up nearby and equip it. |q Mystery Metal##0923001/2/4/Equip the Stormfist Disguise##1
 step
 goto lostknifecave_base 15.43,53.96
 .click Mysterious Ore##0923002
 .kill Troll##0153170
 .' Gather more ore samples |q Mystery Metal##0923001/6/1/Gather More Ore Samples##1
+.' If you lose your disguise, pick one up nearby and equip it. |q Mystery Metal##0923001/2/4/Equip the Stormfist Disguise##1
 step
 goto lostknifecave_base 39.45,68.08
-.' Go through the barricade |goto lostknifecave_base 39.45,68.08 < 10 |c |noway
+.' Go through the barricade |goto lostknifecave_base 39.45,68.08 < 10 |c |noway |q Mystery Metal##0923001/7 |future
 step
 goto 64.74,87.58
 .click Lost Knife Camp##0923003
 .' Leave the Mine |q Mystery Metal##0923001/7
+.' If you lose your disguise, pick one up nearby and equip it. |q Mystery Metal##0923001/2/4/Equip the Stormfist Disguise##1
 step
 goto eastmarch_base 18.37,59.44
 .talk Jomund Snowmead##0923007
@@ -10581,10 +10577,10 @@ goto 22.10,62.39
 ..turnin Do Kill the Messenger##0153042
 step
 goto Fort Amol 22.20,9.46
-.' Follow the path |goto Fort Amol 22.20,9.46 < 5 |c |noway
+.' Follow the path |goto Fort Amol 22.20,9.46 < 5 |c |noway |q Alchemical Analysis##0153041/1
 step
 goto 50.14,31.21
-.' Follow the path |goto 50.14,31.21 < 5 |c |noway
+.' Follow the path |goto 50.14,31.21 < 5 |c |noway |q Alchemical Analysis##0153041/1
 step
 goto 50.74,40.17
 .click The Uncanny Alembic##0153054
@@ -10601,14 +10597,14 @@ goto 50.82,43.15
 step
 goto 51.02,40.83
 .click Fort Amol##0153033
-.' Leave the Alchemist Shop |goto 50.85,40.42 < 1 |c |noway
+.' Leave the Alchemist Shop |goto 50.85,40.42 < 1 |c |noway |complete if dist() > 30
 step
 goto 55.63,10.73
 .click Ovuld's Metallurgic Anomolies##0153130 |q Alchemical Analysis##0153041/5/1/Find Ovuld's Study of Metallurgic Anomalies##1
 step
 goto 50.68,40.37
 .click The Uncanny Alembic##0153054
-.' Enter the Alchemist's Shop |goto 51.16,40.89 < 1 |c |noway
+.' Enter the Alchemist's Shop |goto 51.16,40.89 < 1 |c |noway |q Alchemical Analysis##0153041
 step
 goto 50.34,42.25
 .talk Aleeto##0153325
@@ -10623,10 +10619,10 @@ goto Fort Amol 51.27,42.18
 step
 goto 51.18,40.93
 .click Fort Amol##0153033
-.' Leave the Alchemist's Shop here |goto 50.85,40.42 < 1 |c |noway
+.' Leave the Alchemist's Shop here |goto 50.85,40.42 < 1 |c |noway |complete if dist() > 30
 step
 goto eastmarch_base 36.26,64.55
-.' Follow the road |goto 36.26,64.55 |c |noway
+.' Follow the road |goto 36.26,64.55 |c |noway |complete if dist() > 550
 step
 goto 39.95,57.17
 .talk Selgaard Wood-Hewer##0153195
@@ -10634,48 +10630,48 @@ goto 39.95,57.17
 step
 goto 41.90,55.77
 .click Kerthor's Cabin##0153067
-.' Enter the cabin |goto 41.80,55.71 |c |noway
+.' Enter the cabin |goto 41.80,55.71 |c |noway |q Dark Deeds##0153019/1
 step
 goto 41.50,55.53
 .' Find Kerthor |q Dark Deeds##0153019/1/Find Kerthor##3
 step
 goto 41.81,55.72
 .click Bonestrewn Crest##0153068
-.' Leave the cabin |goto 41.89,55.75 |c |noway
+.' Leave the cabin |goto 41.89,55.75 |c |noway |complete if dist() > 30
 step
 goto eastmarch_base 43.04,56.54
 .wayshrine Wittestadr Wayshrine
 step
 goto 43.07,54.77
-.' Follow the path |goto 43.07,54.77 |c |noway
+.' Follow the path |goto 43.07,54.77 |c |noway |q Dark Deeds##0153019/1
 step
 goto Eastmarch 43.15,50.23
 .click Agnedir's Cabin##0153070
-.' Enter the Cabin |goto 43.28,50.25 < 1 |c |noway
+.' Enter the Cabin |goto 43.28,50.25 < 1 |c |noway |q Dark Deeds##0153019/1
 step
 goto 43.58,50.50
 .' Find Agnedir |q Dark Deeds##0153019/1/Find Agnedir##2
 step
 goto 43.27,50.24
 .click Bonestrewn Crest##0153068
-.' Leave the cabin |goto 43.18,50.24 |c |noway
+.' Leave the cabin |goto 43.18,50.24 |c |noway |complete if dist() > 30
 step
 goto 40.03,51.26
-.' Follow the path |goto 40.03,51.26 < 10 |c |noway
+.' Follow the path |goto 40.03,51.26 < 10 |c |noway |q Dark Deeds##0153019/1
 step
 goto 40.21,47.13
-.' Follow the path |goto 40.21,47.13 < 10 |c |noway
+.' Follow the path |goto 40.21,47.13 < 10 |c |noway |q Dark Deeds##0153019/1
 step
 goto 38.66,46.73
 .click Jakild's Cabin##0153073
-.' Enter the cabin here |goto 38.58,46.76 |c |noway
+.' Enter the cabin here |goto 38.58,46.76 |c |noway |q Dark Deeds##0153019/1
 step
 goto 38.45,46.81
 .talk Jakild Wood-Hewer##0153201 |q Dark Deeds##0153019/1/1/Find Jakild##1
 step
 goto 38.57,46.76
 .click Bonestrewn Crest##0153068
-.' Leave the cabin |goto 38.65,46.73 |c |noway
+.' Leave the cabin |goto 38.65,46.73 |c |noway |complete if dist() > 30
 step
 goto 38.79,46.69
 .talk Selgaard Wood-Hewer##0153195 |q Dark Deeds##0153019/2/1/Talk to Selgaard##1
@@ -10721,18 +10717,18 @@ goto 26.53,74.51
 .kill Sir Valcent Tailies##0933004 |q Dark Deeds##0153019/14/1/Defeat Sir Valcent Tailies##1
 step
 goto 34.54,66.63
-.' Follow the path up |goto 34.54,66.63 < 5 |c |noway
+.' Follow the path up |goto 34.54,66.63 < 5 |c |noway |q Dark Deeds##0153019 |complete if dist() > 75
 step
 goto 27.76,62.45
-.' Follow the path up the ramp here |goto 27.76,62.45 < 5 |c |noway
+.' Follow the path up the ramp here |goto 27.76,62.45 < 5 |c |noway |q Dark Deeds##0153019 |complete if dist() > 100
 step
 goto 13.07,49.19
 .click Bonestrewn Crest##0153068
-.' Leave the Bonestrewn Crest |goto Eastmarch 37.75,50.48 |c |noway
+.' Leave the Bonestrewn Crest |goto Eastmarch 37.75,50.48 |c |noway |q Dark Deeds##0153019 |complete if dist() > 200
 step
 goto 38.63,46.74
 .click Jakild's Cabin##0153072
-.' Enter the cabin |goto 38.58,46.76 |c |noway
+.' Enter the cabin |goto 38.58,46.76 |c |noway |q Dark Deeds##0153019 |complete if dist() > 300
 step
 goto 38.47,46.86
 .talk Selgaard Wood-Hewer##0153195
@@ -10740,7 +10736,7 @@ goto 38.47,46.86
 step
 goto 38.59,46.75
 .click Bonestrewn Crest##0153068
-.' Leave the cabin |goto 38.65,46.73 |c |noway
+.' Leave the cabin |goto 38.65,46.73 |c |noway |complete if dist() > 30
 step
 .' Open your map and Fast Travel to the Wittestadr Wayshrine |goto eastmarch_base 43.03,56.51 |c |noway
 step
@@ -10766,10 +10762,10 @@ goto 48.53,51.55
 .' Enter Valeric's Manor |q A Right to Live##0153020/5
 step
 goto 48.18,51.32
-.' Follow the path up |goto 48.18,51.32 |c |noway
+.' Follow the path up |goto 48.18,51.32 |c |noway |q A Right to Live##0153020/6
 step
 goto 48.64,51.23
-.talk Valeric##0153204 |q A Right to Live##0153020/7
+.talk Valeric##0153204 |q A Right to Live##0153020/6
 ..turnin A Right to Live##0153020
 ..accept The Better of Two Evils##0153021
 step
@@ -10778,14 +10774,14 @@ goto 48.69,51.25
 step
 goto 48.48,51.48
 .click Wittestadr##0153074
-.' Leave the manor |goto 48.52,51.54 |c |noway
+.' Leave the manor |goto 48.52,51.54 |c |noway |complete if dist() > 50
 step
 goto 48.71,51.87
 .talk Tunus##0153210 |q The Better of Two Evils##0153021/2
 step
 goto 47.40,53.60
 .click Majorn's Manor##0153069
-.' Enter the manor here |goto 47.35,53.62 |c |noway
+.' Enter the manor here |goto 47.35,53.62 |c |noway |q The Better of Two Evils##0153021/3
 step
 goto 46.97,53.84
 .talk Majorn the Ancient##0153211
@@ -10793,14 +10789,14 @@ goto 46.97,53.84
 step
 goto 47.31,53.64
 .click Wittestadr##0153074
-.' Leave the manor |goto 47.39,53.60 < 10 |c |noway
+.' Leave the manor |goto 47.39,53.60 < 10 |c |noway |complete if dist() > 50
 step
 goto 48.06,53.32
 .kill Bloodfiend##0153197
 .' Use a Rune to Capture a Bloodfiend |q The Better of Two Evils##0153021/4/1/Use the Rune to Capture a Bloodfiend##1
 step
 goto 51.94,56.33
-.' Follow the path up to the hunters |goto 51.94,56.33 |c |noway
+.' Follow the path up to the hunters |goto 51.94,56.33 |c |noway |complete if dist() > 400
 step
 goto 51.30,57.18
 .kill Winterland Stalker##0153202
@@ -10809,38 +10805,38 @@ goto 51.30,57.18
 step
 goto 47.41,53.59
 .click Majorn's Manor##0153069
-.' Enter the manor |goto 47.35,53.62 |c |noway
+.' Enter the manor |goto 47.35,53.62 |c |noway |q The Better of Two Evils##0153021/7 |future
 step
 goto 46.97,53.84
 .talk Majorn the Ancient##0153211 |q The Better of Two Evils##0153021/6
 step
 goto 47.24,54.11
 .click Wittestadr Crypts##0153076
-.' Enter the Wittestadr Crypts |goto Wittestadr Crypts 66.12,89.49 |c |noway
+.' Enter the Wittestadr Crypts |goto Wittestadr Crypts 66.12,89.49 |c |noway |q The Better of Two Evils##0153021/7
 step
 goto 56.49,50.18
 .click Wittestadr Depths##0943001
-.' Continue through the door here |goto 54.98,50.18 |c |noway
+.' Continue through the door here |goto 54.98,50.18 |c |noway |q The Better of Two Evils##0153021/7
 step
 goto 23.77,42.91
-.' Follow the path |goto 23.77,42.91 < 10  |c |noway
+.' Follow the path |goto 23.77,42.91 < 10 |c |noway |q The Better of Two Evils##0153021/7
 step
 goto 18.22,18.40
 .kill Valeric##0153204 |q The Better of Two Evils##0153021/7
 step
 goto 25.32,45.35
-.' Follow the path |goto 25.32,45.35 < 10  |c |noway
+.' Follow the path |goto 25.32,45.35 < 10 |c |noway |q The Better of Two Evils##0153021 |complete if dist() > 200
 step
 goto 54.66,50.17
 .click Wittestadr Crypts##0153076
-.' Leave the Depths |goto 56.23,50.13 |c |noway
+.' Leave the Depths |goto 56.23,50.13 |c |noway |q The Better of Two Evils##0153021 |complete if dist() > 100
 step
 goto 73.00,57.99
-.' Follow the path up |goto 73.00,57.99 < 10 |c |noway
+.' Follow the path up |goto 73.00,57.99 < 10 |c |noway |q The Better of Two Evils##0153021 |complete if dist() > 100
 step
 goto 66.48,89.53
 .click Majorn's Manor##0153069
-.' Leave the Crypts |goto Eastmarch 47.22,54.12 |c |noway
+.' Leave the Crypts |goto Eastmarch 47.22,54.12 |c |noway |q The Better of Two Evils##0153021 |complete if dist() > 150
 step
 goto 46.97,53.88
 .talk Majorn the Ancient##0153211 |q The Better of Two Evils##0153021/8
@@ -10852,14 +10848,14 @@ goto 46.97,53.88
 step
 goto 47.32,53.64
 .click Wittestadr##0153074
-.' Leave the manor |goto 47.39,53.60 |c |noway
+.' Leave the manor |goto 47.39,53.60 |c |noway |complete if dist() > 50
 step
 goto 46.75,59.42
 .talk Dralof Waterwalker##0153214
 ..accept Bath Time##0153022
 step
 goto eastmarch_base 42.29,62.01
-.' Follow the path up |goto eastmarch_base 42.29,62.01 < 10  |c |noway
+.' Follow the path up |goto eastmarch_base 42.29,62.01 < 10  |c |noway |q Lifeline##0153017
 step
 goto Eastmarch 43.41,63.89
 .talk Thane Oda Wolf-Sister##0153141
@@ -10911,14 +10907,14 @@ goto 45.19,66.97
 .' Enter the Crevasse |q Gods Save the King##0153024/2
 step
 goto mistwatchcrevassecrypt_base 17.60,57.28
-.' Follow the path up |goto mistwatchcrevassecrypt_base 17.60,57.28 < 10 |c |noway
+.' Follow the path up |goto mistwatchcrevassecrypt_base 17.60,57.28 < 10 |c |noway |q Gods Save the King##0153024/3
 step
 goto 24.02,21.19
 .kill Dream Eater##0153228 |q Gods Save the King##0153024/3
 step
 goto 21.81,9.11
 .click Portal to Mistwatch##0153078
-.' Leave the Crevasse |goto Eastmarch 45.29,66.77 |c |noway
+.' Leave the Crevasse |goto Eastmarch 45.29,66.77 |c |noway |complete if dist() > 100
 step
 goto 45.61,67.44
 .talk High Priest Esling##0153224 |q Gods Save the King##0153024/4
@@ -10935,26 +10931,26 @@ goto mistwatchtower_base 78.76,62.98
 .talk Fractured Spirit of Jorunn##0153229 |q Gods Save the King##0153024/7
 step
 goto 50.90,58.05
-.' Go to the first fire here |goto 50.90,58.05 < 5 |c |noway
+.' Go to the first fire here |goto 50.90,58.05 < 5 |c |noway |q Gods Save the King##0153024/8
 step
 goto 17.96,54.20
-.' Go to the second fire here |goto 17.96,54.20 < 5 |c |noway
+.' Go to the second fire here |goto 17.96,54.20 < 5 |c |noway |q Gods Save the King##0153024/8
 step
 goto mistwatchtower_base 19.58,45.95
-.' Enter the passage here |goto mistwatchtower_base 19.58,45.95 < 5 |c |noway
+.' Enter the passage here |goto mistwatchtower_base 19.58,45.95 < 5 |c |noway |q Gods Save the King##0153024/8
 step
 goto 48.47,45.47
-.' Go to the third fire here |goto 48.47,45.47 < 5 |c |noway
+.' Go to the third fire here |goto 48.47,45.47 < 5 |c |noway |q Gods Save the King##0153024/8
 step
 goto 57.50,55.37
-.' Cross the rock bridge here. |goto 57.50,55.37 < 5 |c |noway |tip Make sure you don't fall!
+.' Cross the rock bridge here. |goto 57.50,55.37 < 5 |c |noway |tip Make sure you don't fall! |q Gods Save the King##0153024/8
 step
 goto 87.14,49.43
 .kill Dream Eater##0153228 |q Gods Save the King##0153024/8
 step
 goto 89.07,62.32
 .click Portal to Mistwatch##0153078
-.' Leave Mistwatch |goto Eastmarch 45.29,66.77 |c |noway
+.' Leave Mistwatch |goto Eastmarch 45.29,66.77 |c |noway |complete if dist() > 100
 step
 goto 45.60,67.43
 .talk High Priest Esling##0153224 |q Gods Save the King##0153024/9
@@ -10971,7 +10967,7 @@ goto 14.93,49.43
 .talk Stormy-Eyes##0153181 |q Gods Save the King##0153024/12
 step
 goto 15.45,50.22
-.' Follow the path up |goto 15.45,50.22 < 10 |c |noway
+.' Follow the path up |goto 15.45,50.22 < 10 |c |noway |q Gods Save the King##0153024/13
 step
 goto 15.55,53.18
 .kill Dream Eater##0153228 |q Gods Save the King##0153024/13
@@ -10996,16 +10992,16 @@ goto eastmarch_base 47.69,66.48
 step
 goto 48.12,68.66
 .click Portal to Eastmarch##0153079
-.' Go through the portal here |goto 46.47,64.30 < 10 |c |noway
+.' Go through the portal here |goto 46.47,64.30 < 10 |c |noway |q Bath Time##0153022/1
 step
 goto eastmarch_base 43.77,63.78
-.' Leave the cave |goto eastmarch_base 43.77,63.78
+.' Leave the cave |goto eastmarch_base 43.77,63.78 |q Bath Time##0153022/1
 step
 goto Eastmarch 40.38,61.93
-.' Go back out to the road |goto Eastmarch 40.38,61.93 < 10  |c |noway
+.' Go back out to the road |goto Eastmarch 40.38,61.93 < 10  |c |noway |q Bath Time##0153022/1
 step
 goto 34.93,63.69
-.' Follow the path |goto 34.93,63.69 < 10 |c |noway
+.' Follow the path |goto 34.93,63.69 < 10 |c |noway |q Bath Time##0153022/1
 step
 goto 34.64,61.09
 .click Darkwater Apothecary##0153083
@@ -11017,10 +11013,10 @@ goto 34.41,60.96
 step
 goto 34.56,61.04
 .click Eastmarch##0193077
-.' Leave the Apothecary |goto 34.62,61.10 |c |noway
+.' Leave the Apothecary |goto 34.62,61.10 |c |noway |complete dist() > 50
 step
 goto 34.53,62.56
-.' Follow the path |goto 34.53,62.56 < 10 |c |noway
+.' Follow the path |goto 34.53,62.56 < 10 |c |noway |q Bath Time##0153022/3
 step
 goto 35.49,64.54
 .kill Troll##0153170
@@ -11030,6 +11026,9 @@ goto fortamol_base 77.71,61.29
 .kill Mudcrab##1093042
 ..collect 4 Mudcrab Claws |q Bath Time##0153022/3/1/Collect Mudcrab Claws##1
 step
+goto eastmarch_base 35.84,67.61
+.' Enter the cave here |goto eastmarch_base 35.84,67.61 |noway |c |q Bath Time##0153022/3
+step
 goto Eastmarch 38.58,67.80
 .talk Laughs-at-Danger##0153183
 .' Intimidate him into giving you the ingredient |q Bath Time##0153022/3
@@ -11038,10 +11037,10 @@ goto 36.54,61.28
 .click Millstone##0153085 |q Bath Time##0153022/4
 step
 goto 34.53,62.54
-.' Follow the road here |goto 34.53,62.54 < 10  |c |noway
+.' Follow the road here |goto 34.53,62.54 < 10  |c |noway |q Bath Time##0153022
 step
 goto 42.23,60.13
-.' Follow the road here |goto 42.23,60.13 < 10  |c |noway
+.' Follow the road here |goto 42.23,60.13 < 10  |c |noway |q Bath Time##0153022
 step
 goto 46.68,59.49
 .talk Dralof Waterwalker##0153214
@@ -11748,8 +11747,6 @@ goto 67.26,71.01
 .' Follow this road out to get to The Rift |goto The Rift 68.52,24.53 |c |noway
 ]])
 ZGV:RegisterGuide("Ebonheart Pact Leveling Guides\\The Rift (35-42)",[[
-startlevel 35
-endlevel 42
 step
 goto Shor's Stone 55.73,43.19
 .talk Vigrod Wraithbane##0163001 |q Beneath the Stone##0153039/1
@@ -13331,14 +13328,14 @@ goto 65.86,54.63
 ..accept In His Wake##0163039
 step
 goto riften_base 48.99,82.14
-.' Enter Riften |goto riften_base 48.99,82.14 < 10 |c |noway |complete if dist() > 110 |q Redguard on the Run##0163041/1 |future
+.' Enter Riften |goto riften_base 48.99,82.14 < 10 |c |noway |complete if dist() > 110 |q Redguard on the Run##161003/1 |future
 step
 goto 72.55,54.24
 .wayshrine Riften Wayshrine
 step
 goto 67.57,52.34
 .talk Gorgath Deadeye##0163253
-..accept Redguard on the Run##0163041
+..accept Redguard on the Run##161003
 step
 goto Riften 48.40,39.27
 .talk Sarisa Rothalen##0163241
@@ -14011,19 +14008,19 @@ goto 79.67,60.70
 .click East Candle##0163111
 .click West Candle##0163112
 .click North Candle##0163113
-.click South Candle##0163114  |q A Walk Above the Clouds##163051/10/2/Light the Candles##1
+.click South Candle##0163114  |q A Walk Above the Clouds##163051/10/2/Light the Candles##1 |future
 step
 goto 79.67,60.70
-.click Ritual Bowl##0163115 |q A Walk Above the Clouds##163051/11/2/Place the Nightshade##1
+.click Ritual Bowl##0163115 |q A Walk Above the Clouds##163051/11/2/Place the Nightshade##1 |future
 step
 goto 79.70,60.68
-.click Pike##1983001 |q A Walk Above the Clouds##163051/11/2/Place the Animal Hide##2
+.click Pike##1983001 |q A Walk Above the Clouds##163051/11/2/Place the Animal Hide##2 |future
 step
 goto 79.66,60.71
-..' Use the Animus Geode to perform the Ritual |q A Walk Above the Clouds##163051/12/1/Perform the Ritual##2
+..' Use the Animus Geode to perform the Ritual |q A Walk Above the Clouds##163051/12/1/Perform the Ritual##2 |future
 step
 goto 79.66,60.71
-.talk Nordahl##0163343 |q A Walk Above the Clouds##163051/12
+.talk Nordahl##0163343 |q A Walk Above the Clouds##163051/12 |future
 step
 goto The Rift 77.88,59.92
 .' Use the Animus Geode in your bag to summon Nordahl
@@ -14486,59 +14483,60 @@ goto therift_base 58.26,60.72
 .talk Rigvar##0163369 |q Lost Companions##0163052/4/1/Find Rigvar##1
 step
 goto 54.42,60.31
-.' Follow the path |goto 54.42,60.31 |c |noway
+.' Follow the path |goto 54.42,60.31 |c |noway |complete if dist() > 215
 step
 goto 52.79,58.97
-.click Irgnar's Journal##0163127 |q Lost Companions##0163052/5
+.click Irgnar's Journal##0163127 |q Lost Companions##0163052/6 |future
 step
 goto 51.06,60.19
-.kill Redmaw##0163371 |q Lost Companions##0163052/6/1/Kill Redmaw##1
+.kill Redmaw##0163371 |q Lost Companions##0163052/7 |future
 step
 goto The Rift 42.03,51.80
 .click Honrich Tower Wayshrine##0163129
-.' Teleport to the Fallowstone Hall Wayshrine |goto The Rift 61.49,31.17 |c |noway
+.' Teleport to the Fallowstone Hall Wayshrine |goto The Rift 61.49,31.17 |c |noway |q Aiding Sigunn##0163004/1 |future
 step
 goto Shor's Stone 90.17,76.09
-.click Salvageable Goods##0163131 |q Aiding Sigunn##0163004/1/1/Find Salvageable Goods##1
+.click Salvageable Goods##0163131 |q Aiding Sigunn##161004/1/1/Find Salvageable Goods##1 |future
 step
 goto 44.77,43.07
 .talk Sigunn##0163035
-..turnin Aiding Sigunn##0163004
+..turnin Aiding Sigunn##161004
 step
-goto 61.75,31.17
-.click Fallowstone Hall Wayshrine##0163130
-.' Teleport to the Geirmund's Hall Wayshrine |goto 15.29,27.59 |c |noway
+goto therift_base 61.72,31.16
+.' Teleport to the Geirmund's Hall Wayshrine |goto 15.29,27.59 |c |noway |q Redguard on the Run##161003/2 |future
 step
 goto 10.58,31.49
 .click The Horker's Tusk Tavern##0163060
-.' Enter the Horker's Tusk Tavern |goto 10.50,31.47 |c |noway
+.' Enter the Horker's Tusk Tavern |goto 10.50,31.47 |c |noway |q Redguard on the Run##161003/1 |future
 step
-goto 10.41,31.28
-.talk Adla##0163190 |q Redguard on the Run##0163041/2/1/Talk to Akvid Gray-Sky##1
+goto therift_base 10.41,31.30
+.talk Adla##163190 |q Redguard on the Run##161003/1 |future
 step
 goto 10.36,31.48
-.talk Akvid Gray-Sky##0163187 |q Redguard on the Run##0163041/3/1/Kill Varnedo##1
+.talk Akvid Gray-Sky##0163187 |q Redguard on the Run##161003/2 |future
+|tip Intimidate him
 step
 goto 10.52,31.46
 .click Ivarstead##0163054
-.' Leave the Horker's Tusk Tavern |goto 10.58,31.47 |c |noway
+.' Leave the Horker's Tusk Tavern |goto 10.58,31.47 |c |noway |q Redguard on the Run##161003/3 |future
 step
 goto 13.97,26.16
-.kill Varnedo##0163379 |q Redguard on the Run##0163041/3/1/Kill Varnedo##1
+.kill Varnedo##0163379 |q Redguard on the Run##161003/3
 step
 goto 15.30,27.31
 .click Geirmund's Hall Wayshrine##0163062
-.' Teleport to the Riften Wayshrine |goto Riften 71.28,53.54 |c |noway
+.' Teleport to the Riften Wayshrine |goto Riften 71.28,53.54 |c |noway |q Redguard on the Run##161003 |future
 step
 goto 67.47,52.27
 .talk Gorgath Deadeye##0163253
-..turnin Redguard on the Run##0163041
+..turnin Redguard on the Run##161003
 step
 goto The Rift 70.85,49.54
 .click Riften Wayshrine##0163129
 .' Teleport to the Trolhetta Wayshrine |goto 81.15,65.27 |c |noway
 step
-.' Follow the path up |goto 85.95,63.28 |c |noway
+goto 85.95,63.28
+.' Follow the path up |goto 85.95,63.28 < 5 |c |noway |complete if dist() > 290 |future
 step
 goto 86.42,63.14
 .talk Snorrvild##0163345
@@ -14546,244 +14544,363 @@ goto 86.42,63.14
 step
 goto The Rift 81.20,65.04
 .click Trolhetta Wayshrine##0163120
-.' Teleport to The Harborage |goto stonefalls_base 77.11,36.71 |c |noway
+.' Teleport to The Harborage |goto stonefalls_base 77.11,36.71 |c |noway |q Shadow of Sancre Tor##0163046/2 |future
 step
 goto 77.21,36.58
 .click The Harborage##0093016
-.' Enter The Harborage
+.' Enter The Harborage |q Shadow of Sancre Tor##0163046/2
 step
-.talk Varen Aquilarios##0453001 |q Shadow of Sancre Tor##0163046/3/1/Talk to Varen##1
+'Follow the path in the Harborage to the small camp:
+.talk Varen Aquilarios##0452002 |q Shadow of Sancre Tor##0163046/3
 step
-.talk Sai Sahan##0453002 |q Shadow of Sancre Tor##0163046/4/1/Talk to Sai Sahan##1
+'In the small camp in the Harborage:
+.talk Sai Sahan##0452003 |q Shadow of Sancre Tor##0163046/4
+.' Wait for Varen to Open the Portal |q Shadow of Sancre Tor##0163046/5
 step
-.' Wait for Varen to open the portal |q Shadow of Sancre Tor##0163046/5/1/Wait for Varen to Open the Portal##1
+'In the small camp in the Harborage:
+.click Portal to Sancre Tor##0022157
+.' Enter Portal to Sancre Tor |q Shadow of Sancre Tor##0163046/6
 step
-.click Portal to Sancre Tor##0093186 |q Shadow of Sancre Tor##0163046/6/1/Enter Portal to Sancre Tor##1
+goto sancretor1_base 39.44,20.14
+.' Follow the path |goto sancretor1_base 39.44,20.14 < 10 |c |noway |q Shadow of Sancre Tor##0163046 |future
 step
-goto Sancre Tor 50.88,22.57
-.' Follow the path |goto Sancre Tor 50.88,22.57 |c |noway
+goto 50.06,57.11
+.' Explore Sancre Tor |q Shadow of Sancre Tor##0163046/7
 step
-goto 49.48,58.44
-.' Explore Sancre Tor |q Shadow of Sancre Tor##0163046/7/1/Explore Sancre Tor##1
+goto 45.16,65.23
+.' Watch the dialogue
+.' Confront Mannimarco |q Shadow of Sancre Tor##0163046/8
 step
-goto 45.03,65.11
-.' Watch the confrontation here |q Shadow of Sancre Tor##0163046/8/1/Confront Mannimarco##1
+goto 44.88,67.60
+.talk Sai Sahan##0452002 |q Shadow of Sancre Tor##0163046/9
 step
-goto 45.01,66.89
-.talk Sai Sahan##0453002 |q Shadow of Sancre Tor##0163046/9/1/Talk to Sai Sahan##1
+goto 37.29,84.07
+.' Follow the path |goto 37.29,84.07 < 10 |c |noway |q Shadow of Sancre Tor##0163046 |future
 step
-goto 37.23,83.78
-.' Follow the path |goto 37.23,83.78 |c |noway
+goto 47.97,91.18
+.click Sancre Tor Interior##2862001
+.' Enter the Sancre Tor Interior |goto sancretor2_base 35.00,90.34 < 1 |c |noway |q Shadow of Sancre Tor##0163046 |future
 step
-goto 57.95,90.07
-.click Sancre Tor Inner Chamber##2863002
-goto 9.02,56.16
+goto sancretor2_base 59.22,89.65
+.click Sancre Tor Inner Chamber##2862002
+.' Enter the Sancre Tor Inner Chamber |goto sancretor3_base 9.02,56.16 < 1 |c |noway |q Shadow of Sancre Tor##0163046 |future
 step
-goto 38.02,54.34 |q Shadow of Sancre Tor##0163046/10/1/Go to Sancre Tor Inner Chamber##1
+goto sancretor3_base 40.56,54.36
+.' Go to the Sancre Tor Inner Chamber |q Shadow of Sancre Tor##0163046/10
+.' Watch the dialogue
+.' Confront Mannimarco |q Shadow of Sancre Tor##0163046/11
 step
-goto 37.94,54.15 |q Shadow of Sancre Tor##0163046/11/1/Confront Mannimarco##1
+goto 45.64,54.13
+.' Kill the enemies that appear
+.' Defeat Mannimarco's Minions |q Shadow of Sancre Tor##0163046/12
 step
-goto 48.13,53.80
-.kill Bone Colossus##2963007 |q Shadow of Sancre Tor##0163046/12/1/Defeat Mannimarco's Minions##1
+goto 74.92,56.11
+.' Follow the path |goto 74.92,56.11 < 10 |c |noway |q Shadow of Sancre Tor##0163046 |future
 step
-goto 86.50,45.86
-.click Inner Courtyard##2863003
-goto 45.30,86.91
+goto 86.10,44.71
+.click Inner Courtyard##2862003
+.' Enter the Inner Courtyard |goto sancretor4_base 45.30,86.91 < 1 |c |noway |q Shadow of Sancre Tor##0163046 |future
 step
-goto 46.83,66.89 |q Shadow of Sancre Tor##0163046/13/1/Continue to the Inner Courtyard##1
+goto sancretor4_base 46.41,67.70
+.' Continue to the Inner Courtyard |q Shadow of Sancre Tor##0163046/13
 step
-goto 47.34,61.67 |q Shadow of Sancre Tor##0163046/14/1/Wait for Sai to Catch His Breath##1
+goto 46.48,63.06
+.' Watch the dialogue
+.' Wait for Sai to Catch His Breath |q Shadow of Sancre Tor##0163046/14
 step
-goto 46.78,60.92 |q Shadow of Sancre Tor##0163046/15/1/Talk to Sai Sahan##1
+goto 52.55,60.97
+.talk Lyris Titanborn##3362006 |q Shadow of Sancre Tor##0163046/15
 step
-goto 15.83,49.16
-.click Dragonguard Tomb##2863004
-goto 89.89,51.37
+goto 45.85,61.24
+.talk Sai Sahan##0452002 |q Shadow of Sancre Tor##0163046/16
 step
-goto 34.50,66.57
-.click Gate##0093172
+goto 32.62,49.11
+.' Follow the path |goto 32.62,49.11 < 10 |c |noway |q Shadow of Sancre Tor##0163046 |future
 step
-goto 26.36,65.71
-.click Gate##0093172
+goto 14.61,49.27
+.click Dragonguard Tomb##2862004
+.' Enter the Dragonguard Tomb |q Shadow of Sancre Tor##0163046/17
 step
-goto 24.52,52.48
-.click Shrine of the Divines##2863005 |q Shadow of Sancre Tor##0163046/4/1/Consecrate the Shrine in the Dragonguard Tomb##1
+goto sancretor6_base 69.32,59.04
+.' Click Gates to open them
+.' Follow the path down |goto sancretor6_base 69.32,59.04 < 5 |c |noway |q Shadow of Sancre Tor##0163046 |future
 step
-goto 63.15,41.66
+goto 57.17,58.60
+.' Click Gates to open them
+.' Follow the path |goto 57.17,58.60 < 5 |c |noway |q Shadow of Sancre Tor##0163046 |future
 step
-goto 88.87,51.39
-.click Inner Courtyard##2863003
-goto 14.64,49.13
+goto 48.16,49.96
+.' Click Gates to open them
+.' Follow the path |goto 48.16,49.96 < 5 |c |noway |q Shadow of Sancre Tor##0163046 |future
 step
-goto 79.13,51.86
+goto 44.03,42.62
+.' Click Gates to open them
+.' Follow the path |goto 44.03,42.62 < 5 |c |noway |q Shadow of Sancre Tor##0163046 |future
 step
-goto 80.41,65.40
-.click Reman Vault##2863006
-goto 49.89,13.41
+goto 32.67,36.42
+.' Click Gates to open them
+.' Follow the path up |goto 32.67,36.42 < 5 |c |noway |q Shadow of Sancre Tor##0163046 |future
 step
-goto 59.29,38.05
-.click Lever##0463011 (2,1,3)
+goto 23.71,52.05
+.click Shrine of the Divines##2862005
+.' Watch the ritual
+.' Consecrate the Shrine in the Dragonguard Tomb |q Shadow of Sancre Tor##0163046/18
 step
-goto 38.89,68.36
-.click Shrine to the Divines##2863007 |q Shadow of Sancre Tor##0163046/18/1/Consecrate the Shrine in the Reman Vault##1
+goto 25.03,64.30
+.' Click Gates to open them
+.' Follow the path down |goto 25.03,64.30 < 5 |c |noway |q Shadow of Sancre Tor##0163046 |future
 step
-goto 50.00,14.85
-.click Inner Courtyard##2863003
-goto 80.00,65.77
+goto 32.22,67.33
+.' Click Gates to open them
+.' Follow the path |goto 32.22,67.33 < 5 |c |noway |q Shadow of Sancre Tor##0163046 |future
 step
-goto 52.47,12.47
-.click Vault Antechamber##2863008
-goto 52.64,92.35
+goto 39.69,57.90
+.' Click Gates to open them
+.' Follow the path |goto 39.69,57.90 < 5 |c |noway |q Shadow of Sancre Tor##0163046 |future
 step
-goto 52.34,62.34 |q Shadow of Sancre Tor##0163046/19/1/Confront Mannimarco##1
+goto 48.07,49.84
+.' Click Gates to open them
+.' Follow the path |goto 48.07,49.84 < 5 |c |noway |q Shadow of Sancre Tor##0163046 |future
 step
-goto 51.17,56.67 |q Shadow of Sancre Tor##0163046/20/1/Defeat the Undead##1
-.kill Bone Colossus##2963007
+goto 57.27,57.96
+.' Click Gates to open them
+.' Follow the path |goto 57.27,57.96 < 5 |c |noway |q Shadow of Sancre Tor##0163046 |future
 step
-goto 57.37,44.12
-.click Gate##0093172
-goto 57.61,42.18
+goto 64.72,65.12
+.' Click Gates to open them
+.' Follow the path up |goto 64.72,65.12 < 5 |c |noway |q Shadow of Sancre Tor##0163046 |future
 step
-goto 34.86,18.40
-.click Vault of Kings##2863009
-goto 88.33,51.98 |q Shadow of Sancre Tor##0163046/21/1/Enter the Vault of Kings##1
+goto 89.94,51.33
+.click Inner Courtyard##2862003
+.' Leave the Dragonguard Tomb |goto sancretor4_base 14.94,49.19 < 1 |c |noway |q Shadow of Sancre Tor##0163046 |future
 step
-goto 85.79,51.68
-.talk Sai Sahan##0453002 |q Shadow of Sancre Tor##0163046/22/1/Talk to Sai Sahan##1
+goto sancretor4_base 68.49,49.26
+.' Follow the path |goto sancretor4_base 68.49,49.26 < 10 |c |noway |q Shadow of Sancre Tor##0163046 |future
 step
-goto 74.54,51.19 |q Shadow of Sancre Tor##0163046/23/1/Open the Vault Door##1
+goto 80.68,65.81
+.click Reman Vault##2862006
+.' Go to the Reman Vault |q Shadow of Sancre Tor##0163046/18
 step
-goto 44.32,50.21
-.kill Mannimarco##0453004 |q Shadow of Sancre Tor##0163046/24/1/Defeat Mannimarco##1
+goto sancretor5_base 59.49,40.42
+.' Facing the bridge:
+.' Click the far left Lever
+.' Click the middle-right Lever
+.' Click the middle-left Lever
+.' Cross the bridge |goto sancretor5_base 59.23,62.25 < 10 |c |noway |q Shadow of Sancre Tor##0163046 |future
 step
-goto 24.00,50.66
-.click Amulet of Kings##2863010 |q Shadow of Sancre Tor##0163046/25/1/Collect the Amulet of Kings##1
+goto 37.81,68.52
+.click Shrine to the Divines##2862007
+.' Watch the ritual
+.kill Bone Colossus##2962006
+.' Consecrate the Shrine in the Reman Vault |q Shadow of Sancre Tor##0163046/19
 step
-goto 20.01,50.73
-.click Portal to Harborage##2863011
-' Return to the Harborage |q Shadow of Sancre Tor##0163046/26/1/Return to the Harborage##1
+goto 59.05,61.85
+.' Follow the path |goto 59.05,61.85 < 10 |c |noway |q Shadow of Sancre Tor##0163046 |future
 step
-.talk Varen Aquilarios##0453001
+goto 49.95,13.37
+.click Inner Courtyard##2862003
+.' Leave the Reman Vault |goto sancretor4_base 80.00,65.77 < 1 |c |noway |q Shadow of Sancre Tor##0163046 |future
+step
+goto sancretor4_base 77.62,49.61
+.' Follow the path |goto sancretor4_base 77.62,49.61 < 10 |c |noway |q Shadow of Sancre Tor##0163046 |future
+step
+goto 52.25,34.36
+.' Follow the path |goto 52.25,34.36 < 10 |c |noway |q Shadow of Sancre Tor##0163046 |future
+step
+goto 52.54,11.46
+.click Vault Antechamber##2862008
+.' Enter the Vault Antechamber |goto sancretor7_base 52.64,92.35 < 1 |c |noway |q Shadow of Sancre Tor##0163046 |future
+step
+goto sancretor7_base 49.67,75.97
+.' Follow the path down |goto sancretor7_base 49.67,75.97 < 10 |c |noway |q Shadow of Sancre Tor##0163046 |future
+step
+goto 45.43,61.20
+.' Continue to the Vault Antechamber |q Shadow of Sancre Tor##0163046/31
+step
+goto 45.73,61.88
+.' Watch the dialogue
+.' Confront Mannimarco |q Shadow of Sancre Tor##0163046/20
+.' Kill the waves of enemies that attack you
+.' Defeat the Undead |q Shadow of Sancre Tor##0163046/21
+step
+goto 57.35,43.53
+.click Gate##1892002
+.' Follow the path |goto 57.35,43.53 < 5 |c |noway |q Shadow of Sancre Tor##0163046 |future
+step
+goto 57.32,17.28
+.' Follow the path |goto 57.32,17.28 < 10 |c |noway |q Shadow of Sancre Tor##0163046 |future
+step
+goto 33.07,18.65
+.click Vault of Kings##2862009
+.' Enter the Vault of Kings |q Shadow of Sancre Tor##0163046/22
+step
+goto sancretor8_base 84.40,51.70
+.talk Sai Sahan##0452002 |q Shadow of Sancre Tor##0163046/23
+step
+goto 74.39,51.32
+.' Press _E_ to use the Ring of Stendarr's Mercy
+.' Open the Vault Door |q Shadow of Sancre Tor##0163046/24
+step
+goto 45.10,50.82
+.kill Mannimarco##0452003 |tip He summons enemies after through portal. Save your ultimate abilities to quickly kill those, allowing you to focus on killing him.
+.' Watch the dialogue
+.' Defeat Mannimarco |q Shadow of Sancre Tor##0163046/25
+step
+goto 23.53,50.60
+.click Amulet of Kings##0112044
+.' Collect the Amulet of Kings |q Shadow of Sancre Tor##0163046/26
+step
+goto 18.72,50.49
+.click Portal to Harborage##2862010
+.' Return to the Harborage |q Shadow of Sancre Tor##0163046/27
+step
+goto The Harborage 771.50,4.08
+.talk Varen Aquilarios##0452001
 ..turnin Shadow of Sancre Tor##0163046
 step
-'Teleport to the Mourhold Wayshrine |goto 38.50,56.19 |c |noway
+.' Fast Travel to the Mourhold Wayshrine |goto deshaan_base 38.53,56.17 |c |noway |q Messages Across Tamriel##0163056/2 |future
 step
 goto mournhold_base 23.60,67.50
 .click Mages Guild##0093007
-goto 23.35,67.38
+.' Enter the Mages Guild |goto 23.35,67.38 |c |noway |q Messages Across Tamriel##0163056/2 |future
 step
 goto 23.50,64.67
-.talk Thrush##0103521 |q Messages Across Tamriel##0163056/2/1/Wait for Vanus Galerion##1
+.talk Thrush##0103521 |q Messages Across Tamriel##0163056/1
+.' Wait for Vanus Galerion |q Messages Across Tamriel##0163056/2
 step
-goto mournhold_base 24.65,64.67
+goto mournhold_base 24.86,64.84
 .talk Vanus Galerion##0103522 |q Messages Across Tamriel##0163056/3/1/Talk to Vanus Galerion##1
 step
 goto 24.54,64.52
 .click Portal to Alliance Capital##0103182
-goto Grahtwood 57.10,47.86
+.' Take the portal to the Alliance Capital |goto Grahtwood 57.10,47.86 |c |noway |q Messages Across Tamriel##0163056/5 |future
 step
-goto 57.10,47.86 |q Messages Across Tamriel##0163056/5/1/Receive Introduction##1
+goto 57.10,47.86
+.' Receive an introduction |q Messages Across Tamriel##0163056/5/1/Receive Introduction##1
 step
 goto 57.10,47.86
 .talk Queen Ayrenn##1803002 |q Messages Across Tamriel##0163056/6/1/Talk to the Alliance Leader##1
 step
-goto 57.10,47.86
+.' Standing nearby
 .talk Vanus Galerion##0103522 |q Messages Across Tamriel##0163056/7/1/Talk to Vanus Galerion##1
 step
-goto 57.10,47.86
+.' Go to the opposite end of the room
 .click Portal to Alliance Capital##0103182
-goto Wayrest 40.50,43.46
+.' Take the portal to Wayrest |goto Wayrest 40.50,43.46 |c |noway |q Messages Across Tamriel##0163056 |future
 step
-goto 40.50,43.46 |q Messages Across Tamriel##0163056/5/1/Receive Introduction##1
+.' Go to Vanus, who is standing next to the High King Emeric
+.' Receive and Introduction |q Messages Across Tamriel##0163056/5/1/Receive Introduction##1
 step
-goto 40.50,43.46
+.' He is standing near the throne
 .talk High King Emeric##0043003 |q Messages Across Tamriel##0163056/8/1/Talk to the Alliance Leader##1
 step
-goto 40.50,43.46
+.' Standing nearby
 .talk Vanus Galerion##0103522 |q Messages Across Tamriel##0163056/9/1/Talk to Vanus Galerion##1
 step
-goto 40.50,43.46
+.' Go to the portal at the opposite end of the room
 .click Portal to Alliance Capital##0103182
-goto mournhold_base 42.97,81.86
+.' Take the portal to Mournhold |goto mournhold_base 42.97,81.86 |c |noway |q Messages Across Tamriel##0163056 |future
 step
 goto 43.45,82.53
 ..turnin Messages Across Tamriel##0163056
 ..accept The Weight of Three Crowns##0103056
 step
-goto 43.56,82.49 |q The Weight of Three Crowns##0103056/1/1/Wait for Portal##1
-step
 goto 43.56,82.49
-.click Portal to Stirk##0103183
-goto Stirk 23.15,29.94 |q The Weight of Three Crowns##0103056/2/1/Enter Portal to Stirk##1
+.' Wait for the Portal |q The Weight of Three Crowns##0103056/1
+.click Portal to Stirk##0042123
+.' Enter the Portal to Stirk |q The Weight of Three Crowns##0103056/2
 step
-goto 23.29,30.16
-.talk Vanus Galerion##0103522 |q The Weight of Three Crowns##0103056/3/1/Talk to Vanus Galerion##1
+goto stirk_base 23.51,30.40
+.talk Vanus Galerion##0582020 |q The Weight of Three Crowns##0103056/3
 step
-goto 31.39,43.62
-.talk Lady Clarisse Laurent##3243002 |q The Weight of Three Crowns##0103056/4/2/Meet Lady Laurent##1
+goto 28.46,40.26
+.' Follow the path |goto 28.46,40.26 < 10 |c |noway |q The Weight of Three Crowns##0103056/4 |future
 step
-goto 31.93,49.43
-.talk Telenger the Artificer##3243005 |q The Weight of Three Crowns##0103056/4/3/Meet Telenger##1
+goto 37.07,55.28
+.' Follow the path |goto 37.07,55.28 < 10 |c |noway |q The Weight of Three Crowns##0103056/4 |future
 step
-goto 29.87,55.92
-.talk Captain Alphaury##3243008 |q The Weight of Three Crowns##0103056/4/4/Meet Captain Alphaury##1
+goto 46.51,55.23
+.' Go to Summit Point |q The Weight of Three Crowns##0103056/4
 step
-goto 44.92,55.34 |q The Weight of Three Crowns##0103056/4/1/Go to Summit Point##1
+goto 47.00,55.34
+.' Watch the dialogue
+.' Listen to the Alliance Leaders |q The Weight of Three Crowns##0103056/5
 step
-goto 46.48,55.36 |q The Weight of Three Crowns##0103056/5/1/Listen to the Alliance Leaders##1
+goto 46.52,55.91
+.talk Vanus Galerion##1792292 |q The Weight of Three Crowns##0103056/6/1/Talk to Vanus Galerion##1
 step
-goto 46.41,55.28
-.talk countess Hakruba##0153143 |q The Weight of Three Crowns##0103056/6/1/Talk to countess Hakruba##2
+goto 46.47,54.71
+.talk Countess Hakruba##0112300 |q The Weight of Three Crowns##0103056/6/1/Talk to Countess Hakruba##2
 step
-goto 46.42,55.40
-.talk Vanus Galerion##0103522 |q The Weight of Three Crowns##0103056/6/1/Talk to Vanus Galerion##1
+goto 47.75,52.26
+.' Follow the path |goto 47.75,52.26 < 10 |c |noway |q The Weight of Three Crowns##0103056/7 |future
 step
-goto 47.82,63.35
-.talk Jorunn the Skald-King##0153174 |q The Weight of Three Crowns##0103056/7/2/Talk to Jorunn Skald-King##3
+goto 49.52,45.40
+.talk High King Emeric##3512001 |q The Weight of Three Crowns##0103056/7/2/Talk to High King Emeric##1 |tip Persuade him
 step
-goto 57.12,54.98
-.talk Queen Ayrenn##1803002 |q The Weight of Three Crowns##0103056/7/2/Talk to Queen Ayrenn##2
+goto 51.00,55.25
+.' Follow the path |goto 51.00,55.25 < 10 |c |noway |q The Weight of Three Crowns##0103056/7 |future
 step
-goto 49.36,45.93
-.talk High King Emeric##0043003 |q The Weight of Three Crowns##0103056/7/2/Talk to High King Emeric##1
+goto 57.54,54.86
+.talk Queen Ayrenn##1782057 |q The Weight of Three Crowns##0103056/7/2/Talk to Queen Ayrenn##2 |tip Intimidate her
 step
-goto Stirk 47.88,54.84
-.talk Vanus Galerion##0103522 |q The Weight of Three Crowns##0103056/8/1/Talk to Vanus Galerion##1
+goto 47.92,58.42
+.' Follow the path |goto 47.92,58.42 < 10 |c |noway |q The Weight of Three Crowns##0103056/7 |future
 step
-goto 59.34,54.52
-.click Unstable Rift##3243001 |q The Weight of Three Crowns##0103056/9/1/Close the Unstable Rifts##1
+goto 47.82,63.81
+.talk Jorunn the Skald-King##3502005
+.' Talk to the Alliance Leaders |q The Weight of Three Crowns##0103056/7
 step
-goto 49.76,43.73
-.click Unstable Rift##3243001 |q The Weight of Three Crowns##0103056/9/1/Close the Unstable Rifts##1
+goto 47.53,55.40
+.talk Vanus Galerion##1792292 |q The Weight of Three Crowns##0103056/8
+.' Watch the dialogue
 step
-goto 47.75,66.77
-.click Unstable Rift##3243001 |q The Weight of Three Crowns##0103056/9/1/Close the Unstable Rifts##1
+goto 47.75,52.26
+.' Follow the path |goto 47.75,52.26 < 10 |c |noway |q The Weight of Three Crowns##0103056 |future
 step
-goto 49.67,55.80
-.talk Vanus Galerion##0103522 |q The Weight of Three Crowns##0103056/10/1/Talk to Vanus Galerion##1
+goto 49.82,43.51
+.kill Bitterwind##3242016
+.click Unstable Rift##3242001
+.' Close the Unstable Rift |q The Weight of Three Crowns##0103056/9/1/Close the Unstable Rifts##1 |count 1
 step
-goto Stirk 66.14,54.65
-.click Portal Valley##3243002
-goto 67.87,54.64 |q The Weight of Three Crowns##0103056/11/1/Enter the Portal Valley##1
+goto 51.00,55.25
+.' Follow the path |goto 51.00,55.25 < 10 |c |noway |q The Weight of Three Crowns##0103056 |future
 step
-goto 78.29,68.67
-.talk Vanus Galerion##0103522 |q The Weight of Three Crowns##0103056/12/1/Talk to Vanus Galerion##1
+goto 59.71,54.55
+.kill Ra'Lorka##3242018
+.click Unstable Rift##3242001
+.' Close the Unstable Rift |q The Weight of Three Crowns##0103056/9/1/Close the Unstable Rifts##1 |count 2
+step
+goto 47.92,58.42
+.' Follow the path |goto 47.92,58.42 < 10 |c |noway |q The Weight of Three Crowns##0103056 |future
+step
+goto 47.59,67.03
+.kill Sormorask##3242019
+.click Unstable Rift##3242001
+.' Close the Unstable Rift |q The Weight of Three Crowns##0103056/9/1/Close the Unstable Rifts##1 |count 3
+step
+goto 49.69,55.61
+.talk Vanus Galerion##1792292 |q The Weight of Three Crowns##0103056/10
+.' Watch the dialogue
+step
+goto 66.83,54.67
+.click Portal Valley##3242002
+.' Enter the Portal Valley |goto 67.88,54.64 < 10 |c |noway |q The Weight of Three Crowns##0103056 |future
+step
+goto 72.96,56.28
+.' Follow the path |goto 72.96,56.28 < 10 |c |noway |q The Weight of Three Crowns##0103056 |future
+step
+goto 78.47,68.37
+.' Enter the Portal Valley |q The Weight of Three Crowns##0103056/11
+step
+goto 78.47,68.37
+.talk Vanus Galerion##1792292 |q The Weight of Three Crowns##0103056/12
 step
 goto 79.62,68.65
 .click Portal to Coldharbour##0453001
 goto Coldharbour 52.07,77.37 |q The Weight of Three Crowns##0103056/14/1/Take Portal to Coldharbour##1 |next Ebonheart Pact Leveling Guides\\Coldharbour (42-50)
-step
-goto 54.18,50.25
-.click The Withered Tree##0163094
-.' Enter The Withered Tree |goto 54.17,49.63 |c |noway
-step
-goto 56.02,47.53
-.talk Wilrek Snow-Shod##0163315
-..turnin Shadow of Sancre Tor##0163046
 ]])
 ZGV:RegisterGuide("Ebonheart Pact Leveling Guides\\Coldharbour (42-50)",[[
-startlevel 42
-endlevel 50
 step
 goto Coldharbour 52.09,77.35
 .talk Cadwell##3363010

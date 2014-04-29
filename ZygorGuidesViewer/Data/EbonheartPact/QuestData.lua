@@ -407,4 +407,6 @@ News of Fallen Kin=2163001
 The Anguish Gem=2173001
 
 To Honrich Tower=2233001
+
+Honrich Tower=3241002
 ]]

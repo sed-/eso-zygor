@@ -3,99 +3,102 @@ if not ZGV then return end
 if ZGV:DoMutex("LevelingDC") then return end
 if ZGV.Utils.GetFaction() ~= "DC" then return end
 ZGV:RegisterGuide("Daggerfall Covenant Leveling Guides\\Stros M'Kai (3-7)",[[
-startlevel 3
-endlevel 7
 step
-.' Save 2 extra skill points, don't spend them yet
-.' You'll be able to invest them into the Intimidate and Persuade skills soon, which will save you a lot of gold and time on certain quests coming up soon.
-|confirm
+'Save 2 extra skill points, don't spend them yet
+.' You'll be able to invest them into the Intimidate and Persuade skills soon, which will save you a lot of time on certain quests as you level.
+.' Skip to the next step in the guide |confirm
+|only Daggerfall Covenant
 step
 goto daggerfall_base 68.31,61.29
 .click Daggerfall##0022003
-.' Leave the house |goto daggerfall_base 68.19,61.48 < 1 |c |noway |q The Broken Spearhead##2922001/1 |future
+.' Leave the house |goto daggerfall_base 68.19,61.48 < 1 |c |noway |complete if dist() > 15 or completedquest("The Broken Spearhead##2922001/1")
 step
 goto 65.99,63.88
 .talk Mihayya##0022408
 ..accept The Broken Spearhead##2922001
 step
 goto 69.79,65.10
-.' Follow the path |goto 69.79,65.10 < 10 |c |noway |q The Broken Spearhead##2922001/1
+.' Follow the path |goto 69.79,65.10 < 10 |c |noway |complete if dist() > 50 or completedquest("The Broken Spearhead##2922001/1")
 step
 goto 71.64,71.50
-.' Follow the path all the way down |goto 71.64,71.50 < 10 |c |noway |q The Broken Spearhead##2922001/1
+.' Follow the path all the way down |goto 71.64,71.50 < 10 |c |complete if dist() > 80 or completedquest("The Broken Spearhead##2922001/1")
 step
 goto 72.82,94.00
 .talk Gilzir##0022410
-.' Talk to the Boatswain |q The Broken Spearhead##2922001/1/1/Talk to the Boatswain##1
+.' Talk to the Boatswain |q The Broken Spearhead##2922001/1
 step
 goto porthunding_base 30.14,68.34
-.talk Captain Kaleen##2922005 |q The Broken Spearhead##2922001/2/1/Talk to Captain Kaleen##1
+.talk Captain Kaleen##2922005 |q The Broken Spearhead##2922001/2
 step
 goto 30.14,68.34
-.talk Captain Kaleen##2922005 |q The Broken Spearhead##2922001/3/1/Talk to Captain Kaleen##1
-..' Ask about _Crafty Lerisa_, then tell her you will look for her
-.' Look for Lerisa, Jakarn, or Neramo |q The Broken Spearhead##2922001/4/1/Look for Lerisa, Jakarn, or Neramo##1
+.talk Captain Kaleen##2922005 |q The Broken Spearhead##2922001/3
+..' Tell her _"Who's Crafty Lerisa"_
+..' Tell her _"I'll look for Lerisa. How do I find her?"_
+.' Choose to Look for Lerisa |q The Broken Spearhead##2922001/4
 step
-goto strosmkai_base 63.30,41.58
+goto 43.70,49.37
 .talk Irien##2922046
 ..accept Innocent Scoundrel##2922008
 step
-goto 62.74,39.54
-.' Enter the cave |goto 62.74,39.54 < 10 |c |noway |q Innocent Scoundrel##2922008/9 |future
+goto strosmkai_base 63.18,40.22
+.' Follow the path |goto porthunding_base 43.77,45.87 < 30 |c |noway |q Innocent Scoundrel##2922008/8 |future
 step
-goto 64.16,37.95
+goto porthunding_base 42.71,44.28
+.' Enter the cave |goto strosmkai_base 62.74,39.54 < 30 |c |noway |q Innocent Scoundrel##2922008/8 |future
+step
+goto strosmkai_base 64.16,37.95
 .click The Grave##2922047
-.' Enter the Grave |q Innocent Scoundrel##2922008/1/1/Enter the Grave##1
+.' Enter the Grave |goto thegrave_base 36.15,90.63 < 1 |c |noway |q Innocent Scoundrel##2922008/8 |future
 step
 goto thegrave_base 36.55,52.67
-.' Follow the path up, avoid traps |goto thegrave_base 36.55,52.67 < 5 |c |noway |q Innocent Scoundrel##2922008/2
+.' Follow the path up |goto thegrave_base 36.55,52.67 < 5 |c |noway |q Innocent Scoundrel##2922008/5 |future
 step
 goto 42.92,49.15
-.' Follow the path, avoid traps |goto 42.92,49.15 < 5 |c |noway |q Innocent Scoundrel##2922008/2
+.' Follow the path |goto 42.92,49.15 < 5 |c |noway |q Innocent Scoundrel##2922008/5 |future
 step
 goto 62.45,22.86
-.' Follow the path down |goto 62.45,22.86 < 5 |c |noway |q Innocent Scoundrel##2922008/2
+.' Follow the path down |goto 62.45,22.86 < 5 |c |noway |q Innocent Scoundrel##2922008/5 |future
 step
 goto 32.15,44.78
-.' Follow the path |goto 32.15,44.78 < 5 |c |noway |q Innocent Scoundrel##2922008/2
+.' Follow the path |goto 32.15,44.78 < 5 |c |noway |q Innocent Scoundrel##2922008/5 |future
 step
 goto 47.45,44.68
-.' Find Jakarn |q Innocent Scoundrel##2922008/2/1/Find Jakarn##1
+.' Find Jakarn |q Innocent Scoundrel##2922008/2
 step
 goto 47.54,44.50
-.talk Jakarn##2922057 |q Innocent Scoundrel##2922008/3/1/Talk to Jakarn##1
+.talk Jakarn##2922057 |q Innocent Scoundrel##2922008/3
 step
 goto 47.54,44.50
 .click Cell Door##2922055
-.' Free Jakarn |q Innocent Scoundrel##2922008/4/1/Free Jakarn##1
+.' Free Jakarn |q Innocent Scoundrel##2922008/4
 step
 goto 32.36,44.23
-.' Follow Jakarn |q Innocent Scoundrel##2922008/5/1/Follow Jakarn##1
+.' Follow Jakarn |q Innocent Scoundrel##2922008/5
 step
 goto 36.35,23.07
-.' Follow the path |goto 36.35,23.07 < 5 |c |noway |q Innocent Scoundrel##2922008/6
+.' Follow the path |goto 36.35,23.07 < 5 |c |noway |q Innocent Scoundrel##2922008/7 |future
 step
 goto 64.91,25.34
-.' Follow the path |goto 64.91,25.34 < 5 |c |noway |q Innocent Scoundrel##2922008/6
+.' Follow the path |goto 64.91,25.34 < 5 |c |noway |q Innocent Scoundrel##2922008/7 |future
 step
 goto 36.11,55.99
-.' Follow the path |goto 36.11,55.99 < 5 |c |noway |q Innocent Scoundrel##2922008/6
+.' Follow the path |goto 36.11,55.99 < 5 |c |noway |q Innocent Scoundrel##2922008/7 |future
 step
 goto 35.22,81.06
-.' Exit the Grave |q Innocent Scoundrel##2922008/6/1/Exit the Grave##1
+.' Exit the Grave |q Innocent Scoundrel##2922008/6
 step
 goto 34.03,85.02
-.talk Jakarn##2922057 |q Innocent Scoundrel##2922008/7/1/Talk to Jakarn##1
+.talk Jakarn##2922057 |q Innocent Scoundrel##2922008/7
 step
 goto 43.82,69.58
-.' Follow the path |goto 43.82,69.58 < 10 |c |noway |q Innocent Scoundrel##2922008/8
+.' Follow the path |goto 43.82,69.58 < 5 |c |noway |q Innocent Scoundrel##2922008/8 |future
 step
 goto 67.13,71.04
 .click Stros M'Kai##2922001
-.' Use the Side Exit |q Innocent Scoundrel##2922008/8/1/Use the Side Exit##1
+.' Use the Side Exit |q Innocent Scoundrel##2922008/8
 step
 goto strosmkai_base 83.85,31.16
-.talk Jakarn##2922057 |q Innocent Scoundrel##2922008/9/1/Talk to Jakarn##1
+.talk Jakarn##2922057 |q Innocent Scoundrel##2922008/9
 step
 goto 82.95,21.98
 .talk Gugnir##2922058
@@ -106,7 +109,7 @@ goto 84.86,21.68
 ..accept Sphere Assembly##2922002
 step
 goto 83.74,12.29
-.' Follow the path |goto 83.74,12.29 < 10 |c |noway |q Tarnish the Crown##2922011/1
+.' Follow the path |goto 83.74,12.29 < 10 |c |noway |complete if dist() > 200 or completedquest("Dead Man's Wrist##2922014/1")
 step
 goto 85.88,11.25
 .wayshrine Sandy Grotto
@@ -116,56 +119,57 @@ goto 79.71,12.86
 ..accept Dead Man's Wrist##2922014
 step
 goto 80.98,12.28
-.' Leave the cave |goto 80.98,12.28 < 5 |c |noway |q Tarnish the Crown##2922011/1
+.' Leave the cave |goto 80.98,12.28 < 5 |c |noway |complete if dist() > 40 or completedquest("Dead Man's Wrist##2922014/1")
 step
 goto 79.87,14.99
-.' Jump into the small passage here |goto 79.87,14.99 < 5 |c |noway |q Tarnish the Crown##2922011/1
+.' Follow the path |goto 79.87,14.99 < 5 |c |noway |complete if dist() > 70 or completedquest("Dead Man's Wrist##2922014/1")
 step
 goto 73.70,17.90
-.' Follow the path |goto 73.70,17.90 < 10 |c |noway |q Tarnish the Crown##2922011/1
+.' Follow the path |goto 73.70,17.90 < 10 |c |noway |q Tarnish the Crown##2922011/1 |future
 step
 goto 69.26,17.24
 .kill King Demog##2922062
-.' Kill King Demog and Take His Crown |q Tarnish the Crown##2922011/1/1/Kill King Demog and Take His Crown##1
+.' Kill King Demog and Take His Crown |q Tarnish the Crown##2922011/1
 step
 goto 71.87,18.12
-.' Follow the path |goto 71.87,18.12 < 10 |c |noway |q Innocent Scoundrel##2922008/10
+.' Follow the path |goto 71.87,18.12 < 10 |c |noway |complete if dist() > 70 or completedquest("Innocent Scoundrel##2922008/10")
 step
 goto 74.18,16.58
-.' Follow the path |goto 74.18,16.58 < 10 |c |noway |q Innocent Scoundrel##2922008/10
+.' Follow the path |goto 74.18,16.58 < 10 |c |noway |q Innocent Scoundrel##2922008/16 |future
 step
 goto 73.47,14.78
 .click Goblin Mine##2922056
-.' Reach the Goblin Mine |q Innocent Scoundrel##2922008/10/1/Reach Goblin Mine##1
-.' Wait for Jakarn |q Innocent Scoundrel##2922008/11/1/Wait for Jakarn##1
+.' Enter the Goblin Mine |goto goblinminesstart_base 59.25,83.86 < 1 |c |noway |q Innocent Scoundrel##2922008/16 |future
 step
-goto goblinminesstart_base 54.70,53.81
-.' Follow the path |goto goblinminesstart_base 54.70,53.81 < 5 |c |noway |q Innocent Scoundrel##2922008/12
+goto goblinminesstart_base 59.25,83.86
+.' Wait for Jakarn |q Innocent Scoundrel##2922008/11
+step
+goto 54.70,53.81
+.' Follow the path |goto 54.70,53.81 < 5 |c |noway |q Innocent Scoundrel##2922008/16 |future
 step
 goto 36.34,34.82
-.' Follow the path up |goto 36.34,34.82 < 5 |c |noway |q Innocent Scoundrel##2922008/12
+.' Follow the path up |goto 36.34,34.82 < 5 |c |noway |q Innocent Scoundrel##2922008/16 |future
 step
 goto 12.54,63.98
 .click Stros M'Kai##2922001
-.' Reach the Upper level of the Mine |q Innocent Scoundrel##2922008/12/1/Reach Upper Level of Mine##1
+.' Enter the Upper Level of the Mine |goto strosmkai_base 69.99,14.36 < 1 |c |noway |q Innocent Scoundrel##2922008/16 |future
 step
 goto strosmkai_base 67.85,15.98
-.' Keep running into the mine
-.' Enter the Goblin Mines |goto goblinminesend_base 94.10,49.30 < 20 |c |noway |q Innocent Scoundrel##2922008/13
+.' Follow the path |goto goblinminesend_base 94.10,49.30 < 20 |c |noway |q Innocent Scoundrel##2922008/16 |future
 step
-goto 63.23,33.10
-.' Follow the path down |goto 63.23,33.10 < 5 |c |noway |q Innocent Scoundrel##2922008/13
+goto goblinminesend_base 63.23,33.10
+.' Follow the path down |goto 63.23,33.10 < 5 |c |noway |q Innocent Scoundrel##2922008/16 |future
 step
 goto 38.57,32.08
-.talk Jakarn##2922057 |q Innocent Scoundrel##2922008/13/1/Talk to Jakarn##1
+.talk Jakarn##2922057 |q Innocent Scoundrel##2922008/13
 step
 goto 37.08,33.38
 .click Goblin Mine##2922056
-.' Enter the Storage Room  |q Innocent Scoundrel##2922008/14/1/Enter Storage Room##1
+.' Enter the Storage Room |goto 36.83,41.83 < 1 |c |noway |q Innocent Scoundrel##2922008/16 |future
 step
 goto 16.04,50.19
 .click Jakarn's Treasure##2922057
-.' Retrieve Jakarn's Treasure |q Innocent Scoundrel##2922008/15/1/Retrieve Jakarn's Treasure##1
+.' Retrieve Jakarn's Treasure |q Innocent Scoundrel##2922008/15
 step
 goto 39.24,61.02
 .' Follow the path up |goto 39.24,61.02 < 5 |c |noway |q Innocent Scoundrel##2922008/16
@@ -175,13 +179,13 @@ goto 49.00,73.52
 .' Find the Other Mine Exit |q Innocent Scoundrel##2922008/16/2/Find Other Mine Exit##1
 step
 goto strosmkai_base 61.49,21.77
-.' Jump down here |goto strosmkai_base 61.49,21.77 < 5 |c |noway |q Innocent Scoundrel##2922008/16
+.' Jump down here |goto strosmkai_base 61.49,21.77 < 10 |c |noway |q Innocent Scoundrel##2922008/16 |future
 step
 goto 60.95,24.16
 .' Find Jakarn |q Innocent Scoundrel##2922008/16/1/Find Jakarn##1
 step
 goto 60.79,24.49
-.talk Moglurkgul##2922047 |q Innocent Scoundrel##2922008/17/1/Talk to Moglurkgul##1
+.talk Moglurkgul##2922047 |q Innocent Scoundrel##2922008/17
 ..' Tell her _"Well, I did find this gem..."_
 step
 goto 59.64,26.76
@@ -193,48 +197,52 @@ goto 55.67,29.04
 ..accept Goblin Marq##2922012
 step
 goto 49.22,28.75
-.' Follow the path |goto 49.22,28.75 < 10 |c |noway |q Goblin Marq##2922012/1
+.' Follow the path |goto 49.22,28.75 < 10 |c |noway |q Goblin Marq##2922012/2 |future
 step
 goto 45.82,28.22
 .click Marq's Special Brew##2922058
-.' Find Marq's Special Brew |q Goblin Marq##2922012/1/1/Find Marq's Special Brew##1
+.' Find Marq's Special Brew |q Goblin Marq##2922012/1
 step
 goto 43.73,25.85
-.talk Goblin Marq##2922066 |q Goblin Marq##2922012/2/1/Talk to Goblin Marq##1
+.talk Goblin Marq##2922066 |q Goblin Marq##2922012/2
 step
 goto 49.22,28.75
-.' Follow the path |goto 49.22,28.75 < 10 |c |noway |q Goblin Marq##2922012
+.' Follow the path |goto 49.22,28.75 < 10 |c |noway |complete if dist() > 135 or completedquest("Goblin Marq##2922012")
 step
 goto 55.67,29.04
 .talk Grubby Grunyun##2922065
 ..turnin Goblin Marq##2922012
 step
 goto 51.29,36.16
-.' Follow the path |goto porthunding_base 15.38,36.30 < 20 |c |noway |q Moment of Truth##2922010/1 |future
+.' Follow the path |goto porthunding_base 15.38,36.30 < 20 |c |noway |complete if dist("strosmkai_base",51.29,36.16) > 180 or completedquest("Moment of Truth##2922010/1")
 step
 goto porthunding_base 11.97,42.72
-.' Follow the path |goto strosmkai_base 49.84,38.90 < 20 |c |noway |q Moment of Truth##2922010/1 |future
+.' Follow the path |goto strosmkai_base 49.84,38.90 < 20 |c |noway |complete if dist("porthunding_base",11.97,42.72) > 35 or completedquest("Moment of Truth##2922010/1")
 step
 goto strosmkai_base 46.74,43.89
-.' Follow the path |goto strosmkai_base 46.74,43.89 < 10 |c |noway |q Moment of Truth##2922010/1 |future
+.' Follow the path |goto strosmkai_base 46.74,43.89 < 10 |c |noway |complete if dist() > 130 or completedquest("Moment of Truth##2922010/1")
 step
 goto 41.56,40.91
 .talk Dugroth##2922049
 ..accept Moment of Truth##2922010
 step
 goto 34.80,38.03
-.' Help Dugroth Find His Sword |q Moment of Truth##2922010/1/1/Help Dugroth Find His Sword##1
+.' Help Dugroth Find His Sword |q Moment of Truth##2922010/1
 step
 goto 30.41,37.42
 .click Sword##2922048
-.' Recover Dugroth's Sword |q Moment of Truth##2922010/2/1/Recover Dugroth's Sword##1
+.' Recover Dugroth's Sword |q Moment of Truth##2922010/2
 step
 goto 34.34,38.49
-.talk Dugroth##2922049 |q Moment of Truth##2922010/3/1/Talk to Dugroth##1
+.talk Dugroth##2922049 |q Moment of Truth##2922010/3
 step
 goto 32.62,33.39
-.' Kill Deathfang with Dugroth |q Moment of Truth##2922010/4/1/Kill Deathfang with Dugroth##1
-.' Kill Deathfang without Dugroth |q Moment of Truth##2922010/5/1/Kill Deathfang without Dugroth##1
+.' Kill Deathfang with Dugroth |q Moment of Truth##2922010/4
+.' Kill Deathfang without Dugroth |q Moment of Truth##2922010/5
+step
+goto 33.39,33.27
+.click Sword##3360021
+.' Collect Dugroth's Sword |q Moment of Truth##2922010/6
 step
 goto 36.16,36.64
 .talk Dugroth##2922049
@@ -246,98 +254,98 @@ goto 40.79,45.03
 ..accept Buried Secrets##2922006
 step
 goto 40.20,50.84
-.talk Neramo##2922038 |q Buried Secrets##2922006/1/1/Talk to Neramo##1
+.talk Neramo##2922038 |q Buried Secrets##2922006/1
 step
 goto 39.46,44.87
-.' Follow the path up |goto 39.46,44.87 < 15 |c |noway |q Buried Secrets##2922006/2
+.' Follow the path up |goto 39.46,44.87 < 30 |c |noway |q Buried Secrets##2922006/2 |future
 step
 goto 33.23,41.02
-.' Enter the building |goto 33.23,41.02 < 5 |c |noway |q Buried Secrets##2922006/2
+.' Enter the building |goto 33.23,41.02 < 10 |c |noway |q Buried Secrets##2922006/2 |future
+step
+goto 33.03,40.29
+.' Follow the path up |goto 33.03,40.29 < 5 |c |noway |q Buried Secrets##2922006/2 |future
 step
 goto 32.51,40.21
-.' Go upstairs
 .click Secondary Focusing Crystal##2922021
 .' Collect the Secondary Focusing Crystal |q Buried Secrets##2922006/2/1/Collect Secondary Focusing Crystal##2
 step
 goto 33.23,41.02
-.' Leave the building |goto 33.23,41.02 < 5 |c |noway |q Buried Secrets##2922006/2
+.' Leave the building |goto 33.23,41.02 < 10 |c |noway |q Buried Secrets##2922006/2 |future
 step
 goto 34.84,48.26
-.' Follow the path |goto 34.84,48.26 < 10 |c |noway |q Buried Secrets##2922006/2
+.' Follow the path |goto 34.84,48.26 < 10 |c |noway |q Buried Secrets##2922006/2 |future
 step
 goto 31.70,52.15
-.' Follow the path |goto 31.70,52.15 < 10 |c |noway |q Buried Secrets##2922006/2
+.' Follow the path |goto 31.70,52.15 < 10 |c |noway |q Buried Secrets##2922006/2 |future
 step
 goto 29.11,51.44
 .click Primary Focusing Crystal##2922022
 .' Collect the Primary Focusing Crystal |q Buried Secrets##2922006/2/1/Collect Primary Focusing Crystal##1
 step
 goto 31.35,52.43
-.' Follow the path |goto 31.35,52.43 < 10 |c |noway |q Buried Secrets##2922006/3
+.' Follow the path |goto 31.35,52.43 < 10 |c |noway |complete if dist() > 60 or completedquest("Buried Secrets##2922006/3")
 step
 goto 32.66,47.51
 .' Enter the building |goto 32.66,47.51 < 5 |c |noway |q Buried Secrets##2922006/3
 step
 goto 29.73,46.18
-.talk Neramo##2922038 |q Buried Secrets##2922006/3/1/Talk to Neramo at Entrance##1
-step
-goto 29.56,46.07
+.talk Neramo##2922038 |q Buried Secrets##2922006/3
 .' Watch the dialogue
-.' Observe Neramo's Experiment |q Buried Secrets##2922006/4/1/Observe Neramo's Experiment##1
+.' Observe Neramo's Experiment |q Buried Secrets##2922006/4
 step
 goto 29.01,45.80
 .click Bthzark##2922023
-.' Enter Bthzark |q Buried Secrets##2922006/5/1/Enter Bthzark##1
+.' Enter Bthzark |goto bthzark_base 61.01,12.11 < 1 |c |noway |q Buried Secrets##2922006/12 |future
 step
 goto bthzark_base 55.80,11.71
-.talk Neramo##2922038 |q Buried Secrets##2922006/6/1/Talk to Neramo##1
+.talk Neramo##2922038 |q Buried Secrets##2922006/6
 step
 goto 54.47,32.48
-.' Follow the path |goto 54.47,32.48 < 10 |c |noway |q Buried Secrets##2922006/7
+.' Follow the path |goto 54.47,32.48 < 10 |c |noway |q Buried Secrets##2922006/7 |future
 step
 goto 74.37,32.55
 .' Use Neramo's Control Rod
 .' Repair the Eastern Generator |q Buried Secrets##2922006/7/1/Repair the Eastern Generator##1
 step
 goto 65.49,45.10
-.' Follow the path |goto 65.49,45.10 < 10 |c |noway |q Buried Secrets##2922006/7
+.' Follow the path |goto 65.49,45.10 < 10 |c |noway |q Buried Secrets##2922006/7 |future
 step
 goto 30.35,48.57
 .' Use Neramo's Control Rod
 .' Repair the Western Generator |q Buried Secrets##2922006/7/1/Repair the Western Generator##2
 step
 goto 47.94,43.92
-.talk Neramo##2922038 |q Buried Secrets##2922006/8/1/Speak with Neramo in the Central Chamber##1
+.talk Neramo##2922038 |q Buried Secrets##2922006/8
 step
 goto 48.43,50.76
 .click Inner Bthzark##2922025
-.' Enter Inner Bthzark |goto 48.32,53.85 < 1 |c |noway |q Buried Secrets##2922006/9
+.' Enter Inner Bthzark |goto 48.32,53.85 < 1 |c |noway |q Buried Secrets##2922006/12 |future
 step
 goto 48.29,67.06
-.' Enter the Assembly Chamber |q Buried Secrets##2922006/9/1/Enter the Assembly Chamber##1
+.' Enter the Assembly Chamber |q Buried Secrets##2922006/9
 step
 goto 49.34,85.80
 .click Drivas' Journal (Partial)##2922037
-.' Read the Dead Man's Journal |q Buried Secrets##2922006/10/2/Read the Dead Man's Journal##1
+.' Read the Dead Man's Journal |q Buried Secrets##2922006/10
 step
 goto 61.02,92.44
 .click Stros M'Kai##2922001
-.' Leave Bthzark |goto strosmkai_base 27.08,57.41 < 1 |c |noway |q Buried Secrets##2922006/11
+.' Leave Bthzark |goto strosmkai_base 27.08,57.41 < 1 |c |noway |q Buried Secrets##2922006/12 |future
 step
 goto strosmkai_base 29.69,65.65
 .' Sneak through the path |tip Avoid the metal circles on the ground.
 .click Bthzark Mine##2922042
-.' Sneak By Constructs (Left) |q Buried Secrets##2922006/11/2/Avoid Traps (Right) or Sneak By Constructs (Left)##1
+.' Enter Bthzark Mine |goto strosmkai_base 27.05,63.01 < 1 |c |noway |q Buried Secrets##2922006/12 |future
 step
 goto 27.10,66.47
 .click Dwemer Schematics##2922043
-.' Search for the Dwemer Schematics |q Buried Secrets##2922006/12/1/Search for Dwemer Schematics##1
+.' Search for the Dwemer Schematics |q Buried Secrets##2922006/12
 step
 goto 29.82,66.37
 .click Bthzark Mine##2922042
-.' Leave the Bthzark Mine |goto strosmkai_base 31.59,64.58 < 1 |c |noway |q Buried Secrets##2922006
+.' Leave the Bthzark Mine |goto 31.59,64.58 < 1 |c |noway |q Buried Secrets##2922006 |future
 step
-goto strosmkai_base 31.54,64.37
+goto 31.54,64.37
 .talk Neramo##2922038
 ..turnin Buried Secrets##2922006
 step
@@ -346,13 +354,13 @@ goto 40.47,63.39
 ..accept Last Night##2922005
 step
 goto 40.58,69.30
-.' Follow the path |goto 40.58,69.30 < 20 |c |noway |q Last Night##2922005/1
+.' Follow the path |goto 40.58,69.30 < 20 |c |noway |q Last Night##2922005/1 |future
 step
 goto 36.67,73.05
 .talk Shamal##2922052 |q Last Night##2922005/1/1/Find Shamal##2
 step
 goto 38.17,75.01
-.' Follow the path |goto 38.17,75.01 < 10 |c |noway |q Last Night##2922005/1
+.' Follow the path |goto 38.17,75.01 < 10 |c |noway |q Last Night##2922005/1 |future
 step
 goto 36.35,79.17
 .talk Iriana##2922053 |q Last Night##2922005/1/1/Find Iriana##1
@@ -361,7 +369,7 @@ goto 43.80,81.27
 .wayshrine Saintsport
 step
 goto 43.84,74.49
-.' Follow the road |goto 43.84,74.49 < 20 |c |noway |q Last Night##2922005
+.' Follow the road |goto 43.84,74.49 < 20 |c |noway |complete if dist() > 150 or completedquest("Last Night##2922005")
 step
 goto 40.07,63.90
 .' Watch the dialogue
@@ -372,21 +380,21 @@ goto 54.01,60.88
 .click Dwarven Part##2922011
 .' Collect a Dwarven Part |q Sphere Assembly##2922002/1/1/Collect Dwarven Parts##1 |count 3
 step
-.' Open your map:
+'Open your map:
 .' Click the Saintsport Wayshrine
-.' Travel to the Saintsport Wayshrine |goto 43.95,80.52 < 5 |c |noway |q The Broken Spearhead##2922001/5
+.' Travel to the Saintsport Wayshrine |goto 43.95,80.52 < 5 |c |noway |q The Broken Spearhead##2922001 |future
 step
 goto 46.07,75.98
-.' Follow the road |goto 46.07,75.98 < 10 |c |noway |q The Broken Spearhead##2922001/5
+.' Follow the road |goto 46.07,75.98 < 10 |c |noway |q The Broken Spearhead##2922001 |future
 step
 goto 53.92,81.06
-.' Enter the building |goto 53.92,81.06 < 5 |c |noway |q The Broken Spearhead##2922001/5
+.' Enter the building |goto 53.92,81.06 < 5 |c |noway |q The Broken Spearhead##2922001 |future
 step
 goto 54.77,80.27
-.' Follow the path |goto 54.77,80.27 < 5 |c |noway |q The Broken Spearhead##2922001/5
+.' Follow the path |goto 54.77,80.27 < 5 |c |noway |q The Broken Spearhead##2922001 |future
 step
 goto 54.17,80.20
-.' Find Howler |q The Broken Spearhead##2922001/5/1/Find Howler##1
+.' Find Howler |q The Broken Spearhead##2922001/5
 step
 goto 55.23,80.25
 .talk Crafty Lerisa##2922021
@@ -394,103 +402,110 @@ goto 55.23,80.25
 ..accept Like Moths to a Candle##2922003
 step
 goto 55.23,80.25
-.talk Crafty Lerisa##2922021 |q Like Moths to a Candle##2922003/1/1/Talk to Crafty Lerisa##1
+.talk Crafty Lerisa##2922021 |q Like Moths to a Candle##2922003/1
+step
+goto 55.16,80.53
+.click Seadrake Clothing##2922207
+.' Take a Sea Drake Uniform |q Like Moths to a Candle##2922003/2
 step
 goto 53.92,81.06
-.' Leave the building |goto 53.92,81.06 < 5 |c |noway |q Like Moths to a Candle##2922003/2
+.' Leave the building |goto 53.92,81.06 < 10 |c |noway |complete if dist() > 40 or completedquest("Like Moths to a Candle##2922003/3")
 step
 goto 49.23,82.49
-.' Enter the building |goto 49.23,82.49 < 5 |c |noway |q Like Moths to a Candle##2922003/2
+.' Enter the building |goto 49.23,82.49 < 10 |c |noway |q Like Moths to a Candle##2922003/3 |future
+step
+goto 48.29,83.12
+.' Follow the path up |goto 48.29,83.12 < 5 |c |noway |q Like Moths to a Candle##2922003/3 |future
 step
 goto 48.33,82.88
-.' Go upstairs
 .talk Mekag gro-Bug##2922023
-.' Release Mekag gro-Bug |q Like Moths to a Candle##2922003/2/1/Release Mekag gro-Bug##3
+.' Release Mekag gro-Bug |q Like Moths to a Candle##2922003/3/1/Release Mekag gro-Bug##3
+step
+goto 47.90,82.49
+.' Follow the path down |goto 47.90,82.49 < 5 |c |noway |q Like Moths to a Candle##2922003/3 |future
 step
 goto 49.23,82.49
-.' Go downstairs
-.' Leave the building |goto 49.23,82.49 < 5 |c |noway |q Like Moths to a Candle##2922003/2
+.' Leave the building |goto 49.23,82.49 < 10 |c |noway |q Like Moths to a Candle##2922003/3 |future
 step
 goto 51.92,76.62
-.' Enter the building |goto 51.92,76.62 < 5 |c |noway |q Like Moths to a Candle##2922003/2
+.' Enter the building |goto 51.92,76.62 < 10 |c |noway |q Like Moths to a Candle##2922003/3 |future
+step
+goto 51.20,75.47
+.' Follow the path up |goto 51.20,75.47 < 5 |c |noway |q Like Moths to a Candle##2922003/3 |future
 step
 goto 53.07,76.49
-.' Go upstairs
 .talk Haerdon##2922024
-.' Release Haerdon |q Like Moths to a Candle##2922003/2/1/Release Haerdon##2
+.' Release Haerdon |q Like Moths to a Candle##2922003/3/1/Release Haerdon##2
 step
 goto 54.79,77.02
-.' Enter the building |goto 54.79,77.02 < 5 |c |noway |q Like Moths to a Candle##2922003/2
+.' Enter the building |goto 54.79,77.02 < 10 |c |noway |q Like Moths to a Candle##2922003/3 |future
+step
+goto 55.84,76.40
+.' Follow the path up |goto 55.84,76.40 < 5 |c |noway |q Like Moths to a Candle##2922003/3 |future
 step
 goto 54.95,77.23
-.' Go upstairs
 .talk Crenard Dortene##2922025
-.' Release Crenard Dortene |q Like Moths to a Candle##2922003/2/1/Release Crenard Dortene##1
+.' Release Crenard Dortene |q Like Moths to a Candle##2922003/3/1/Release Crenard Dortene##1
 step
 goto 56.23,77.10
-.' Follow the path down |goto 56.23,77.10 < 5 |c |noway |q Like Moths to a Candle##2922003/3
+.' Follow the path down |goto 56.23,77.10 < 10 |c |noway |complete if dist() > 35 or completedquest ("Like Moths to a Candle##2922003/4")
 step
 goto 54.79,77.02
-.' Go downstairs
-.' Leave the building |goto 54.79,77.02 < 5 |c |noway |q Like Moths to a Candle##2922003/3
+.' Leave the building |goto 54.79,77.02 < 10 |c |noway |complete if dist() > 40 or completedquest ("Like Moths to a Candle##2922003/4")
 step
 goto 55.07,73.98
-.' Follow the path |goto 55.07,73.98 < 5 |c |noway |q Like Moths to a Candle##2922003/3
+.' Follow the path |goto 55.07,73.98 < 10 |c |noway |q Like Moths to a Candle##2922003/4 |future
 step
 goto 61.98,77.50
 .talk Crafty Lerisa##2922021
-.' Meet Lerisa |q Like Moths to a Candle##2922003/3/1/Meet Lerisa##1
+.' Meet Lerisa |q Like Moths to a Candle##2922003/4
 step
 goto 61.65,78.53
-.' Follow the path up |goto 61.65,78.53 < 5 |c |noway |q Like Moths to a Candle##2922003/4
+.' Follow the path up |goto 61.65,78.53 < 10 |c |noway |complete if dist() > 35 or completedquest ("Like Moths to a Candle##2922003/5")
 step
 goto 60.99,81.09
-.' Follow the path |goto 60.99,81.09 < 5 |c |noway |q Like Moths to a Candle##2922003/4
+.' Follow the path |goto 60.99,81.09 < 10 |c |noway |q Like Moths to a Candle##2922003/9 |future
 step
 goto 65.69,81.95
-.' Follow the path down |goto 65.69,81.95 < 5 |c |noway |q Like Moths to a Candle##2922003/4
+.' Follow the path down |goto 65.69,81.95 < 10 |c |noway |q Like Moths to a Candle##2922003/6 |future
 step
 goto 66.17,80.61
 .click Lockbox##2922005
-.' Get the Key to the Storeroom |q Like Moths to a Candle##2922003/4/1/Get Key to Storeroom##1
+.' Get the Key to the Storeroom |q Like Moths to a Candle##2922003/5
 step
 goto 65.60,83.38
 .click Bloody Witch Storeroom##2922006
-.' Enter the Bloody Witch Storeroom |goto 65.52,83.57 < 1 |c |noway |q Like Moths to a Candle##2922003/5
+.' Enter the Bloody Witch Storeroom |goto 65.52,83.57 < 1 |c |noway |q Like Moths to a Candle##2922003/6
 step
 goto 65.39,84.07
 .talk Deregor##2922026
-.' Save Deregor |q Like Moths to a Candle##2922003/5/1/Save Deregor##1
+.' Save Deregor |q Like Moths to a Candle##2922003/6
 step
 goto 65.56,83.49
 .click Bloody Witch Hold##2922007
-.' Leave the Bloody Witch Storeroom |goto 65.59,83.37 < 1 |c |noway |q Like Moths to a Candle##2922003/6
+.' Leave the Bloody Witch Storeroom |goto 65.59,83.37 < 1 |c |noway |complete if dist() > 20 or completedquest ("Like Moths to a Candle##2922003/7")
 step
 goto 65.90,81.51
-.' Follow the path up |goto 65.90,81.51 < 5 |c |noway |q Like Moths to a Candle##2922003/6
+.' Follow the path up |goto 65.90,81.51 < 5 |c |noway |complete if dist() > 50 or completedquest ("Like Moths to a Candle##2922003/7")
 step
 goto 65.39,81.92
-.' Follow the path |goto 65.39,81.92 < 5 |c |noway |q Like Moths to a Candle##2922003/6
+.' Follow the path |goto 65.39,81.92 < 5 |c |noway |q Like Moths to a Candle##2922003/9 |future
 step
 goto 66.36,80.87
 .click Captain Helane's Cabin##2922008
-.' Enter Captain Helane's Cabin |q Like Moths to a Candle##2922003/6/1/Enter Captain Helane's Cabin##1
+.' Enter Captain Helane's Cabin |goto 66.38,80.73 < 1 |c |noway |q Like Moths to a Candle##2922003/9 |future
 step
 goto 66.46,80.08
 .' Watch the dialogue
-.talk Crafty Lerisa##2922021 |q Like Moths to a Candle##2922003/7/1/Talk to Crafty Lerisa##1
+.talk Crafty Lerisa##2922021 |q Like Moths to a Candle##2922003/8
 step
 goto 66.38,80.75
 .click Bloody Witch Deck##2922010
-.' Leave (Let Helane Die) |q Like Moths to a Candle##2922003/8/1/Leave (Let Helane Die)##2
-step
-goto 66.37,80.75
-.click Bloody Witch Deck##2922010
-.' Leave Captain Helane's Cabin |goto 66.35,80.89 < 1 |c |noway |q Like Moths to a Candle##2922003
+.' Leave (Let Helane Die) |q Like Moths to a Candle##2922003/9
 step
 goto 66.53,79.08
 .' Go to the top of the ship
-.' Jump into the water here |goto 66.53,79.08 < 5 |c |noway |q Like Moths to a Candle##2922003
+.' Jump into the water here |goto 66.53,79.08 < 10 |c |noway |complete if dist() > 50 or completedquest ("Like Moths to a Candle##2922003")
 step
 goto 61.49,69.49
 .talk Crafty Lerisa##2922021
@@ -500,9 +515,10 @@ goto 61.27,69.23
 .talk Nicolene##2922012
 ..accept The Spearhead's Crew##2922007
 step
-.' Open your map:
+'Open your map:
 .' Click the Saintsport Wayshrine
-.' Travel to the Saintsport Wayshrine |goto 43.95,80.52 < 5 |c |noway |q Sphere Assembly##2922002/1
+.' Travel to the Saintsport Wayshrine |goto 43.95,80.52 < 5 |c |noway |q Sphere Assembly##2922002/1 |future |only if havequest("Sphere Assembly##2922002")
+.' Travel to the Saintsport Wayshrine |goto 43.95,80.52 < 5 |c |noway |q Izad's Treasure##2922004/1 |future
 step
 goto 43.58,90.18
 .click Dwarven Part##2922011
@@ -513,77 +529,70 @@ goto 45.49,91.45
 .click Unearthed Chest##2922013
 ..accept Izad's Treasure##2922004
 step
-.' Press _E_ to:
-.' Use the Clues, Damn Your Eyes
-.' Read the Sealed Letter |q Izad's Treasure##2922004/1/1/Read the Sealed Letter##1
+goto 45.49,91.45
+.' Press _E_ to use the Clues, Damn Your Eyes
+.' Read the Sealed Letter |q Izad's Treasure##2922004/1
 step
 goto 42.78,87.10
-.' Follow the path |goto 42.78,87.10 < 10 |c |noway |q Izad's Treasure##2922004/2
+.' Follow the path |goto 42.78,87.10 < 10 |c |noway |complete if dist() > 110 or completedquest ("Izad's Treasure##2922004/2")
 step
 goto 45.44,74.02
-.' Follow the path |goto 45.44,74.02 < 10 |c |noway |q Izad's Treasure##2922004/2
+.' Follow the path |goto 45.44,74.02 < 10 |c |noway |complete if dist() > 285 or completedquest ("Izad's Treasure##2922004/2")
 step
 goto 57.80,69.36
-.' Enter the building |goto 57.80,69.36 < 5 |c |noway |q Izad's Treasure##2922004/2
+.' Enter the building |goto 57.80,69.36 < 5 |c |noway |q Izad's Treasure##2922004/2 |future
 step
 goto 58.52,68.77
 .click Lighthouse##0022059
-.' Find the Start of the Trail |q Izad's Treasure##2922004/2/1/Find the Start of the Trail##1
+.' Find the Start of the Trail |q Izad's Treasure##2922004/2
 step
 goto 58.43,68.69
 .click Stros M'Kai##2922001
-.' Leave the Lighthouse |goto 58.51,68.77 < 1 |c |noway |q Izad's Treasure##2922004/3
+.' Leave the Lighthouse |goto 58.51,68.77 < 1 |c |noway |complete if dist() > 10 or completedquest ("Izad's Treasure##2922004/3")
 step
 goto 57.80,69.36
-.' Leave the building |goto 57.80,69.36 < 5 |c |noway |q Izad's Treasure##2922004/3
+.' Leave the building |goto 57.80,69.36 < 5 |c |noway |complete if dist() > 30 or completedquest ("Izad's Treasure##2922004/3")
 step
-goto 48.65,55.74
-.' Follow the path |goto 48.65,55.74 < 10 |c |noway |q Izad's Treasure##2922004/3
+goto 45.27,59.03
+.' Follow the path |goto 45.27,59.03 < 10 |c |noway |complete if dist() > 340 or completedquest ("Izad's Treasure##2922004/3")
 step
 goto 41.75,40.86
-.' Find the Warrior |q Izad's Treasure##2922004/3/1/Find the Warrior##1
+.' Find the Warrior |q Izad's Treasure##2922004/3
 step
 goto 41.78,48.49
-.' Walk 45 Paces South from the Statue |q Izad's Treasure##2922004/4/1/Walk 45 Paces South from the Statue##1
+.' Walk 45 Paces South from the Statue |q Izad's Treasure##2922004/4
 step
 goto 49.87,61.39
-.' Find the Island of Iron Faces |q Izad's Treasure##2922004/5/1/Find the Island of Iron Faces##1
-step
-goto 41.41,72.47
-.' Follow the path |goto 41.41,72.47 < 10 |c |noway |q Izad's Treasure##2922004/6
-step
-goto 38.13,75.20
-.' Follow the path |goto 38.13,75.20 < 10 |c |noway |q Izad's Treasure##2922004/6
+.' Find the Island of Iron Faces |q Izad's Treasure##2922004/5
 step
 goto 31.51,81.35
 .' Find the Stone Ship |q Izad's Treasure##2922004/6/1/Find the Stone Ship##1
 step
 goto 29.18,79.03
 .click Disturbed Soil##2922083
-.' Dig Beneath the Leaves in the Ship's Port |q Izad's Treasure##2922004/7/1/Dig Beneath the Leaves in the Ship's Port##1
+.' Dig Beneath the Leaves in the Ship's Port |q Izad's Treasure##2922004/7
 step
 goto 29.12,79.00
 .click Buried Treasure##2922085
 ..turnin Izad's Treasure##2922004
 step
-.' Open your map:
+'Open your map:
 .' Click the Port Hunding Wayshrine
-.' Travel to the Port Hunding Wayshrine |goto 46.13,45.65 < 5 |c |noway |q Sphere Assembly##2922002/2
+.' Travel to the Port Hunding Wayshrine |goto 46.13,45.65 < 5 |c |noway |q Sphere Assembly##2922002/2 |future
 step
 goto 49.84,48.69
-.' Follow the path
-.' Enter Port Hunding |goto porthunding_base 11.98,66.18 < 20 |c |noway |q Sphere Assembly##2922002/2
+.' Follow the path |goto porthunding_base 11.98,66.18 < 20 |c |noway |q Sphere Assembly##2922002/2 |future
 step
 goto porthunding_base 21.37,64.08
-.talk Rulorn##2922073 |q Sphere Assembly##2922002/2/1/Talk to Rulorn##1
+.talk Rulorn##2922073 |q Sphere Assembly##2922002/2
 step
 goto 20.77,64.00
-.' Watch Rulorn tinker with the machine
-.' Wait Until Rulorn Gives the Word |q Sphere Assembly##2922002/3/2/Wait Until Rulorn Gives the Word##1
+.' Watch the dialogue
+.' Wait Until Rulorn Gives the Word |q Sphere Assembly##2922002/3
 step
 goto 20.77,64.00
 .click Control Lever##2922059
-.' Activate the Rusty Sphere |q Sphere Assembly##2922002/4/1/Activate the Rusty Sphere##1
+.' Activate the Rusty Sphere |q Sphere Assembly##2922002/4
 step
 goto 21.60,63.78
 .talk Rulorn##2922073
@@ -594,16 +603,18 @@ goto 25.29,49.69
 ..turnin Dead Man's Wrist##2922014
 step
 goto 42.19,58.34
-.' Follow the path |goto 42.19,58.34 < 10 |c |noway |q Tarnish the Crown##2922011
+.' Follow the path |goto 42.19,58.34 < 5 |c |noway |q Tarnish the Crown##2922011
 step
 goto 62.97,65.51
 .talk Gugnir##2922058
 ..turnin Tarnish the Crown##2922011
 step
-goto 66.93,68.22
-.talk Irien##2922046
-.click Screaming Mermaid##2922060 |tip It's the door behind Irien.
-.' Meet Jakarn at the Inn |q Innocent Scoundrel##2922008/18/1/Meet Jakarn at the Inn##1
+goto 66.93,68.17
+.talk Irien##2922046 |q Innocent Scoundrel##2922008/18
+step
+goto 67.63,69.15
+.click Screaming Mermaid##2922060
+.' Meet Jakarn at the Inn |q Innocent Scoundrel##2922008/19
 step
 goto strosmkai_base 74.69,50.07
 .talk Jakarn##2922057
@@ -611,10 +622,10 @@ goto strosmkai_base 74.69,50.07
 step
 goto 73.17,49.98
 .click Port Hunding##2922045
-.' Leave the Screaming Mermaid |goto porthunding_base 67.43,68.98 < 1 |c |noway |q The Spearhead's Crew##2922007/1 |future
+.' Leave the Screaming Mermaid |goto porthunding_base 67.43,68.98 < 1 |c |noway |complete if dist("strosmkai_base",73.17,49.98) > 40 or completedquest("The Spearhead's Crew##2922007")
 step
 goto porthunding_base 46.14,58.56
-.' Follow the path |goto porthunding_base 46.14,58.56 < 10 |c |noway |q The Spearhead's Crew##2922007/1 |future
+.' Follow the path |goto porthunding_base 46.14,58.56 < 5 |c |noway |complete if dist() > 85 or completedquest("The Spearhead's Crew##2922007")
 step
 goto 33.29,65.12
 .talk Lambur##2922004
@@ -622,127 +633,124 @@ goto 33.29,65.12
 step
 goto 33.61,64.23
 .click Captain Kaleen's Hideout##2922046
-.' Enter Kaleen's Hideout After You Finish Recruiting |q The Spearhead's Crew##2922007/1/1/Enter Kaleen's Hideout After You Finish Recruiting##1
+.' Enter Captain Kaleen's Hideout |goto 33.62,63.66 < 1 |c |noway |q The Spearhead's Crew##2922007 |future |only if havequest("The Spearhead's Crew##2922007")
+.' Enter Captain Kaleen's Hideout |goto 33.62,63.66 < 1 |c |noway |q Tip of the Spearhead##2922009/5 |future
 step
 goto 33.40,61.95
 .talk Nicolene##2922012
 ..turnin The Spearhead's Crew##2922007
 step
-goto 33.05,63.25
-.' Go upstairs
-.talk Captain Kaleen##2922005
-.' Meet Kaleen When You Are Ready to Start the Heist |q Tip of the Spearhead##2922009/1/1/Meet Kaleen When You Are Ready to Start the Heist##1
+goto 32.06,61.70
+.' Follow the path up |goto 32.06,61.70 < 5 |c |noway |q Tip of the Spearhead##2922009/5 |future
 step
 goto 33.05,63.25
-.talk Captain Kaleen##2922005 |q Tip of the Spearhead##2922009/2/1/Talk to Captain Kaleen##1
+.talk Captain Kaleen##2922005
+.' Meet Kaleen When You Are Ready to Start the Heist |q Tip of the Spearhead##2922009/1
+step
+goto 33.05,63.25
+.talk Captain Kaleen##2922005 |q Tip of the Spearhead##2922009/2
 step
 goto 32.77,63.15
-.talk Neramo##2922038 |q Tip of the Spearhead##2922009/3/4/Talk to Neramo##1
+.talk Neramo##2922038 |q Tip of the Spearhead##2922009/3
 ..' Tell him _"I'll take it. Thanks Neramo."_
 step
 goto 33.59,63.28
-.talk Jakarn##2922057 |q Tip of the Spearhead##2922009/4/3/Talk to Jakarn##1
+.talk Jakarn##2922057 |q Tip of the Spearhead##2922009/4
 ..' Tell him _"Sounds great, Jakarn."_
 step
 goto 33.61,63.04
-.talk Crafty Lerisa##2922021 |q Tip of the Spearhead##2922009/5/2/Talk to Crafty Lerisa##1
+.talk Crafty Lerisa##2922021 |q Tip of the Spearhead##2922009/5
 ..' Thank her _"Thanks, Lerisa. I'd love your help."_
 step
+goto 33.49,60.64
+.' Follow the path down |goto 33.49,60.64 < 5 |c |noway |complete if dist() > 15 or completedquest("Tip of the Spearhead##2922009/6")
+step
 goto 33.63,63.77
-.' Go downstairs
 .click Port Hunding##2922045
-.' Leave Captain Kaleen's Hideout |goto 33.63,64.31 < 1 |c |noway |q Tip of the Spearhead##2922009/6
+.' Leave Captain Kaleen's Hideout |goto 33.63,64.31 < 1 |c |noway |complete if dist() > 20 or completedquest("Tip of the Spearhead##2922009/6")
 step
 goto 43.46,58.57
-.' Follow the path |goto 43.46,58.57 < 10 |c |noway |q Tip of the Spearhead##2922009/6
+.' Follow the path |goto 43.46,58.57 < 10 |c |noway |complete if dist() > 45 or completedquest("Tip of the Spearhead##2922009/6")
 step
 goto 53.64,52.19
-.' Run onto the bridge
-.' Enter Stros M'Kai |goto strosmkai_base 67.28,42.82 < 20 |c |noway |q Tip of the Spearhead##2922009/6
+.' Follow the path |goto strosmkai_base 67.28,42.82 < 20 |c |noway |complete if dist("porthunding_base",53.64,52.19) > 50 or completedquest("Tip of the Spearhead##2922009/6")
 step
-goto 67.34,41.13
-.' Obtain a Servant's Disguise |q Tip of the Spearhead##2922009/6/1/Obtain a Servant's Disguise##1
+goto strosmkai_base 67.34,41.13
+.' Obtain a Servant's Disguise |q Tip of the Spearhead##2922009/6
 step
 goto 67.10,35.26
 .talk Crafty Lerisa##2922021
-..' Ask her if she got your disguise
-.' Meet Lerisa and Get the Disguise |q Tip of the Spearhead##2922009/7/1/Meet Lerisa and Get the Disguise##1
-step
-.' Open your inventory:
-.' Equip the Servant's Robes
-|confirm
+.' Meet Lerisa and Get the Disguise |q Tip of the Spearhead##2922009/7
 step
 goto 67.35,34.45
+.' Equip the Servant's Robes in your inventory
 .click Headman Bhosek's Palace##2922061
-.' Enter Bhosek's Palace |q Tip of the Spearhead##2922009/8/1/Enter Bhosek's Palace##1
+.' Enter Bhosek's Palace |goto 67.35,34.25 < 1 |c |noway |q Tip of the Spearhead##2922009/15 |future
 step
 goto 66.62,31.23
 .talk Hulya##2922089
-.' Ask about Headman Bhosek |q Tip of the Spearhead##2922009/9/1/Ask about Headman Bhosek##1
+.' Ask about Headman Bhosek |q Tip of the Spearhead##2922009/9
 step
 goto 67.34,30.79
 .click Palace Yard##2922063
-.' Enter the Palace Yard |q Tip of the Spearhead##2922009/10/1/Enter Palace Yard##1
+.' Enter the Palace Yard |goto 67.35,30.57 < 1 |c |noway |q Tip of the Spearhead##2922009/12 |future
 step
 goto 67.68,26.10
 .talk Jakarn##2922057
-.' Collect Bhosek's Key |q Tip of the Spearhead##2922009/11/1/Collect Bhosek's Key##1
+.' Collect Bhosek's Key |q Tip of the Spearhead##2922009/11
 step
 goto 67.35,30.62
 .click Headman Bhosek's Palace##2922061
-.' Enter the Palace |q Tip of the Spearhead##2922009/12/1/Enter the Palace##1
+.' Enter the Palace |goto 67.34,30.82 < 1 |c |noway |complete if dist() > 100 or completedquest("Tip of the Spearhead##2922009/12")
 step
 goto 68.25,32.71
-.' Follow the path up |goto 68.25,32.71 < 5 |c |noway |q Tip of the Spearhead##2922009/13
+.' Follow the path up |goto 68.25,32.71 < 5 |c |noway |q Tip of the Spearhead##2922009/15 |future
 step
 goto 67.57,31.08
-.' Find Bhosek's Lockbox |q Tip of the Spearhead##2922009/13/1/Find Bhosek's Lockbox##1
+.' Find Bhosek's Lockbox |q Tip of the Spearhead##2922009/13
 step
 goto 67.48,30.96
 .' Use the Dwemer Device on Helthar
-.' Disable Bhosek's Guard |q Tip of the Spearhead##2922009/14/1/Disable Bhosek's Guard##1
+.' Disable Bhosek's Guard |q Tip of the Spearhead##2922009/14
 step
 goto 67.38,30.89
 .click Bhosek's Lockbox##2922064
-.' Collect the Shipping Logs |q Tip of the Spearhead##2922009/15/1/Collect Shipping Logs##1
+.' Collect the Shipping Logs |q Tip of the Spearhead##2922009/15
+step
+goto 68.50,32.04
+.' Follow the path down |goto 68.50,32.04 < 1 |c |noway |complete if dist() > 45 or completedquest("Tip of the Spearhead##2922009/16")
 step
 goto 67.35,34.29
-.' Go downstairs
 .click Port Hunding##2922045
-.' Leave Bhosek's Palace |goto 67.34,34.57 < 1 |c |noway |q Tip of the Spearhead##2922009/16
-step
-goto 67.34,39.22
-.' Follow the path |goto 67.34,39.22 < 5 |c |noway |q Tip of the Spearhead##2922009/16
+.' Leave Bhosek's Palace |goto 67.34,34.57 < 1 |c |noway |complete if dist() > 60 or completedquest("Tip of the Spearhead##2922009/16")
 step
 goto 67.27,42.76
-.' Keep running
-.' Enter Port Hunding |goto porthunding_base 53.61,52.21 < 20 |c |noway |q Tip of the Spearhead##2922009/16
+.' Follow the path |goto porthunding_base 53.61,52.21 < 20 |c |noway |complete if dist("strosmkai_base",67.27,42.76) > 175 or completedquest("Tip of the Spearhead##2922009/16")
 step
 goto porthunding_base 46.33,58.35
-.' Follow the path |goto porthunding_base 46.33,58.35 < 10 |c |noway |q Tip of the Spearhead##2922009/16
+.' Follow the path |goto porthunding_base 46.33,58.35 < 5 |c |complete if dist() > 40 or completedquest("Tip of the Spearhead##2922009/16")
 step
 goto 40.46,82.65
-.' Head to the Docks |q Tip of the Spearhead##2922009/16/1/Head to the Docks##1
+.' Head to the Docks |q Tip of the Spearhead##2922009/16
 step
 goto 40.17,84.14
 .talk Captain Kaleen##2922005
-.' Give the Records to Kaleen |q Tip of the Spearhead##2922009/17/1/Give Records to Kaleen##1
+.' Give the Records to Kaleen |q Tip of the Spearhead##2922009/17
 step
 goto 43.88,89.73
-.' Follow Captain Kaleen |q Tip of the Spearhead##2922009/18/1/Follow Captain Kaleen##1
+.' Follow Captain Kaleen |q Tip of the Spearhead##2922009/18 |tip It will take a while for her to finally get to this spot.
 step
 goto 43.88,89.73
-.talk Captain Kaleen##2922005 |q Tip of the Spearhead##2922009/19/1/Talk to Captain Kaleen##1
-|next Daggerfall Covenant Leveling Guides\\Betnikh (7-8)  
+.talk Captain Kaleen##2922005 |q Tip of the Spearhead##2922009/19
 .' Tell her _"I'm ready to leave now. Let's sail."_
+.' Continue to the next guide |next Daggerfall Covenant Leveling Guides\\Betnikh (7-8)  
 ]])
 ZGV:RegisterGuide("Daggerfall Covenant Leveling Guides\\Betnikh (7-8)",[[
-startlevel 7
-endlevel 8
 step
-.' Save 2 extra skill points, don't spend them yet
-.' You'll be able to invest them into the Intimidate and Persuade skills soon, which will save you a lot of gold and time on certain quests coming up soon.
-|confirm
+'Save 2 extra skill points, don't spend them yet
+.' You'll be able to invest them into the Intimidate and Persuade skills soon, which will save you a lot of time on certain quests as you level.
+.' Skip to the next step in the guide |confirm
+|only Daggerfall Covenant
 step
 goto betnihk_base 64.11,53.44
 .talk Captain Kaleen##2922005
@@ -1141,7 +1149,7 @@ step
 goto 40.64,28.33
 .talk Nicolene##2922012 |q The Bloodthorn Plot##2932001/3/1/Talk to Nicolene##1 |tip She runs up to you.
 step
-.' Open your map:
+'Open your map:
 .' Click the Stonetooth Wayshrine
 .' Travel to the Stonetooth Wayshrine |goto 53.10,52.12 < 5 |c |noway |q Farsight##2932004
 step
@@ -1213,10 +1221,10 @@ goto 66.71,27.63
 .' Enter the Ayleid Sanctuary |q Carzog's Demise##2932008/9/1/Enter Ayleid Sanctuary##1
 step
 goto carzogsdemise_base 62.27,56.40
-.' Find Lerisa |goto carzogsdemise_base 62.27,56.40 < 10 |c |noway |q Carzog's Demise##2932008/11
+.' Find Lerisa |goto carzogsdemise_base 62.27,56.40 < 10 |c |noway |q Carzog's Demise##2932008/10
 step
 goto 62.27,56.40
-.talk Lerisa##2922021 |q Carzog's Demise##2932008/11/2/Talk to Lerisa##1
+.talk Lerisa##2922021 |q Carzog's Demise##2932008/11
 step
 goto 64.56,56.53
 .' Follow the path down |goto 64.56,56.53 < 10 |c |noway |q Carzog's Demise##2932008/12
@@ -1294,7 +1302,7 @@ goto 46.91,42.24
 .click Carzog's Demise##2952007
 .' Leave Carzog's Demise |goto betnihk_base 62.48,22.93 < 1 |c |noway |q Carzog's Demise##2932008
 step
-.' Open your map:
+'Open your map:
 .' Click the Stonetooth Wayshrine
 .' Travel to the Stonetooth Wayshrine |goto betnihk_base 53.10,52.12 < 5 |c |noway |q Carzog's Demise##2932008
 step
@@ -1323,8 +1331,6 @@ goto 64.03,53.14
 ..' Tell her _"Yes, let's go."_
 ]])
 ZGV:RegisterGuide("Daggerfall Covenant Leveling Guides\\Glenumbra (8-16)",[[
-startlevel 8
-endlevel 16
 step
 .' Save 2 extra skill points, don't spend them yet
 .' You'll use them in this guide to get the Intimidate and Persuade skills soon, which will save you a lot of gold and time on certain quests coming up soon.
@@ -1452,7 +1458,7 @@ goto 58.70,68.61
 .' Search the West Alley |q Back-Alley Murders##0022003/2/1/Search the West Alley##2
 step
 goto 47.81,65.97
-.' Follow the path |goto 47.81,65.97 < 10 |c |noway |q Back-Alley Murders##0022003/2
+.' Follow the path |goto 47.81,65.97 < 10 |c |noway
 step
 goto 45.91,59.12
 .talk Panhandler Thomas##0022043
@@ -1532,6 +1538,9 @@ step
 goto 51.21,28.93
 .talk Mighty Mordra##0022094
 ..accept One of the Undaunted##0022007
+step
+goto 51.21,28.93
+.talk Mighty Mordra##0022094 |q One of the Undaunted##0022007/1
 step
 goto 51.46,24.23
 .' Follow the path up |goto 51.46,24.23 < 5 |c |noway |q Blood and the Crescent Moon##0022001/5
@@ -1722,10 +1731,6 @@ goto 34.10,75.34
 step
 goto 34.32,75.56
 .talk Aelif##0022161 |q Anchors from the Harbour##0022006/3/1/Talk to Aelif##1
-step
-goto 33.69,74.73
-.' Keep running on the road
-.' Enter Daggerfall |goto daggerfal_base 78.09,40.93 < 20 |c |noway |q Anchors from the Harbour##0022006/4
 step
 goto daggerfall_base 55.24,36.21
 .click Fighters Guild##0022006
@@ -2081,7 +2086,7 @@ goto 53.91,62.14
 .talk Alexia Dencent##0022215
 ..turnin Vital Inheritance##0022024
 step
-.' Open your map:
+'Open your map:
 .' Click the Deleyn's Mill Wayshrine
 .' Travel to the Deleyn's Mill Wayshrine |goto 47.75,70.70 < 5 |c |noway |q Disorganized Crime##0022022
 step
@@ -2277,7 +2282,7 @@ goto Glenumbra 33.90,53.14
 ..turnin Purifying the Wyrd Tree##0022020
 ..accept Werewolves to the North##0022021
 step
-.' Open your map:
+'Open your map:
 .' Click the Baelborne Rock Wayshrine
 .' Travel to the Baelborne Rock Wayshrine |goto 37.32,73.10 < 5 |c |noway |q Legacy of Baelborne Rock##0022063/1 |future
 step
@@ -2372,7 +2377,7 @@ goto 57.84,35.05
 .click Summoning Rituals of the Arch-Mage##1222005
 .' Retrieve the Tome |q Long Lost Lore##0022005/2/1/Retrieve the Tomes##1 |count 4
 step
-.' Open your map:
+'Open your map:
 .' Click the Daggerfall Wayshrine in Glenumbra
 .' Travel to the Daggerfall Wayshrine |goto daggerfall_base 48.73,21.33 < 10 |c |noway |q Long Lost Lore##0022005/3
 step
@@ -2498,7 +2503,7 @@ step
 goto 47.76,59.34
 .talk Claudie Themond##0022441 |q Legacy of Baelborne Rock##0022063/7/1/Talk to Claudie Themond##1
 step
-.' Open your map:
+'Open your map:
 .' Click the Harborage in Glenumbra
 .' Travel to the Harborage |goto glenumbra_base 35.73,79.42 < 1 |c |noway
 step
@@ -2616,7 +2621,7 @@ step
 .talk The Prophet##3362001
 ..turnin Daughter of Giants##0022025
 step
-.' Open your map:
+'Open your map:
 .' Click the Baelborne Rock Wayshrine in Glenumbra
 .' Travel to the Baelborne Rock Wayshrine |goto glenumbra_base 37.32,73.10 < 5 |c |noway |q Legacy of Baelborne Rock##0022063/8
 step
@@ -2694,7 +2699,7 @@ goto 27.53,62.06
 .' Use the Throwing Snare on 4 Weakened Harpies
 .' Assist the Remly Brothers |q The Dagger's Edge##0022011/8/1/Assist the Remly Brothers##1
 step
-.' Open your map:
+'Open your map:
 .' Click the Wyrd Tree Wayshrine
 .' Travel to the Wyrd Tree Wayshrine |goto 39.69,57.79 < 5 |c |noway |q The Dagger's Edge##0022011/9
 step
@@ -2838,7 +2843,7 @@ goto 23.90,40.44
 .talk Recruit Cecile##0022455
 ..turnin Wayward Scouts##0022065
 step
-.' Open your map:
+'Open your map:
 .' Click the Wyrd Tree Wayshrine
 .' Travel to the Wyrd Tree Wayshrine |goto 39.69,57.79 < 5 |c |noway |q The Hidden Treasure##0022066/1 |future
 step
@@ -3893,7 +3898,7 @@ goto 39.91,42.71
 .talk Leon Milielle##0022274
 ..turnin Memento Mori##0022053
 step
-.' Open your map:
+'Open your map:
 .' Click the Eagle's Brook Wayshrine
 .' Travel to the Eagle's Brook Wayshrine |goto 47.98,36.93 < 5 |c |noway |q Garments by Odei##0022069/1
 step
@@ -4118,7 +4123,7 @@ goto 71.45,33.63
 .click Dungeon: Spindleclutch##0022112
 .' Enter Spindleclutch |q One of the Undaunted##0022007/1/1/Enter Spindleclutch##1
 step
-.' Open your map:
+'Open your map:
 .' Click the Daggerfall Wayshrine in Glenumbra
 .' Travel to the Daggerfall Wayshrine |goto daggerfall_base 48.73,21.33 < 5 |c |noway |q One of the Undaunted##0022007/2
 step
@@ -4588,7 +4593,7 @@ goto 71.02,25.04
 .talk Harald Winvale##0022368 |tip He walks up to you.
 ..turnin Forgotten Ancestry##0022057
 step
-.' Open your map:
+'Open your map:
 .' Click the Crosswych Wayshrine
 .' Travel to the Crosswych Wayshrine |goto 75.88,15.63 < 5 |c |noway |q Legitimate Interests##0022049/1
 step
@@ -4847,8 +4852,6 @@ goto 46.98,31.66
 .' Leave the Sleepy Sailor Inn |goto 46.76,31.72 < 1 |c |noway |next Daggerfall Covenant Leveling Guides\\Stormhaven (16-24)
 ]])
 ZGV:RegisterGuide("Daggerfall Covenant Leveling Guides\\Stormhaven (16-24)",[[
-startlevel 16
-endlevel 24
 step
 goto koeglinvillage_base 38.01,32.77
 .talk Dame Dabienne##0042010
@@ -5058,7 +5061,7 @@ goto 51.97,87.23
 .talk Abnur Tharn##0452004 |q Chasing Shadows##0022059/7/1/Talk to Abnur Tharn##1
 ..' Persuade him
 step
-.' Open your map:
+'Open your map:
 .' Click the Harborage in Glenumbra
 .' Travel to the Harborage |goto glenumbra_base 35.73,79.42 < 5 |c |noway |q Chasing Shadows##0022059/8
 step
@@ -5708,7 +5711,7 @@ goto 33.23,29.81
 ..turnin Sir Hughes' Fate##0042016
 ..accept Unanswered Questions##0042017
 step
-.' Open your map:
+'Open your map:
 .' Click the _Koeglin Village_ Wayshrine
 .' Travel to the Koeglin Village Wayshrine |goto koeglinvillage_base 71.87,43.65 < 5 |c |noway |q Rozenn's Dream##0042019/1
 step
@@ -6985,7 +6988,7 @@ goto 47.86,63.54
 .' Cure Miranda |q A Woman Wronged##0042092/5/1/Cure Miranda##1
 ..turnin A Woman Wronged##0042092
 step
-.' Open your map:
+'Open your map:
 .' Click the Wayrest Wayshrine
 .' Travel to the Wayrest Wayshrine |goto wayrest_base 39.90,51.08 < 5 |c |noway |q The Debt Collector's Debts##0042038/7
 step
@@ -7223,7 +7226,7 @@ goto 30.98,61.46
 ..turnin Saving Hosni##0042043
 ..accept The Return of the Dream Shard##0042081
 step
-.' Open your map:
+'Open your map:
 .' Click the Pariah Abbey Wayshrine
 .' Travel to the Pariah Abbey Wayshrine |goto 49.49,41.05 < 5 |c |noway |q The Return of the Dream Shard##0042081/1
 step
@@ -7780,7 +7783,7 @@ goto 63.80,34.50
 .talk Elin Gousse##0042442
 .' Track Down Sirion |q Gift from a Suitor##0042088/6/1/Track down Sirion##1
 step
-.' Open your map:
+'Open your map:
 .' Click the Wind Keep Wayshrine
 .' Travel to the Wind Keep Wayshrine |goto 70.31,41.24 < 5 |c |noway |q Gift from a Suitor##0042088/8
 step
@@ -7933,7 +7936,7 @@ goto 58.80,40.05
 .talk King Aphren##2222001
 ..turnin King Aphren's Sword##0042046
 step
-.' Open your map:
+'Open your map:
 .' Click the Wind Keep Wayshrine
 .' Travel to the Wind Keep Wayshrine |goto stormhaven_base 70.31,41.24 < 5 |c |noway |q Ogre Teeth##0042044
 step
@@ -8466,13 +8469,11 @@ step
 .talk Varen Aquilarios##0452002
 ..turnin Castle of the Worm##0042037
 step
-.' Open your map:
+'Open your map:
 .' Click the Alcaire Castle Wayshrine in Stormhaven
 .' Travel to the Alcaire Castle Wayshrine |goto stormhaven_base 24.20,24.04 < 5 |c |noway |next Daggerfall Covenant Leveling Guides\\Rivenspire (24-30)
 ]])
 ZGV:RegisterGuide("Daggerfall Covenant Leveling Guides\\Rivenspire (24-30)",[[
-startlevel 24
-endlevel 30
 step
 goto stormhaven_base 23.56,23.03
 .' Follow the road |goto stormhaven_base 23.56,23.03 < 10 |c |noway
@@ -9548,7 +9549,7 @@ goto 21.58,61.25
 .' Go to the top of the tower
 .talk Jonah Marose##0052075 |q The Blood-Splattered Shield##0052006/4
 step
-.' Open your map:
+'Open your map:
 .' Click the Tamrith Camp Wayshrine
 .' Travel to the Tamrith Camp Wayshrine |goto 25.81,65.81 < 5 |c |noway |q The Blood-Splattered Shield##0052006/5
 step
@@ -9665,7 +9666,7 @@ goto 18.15,62.52
 .talk Garth##0052075
 ..turnin The Spider's Cocoon##0052008
 step
-.' Open your map:
+'Open your map:
 .' Click the Tamrith Camp Wayshrine
 .' Travel to the Tamrith Camp Wayshrine |goto 25.81,65.81 < 5 |c |noway |q Rusty Daggers##0052036/1 |future
 step
@@ -9772,7 +9773,7 @@ goto 35.35,72.03
 .talk Makar the Elder##0052163
 ..turnin Rusty Daggers##0052036
 step
-.' Open your map:
+'Open your map:
 .' Click the Shornhelm Wayshrine
 .' Travel to the Shornhelm Wayshrine |goto shornhelm_base 73.02,40.16 < 5 |c |noway |q Children of Yokuda##0052002
 step
@@ -9854,7 +9855,7 @@ goto 31.76,67.74
 .talk Ignobert Ervine##0052062
 ..turnin In the Doghouse##0052038
 step
-.' Open your map:
+'Open your map:
 .' Click the Shornhelm Wayshrine
 .' Travel to the Shornhelm Wayshrine |goto shornhelm_base 73.02,40.16 < 5 |c |noway |q Proving the Deed##0052017 |future
 step
@@ -9975,7 +9976,7 @@ goto 50.67,51.17
 .talk General Dathieu##0052100
 ..turnin A Traitor's Tale##0052009
 step
-.' Open your map:
+'Open your map:
 .' Click the Hoarfrost Downs Wayshrine
 .' Travel to the Hoarfrost Downs Wayshrine |goto hoarfrost_base 28.41,49.84 < 5 |c |noway |q The Wayward Son##0052010/1 |future
 step
@@ -10181,7 +10182,7 @@ step
 goto 66.40,64.41
 .talk Gerard Althen##0052313 |q Crimes of the Past##0052015/8
 step
-.' Open your map:
+'Open your map:
 .' Click the Hoarfrost Downs Wayshrine
 .' Travel to the Hoarfrost Downs Wayshrine |goto hoarfrost_base 28.41,49.84 < 5 |c |noway
 step
@@ -10448,7 +10449,7 @@ goto 68.70,62.30
 .click Ancient Grave##0052051
 .' Search Saint Marben's Grave |q Archaic Relics##0052013/5
 step
-.' Open your map:
+'Open your map:
 .' Click the Fell's Run Wayshrine
 .' Travel to the Fell's Run Wayshrine |goto 67.02,44.73 < 5 |c |noway |q A Change of Heart##0052016/1 |future
 step
@@ -10781,7 +10782,7 @@ goto 31.66,19.49
 .click Handre's Remains##1342003
 .' Search Handre's Remains |q Fadeel's Freedom##1342001/1
 step
-.' Open your map:
+'Open your map:
 .' Click the Tamrith Camp Wayshrine in Rivenspire
 .' Travel to the Tamrith Camp Wayshrine |goto rivenspire_base 25.81,65.81 < 5 |c |noway |q Fadeel's Freedom##1342001/2
 step
@@ -10810,7 +10811,7 @@ goto 34.03,70.49
 .talk Fadeel##0052161
 ..turnin Fadeel's Freedom##1342001
 step
-.' Open your map:
+'Open your map:
 .' Click the Hoarfrost Down Wayshrine |tip If it's really expensive, just wait a few minutes for the price to drop down.
 .' Travel to the Hoarfrost Downs Wayshrine |goto hoarfrost_base 28.41,49.84 < 5 |c |noway |q Archaic Relics##0052013
 step
@@ -11330,7 +11331,7 @@ step
 goto 68.24,55.03
 .talk Teeba-Ja##1362002 |q Shedding the Past##1362001/1
 step
-.' Open your map:
+'Open your map:
 .' Click the Fell's Run Wayshrine in Rivenspire
 .' Travel to the Fell's Run Wayshrine |goto rivenspire_base 67.02,44.73 < 5 |c |noway |q Shedding the Past##1362001/2
 step
@@ -11437,7 +11438,7 @@ goto 36.03,55.71
 .kill Arcorion Two-Blades##0052196
 .' Eliminate Arcorion Two-Blades |q Assassin Hunter##0052025/1
 step
-.' Open your map:
+'Open your map:
 .' Click the Crestshade Wayshrine
 .' Travel to the Crestshade Wayshrine |goto 26.74,49.17 < 5 |c |noway |q Assassin Hunter##0052025
 step
@@ -11895,7 +11896,7 @@ goto 59.69,22.62
 .talk Queen Maraya##0052228
 ..accept Favor for the Queen##0052032
 step
-.' Open your map:
+'Open your map:
 .' Click the Daggerfall Wayshrine in Glenumbra
 .' Travel to the Daggerfall Wayshrine |goto daggerfall_base 48.73,21.33 < 5 |c |noway |q The Tharn Speaks##0042048/1
 step
@@ -12110,7 +12111,7 @@ step
 .talk Sai Sahan##0452002
 ..turnin Halls of Torment##0052031
 step
-.' Open your map:
+'Open your map:
 .' Click the Northpoint Wayshrine in Rivenspire
 .' Travel to the Northpoint Wayshrine |goto rivenspire_base 73.63,19.65 < 5 |c |noway |q Favor for the Queen##0052032/1
 step
@@ -12126,8 +12127,6 @@ goto sentinel_base 27.79,15.53
 ..turnin Favor for the Queen##0052032 |next Daggerfall Covenant Leveling Guides\\Alik'r Desert (30-37)
 ]])
 ZGV:RegisterGuide("Daggerfall Covenant Leveling Guides\\Alik'r Desert (30-36)",[[
-startlevel 30
-endlevel 36
 step
 goto Sentinel 29.47,15.70
 .talk Captain Albert Marck##0042240
@@ -12992,7 +12991,7 @@ goto 19.26,73.90
 .talk Lady Clarisse Laurent##0172137
 ..turnin Thwarting the Aldmeri Dominion##0172010
 step
-.' Open your map:
+'Open your map:
 .' Click the Morwha's Bounty Wayshrine
 .' Travel to the Morwha's Bounty Wayshrine |goto 24.90,66.19 < 5 |c |noway |q Morwha's Curse##0172009 |future
 .' Travel to the Morwha's Bounty Wayshrine |goto 24.90,66.19 < 5 |c |noway |q The Initiation##0172012 |future
@@ -13276,7 +13275,7 @@ goto 41.83,53.52
 ..turnin A Reckoning with Uwafa##0172019
 ..accept The Scholar of Bergama##172385
 step
-.' Open your map:
+'Open your map:
 .' Click the Goat's Head Oasis Wayshrine
 .' Travel to the Goat's Head Oasis Wayshrine |goto 41.06,57.64 < 5 |c |noway |q Revered Ancestors##0172018
 step
@@ -13613,7 +13612,7 @@ goto 12.59,50.53
 .click Tamriel##3362012
 .' Leave Ragnthar |goto alikr_base 71.12,60.83 < 1 |c |noway
 step
-.' Open your map:
+'Open your map:
 .' Click the Bergama Wayshrine
 .' Travel to the Bergama Wayshrine |goto alikr_base 57.11,60.51 < 5 |c |noway |q Snakes in the Sands##0172020 |future
 .' Travel to the Bergama Wayshrine |goto alikr_base 57.11,60.51 < 5 |c |noway |q Trapped in the Bluffs##0172021 |future
@@ -13769,7 +13768,7 @@ goto sentinel_base 48.99,46.81
 .talk Valaste##0022052
 ..turnin Chateau of the Ravenous Rodent##0052043
 step
-.' Open your map:
+'Open your map:
 .' Click the Bergama Wayshrine in Alik'r Desert
 .' Teleport to the Bergama Wayshrine |goto alikr_base 57.06,60.54 < 5 |c |noway |q Master of Leki's Blade##0172023 |future
 step
@@ -15053,8 +15052,6 @@ goto 78.21,52.44
 .' Use the Portal |q Kingdom in Mourning##0722049/2 |next Daggerfall Covenant Leveling Guides\\Bangkorai (36-43)
 ]])
 ZGV:RegisterGuide("Daggerfall Covenant Leveling Guides\\Bangkorai (36-43)",[[
-startlevel 36
-endlevel 44
 step
 goto evermore_base 24.08,59.86
 .talk Sergeant Antieve##0142001
@@ -18965,8 +18962,6 @@ goto coldharbour_base 52.12,77.30
 ..turnin The Weight of Three Crowns##0042080 |next Daggerfall Covenant Leveling Guides\\Coldharbour (42-48)
 ]])
 ZGV:RegisterGuide("Daggerfall Covenant Leveling Guides\\Coldharbour (42-48)",[[
-startlevel 42
-endlevel 48
 step
 goto coldharbour_base 52.09,77.33
 .talk Cadwell##3362010
@@ -19838,7 +19833,7 @@ goto 32.59,51.98
 .talk Stibbons##1542100
 .' Rescue Stibbons |q Saving Stibbons##1542017/1/1/Rescue Stibbons##1
 step
-.' Open your map:
+'Open your map:
 .' Click the Shrouded Plains Wayshrine
 .' Travel to the Shrouded Plains Wayshrine |goto 38.51,55.45 < 5 |c |noway |q Saving Stibbons##1542017 |future
 step
@@ -20553,7 +20548,7 @@ goto 70.64,79.25
 ..' Tell her _"You need to forgive Bernt. He's the only family you have left."_
 ..turnin Special Blend##1542013
 step
-.' Open your map:
+'Open your map:
 .' Click the Everfull Flagon Wayshrine
 .' Travel to the Everfull Flagon Wayshrine |goto 65.53,71.37 < 5 |c |noway |q Vanus Unleashed##1542014/1 |future
 step
@@ -21279,7 +21274,7 @@ goto coldharbour_base 43.59,48.03
 .talk Stibbons##1542100
 ..turnin What the Heart Wants##1542020
 step
-.' Open your map:
+'Open your map:
 .' Click the Reaver Citadel Wayshrine
 .' Travel to the Reaver Citadel Wayshrine |goto 52.08,41.85 < 10 |c |noway |complete if dist(43.59,48.03) > 50
 step
@@ -21440,7 +21435,7 @@ goto 63.98,40.64
 ..' Tell her _"Absolutely not."_
 ..turnin Between Blood and Bone##1542026
 step
-.' Open your map:
+'Open your map:
 .' Click the Reaver Citadel Wayshrine
 .' Travel to the Reaver Citadel Wayshrine |goto 52.08,41.85 < 10 |c |noway |complete if dist(63.98,40.64) > 50
 step

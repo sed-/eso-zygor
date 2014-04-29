@@ -488,6 +488,49 @@ GOALTYPES['confirm'] = {
 	end,
 }
 
+GOALTYPES['lorebook'] = {
+	parse = function(self,params,step,data)
+		if not params then return "no lorebook parameter" end
+		local name,cat,col,book = params:match("^(.-)(%d+)/(%d+)/(%d+)$")
+		self.lorebook_cat=tonumber(cat)  self.lorebook_col=tonumber(col)  self.lorebook_book=tonumber(book)
+		
+		if not self.lorebook_book then return "no lorebook cat/col/book parameter" end
+
+		--if self.questid then
+		--	ZGV.mentionedQuests[self.questid] = 1
+		--end
+	end,
+	iscomplete = function(self)
+		local title,icon,known = GetLoreBookInfo(self.lorebook_cat,self.lorebook_col,self.lorebook_book)
+		return known , true
+	end,
+	gettext = function(self)
+		local title = GetLoreBookInfo(self.lorebook_cat,self.lorebook_col,self.lorebook_book)
+		return L['stepgoal_lorebook']:format(title)
+	end
+}
+
+GOALTYPES['achieve'] = {
+	parse = function(self,params,step,data)
+		if not params then return "no achieve parameter" end
+		local name,id = ParseId(params)
+		self.achieve_id=tonumber(id)
+		if not self.achieve_id then return "no achieve id" end
+
+		--if self.questid then
+		--	ZGV.mentionedQuests[self.questid] = 1
+		--end
+	end,
+	iscomplete = function(self)
+		local name,desc,points,icon,isCompleted,date,time = GetAchievementInfo(self.achieve_id)
+		return isCompleted , true
+	end,
+	gettext = function(self)
+		local name = GetAchievementInfo(self.achieve_id)
+		return L['stepgoal_achieve']:format(name)
+	end
+}
+
 GOALTYPES['text'] = {
 	parse = function(self,params)
 		-- highlight _text_
@@ -691,7 +734,6 @@ function Goal:GetText()
 			text = self.waytitle.." ("..text..")"
 		end
 		text = ( L["stepgoal_goto"]):format( text )
-
 	end
 
 	if base and data then
@@ -705,6 +747,15 @@ function Goal:GetText()
 			text = base:format(data)
 		end
 	end
+
+	if text=="?" and GOALTYPE.gettext then
+		text = GOALTYPE.gettext(self)
+	end
+
+	if text=="?" and L["stepgoal_"..self.action] then  -- fallback: just plain text in L
+		text = L["stepgoal_"..self.action]
+	end
+
 
 
 	-- trickiness: coordinates. Add (x,y) when needed

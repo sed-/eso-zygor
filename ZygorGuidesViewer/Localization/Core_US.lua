@@ -179,7 +179,9 @@ ZygorGuidesViewer_L("Main", "enUS", function() local f = {
 	["stepgoal_wayshrine_done"] = "Discovered the %s Wayshrine",
 	["stepgoal_kill"] = "Kill %s",
 	["stepgoal_kill_done"] = "Killed %s",
-
+	["stepgoal_lorebook"] = "Read lore book: \"%s\"",
+	["stepgoal_achieve"] = "Earn achievement: \"%s\"",
+	
 	-- WAYPOINTER
 	["dist_km"] = "%.1f km",
 	["dist_m"] = "%d m",

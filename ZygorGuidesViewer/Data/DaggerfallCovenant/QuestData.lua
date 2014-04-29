@@ -272,7 +272,6 @@ Trials of the Hero=0172031
 Undying Loyalty=0172032
 Crawling Chaos=0172033
 Whose Wedding?=0172034
-
 Shiri's Research=0172102
 Imperial Incursion=0172111
 Alasan's Plot=0172112

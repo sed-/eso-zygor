@@ -786,6 +786,8 @@ Ragged Hills Wayshrine=0163144
 Skald's Retreat Wayshrine=0163145
 The Lusty Argonian Maid, Vol. 2=0163146
 Ascendancy: Pathway to Lichdom=0163147
+Salvageable Goods=0163148
+Song of the Askelde Men=0163149
 
 Loriasel=0191001
 Stormhold Wayshrine=0193001
@@ -969,6 +971,7 @@ White Rose Guard's Journal=0193178
 Rituals of Contempt=0193179
 The Lamia Threat=0193180
 The Knighting Ceremony=0193181
+The Green Singing=0193182
 
 Transitus Shrine=0373001
 North Morrowind Wayshrine=0373002

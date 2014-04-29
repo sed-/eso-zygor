@@ -198,8 +198,10 @@ function class(obj)
 end
 
 
-function Utils.table_join (tab1,tab2)
-	for k,v in pairs(tab2) do tab1[k]=v end
+function Utils.table_join (target,source)
+	if type(source)~="table" then return end
+	if type(target)~="table" then return end
+	for k,v in pairs(source) do target[k]=v end
 end
 
 -- HAR HAR we can into hexaccurate colors năo
@@ -365,6 +367,8 @@ function Utils.GetPOIForQuest(questid)
 	poi = ZGV._QuestPOIData:match("(%d+):[^\n]*"..questid)
 	return poi
 end
+
+
 
 --[[
 1. General							-- Always open, Don't hide

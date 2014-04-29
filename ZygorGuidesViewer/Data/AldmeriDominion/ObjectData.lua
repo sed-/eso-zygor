@@ -5,10 +5,10 @@ if ZGV.Utils.GetFaction() ~= "AD" then return end
 ZGV._ObjectData = [[
 
 Shrine to Stendarr=-21474836481001
-Vuldngrav Great Hall=-21474836481001
-Fort Grimwatch=-21474836481001
-Ruined Door=-21474836481001
 Dark Source=-21474836481001
+Ruined Door=-21474836481001
+Fort Grimwatch=-21474836481001
+Vuldngrav Great Hall=-21474836481001
 Corrupted Guardian Senche=-21474836481001
 
 The Reality of Spirits=0021147
@@ -68,6 +68,7 @@ Triumphs of a Monarch, Ch. 10=0021201
 Entoloma=0021202
 Rosalind's Orders=0021203
 Triumphs of a Monarch, Ch. 6=0021204
+Patheirry House=0022216
 
 Davon's Watch=0091001
 Sadreno House=0091002
@@ -413,8 +414,8 @@ Lyris' Axe=0461007
 Prison of Echoes=0461008
 Door Lever=0461009
 Crucible of Terror=0461010
-Lyris's Axe=0461011
 Portal to the Harborage=0461011
+Lyris's Axe=0461011
 
 Wretched Squalor=0471001
 Castle Cistern=0471002
@@ -447,9 +448,11 @@ Forge Valve=0501003
 Pressure Lever=0501004
 Prismatic Bow=0501005
 Halls of Submission=0501006
+Prismatic Blade=0501007
 
 Outer Courtyard=0511001
 Portal Control Switch=0511002
+Font Pinion=0511003
 
 Proper Torture Techniques, Vol. 13=0571001
 Brimstone Steppes=0571002
@@ -961,8 +964,8 @@ Portal to Alliance Capital=1781259
 Basic Provisioning Guide=1781259
 Portal to Stirk=1781260
 Gilded Letter=1781260
-Starfall Arcana=1781261
 A Clothier's Primer=1781261
+Starfall Arcana=1781261
 Centurion Control Lever=1781262
 Woodworking For Simpletons=1781262
 Blacksmithing Station (Death's Wind)=1781263
@@ -985,6 +988,10 @@ Kreshweed=1781305
 Urcelmo's Supplemental Orders=1781306
 Top Floor=1781307
 Hookah=1781308
+Skywatch Coinhouse=1781309
+Del's Claim=1781310
+Regarding the Ebonheart Pact=1781311
+Wansalen=1781312
 
 Ancient Scrolls of the Dwemer IV=1791001
 Spidersilk=1791002
@@ -1459,6 +1466,18 @@ Aluvus' Final Notes=1911004
 Summoning Rituals of the Arch-Mage=1911005
 Switch=1911006
 
+Our Dupes, the Sea Elves=1921001
+
+Bakhig's Journal Page 3=1931001
+Bakhig's Journal Page 18=1931002
+Lower Level=1931003
+
+Supplementary Orders=1941001
+Nolonir's Journal Page 17=1941002
+
+Digging Orders=1961001
+Warning: I Heard You!=1961002
+
 Bone Amulet=2061001
 A Token of My Affection=2061002
 Totem of Hircine=2061003
@@ -1636,6 +1655,7 @@ Drivas' Journal (Partial)=2921172
 Laganakh's Home=2931024
 An Almanac of Betony=2931025
 Corn Flower=2931026
+Sayings of the Wise=2932027
 
 Khenarthi's Roost=2941001
 Essence Rune=2941002
@@ -1727,8 +1747,8 @@ Servant's Clothing=2941087
 Apothecary's Ledger=2941088
 Alchemy Station=2941089
 Dockmaster's Lament=2941090
-Basic Provisioning Guide=2941091
 Alchemy For My Apprentice=2941091
+Basic Provisioning Guide=2941091
 Alchemy For My Apprentice=2941092
 Zaban-ma's Journal=2941093
 Brazier Fire=2941094

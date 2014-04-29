@@ -8397,12 +8397,32 @@ ZGV._QuestStepData = {
 			[[S1 Once in Ivarstead, I should check out ___ know where he is.<121>]],
 			[[S1C1 Visit the Horker's Tusk in Ivarstead]],
 		},
+		[2]={
+			[[Q1 Gorgath Deadeye is after a Redguard ___ tracking him down.<139>]],
+			[[S1 The barkeep Adla claims she saw a ___ talk to Akvid.<96>]],
+			[[S1C1 Talk to Akvid Gray-Sky]],
+		},
+		[3]={
+			[[Q1 Gorgath Deadeye is after a Redguard ___ tracking him down.<139>]],
+			[[S1 Akvid said Varnedo may be down by the ___ I have right now.<94>]],
+			[[S1C1 Kill Varnedo]],
+		},
+		[4]={
+			[[Q1 Gorgath Deadeye is after a Redguard ___ tracking him down.<139>]],
+			[[S1 I found and killed Varnedo. I need to ___ Riften to get paid.<73>]],
+			[[S1C0 Return to Gorgath Deadeye in Riften]],
+		},
 	},
 	[0161004] = {
 		[1]={
 			[[Q1 The traveling merchant Sigunn has asked ___ a giant attack.<98>]],
 			[[S1 I should look for any supplies that are worth recovering.]],
 			[[S1C1 Find Salvageable Goods]],
+		},
+		[2]={
+			[[Q1 The traveling merchant Sigunn has asked ___ a giant attack.<98>]],
+			[[S1 I've recovered what I could of Sigunn's ___ in Shor's Stone.<91>]],
+			[[S1C0 Talk to Sigunn in Shor's Stone]],
 		},
 	},
 	[0163001] = {
@@ -10191,14 +10211,20 @@ I can kill her, try to bring her back to face justice, or let her go.]],
 			[[S1 Sai appears to need a moment before we m___o ensure he is well.<102>]],
 			[[C1 Talk to Sai Sahan]],
 			[[S2 NO TEXT]],
-			[[C1 Talk to Lyris]],
+			[[C1 == Talk to Lyris]],
 		},
 		[16]={
+			[[Q1 Sai Sahan has recovered from his ___ Imperial catacomb.<186>]],
+			[[S1 Sai appears to need a moment before we ___ ensure he is well.<102>]],
+			[[S1C1 Talk to Sai Sahan]],
+			[[S2 NO TEXT]],
+		},
+		[17]={
 			[[Q1 Sai Sahan has recovered from his experie___t Imperial catacomb.<186>]],
 			[[S1 We must go to the Dragonguard Tomb in order to pray at the shrine.]],
 			[[C1 Enter the Dragonguard Tomb]],
 		},
-		[17]={
+		[18]={
 			[[Q1 Sai Sahan has recovered from his experie___t Imperial catacomb.<186>]],
 			[[S1 We have prayed at the first shrine. Now ___ similar task there.<113>]],
 			[[C1 Go to the Reman Vault]],
@@ -10206,62 +10232,74 @@ I can kill her, try to bring her back to face justice, or let her go.]],
 			[[C1 TRACKER GOAL TEXT]],
 			[[C2 TRACKER GOAL TEXT]],
 		},
-		[18]={
+		[19]={
 			[[Q1 Sai Sahan has recovered from his experie___t Imperial catacomb.<186>]],
 			[[S1 We must pray at the second shrine before___ pray at the shrine.<188>]],
 			[[C1 Consecrate the Shrine in the Reman Vault]],
 			[[S2 NO TEXT]],
 			[[C1 TRACKER GOAL TEXT]],
 		},
-		[19]={
+		[20]={
 			[[Q1 Sai Sahan has recovered from his experie___t Imperial catacomb.<186>]],
 			[[S1 Mannimarco appeared again. We should con___for his vile tricks.<86>]],
 			[[C1 Confront Mannimarco]],
 		},
-		[20]={
+		[21]={
 			[[Q1 Sai Sahan has recovered from his experie___t Imperial catacomb.<186>]],
 			[[S1 Mannimarco has raised the dead once more___at them to continue.<74>]],
 			[[C1 Defeat the Undead]],
 		},
-		[21]={
+		[22]={
 			[[Q1 Sai Sahan has recovered from his experie___t Imperial catacomb.<186>]],
 			[[S1 We have defeated the undead in the Vault___retrieve the Amulet.<115>]],
 			[[C1 Enter the Vault of Kings]],
 		},
-		[22]={
+		[23]={
 			[[Q1 Sai Sahan has recovered from his experie___t Imperial catacomb.<186>]],
 			[[S1 We've arrived at the Vault. I should speak with Sai to see what's next.]],
 			[[C1 Talk to Sai Sahan]],
 		},
-		[23]={
+		[24]={
 			[[Q1 Sai Sahan has recovered from his experie___t Imperial catacomb.<186>]],
 			[[S1 We are in the Vault of Kings. I must use___open the vault door.<85>]],
 			[[C1 Open the Vault Door]],
 		},
-		[24]={
+		[25]={
 			[[Q1 Sai Sahan has recovered from his experie___t Imperial catacomb.<186>]],
 			[[S1 Mannimarco attacked us in the Vault of K___im once and for all.<84>]],
 			[[C1 Defeat Mannimarco]],
 		},
-		[25]={
+		[26]={
 			[[Q1 Sai Sahan has recovered from his experie___t Imperial catacomb.<186>]],
 			[[S1 We have defeated Mannimarco and sent him___as soon as possible.<124>]],
 			[[C1 Collect the Amulet of Kings]],
 		},
-		[26]={
+		[27]={
 			[[Q1 Sai Sahan has recovered from his experie___t Imperial catacomb.<186>]],
 			[[S1 I have the Amulet of Kings. I should ret___and report to Varen.<81>]],
 			[[C1 Return to the Harborage]],
 		},
-		[27]={
+		[28]={
 			[[Q1 Sai Sahan has recovered from his experie___t Imperial catacomb.<186>]],
 			[[S1 I am successful in collecting the Amulet___uld report to Varen.<76>]],
 			[[C1 Talk to Varen]],
 		},
-		[28]={
+		[29]={
 			[[Q1 Sai Sahan has recovered from his experie___t Imperial catacomb.<186>]],
 			[[S1 I have successfully retrieved the Amulet___rophet to report in.<96>]],
 			[[C0 Talk to Varen]],
+		},
+		[30]={
+			[[Q1 Sai Sahan has recovered from his ___ Imperial catacomb.<186>]],
+			[[S1 The shrine is on the other side of the ___ tombs to get there.<99>]],
+			[[S1C1 Consecrate the Shrine in the Dragonguard Tomb]],
+		},
+		[31]={
+			[[Q1 Sai Sahan has recovered from his ___ Imperial catacomb.<186>]],
+			[[S1 We've prayed at both altars. Now we ___ Vault Antechamber.<73>]],
+			[[S1C1 Continue to the Vault Antechamber]],
+			[[S2 NO TEXT]],
+			[[S2C1 TRACKER GOAL TEXT]],
 		},
 	},
 	[0163047] = {
@@ -10624,39 +10662,44 @@ I can kill her, try to bring her back to face justice, or let her go.]],
 	},
 	[0163052] = {
 		[1]={
-			[[Q1 Gamwyn, Rigvar, and Irgnar are missing a___e to help find them.<103>]],
+			[[Q1 Gamwyn, Rigvar, and Irgnar are missing ___ to help find them.<103>]],
 			[[S1 I should try to find Gamwyn first.]],
-			[[C1 Find Gamwyn]],
+			[[S1C1 Find Gamwyn]],
 		},
 		[2]={
-			[[Q1 Gamwyn, Rigvar, and Irgnar are missing a___e to help find them.<103>]],
+			[[Q1 Gamwyn, Rigvar, and Irgnar are missing ___ to help find them.<103>]],
 			[[S1 I should read Gamwyn's Journal.]],
-			[[C1 Read Irgnar's Journal]],
+			[[S1C1 == Read Gamwyn's Journal]],
 		},
 		[3]={
-			[[Q1 Gamwyn, Rigvar, and Irgnar are missing a___e to help find them.<103>]],
+			[[Q1 Gamwyn, Rigvar, and Irgnar are missing ___ to help find them.<103>]],
 			[[S1 I should collect Ancient Goblet.]],
-			[[C1 Collect Ancient Goblet]],
+			[[S1C1 Collect Ancient Goblet]],
 		},
 		[4]={
-			[[Q1 Gamwyn, Rigvar, and Irgnar are missing a___e to help find them.<103>]],
+			[[Q1 Gamwyn, Rigvar, and Irgnar are missing ___ to help find them.<103>]],
 			[[S1 I should find Rigvar.]],
-			[[C1 Find Rigvar]],
+			[[S1C1 Find Rigvar]],
 		},
 		[5]={
-			[[Q1 Gamwyn, Rigvar, and Irgnar are missing a___e to help find them.<103>]],
+			[[Q1 Gamwyn, Rigvar, and Irgnar are missing ___ to help find them.<103>]],
 			[[S1 I should find Irgnar.]],
-			[[C1 Find Irgnar]],
+			[[S1C1 Find Irgnar]],
 		},
 		[6]={
-			[[Q1 Gamwyn, Rigvar, and Irgnar are missing a___e to help find them.<103>]],
-			[[S1 I should kill Redmaw.]],
-			[[C1 Kill Redmaw]],
+			[[Q1 Gamwyn, Rigvar, and Irgnar are missing ___ to help find them.<103>]],
+			[[S1 I should read Gamwyn's Journal.]],
+			[[S1C1 == Read Irgnar's Journal]],
 		},
 		[7]={
-			[[Q1 Gamwyn, Rigvar, and Irgnar are missing a___e to help find them.<103>]],
-			[[S1 Now that I've accounted for all the lost___return to Snorrvild.<82>]],
-			[[C0 Talk to Snorrvild]],
+			[[Q1 Gamwyn, Rigvar, and Irgnar are missing ___ to help find them.<103>]],
+			[[S1 I should kill Redmaw.]],
+			[[S1C1 Kill Redmaw]],
+		},
+		[8]={
+			[[Q1 Gamwyn, Rigvar, and Irgnar are missing ___ to help find them.<103>]],
+			[[S1 Now that I've accounted for all the ___ to Snorrvild.<82>]],
+			[[S1C0 Talk to Snorrvild]],
 		},
 	},
 	[0163053] = {
@@ -10825,6 +10868,11 @@ I can kill her, try to bring her back to face justice, or let her go.]],
 			[[Q1 Vanus Galerion of the Mages Guild has a ___assault Coldharbour.<208>]],
 			[[S1 I have returned to the Fighters Guild in___ speak to him there.<120>]],
 			[[C0 Talk to Vanus Galerion]],
+		},
+		[12]={
+			[[Q1 Vanus Galerion of the Mages Guild has a ___ Coldharbour.<208>]],
+			[[S1 Vanus has prepared a portal for us to ___ into the portal.<112>]],
+			[[S1C1 Enter Vanus Galerion's Portal]],
 		},
 	},
 	[0163057] = {
@@ -17287,6 +17335,13 @@ I can kill her, try to bring her back to face justice, or let her go.]],
 			[[S1C0 Talk to Cadwell]],
 		},
 	},
+	[1781053] = {
+		[1]={
+			[[Q1 I convinced the leaders of the three ___ will go smoothly.<214>]],
+			[[S1 The invasion of Coldharbour has begun! ___ Molag Bal's realm.<93>]],
+			[[S1C1 Take Portal to Coldharbour]],
+		},
+	},
 	[1823001] = {
 		[1]={
 			[[Q1 The Covenant has seized Fort Virak. ___ to retake it.<209>]],
@@ -17593,6 +17648,25 @@ I can kill her, try to bring her back to face justice, or let her go.]],
 			[[Q1 Valdur spoke of a dark gathering at Honrich Tower.]],
 			[[S1 Now that I've reached Honrich Tower I sh___runn the Skald-King.<76>]],
 			[[C0 Talk to Jorunn the Skald-King]],
+		},
+		[3]={
+			[[Q1 Hakra has been saved and Pinepeak is ___ by the Worm Cult.<104>]],
+			[[S1 Netapatuu asked that I seek out Jorunn the Skald-King at Honrich Tower.]],
+			[[S1C0 Talk to Jorunn the Skald-King]],
+		},
+	},
+	[3241001] = {
+		[1]={
+			[[Q1 Frostmoon Farmstead has been attacked, ___ killer or killers.<133>]],
+			[[S1 Raerana asked me to seek out her uncle, ___ saving his niece.<135>]],
+			[[S1C0 Visit Wilrek Snow-Shod at the Withered Tree]],
+		},
+	},
+	[3241002] = {
+		[1]={
+			[[Q1 Hakra has been saved and Pinepeak is ___ by the Worm Cult.<104>]],
+			[[S1 Netapatuu asked that I seek out Jorunn the Skald-King at Honrich Tower.]],
+			[[S1C0 Talk to Jorunn the Skald-King]],
 		},
 	},
 }
