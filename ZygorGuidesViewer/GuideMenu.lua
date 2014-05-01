@@ -14,6 +14,7 @@ local tinsert,tremove,sort,min,max,floor,type,pairs,ipairs,class = table.insert,
 local print = ZGV.print
 local CHAIN = ZGV.Utils.ChainCall
 local ui = ZGV.UI
+local wm = WINDOW_MANAGER
 local L = ZGV.L
 
 -----------------------------------------
@@ -51,6 +52,7 @@ local DEFAULT_ANCHOR= {
 	CENTER,
 }
 
+local MAX_LINES = 18
 
 local GuideStatusColor = {
 	["SUGGESTED"]	= "ffcc40",
@@ -199,10 +201,26 @@ function GuideMenu:Create()
 		:SetWidth(LEFT_COLUMN_WIDTH)
 	.__END
 
-	frame.guideBoxScroll = CHAIN(ui:Create("SecFrame", frame, gmname.. "_Scroll"))	-- TODO real scrollie? -- Scroll bar for the left box.
-		:SetPoint(TOPLEFT,frame.guideBox,TOPRIGHT)
-		:SetPoint(BOTTOMLEFT,frame.guideBox,BOTTOMRIGHT)
+	frame.guideBoxScroll = CHAIN(wm:CreateControl(name.."_Slider",frame,CT_SLIDER))
+		:SetMouseEnabled(true)
+		:SetThumbTexture(tex,tex,tex,SCROLL_WIDTH,50,0,0,1,1)
+		:SetThumbFlushWithExtents(true)
+		:SetValue(0)
+		:SetValueStep(1)
 		:SetWidth(SCROLL_WIDTH)
+		:SetAnchor(TOPLEFT,frame.guideBox,TOPRIGHT)
+		:SetAnchor(BOTTOMLEFT,frame.guideBox,BOTTOMRIGHT)
+		:SetOrientation(ORIENTATION_VERTICAL)
+		:SetHandler("OnValueChanged",function(self,value,eventReason)
+			GuideMenu.offset = value
+			GuideMenu:RefreshUI()
+		end)
+
+	.__END
+
+	frame.guideBoxScrollBack = CHAIN(ui:Create("SecFrame", frame, gmname.. "_ScrollBack"))
+		:SetPoint(TOPLEFT,frame.guideBoxScroll,TOPLEFT)
+		:SetPoint(BOTTOMRIGHT,frame.guideBoxScroll,BOTTOMRIGHT)
 		:SetBackdropColor(.4,.4,.4,1)
 	.__END
 
@@ -221,7 +239,7 @@ function GuideMenu:Create()
 	-- Setup Left column buttons
 	-----------------------------
 	frame.buttons={}
-	local rows = 18
+	local rows = MAX_LINES
 	local ROWHEIGHT = 22	-- TODO could calculate these based on height of Guide Menu?
 	for i=1,rows do
 		local butname = gmname.."_But"..i
@@ -353,14 +371,20 @@ function GuideMenu:RefreshUI()
 
 	local guides = ZGV.registeredguides	-- TODO can't just steal guides from here when we have a bunch of guides.
 
-	if #guides > #buts then error("More guides than buttons in Guide Menu! Tell Dev Team") end
+	self.offset = self.offset and zo_min(#guides,zo_max(0,self.offset)) or 0
+	frame.guideBoxScroll:SetMinMax(0,#guides-MAX_LINES)
+	
+	local hei = zo_min(1,MAX_LINES / #guides)  if hei==1 then hei=0 end
+	frame.guideBoxScroll:SetThumbTexture(tex,tex,tex,SCROLL_WIDTH,frame.guideBoxScroll:GetHeight() * hei,0,0,1,1)
+
+	--if #guides > #buts then error("More guides than buttons in Guide Menu! Tell Dev Team. "..#guides..">"..#buts) end
 
 	-------------------------------
 	-- UPDATE THE BUTTONS
 	-------------------------------
 
 	for i,but in ipairs(buts) do
-		local guide = guides[i]
+		local guide = guides[i+self.offset]
 
 		if guide then
 			-- guide
@@ -563,7 +587,7 @@ function Settings:Create()
 	-- Setup Left column buttons
 	-----------------------------
 	frame.buttons={}
-	local rows = 18
+	local rows = MAX_LINES
 	local ROWHEIGHT = 22	-- TODO could calculate these based on height of Guide Menu?
 	for i=1,rows do
 		local butname = setname.."_But"..i

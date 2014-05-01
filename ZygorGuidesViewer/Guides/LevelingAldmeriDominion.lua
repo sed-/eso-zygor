@@ -9,8 +9,10 @@ step
 .' Skip to the next step in the guide |confirm
 |only Aldmeri Dominion
 step
+goto vulkhelguard_base 70.21,61.74
+.' Follow the ramp up |goto vulkhelguard_base 70.21,61.74 < 5 |c |noway |q Storm on the Horizon##2941001/1 |future
+step
 goto vulkhelguard_base 70.38,62.23
-.' Go upstairs
 .click Vulkhel Guard##1781005
 .' Leave the ship |goto vulkhelguard_base 70.01,62.29 < 1 |c |noway |q Storm on the Horizon##2941001/1 |future
 step
@@ -19,7 +21,7 @@ goto vulkhelguard_base 66.64,63.65
 ..accept Storm on the Horizon##2941001
 step
 goto 62.89,53.34
-.' Follow the path |goto 62.89,53.34 < 10 |c |noway |q Storm on the Horizon##2941001/1 |future
+.' Follow the path |goto 62.89,53.34 < 10 |c |noway |q Storm on the Horizon##2941001/1 |complete if dist() > 110
 step
 goto 81.64,54.12
 .talk Sugar-Claws##1781415 |q Storm on the Horizon##2941001/1
@@ -29,10 +31,10 @@ goto khenarthisroost_base 54.58,81.40
 .' Enter Eagle's Strand |goto khenarthisroost_base 54.75,80.92 < 1 |c |noway |q Storm on the Horizon##2941001/6 |future
 step
 goto 54.44,78.75
-.talk Razum-dar##2941005 |q Storm on the Horizon##2941001/2 |tip He walks around.
+.talk Razum-dar##2941005 |q Storm on the Horizon##2941001/2
 step
 goto 54.44,78.75
-.talk Razum-dar##2941005 |q Storm on the Horizon##2941001/3 |tip He walks around.
+.talk Razum-dar##2941005 |q Storm on the Horizon##2941001/3
 step
 goto 55.78,78.87
 .talk Commander Karinith##2941006 |q Storm on the Horizon##2941001/4
@@ -78,13 +80,13 @@ goto 26.34,63.19
 .' Find Onglorn |q Cast Adrift##2941003/1/1/Find Onglorn##2
 step
 goto 31.35,55.80
-.' Go to the Cave |q Cast Adrift##2941003/2
+.' Go to the Cave |goto 31.35,55.80 < 10 |c |noway |q Cast Adrift##2941003/3
 step
 goto 35.71,55.72
 .' Find Lieutenant Gelin |q Cast Adrift##2941003/3 |tip If he's not here, check the other wooden posts along the walls of the cave.
 step
 goto 31.26,55.78
-.' Exit the cave |goto 31.26,55.78 < 10 |c |noway |q Cast Adrift##2941003/4
+.' Exit the cave |goto 31.26,55.78 < 10 |c |noway |q Cast Adrift##2941003/4 |complete if dist() > 130
 step
 goto 29.87,55.66
 .talk Sergeant Firion##2941025 |q Cast Adrift##2941003/4
@@ -111,11 +113,10 @@ goto 23.66,55.89
 step
 goto 24.14,57.78
 .click Prowler##2941007
-.' Enter the Prowler |goto 24.19,57.57 < 1 |c |noway |q Cast Adrift##2941003/10 |future
+.' Enter the Prowler |goto 24.19,57.57 < 1 |c |noway |q Cast Adrift##2941003/10
 step
 goto 23.48,56.30
-.' Go downstairs
-.talk Mastengwe##2941037 |q Cast Adrift##2941003/10
+.talk Mastengwe##2941037 |q Cast Adrift##2941003/10 |tip She is downstairs in a room on the left.
 step
 goto 24.20,57.57
 .' Go upstairs
@@ -127,14 +128,14 @@ goto 16.60,53.58
 .' Take the Lodestone From Sea Vipers |q Cast Adrift##2941003/11
 step
 goto 11.52,51.62
-.' Board the ship |goto 11.52,51.62 < 10 |c |noway |q Cast Adrift##2941003/12 |future
+.' Board the ship |goto 11.52,51.62 < 10 |c |noway |q Cast Adrift##2941003/12
 step
 goto 11.17,49.57
-.' Use the Lodestone on Virkvild
+.' Press _E_ to use the Lodestone Virkvild
 .' Free Virkvild |q Cast Adrift##2941003/12/2/Free Virkvild##1
 step
 goto 13.22,52.81
-.' Use the Lodestone on Suhr
+.' Press _E_ to use the Lodestone on Suhr
 .' Free Suhr |q Cast Adrift##2941003/12/2/Free Suhr##2
 .' Stop the Maormer Ritual |q Cast Adrift##2941003/12/1/Stop the Maormer Ritual##1
 step
@@ -155,21 +156,21 @@ goto 64.39,68.91
 .talk Officer Lorin##2941207 |q The Family Business##2941012/1
 step
 goto 65.60,72.62
-.' Follow the path up |goto 65.60,72.62 < 10 |c |noway |q The Family Business##2941012/2 |future
+.' Follow the stairs up |goto 65.60,72.62 < 10 |c |noway |q The Family Business##2941012/2
 step
 goto 66.23,73.19
 .click Scorched Workbench##2941077 |tip It's upstairs in this burned house.
 .' Search the Scorched Workbench |q The Family Business##2941012/2/2/Scorched Workbench##1
 step
 goto 67.84,72.66
-.' Follow the path up |goto 67.84,72.66 < 1 |c |noway |q The Family Business##2941012/2 |future
+.' Follow the stairs up |goto 67.84,72.66 < 10 |c |noway |q The Family Business##2941012/2
 step
 goto 68.21,73.13
 .click Smoldering Alchemical Tools##2941079 |tip It's upstairs in this burned house.
 .' Search the Smoldering Alchemical Tools |q The Family Business##2941012/2/2/Smoldering Alchemical Tools##2
 step
 goto 70.97,69.78
-.' Follow the path up |goto 70.97,69.78 < 10 |c |noway |q The Family Business##2941012/2 |future
+.' Follow the stairs up |goto 70.97,69.78 < 10 |c |noway |q The Family Business##2941012/2
 step
 goto 71.61,69.72
 .' Salvage the Alchemical Tools |q The Family Business##2941012/2/1/Salvage Alchemical Tools##1
@@ -181,7 +182,7 @@ goto 80.37,64.90
 .' Find the Skooma |q The Family Business##2941012/4
 step
 goto 69.79,65.94
-.' Follow the path up |goto 69.79,65.94 < 10 |c |noway |complete if dist() > 300 or completedquest("The Family Business##2941012/5")
+.' Follow the path up |goto 69.79,65.94 < 10 |c |noway |q The Family Business##2941012/5 |complete if dist() > 300
 step
 goto 61.78,64.17
 .talk Zaban-ma##2941208 |q The Family Business##2941012/5
@@ -194,7 +195,7 @@ goto 61.89,64.04
 ..turnin The Family Business##2941012
 step
 goto 61.49,62.65
-.' Follow the path up |goto 61.49,62.65 < 10 |c |noway |complete if dist() > 50 or completedquest("Dark Knowledge##2941002/2")
+.' Follow the path up |goto 61.49,62.65 < 10 |c |noway |q Dark Knowledge##2941002/2 |complete if dist() > 50
 step
 goto 56.26,60.14
 .click Masterwork of the Inducer##2941011
@@ -237,11 +238,11 @@ goto 19.73,50.80
 .' Disrupt the Barrier |q Tears of the Two Moons##2941004/5
 step
 goto 23.34,50.60
-.talk Gathwen##2941060 |q Tears of the Two Moons##2941004/1/6
+.talk Gathwen##2941060 |q Tears of the Two Moons##2941004/6
 step
 goto 24.14,50.77
 .click Central Ruins##2941022
-.' Enter the Central Ruins |goto khenarthisroost_base 76.28,55.97 < 1 |c |noway |q Tears of the Two Moons##2941004 |future
+.' Enter the Central Ruins |goto khenarthisroost_base 76.28,55.97 < 1 |c |noway |q Tears of the Two Moons##2941004/16 |future
 step
 goto khenarthisroost_base 77.41,56.02
 .talk Rurelion##2941065
@@ -268,11 +269,11 @@ goto 78.04,54.75
 .' Disrupt the Bone Pile |q Tears of the Two Moons##2941004/8/2/Bone Pile##1
 step
 goto 78.02,55.96
-.' Follow the stairs down |goto 78.02,55.96 < 10 |c |noway |q Tears of the Two Moons##2941004 |future
+.' Follow the stairs down |goto 78.02,55.96 < 10 |c |noway |q Tears of the Two Moons##2941004/16 |future
 step
 goto 80.22,55.98
 .click Great Hall##2941023
-.' Enter the Great Hall |goto templeofthemourningspring_base 34.22,48.93 < 1 |c |noway |q Tears of the Two Moons##2941004 |future
+.' Enter the Great Hall |goto templeofthemourningspring_base 34.22,48.93 < 1 |c |noway |q Tears of the Two Moons##2941004/16 |future
 step
 goto templeofthemourningspring_base 65.22,48.74
 .' Watch the dialogue
@@ -286,17 +287,19 @@ goto 65.25,48.75
 .talk Rurelion##2941065 |q Tears of the Two Moons##2941004/11
 step
 goto 64.59,49.37
+.' Tell her
+..' _I need to hear Rurelion's thoughts_
 .talk Gathwen##2941060 |q Tears of the Two Moons##2941004/12
-..' Tell her you need to hear Rurelion's thoughts
 step
 goto 65.01,48.63
 .talk Rurelion##2941065
-..' Tell him you'll seal him in the tomb with Uldor
+.' Tell him
+..' _I'll seal you in the tomb with Uldor_
 .' Choose to Seal Rurelion in the Tomb with Uldor |q Tears of the Two Moons##2941004/13
 step
 goto 71.24,48.86
 .click Uldor's Tomb##2941024
-.' Enter Uldor's Tomb |goto 72.98,48.88 < 1 |c |noway |q Tears of the Two Moons##2941004 |future
+.' Enter Uldor's Tomb |goto 72.98,48.88 < 1 |c |noway |q Tears of the Two Moons##2941004/16 |future
 step
 goto 84.83,48.77
 .' Watch the dialogue
@@ -323,11 +326,11 @@ goto 85.17,49.58
 step
 goto 72.52,48.91
 .click Great Hall##2941023
-.' Enter the Great Hall |goto templeofthemourningspring_base 70.90,48.91 < 1 |c |noway |q Tears of the Two Moons##2941004 |future
+.' Enter the Great Hall |goto templeofthemourningspring_base 70.90,48.91 < 1 |c |noway |q Tears of the Two Moons##2941004 |complete if dist() > 60
 step
-goto 34.10,48.84
+goto templeofthemourningspring_base 34.10,48.84
 .click Central Ruins##2941022
-.' Enter the Central Ruins |goto khenarthisroost_base 80.19,55.99 < 1 |c |noway |q Tears of the Two Moons##2941004 |future
+.' Enter the Central Ruins |goto khenarthisroost_base 80.19,55.99 < 1 |c |noway |q Tears of the Two Moons##2941004 |future |complete if dist("templeofthemourningspring_base",34.10,48.84) > 200
 step
 goto khenarthisroost_base 77.54,56.31
 .talk Gathwen##2941060
@@ -336,17 +339,17 @@ goto khenarthisroost_base 77.54,56.31
 step
 goto 77.28,56.3
 .click Portal##2941025
-.' Teleport outside |goto 75.35,55.29 < 1 |c |noway |complete if dist(77.28,56.3) > 50 or completedquest("Dark Knowledge##2941002/2")
+.' Teleport outside |goto 75.35,55.29 < 1 |c |noway |q Dark Knowledge##2941002/2 |complete if dist(77.28,56.3) > 50
 step
 goto 69.58,49.52
-.' Follow the path down |goto 69.58,49.52 < 10 |c |noway |q Dark Knowledge##2941002/2 |future
+.' Follow the path down |goto 69.58,49.52 < 20 |c |noway |q Dark Knowledge##2941002/2
 step
 goto 65.68,47.40
 .click Journal of Bravam##2941026
 .' Examine the Journal of Bravam Lythandas |q Dark Knowledge##2941002/2
 step
-goto 66.37,48.25
-.' Follow the path up |goto 66.37,48.25 < 10 |c |noway |complete if dist() > 35 or completedquest("Moon-Sugar Medicament##2941005/1")
+goto 67.17,49.22
+.' Follow the path up |goto 67.17,49.225 < 20 |c |noway |q Moon-Sugar Medicament##2941005/1 |complete if dist() > 50
 step
 goto 73.71,47.19
 .click Note##2941028
@@ -357,16 +360,16 @@ goto 71.13,43.81
 .' Find Hazak's Hollow |q Moon-Sugar Medicament##2941005/1
 step
 goto 69.84,41.14
-.' Follow the path |goto 69.84,41.14 < 10 |c |noway |q Moon-Sugar Medicament##2941005 |future
+.' Follow the path |goto 69.84,41.14 < 20 |c |noway |q Moon-Sugar Medicament##2941005/7 |future
 step
 goto 71.56,39.47
-.' Enter the cave |goto 71.56,39.47 < 10 |c |noway |q Moon-Sugar Medicament##2941005 |future
+.' Enter the cave |goto 71.56,39.47 < 10 |c |noway |q Moon-Sugar Medicament##2941005/7 |future
 step
 goto hazikslair_base 31.67,22.03
 .' Enter Hazak's Hollow |q Moon-Sugar Medicament##2941005/2
 step
 goto 52.10,26.91
-.' Follow the path |goto 52.10,26.91 < 10 |c |noway |q Moon-Sugar Medicament##2941005 |future
+.' Follow the path |goto 52.10,26.91 < 10 |c |noway |q Moon-Sugar Medicament##2941005/6 |future
 step
 goto 43.52,68.80
 .talk Khari##2941081
@@ -15821,3145 +15824,147 @@ step
 step
 'Open your map:
 .' Click the Rawl'kha Wayshrine in Reaper's March
-.' Travel to the Rawl'kha Wayshrine |goto Reaper's March 38.67,52.41 < 1 |c |noway |next Aldmeri Dominion Leveling Guides\\Coldharbour (45-50)
-]])
-ZGV:RegisterGuide("Aldmeri Dominion Leveling Guides\\Coldharbour (45-50)",[[
+.' Travel to the Rawl'kha Wayshrine |goto rawlkha_base 38.67,52.41 < 1 |c |noway
 step
-goto Reaper's March 43.80,50.18
+goto 43.80,50.18
 .' Vanus Galerion appears
 ..accept Messages Across Tamriel##1791037
 step
-goto 43.80,50.18
-.talk Vanus Galerion##1791292 |q Messages Across Tamriel##1791037/Talk to Vanus Galerion (AD) |sub
-step
 goto 37.89,53.63
 .click Rawl'kha Wayshrine##1791085
-.' Travel to the Skywatch Wayshrine in Auridon |goto Auridon 17.32,42.18 < 1 |c |noway
+.' Travel to the Skywatch Wayshrine in Auridon |goto skywatch_base 17.32,42.18 < 1 |c |noway
 step
-goto Auridon 52.56,36.77
+goto 52.56,36.84
 .click Mages Guild##1781008
-.' Enter the Mages Guild |goto Auridon 51.49,36.81 < 1 |c |noway
+.' Enter the Mages Guild |goto 51.49,36.81 < 1 |c |noway |q 1791037/2
 step
 goto 52.06,37.58
-.talk Razum-dar##2941005 |q Messages Across Tamriel##1791037/Talk to Razum-dar in Skywatch |sub
+.talk Razum-dar##2941005 |q Messages Across Tamriel##1791037/1
 step
 goto 53.06,37.42
 .' Watch the dialogue
-.' Wait for Vanus Galerion |q Messages Across Tamriel##1791037/Wait for Vanus Galerion |sub
+.' Wait for Vanus Galerion |q Messages Across Tamriel##1791037/2
 step
-goto 52.35,36.87
-.talk Vanus Galerion##1791292 |q Messages Across Tamriel##1791037/Talk to Vanus Galerion |sub
+goto 52.17,36.89
+.talk Vanus Galerion##1541036 |q Messages Across Tamriel##1791037/3
 step
 goto 53.05,36.90
 .click Portal to Alliance Capital##1781259
-.' Enter Vanus Galerion's Portal |q Messages Across Tamriel##1791037/Enter Vanus Galerion's Portal |sub
+.' Enter Vanus Galerion's Portal |q Messages Across Tamriel##1791037/4
 step
-goto Wayrest 40.50,43.46
+'Go towards the throne in front of you
 .' Watch the dialogue
-.' Receive the Introduction |q Messages Across Tamriel##1791037/Receive Introduction |sub
+.' Receive the Introduction |q Messages Across Tamriel##1791037/5
 step
-goto 40.50,43.46
+'Standing near the throne, in front of you
 .talk High King Emeric##3511001
-.' Talk to the Alliance Leader |q Messages Across Tamriel##1791037/Talk to the Alliance Leader |sub
+.' Talk to the Alliance Leader |q Messages Across Tamriel##1791037/6
 step
-goto 40.50,43.46
-.talk Vanus Galerion##1791292 |q Messages Across Tamriel##1791037/Talk to Vanus Galerion |sub
+'Standing next to you, in front of the throne's steps
+.talk Vanus Galerion##1791292 |q Messages Across Tamriel##1791037/7
 step
-goto 40.50,43.46
+'Run back towards the place you came in, opposite of the throne
 .click Portal to Alliance Capital##1781259
-.' Enter Vanus Galerion's Portal |q Messages Across Tamriel##1791037/Enter Vanus Galerion's Portal |sub
+.' _After taking the portal_
+.' Run to the middle of the courtyard
+..' Watch the dialogue
+..' Receive the Introduction |q Messages Across Tamriel##1791037/5
 step
-goto Mournhold 45.20,83.62
-.' Watch the dialogue
-.' Receive the Introduction |q Messages Across Tamriel##1791037/Receive Introduction |sub
-step
-goto 45.20,83.62
+'Standing in the middle of the courtyard
 .talk Jorunn the Skald-King##3501005
-.' Talk to the Alliance Leader |q Messages Across Tamriel##1791037/Talk to the Alliance Leader |sub
+.' Talk to the Alliance Leader |q Messages Across Tamriel##1791037/9
 step
-goto 45.20,83.62
-.talk Vanus Galerion##1791292 |q Messages Across Tamriel##1791037/Talk to Vanus Galerion |sub
+'Standing next to you in the courtyard
+.talk Vanus Galerion##1791292 |q Messages Across Tamriel##1791037/10
 step
-goto 45.20,83.62
+'Run back towards the place you came in, near
 .click Portal to Alliance Capital##1781259
-.' Enter Vanus Galerion's Portal |q Messages Across Tamriel##1791037/Enter Vanus Galerion's Portal |sub
+.' Enter Vanus Galerion's Portal |q Messages Across Tamriel##1791037/11
 step
-goto Auridon 8.74,54.45
+goto vulkhelguard_base 8.83,54.47
 .talk Vanus Galerion##1791292
 ..turnin Messages Across Tamriel##1791037
 ..accept The Weight of Three Crowns##1781053
 step
 goto 9.07,54.63
+.' Wait portal |q The Weight of Three Crowns##1781053/1
 .click Portal to Stirk##1781260
-.' Enter the Portal to Stirk |q The Weight of Three Crowns##1781053/Enter Portal to Stirk |sub
+.' Enter the Portal to Stirk |q The Weight of Three Crowns##1781053/2
 step
 goto Stirk 23.56,30.64
-.talk Vanus Galerion##1791292 |q The Weight of Three Crowns##1781053/Talk to Vanus Galerion |sub
-step
-goto 28.46,40.26
-.' Follow the path |goto 28.46,40.26 < 1 |c |noway
+.talk Vanus Galerion##1791292 |q The Weight of Three Crowns##1781053/3
 step
 goto 37.07,55.28
-.' Follow the path |goto 37.07,55.28 < 1 |c |noway
+.' Follow the path |goto 37.07,55.28 < 20 |c |noway |q The Weight of Three Crowns##1781053/4 |future
 step
 goto 45.72,55.42
-.' Go to Summit Point |q The Weight of Three Crowns##1781053/Go to Summit Point |sub
+.' Go to Summit Point |q The Weight of Three Crowns##1781053/4
 step
 goto 47.00,55.34
 .' Watch the dialogue
-.' Listen to the Alliance Leaders |q The Weight of Three Crowns##1781053/Listen to the Alliance Leaders |sub
+.' Listen to the Alliance Leaders |q The Weight of Three Crowns##1781053/5
 step
 goto 46.52,55.91
-.talk Vanus Galerion##1791292 |q The Weight of Three Crowns##1781053/6/Talk to Vanus Galerion##1
+.talk Vanus Galerion##1791292 |q The Weight of Three Crowns##1781053/6/1/Talk to Vanus Galerion##1
 step
 goto 46.47,54.71
-.talk Countess Hakruba##0111300 |q The Weight of Three Crowns##1781053/Talk to Countess Hakruba |sub
-step
-goto 47.75,52.26
-.' Follow the path |goto 47.75,52.26 < 1 |c |noway
+.talk Countess Hakruba##0111300 |q The Weight of Three Crowns##1781053/6/1/Talk to Countess Hakruba##2
 step
 goto 49.52,45.40
-.talk High King Emeric##3511001 |q The Weight of Three Crowns##1781053/Talk to High King Emeric |sub
+.talk High King Emeric##3511001 |q The Weight of Three Crowns##1781053/7/2/Talk to High King Emeric##1
 ..' Persuade him
 step
 goto 51.00,55.25
-.' Follow the path |goto 51.00,55.25 < 1 |c |noway
+.' Follow the path |goto 51.00,55.25 < 20 |c |noway |q The Weight of Three Crowns##1781053/7 |future
 step
 goto 57.54,54.86
-.talk Queen Ayrenn##1781057 |q The Weight of Three Crowns##1781053/Talk to Queen Ayrenn |sub
+.talk Queen Ayrenn##178105 |q The Weight of Three Crowns##1781053/7/2/Talk to Queen Ayrenn##2
 step
 goto 47.92,58.42
-.' Follow the path |goto 47.92,58.42 < 1 |c |noway
+.' Follow the path |goto 47.92,58.42 < 20 |c |noway |q The Weight of Three Crowns##1781053/7 |future
 step
 goto 47.82,63.81
 .talk Jorunn the Skald-King##3501005
 ..' Intimidate him
-.' Talk to the Alliance Leaders |q The Weight of Three Crowns##1781053/Talk to the Alliance Leaders |sub
+.' Talk to the Alliance Leaders |q The Weight of Three Crowns##1781053/7
 step
 goto 47.53,55.40
-.talk Vanus Galerion##1791292 |q The Weight of Three Crowns##1781053/8/Talk to Vanus Galerion##1
-step
-goto 49.43,55.35
-.' Watch the dialogue
-.' Talk to Vanus Galerion |q The Weight of Three Crowns##1781053/Talk to Vanus Galerion |sub
-step
-goto 47.75,52.26
-.' Follow the path |goto 47.75,52.26 < 1 |c |noway
+.talk Vanus Galerion##1791292 |q The Weight of Three Crowns##1781053/8
+..' Watch the dialogue
 step
 goto 49.82,43.51
 .kill Bitterwind##3241016
 .click Unstable Rift##3241001
-.' Close the Unstable Rift |q The Weight of Three Crowns##1781053/Close the Unstable Rifts |sub
-'FIX ME
-step
-goto 51.00,55.25
-.' Follow the path |goto 51.00,55.25 < 1 |c |noway
+.' Close the Unstable Rift |q The Weight of Three Crowns##1781053/9/1/Close the Unstable Rifts##1 | count 1
 step
 goto 59.71,54.55
 .kill Ra'Lorka##3241018
 .click Unstable Rift##3241001
-.' Close the Unstable Rift |q The Weight of Three Crowns##1781053/Close the Unstable Rifts |sub
-'FIX ME
-step
-goto 47.92,58.42
-.' Follow the path |goto 47.92,58.42 < 1 |c |noway
+.' Close the Unstable Rift |q The Weight of Three Crowns##1781053/9/1/Close the Unstable Rifts##1 | count 2
 step
 goto 47.59,67.03
 .kill Sormorask##3241019
 .click Unstable Rift##3241001
-.' Close the Unstable Rift |q The Weight of Three Crowns##1781053/Close the Unstable Rifts |sub
-'FIX ME
+.' Close the Unstable Rift |q The Weight of Three Crowns##1781053/9/1/Close the Unstable Rifts##1 | count 3
 step
 goto 49.69,55.61
-.talk Vanus Galerion##1791292 |q The Weight of Three Crowns##1781053/10/Talk to Vanus Galerion##1
-step
-goto 48.71,54.94
-.' Watch the dialogue
-.talk to Vanus Galerion |q The Weight of Three Crowns##1781053/Talk to Vanus Galerion |sub
-'FIX ME
+.talk Vanus Galerion##1791292 |q The Weight of Three Crowns##1781053/10
+..' Watch the dialogue
 step
 goto 66.83,54.67
 .click Portal Valley##3241002
-.' Enter the Portal Valley |q The Weight of Three Crowns##1781053/11/Enter the Portal Valley##1
+.' Enter the Portal Valley |goto stirk_base 67.87,54.64 < 1 |c |noway |q The Weight of Three Crowns##1781053/13 |future
 step
-goto 78.60,68.38
-.talk Vanus Galerion##1791292 |q The Weight of Three Crowns##1781053/Talk to Vanus Galerion |sub
-'FIX ME
+goto stirk_base 78.60,68.38
+.' Follow Vanus Galerion |q The Weight of Three Crowns##1781053/11
+.talk Vanus Galerion##1791292 |q The Weight of Three Crowns##1781053/12
+.' Wait for Portal |q The Weight of Three Crowns##1781053/13
 step
 goto 80.01,68.59
 .click Portal to Coldharbour##0451002
-.' Take the Portal to Coldharbour |q The Weight of Three Crowns##1781053/Take Portal to Coldharbour |sub
+.' Take the Portal to Coldharbour |q The Weight of Three Crowns##1781053/14
 step
-goto Coldharbour 52.12,77.30
+goto coldharbour_base 52.12,77.30
 .talk Cadwell##3361010
-..turnin The Weight of Three Crowns##1781053
-..accept The Hollow City##1541001
-step
-goto 52.05,77.14
-.' Follow the path down |goto 52.05,77.14 < 1 |c |noway
-step
-goto 52.09,74.70
-.' Follow the path up |goto 52.09,74.70 < 1 |c |noway
-step
-goto 77.59,75.99
-.' Follow the path up |goto 77.59,75.99 < 1 |c |noway
-step
-goto 71.22,68.93
-.talk The Groundskeeper##1541001 |q The Hollow City##1541001/Talk to The Groundskeeper |sub
-..' Tell her you're ready.  Lead on.
-step
-goto 53.77,61.30
-.' Follow the Groundskeeper and Listen to Her Tale |q The Hollow City##1541001/Follow the Groundskeeper and Listen to Her Tale |sub
-'FIX ME
-step
-goto 36.94,65.50
-.' Follow the Groundskeeper and Listen to Her Tale |q The Hollow City##1541001/Follow the Groundskeeper and Listen to Her Tale |sub
-'FIX ME
-step
-goto 27.77,48.13
-.' Follow the Groundskeeper and Listen to Her Tale |q The Hollow City##1541001/Follow the Groundskeeper and Listen to Her Tale |sub
-'FIX ME
-step
-goto 34.07,35.07
-.' Follow the Groundskeeper and Listen to Her Tale |q The Hollow City##1541001/Follow the Groundskeeper and Listen to Her Tale |sub
-'FIX ME
-step
-goto 43.05,32.00
-.' Follow the Groundskeeper and Listen to Her Tale |q The Hollow City##1541001/Follow the Groundskeeper and Listen to Her Tale |sub
-'FIX ME
-step
-goto 53.32,41.66
-.' Follow the Groundskeeper and Listen to Her Tale |q The Hollow City##1541001/Follow the Groundskeeper and Listen to Her Tale |sub
-'FIX ME
-step
-goto 53.31,42.10
-.talk The Groundskeeper##1541001
-..turnin The Hollow City##1541001
-..accept The Army of Meridia##1541002
-step
-goto 53.30,55.28
-.' Follow the path down |goto 53.30,55.28 < 1 |c |noway
-step
-goto 67.27,63.60
-.' Follow the path |goto 67.27,63.60 < 1 |c |noway
-step
-goto 53.42,68.63
-.' Follow the path down |goto 53.42,68.63 < 1 |c |noway
-step
-goto 56.81,68.93
-.' Follow the path |goto 56.81,68.93 < 1 |c |noway
-step
-goto 57.71,70.08
-.' Follow the path |goto 57.71,70.08 < 1 |c |noway
-step
-goto 59.09,72.53
-.' Follow the path up |goto 59.09,72.53 < 1 |c |noway
-step
-goto 60.15,73.45
-.talk Gadris##1541006
-..accept The Soul-Meld Mage##1541003
-step
-goto 60.15,73.44
-.talk Zur##1541007 |q The Soul-Meld Mage##1541003/Talk to Zur |sub
-'FIX ME
-step
-goto 60.02,73.98
-.' Follow the path down |goto 60.02,73.98 < 1 |c |noway
-step
-goto 57.88,75.33
-.' Follow the path up |goto 57.88,75.33 < 1 |c |noway
-step
-goto 57.68,75.49
-.talk Zur##1541007 |q The Soul-Meld Mage##1541003/Talk to Zur |sub
-'FIX ME
-step
-goto 57.57,75.72
-.click Pearl Tincture##1541002
-.' Collect the Tincture |q The Soul-Meld Mage##1541003/Collect Zur's Notes and Tincture |sub
-'FIX ME
-step
-goto 60.13,75.57
-.click Transmutation of Living Creatures##1541003
-.' Collect Zur's Note |q The Soul-Meld Mage##1541003/Collect Zur's Notes and Tincture |sub
-'FIX ME
-step
-goto 59.48,76.77
-.click Transmutation Potion Recipe##1541005
-.' Collect Zur's Note |q The Soul-Meld Mage##1541003/Collect Zur's Notes and Tincture |sub
-'FIX ME
-step
-goto 60.69,77.22
-.' Find the Entrance |q The Soul-Meld Mage##1541003/Find the Entrance |sub
-step
-goto 61.19,77.47
-.click Vile Laboratory##1541006
-.' Enter the Vile Laboratory |goto The Vile Laboratory 76.86,32.02 < 1 |c |noway
-step
-goto The Vile Laboratory 80.24,31.79
-.talk Zur##1541007
-.' Give the Items to the Soul-Meld Mage |q The Soul-Meld Mage##1541003/Give Items to the Soul-Meld Mage |sub
-step
-goto 80.11,33.77
-.' Wait While Zur Makes the Potion |q The Soul-Meld Mage##1541003/Wait While Zur Makes Potion |sub
-step
-goto 79.70,34.01
-.talk Gadris##1541006
-.' Get the Transmutation Potion |q The Soul-Meld Mage##1541003/Get the Transmutation Potion |sub
-step
-goto 82.77,32.26
-.click Rubble-Blocked Door##1671001
-.' Squeeze Through the Rubble |q The Soul-Meld Mage##1541003/Squeeze Through the Rubble |sub
-step
-goto 94.53,37.34
-.' Climb onto the metal pipe
-.' Follow the path |goto 94.53,37.34 < 1 |c |noway
-step
-goto 84.67,56.13
-.click Rubble-Blocked Passage##1671002
-.' Find the Metallurgy Workshop |q The Soul-Meld Mage##1541003/Find the Metallurgy Workshop |sub
-step
-goto 69.26,55.34
-.click The Notebook of Mage Gadris##1671003
-.' Read Gadris' Notebook |q The Soul-Meld Mage##1541003/Read Gadris' Notebook |sub
-step
-goto 61.86,47.90
-.click Crystalline Essence Matrix##1671004
-.' Collect the Crystalline Essence Matrix |q The Soul-Meld Mage##1541003/10/Collect Crystalline Essence Matrix##2
-step
-goto 60.43,58.66
-.click Ebony Ore##1671005
-.' Collect the Ebony Ore |q The Soul-Meld Mage##1541003/10/Collect Ebony Ore##1
-step
-goto 75.32,62.29
-.click Refined Void Salts##1671006
-.' Collect the Refined Void Salts |q The Soul-Meld Mage##1541003/10/Collect Refined Void Salts##3
-step
-goto 69.26,56.14
-.click Catalyst Notes##1671007
-.' Read the Catalyst Notes |q The Soul-Meld Mage##1541003/Read Catalyst Note |sub
-step
-goto 68.65,71.93
-.click Experiment Chamber##1671008
-.' Enter the Experiment Chamber |goto 68.70,72.90 < 1 |c |noway
-step
-goto 68.65,86.65
-.click Corrupted Blood##1671009
-.' Collect the Corrupted Blood |q The Soul-Meld Mage##1541003/Collect Corrupted Blood |sub
-step
-goto 68.64,72.90
-.click Metallurgy Workshop##1671010
-.' Leave the Experiment Chamber |goto 68.72,71.93 < 1 |c |noway
-step
-goto 61.16,62.69
-.click Forge Furnace##1671011
-.' Melt the Components |q The Soul-Meld Mage##1541003/Melt the Components |sub
-step
-goto 64.24,63.78
-.click Weapon Anvil##1671012
-.' Craft the Antipodal Rods |q The Soul-Meld Mage##1541003/Craft the Antipodal Rods |sub
-step
-goto 68.59,43.97
-.click Vile Laboratory##154000
-.' Leave the Metallurgy Workshop |goto 68.66,42.90 < 1 |c |noway
-step
-goto 54.92,33.09
-.' Follow the path |goto 54.92,33.09 < 1 |c |noway
-step
-goto 39.12,25.41
-.' Meet the Soul-Meld Mage |q The Soul-Meld Mage##1541003/Meet the Soul-Meld Mage |sub
-step
-goto 35.03,36.18
-.talk Gadris##1541006
-.' Talk to the Soul-Meld Mage |q The Soul-Meld Mage##1541003/Talk to the Soul-Meld Mage |sub
-step
-goto 33.76,35.48
-.click Overseer's Atelier##1671014
-.' Enter the Overseer's Atelier |goto 32.44,35.53 < 1 |c |noway
-step
-goto 22.00,35.47
-.click Light of Meridia##1671015
-.' Find the Power Crystal |q The Soul-Meld Mage##1541003/Find the Power Crystal |sub
-step
-goto 9.44,35.50
-.talk Zur##1541007
-.' Talk to the Soul-Meld Mage |q The Soul-Meld Mage##1541003/Talk to the Soul-Meld Mage |sub
-step
-goto 5.90,35.44
-.click Dwarven Power Mechanism##1671016
-.' Place the Crystal |q The Soul-Meld Mage##1541003/Place the Crystal |sub
-step
-goto 8.31,33.94
-.click Right Pillar##1671017
-.' Insert the Right Antipodal Rod |q The Soul-Meld Mage##1541003/21/Insert the Right Antipodal Rod##2
-step
-goto 8.39,36.81
-.click Left Pillar##1671019
-.' Insert the Left Antipodal Rod |q The Soul-Meld Mage##1541003/21/Insert the Left Antipodal Rod##1
-step
-goto 8.93,36.48
-.click Left Pillar Lever##1671021
-.' Choose Gadris |q The Soul-Meld Mage##1541003/Choose Gadris |sub
-step
-goto 9.28,36.13
-.talk Gadris##1541006 |q The Soul-Meld Mage##1541003/Talk to Gadris |sub
-step
-goto 5.90,35.46
-.click Light of Meridia##1671015
-.' Take the Light of Meridia |q The Soul-Meld Mage##1541003/Take the Light of Meridia |sub
-step
-goto 21.81,18.01
-.click Coldharbour##0451002
-.' Leave the Laboratory |q The Soul-Meld Mage##1541003/Leave the Laboratory |sub
-step
-goto Coldharbour 59.60,77.90
-.' Jump down
-.talk Gadris##1541006
-..turnin The Soul-Meld Mage##1541003
-step
-goto 59.40,77.94
-.click Portal to the Hollow City##1541007
-.' Teleport to the Hollow City |goto 34.60,63.74 < 1 |c |noway
-step
-goto 47.92,64.92
-.' Follow the path up |goto 47.92,64.92 < 1 |c |noway
-step
-goto 80.29,55.08
-.' Follow the path |goto 80.29,55.08 < 1 |c |noway
-step
-goto 56.83,68.16
-.' Follow the path |goto 56.83,68.16 < 1 |c |noway
-step
-goto 59.14,67.07
-.' Follow the path |goto 59.14,67.07 < 1 |c |noway
-step
-goto 58.01,62.25
-.wayshrine Court of Contempt
-step
-goto 59.67,62.95
-.talk Malkur Valos##3241006
-..accept Hall of Judgment##1541004
-step
-goto 60.40,62.97
-.' Follow the path |goto 60.40,62.97 < 1 |c |noway
-step
-goto 60.88,61.55
-.' Follow the path up |goto 60.88,61.55 < 1 |c |noway
-step
-goto 60.54,61.29
-.' Go up into the tower
-.click Fire Crystal##1541010
-.' Destroy the Elemental Crystal |q Hall of Judgment##1541004/Destroy Elemental Crystals |sub
-'FIX ME
-step
-goto 62.10,61.19
-.' Follow the path |goto 62.10,61.19 < 1 |c |noway
-step
-goto 61.37,59.91
-.' Follow the path up |goto 61.37,59.91 < 1 |c |noway
-step
-goto 60.99,59.35
-.click Daedric Coffer##1541011
-.' Collect the Gate Key |q Hall of Judgment##1541004/1/Collect the Gate Key##2
-step
-goto 61.58,59.92
-.' Follow the path |goto 61.58,59.92 < 1 |c |noway
-step
-goto 62.10,61.25
-.' Follow the path |goto 62.10,61.25 < 1 |c |noway
-step
-goto 60.85,64.24
-.' Follow the path up |goto 60.85,64.24 < 1 |c |noway
-step
-goto 60.52,64.58
-.' Go up into the tower
-.click Air Crystal##1541012
-.' Destroy the Elemental Crystal |q Hall of Judgment##1541004/Destroy Elemental Crystals |sub
-'FIX ME
-step
-goto 61.56,63.80
-.' Follow the path |goto 61.56,63.80 < 1 |c |noway
-step
-goto 63.42,64.16
-.' Follow the path up |goto 63.42,64.16 < 1 |c |noway
-step
-goto 63.78,64.42
-.' Go up into the tower
-.click Earth Crystal##1541013
-.' Destroy the Elemental Crystal |q Hall of Judgment##1541004/Destroy Elemental Crystals |sub
-step
-goto 63.53,61.78
-.talk Malkur Valos##3241006 |q Hall of Judgment##1541004/Talk to Malkur Valos |sub
-step
-goto 63.65,61.68
-.click Hall of Judgment##1541015
-.' Enter the Hall of Judgement |q Hall of Judgment##1541004/Enter the Arena WP |sub
-step
-goto 65.27,60.39
-.click Holding Cells##1541017
-.' Enter the Holding Cells |q Hall of Judgment##1541004/Enter the Holding Cells |sub
-step
-goto 66.01,61.20
-.click Pack##1801078
-.' Collect the Cage Key |q Hall of Judgment##1541004/Collect the Cage Key |sub
-step
-goto 65.93,61.62
-.click Cage##3361015
-.' Rescue Tarrami |q Hall of Judgment##1541004/6/Rescue Tarrami##1
-step
-goto 66.43,61.19
-.click Cage##3361015
-.' Rescue Denthis Romori |q Hall of Judgment##1541004/6/Rescue Denthis Romori##3
-step
-goto 66.53,61.60
-.click Cage##3361015
-.' Rescue Dithis Romori |q Hall of Judgment##1541004/6/Rescue Dithis Romori##2
-step
-goto 66.08,61.39
-.talk Tarrami##1541014 |q Hall of Judgment##1541004/Talk to Tarrami |sub
-step
-goto 65.27,61.27
-.click Hall of Judgment##1541015
-.' Meet the Mages Outside |q Hall of Judgment##1541004/Meet the Mages Outside |sub
-step
-goto 64.33,61.05
-.' Kill the waves of enemies that attack you
-.kill Judge Xiven##1541015
-.' Defend the Mages |q Hall of Judgment##1541004/Defend the Mages |sub
-step
-goto 63.71,61.61
-.click Court of Contempt##1541016
-.' Exit the Hall of Judgement |q Hall of Judgment##1541004/Exit the Arena Subzone |sub
-step
-goto 61.70,63.25
-.' Follow the path |goto 61.70,63.25 < 1 |c |noway
-step
-goto 62.28,64.68
-.' Follow the path |goto 62.28,64.68 < 1 |c |noway
-step
-goto 62.26,65.76
-.' Meet the Mages Outside |q Hall of Judgment##1541004/Meet the Mages Outside |sub
-step
-goto 62.19,65.85
-.talk Malkur Valos##3241006
-..turnin Hall of Judgment##1541004
-step
-goto 61.07,67.80
-.' Follow the path |goto 61.07,67.80 < 1 |c |noway
-step
-goto 63.10,69.51
-.' Follow the path |goto 63.10,69.51 < 1 |c |noway
-step
-goto 64.32,69.87
-.' Follow the path |goto 64.32,69.87 < 1 |c |noway
-step
-goto 65.40,71.37
-.wayshrine Everfull Flagon
-step
-goto 64.97,72.15
-.' Jump down here |goto 64.97,72.15 < 1 |c |noway
-step
-goto 65.49,73.73
-.' Follow the path |goto 65.49,73.73 < 1 |c |noway
-step
-goto 68.22,76.34
-.' Follow the path |goto 68.22,76.34 < 1 |c |noway
-step
-goto 70.16,78.66
-.talk Gamirth##1541018
-..accept Special Blend##1541005
-step
-goto 70.19,78.65
-.click Gamirth's Final Message##1541019
-.' Read the Note |q Special Blend##1541005/Read the Note |sub
-step
-goto 70.45,79.13
-.click The Everfull Flagon##1541020
-.' Enter the Everfull Flagon |goto 70.45,79.15 < 1 |c |noway
-step
-goto 70.66,79.13
-.talk Bernt the Brittle##1541027
-.' Talk to the Tavern Patrons |q Special Blend##1541005/Talk to Tavern Patrons |sub
-step
-goto 70.23,79.41
-.' Go upstairs
-.talk Nelhilda##1541033 |q Special Blend##1541005/Talk to Nelhilda |sub
-step
-goto 70.45,79.15
-.' Go downstairs
-.click Coldharbour##0451002
-.' Leave the Everfull Flagon |goto 70.45,79.13 < 1 |c |noway
-step
-goto 71.33,78.78
-.' Follow the path |goto 71.33,78.78 < 1 |c |noway
-step
-goto 72.31,80.42
-.' Follow the path down |goto 72.31,80.42 < 1 |c |noway
-step
-goto 75.23,81.99
-.' Follow the path up |goto 75.23,81.99 < 1 |c |noway
-step
-goto 76.07,82.76
-.' Locate Kyne's Shrine |q Special Blend##1541005/Locate Kyne's Shrine |sub
-step
-goto 75.27,83.29
-.click Runestone of Kyne##1541022
-.' Find a Runestone of Kyne |q Special Blend##1541005/Find a Runestone of Kyne |sub
-step
-goto 75.19,82.97
-.' Jump down here |goto 75.19,82.97 < 1 |c |noway
-step
-goto 73.95,83.27
-.click Kyne's Tears##1541023 |tip They look like bunches of small red flowers at the base of old trees all around this area.
-.' Gather 4 Kyne's Tears |q Special Blend##1541005/Gather Kyne's Tears |sub
-step
-goto 73.01,81.64
-.' Follow the path up |goto 73.01,81.64 < 1 |c |noway
-step
-goto 71.11,78.55
-.' Follow the path |goto 71.11,78.55 < 1 |c |noway
-step
-goto 70.45,79.13
-.click The Everfull Flagon##1541020
-.' Enter the Everfull Flagon |goto 70.45,79.15 < 1 |c |noway
-step
-goto 70.25,79.36
-.' Go upstairs
-.talk Nelhilda##1541033
-.' Give the Kyne's Tears to Nelhilda |q Special Blend##1541005/Give Kyne's Tears to Nelhilda |sub
-step
-goto 70.42,79.53
-.click Kyne's Purifying Potion##1541024
-.' Take the Purifying Potion |q Special Blend##1541005/Take the Purifying Potion |sub
-step
-goto 70.78,79.26
-.' Go downstairs
-.click Everfull Special Blend##1541025
-.' Purify the Cask of Special Blend |q Special Blend##1541005/Purify the Casks of Special Blend |sub
-'FIX ME
-step
-goto 70.36,79.26
-.click Everfull Special Blend##1541025
-.' Purify the Cask of Special Blend |q Special Blend##1541005/Purify the Casks of Special Blend |sub
-'FIX ME
-step
-goto 70.35,79.53
-.click Everfull Special Blend##1541025
-.' Purify the Cask of Special Blend |q Special Blend##1541005/Purify the Casks of Special Blend |sub
-'FIX ME
-step
-goto 70.66,79.13
-.talk Bernt the Brittle##1541027 |q Special Blend##1541005/Talk to Bernt the Brittle |sub
-step
-goto 70.76,79.27
-.' Go upstairs
-.talk Hridi Daggerhand##1541029 |q Special Blend##1541005/Talk to Hridi |sub
-step
-goto 70.19,79.53
-.' Go downstairs
-.talk Hautt Silvertongue##1541024 |q Special Blend##1541005/Talk to Hautt |sub
-..' Intimidate him
-step
-goto 70.45,79.15
-.click Coldharbour##0451002
-.' Leave the Everfull Flagon |goto 70.45,79.13 < 1 |c |noway
-step
-goto 71.28,77.17
-.' Enter the building |goto 71.28,77.17 < 1 |c |noway
-step
-goto 71.09,77.40
-.click Urn##1791092
-.' Find Hautt's Lute |q Special Blend##1541005/11/Find Hautt's Lute##2
-step
-goto 73.32,76.84
-.click Mill House##1541028
-.' Enter the Mill House |goto 73.35,76.87 < 1 |c |noway
-step
-goto 73.63,76.82
-.click Old Chest##1541029
-.' Find Hridi's Daggers |q Special Blend##1541005/11/Find Hridi's Daggers##1
-step
-goto 73.35,76.88
-.click Coldharbour##0451002
-.' Leave the Mill House |goto 73.31,76.84 < 1 |c |noway
-step
-goto 71.38,76.66
-.' Follow the path |goto 71.38,76.66 < 1 |c |noway
-step
-goto 69.67,77.51
-.' Follow the path up |goto 69.67,77.51 < 1 |c |noway
-step
-goto 70.45,79.13
-.click The Everfull Flagon##1541020
-.' Return to the Everfull Flagon |q Special Blend##1541005/Return to the Everfull Flagon |sub
-step
-goto 70.37,79.50
-.' Go upstairs
-.talk Bernt the Brittle##1541027 |q Special Blend##1541005/Talk to Bernt |sub
-'FIX ME
-step
-goto 70.45,79.15
-.' Go downstairs
-.click Coldharbour##0451002
-.' Leave the Everfull Flagon |goto 70.45,79.13 < 1 |c |noway
-step
-goto 68.82,79.20
-.' Jump down here |goto 68.82,79.20 < 1 |c |noway
-step
-goto 68.36,79.75
-.' Find the Thane's Lair |q Special Blend##1541005/Find the Thane's Lair |sub
-step
-goto 68.44,79.75
-.click Thane's Lair##1541030
-.' Enter the Thane's Lair |goto 68.00,79.38 < 1 |c |noway
-step
-goto 68.30,81.42
-.kill Thane Fellrig##1541020
-.' Defeat the Thane |q Special Blend##1541005/Defeat the Thane |sub
-step
-goto 68.33,81.73
-.click Soul Keeper##1541031
-.' Set the Villagers' Souls Free |q Special Blend##1541005/Set the Villagers' Souls Free |sub
-step
-goto 67.99,79.35
-.click Coldharbour##0451002
-.' Leave the Thane's Lair |goto 68.43,79.72 < 1 |c |noway
-step
-goto 68.24,78.37
-.' Follow the path |goto 68.24,78.37 < 1 |c |noway
-step
-goto 69.73,78.06
-.' Follow the path |goto 69.73,78.06 < 1 |c |noway
-step
-goto 70.45,79.13
-.click The Everfull Flagon##1541020
-.' Return to the Everfull Flagon |q Special Blend##1541005/Return to the Everfull Flagon |sub
-step
-goto 70.67,79.23
-.' Go upstairs
-.talk Bernt the Brittle##1541027 |q Special Blend##1541005/Talk to Bernt |sub
-'FIX ME
-.' Watch the dialogue
-step
-goto 70.64,79.25
-.' Go downstairs
-.talk Nelhilda##1541033
-..' Tell her she needs to forgive Bernt
-..turnin Special Blend##1541005
-step
-'Open your map:
-.' Click the Everfull Flagon Wayshrine
-.' Travel to the Everfull Flagon Wayshrine |goto 65.53,71.37 < 1 |c |noway
-step
-goto 66.72,71.01
-.' Follow the path |goto 66.72,71.01 < 1 |c |noway
-step
-goto 67.17,69.36
-.' Follow the path |goto 67.17,69.36 < 1 |c |noway
-step
-goto 71.44,68.46
-.talk Projection of Vanus Galerion##1541036
-..accept Vanus Unleashed##1541006
-step
-goto 72.60,68.31
-.' Follow the path through the lava |goto 72.60,68.31 < 1 |c |noway
-step
-goto 74.71,68.03
-.click The Black Forge##1541032
-.' Enter the Black Forge |goto The Black Forge 17.28,11.30 < 1 |c |noway
-step
-goto 14.97,21.47
-.' Follow the path |goto 14.97,21.47 < 1 |c |noway
-step
-goto 15.67,30.47
-.' Find Vanus Galerion |q Vanus Unleashed##1541006/Find Vanus Galerion |sub
-step
-goto 15.36,31.01
-.talk Galerion's Health##1661001
-.' Talk to Galerion's Essence |q Vanus Unleashed##1541006/Talk to Galerion's Essence |sub
-step
-goto 19.15,28.19
-.' Kill Abhorrent enemies |tip They are all around this area. Run into the orbs of light that appear after you kill them.
-.' Collect 5 Galerion's Health |q Vanus Unleashed##1541006/Collect Galerion's Health |sub
-step
-goto 15.36,31.01
-.talk Galerion's Health##1661001
-.' Talk to Galerion's Essence |q Vanus Unleashed##1541006/Talk to Galerion's Essence |sub
-step
-goto 19.63,31.78
-.' Follow the path |goto 19.63,31.78 < 1 |c |noway
-step
-goto 26.42,36.87
-.click Slave Quarters##1661001
-.' Enter the Slave Quarters |goto 26.65,37.36 < 1 |c |noway
-step
-goto 27.59,49.68
-.' Follow the path |goto 27.59,49.68 < 1 |c |noway
-step
-goto 34.47,56.39
-.' Enter the Slave Quarters |q Vanus Unleashed##1541006/Enter the Slave Quarters |sub
-step
-goto 39.84,60.49
-.talk Galerion's Stamina##1661010
-.' Talk to Galerion's Essence |q Vanus Unleashed##1541006/Talk to Galerion's Essence |sub
-step
-goto 41.84,57.46
-.talk Hillaz##1661009
-..' Intimidate him
-.' Collect 1 Galerion's Stamina |q Vanus Unleashed##1541006/Collect Galerion's Stamina |sub
-'FIX ME
-step
-goto 40.62,55.55
-.talk Midura##1661007
-..' Intimidate her
-.' Collect 2 Galerion's Stamina |q Vanus Unleashed##1541006/Collect Galerion's Stamina |sub
-'FIX ME
-step
-goto 39.31,55.74
-.talk Talian##1661006
-..' Persuade him
-.' Collect 3 Galerion's Stamina |q Vanus Unleashed##1541006/Collect Galerion's Stamina |sub
-'FIX ME
-step
-goto 37.82,57.26
-.talk Guzash gra-Bar##1661011
-..' Persuade her
-.' Collect 4 Galerion's Stamina |q Vanus Unleashed##1541006/Collect Galerion's Stamina |sub
-'FIX ME
-step
-goto 39.34,45.34
-.click Essence Extractor##1661002
-.' Get the Essence Extractor |q Vanus Unleashed##1541006/Get the Essence Extractor |sub
-step
-goto 41.45,53.86
-.' Use the Essence Extractor on Jurisa Denter |tip You have to be at about medium range to be able to use it.
-.' Collect 5 Galerion's Stamina |q Vanus Unleashed##1541006/Collect Galerion's Stamina |sub
-'FIX ME
-step
-goto 39.84,60.49
-.talk Galerion's Stamina##1661010
-.' Talk to Galerion's Essence |q Vanus Unleashed##1541006/Talk to Galerion's Essence |sub
-'FIX ME
-step
-goto 46.03,56.37
-.click Fabrication Chamber##1661003
-.' Enter the Fabrication Chamber |goto 46.19,56.15 < 1 |c |noway
-step
-goto 62.76,57.24
-.' Follow the path |goto 62.76,57.24 < 1 |c |noway
-step
-goto 70.40,56.16
-.click Foundry##1661004
-.' Enter the Foundry |q Vanus Unleashed##1541006/Enter the Foundry |sub
-step
-goto 76.66,56.16
-.talk Galerion's Magicka##1661014
-.' Talk to Galerion's Essence |q Vanus Unleashed##1541006/Talk to Galerion's Essence |sub
-'FIX ME
-step
-goto 73.99,58.69
-.click Seal of Binding##1661005
-.' Unlock the Seal of Binding |q Vanus Unleashed##1541006/Unlock the Seals of Binding |sub
-'FIX ME
-step
-goto 79.05,58.66
-.click Seal of Binding##1661005
-.' Unlock the Seal of Binding |q Vanus Unleashed##1541006/Unlock the Seals of Binding |sub
-'FIX ME
-step
-goto 79.15,53.68
-.click Seal of Binding##1661005
-.' Unlock the Seal of Binding |q Vanus Unleashed##1541006/Unlock the Seals of Binding |sub
-'FIX ME
-step
-goto 74.12,53.60
-.click Seal of Binding##1661005
-.' Unlock the Seal of Binding |q Vanus Unleashed##1541006/Unlock the Seals of Binding |sub
-'FIX ME
-step
-goto 76.66,56.16
-.talk Galerion's Magicka##1661014
-.' Talk to Galerion's Essence |q Vanus Unleashed##1541006/Talk to Galerion's Essence |sub
-step
-goto 76.64,62.87
-.click Boiler Tunnels##1661006
-.' Enter the Boiler Tunnels |goto 76.54,63.37 < 1 |c |noway
-step
-goto 79.21,73.51
-.' Follow the path down
-.' Follow the path |goto 79.21,73.51 < 1 |c |noway
-step
-goto 78.93,82.26
-.click Boiler##1661007
-.' Enter the Boiler |goto 78.34,83.72 < 1 |c |noway
-step
-goto 88.50,85.48
-.' Follow the path |goto 88.50,85.48 < 1 |c |noway
-step
-goto 89.25,82.89
-.' Find Vanus Galerion |q Vanus Unleashed##1541006/Find Vanus Galerion |sub
-step
-goto 89.71,78.40
-.click Health Conduit##1661008
-.click Magicka Conduit##1661009
-.click Stamina Conduit##1661010
-.' Watch the essences return to him
-.' Release Vanus Galerion |q Vanus Unleashed##1541006/Release Vanus Galerion |sub
-step
-goto 89.22,74.10
-.click The Shackle Bridge##1661011
-.' Follow Vanus Galerion |q Vanus Unleashed##1541006/Follow Vanus Galerion |sub
-step
-goto The Great Shackle 24.17,64.30
-.talk Vanus Galerion##1791292
-..turnin Vanus Unleashed##1541006
-..accept Breaking the Shackle##1541007
-step
-goto 38.63,61.35
-.' Watch him dispel the barrier
-.' Follow Vanus Galerion |q Breaking the Shackle##1541007/Follow Vanus Galerion |sub
-step
-goto 41.68,60.52
-.click The Great Shackle##1541033
-.' Enter the Great Shackle |q Breaking the Shackle##1541007/Enter the Great Shackle |sub
-step
-goto 55.76,60.46
-.' Follow the path |goto 55.76,60.46 < 1 |c |noway
-step
-goto 62.67,53.91
-.' Follow the path |goto 62.67,53.91 < 1 |c |noway
-step
-goto 62.68,46.90
-.click Power Chamber##1541034
-.' Enter the Power Chamber |goto 62.70,46.57 < 1 |c |noway
-step
-goto 62.69,42.64
-.click Magicka Conduit##1661009
-.' Use the Magicka Conduit |q Breaking the Shackle##1541007/Use Magicka Conduit |sub
-step
-goto 62.67,32.88
-.' Follow the path |goto 62.67,32.88 < 1 |c |noway
-step
-goto 69.48,20.22
-.' Follow the path |goto 69.48,20.22 < 1 |c |noway
-step
-goto 70.26,13.19
-.click Cage##3361015
-.' Rescue Sage Tirora |q Breaking the Shackle##1541007/Rescue Sage Tirora |sub
-step
-goto 70.77,23.25
-.' Follow the path |goto 70.77,23.25 < 1 |c |noway
-step
-goto 76.34,26.23
-.' Follow the path |goto 76.34,26.23 < 1 |c |noway
-step
-goto 77.36,32.76
-.click Cage##3361015
-.' Rescue Treva |q Breaking the Shackle##1541007/Rescue Treva |sub
-step
-goto 77.99,23.25
-.' Follow the path |goto 77.99,23.25 < 1 |c |noway
-step
-goto 86.56,25.84
-.' Follow the path |goto 86.56,25.84 < 1 |c |noway
-step
-goto 83.26,39.98
-.click Power Chamber Catwalk##1541035
-.' Enter the Power Chamber Catwalk |goto 82.87,39.96 < 1 |c |noway
-step
-goto 82.22,39.86
-.' Locate the Conduits Up Above |q Breaking the Shackle##1541007/Locate the Conduits Up Above |sub
-step
-goto 75.90,40.11
-.' Follow the path up |goto 75.90,40.11 < 1 |c |noway
-step
-goto 68.11,40.04
-.click Magicka Conduit##1661009
-.' Use the Magicka Conduit |q Breaking the Shackle##1541007/Use Magicka Conduit |sub
-'FIX ME
-step
-goto 62.67,45.55
-.click Magicka Conduit##1661009
-.' Use the Magicka Conduit |q Breaking the Shackle##1541007/Use Magicka Conduit |sub
-'FIX ME
-step
-goto 62.69,34.63
-.click Magicka Conduit##1661009
-.' Use the Magicka Conduit |q Breaking the Shackle##1541007/Use Magicka Conduit |sub
-'FIX ME
-.' Explore the Great Shackle |q Breaking the Shackle##1541007/Explore the Great Shackle |sub
-step
-goto 55.77,40.05
-.' Go through the doorway |goto 55.77,40.05 < 1 |c |noway
-step
-goto 55.26,41.36
-.' Jump down here |goto 55.26,41.36 < 1 |c |noway
-step
-goto 42.27,39.97
-.click The Mooring##1541036
-.' Enter the Mooring |q Breaking the Shackle##1541007/Enter the Mooring |sub
-step
-goto The Mooring 46.22,51.76
-.' Kill the enemies that attack you in waves |tip They come out of the portals that appear to the right and left of Vanus Galerion.
-.' Defend Vanus Galerion |q Breaking the Shackle##1541007/Defend Vanus Galerion |sub
-step
-goto 47.76,51.82
-.' Watch the dialogue
-.' Observe the Great Shackle |q Breaking the Shackle##1541007/Observe the Great Shackle |sub
-step
-goto 50.42,54.52
-.click Portal to The Hollow City##1691001
-.' Return to The Hollow City |q Breaking the Shackle##1541007/Return to the Hollow City |sub
-step
-goto The Hollow City 18.25,79.21
-.talk Vanus Galerion##1791292
-..turnin Breaking the Shackle##1541007
-step
-goto 18.06,79.76
-.click Mages Guild##1781008
-.' Enter the Mages Guild |goto 17.71,79.90 < 1 |c |noway
-step
-goto 15.88,83.98
-.talk Nalia##1541041
-.' Walk back into the big room
-.' Introduce Vanus Galerion
-.' Rescue Vanus Galerion |q The Army of Meridia##1541002/1/Rescue Vanus Galerion##2
-step
-goto 17.90,79.80
-.click Hollow City##1541007
-.' Leave the Mages Guild |goto 18.07,79.75 < 1 |c |noway
-step
-goto 24.19,82.03
-.' Follow the path down |goto 24.19,82.03 < 1 |c |noway
-step
-goto 32.84,69.04
-.click Hollow City##1541007
-.' Leave the Mages Guild District |goto 33.90,67.97 < 1 |c |noway
-step
-goto 31.91,55.54
-.' Follow the path |goto 31.91,55.54 < 1 |c |noway
-step
-goto 15.03,50.05
-.' Follow the path |goto 15.03,50.05 < 1 |c |noway
-step
-goto 4.82,62.44
-.' Follow the path |goto 4.82,62.44 < 1 |c |noway
-step
-goto Coldharbour 41.85,69.97
-.talk Projection of Kireth Vanos##1541047 |tip She walks up to you.
-..accept Through the Daedric Lens##1541008
-step
-goto 41.03,71.78
-.' Follow the path |goto 41.03,71.78 < 1 |c |noway
-step
-goto 39.86,74.49
-.' Follow the path up |goto 39.86,74.49 < 1 |c |noway
-step
-goto 40.05,75.66
-.click Daedric Lens##1541043
-.' Destroy the Daedric Lens |q Through the Daedric Lens##1541008/Destroy the Daedric Lenses |sub
-step
-goto 40.66,76.74
-.' Follow the path |goto 40.66,76.74 < 1 |c |noway
-step
-goto 39.21,78.10
-.talk Treeminder Xohaneel##1541050 |tip She walks up to you.
-..accept Wisdom of the Ages##1541009
-step
-goto 37.73,79.15
-.' Follow the path |goto 37.73,79.15 < 1 |c |noway
-step
-goto 34.12,82.28
-.wayshrine Haj Uxith
-step
-goto 34.09,81.60
-.' Go to Haj Uxith |q Wisdom of the Ages##1541009/Go to Haj Uxith |sub
-step
-goto 34.13,81.33
-.' Watch the dialogue
-.' Listen to Xohaneel and An-Jeen-Sakka |q Wisdom of the Ages##1541009/Listen to Xohaneel and An-Jeen-Sakka |sub
-step
-goto 34.06,81.37
-.talk Treeminder Xohaneel##1541050 |q Wisdom of the Ages##1541009/Talk to Treeminder Xohaneel |sub
-'FIX ME
-..' Tell her you're ready to begin the Trial of Spirit
-step
-goto 33.42,82.19
-.' Follow the path up |goto 33.42,82.19 < 1 |c |noway
-step
-goto 32.04,82.15
-.' Follow the path up |goto 32.04,82.15 < 1 |c |noway
-step
-goto 32.28,82.55
-.talk Teelawei##1541052
-..' <Give Teelawei the Amulet of Courage.>
-.' Give an Amulet to Teelawei |q Wisdom of the Ages##1541009/5/Give Amulet to Teelawei##2
-step
-goto 32.14,83.58
-.talk Ashgar##1541053
-..' <Give Ashgar the Amulet of Preservation.>
-.' Give an Amulet to Ashgar |q Wisdom of the Ages##1541009/5/Give Amulet to Ashgar##1
-step
-goto 31.96,82.58
-.' Follow the path |goto 31.96,82.58 < 1 |c |noway
-step
-goto 31.24,82.61
-.talk Desh-Wazei##1541054
-..' <Give Desh-Wazei the Amulet of Endurance.>
-.' Give an Amulet to Desh-Wazei |q Wisdom of the Ages##1541009/5/Give Amulet to Desh-Wazei##3
-step
-goto 31.52,82.40
-.' Follow the path up |goto 31.52,82.40 < 1 |c |noway
-step
-goto 31.48,83.26
-.click Statue of Time##1541048
-..' <Place the Gem of Preservation.>
-.click Statue of Life##1541050
-..' <Place the Gem of Endurance.>
-.click Statue of the Unknown##1541049
-..' <Place the Gem of Courage.>
-.' Place the Gems |q Wisdom of the Ages##1541009/Place the Gems |sub
-step
-goto 32.38,82.26
-.talk Treeminder Xohaneel##1541050 |q Wisdom of the Ages##1541009/Talk to Treeminder Xohaneel |sub
-'FIX ME
-step
-goto 32.34,82.18
-.talk An-Jeen-Sakka##1541051 |q Wisdom of the Ages##1541009/Talk to An-Jeen-Sakka |sub
-step
-goto 31.88,81.75
-.' Follow the path |goto 31.88,81.75 < 1 |c |noway
-step
-goto 32.20,79.77
-.' Follow the path up |goto 32.20,79.77 < 1 |c |noway
-step
-goto 31.51,79.56
-.' Follow the path up |goto 31.51,79.56 < 1 |c |noway
-step
-goto 31.51,78.76
-.click North Pyramid##1541051
-.' Enter the North Pyramid |goto Haj Uxith 11.00,64.42 < 1 |c |noway
-step
-goto Haj Uxith 18.04,39.95
-.' Follow the path |goto Haj Uxith 18.04,39.95 < 1 |c |noway
-step
-goto 31.41,41.20
-.click Hist Sap Chamber##1541052
-.' Enter the Hist Sap Chamber |goto 41.90,43.19 < 1 |c |noway
-step
-goto 57.61,51.90
-.' Follow the path |goto 57.61,51.90 < 1 |c |noway
-step
-goto 66.83,51.59
-.' Enter the Sap Collection Facility |q Wisdom of the Ages##1541009/Enter Sap Collection Facility |sub
-step
-goto 69.46,44.86
-.click Treated Wood##1541053
-.' Collect Treated Wood |q Wisdom of the Ages##1541009/Collect Treated Wood |sub
-step
-goto 70.89,43.24
-.click Hist Sap Vat##1541054
-.' Overheat the Sap Vat
-.' Click the other 5 Hist Sap Vats in this big room
-.' Overheat the Sap Vats |q Wisdom of the Ages##1541009/Overheat the Sap Vats |sub
-step
-goto 82.83,64.92
-.' Follow the path |goto 82.83,64.92 < 1 |c |noway
-step
-goto 77.08,79.00
-.click The Values of Haj Uxith##1541045
-.' Exit the Facility |q Wisdom of the Ages##1541009/Exit the Facility |sub
-step
-goto Coldharbour 34.06,81.24
-.talk An-Jeen-Sakka##1541051 |q Wisdom of the Ages##1541009/An-Jeen-Sakka |sub
-..' Tell him you agree with the warriors
-step
-goto 34.06,81.37
-.talk Treeminder Xohaneel##1541050
-..' Persuade her |q Wisdom of the Ages##1541009/Persuade |sub
-step
-goto 34.05,81.23
-.talk An-Jeen-Sakka##1541051
-..turnin Wisdom of the Ages##1541009
-step
-goto 34.83,81.56
-.' Follow the path |goto 34.83,81.56 < 1 |c |noway
-step
-goto 39.20,77.58
-.' Follow the path |goto 39.20,77.58 < 1 |c |noway
-step
-goto 37.73,76.02
-.' Follow the path |goto 37.73,76.02 < 1 |c |noway
-step
-goto 37.62,74.63
-.' Follow the path up |goto 37.62,74.63 < 1 |c |noway
-step
-goto 37.06,75.17
-.click Daedric Lens##1541043
-.' Destroy the Daedric Lens |q Through the Daedric Lens##1541008/Destroy the Daedric Lenses |sub
-'FIX ME
-step
-goto 35.91,74.49
-.' Follow the path up |goto 35.91,74.49 < 1 |c |noway
-step
-goto 35.24,73.98
-.' Follow the path |goto 35.24,73.98 < 1 |c |noway
-step
-goto 35.15,72.93
-.' Follow the path up |goto 35.15,72.93 < 1 |c |noway
-step
-goto 34.42,73.07
-.click Daedric Lens##1541043
-.' Destroy the Daedric Lens |q Through the Daedric Lens##1541008/Destroy the Daedric Lenses |sub
-'FIX ME
-step
-goto 35.52,72.73
-.' Follow the path |goto 35.52,72.73 < 1 |c |noway
-step
-goto 38.38,71.59
-.click Library Gallery##1541055
-.' Enter the Gallery |q Through the Daedric Lens##1541008/Enter the Gallery |sub
-step
-goto 37.63,71.57
-.' Find Kireth Vanos |q Through the Daedric Lens##1541008/Find Kireth Vanos |sub
-step
-goto 37.45,71.66
-.talk Kireth Vanos##3241020
-..turnin Through the Daedric Lens##1541008
-..accept The Library of Dusk##1541010
-step
-goto 37.44,71.66
-.click Observation Window##1541056
-.' Use the Observation Window |q The Library of Dusk##1541010/Use the Observation Windows |sub
-'FIX ME
-step
-goto 38.12,72.33
-.click Observation Window##1541056
-.' Use the Observation Window |q The Library of Dusk##1541010/Use the Observation Windows |sub
-'FIX ME
-step
-goto 38.80,71.66
-.click Observation Window##1541056
-.' Use the Observation Window |q The Library of Dusk##1541010/Use the Observation Windows |sub
-'FIX ME
-step
-goto 38.62,70.50
-.click Library of Dusk##1541057
-.' Enter the Library of Dusk |q The Library of Dusk##1541010/Enter the Library of Dusk |sub
-step
-goto Library of Dusk 20.59,66.01
-.' Follow the path |goto Library of Dusk 20.59,66.01 < 1 |c |noway
-step
-goto 9.91,65.69
-.talk Raynor Vanos##3241002
-..' Persuade him
-.' Find Raynor Vanos |q The Library of Dusk##1541010/Find Raynor Vanos |sub
-.' Talk to Raynor Vanos |q The Library of Dusk##1541010/Talk to Raynor Vanos |sub
-step
-goto 31.37,76.72
-.' Follow the path |goto 31.37,76.72 < 1 |c |noway
-step
-goto 29.81,87.19
-.talk Lady Clarisse Laurent##3241023
-.' Find Lady Clarisse Laurent |q The Library of Dusk##1541010/Find Lady Clarisse Laurent |sub
-step
-goto 55.29,70.84
-.' Follow the path |goto 55.29,70.84 < 1 |c |noway
-step
-goto 63.21,58.54
-.' Find Telenger the Artificer |q The Library of Dusk##1541010/Find Telenger the Artificer |sub
-'FIX ME
-step
-goto 64.44,60.17
-.click If You Can Read This, Open It##1631001
-.' Read Telenger's Note |q The Library of Dusk##1541010/Read Telenger's Note |sub
-step
-goto 39.78,68.93
-.' Follow the path down |goto 39.78,68.93 < 1 |c |noway
-step
-goto 39.51,53.82
-.' Follow the path |goto 39.51,53.82 < 1 |c |noway
-step
-goto 42.96,24.87
-.' Follow the path |goto 42.96,24.87 < 1 |c |noway
-step
-goto 75.68,24.76
-.' Find Telenger the Artificer |q The Library of Dusk##1541010/Find Telenger the Artificer |sub
-'FIX ME
-step
-goto 75.82,24.78
-.talk Telenger the Artificer##1781262 |q The Library of Dusk##1541010/Talk to Telenger the Artificer |sub
-step
-goto 75.82,24.78
-.click Library Vault##1631002
-.' Enter the Vault |q The Library of Dusk##1541010/Enter the Vault |sub
-step
-goto 80.84,24.84
-.talk Telenger the Artificer##1781262 |q The Library of Dusk##1541010/Talk to Telenger the Artificer |sub
-'FIX ME
-step
-goto 89.08,24.49
-.click Portal to Mysterious Power Source##1631003
-.' Enter the Library Valut Portal |q The Library of Dusk##1541010/Enter the Library Vault Portal |sub
-step
-goto Coldharbour 38.09,71.90
-.' Follow the path up |goto Coldharbour 38.09,71.90 < 1 |c |noway
-step
-goto 36.91,71.07
-.' Find the Source of Power |q The Library of Dusk##1541010/Find the Source of Power |sub
-step
-goto 36.79,70.93
-.click Light of Meridia##1671015
-.' Take the Light of Meridia |q The Library of Dusk##1541010/Take the Light of Meridia |sub
-step
-goto 36.47,70.57
-.' Jump down here |tip You won't die.
-.' Leave the Floating Rock |q The Library of Dusk##1541010/Leave the Floating Rock |sub
-step
-goto 35.70,67.97
-.talk Telenger the Artificer##1781262
-..turnin The Library of Dusk##1541010
-.' Restore the Hollow City |q The Army of Meridia##1541002/1/Restore the Hollow City##3
-step
-goto 35.54,67.52
-.wayshrine Library of Dusk
-step
-goto 35.54,67.52
-.click Library of Dusk Wayshrine##1541058
-.' Travel to the Hollow City Wayshrine |goto The Hollow City 20.68,42.04 < 1 |c |noway
-step
-goto The Hollow City 31.41,32.69
-.' Follow the path |goto The Hollow City 31.41,32.69 < 1 |c |noway
-step
-goto Tower of Lies 115.44,100.54
-.talk Gwilir##1541059
-..accept Truth, Lies, and Prisoners##1541011
-step
-goto 113.76,98.55
-.' Jump down here |tip You won't die.
-.' Jump Into the Water |q Truth, Lies, and Prisoners##1541011/Jump Into the Water |sub
-step
-goto 87.28,81.21
-.talk Skordo the Knife##3241022 |q Truth, Lies, and Prisoners##1541011/Talk to Skordo |sub
-step
-goto 74.06,91.30
-.talk Lyranth##1541061
-.' Talk to the Dremora Prisoner |q Truth, Lies, and Prisoners##1541011/Talk to the Dremora Prisoner |sub
-step
-goto 75.99,114.76
-.' Find Borgath |q Truth, Lies, and Prisoners##1541011/Find Borgath |sub
-step
-goto 70.67,103.45
-.' Follow the path |goto 70.67,103.45 < 1 |c |noway
-step
-goto 49.58,104.76
-.' Follow the path |goto 49.58,104.76 < 1 |c |noway
-step
-goto 45.95,109.71
-.talk Sinfay##1541065
-.' Find Sinfay |q Truth, Lies, and Prisoners##1541011/Find Sinfay |sub
-step
-goto 54.71,98.85
-.' Follow the path |goto 54.71,98.85 < 1 |c |noway
-step
-goto 67.27,82.62
-.talk Vikord Skullcleaver##3241009
-.' Find Vikord |q Truth, Lies, and Prisoners##1541011/Find Vikord |sub
-step
-goto 56.69,90.16
-.' Follow the path up |goto 56.69,90.16 < 1 |c |noway
-step
-goto 53.91,106.75
-.' Follow the path up |goto 53.91,106.75 < 1 |c |noway
-step
-goto 66.16,108.68
-.talk Skordo the Knife##3241022
-.' Meet Skordo Outside the Overseer's Chamber |q Truth, Lies, and Prisoners##1541011/Meet Skordo Outside the Overseer's Chamber |sub
-step
-goto 64.81,111.92
-.click Overseer Aruz's Chamber##1541059
-.' Enter Overseer Aruz's Chamber |goto 65.10,112.73 < 1 |c |noway
-step
-goto 65.52,117.53
-.kill Overseer Aruz##1541066 |q Truth, Lies, and Prisoners##1541011/5/Kill Overseer Aruz##2
-step
-goto 63.47,119.47
-.click Overseer's Chest##1541060
-.' Get the Key to the Passage |q Truth, Lies, and Prisoners##1541011/Get the Key to the Passage |sub
-step
-goto 65.13,112.68
-.click Tower of Lies##1541061
-.' Leave Overseer Aruz's Chamber |goto 64.87,111.88 < 1 |c |noway
-step
-goto 54.47,99.01
-.' Follow the path |goto 54.47,99.01 < 1 |c |noway
-step
-goto 57.92,79.67
-.' Follow the path |goto 57.92,79.67 < 1 |c |noway
-step
-goto 70.39,68.01
-.talk Skordo the Knife##3241022 |q Truth, Lies, and Prisoners##1541011/Talk to Skordo |sub
-step
-goto 71.88,68.62
-.click Liar's Passage##1541062
-.' Enter the Passage |q Truth, Lies, and Prisoners##1541011/Enter the Passage |sub
-step
-goto 84.87,45.20
-.' Follow the path |goto 84.87,45.20 < 1 |c |noway
-step
-goto 29.22,45.01
-.' Follow the path |goto 29.22,45.01 < 1 |c |noway
-step
-goto 17.78,54.67
-.click Tower of Lies##1541061
-.' Use the Passage to the Upper Level |q Truth, Lies, and Prisoners##1541011/Use Passage to Upper Level |sub
-step
-goto 22.65,90.84
-.talk Lyranth##1541061
-.' Talk to the Dremora Prisoner |q Truth, Lies, and Prisoners##1541011/Talk to the Dremora Prisoner |sub
-step
-goto 25.85,97.78
-.' Follow the path up |goto 25.85,97.78 < 1 |c |noway
-step
-goto 36.06,103.14
-.talk Captain Eilram##1541068 |q Truth, Lies, and Prisoners##1541011/Talk to Captain Eilram |sub
-step
-goto 44.75,121.08
-.' Follow the path down |goto 44.75,121.08 < 1 |c |noway
-step
-goto 72.90,125.89
-.click Captain Eilram's Sword##1541063
-.' Find Captain Eilram's Sword |q Truth, Lies, and Prisoners##1541011/Find Captain Eilram's Sword |sub
-step
-goto 60.47,123.39
-.' Follow the path up |goto 60.47,123.39 < 1 |c |noway
-step
-goto 26.55,103.75
-.talk Lyranth##1541061
-.' Talk to the Dremora Prisoner |q Truth, Lies, and Prisoners##1541011/Talk to the Dremora Prisoner |sub
-step
-goto 18.92,75.66
-.' Follow the path |goto 18.92,75.66 < 1 |c |noway
-step
-goto 34.74,47.42
-.' Follow the path |goto 34.74,47.42 < 1 |c |noway
-step
-goto 55.21,41.84
-.' Go to Captain Arakh's Camp |q Truth, Lies, and Prisoners##1541011/Go to Captain Arakh's Camp |sub
-step
-goto 64.44,44.21
-.talk Captain Eilram##1541068
-.' Return the Sword to Eilram |q Truth, Lies, and Prisoners##1541011/Return the Sword to Eilram |sub
-step
-goto 49.07,44.81
-.' Follow the path down |goto 49.07,44.81 < 1 |c |noway
-step
-goto 60.65,62.47
-.' Follow the path |goto 60.65,62.47 < 1 |c |noway
-step
-goto 69.14,82.98
-.' Follow the path up |goto 69.14,82.98 < 1 |c |noway
-step
-goto 78.90,83.33
-.click Captain Arakh's Helm##1541064 |tip It's hanging up on a hook.
-.' Find Captain Arakh's Helm |q Truth, Lies, and Prisoners##1541011/Find Captain Arakh's Helm |sub
-step
-goto 64.76,77.27
-.' Follow the path |goto 64.76,77.27 < 1 |c |noway
-step
-goto 50.36,42.01
-.' Follow the path up |goto 50.36,42.01 < 1 |c |noway
-step
-goto 66.21,49.17
-.talk Captain Arakh##1541070
-.' Return the Helmet to Arakh |q Truth, Lies, and Prisoners##1541011/Return the Helmet to Arakh |sub
-step
-goto 65.26,45.36
-.' Watch the dialogue
-.' Listen to the Two Captains |q Truth, Lies, and Prisoners##1541011/Listen to the Two Captains |sub
-step
-goto 66.22,42.99
-.talk Lyranth##1541061 |q Truth, Lies, and Prisoners##1541011/Talk to Lyranth |sub
-step
-goto 65.58,39.86
-.' Follow the path up |goto 65.58,39.86 < 1 |c |noway
-step
-goto 89.10,54.61
-.' Follow the path up |goto 89.10,54.61 < 1 |c |noway
-step
-goto 87.22,68.35
-.kill Ifriz the Unraveler##1541071 |q Truth, Lies, and Prisoners##1541011/Kill Ifriz |sub
-step
-goto 76.77,61.89
-.talk Captain Arakh##1541070 |q Truth, Lies, and Prisoners##1541011/Talk to Captain Arakh |sub
-step
-goto 73.41,68.64
-.' Follow the path up |goto 73.41,68.64 < 1 |c |noway
-step
-goto 65.48,81.39
-.' Go to the Portal |q Truth, Lies, and Prisoners##1541011/Go to the Portal |sub
-step
-goto 60.81,79.60
-.click Light of Meridia##1671015
-.' Take the Light of Meridia |q Truth, Lies, and Prisoners##1541011/Take the Light of Meridia |sub
-step
-goto 59.41,84.24
-.click Portal to the Hollow City##1541007
-.' Use the Portal |q Truth, Lies, and Prisoners##1541011/Use the Portal |sub
-step
-goto Coldharbour 45.20,64.86
-.talk Skordo the Knife##3241022
-..turnin Truth, Lies, and Prisoners##1541011
-step
-goto The Hollow City 29.82,31.20
-.' Follow the path |goto The Hollow City 29.82,31.20 < 1 |c |noway
-step
-goto 19.97,41.13
-.click Hollow City Wayshrine##1541041
-.' Travel to the Library of Dusk Wayshrine |goto Coldharbour 35.59,67.58 < 1 |c |noway
-step
-goto Coldharbour 34.93,67.22
-.' Follow the path |goto Coldharbour 34.93,67.22 < 1 |c |noway
-step
-goto 33.04,66.39
-.click Abandoned Pack##1541066
-..accept Into the Woods##1541012
-.' Find the Ayleid King |q The Army of Meridia##1541002/Find the Ayleid King |sub
-step
-goto 32.95,66.39
-.click Captain Alphaury's Journal##1541065
-.' Search the Camp |q Into the Woods##1541012/Search the Camp |sub
-step
-goto 32.22,67.11
-.' Follow the path |goto 32.22,67.11 < 1 |c |noway
-step
-goto 31.47,68.48
-.click Placed Blade##1541067
-.' Find the Fighters Guild Members |q Into the Woods##1541012/2/Find the Fighters Guild Members##1
-step
-goto 28.31,69.36
-.talk Faraniel##1541074
-.' Follow the Direction of the Blades |q Into the Woods##1541012/Follow the Direction of the Blades |sub
-'FIX ME
-step
-goto 24.15,67.30
-.' Kill the enemies that attack you
-.' Follow the Direction of the Blades |q Into the Woods##1541012/Follow the Direction of the Blades |sub
-'FIX ME
-step
-goto 26.85,66.32
-.' Follow the Direction of the Blades |q Into the Woods##1541012/Follow the Direction of the Blades |sub
-'FIX ME
-.' Find the Fighters Guild Members |q Into the Woods##1541012/Find the Fighters Guild Members |sub
-step
-goto 26.99,66.27
-.talk Faraniel##1541074 |q Into the Woods##1541012/Talk to Faraniel |sub
-step
-goto 26.37,66.78
-.kill Spriggan##1801040+ |tip They are all around this area.  They look like tree women with a circle of root legs that crawl on the ground.
-.' Collect 3 Spriggan Bark |q Into the Woods##1541012/Collect Spriggan Bark |sub
-step
-goto 26.98,66.18
-.talk Faraniel##1541074
-.' Bring the Spriggan Bark to Faraniel |q Into the Woods##1541012/Bring the Spriggan Bark to Faraniel |sub
-step
-goto 27.22,65.38
-.' Follow the path |goto 27.22,65.38 < 1 |c |noway
-step
-goto 29.35,65.03
-.' Cross the Ayleid Bridge |q Into the Woods##1541012/Cross the Ayleid Bridge |sub
-step
-goto 30.45,65.42
-.' Follow the Shadow Runner as he walks |tip He will wait on you as you fight.  Touch the green Wisps of Light as you walk to keep up your Lighting the Way buff.
-.' Follow the Shadow Runner |q Into the Woods##1541012/Follow the Shadow Runner |sub
-step
-goto 22.20,65.10
-.' Kill the Shadow enemies
-.' Rescue the Khajiit Soldier
-.' Follow a Shadow Runner |q Into the Woods##1541012/Follow a Shadow Runner |sub
-step
-goto 23.06,64.37
-.' Follow the path |goto 23.06,64.37 < 1 |c |noway
-step
-goto 23.86,61.73
-.wayshrine Moonless Walk
-step
-goto 23.41,63.23
-.' Follow the path |goto 23.41,63.23 < 1 |c |noway
-step
-goto 23.30,65.51
-.' Follow the path |goto 23.30,65.51 < 1 |c |noway
-step
-goto 22.93,66.32
-.talk Sergeant Kamu##3241021 |q Into the Woods##1541012/Talk to Sergeant Kamu |sub
-step
-goto 23.03,66.42
-.talk Faraniel##1541074
-..' Tell her you will help her
-.' Ask the Wood Elf for Help
-..turnin Into the Woods##1541012
-step
-goto 28.16,67.16
-.' Walk onto the bridge
-.' Meet Faraniel at the Bridge |q The Shadow's Embrace##1541013/Meet Faraniel at the Bridge |sub
-step
-goto 28.13,67.23
-.talk Faraniel##1541074
-..' Persuade her
-..accept The Shadow's Embrace##1541013
-step
-goto 28.38,71.45
-.' Follow the path |goto 28.38,71.45 < 1 |c |noway
-step
-goto 28.75,72.49
-.' Enter the small cave |goto 28.75,72.49 < 1 |c |noway
-step
-goto 28.96,72.90
-.kill Muiriana the Dark##1541080
-.' Defeat the Lamia Champion |q The Shadow's Embrace##1541013/Defeat the Lamia Champion |sub
-step
-goto 28.75,72.40
-.' Follow the path down |goto 28.75,72.40 < 1 |c |noway
-step
-goto 27.03,66.49
-.' Return to the Center Camp |q The Shadow's Embrace##1541013/Return to the Center Camp |sub
-step
-'Next to you:
-.talk Faraniel##1541074 |q The Shadow's Embrace##1541013/Talk to Faraniel |sub
-step
-goto 26.79,66.17
-.talk Idreloth##1541083
-..' Persuade him
-.' Talk to the Wood Elf |q The Shadow's Embrace##1541013/Talk to the Wood Elves |sub
-'FIX ME
-step
-goto 27.06,66.19
-.talk Sanithil##1541082
-..' Intimidate her
-.' Talk to the Wood Elf |q The Shadow's Embrace##1541013/Talk to the Wood Elves |sub
-'FIX ME
-step
-goto 26.92,66.05
-.talk Mindirin##1541081
-.' Talk to the Wood Elf |q The Shadow's Embrace##1541013/Talk to the Wood Elves |sub
-'FIX ME
-step
-goto 27.05,65.91
-.talk Eginthoril##1541084
-.' Talk to the Wood Elf |q The Shadow's Embrace##1541013/Talk to the Wood Elves |sub
-'FIX ME
-step
-goto 26.95,65.90
-.talk Faraniel##1541074 |q The Shadow's Embrace##1541013/Talk to Faraniel |sub
-step
-goto 26.76,65.86
-.click Portal to Council of Elders##1541070
-.' Teleport to the Council of Elders |goto 26.58,65.03 < 1 |c |noway
-step
-goto 26.61,64.84
-.talk Elder Erthor##1541086
-..' Tell him you understand his situation, but you think he has been tricked.
-.' Convince Elder Erthor |q The Shadow's Embrace##1541013/Erthor Talk-To |sub
-step
-goto 26.90,64.63
-.talk Elder Gluin##1541087
-..' Tell him with all due respect, you've seen the chains destroying our world.
-.' Convince Elder Gluin |q The Shadow's Embrace##1541013/Talk to Gluin |sub
-step
-goto 26.64,64.51
-.talk Elder Inril##1541088
-..' Tell her Valenwood will be destroyed unless we do something.
-.' Convince Elder Inril |q The Shadow's Embrace##1541013/Talk to Inril |sub
-step
-goto 26.44,64.69
-.talk Elder Elsaril##1541089
-..' Tell her you're so sorry, but you've seen the Daedric anchors.
-.' Convince Elder Elsaril |q The Shadow's Embrace##1541013/Talk to Elsaril |sub
-step
-goto 26.56,65.05
-.click Portal to the Moonless Walk##1541071
-.' Use the Portal to Return to Faraniel |goto 26.79,65.86 < 1 |c |noway
-step
-goto 27.05,66.13
-.talk Faraniel##1541074 |q The Shadow's Embrace##1541013/Talk to Faraniel |sub
-..' Tell her you did your best.
-step
-goto 26.95,65.99
-.talk Elder Erthor##1541086 |q The Shadow's Embrace##1541013/Talk to Elder Erthor |sub
-step
-goto 27.05,66.13
-.talk Faraniel##1541074 |q The Shadow's Embrace##1541013/Talk to Faraniel |sub
-step
-goto 25.67,64.89
-.' Follow the path |goto 25.67,64.89 < 1 |c |noway
-step
-goto 24.18,63.22
-.' Follow the path up |goto 24.18,63.22 < 1 |c |noway
-step
-goto 22.79,62.42
-.click Ruined Passage##1541072
-.' Enter the Ruined Passage |q The Shadow's Embrace##1541013/Enter the Ruined Passage |sub
-step
-goto Lightless Oubliette 76.46,59.69
-.click Ancient Branch##1641001 |tip This will move the branch so you can walk in.
-.click Light of Meridia##1671015
-.' Collect the Light of Meridia |q The Army of Meridia##1541002/Collect the Lights of Meridia |sub
-step
-goto 70.31,56.59
-.talk King Laloriaran Dynar##1541057
-..turnin The Shadow's Embrace##1541013
-..accept Light from the Darkness##1641001
-step
-goto 61.98,56.62
-.click Lightless Oubliette##1641002
-.' Enter the Tower |q Light from the Darkness##1641001/Enter the Tower |sub
-step
-goto 50.24,49.67
-.' Press E to use the Light of Meridia to see better
-.' Follow the path |goto 50.24,49.67 < 1 |c |noway
-step
-goto 47.69,47.31
-.' Follow the path |goto 47.69,47.31 < 1 |c |noway
-step
-goto 31.72,40.82
-.' Follow the path |goto 31.72,40.82 < 1 |c |noway
-step
-goto 54.89,35.00
-.' Follow the path down |goto 54.89,35.00 < 1 |c |noway
-step
-goto 56.28,21.67
-.click Lifeshadow Crystal##1641003
-.' Take the Lifeshadow Crystal |q Light from the Darkness##1641001/Take the Lifeshadow Crystal |sub
-step
-goto 56.64,31.83
-.' Follow the path up |goto 56.64,31.83 < 1 |c |noway
-step
-goto 32.91,47.21
-.' Follow the path |goto 32.91,47.21 < 1 |c |noway
-step
-goto 49.51,48.26
-.' Follow the path |goto 49.51,48.26 < 1 |c |noway
-step
-goto 51.65,56.09
-.click Lifeshadow Crystal##1641003
-.' Place the Lifeshadow Crystal |q Light from the Darkness##1641001/Place the Lifeshadow Crystal |sub
-step
-goto 48.47,61.38
-.click Frozen Alcove##1641004
-.' Enter the Frozen Alcove |goto 47.41,61.19 < 1 |c |noway
-step
-goto 13.51,58.81
-.click Flameshadow Crystal##1641005
-.' Take the Flameshadow Crystal |q Light from the Darkness##1641001/Take the Flameshadow Crystal |sub
-step
-goto 27.94,61.07
-.' Follow the path |goto 27.94,61.07 < 1 |c |noway
-step
-goto 47.44,61.39
-.click Lightless Oubliette##1641002
-.' Leave the Frozen Alcove |goto 48.79,61.08 < 1 |c |noway
-step
-goto 51.50,56.56
-.click Flameshadow Crystal##1641005
-.' Place the Flameshadow Crystal |q Light from the Darkness##1641001/Place the Flameshadow Crystal |sub
-step
-goto 53.55,65.86
-.' Follow the path |goto 53.55,65.86 < 1 |c |noway
-step
-goto 40.87,68.59
-.' Follow the path down |goto 40.87,68.59 < 1 |c |noway
-step
-goto 51.82,88.97
-.' Follow the path |goto 51.82,88.97 < 1 |c |noway
-step
-goto 61.42,79.96
-.' Follow the path |goto 61.42,79.96 < 1 |c |noway
-step
-goto 67.80,79.89
-.click Mindshadow Crystal##1641006
-.' Take the Mindshadow Crystal |q Light from the Darkness##1641001/Take the Mindshadow Crystal |sub
-step
-goto 60.95,79.73
-.' Follow the path |goto 60.95,79.73 < 1 |c |noway
-step
-goto 55.55,73.11
-.click Library Gate Switch##1641007
-.' Go through the door |goto 55.00,71.99 < 1 |c |noway
-step
-goto 51.63,57.09
-.click Mindshadow Crystal##1641006
-.' Place the Mindshadow Crystal |q Light from the Darkness##1641001/Place the Mindshadow Crystal |sub
-step
-goto 44.99,56.65
-.click King Dynar's Prison##1641008
-.' Enter King Dynar's Prison |q Light from the Darkness##1641001/Enter King Dynar's Prison |sub
-step
-goto Lightless Cell 15.32,16.27
-.click Light of Meridia##1671015
-.' Activate the North Emitter |q Light from the Darkness##1641001/Activate the North Emitter |sub
-step
-goto 17.56,16.43
-.' Click the Crystal Prism
-.' Make the beam of light point SOUTHEAST
-.' Skip to the next step |confirm |q Light from the Darkness##1641001
-step
-goto 20.00,18.66
-.' Click the Crystal Prism
-.' Make the beam of light point SOUTHWEST
-.' Skip to the next step |confirm |q Light from the Darkness##1641001
-step
-goto 17.71,20.85
-.' Click the Crystal Prism
-.' Make the beam of light point EAST
-.' Destroy the North Receiver |q Light from the Darkness##1641001/Destroy the North Receiver |sub
-step
-goto 27.41,25.76
-.click Light of Meridia##1671015
-.' Activate the South Emitter |q Light from the Darkness##1641001/Activate the South Emitter |sub
-step
-goto 27.67,20.94
-.' Click the Crystal Prism
-.' Make the beam of light point SOUTHWEST
-.' Skip to the next step |confirm |q Light from the Darkness##1641001
-step
-goto 25.18,13.87
-.' Click the Crystal Prism
-.' Make the beam of light point SOUTHWEST
-.' Skip to the next step |confirm |q Light from the Darkness##1641001
-step
-goto 22.60,16.25
-.' Click the Crystal Prism
-.' Make the beam of light point SOUTH
-.' Destroy the South Receiver |q Light from the Darkness##1641001/Destroy the South Receiver |sub
-.' Set King Laloriaran Dynar Free |q Light from the Darkness##1641001/Set King Laloriaran Dynar Free |sub
-step
-goto 24.43,18.55
-.' Follow the path up |goto 24.43,18.55 < 1 |c |noway
-step
-goto 22.73,18.69
-.talk King Laloriaran Dynar##1541057 |q Light from the Darkness##1641001/Talk to King Laloriaran Dynar |sub
-step
-goto 28.67,18.80
-.' Follow King Laloriaran Dynar |q Light from the Darkness##1641001/Follow King Laloriaran Dynar |sub
-step
-goto 29.92,18.79
-.click Portal to the Hollow City##1541007
-.' Meet King Laloriaran Dynar in the Hollow City |q Light from the Darkness##1641001/Meet King Laloriaran Dynar in the Hollow City |sub
-step
-goto The Hollow City 78.79,41.57
-.click Fighters Guild Training Grounds##1541040
-.' Enter the Fighters Guild Training Grounds |goto The Hollow City 80.29,40.49 < 1 |c |noway
-step
-goto 83.75,38.85
-.' Follow the path up |goto 83.75,38.85 < 1 |c |noway
-step
-goto 81.79,34.03
-.talk King Laloriaran Dynar##1541057
-..turnin Light from the Darkness##1641001
-.' Free the King and Return to the Hollow City |q The Army of Meridia##1541002/Free the King and Return to the Hollow City |sub
-step
-goto 83.48,32.94
-.click Fighters Guild##1781007
-.' Enter the Fighters Guild |goto 82.42,31.75 < 1 |c |noway
-step
-goto 84.76,30.07
-.' Watch the dialogue
-.talk Darien Gautier##3241008
-.' Introduce King Dynar to the Fighters Guild |q The Army of Meridia##1541002/Introduce King Dynar to the Fighters Guild |sub
-.' Rescue King Laloriaran Dynar |q The Army of Meridia##1541002/Rescue King Laloriaran Dynar |sub
-step
-goto 82.31,31.95
-.click The Hollow City##1691001
-.' Leave the Fighters Guild |goto 83.47,32.97 < 1 |c |noway
-step
-goto 80.13,40.53
-.click The Hollow City##1691001
-.' Leave the Fighters Guild Training Grounds |goto 78.72,41.59 < 1 |c |noway
-step
-goto 74.17,44.15
-.' Follow the path up |goto 74.17,44.15 < 1 |c |noway
-step
-goto 53.79,47.29
-.talk The Groundskeeper##1541001 |q The Army of Meridia##1541002/Talk to the Groundskeeper |sub
-step
-goto 55.34,47.37
-.click Chapel of Light##1541073
-.' Enter the Chapel of Light |goto 169.70,67.71 < 1 |c |noway
-step
-goto 169.70,67.71
-.talk King Laloriaran Dynar##1541057
-.' Watch the dialogue
-.' Attend the Council of War |q The Army of Meridia##1541002/Attend the Council of War |sub
-step
-goto 169.70,67.71
-.talk King Laloriaran Dynar##1541057
-..turnin The Army of Meridia##1541002
-..accept Crossing the Chasm##1721001
-step
-goto 169.70,67.71
-.click Hollow City##1541007
-.' Leave the Chapel of Light |goto The Hollow City 55.32,47.44 < 1 |c |noway
-step
-'Open your map:
-.' Click the Moonless Walk Wayshrine
-.' Travel to the Moonless Walk Wayshrine |goto Coldharbour 23.83,61.74 < 1 |c |noway
-step
-goto 31.02,60.26
-.' Follow the path up |goto 31.02,60.26 < 1 |c |noway
-step
-goto 31.31,58.07
-.' Follow the path |goto 31.31,58.07 < 1 |c |noway
-step
-goto 33.84,55.72
-.click Hastily Written Note##1541075
-..accept Saving Stibbons##1541014
-step
-goto 34.82,55.07
-.click If I May Beseech You##1541076
-.' Follow the path |goto 34.82,55.07 < 1 |c |noway
-step
-goto 37.01,54.38
-.' Follow the path |goto 37.01,54.38 < 1 |c |noway
-step
-goto 38.58,55.45
-.wayshrine Shrouded Plains
-step
-goto 37.01,54.38
-.' Follow the path |goto 37.01,54.38 < 1 |c |noway
-step
-goto 35.68,54.40
-.' Follow the path up |goto 35.68,54.40 < 1 |c |noway
-step
-goto 34.78,53.37
-.click Situation Becoming Urgent##1541077
-.' Follow the path up |goto 34.78,53.37 < 1 |c |noway
-step
-goto 33.00,53.24
-.' Follow the path |goto 33.00,53.24 < 1 |c |noway
-step
-goto 32.27,52.42
-.' Follow the path up |goto 32.27,52.42 < 1 |c |noway
-step
-goto 32.58,51.17
-.click Prompt Rescue is Imperative##1541079
-.' Follow the path |goto 32.58,51.17 < 1 |c |noway
-step
-goto 31.76,52.14
-.' Follow the path up |goto 31.76,52.14 < 1 |c |noway
-step
-goto 33.11,52.92
-.' Follow the path |goto 33.11,52.92 < 1 |c |noway
-step
-goto 33.11,52.05
-.' Follow the path up |goto 33.11,52.05 < 1 |c |noway
-step
-goto 32.20,51.75
-.' Follow the path up |goto 32.20,51.75 < 1 |c |noway
-step
-goto 32.92,52.77
-.' Follow the path |goto 32.92,52.77 < 1 |c |noway
-step
-goto 32.72,52.25
-.kill Drasilla##1541099 |q Saving Stibbons##1541014/Kill Drasilla |sub
-step
-goto 32.59,51.98
-.talk Stibbons##1541100
-.' Rescue Stibbons |q Saving Stibbons##1541014/Rescue Stibbons |sub
-step
-'Open your map:
-.' Click the Shrouded Plains Wayshrine
-.' Travel to the Shrouded Plains Wayshrine |goto 38.51,55.45 < 1 |c |noway
-step
-goto 38.32,55.57
-.talk Stibbons##1541100
-..turnin Saving Stibbons##1541014
-step
-goto 38.58,55.45
-.click Shrouded Plains Wayshrine##1541080
-.' Travel to the Hollow City Wayshrine |goto The Hollow City 20.68,42.04 < 1 |c |noway
-step
-goto The Hollow City 47.10,33.06
-.' Follow the path up |goto The Hollow City 47.10,33.06 < 1 |c |noway
-step
-goto 62.02,22.28
-.talk Cadwell##3361010 |q Crossing the Chasm##1721001/Talk to Cadwell |sub
-step
-goto Coldharbour 50.77,64.64
-.click The Chasm##1541082
-.' Enter the Chasm |goto Coldharbour 50.78,64.42 < 1 |c |noway
-step
-goto 50.76,64.16
-.' Follow Cadwell to the Chasm |q Crossing the Chasm##1721001/Follow Cadwell to the Chasm |sub
-step
-goto 51.13,62.99
-.wayshrine The Chasm
-step
-goto 51.00,62.22
-.talk Gathwen##2941060 |q Crossing the Chasm##1721001/Talk to Gathwen |sub
-step
-goto 51.26,61.99
-.' Follow the path down |goto 51.26,61.99 < 1 |c |noway
-step
-goto 52.87,62.20
-.click Focus Stone##1541084
-.' Destroy the Focus Stone |q Crossing the Chasm##1721001/Destroy the Focus Stones |sub
-'FIX ME
-step
-goto 52.24,61.46
-.click Focus Stone##1541084
-.' Destroy the Focus Stone |q Crossing the Chasm##1721001/Destroy the Focus Stones |sub
-'FIX ME
-step
-goto 51.83,60.93
-.' Follow the path |goto 51.83,60.93 < 1 |c |noway
-step
-goto 49.74,60.63
-.click Focus Stone##1541084
-.' Destroy the Focus Stone |q Crossing the Chasm##1721001/Destroy the Focus Stones |sub
-'FIX ME
-step
-goto 49.18,62.12
-.click Focus Stone##1541084
-.' Destroy the Focus Stone |q Crossing the Chasm##1721001/Destroy the Focus Stones |sub
-'FIX ME
-step
-goto 48.42,62.14
-.talk Cadwell##3361010 |q Crossing the Chasm##1721001/Talk to Cadwell |sub
-step
-goto 48.27,62.19
-.click Portal to Chasm Second Tier##1541085
-.' Enter the Portal |goto 53.89,61.10 < 1 |c |noway
-step
-goto 53.03,59.53
-.' Follow the path |goto 53.03,59.53 < 1 |c |noway
-step
-goto 54.00,58.21
-.' Kill the waves of enemies
-.' Watch the dialogue
-.' Close the East Portal |q Crossing the Chasm##1721001/5/Close the East Portal##2
-step
-goto 51.84,59.68
-.' Follow the path |goto 51.84,59.68 < 1 |c |noway
-step
-goto 47.67,58.68
-.' Kill the waves of enemies
-.' Watch the dialogue
-.' Close the West Portal |q Crossing the Chasm##1721001/Close the West Portal |sub
-step
-goto 49.40,58.76
-.' Follow the path |goto 49.40,58.76 < 1 |c |noway
-step
-goto 49.45,57.79
-.' Follow the path up |goto 49.45,57.79 < 1 |c |noway
-step
-goto 51.04,55.93
-.talk Cadwell##3361010
-.' Go to the Gatehouse |q Crossing the Chasm##1721001/Go to the Gatehouse |sub
-step
-goto 50.95,55.68
-.click Gatehouse Span##1541087
-.' Enter the Gatehouse Span |q Crossing the Chasm##1721001/Enter the Gatehouse Span |sub
-step
-goto Grunda's Gatehouse 59.45,52.92
-.' Cross the Span |q Crossing the Chasm##1721001/Cross the Span |sub
-step
-goto 49.53,29.58
-.click Control Lever##1731001
-.' Start the North Flywheel |q Crossing the Chasm##1721001/Start the North Flywheel |sub
-step
-goto 48.53,76.39
-.click Control Lever##1731001
-.' Start the South Flywheel |q Crossing the Chasm##1721001/Start the South Flywheel |sub
-step
-goto 36.45,53.91
-.click Door Chain##1731002
-.' Unlock the Gatehouse |q Crossing the Chasm##1721001/Unlock the Gatehouse |sub
-step
-goto 35.56,52.98
-.click The Chasm Gatehouse##1731003
-.' Enter the Chasm Gatehouse |goto 34.76,53.01 < 1 |c |noway
-step
-goto 28.72,52.79
-.kill Tiny##1731004
-.kill Molag Grunda##1731005 |q Crossing the Chasm##1721001/Kill Molag Grunda |sub
-step
-goto 15.39,52.18
-.click Coldharbour##0451002
-.' Exit the Gatehouse |q Crossing the Chasm##1721001/Exit the Gatehouse |sub
-step
-goto Coldharbour 50.88,52.02
-.' Meet Vanus Galerion Outside |q Crossing the Chasm##1721001/Meet Vanus Galerion Outside |sub
-step
-goto 50.87,51.72
-.talk Vanus Galerion##1791292
-..turnin Crossing the Chasm##1721001
-..accept The Harvest Heart##1541015
-step
-goto 50.88,50.71
-.' Follow the path |goto 50.88,50.71 < 1 |c |noway
-step
-goto 51.55,49.76
-.' Follow the path |goto 51.55,49.76 < 1 |c |noway
-step
-goto 52.75,50.81
-.click Vampire Lair##1541088
-.' Mark the Vampire Lair |q The Harvest Heart##1541015/Mark Vampire Lairs |sub
-'FIX ME
-step
-goto 51.64,49.44
-.' Follow the path up |goto 51.64,49.44 < 1 |c |noway
-step
-goto 52.10,48.96
-.' Kill Vampire enemies around this area
-.' Collect 4 Vampire Blood |q The Harvest Heart##1541015/Collect Vampire Blood |sub
-step
-goto 51.68,48.45
-.click Vampire Lair##1541088
-.' Mark the Vampire Lair |q The Harvest Heart##1541015/Mark Vampire Lairs |sub
-'FIX ME
-step
-goto 50.25,48.40
-.click Vampire Lair##1541088
-.' Mark the Vampire Lair |q The Harvest Heart##1541015/Mark Vampire Lairs |sub
-'FIX ME
-step
-goto 48.61,49.92
-.' Follow the path |goto 48.61,49.92 < 1 |c |noway
-step
-goto 48.94,50.62
-.click Vampire Lair##1541088
-.' Mark the Vampire Lair |q The Harvest Heart##1541015/Mark Vampire Lairs |sub
-'FIX ME
-step
-goto 48.39,49.40
-.' Follow the path up |goto 48.39,49.40 < 1 |c |noway
-step
-goto 48.91,47.32
-.' Follow the path down |goto 48.91,47.32 < 1 |c |noway
-step
-goto 50.10,47.24
-.' Follow the path up |goto 50.10,47.24 < 1 |c |noway
-step
-goto 50.85,46.78
-.' Locate the Harvest Heart |q The Harvest Heart##1541015/Locate the Harvest Heart |sub
-step
-goto 51.06,46.69
-.talk Virgar the Red##1541113
-..' Tell her you'll help her free the vampires
-.' Support Virgar the Red |q The Harvest Heart##1541015/Support Virgar the Red |sub
-step
-goto 50.39,47.01
-.' Follow the path down |goto 50.39,47.01 < 1 |c |noway
-step
-goto 49.23,47.17
-.' Follow the path up |goto 49.23,47.17 < 1 |c |noway
-step
-goto 48.10,47.80
-.' Kill the waves of enemies that attack you
-.' Defend West Ritual Site |q The Harvest Heart##1541015/5/Defend West Ritual Site##1
-step
-goto 48.91,47.32
-.' Follow the path down |goto 48.91,47.32 < 1 |c |noway
-step
-goto 50.10,47.24
-.' Follow the path up |goto 50.10,47.24 < 1 |c |noway
-step
-goto 51.84,47.08
-.' Follow the path down |goto 51.84,47.08 < 1 |c |noway
-step
-goto 52.75,47.44
-.' Follow the path up |goto 52.75,47.44 < 1 |c |noway
-step
-goto 53.75,48.28
-.' Kill the waves of enemies that attack you
-.' Defend East Ritual Site |q The Harvest Heart##1541015/5/Defend East Ritual Site##2
-step
-goto 53.08,47.64
-.' Follow the path down |goto 53.08,47.64 < 1 |c |noway
-step
-goto 52.14,47.33
-.' Follow the path up |goto 52.14,47.33 < 1 |c |noway
-step
-goto 51.42,46.86
-.' Return to the Harvest Heart |q The Harvest Heart##1541015/Return to the Harvest Heart |sub
-step
-goto 51.06,46.78
-.talk Virgar the Red##1541113 |q The Harvest Heart##1541015/Talk to Virgar the Red |sub
-step
-goto 51.12,45.69
-.click Binding Totem##1541089
-.' Disable the Binding Totem |q The Harvest Heart##1541015/Light Binding Totem |sub
-'FIX ME
-step
-goto 50.56,46.47
-.' Follow the path |goto 50.56,46.47 < 1 |c |noway
-step
-goto 50.36,45.70
-.click Binding Totem##1541089
-.' Disable the Binding Totem |q The Harvest Heart##1541015/Light Binding Totem |sub
-'FIX ME
-step
-goto 50.40,44.92
-.click Binding Totem##1541089
-.' Disable the Binding Totem |q The Harvest Heart##1541015/Light Binding Totem |sub
-'FIX ME
-step
-goto 50.70,44.52
-.' Follow the path |goto 50.70,44.52 < 1 |c |noway
-step
-goto 51.66,44.84
-.click Binding Totem##1541089
-.' Disable the Binding Totem |q The Harvest Heart##1541015/Light Binding Totem |sub
-'FIX ME
-step
-goto 51.77,45.41
-.click Binding Totem##1541089
-.' Disable the Binding Totem |q The Harvest Heart##1541015/Light Binding Totem |sub
-'FIX ME
-step
-goto 51.90,45.91
-.' Follow the path |goto 51.90,45.91 < 1 |c |noway
-step
-goto 51.31,46.72
-.' Return to Ritual
-.' Help Virgar and Vanus Complete the Ritual |q The Harvest Heart##1541015/Help Virgar and Vanus Complete the Ritual |sub
-step
-goto 51.06,46.73
-.talk Virgar the Red##1541113
-..turnin The Harvest Heart##1541015
-step
-goto 52.12,44.07
-.' Follow the path |goto 52.12,44.07 < 1 |c |noway
-step
-goto 52.12,41.92
-.wayshrine Reaver Citadel
-step
-goto 51.83,41.93
-.talk King Laloriaran Dynar##1541057
-..accept The Citadel Must Fall##1541016
-step
-goto 52.02,42.43
-.' Follow the path |goto 52.02,42.43 < 1 |c |noway
-step
-goto 51.66,44.50
-.' Follow the path |goto 51.66,44.50 < 1 |c |noway
-step
-goto 49.21,47.16
-.' Follow the path up |goto 49.21,47.16 < 1 |c |noway
-step
-goto 46.81,46.91
-.' Follow the path |goto 46.81,46.91 < 1 |c |noway
-step
-goto 43.77,45.42
-.talk Fatahala##1541117
-..accept What the Heart Wants##1541017
-step
-goto 43.75,43.24
-.' Follow the path |goto 43.75,43.24 < 1 |c |noway
-step
-goto 42.43,42.89
-.wayshrine Manor of Revelry
-step
-goto 42.19,41.74
-.click The Manor of Revelry Grounds##1541092
-.' Enter the Manor |q What the Heart Wants##1541017/Enter the Manor |sub
-step
-goto themanorofrevelry_base 39.24,44.96
-.talk Stibbons##1541100 |q What the Heart Wants##1541017/Talk to Stibbons |sub
-step
-goto 39.29,23.20
-.' Click the various foods on the table
-.' Eat at the Banquet |q What the Heart Wants##1541017/Eat Banquet |sub
-step
-goto 40.17,23.06
-.' Examine the Banquet
-.' Meet Stibbons at the Banquet |q What the Heart Wants##1541017/Meet Stibbons at the Banquet |sub
-step
-goto 49.21,32.03
-.talk Fatahala##1541117 |q What the Heart Wants##1541017/Talk to Fatahala |sub
-step
-goto 72.44,32.63
-.' Follow the path |goto 72.44,32.63 < 1 |c |noway
-step
-goto 69.00,55.78
-.' Go to the Pools |q What the Heart Wants##1541017/Go to the Pools |sub
-step
-goto 68.82,56.23
-.talk Shayaifa##1701004 |q What the Heart Wants##1541017/Talk to Shayaifa |sub
-step
-goto 74.45,56.21
-.talk Fatahala##1541117 |q What the Heart Wants##1541017/Talk to Fatahala |sub
-'FIX ME
-step
-goto 79.18,47.36
-.click Wash Basin##1701005
-.' Use the Basin |q What the Heart Wants##1541017/Use the Basin |sub
-step
-goto 74.46,46.01
-.talk Fatahala##1541117 |q What the Heart Wants##1541017/Talk to Fatahala |sub
-'FIX ME
-step
-goto 66.25,64.02
-.' Follow the path |goto 66.25,64.02 < 1 |c |noway
-step
-goto 48.78,73.86
-.' Follow the path up |goto 48.78,73.86 < 1 |c |noway
-step
-goto 48.99,59.99
-.' Follow the path |goto 48.99,59.99 < 1 |c |noway
-step
-goto 47.77,45.45
-.click The Manor of Revelry##1701006
-.' Enter the Manor House |q What the Heart Wants##1541017/Enter the Manor House |sub
-step
-goto 53.92,48.08
-.' Follow the path up |goto 53.92,48.08 < 1 |c |noway
-step
-goto 59.91,45.82
-.click Storage Room##1701007
-.' Find Stibbons |q What the Heart Wants##1541017/Find Stibbons |sub
-step
-goto 60.09,45.64
-.click The Manor of Revelry##1701006
-.' Leave the Storage Room |goto 59.75,45.80 < 1 |c |noway
-step
-goto 55.09,48.81
-.' Follow the path down |goto 55.09,48.81 < 1 |c |noway
-step
-goto 61.49,46.28
-.kill Shayaifa##1701004
-.click Coffer##0111014
-.' Collect the Cage Key |q What the Heart Wants##1541017/Collect the Cage Key |sub
-step
-goto 53.92,48.08
-.' Follow the path up |goto 53.92,48.08 < 1 |c |noway
-step
-goto 59.91,45.82
-.click Storage Room##1701007
-.' Enter the Storage Room |goto 60.14,45.65 < 1 |c |noway
-step
-goto 63.06,44.98
-.click Cage##3361015
-.' Free Stibbons |q What the Heart Wants##1541017/Free Stibbons |sub
-step
-goto 63.04,45.99
-.' Watch the dialogue
-.talk Stibbons##1541100 |q What the Heart Wants##1541017/Talk to Stibbons |sub
-step
-goto 60.09,45.64
-.click The Manor of Revelry##1701006
-.' Leave the Storage Room |goto 59.75,45.80 < 1 |c |noway
-step
-goto 55.09,48.81
-.' Follow the path down |goto 55.09,48.81 < 1 |c |noway
-step
-goto 50.75,45.67
-.click The Manor of Revelry Grounds##1541092
-.' Leave the Manor House |goto 47.51,45.45 < 1 |c |noway
-step
-goto 38.03,43.23
-.kill Nuzara##1701002
-.click Coffer##0111014
-.' Collect Lady Laurent's Emerald |q What the Heart Wants##1541017/14/Collect Lady Laurent's Emerald##1
-step
-goto 47.68,33.66
-.' Follow the path |goto 47.68,33.66 < 1 |c |noway
-step
-goto 43.13,20.55
-.kill Rayyaima##1701003
-.' Enter the building |goto 43.13,20.55 < 1 |c |noway
-step
-goto 43.61,18.29
-.click Coffer##0111014
-.' Collect Lady Laurent's Diamond |q What the Heart Wants##1541017/14/Collect Lady Laurent's Diamond##2
-step
-goto 50.70,33.57
-.' Follow the path down |goto 50.70,33.57 < 1 |c |noway
-step
-goto 72.52,32.64
-.' Follow the path |goto 72.52,32.64 < 1 |c |noway
-step
-goto 84.43,67.99
-.talk Stibbons##1541100 |q What the Heart Wants##1541017/Talk to Stibbons |sub
-step
-goto 85.81,68.38
-.click The Manor of Revelry Cave##1701008
-.' Enter the Manor of Revelry Cave |goto 94.89,76.21 < 1 |c |noway
-step
-goto 85.10,75.59
-.' Follow the path |goto 85.10,75.59 < 1 |c |noway
-step
-goto 78.76,66.29
-.' Follow the path |goto 78.76,66.29 < 1 |c |noway
-step
-goto 67.35,65.32
-.' Follow the path |goto 67.35,65.32 < 1 |c |noway
-step
-goto 74.52,55.79
-.' Go to this spot
-.' Defend Stibbons |q What the Heart Wants##1541017/Defend Stibbons |sub
-step
-goto 75.35,55.96
-.click Coldharbour##0451002
-.' Leave the Manor of Revelry |q What the Heart Wants##1541017/Leave the Manor of Revelry |sub
-step
-goto Coldharbour 43.59,48.03
-.talk Stibbons##1541100
-..turnin What the Heart Wants##1541017
-step
-'Open your map:
-.' Click the Reaver Citadel Wayshrine
-.' Travel to the Reaver Citadel Wayshrine |goto 52.08,41.85 < 1 |c |noway
-step
-goto 52.02,42.49
-.' Follow the path |goto 52.02,42.49 < 1 |c |noway
-step
-goto 52.37,44.20
-.' Follow the path |goto 52.37,44.20 < 1 |c |noway
-step
-goto 56.11,44.74
-.' Follow the path |goto 56.11,44.74 < 1 |c |noway
-step
-goto 58.03,41.71
-.talk Captain One-Eye##1541119
-..accept A Graveyard of Ships##1541018
-step
-goto 60.75,40.59
-.' Follow the path up |goto 60.75,40.59 < 1 |c |noway
-step
-goto 61.04,41.14
-.talk First Mate Jalan##1541126
-.' Kill the waves of enemies that attack you
-.' Protect First Mate Jalan |q A Graveyard of Ships##1541018/Protect First Mate Jalan |sub
-step
-goto 61.04,41.16
-.click Wreck of the Winsome Lass##1541093
-.' Watch the dialogue
-.kill First Mate Jalan##1541126
-.' Defeat First Mate Jalan |q A Graveyard of Ships##1541018/Defeat First Mate Jalan |sub
-step
-goto 61.14,41.10
-.click Coldharbour##0451002
-.' Leave the Wreck of Winsome Lass |goto 61.04,41.14 < 1 |c |noway
-step
-goto 61.40,40.96
-.' Follow the path |goto 61.40,40.96 < 1 |c |noway
-step
-goto 62.58,40.26
-.' Follow the path |goto 62.58,40.26 < 1 |c |noway
-step
-goto 63.39,38.75
-.' Follow the path down |goto 63.39,38.75 < 1 |c |noway
-step
-goto 63.67,37.94
-.click Wreck of the Bonnie Spriggan##1541095
-.' Find One-Eye |q A Graveyard of Ships##1541018/Find One-Eye |sub
-step
-goto 63.58,38.02
-.talk Captain One-Eye##1541119
-..turnin A Graveyard of Ships##1541018
-..accept Between Blood and Bone##1541019
-step
-goto 63.55,37.97
-.' Watch the dialogue
-.' Listen to the Argonian Skeleton |q Between Blood and Bone##1541019/1/Listen to the Argonian Skeleton##1
-step
-goto 63.43,37.94
-.talk Argonian Skeleton##1541127 |q Between Blood and Bone##1541019/1/Talk to the Argonian Skeleton##1
-step
-goto 63.47,37.96
-.talk Captain One-Eye##1541119 |q Between Blood and Bone##1541019/Talk to Captain One-Eye |sub
-step
-goto 63.39,37.91
-.click Coldharbour##0451002
-.' Leave the Wreck of the Bonnie Spriggan |goto 63.66,37.95 < 1 |c |noway
-step
-goto 63.43,38.67
-.' Follow the path |goto 63.43,38.67 < 1 |c |noway
-step
-goto 62.86,42.26
-.' Jump down here |goto 62.86,42.26 < 1 |c |noway
-step
-goto 61.62,44.45
-.' Follow the path |goto 61.62,44.45 < 1 |c |noway
-step
-goto 62.44,45.02
-.' Follow the path up |goto 62.44,45.02 < 1 |c |noway
-step
-goto 62.95,44.32
-.click Golden Era Hold##1541096
-.' Enter the Golden Era's Hold |q Between Blood and Bone##1541019/Enter the Golden Era's Hold |sub
-step
-goto 62.43,44.07
-.click Ship Door##1541097
-.' Go through the door |goto 62.39,44.02 < 1 |c |noway
-step
-goto 61.99,43.70
-.click Journal of Tsona-Ei, Part Four##1541098
-.' Find the Journal |q Between Blood and Bone##1541019/Find the Journal |sub
-step
-goto 62.40,44.04
-.talk Captain One-Eye##1541119 |q Between Blood and Bone##1541019/Talk to Captain One-Eye |sub
-step
-goto 62.41,44.06
-.click Ship Door##1541097
-.' Go through the door |goto 62.43,44.07 < 1 |c |noway
-step
-goto 63.06,44.40
-.click Coldharbour##0451002
-.' Leave the Golden Era Hold |goto 62.88,44.27 < 1 |c |noway
-step
-goto 63.29,43.88
-.' Follow the path |goto 63.29,43.88 < 1 |c |noway
-step
-goto 64.77,45.00
-.talk Bosun Bones##1541129
-..accept Old Bones##1541020
-step
-goto 64.41,45.62
-.' Kill Sea Dog enemies around this area
-.' Collect Leg Bones |q Old Bones##1541020/1/Collect Leg Bones##1
-.' Collect a Ribcage |q Old Bones##1541020/1/Collect Ribcage##2
-.' Collect Arm Bones |q Old Bones##1541020/1/Collect Arm Bones##3
-.' Collect a Hip Bone |q Old Bones##1541020/1/Collect Hip Bone##4
-step
-goto 64.77,45.00
-.talk Bosun Bones##1541129 |q Old Bones##1541020/Talk to Bosun Bones |sub
-step
-goto 64.79,44.91
-.click Ground##1541099
-.' Place the Bones |q Old Bones##1541020/Place Bones |sub
-step
-goto 64.82,44.90
-.talk Bosun Bones##1541129
-..turnin Old Bones##1541020
-step
-goto 65.04,44.60
-.click Coral Tower Tunnel##1541100
-.' Enter the Tunnel |q Between Blood and Bone##1541019/Enter the Tunnel |sub
-step
-goto 67.79,42.76
-.' Follow the path up |goto 67.79,42.76 < 1 |c |noway
-step
-goto 66.37,42.06
-.click Coldharbour##0451002
-.' Leave the Tunnel |goto 66.36,41.97 < 1 |c |noway
-step
-goto 65.14,41.54
-.' Follow the path |goto 65.14,41.54 < 1 |c |noway
-step
-goto 64.75,40.54
-.' Go to the Coral Tower |q Between Blood and Bone##1541019/Go to the Coral Tower |sub
-step
-goto 65.55,40.35
-.click Coral Tower##1541101
-.' Enter the Coral Tower |q Between Blood and Bone##1541019/Enter the Coral Tower |sub
-step
-goto 66.07,40.58
-.' Follow the path up |goto 66.07,40.58 < 1 |c |noway
-step
-goto 65.68,40.33
-.kill Lost Fleet Admiral##1541128
-.' Get the Crown of Bones |q Between Blood and Bone##1541019/Get the Crown of Bones |sub
-step
-goto 65.13,40.44
-.' Jump down here |goto 65.13,40.44 < 1 |c |noway
-step
-goto 63.98,40.64
-.talk Captain One-Eye##1541119
-..' Tell her "All right, here." (Give the Crown of Bones)
-..turnin Between Blood and Bone##1541019
-step
-'Open your map:
-.' Click the Reaver Citadel Wayshrine
-.' Travel to the Reaver Citadel Wayshrine |goto 52.08,41.85 < 1 |c |noway
-step
-goto 51.73,39.54
-.' Follow the path |goto 51.73,39.54 < 1 |c |noway
-step
-goto 54.54,39.26
-.' Follow the path |goto 54.54,39.26 < 1 |c |noway
-step
-goto 55.47,38.39
-.' Find a Way Into the Citadel |q The Citadel Must Fall##1541016/Find a Way Into the Citadel |sub
-step
-goto 55.01,38.03
-.talk Lyranth##1541061 |q The Citadel Must Fall##1541016/Talk to Lyranth |sub
-step
-goto 52.89,37.64
-.' Follow the path |goto 52.89,37.64 < 1 |c |noway
-step
-goto 51.25,38.38
-.' Follow the path up |goto 51.25,38.38 < 1 |c |noway
-step
-goto 50.01,38.32
-.' Follow the path |goto 50.01,38.32 < 1 |c |noway
-step
-goto 49.70,38.91
-.' Enter the building |goto 49.70,38.91 < 1 |c |noway
-step
-goto 49.65,39.18
-.click Ram Horn Lamp##1541102
-.' Collect the Fighters Guild Ward Key |q The Citadel Must Fall##1541016/Collect Fighters Guild Ward Key |sub
-step
-goto 50.01,38.32
-.' Follow the path |goto 50.01,38.32 < 1 |c |noway
-step
-goto 50.62,38.61
-.click Warded Door##1541103
-.' Deactivate the Guild Hall Wards |q The Citadel Must Fall##1541016/Deactivate the Guild Hall Wards |sub
-step
-goto 50.62,38.61
-.click Fighters Guild Hall##1541104
-.' Enter the Fighters Guild Hall |goto 50.58,38.74 < 1 |c |noway
-step
-goto 50.19,38.73
-.' Go upstairs
-.talk King Laloriaran Dynar##1541057 |q The Citadel Must Fall##1541016/Talk to King Laloriaran Dynar in the Fighters Guild Hall |sub
-step
-goto 50.60,38.74
-.' Go downstairs
-.click Reaver Citadel##1541105
-.' Leave the Fighters Guild Hall |goto 50.64,38.60 < 1 |c |noway
-step
-goto 50.84,37.31
-.talk Lyranth##1541061 |q The Citadel Must Fall##1541016/Talk to Lyranth |sub
-step
-goto 50.52,37.02
-.' Follow the path up |goto 50.52,37.02 < 1 |c |noway
-step
-goto 49.00,36.98
-.' Kill the enemies that appear
-.kill Markynaz Gadrah##1541133
-.click Upper City##1541106
-.' Go to the Upper City |q The Citadel Must Fall##1541016/Go to the Upper City |sub
-step
-goto 47.79,37.52
-.click Portal Stone##1541107
-.' Collect a Portal Stone |q The Citadel Must Fall##1541016/Collect Portal Stones |sub
-'FIX ME
-step
-goto 47.99,38.42
-.click Portal Stone##1541107
-.' Collect a Portal Stone |q The Citadel Must Fall##1541016/Collect Portal Stones |sub
-'FIX ME
-step
-goto 46.82,38.87
-.click Portal Stone##1541107
-.' Collect a Portal Stone |q The Citadel Must Fall##1541016/Collect Portal Stones |sub
-'FIX ME
-step
-goto 46.61,37.86
-.click Portal Stone##1541107
-.' Collect a Portal Stone |q The Citadel Must Fall##1541016/Collect Portal Stones |sub
-'FIX ME
-step
-goto 46.50,37.70
-.click Mages Guild Hall##0991003
-.' Enter the Mages Guild Hall |q The Citadel Must Fall##1541016/Enter the Mages Guild Hall |sub
-step
-goto 46.07,37.89
-.click Portal Stone Socket##1541108
-.' Restore the Portal Stone |q The Citadel Must Fall##1541016/Restore the Portal Stones |sub
-'FIX ME
-step
-goto 46.17,37.81
-.click Portal Stone Socket##1541108
-.' Restore the Portal Stone |q The Citadel Must Fall##1541016/Restore the Portal Stones |sub
-'FIX ME
-step
-goto 46.10,37.70
-.click Portal Stone Socket##1541108
-.' Restore the Portal Stone |q The Citadel Must Fall##1541016/Restore the Portal Stones |sub
-'FIX ME
-step
-goto 46.01,37.79
-.click Portal Stone Socket##1541108
-.' Restore the Portal Stone |q The Citadel Must Fall##1541016/Restore the Portal Stones |sub
-'FIX ME
-step
-goto 46.14,37.62
-.talk Vanus Galerion##1791292 |q The Citadel Must Fall##1541016/Talk to Vanus Galerion |sub
-'FIX ME
-step
-goto 46.13,37.39
-.click Reaver Citadel##1541105
-.' Leave the Mages Guild Hall |goto 46.51,37.70 < 1 |c |noway
-step
-goto 47.10,36.38
-.' Follow the path up |goto 47.10,36.38 < 1 |c |noway
-step
-goto 47.40,34.01
-.' Follow the path up |goto 47.40,34.01 < 1 |c |noway
-step
-goto 48.02,34.01
-.' Find the Pyramid Entrance |q The Citadel Must Fall##1541016/Find the Pyramid Entrance |sub
-'FIX ME
-step
-goto 48.11,34.05
-.talk Lyranth##1541061 |q The Citadel Must Fall##1541016/Talk to Lyranth |sub
-'FIX ME
-step
-goto 48.27,34.01
-.click Reaver Citadel Pyramid##1541109
-.' Enter the Pyramid |q The Citadel Must Fall##1541016/Enter the Pyramid |sub
-'FIX ME
-step
-goto 49.68,34.02
-.kill Valkynaz Seris##1541135 |q The Citadel Must Fall##1541016/Kill Valkynaz Seris |sub
-'FIX ME
-step
-goto 49.68,34.02
-.talk Lyranth##1541061 |q The Citadel Must Fall##1541016
-'FIX ME
-step
-goto 49.68,34.02
-.click Valkynaz Seris' Chest##1541110
-.' Find the Labyrinth Key |q The Citadel Must Fall##1541016/Find the Labyrinth Key |sub
-'FIX ME
-step
-goto 49.68,34.02
-.click Reaver Citadel##1541105
-.' Leave the Pyramid |goto 48.24,34.01 < 1 |c |noway
-step
-goto 47.09,32.77
-.' Find Vanus Galerion |q The Citadel Must Fall##1541016/Find Vanus Galerion |sub
-'FIX ME
-step
-goto 47.08,32.71
-.talk Vanus Galerion##1791292
-..turnin The Citadel Must Fall##1541016
-..accept The Final Assault##1541021
-step
-goto 46.88,32.78
-.talk Gabrielle Benele##1541040 |q The Final Assault##1541021/1/Talk to Gabrielle##2
-step
-goto 47.34,32.80
-.talk Hahnin##1541093 |q The Final Assault##1541021/1/Talk to Hahnin##1
-step
-goto 47.43,32.85
-.talk Cadwell##3361010
-..' Ask him to accompany you on the initial assault
-.' Choose a Companion for the Initial Assault |q The Final Assault##1541021/Choose a Companion for the Initial Assault |sub
-'FIX ME
-step
-goto 47.04,32.69
-.talk King Laloriaran Dynar##1541057 |q The Final Assault##1541021/Talk to King Dynar |sub
-'FIX ME
-step
-goto 47.15,32.53
-.' Watch the dialogue
-.' Receive King Dynar's Briefing |q The Final Assault##1541021/Receive King Dynar's Briefing |sub
-'FIX ME
-step
-goto 47.14,32.38
-.click The Endless Stair##1541111
-.' Go throuth the barrier |goto 47.14,32.30 < 1 |c |noway
-step
-goto 47.93,31.83
-.wayshrine Endless Stair
-step
-goto 47.20,30.64
-.' Follow the path |goto 47.20,30.64 < 1 |c |noway
-step
-goto 50.93,31.50
-.' Follow the path down |goto 50.93,31.50 < 1 |c |noway
-step
-goto 53.08,30.56
-.' Follow the path down |goto 53.08,30.56 < 1 |c |noway
-step
-goto 52.74,28.94
-.' Follow the path up |goto 52.74,28.94 < 1 |c |noway
-step
-goto 52.51,27.65
-.' Go to the Reinforcement Portal |q The Final Assault##1541021/Go to the Reinforcement Portal |sub
-'FIX ME
-step
-goto 52.24,27.24
-.kill Guardian of the Gate##1541140
-.' Defeat the Guardian of the Gate |q The Final Assault##1541021/Defeat the Guardian of the Gate |sub
-'FIX ME
-step
-goto 52.19,27.32
-.' Follow the path up |goto 52.19,27.32 < 1 |c |noway
-step
-goto 51.85,27.88
-.click Reinforcement Portal##1541113
-.' Close the Reinforcement Portal |q The Final Assault##1541021/Close the Reinforcement Portal |sub
-'FIX ME
-step
-goto 51.43,27.05
-.' Follow the path |goto 51.43,27.05 < 1 |c |noway
-step
-goto 49.58,25.87
-.' Open the Labyrinth |q The Final Assault##1541021/Open the Labyrinth |sub
-'FIX ME
-step
-goto 49.59,25.77
-.talk Vanus Galerion##1791292 |q The Final Assault##1541021/Talk to Vanus Galerion |sub
-'FIX ME
-step
-goto 49.63,24.97
-.click The Labyrinth##1541114
-.' Enter the Labyrinth |q The Final Assault##1541021/Enter the Labyrinth |sub
-'FIX ME
-step
-goto 52.01,23.59
-.talk Gabrielle Benele##1541040 |q The Final Assault##1541021/Talk to Gabrielle |sub
-'FIX ME
-step
-goto 52.01,23.59
-.' Jump across here |goto 52.01,23.59 < 1 |c |noway
-step
-goto 52.01,23.59
-.' Jump across here |goto 52.01,23.59 < 1 |c |noway
-step
-goto 52.01,23.59
-.click Daedric Fire##1541119
-.' Touch the Flames to Gain Their Power |q The Final Assault##1541021/Touch the Flames to Gain Their Power |sub
-'FIX ME
-step
-goto 52.01,23.59
-.' Look NORTHWEST at the Cold Fire Brazier on the wall |tip It looks like a face with glowing eyes, below a big hole in the wall.  It is beneath the big metal pipes that lead into the wall.
-.' Use the Daedric Fire
-.' Light the Fire to Activate the Pipes |q The Final Assault##1541021/Light the Fires to Activate the Pipes |sub
-'FIX ME
-step
-goto 52.01,23.59
-.' Follow the path up |goto 52.01,23.59 < 1 |c |noway
-step
-goto 52.01,23.59
-.click Daedric Fire##1541119
-.' Touch the Flames to Gain Their Power |q The Final Assault##1541021/Touch the Flames to Gain Their Power |sub
-'FIX ME
-step
-goto 52.01,23.59
-.' Look NORTHEAST at the Cold Fire Brazier on the wall |tip It looks like a face with glowing eyes, below a big hole in the wall.  It is beneath the big metal pipes that lead into the wall.
-.' Use the Daedric Fire
-.' Light the Fire to Activate the Pipes |q The Final Assault##1541021/Light the Fires to Activate the Pipes |sub
-'FIX ME
-step
-goto 52.01,23.59
-.click Daedric Fire##1541119
-.' Touch the Flames to Gain Their Power |q The Final Assault##1541021/Touch the Flames to Gain Their Power |sub
-'FIX ME
-step
-goto 52.01,23.59
-.' Look SOUTHWEST at the Cold Fire Brazier on the wall |tip It looks like a face with glowing eyes, below a big hole in the wall.  It is beneath the big metal pipes that lead into the wall.
-.' Use the Daedric Fire
-.' Light the Fire to Activate the Pipes |q The Final Assault##1541021/Light the Fires to Activate the Pipes |sub
-'FIX ME
-step
-goto 52.01,23.59
-.click Daedric Fire##1541119
-.' Touch the Flames to Gain Their Power |q The Final Assault##1541021/Touch the Flames to Gain Their Power |sub
-'FIX ME
-step
-goto 52.01,23.59
-.' Look WEST at the Cold Fire Brazier on the wall |tip It looks like a face with glowing eyes, below a big hole in the wall.  It is beneath the big metal pipes that lead into the wall.
-.' Use the Daedric Fire
-.' Open the Library Gate |q The Final Assault##1541021/Open the Library Gate |sub
-'FIX ME
-step
-goto 52.01,23.59
-.' Follow the path |goto 52.01,23.59 < 1 |c |noway
-step
-goto 52.01,23.59
-.click The Dark Room##1541120
-.' Enter the Next Area |q The Final Assault##1541021/Enter the Next Area |sub
-'FIX ME
-step
-goto 52.01,23.59
-.talk Gadris##1541006
-..' He will cast a spell on you to see better in the dark
-.' Follow the path |goto 52.01,23.59 < 1 |c |noway
-step
-goto 52.01,23.59
-.' Follow the path down |goto 52.01,23.59 < 1 |c |noway
-step
-goto 52.01,23.59
-.' Follow the path |goto 52.01,23.59 < 1 |c |noway
-step
-goto 52.01,23.59
-.' Follow the path |goto 52.01,23.59 < 1 |c |noway
-step
-goto 52.01,23.59
-.click Gate Bridge##1541121
-.' Cross the Dark Chamber |q The Final Assault##1541021/Cross the Dark Chamber |sub
-'FIX ME
-step
-goto 46.51,24.94
-.' Cross the Bridge |q The Final Assault##1541021/Cross the Bridge |sub
-'FIX ME
-step
-goto 46.39,24.94
-.click The Labyrinth##1541114
-.' Enter the Next Area |q The Final Assault##1541021/Enter the Next Area |sub
-'FIX ME
-step
-goto thefistofstone_base 34.28,10.43
-.talk Gabrielle Benele##1541040
-.' Follow her and defend her while she breaks the barrier
-.' Find a Path Through the Statue Room |q The Final Assault##1541021/Find a Path Through the Statue Room |sub
-'FIX ME
-step
-goto 34.28,10.43
-.click The Endless Stair##1541111
-.' Exit the Statue Room |q The Final Assault##1541021/Exit the Statue Room |sub
-'FIX ME
-step
-goto Coldharbour 43.57,26.30
-.talk Vanus Galerion##1791292 |q The Final Assault##1541021/Talk to Vanus Galerion |sub
-'FIX ME
-step
-goto 44.43,29.46
-.' Kill the first wave of enemies
-.kill Guardian of Coldharbour##1541137
-.' Find the Planar Vortex Portal |q The Final Assault##1541021/Find the Planar Vortex Portal |sub
-'FIX ME
-step
-goto 45.39,29.86
-.' Follow the path |goto 45.39,29.86 < 1 |c |noway
-step
-goto 46.90,28.10
-.kill Telkor the Unforgiving##1541144
-.' Defeat the Guardian of the Portal |q The Final Assault##1541021/Defeat the Guardian of the Portal |sub
-'FIX ME
-step
-goto 47.08,27.77
-.talk The Groundskeeper##1541001 |q The Final Assault##1541021/Talk to the Groundskeeper |sub
-'FIX ME
-step
-goto 47.16,27.41
-.click Portal to the Planar Vortex##1541122
-.' Enter the Planar Vortex Portal |q The Final Assault##1541021/Enter the Planar Vortex Portal |sub
-'FIX ME
-step
-goto 50.12,52.99
-'Watch her destroy the dark anchor
-.talk Meridia##1711001 |q The Final Assault##1541021/Talk to Meridia |sub
-'FIX ME
-step
-goto 49.44,55.99
-.talk Meridia##1711001
-..' Tell her you're ready
-.' Let Meridia Know When You Are Ready |q The Final Assault##1541021/Let Meridia Know When You Are Ready |sub
-'FIX ME
-step
-goto 46.71,63.25
-.' Follow the path |goto 46.71,63.25 < 1 |c |noway
-step
-goto 28.79,83.29
-.' Follow the path |goto 28.79,83.29 < 1 |c |noway
-step
-goto 30.67,61.60
-.' Follow the path |goto 30.67,61.60 < 1 |c |noway
-step
-goto 46.41,31.29
-.' Kill the enemies
-.' Watch the dialogue
-.' Follow the path |goto 46.41,31.29 < 1 |c |noway
-step
-goto 66.03,30.90
-.' Follow the path |goto 66.03,30.90 < 1 |c |noway
-step
-goto 75.31,26.28
-.click Light of Meridia##1671015
-.' Place the Light of Meridia
-.' Confront the Council of Molag Bal |tip The 3 council members will attack you one at a time, kill them.
-.' Survive Molag Bal's Assault |tip Enemies will come out of the many portals randomly, kill them until Meridia yells for you.
-.click Light of Meridia##1671015 |tip It's a big glowing yellow crystal that appears once you've killed enough enemies.
-.' Activate the Light of Meridia |q The Final Assault##1541021/Activate the Light of Meridia |sub
-'FIX ME
-step
-goto The Hollow City 65.83,47.31
-.talk Meridia##1711001 |q The Final Assault##1541021/Talk to Meridia |sub
-'FIX ME
-step
-goto 59.86,50.03
-.talk King Laloriaran Dynar##1541057
-..turnin The Final Assault##1541021
-step
-goto 57.54,45.36
-.click The Hollow City##1691001
-..accept God of Schemes##1541022
-step
-goto 19.99,41.38
-.click Hollow City Wayshrine##1541041
-.' Travel to the Harborage in Auridon |goto Auridon 69.81,92.48 < 1 |c |noway
-step
-goto Auridon 69.70,92.54
-.click The Harborage##1781015
-.' Go to the Harborage |q God of Schemes##1541022/Go to the Harborage |sub
-'FIX ME
-step
-goto 771.50,4.08
-.talk Varen Aquilarios##0451001 |q God of Schemes##1541022/Talk to Varen Aquilarios |sub
-'FIX ME
-step
-goto 771.50,4.08
-.click Portal to Coldharbour##0451002
-.' Enter Coldharbour |q God of Schemes##1541022/Enter Coldharbour |sub
-'FIX ME
-step
-goto Heart's Grief 11.25,51.97
-.talk Abnur Tharn##0451004 |q God of Schemes##1541022/Talk to Abnur Tharn |sub
-'FIX ME
-step
-goto 17.33,43.84
-.' Follow the path |goto 17.33,43.84 < 1 |c |noway
-step
-goto 43.86,59.55
-.kill Titan##3261003
-.' Follow the path up |goto 43.86,59.55 < 1 |c |noway
-step
-goto 65.64,59.46
-.click Heart's Grief Vestibule##3331001
-.' Enter Heart's Grief |q God of Schemes##1541022/Enter Heart's Grief |sub
-'FIX ME
-step
-goto 19.79,48.53
-.' Follow the path |goto 19.79,48.53 < 1 |c |noway
-step
-goto 35.31,48.18
-.' Explore the Hall |q God of Schemes##1541022/Explore the Hall |sub
-'FIX ME
-step
-goto 42.43,48.91
-.talk Mannimarco##0451003 |q God of Schemes##1541022/Talk to Mannimarco |sub
-'FIX ME
-step
-goto 41.57,48.56
-.click Release Mannimarco##3331002
-.' Release Mannimarco |q God of Schemes##1541022/Release Mannimarco |sub
-'FIX ME
-step
-goto 69.05,48.62
-.click Path of Woe##3331003
-.' Enter the Path of Woe |goto 72.13,49.00 < 1 |c |noway
-step
-goto 91.04,48.66
-.' Follow the path |goto 91.04,48.66 < 1 |c |noway
-step
-goto 91.31,55.33
-.click Seat of Tyranny##3331004
-.' Enter the Seat of Tyranny |goto 54.25,7.29 < 1 |c |noway
-step
-goto 54.29,8.37
-.' Continue to the Throne Room |q God of Schemes##1541022/Continue to the Throne Room |sub
-'FIX ME
-step
-goto 54.25,11.83
-.' Approach the Seat of Tyranny |q God of Schemes##1541022/Approach the Seat of Tyranny |sub
-'FIX ME
-step
-goto 54.27,13.80
-.' Watch the dialogue
-.' Wait for the Five Companions to Assemble |q God of Schemes##1541022/Wait for the Five Companions to Assemble |sub
-'FIX ME
-step
-goto 53.10,13.85
-.talk Abnur Tharn##0451004 |q God of Schemes##1541022/Talk to Abnur Tharn |sub
-'FIX ME
-step
-goto 55.23,15.12
-.talk Varen Aquilarios##0451001
-..' Tell him you choose him
-.' Choose the Sacrifice |q God of Schemes##1541022/Choose Varen |sub
-'FIX ME
-step
-goto 54.19,12.88
-.' Stand in Position |q God of Schemes##1541022/Stand in Position |sub
-'FIX ME
-step
-goto 54.19,12.88
-.' Watch the dialogue
-.' Perform the Ritual |q God of Schemes##1541022/Perform the Ritual |sub
-'FIX ME
-.' Receive the Power of the Divines |q God of Schemes##1541022/Receive the Power of the Divines |sub
-'FIX ME
-step
-goto 58.22,16.32
-.' Follow the path down |goto 58.22,16.32 < 1 |c |noway
-step
-goto 63.88,24.28
-.click Fortress Wall##3331005
-.' Destroy the Fortress Wall
-.' Run through the hole you created |goto 65.88,26.67 < 1 |c |noway
-step
-goto 69.13,31.54
-.' Follow the path up |goto 69.13,31.54 < 1 |c |noway
-step
-goto 65.23,36.76
-.' Follow the path up |goto 65.23,36.76 < 1 |c |noway
-step
-goto 54.57,51.51
-.' Follow the path |goto 54.57,51.51 < 1 |c |noway
-step
-goto 43.30,48.76
-.click Fortress Wall##3331005
-.' Destroy the Fortress Wall
-.' Run through the hole you created |goto 40.78,49.69 < 1 |c |noway
-step
-goto 32.99,53.04
-.' Press X to use Aedric Command
-.' Follow the path |goto 32.99,53.04 < 1 |c |noway
-step
-goto 23.04,61.24
-.' Follow the path |goto 23.04,61.24 < 1 |c |noway
-step
-goto 37.26,67.79
-.' Follow the path |goto 37.26,67.79 < 1 |c |noway
-step
-goto 35.10,77.01
-.click Fortress Wall##3331005
-.' Destroy the Fortress Wall
-.' Run through the hole you created |goto 37.09,78.55 < 1 |c |noway
-step
-goto 45.60,81.68
-.' Follow the path |goto 45.60,81.68 < 1 |c |noway
-step
-goto 46.57,74.86
-.kill Molag Bal##2861001 |tip He grabs you to start the fight, press X when the prompt appears to make him release his grip.  Slowly chip away at his health, this is an endurance fight.  Save your ultimate ability for the wave of dragons he makes you fight when he's at about half health.  After killing the dragons, he will reappear and you fight his as normal until he is almost dead.
-.' Watch the cool animation of Molag Bal's death
-.' Vanquish Molag Bal |q God of Schemes##1541022/Vanquish Molag Bal |sub
-'FIX ME
-step
-goto 51.37,70.24
-.' Approach the Source of the Voice |q God of Schemes##1541022/Approach the Source of the Voice |sub
-'FIX ME
-step
-goto 51.44,69.99
-.click Your Soul##3331006
-.' Reclaim Your Soul |q God of Schemes##1541022/Reclaim Your Soul |sub
-'FIX ME
-step
-goto 51.55,69.78
-.' Watch the dialogue
-.' Witness the Aftermath |q God of Schemes##1541022/Witness the Aftermath |sub
-'FIX ME
-step
-goto 51.51,69.79
-.talk Meridia##1711001 |q God of Schemes##1541022/Talk to Meridia |sub
-'FIX ME
-step
-goto Auridon 771.50,4.08
-.' Approach the Survivors |q God of Schemes##1541022/Approach the Survivors |sub
-'FIX ME
-step
-goto 771.50,4.08
-.' Watch the dialogue
-.' Complete the Epilogue |q God of Schemes##1541022/Epilogue |sub
-'FIX ME
-step
-goto 771.50,4.08
-.talk Lyris Titanborn##3361006 |q God of Schemes##1541022/Talk to Lyris (Prophet Dies) |sub
-'FIX ME
-step
-goto 771.50,4.08
-.talk Sai Sahan##0451002 |q God of Schemes##1541022/Talk to Sai Sahan |sub
-'FIX ME
-step
-goto 771.50,4.08
-.talk Cadwell##3361010
-..turnin God of Schemes##1541022
+..turnin The Weight of Three Crowns##1781053 |next Common Leveling Guides\\Coldharbour (42-48)
 ]])

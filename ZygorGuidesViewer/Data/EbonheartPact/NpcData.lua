@@ -1,8 +1,7 @@
 local ZGV = ZygorGuidesViewer
 if not ZGV then return end
-if ZGV.Utils.GetFaction() ~= "EP" then return end
 
-ZGV._NpcData = [[
+ZGV._NpcDataEP = [[
 
 Uncle Leo=-21474836483050
 Sen Dres=-21474836483008
@@ -10,8 +9,8 @@ Taril Randoro=-21474836483003
 Doril Randoro=-21474836483002
 The Spider's Essence=-21474836483001
 Geril Randoro=-21474836483001
-Vanguard Cryomancer=-21474836483001
 The Scorpion's Essence=-21474836483001
+Vanguard Cryomancer=-21474836483001
 
 Balzag gro-Gruumsh=0023502
 Balrook gro-Mak=0023503
@@ -1510,6 +1509,7 @@ Nils the Bland=0153383
 Seducer Assassin=0153384
 Lich=0153385
 Dread Ogrim=0153386
+Scared-of-Snow=0153387
 
 Vigrod Wraithbane=0163001
 Centurion Gjakil=0163002
@@ -2145,14 +2145,14 @@ Bimee-Kas=0193216
 Captain Henaamo=0193217
 Tribal Warrior=0193218
 Tribal Berserker=0193219
-Born-Under-Stars=0193220
 Jaraleet=0193220
-Sharp-Eye=0193221
+Born-Under-Stars=0193220
 Betzi=0193221
+Sharp-Eye=0193221
 Kothringi Renegade=0193222
 Fills-Up-on-Fish=0193222
-Rising-in-Still-Waters=0193223
 Awas=0193223
+Rising-in-Still-Waters=0193223
 Far-Walker=0193224
 Lodyna Arethi=0193225
 Kudleez=0193226

@@ -1,8 +1,7 @@
 local ZGV = ZygorGuidesViewer
 if not ZGV then return end
-if ZGV.Utils.GetFaction() ~= "DC" then return end
 
-ZGV._ObjectData = [[
+ZGV._ObjectDataDC = [[
 
 Key Ritual Orb=-21474836482083
 Asakala=-21474836482055

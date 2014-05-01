@@ -1,8 +1,7 @@
 local ZGV = ZygorGuidesViewer
 if not ZGV then return end
-if ZGV.Utils.GetFaction() ~= "EP" then return end
 
-ZGV._ObjectData = [[
+ZGV._ObjectDataEP = [[
 
 Daedric Vase=-21474836483009
 A Gift of Sanctuary=-21474836483006
@@ -638,6 +637,9 @@ Suspicious Arrow=0153163
 Goddess of Storm, Mother of Nords=0153164
 Orders to Halskar=0153165
 Windhelm Bank=0153166
+Guard Duty=0153167
+Second Invasion: Reports=0153168
+Skald-King's Temporary Court=0153169
 
 Effigy of Life=0163001
 Effigy of Death=0163002
@@ -788,6 +790,7 @@ The Lusty Argonian Maid, Vol. 2=0163146
 Ascendancy: Pathway to Lichdom=0163147
 Salvageable Goods=0163148
 Song of the Askelde Men=0163149
+Effigy=0163150
 
 Loriasel=0191001
 Stormhold Wayshrine=0193001
@@ -1439,6 +1442,10 @@ Protocols of the Court of Contempt=1543153
 Mal Sorra's Tomb=1543154
 The Library of Dusk: Rare Books=1543155
 The Wailing Maw=1543156
+Brave Sir Cadwell=1543157
+How We Came to Coldharbour=1543158
+The Values of Haj Uxith=1543159
+Daedric Sap Collection Facility=1543160
 
 If You Can Read This, Open It=1633001
 Knights of the Gleaming Blade=1633002

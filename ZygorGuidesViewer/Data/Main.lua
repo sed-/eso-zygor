@@ -21,10 +21,10 @@ local npcDataCom = ZGV._NpcDataCommon
 local questDataCom = ZGV._QuestDataCommon
 local questStepDataCom = ZGV._QuestStepDataCommon
 local objectDataCom = ZGV._ObjectDataCommon
-local npcData = ZGV._NpcData
-local questData = ZGV._QuestData
-local questStepData = ZGV._QuestStepData
-local objectData = ZGV._ObjectData
+local npcData
+local questData
+local questStepData
+local objectData
 
 local itemData = ZGV._ItemData
 
@@ -50,30 +50,6 @@ local allLastUsedIds = {
 ZGV.Data = Data
 Data.allLastUsedIds = allLastUsedIds
 Data.bloackSavedVars = false
-
-
--- Nil out these references since local variables are stored.
-ZGV._NpcDataCommon = nil
-ZGV._QuestDataCommon = nil
-ZGV._QuestDataStepCommon = nil
-ZGV._ObjectDataCommon = nil
-ZGV._NpcData = nil
-ZGV._QuestData = nil
-ZGV._QuestStepData = nil
-ZGV._ObjectData = nil
-ZGV._ItemData = nil
-
--- All these references aren't needed. Just for testing
-
-Data.npcDataCom = npcDataCom
-Data.questDataCom = questDataCom
-Data.questStepDataCom = questStepDataCom
-Data.objectDataCom = objectDataCom
-Data.npcData = npcData
-Data.questData = questData
-Data.questStepData = questStepData
-Data.objectData = objectData
-Data.itemData = itemData
 
 
 -----------------------------------------
@@ -344,7 +320,64 @@ end
 tinsert(ZGV.startups,function(self)
 	svdata = ZGV.sv.profile.data
 
+
+	-- common: store directly
+
+	npcDataCom = ZGV._NpcDataCommon  ZGV._NpcDataCommon=nil
+	questDataCom = ZGV._QuestDataCommon  ZGV._QuestDataCommon=nil
+	questStepDataCom = ZGV._QuestStepDataCommon  ZGV._QuestStepDataCommon=nil
+	objectDataCom = ZGV._ObjectDataCommon  ZGV._ObjectDataCommon=nil
+
+
+	local fac = ZGV.Utils.GetFaction()
+
+	local datatypes={"_QuestStepData","_QuestData","_NpcData","_ObjectData","_ItemData"}
+
+
+	-- old style, temporary
+	for k,v in pairs(datatypes) do if ZGV[v] then ZGV[v..fac]=ZGV[v] ZGV[v]=nil end end
+
+
+	-- faction data: store directly
+	
+	questStepData = ZGV['_QuestStepData'..fac]  ZGV['_QuestStepData'..fac]=nil
+	npcData = ZGV['_NpcData'..fac]  ZGV['_NpcData'..fac]=nil
+	objectData = ZGV['_ObjectData'..fac]  ZGV['_ObjectData'..fac]=nil
+	questData = ZGV['_QuestData'..fac]  ZGV['_QuestData'..fac]=nil
+	itemData = ZGV['_ItemData'..fac]  ZGV['_ItemData'..fac]=nil
+	
+	-- weed out wrong-faction data
+	if GetUnitLevel("player")<48 then
+		-- surely no veteran content, trash all factions now
+		for k,v in pairs(datatypes) do for fi,fa in ipairs{'AD','DC','EP'} do ZGV[k..fa]=nil end end
+	end
+
+		-- add other factions to this one (if there are any left, after the massacre above.)
+
+	for fi,fa in ipairs{'AD','DC','EP'} do if fa~=fac then
+		npcData = npcData .. (ZGV['_NpcData'..fa] or "")  ZGV['_NpcData'..fa]=nil
+		objectData = objectData .. (ZGV['_ObjectData'..fa] or "")  ZGV['_ObjectData'..fa]=nil
+		questData = questData .. (ZGV['_QuestData'..fa] or "")  ZGV['_QuestData'..fa]=nil
+		itemData = itemData .. (ZGV['_ItemDataAD'..fa] or "")  ZGV['_ItemDataAD'..fa]=nil
+		ZGV.Utils.table_join(questStepData,ZGV['_QuestStepData'..fa])  ZGV['_QuestStepData'..fa]=nil
+	end end
+
+	-- All these references aren't needed. Just for testing
+
+	Data.npcDataCom = npcDataCom
+	Data.questDataCom = questDataCom
+	Data.questStepDataCom = questStepDataCom
+	Data.objectDataCom = objectDataCom
+	Data.npcData = npcData
+	Data.questData = questData
+	Data.questStepData = questStepData
+	Data.objectData = objectData
+	Data.itemData = itemData
+
+	collectgarbage()
+
 	Data:UpdateLastQuestIds()
 	Data:UpdateLastNpcIds()
 	Data:UpdateLastObjectIds()
+
 end)

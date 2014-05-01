@@ -1,8 +1,7 @@
 local ZGV = ZygorGuidesViewer
 if not ZGV then return end
-if ZGV.Utils.GetFaction() ~= "AD" then return end
 
-ZGV._QuestData = [[
+ZGV._QuestDataAD = [[
 
 Legacy of the Ancestors=0091001
 Exquisite Tears=0091002
@@ -114,28 +113,28 @@ The Soul Trap=1011001
 
 A Beginning at Bleakrock=1091001
 
-The Hollow City=1541001
-The Army of Meridia=1541002
-The Soul-Meld Mage=1541003
-Hall of Judgment=1541004
-Special Blend=1541005
-Vanus Unleashed=1541006
-Breaking the Shackle=1541007
-Through the Daedric Lens=1541008
-Wisdom of the Ages=1541009
-The Library of Dusk=1541010
-Truth, Lies, and Prisoners=1541011
-Into the Woods=1541012
-The Shadow's Embrace=1541013
-Saving Stibbons=1541014
-The Harvest Heart=1541015
-The Citadel Must Fall=1541016
-What the Heart Wants=1541017
-A Graveyard of Ships=1541018
-Between Blood and Bone=1541019
-Old Bones=1541020
-The Final Assault=1541021
-God of Schemes=1541022
+_The Hollow City=1541001
+_The Army of Meridia=1541002
+_The Soul-Meld Mage=1541003
+_Hall of Judgment=1541004
+_Special Blend=1541005
+_Vanus Unleashed=1541006
+_Breaking the Shackle=1541007
+_Through the Daedric Lens=1541008
+_Wisdom of the Ages=1541009
+_The Library of Dusk=1541010
+_Truth, Lies, and Prisoners=1541011
+_Into the Woods=1541012
+_The Shadow's Embrace=1541013
+_Saving Stibbons=1541014
+_The Harvest Heart=1541015
+_The Citadel Must Fall=1541016
+_What the Heart Wants=1541017
+_A Graveyard of Ships=1541018
+_Between Blood and Bone=1541019
+_Old Bones=1541020
+_The Final Assault=1541021
+_God of Schemes=1541022
 
 Light from the Darkness=1641001
 

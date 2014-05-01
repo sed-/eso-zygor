@@ -1,8 +1,7 @@
 local ZGV = ZygorGuidesViewer
 if not ZGV then return end
-if ZGV.Utils.GetFaction() ~= "AD" then return end
 
-ZGV._QuestStepData = {
+ZGV._QuestStepDataAD = {
 	[0111001] = {
 		[1]={
 			[[Q1 Redguard invaders and Wood Orcs from ___ take back the city.<142>]],
@@ -7834,6 +7833,113 @@ ZGV._QuestStepData = {
 			[[S1C0 Talk to Lyris]],
 		},
 	},
+	[1781053] = {
+		[1]={
+			[[Q1 I convinced the leaders of the three ___ will go smoothly.<214>]],
+			[[S1 I need to wait for Vanus Galerion to open the portal to Stirk.]],
+			[[S1C1 Wait for Portal]],
+			[[S1C2 ]],
+			[[S1C3 ]],
+			[[S1C4 ]],
+		},
+		[2]={
+			[[Q1 I convinced the leaders of the three ___ will go smoothly.<214>]],
+			[[S1 I need to enter Vanus Galerion's portal to travel to Stirk.]],
+			[[S1C1 Enter Portal to Stirk]],
+		},
+		[3]={
+			[[Q1 I convinced the leaders of the three ___ will go smoothly.<214>]],
+			[[S1 I arrived on the island of Stirk. Now I need to talk to Vanus Galerion.]],
+			[[S1C1 Talk to Vanus Galerion]],
+		},
+		[4]={
+			[[Q1 I convinced the leaders of the three ___ will go smoothly.<214>]],
+			[[S1 I need to lead Vanus Galerion to the ___ will take place.<109>]],
+			[[S1C1 Go to Summit Point]],
+			[[S2 NO TEXT]],
+			[[S2C1 Theater 1 Warning Track]],
+			[[S3 NO TEXT]],
+			[[S3C1 Theater 2 Warning Track]],
+			[[S4 NO TEXT]],
+			[[S4C1 Theater 3 Warning Track]],
+			[[S5 NO TEXT]],
+			[[S5C1 Mim Salutes]],
+		},
+		[5]={
+			[[Q1 I convinced the leaders of the three ___ will go smoothly.<214>]],
+			[[S1 The alliance leaders are arriving. I ___ they have to say.<76>]],
+			[[S1C1 Listen to the Alliance Leaders]],
+		},
+		[6]={
+			[[Q1 I convinced the leaders of the three ___ will go smoothly.<214>]],
+			[[S1 The alliance leaders can't reach an ___ what they think.<112>]],
+			[[S1C1 Talk to Vanus Galerion]],
+			[[S1C2 Talk to Countess Hakruba]],
+		},
+		[7]={
+			[[Q1 I convinced the leaders of the three ___ will go smoothly.<214>]],
+			[[S1 I need to convince the three alliance ___ of them in turn.<190>]],
+			[[S1C1 Talk to the Alliance Leaders]],
+			[[S2 NO TEXT]],
+			[[S2C1 Talk to High King Emeric]],
+			[[S2C2 Talk to Queen Ayrenn]],
+			[[S2C3 Talk to Jorunn Skald-King]],
+		},
+		[8]={
+			[[Q1 I convinced the leaders of the three ___ will go smoothly.<214>]],
+			[[S1 I spoke to the alliance leaders. They ___ where things stand.<181>]],
+			[[S1C1 Talk to Vanus Galerion]],
+			[[S2 NO TEXT]],
+			[[S2C1 Talk to Vanus Galerion]],
+		},
+		[9]={
+			[[Q1 I convinced the leaders of the three ___ will go smoothly.<214>]],
+			[[S1 Molag Bal has opened unstable rifts to ___ the unstable rifts.<200>]],
+			[[S1C1 Close the Unstable Rifts]],
+			[[S2 NO TEXT]],
+			[[S2C1 Storm Atronach]],
+			[[S3 NO TEXT]],
+			[[S3C1 Harvester]],
+			[[S4 NO TEXT]],
+			[[S4C1 Titan]],
+		},
+		[10]={
+			[[Q1 I convinced the leaders of the three ___ will go smoothly.<214>]],
+			[[S1 I closed the unstable rifts and saved ___ to Vanus Galerion.<102>]],
+			[[S1C1 Talk to Vanus Galerion]],
+			[[S2 NO TEXT]],
+			[[S2C1 Talk to Vanus Galerion]],
+		},
+		[11]={
+			[[Q1 I convinced the leaders of the three ___ will go smoothly.<214>]],
+			[[S1 The alliance leaders have given the ___ final preparations.<204>]],
+			[[S1C1 Enter the Portal Valley]],
+			[[S2 NO TEXT]],
+			[[S2C1 Follow Vanus Galerion]],
+			[[S3 NO TEXT]],
+			[[S3C1 Enter the Portal Valley]],
+		},
+		[12]={
+			[[Q1 I convinced the leaders of the three ___ will go smoothly.<214>]],
+			[[S1 With the permission of the kings and ___ we're ready to go.<227>]],
+			[[S1C1 Talk to Vanus Galerion]],
+		},
+		[13]={
+			[[Q1 I convinced the leaders of the three ___ will go smoothly.<214>]],
+			[[S1 I need to wait for Vanus Galerion to open the portal to Coldharbour.]],
+			[[S1C1 Wait for Portal]],
+		},
+		[14]={
+			[[Q1 I convinced the leaders of the three ___ will go smoothly.<214>]],
+			[[S1 The invasion of Coldharbour has begun! ___ Molag Bal's realm.<93>]],
+			[[S1C1 Take Portal to Coldharbour]],
+		},
+		[15]={
+			[[Q1 I convinced the leaders of the three ___ will go smoothly.<214>]],
+			[[S1 I arrived in Coldharbour, but I seem to ___ speak to Cadwell.<127>]],
+			[[S1C0 Talk to Cadwell]],
+		},
+	},
 	[1781054] = {
 		[1]={
 			[[Q1 Cadwell has approached me and offered ___ Coldharbour.<173>]],
@@ -10218,6 +10324,73 @@ ZGV._QuestStepData = {
 			[[Q1 Vanus Galerion of the Mages Guild has a ___ Coldharbour.<208>]],
 			[[S1 I need to speak to Razum-dar in the ___ Vanus Galerion.<103>]],
 			[[S1C1 Talk to Razum-dar in Skywatch]],
+		},
+		[2]={
+			[[Q1 Vanus Galerion of the Mages Guild has a ___ Coldharbour.<208>]],
+			[[S1 Vanus Galerion should arrive soon. I ___ can speak with him.<81>]],
+			[[S1C1 Wait for Vanus Galerion]],
+			[[S1C2 ]],
+			[[S1C3 ]],
+		},
+		[3]={
+			[[Q1 Vanus Galerion of the Mages Guild has a ___ Coldharbour.<208>]],
+			[[S1 Vanus Galerion has arrived at the Mages Guild. I should speak with him.]],
+			[[S1C1 Talk to Vanus Galerion]],
+		},
+		[4]={
+			[[Q1 Vanus Galerion of the Mages Guild has a ___ Coldharbour.<208>]],
+			[[S1 To start the diplomatic process, Vanus ___ enter the portal.<131>]],
+			[[S1C1 Enter Vanus Galerion's Portal]],
+		},
+		[5]={
+			[[Q1 Vanus Galerion of the Mages Guild has a ___ Coldharbour.<208>]],
+			[[S1 I followed Vanus Galerion to another ___ alliance's leader.<121>]],
+			[[S1C1 Receive Introduction]],
+			[[S1C2 ]],
+			[[S1C3 ]],
+			[[S2 NO TEXT]],
+			[[S2C1 TRACKER GOAL TEXT]],
+			[[S2C2 TRACKER GOAL TEXT]],
+			[[S2C3 TRACKER GOAL TEXT]],
+		},
+		[6]={
+			[[Q1 Vanus Galerion of the Mages Guild has a ___ Coldharbour.<208>]],
+			[[S1 Vanus Galerion has introduced me to an ___ the leader now.<97>]],
+			[[S1C1 Talk to the Alliance Leader]],
+			[[S1C2 ]],
+			[[S1C3 ]],
+		},
+		[7]={
+			[[Q1 Vanus Galerion of the Mages Guild has a ___ Coldharbour.<208>]],
+			[[S1 This diplomatic mission is complete. I ___ suggests I do next.<112>]],
+			[[S1C1 Talk to Vanus Galerion]],
+		},
+		[8]={
+			[[Q1 Vanus Galerion of the Mages Guild has a ___ Coldharbour.<208>]],
+			[[S1 Vanus has prepared a portal for us to ___ into the portal.<112>]],
+			[[S1C1 Enter Vanus Galerion's Portal]],
+		},
+		[9]={
+			[[Q1 Vanus Galerion of the Mages Guild has a ___ Coldharbour.<208>]],
+			[[S1 Vanus Galerion has introduced me to ___ the leader now.<102>]],
+			[[S1C1 Talk to the Alliance Leader]],
+			[[S1C2 ]],
+			[[S1C3 ]],
+		},
+		[10]={
+			[[Q1 Vanus Galerion of the Mages Guild has a ___ Coldharbour.<208>]],
+			[[S1 All three alliance leaders have agreed ___ to Vanus Galerion.<90>]],
+			[[S1C1 Talk to Vanus Galerion]],
+		},
+		[11]={
+			[[Q1 Vanus Galerion of the Mages Guild has a ___ Coldharbour.<208>]],
+			[[S1 Vanus has prepared a portal for us to ___ into the portal.<87>]],
+			[[S1C1 Enter Vanus Galerion's Portal]],
+		},
+		[12]={
+			[[Q1 Vanus Galerion of the Mages Guild has a ___ Coldharbour.<208>]],
+			[[S1 I have returned to the Fighters Guild ___ speak to him there.<120>]],
+			[[S1C0 Talk to Vanus Galerion]],
 		},
 	},
 	[1791038] = {

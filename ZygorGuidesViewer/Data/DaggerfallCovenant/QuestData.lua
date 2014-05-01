@@ -1,8 +1,7 @@
 local ZGV = ZygorGuidesViewer
 if not ZGV then return end
-if ZGV.Utils.GetFaction() ~= "DC" then return end
 
-ZGV._QuestData = [[
+ZGV._QuestDataDC = [[
 
 Blood and the Crescent Moon=0022001
 Basile's Invitation=0022002
@@ -307,34 +306,6 @@ Fadeel's Freedom=1342001
 Shedding the Past=1362001
 
 Tharayya's Trail=1412001
-
-The Hollow City=1542001
-The Army of Meridia=1542002
-Truth, Lies, and Prisoners=1542003
-Through the Daedric Lens=1542004
-Wisdom of the Ages=1542005
-The Library of Dusk=1542006
-Into the Woods=1542007
-The Shadow's Embrace=1542008
-Light from the Darkness=1542009
-Council of the Five Companions=1542010
-The Soul-Meld Mage=1542011
-Hall of Judgment=1542012
-Special Blend=1542013
-Vanus Unleashed=1542014
-Breaking the Shackle=1542015
-Crossing the Chasm=1542016
-Saving Stibbons=1542017
-The Harvest Heart=1542018
-The Citadel Must Fall=1542019
-What the Heart Wants=1542020
-A Graveyard of Ships=1542021
-Old Bones=1542022
-The Final Assault=1542023
-The Endless War=1542024
-A Thorn in Your Side=1542025
-Between Blood and Bone=1542026
-God of Schemes=1542027
 
 The Broken Spearhead=2922001
 Sphere Assembly=2922002

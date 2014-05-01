@@ -1,6 +1,6 @@
-## Title: |cff8800Zygor |cddddddGuides|r |c888888v1.0.9073
+## Title: |cff8800Zygor |cddddddGuides|r |c888888v1.0.9113
 ## Author: Erich Weiss for Zygor Guides
-## Version: 1.0.9073
+## Version: 1.0.9113
 ## APIVersion: 100003
 ## SavedVariables: ZygorGuidesViewerSettings
 
@@ -106,6 +106,7 @@ Guides/ZygorIncludesEbonheartPact.lua
 
 Guides/LevelingCommon_MASTER.lua
 Guides/LevelingCommon.lua
+Guides/LevelingCommonTrial.lua
 Guides/LevelingAldmeriDominion_MASTER.lua
 Guides/LevelingAldmeriDominion.lua
 Guides/LevelingAldmeriDominionTrial.lua

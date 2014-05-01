@@ -3306,7 +3306,7 @@ function ZG_GETMAPSIZES()
 end
 --]]
 
-coord_to_m = 0
+--local coord_to_m = 0
 
 local function dist_to_target()
 	local px,py = GetMapPlayerPosition("player")
@@ -4273,6 +4273,18 @@ function GetPOIPinType(map,id,truthful)
 	if pin==MAP_PIN_TYPE_INVALID then pin=MAP_PIN_TYPE_POI_SEEN end
 	return pin
 end
+_GetFastTravelNodeInfo_ORIG_ZGV = GetFastTravelNodeInfo
+function GetFastTravelNodeInfo(index,truthful)
+	if truthful then return _GetFastTravelNodeInfo_ORIG_ZGV(index) end
+	local known,name,x,y,icon,glowIcon,typ = _GetFastTravelNodeInfo_ORIG_ZGV(index)
+	if ZGV.CurrentStep then
+		for gi,goal in ipairs(ZGV.CurrentStep.goals) do
+			if goal.wayshrine==name then icon="/esoui/art/icons/poi/poi_town_complete.dds" break end
+		end
+	end
+	return known,name,x,y,icon,glowIcon,typ
+end
+
 if ZGV.DEV then
 	_GetPOIInfo_ORIG_ZGV=GetPOIInfo
 	function GetPOIInfo(map,id,truthful)

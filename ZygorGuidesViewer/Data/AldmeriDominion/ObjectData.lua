@@ -1,14 +1,13 @@
 local ZGV = ZygorGuidesViewer
 if not ZGV then return end
-if ZGV.Utils.GetFaction() ~= "AD" then return end
 
-ZGV._ObjectData = [[
+ZGV._ObjectDataAD = [[
 
 Shrine to Stendarr=-21474836481001
-Dark Source=-21474836481001
+Vuldngrav Great Hall=-21474836481001
 Ruined Door=-21474836481001
 Fort Grimwatch=-21474836481001
-Vuldngrav Great Hall=-21474836481001
+Dark Source=-21474836481001
 Corrupted Guardian Senche=-21474836481001
 
 The Reality of Spirits=0021147
@@ -414,8 +413,8 @@ Lyris' Axe=0461007
 Prison of Echoes=0461008
 Door Lever=0461009
 Crucible of Terror=0461010
-Portal to the Harborage=0461011
 Lyris's Axe=0461011
+Portal to the Harborage=0461011
 
 Wretched Squalor=0471001
 Castle Cistern=0471002
@@ -960,12 +959,12 @@ Vulkhel Guard Lighthouse=1781255
 Vulkhel Guard Lighthouse Tower=1781256
 Abandoned Cellar=1781257
 Entila's Folly=1781258
-Portal to Alliance Capital=1781259
 Basic Provisioning Guide=1781259
-Portal to Stirk=1781260
+Portal to Alliance Capital=1781259
 Gilded Letter=1781260
-A Clothier's Primer=1781261
+Portal to Stirk=1781260
 Starfall Arcana=1781261
+A Clothier's Primer=1781261
 Centurion Control Lever=1781262
 Woodworking For Simpletons=1781262
 Blacksmithing Station (Death's Wind)=1781263
@@ -992,6 +991,7 @@ Skywatch Coinhouse=1781309
 Del's Claim=1781310
 Regarding the Ebonheart Pact=1781311
 Wansalen=1781312
+Prowler Cabin=1781313
 
 Ancient Scrolls of the Dwemer IV=1791001
 Spidersilk=1791002
@@ -1747,8 +1747,8 @@ Servant's Clothing=2941087
 Apothecary's Ledger=2941088
 Alchemy Station=2941089
 Dockmaster's Lament=2941090
-Alchemy For My Apprentice=2941091
 Basic Provisioning Guide=2941091
+Alchemy For My Apprentice=2941091
 Alchemy For My Apprentice=2941092
 Zaban-ma's Journal=2941093
 Brazier Fire=2941094

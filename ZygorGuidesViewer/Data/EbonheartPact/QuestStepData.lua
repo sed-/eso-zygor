@@ -1,8 +1,7 @@
 local ZGV = ZygorGuidesViewer
 if not ZGV then return end
-if ZGV.Utils.GetFaction() ~= "EP" then return end
 
-ZGV._QuestStepData = {
+ZGV._QuestStepDataEP = {
 	[0093001] = {
 		[1]={
 			[[Q1 A Nord commander named Holgunn asked me to help defend Davon's Watch.]],
@@ -14973,101 +14972,126 @@ I can kill her, try to bring her back to face justice, or let her go.]],
 			[[C2 Find Sinfay]],
 			[[C3 Find Vikord]],
 			[[S3 NO TEXT]],
-			[[C1 Locate Lyranth]],
+			[[C1 == Locate Lyranth]],
 		},
 		[4]={
+			[[Q1 While exploring Coldharbour, I came ___ been imprisoned.<182>]],
+			[[S1 Skordo wants me to rescue his three ___ are being tortured.<153>]],
+			[[S1C1 Rescue Sinfay, Borgath, and Vikord Skullcleaver]],
+			[[S2 NO TEXT]],
+			[[S2C1 Find Borgath]],
+			[[S2C2 Find Sinfay]],
+			[[S2C3 Find Vikord]],
+			[[S3 NO TEXT]],
+		},
+		[5]={
 			[[Q1 While exploring Coldharbour, I came acro___ave been imprisoned.<182>]],
 			[[S1 I rescued two of Skordo's companions, bu___l him what happened.<131>]],
 			[[C1 Meet Skordo Outside the Overseer's Chamber]],
 		},
-		[5]={
+		[6]={
 			[[Q1 While exploring Coldharbour, I came acro___ave been imprisoned.<182>]],
 			[[S1 Skordo says that Overseer Aruz, a powerf___ I talked to Skordo.<220>]],
 			[[C1 Get the Key to the Passage]],
 			[[C2 Kill Overseer Aruz]],
 		},
-		[6]={
+		[7]={
 			[[Q1 While exploring Coldharbour, I came acro___ave been imprisoned.<182>]],
 			[[S1 I have the Overseer's key. I should use ___f the Tower of Lies.<93>]],
 			[[C1 Use Passage to Upper Level]],
 			[[S2 Skordo should be waiting by the passage ___that I have the key.<132>]],
 			[[C1 Talk to Skordo]],
 			[[S3 NO TEXT]],
-			[[C1 Enter the Passage]],
+			[[C1 == Enter the Passage]],
 		},
-		[7]={
+		[8]={
+			[[Q1 While exploring Coldharbour, I came ___ been imprisoned.<182>]],
+			[[S1 I have the Overseer's key. I should use ___ the Tower of Lies.<93>]],
+			[[S1C1 Use Passage to Upper Level]],
+			[[S2 NO TEXT]],
+			[[S3 NO TEXT]],
+			[[S3C1 == Leave the Passage]],
+		},
+		[9]={
 			[[Q1 While exploring Coldharbour, I came acro___ave been imprisoned.<182>]],
 			[[S1 While Skordo musters his soldiers, I've ___find Captain Eilram.<108>]],
 			[[C0 Talk to Captain Eilram]],
 			[[C1 Talk to Captain Eilram]],
 			[[S2 NO TEXT]],
-			[[C1 Locate Lyranth]],
+			[[C1 == Locate Lyranth]],
 		},
-		[8]={
+		[10]={
+			[[Q1 While exploring Coldharbour, I came ___ been imprisoned.<182>]],
+			[[S1 While Skordo musters his soldiers, I've ___ Captain Eilram.<108>]],
+			[[S1C0 Talk to Captain Eilram]],
+			[[S1C1 Talk to Captain Eilram]],
+			[[S2 NO TEXT]],
+		},
+		[11]={
 			[[Q1 While exploring Coldharbour, I came acro___ave been imprisoned.<182>]],
 			[[S1 Captain Eilram won't work with me until ___fighting the ogrims.<165>]],
 			[[C1 Find Captain Eilram's Sword]],
 		},
-		[9]={
+		[12]={
 			[[Q1 While exploring Coldharbour, I came acro___ave been imprisoned.<182>]],
 			[[S1 Eilram and Arakh both seem to be sufferi___o the other captain.<242>]],
 			[[C1 Go to Captain Arakh's Camp]],
 			[[S2 NO TEXT]],
 			[[C1 Locate Lyranth]],
 		},
-		[10]={
+		[13]={
 			[[Q1 While exploring Coldharbour, I came acro___ave been imprisoned.<182>]],
 			[[S1 I should find Captain Eilram and give his sword.]],
 			[[C1 Return the Sword to Eilram]],
 		},
-		[11]={
+		[14]={
 			[[Q1 While exploring Coldharbour, I came acro___ave been imprisoned.<182>]],
 			[[S1 Captain Arakh is more paranoid than Capt___I guess I'm elected.<197>]],
 			[[C1 Find Captain Arakh's Helm]],
 		},
-		[12]={
+		[15]={
 			[[Q1 While exploring Coldharbour, I came acro___ave been imprisoned.<182>]],
 			[[S1 I recovered Captain Arakh's helmet from ___ram can talk to her.<147>]],
 			[[C1 Return the Helmet to Arakh]],
 		},
-		[13]={
+		[16]={
 			[[Q1 While exploring Coldharbour, I came acro___ave been imprisoned.<182>]],
 			[[S1 The helmet seems to have calmed Captain ___at they have to say.<129>]],
 			[[C1 Listen to the Two Captains]],
 			[[C2 ]],
 			[[C3 ]],
 		},
-		[14]={
+		[17]={
 			[[Q1 While exploring Coldharbour, I came acro___ave been imprisoned.<182>]],
 			[[S1 The Dremora Lyranth appeared. She claims___what she has to say.<128>]],
 			[[C1 Talk to Lyranth]],
 		},
-		[15]={
+		[18]={
 			[[Q1 While exploring Coldharbour, I came acro___ave been imprisoned.<182>]],
 			[[S1 A Dremora named Ifriz seems to be in cha___had been hiding him.<241>]],
 			[[C1 Kill Ifriz]],
 		},
-		[16]={
+		[19]={
 			[[Q1 While exploring Coldharbour, I came acro___ave been imprisoned.<182>]],
 			[[S1 Ifriz the Unraveler is dead and the barr___get out of here now.<182>]],
 			[[C1 Talk to Captain Arakh]],
 		},
-		[17]={
+		[20]={
 			[[Q1 While exploring Coldharbour, I came acro___ave been imprisoned.<182>]],
 			[[S1 I should head for the portal now.]],
 			[[C1 Go to the Portal]],
 		},
-		[18]={
+		[21]={
 			[[Q1 While exploring Coldharbour, I came acro___ave been imprisoned.<182>]],
 			[[S1 According to the two captains, the nearb___ith me when I leave.<111>]],
 			[[C1 Take the Light of Meridia]],
 		},
-		[19]={
+		[22]={
 			[[Q1 While exploring Coldharbour, I came acro___ave been imprisoned.<182>]],
 			[[S1 Now that I have the Light of Meridia, I ___and get out of here.<82>]],
 			[[C1 Use the Portal]],
 		},
-		[20]={
+		[23]={
 			[[Q1 While exploring Coldharbour, I came acro___ave been imprisoned.<182>]],
 			[[S1 The Fighters Guild members have escaped ___ants to speak to me.<150>]],
 			[[C0 Talk to Skordo]],
@@ -15110,6 +15134,123 @@ I can kill her, try to bring her back to face justice, or let her go.]],
 			[[Q1 An ancient Argonian settlement called Ha___ to their Hist tree.<200>]],
 			[[S1 I convinced the scholars that my decisio___ the Hist will live.<195>]],
 			[[C0 Talk to An-Jeen-Sakka]],
+		},
+		[2]={
+			[[Q1 An ancient Argonian settlement called ___ to their Hist tree.<200>]],
+			[[S1 I have agreed to go to Haj Uxith and ___ follow me there.<130>]],
+			[[S1C1 Go to Haj Uxith]],
+		},
+		[3]={
+			[[Q1 An ancient Argonian settlement called ___ to their Hist tree.<200>]],
+			[[S1 When we reached the central plaza, ___ their conversation.<118>]],
+			[[S1C1 Listen to Xohaneel and An-Jeen-Sakka]],
+		},
+		[4]={
+			[[Q1 An ancient Argonian settlement called ___ to their Hist tree.<200>]],
+			[[S1 Now that Treeminder Xohaneel has ___ they expect of me.<137>]],
+			[[S1C1 Talk to Treeminder Xohaneel]],
+		},
+		[5]={
+			[[Q1 An ancient Argonian settlement called ___ to their Hist tree.<200>]],
+			[[S1 I can perform the Haj Uxith tests in ___ the Trial of Body.<168>]],
+			[[S1C1 Talk to Treeminder Xohaneel]],
+			[[S1C2 Talk to An-Jeen-Sakka]],
+		},
+		[6]={
+			[[Q1 An ancient Argonian settlement called ___ to their Hist tree.<200>]],
+			[[S1 I am working to complete the Trial of ___ these virtues.<219>]],
+			[[S1C1 Give Amulet to Ashgar]],
+			[[S1C2 Give Amulet to Teelawei]],
+			[[S1C3 Give Amulet to Desh-Wazei]],
+			[[S2 NO TEXT]],
+			[[S2C1 TRACKER GOAL TEXT]],
+		},
+		[7]={
+			[[Q1 An ancient Argonian settlement called ___ to their Hist tree.<200>]],
+			[[S1 To complete the Trial of Spirit, I need ___ by these virtues.<228>]],
+			[[S1C1 Place the Gems]],
+		},
+		[8]={
+			[[Q1 An ancient Argonian settlement called ___ to their Hist tree.<200>]],
+			[[S1 I completed the Trial of Spirit. I ___ about my success.<106>]],
+			[[S1C0 Talk to Xohaneel]],
+			[[S1C1 Talk to Xohaneel]],
+			[[S1C2 Talk to Xohaneel]],
+		},
+		[9]={
+			[[Q1 An ancient Argonian settlement called ___ to their Hist tree.<200>]],
+			[[S1 I finished the Trial of Spirit. Now I ___ the Trial of Body.<96>]],
+			[[S1C1 Talk to An-Jeen-Sakka]],
+		},
+		[10]={
+			[[Q1 An ancient Argonian settlement called ___ to their Hist tree.<200>]],
+			[[S1 The Trial of Body requires that I enter ___ from the Hist tree.<141>]],
+			[[S1C1 Enter Sap Collection Facility]],
+		},
+		[11]={
+			[[Q1 An ancient Argonian settlement called ___ to their Hist tree.<200>]],
+			[[S1 I entered the Hist sap chamber beneath ___ overheat the vats.<114>]],
+			[[S1C1 Overheat the Sap Vats]],
+			[[S2 NO TEXT]],
+			[[S2C1 TRACKER GOAL TEXT]],
+			[[S2C2 TRACKER GOAL TEXT]],
+			[[S2C3 TRACKER GOAL TEXT]],
+			[[S3 NO TEXT]],
+			[[S3C1 TRACKER GOAL TEXT]],
+			[[S3C2 TRACKER GOAL TEXT]],
+			[[S3C3 TRACKER GOAL TEXT]],
+			[[S4 NO TEXT]],
+			[[S4C1 == Collect Treated Wood]],
+		},
+		[12]={
+			[[Q1 An ancient Argonian settlement called ___ to their Hist tree.<200>]],
+			[[S1 I entered the Hist sap chamber beneath ___ overheat the vats.<114>]],
+			[[S1C1 Overheat the Sap Vats]],
+			[[S2 NO TEXT]],
+			[[S2C1 TRACKER GOAL TEXT]],
+			[[S2C2 TRACKER GOAL TEXT]],
+			[[S2C3 TRACKER GOAL TEXT]],
+			[[S3 NO TEXT]],
+			[[S3C1 TRACKER GOAL TEXT]],
+			[[S3C2 TRACKER GOAL TEXT]],
+			[[S3C3 TRACKER GOAL TEXT]],
+			[[S4 NO TEXT]],
+		},
+		[13]={
+			[[Q1 An ancient Argonian settlement called ___ to their Hist tree.<200>]],
+			[[S1 I completed the task that An-Jeen Sakka ___ and return to him.<104>]],
+			[[S1C1 Exit the Facility]],
+		},
+		[14]={
+			[[Q1 An ancient Argonian settlement called ___ to their Hist tree.<200>]],
+			[[S1 I overheated the Hist sap vats and ___ about my success.<135>]],
+			[[S1C0 Talk to An-Jeen-Sakka]],
+			[[S1C1 Talk to An-Jeen-Sakka]],
+			[[S1C2 Talk to An-Jeen-Sakka]],
+		},
+		[15]={
+			[[Q1 An ancient Argonian settlement called ___ to their Hist tree.<200>]],
+			[[S1 Now Xohaneel and An-Jeen-Sakka want me ___ against Molag Bal.<246>]],
+			[[S1C1 Agree with the Scholars]],
+			[[S1C2 Agree with the Warriors]],
+			[[S2 NO TEXT]],
+			[[S2C1 Xohaneel]],
+			[[S2C2 An-Jeen-Sakka]],
+			[[S2C3 Xohaneel]],
+			[[S2C4 An-Jeen-Sakka]],
+		},
+		[16]={
+			[[Q1 An ancient Argonian settlement called ___ to their Hist tree.<200>]],
+			[[S1 I decided to side with the warriors and ___ my decision.<116>]],
+			[[S1C0 Talk to Treeminder Xohaneel]],
+			[[S1C1 Talk to Treeminder Xohaneel]],
+			[[S1C2 Talk to Treeminder Xohaneel]],
+			[[S1C3 Talk to Treeminder Xohaneel]],
+			[[S2 NO TEXT]],
+			[[S2C1 Xohaneel]],
+			[[S2C2 An-Jeen-Sakka]],
+			[[S2C3 Xohaneel]],
+			[[S2C4 An-Jeen-Sakka]],
 		},
 	},
 	[1543006] = {
