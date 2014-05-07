@@ -11,17 +11,17 @@ step
 step
 goto daggerfall_base 68.31,61.29
 .click Daggerfall##0022003
-.' Leave the house |goto daggerfall_base 68.19,61.48 < 1 |c |noway |complete if dist() > 15 or completedquest("The Broken Spearhead##2922001/1")
+.' Leave the house |goto daggerfall_base 68.19,61.48 < 1 |c |noway |q The Broken Spearhead##2922001/1 |complete if dist() > 15
 step
 goto 65.99,63.88
 .talk Mihayya##0022408
 ..accept The Broken Spearhead##2922001
 step
 goto 69.79,65.10
-.' Follow the path |goto 69.79,65.10 < 10 |c |noway |complete if dist() > 50 or completedquest("The Broken Spearhead##2922001/1")
+.' Follow the path |goto 69.79,65.10 < 10 |c |noway |q The Broken Spearhead##2922001/1 |complete if dist() > 50
 step
 goto 71.64,71.50
-.' Follow the path all the way down |goto 71.64,71.50 < 10 |c |complete if dist() > 80 or completedquest("The Broken Spearhead##2922001/1")
+.' Follow the path all the way down |goto 71.64,71.50 < 10 |c |noway |q The Broken Spearhead##2922001/1 |complete if dist() > 80
 step
 goto 72.82,94.00
 .talk Gilzir##0022410
@@ -109,7 +109,7 @@ goto 84.86,21.68
 ..accept Sphere Assembly##2922002
 step
 goto 83.74,12.29
-.' Follow the path |goto 83.74,12.29 < 10 |c |noway |complete if dist() > 200 or completedquest("Dead Man's Wrist##2922014/1")
+.' Follow the path |goto 83.74,12.29 < 10 |c |noway |q Dead Man's Wrist##2922014/1 |future |complete if dist() > 200
 step
 goto 85.88,11.25
 .wayshrine Sandy Grotto
@@ -119,10 +119,10 @@ goto 79.71,12.86
 ..accept Dead Man's Wrist##2922014
 step
 goto 80.98,12.28
-.' Leave the cave |goto 80.98,12.28 < 5 |c |noway |complete if dist() > 40 or completedquest("Dead Man's Wrist##2922014/1")
+.' Leave the cave |goto 80.98,12.28 < 5 |c |noway |q Dead Man's Wrist##2922014/1 |complete if dist() > 40
 step
 goto 79.87,14.99
-.' Follow the path |goto 79.87,14.99 < 5 |c |noway |complete if dist() > 70 or completedquest("Dead Man's Wrist##2922014/1")
+.' Follow the path |goto 79.87,14.99 < 5 |c |noway |q Dead Man's Wrist##2922014/1 |complete if dist() > 70
 step
 goto 73.70,17.90
 .' Follow the path |goto 73.70,17.90 < 10 |c |noway |q Tarnish the Crown##2922011/1 |future
@@ -132,7 +132,7 @@ goto 69.26,17.24
 .' Kill King Demog and Take His Crown |q Tarnish the Crown##2922011/1
 step
 goto 71.87,18.12
-.' Follow the path |goto 71.87,18.12 < 10 |c |noway |complete if dist() > 70 or completedquest("Innocent Scoundrel##2922008/10")
+.' Follow the path |goto 71.87,18.12 < 10 |c |noway |complete if dist() > 70 |q Innocent Scoundrel##2922008/10
 step
 goto 74.18,16.58
 .' Follow the path |goto 74.18,16.58 < 10 |c |noway |q Innocent Scoundrel##2922008/16 |future
@@ -207,20 +207,20 @@ goto 43.73,25.85
 .talk Goblin Marq##2922066 |q Goblin Marq##2922012/2
 step
 goto 49.22,28.75
-.' Follow the path |goto 49.22,28.75 < 10 |c |noway |complete if dist() > 135 or completedquest("Goblin Marq##2922012")
+.' Follow the path |goto 49.22,28.75 < 10 |c |noway |q Goblin Marq##2922012 |complete if dist() > 135
 step
 goto 55.67,29.04
 .talk Grubby Grunyun##2922065
 ..turnin Goblin Marq##2922012
 step
 goto 51.29,36.16
-.' Follow the path |goto porthunding_base 15.38,36.30 < 20 |c |noway |complete if dist("strosmkai_base",51.29,36.16) > 180 or completedquest("Moment of Truth##2922010/1")
+.' Follow the path |goto porthunding_base 15.38,36.30 < 20 |c |noway |q Moment of Truth##2922010/1 |future |complete if dist("strosmkai_base",51.29,36.16) > 180
 step
 goto porthunding_base 11.97,42.72
-.' Follow the path |goto strosmkai_base 49.84,38.90 < 20 |c |noway |complete if dist("porthunding_base",11.97,42.72) > 35 or completedquest("Moment of Truth##2922010/1")
+.' Follow the path |goto strosmkai_base 49.84,38.90 < 20 |c |noway |q Moment of Truth##2922010/1 |future |complete if dist("porthunding_base",11.97,42.72) > 35
 step
 goto strosmkai_base 46.74,43.89
-.' Follow the path |goto strosmkai_base 46.74,43.89 < 10 |c |noway |complete if dist() > 130 or completedquest("Moment of Truth##2922010/1")
+.' Follow the path |goto strosmkai_base 46.74,43.89 < 10 |c |noway |q Moment of Truth##2922010/1 |future |complete if dist() > 130
 step
 goto 41.56,40.91
 .talk Dugroth##2922049
@@ -257,33 +257,33 @@ goto 40.20,50.84
 .talk Neramo##2922038 |q Buried Secrets##2922006/1
 step
 goto 39.46,44.87
-.' Follow the path up |goto 39.46,44.87 < 30 |c |noway |q Buried Secrets##2922006/2 |future
+.' Follow the path up |goto 39.46,44.87 < 20 |c |noway |q Buried Secrets##2922006/2
 step
 goto 33.23,41.02
-.' Enter the building |goto 33.23,41.02 < 10 |c |noway |q Buried Secrets##2922006/2 |future
+.' Enter the building |goto 33.23,41.02 < 10 |c |noway |q Buried Secrets##2922006/2
 step
 goto 33.03,40.29
-.' Follow the path up |goto 33.03,40.29 < 5 |c |noway |q Buried Secrets##2922006/2 |future
+.' Follow the path up |goto 33.03,40.29 < 5 |c |noway |q Buried Secrets##2922006/2
 step
 goto 32.51,40.21
 .click Secondary Focusing Crystal##2922021
 .' Collect the Secondary Focusing Crystal |q Buried Secrets##2922006/2/1/Collect Secondary Focusing Crystal##2
 step
 goto 33.23,41.02
-.' Leave the building |goto 33.23,41.02 < 10 |c |noway |q Buried Secrets##2922006/2 |future
+.' Leave the building |goto 33.23,41.02 < 10 |c |noway |q Buried Secrets##2922006/2
 step
 goto 34.84,48.26
-.' Follow the path |goto 34.84,48.26 < 10 |c |noway |q Buried Secrets##2922006/2 |future
+.' Follow the path |goto 34.84,48.26 < 10 |c |noway |q Buried Secrets##2922006/2
 step
 goto 31.70,52.15
-.' Follow the path |goto 31.70,52.15 < 10 |c |noway |q Buried Secrets##2922006/2 |future
+.' Follow the path |goto 31.70,52.15 < 10 |c |noway |q Buried Secrets##2922006/2
 step
 goto 29.11,51.44
 .click Primary Focusing Crystal##2922022
 .' Collect the Primary Focusing Crystal |q Buried Secrets##2922006/2/1/Collect Primary Focusing Crystal##1
 step
 goto 31.35,52.43
-.' Follow the path |goto 31.35,52.43 < 10 |c |noway |complete if dist() > 60 or completedquest("Buried Secrets##2922006/3")
+.' Follow the path |goto 31.35,52.43 < 10 |c |noway |q Buried Secrets##2922006/3 |complete if dist() > 60
 step
 goto 32.66,47.51
 .' Enter the building |goto 32.66,47.51 < 5 |c |noway |q Buried Secrets##2922006/3
@@ -301,14 +301,14 @@ goto bthzark_base 55.80,11.71
 .talk Neramo##2922038 |q Buried Secrets##2922006/6
 step
 goto 54.47,32.48
-.' Follow the path |goto 54.47,32.48 < 10 |c |noway |q Buried Secrets##2922006/7 |future
+.' Follow the path |goto 54.47,32.48 < 10 |c |noway |q Buried Secrets##2922006/7
 step
 goto 74.37,32.55
 .' Use Neramo's Control Rod
 .' Repair the Eastern Generator |q Buried Secrets##2922006/7/1/Repair the Eastern Generator##1
 step
 goto 65.49,45.10
-.' Follow the path |goto 65.49,45.10 < 10 |c |noway |q Buried Secrets##2922006/7 |future
+.' Follow the path |goto 65.49,45.10 < 10 |c |noway |q Buried Secrets##2922006/7
 step
 goto 30.35,48.57
 .' Use Neramo's Control Rod
@@ -343,7 +343,7 @@ goto 27.10,66.47
 step
 goto 29.82,66.37
 .click Bthzark Mine##2922042
-.' Leave the Bthzark Mine |goto 31.59,64.58 < 1 |c |noway |q Buried Secrets##2922006 |future
+.' Leave the Bthzark Mine |goto 31.59,64.58 < 1 |c |noway |q Buried Secrets##2922006
 step
 goto 31.54,64.37
 .talk Neramo##2922038
@@ -354,13 +354,13 @@ goto 40.47,63.39
 ..accept Last Night##2922005
 step
 goto 40.58,69.30
-.' Follow the path |goto 40.58,69.30 < 20 |c |noway |q Last Night##2922005/1 |future
+.' Follow the path |goto 40.58,69.30 < 20 |c |noway |q Last Night##2922005/1
 step
 goto 36.67,73.05
 .talk Shamal##2922052 |q Last Night##2922005/1/1/Find Shamal##2
 step
 goto 38.17,75.01
-.' Follow the path |goto 38.17,75.01 < 10 |c |noway |q Last Night##2922005/1 |future
+.' Follow the path |goto 38.17,75.01 < 10 |c |noway |q Last Night##2922005/1
 step
 goto 36.35,79.17
 .talk Iriana##2922053 |q Last Night##2922005/1/1/Find Iriana##1
@@ -369,7 +369,7 @@ goto 43.80,81.27
 .wayshrine Saintsport
 step
 goto 43.84,74.49
-.' Follow the road |goto 43.84,74.49 < 20 |c |noway |complete if dist() > 150 or completedquest("Last Night##2922005")
+.' Follow the road |goto 43.84,74.49 < 20 |c |noway |q Last Night##2922005 |complete if dist() > 150
 step
 goto 40.07,63.90
 .' Watch the dialogue
@@ -409,49 +409,49 @@ goto 55.16,80.53
 .' Take a Sea Drake Uniform |q Like Moths to a Candle##2922003/2
 step
 goto 53.92,81.06
-.' Leave the building |goto 53.92,81.06 < 10 |c |noway |complete if dist() > 40 or completedquest("Like Moths to a Candle##2922003/3")
+.' Leave the building |goto 53.92,81.06 < 10 |c |noway |complete if dist() > 40 |q Like Moths to a Candle##2922003/3
 step
 goto 49.23,82.49
-.' Enter the building |goto 49.23,82.49 < 10 |c |noway |q Like Moths to a Candle##2922003/3 |future
+.' Enter the building |goto 49.23,82.49 < 10 |c |noway |q Like Moths to a Candle##2922003/3
 step
 goto 48.29,83.12
-.' Follow the path up |goto 48.29,83.12 < 5 |c |noway |q Like Moths to a Candle##2922003/3 |future
+.' Follow the path up |goto 48.29,83.12 < 5 |c |noway |q Like Moths to a Candle##2922003/3
 step
 goto 48.33,82.88
 .talk Mekag gro-Bug##2922023
 .' Release Mekag gro-Bug |q Like Moths to a Candle##2922003/3/1/Release Mekag gro-Bug##3
 step
 goto 47.90,82.49
-.' Follow the path down |goto 47.90,82.49 < 5 |c |noway |q Like Moths to a Candle##2922003/3 |future
+.' Follow the path down |goto 47.90,82.49 < 5 |c |noway |q Like Moths to a Candle##2922003/3
 step
 goto 49.23,82.49
-.' Leave the building |goto 49.23,82.49 < 10 |c |noway |q Like Moths to a Candle##2922003/3 |future
+.' Leave the building |goto 49.23,82.49 < 10 |c |noway |q Like Moths to a Candle##2922003/3
 step
 goto 51.92,76.62
-.' Enter the building |goto 51.92,76.62 < 10 |c |noway |q Like Moths to a Candle##2922003/3 |future
+.' Enter the building |goto 51.92,76.62 < 10 |c |noway |q Like Moths to a Candle##2922003/3
 step
 goto 51.20,75.47
-.' Follow the path up |goto 51.20,75.47 < 5 |c |noway |q Like Moths to a Candle##2922003/3 |future
+.' Follow the path up |goto 51.20,75.47 < 5 |c |noway |q Like Moths to a Candle##2922003/3
 step
 goto 53.07,76.49
 .talk Haerdon##2922024
 .' Release Haerdon |q Like Moths to a Candle##2922003/3/1/Release Haerdon##2
 step
 goto 54.79,77.02
-.' Enter the building |goto 54.79,77.02 < 10 |c |noway |q Like Moths to a Candle##2922003/3 |future
+.' Enter the building |goto 54.79,77.02 < 10 |c |noway |q Like Moths to a Candle##2922003/3
 step
 goto 55.84,76.40
-.' Follow the path up |goto 55.84,76.40 < 5 |c |noway |q Like Moths to a Candle##2922003/3 |future
+.' Follow the path up |goto 55.84,76.40 < 5 |c |noway |q Like Moths to a Candle##2922003/3
 step
 goto 54.95,77.23
 .talk Crenard Dortene##2922025
 .' Release Crenard Dortene |q Like Moths to a Candle##2922003/3/1/Release Crenard Dortene##1
 step
 goto 56.23,77.10
-.' Follow the path down |goto 56.23,77.10 < 10 |c |noway |complete if dist() > 35 or completedquest ("Like Moths to a Candle##2922003/4")
+.' Follow the path down |goto 56.23,77.10 < 10 |c |noway |complete if dist() > 35 |q Like Moths to a Candle##2922003/4
 step
 goto 54.79,77.02
-.' Leave the building |goto 54.79,77.02 < 10 |c |noway |complete if dist() > 40 or completedquest ("Like Moths to a Candle##2922003/4")
+.' Leave the building |goto 54.79,77.02 < 10 |c |noway |complete if dist() > 40 |q Like Moths to a Candle##2922003/4
 step
 goto 55.07,73.98
 .' Follow the path |goto 55.07,73.98 < 10 |c |noway |q Like Moths to a Candle##2922003/4 |future
@@ -461,7 +461,7 @@ goto 61.98,77.50
 .' Meet Lerisa |q Like Moths to a Candle##2922003/4
 step
 goto 61.65,78.53
-.' Follow the path up |goto 61.65,78.53 < 10 |c |noway |complete if dist() > 35 or completedquest ("Like Moths to a Candle##2922003/5")
+.' Follow the path up |goto 61.65,78.53 < 10 |c |noway |complete if dist() > 35 |q Like Moths to a Candle##2922003/5
 step
 goto 60.99,81.09
 .' Follow the path |goto 60.99,81.09 < 10 |c |noway |q Like Moths to a Candle##2922003/9 |future
@@ -483,10 +483,10 @@ goto 65.39,84.07
 step
 goto 65.56,83.49
 .click Bloody Witch Hold##2922007
-.' Leave the Bloody Witch Storeroom |goto 65.59,83.37 < 1 |c |noway |complete if dist() > 20 or completedquest ("Like Moths to a Candle##2922003/7")
+.' Leave the Bloody Witch Storeroom |goto 65.59,83.37 < 1 |c |noway |q Like Moths to a Candle##2922003/7 |complete if dist() > 20
 step
 goto 65.90,81.51
-.' Follow the path up |goto 65.90,81.51 < 5 |c |noway |complete if dist() > 50 or completedquest ("Like Moths to a Candle##2922003/7")
+.' Follow the path up |goto 65.90,81.51 < 5 |c |noway |q Like Moths to a Candle##2922003/7 |complete if dist() > 50
 step
 goto 65.39,81.92
 .' Follow the path |goto 65.39,81.92 < 5 |c |noway |q Like Moths to a Candle##2922003/9 |future
@@ -505,7 +505,7 @@ goto 66.38,80.75
 step
 goto 66.53,79.08
 .' Go to the top of the ship
-.' Jump into the water here |goto 66.53,79.08 < 10 |c |noway |complete if dist() > 50 or completedquest ("Like Moths to a Candle##2922003")
+.' Jump into the water here |goto 66.53,79.08 < 10 |c |noway |complete if dist() > 50 |q Like Moths to a Candle##2922003
 step
 goto 61.49,69.49
 .talk Crafty Lerisa##2922021
@@ -534,10 +534,10 @@ goto 45.49,91.45
 .' Read the Sealed Letter |q Izad's Treasure##2922004/1
 step
 goto 42.78,87.10
-.' Follow the path |goto 42.78,87.10 < 10 |c |noway |complete if dist() > 110 or completedquest ("Izad's Treasure##2922004/2")
+.' Follow the path |goto 42.78,87.10 < 10 |c |noway |q Izad's Treasure##2922004/2 |complete if dist() > 125
 step
 goto 45.44,74.02
-.' Follow the path |goto 45.44,74.02 < 10 |c |noway |complete if dist() > 285 or completedquest ("Izad's Treasure##2922004/2")
+.' Follow the path |goto 45.44,74.02 < 10 |c |noway |q Izad's Treasure##2922004/2 |complete if dist() > 285
 step
 goto 57.80,69.36
 .' Enter the building |goto 57.80,69.36 < 5 |c |noway |q Izad's Treasure##2922004/2 |future
@@ -548,13 +548,13 @@ goto 58.52,68.77
 step
 goto 58.43,68.69
 .click Stros M'Kai##2922001
-.' Leave the Lighthouse |goto 58.51,68.77 < 1 |c |noway |complete if dist() > 10 or completedquest ("Izad's Treasure##2922004/3")
+.' Leave the Lighthouse |goto 58.51,68.77 < 1 |c |noway |q Izad's Treasure##2922004/3 |complete if dist() > 10
 step
 goto 57.80,69.36
-.' Leave the building |goto 57.80,69.36 < 5 |c |noway |complete if dist() > 30 or completedquest ("Izad's Treasure##2922004/3")
+.' Leave the building |goto 57.80,69.36 < 5 |c |noway |q Izad's Treasure##2922004/3 |complete if dist() > 30
 step
 goto 45.27,59.03
-.' Follow the path |goto 45.27,59.03 < 10 |c |noway |complete if dist() > 340 or completedquest ("Izad's Treasure##2922004/3")
+.' Follow the path |goto 45.27,59.03 < 10 |c |noway |q Izad's Treasure##2922004/3 |complete if dist() > 340
 step
 goto 41.75,40.86
 .' Find the Warrior |q Izad's Treasure##2922004/3
@@ -622,10 +622,10 @@ goto strosmkai_base 74.69,50.07
 step
 goto 73.17,49.98
 .click Port Hunding##2922045
-.' Leave the Screaming Mermaid |goto porthunding_base 67.43,68.98 < 1 |c |noway |complete if dist("strosmkai_base",73.17,49.98) > 40 or completedquest("The Spearhead's Crew##2922007")
+.' Leave the Screaming Mermaid |goto porthunding_base 67.43,68.98 < 1 |c |noway |q The Spearhead's Crew##2922007 |complete if dist("strosmkai_base",73.17,49.98) > 40
 step
 goto porthunding_base 46.14,58.56
-.' Follow the path |goto porthunding_base 46.14,58.56 < 5 |c |noway |complete if dist() > 85 or completedquest("The Spearhead's Crew##2922007")
+.' Follow the path |goto porthunding_base 46.14,58.56 < 5 |c |noway |q The Spearhead's Crew##2922007 |complete if dist() > 85
 step
 goto 33.29,65.12
 .talk Lambur##2922004
@@ -644,7 +644,7 @@ goto 32.06,61.70
 .' Follow the path up |goto 32.06,61.70 < 5 |c |noway |q Tip of the Spearhead##2922009/5 |future
 step
 goto 33.05,63.25
-.talk Captain Kaleen##2922005
+.talk Captain Kaleen##2922005 |tip On the second floor.
 .' Meet Kaleen When You Are Ready to Start the Heist |q Tip of the Spearhead##2922009/1
 step
 goto 33.05,63.25
@@ -663,17 +663,17 @@ goto 33.61,63.04
 ..' Thank her _"Thanks, Lerisa. I'd love your help."_
 step
 goto 33.49,60.64
-.' Follow the path down |goto 33.49,60.64 < 5 |c |noway |complete if dist() > 15 or completedquest("Tip of the Spearhead##2922009/6")
+.' Follow the path down |goto 33.49,60.64 < 5 |c |noway |complete if dist() > 15 |q Tip of the Spearhead##2922009/6
 step
 goto 33.63,63.77
 .click Port Hunding##2922045
-.' Leave Captain Kaleen's Hideout |goto 33.63,64.31 < 1 |c |noway |complete if dist() > 20 or completedquest("Tip of the Spearhead##2922009/6")
+.' Leave Captain Kaleen's Hideout |goto 33.63,64.31 < 1 |c |noway |complete if dist() > 20 |q Tip of the Spearhead##2922009/6
 step
 goto 43.46,58.57
-.' Follow the path |goto 43.46,58.57 < 10 |c |noway |complete if dist() > 45 or completedquest("Tip of the Spearhead##2922009/6")
+.' Follow the path |goto 43.46,58.57 < 10 |c |noway |complete if dist() > 45 |q Tip of the Spearhead##2922009/6
 step
 goto 53.64,52.19
-.' Follow the path |goto strosmkai_base 67.28,42.82 < 20 |c |noway |complete if dist("porthunding_base",53.64,52.19) > 50 or completedquest("Tip of the Spearhead##2922009/6")
+.' Follow the path |goto strosmkai_base 67.28,42.82 < 20 |c |noway |complete if dist("porthunding_base",53.64,52.19) > 50 |q Tip of the Spearhead##2922009/6
 step
 goto strosmkai_base 67.34,41.13
 .' Obtain a Servant's Disguise |q Tip of the Spearhead##2922009/6
@@ -701,7 +701,7 @@ goto 67.68,26.10
 step
 goto 67.35,30.62
 .click Headman Bhosek's Palace##2922061
-.' Enter the Palace |goto 67.34,30.82 < 1 |c |noway |complete if dist() > 100 or completedquest("Tip of the Spearhead##2922009/12")
+.' Enter the Palace |goto 67.34,30.82 < 1 |c |noway |complete if dist() > 100 |q Tip of the Spearhead##2922009/12
 step
 goto 68.25,32.71
 .' Follow the path up |goto 68.25,32.71 < 5 |c |noway |q Tip of the Spearhead##2922009/15 |future
@@ -710,7 +710,7 @@ goto 67.57,31.08
 .' Find Bhosek's Lockbox |q Tip of the Spearhead##2922009/13
 step
 goto 67.48,30.96
-.' Use the Dwemer Device on Helthar
+.' Press _E_ to use the Dwemer Device on Helthar
 .' Disable Bhosek's Guard |q Tip of the Spearhead##2922009/14
 step
 goto 67.38,30.89
@@ -718,17 +718,14 @@ goto 67.38,30.89
 .' Collect the Shipping Logs |q Tip of the Spearhead##2922009/15
 step
 goto 68.50,32.04
-.' Follow the path down |goto 68.50,32.04 < 1 |c |noway |complete if dist() > 45 or completedquest("Tip of the Spearhead##2922009/16")
+.' Follow the path down |goto 68.50,32.04 < 1 |c |noway |q Tip of the Spearhead##2922009/16 |complete if dist() > 45
 step
 goto 67.35,34.29
 .click Port Hunding##2922045
-.' Leave Bhosek's Palace |goto 67.34,34.57 < 1 |c |noway |complete if dist() > 60 or completedquest("Tip of the Spearhead##2922009/16")
-step
-goto 67.27,42.76
-.' Follow the path |goto porthunding_base 53.61,52.21 < 20 |c |noway |complete if dist("strosmkai_base",67.27,42.76) > 175 or completedquest("Tip of the Spearhead##2922009/16")
+.' Leave Bhosek's Palace |goto 67.34,34.57 < 1 |c |noway |q Tip of the Spearhead##2922009/16 |complete if dist() > 75
 step
 goto porthunding_base 46.33,58.35
-.' Follow the path |goto porthunding_base 46.33,58.35 < 5 |c |complete if dist() > 40 or completedquest("Tip of the Spearhead##2922009/16")
+.' Follow the path |goto porthunding_base 46.33,58.35 < 5 |c |noway |q Tip of the Spearhead##2922009/16 |complete if dist() > 40
 step
 goto 40.46,82.65
 .' Head to the Docks |q Tip of the Spearhead##2922009/16
@@ -765,7 +762,7 @@ goto 49.39,55.06
 ..accept Into the Hills##2932003
 step
 goto 51.26,54.11
-.' Follow the path |goto 51.26,54.11 < 10 |c |noway |complete if dist() > 45 or completedquest("The Bloodthorn Plot##2932001/1")
+.' Follow the path |goto 51.26,54.11 < 10 |c |noway |q The Bloodthorn Plot##2932001/1 |complete if dist() > 45
 step
 goto 48.46,49.52
 .' Follow the path up |goto 48.46,49.52 < 5 |c |noway |q The Bloodthorn Plot##2932001/1 |future
@@ -774,20 +771,20 @@ goto 50.01,47.56
 .talk Lambur##2922004 |q The Bloodthorn Plot##2932001/1
 step
 goto 50.75,44.69
-.' Follow the path |goto 50.75,44.69 < 10 |c |noway |complete if dist() > 60 or completedquest("Daughter of Seamount##2932002/1")
+.' Follow the path |goto 50.75,44.69 < 10 |c |noway |q Daughter of Seamount##2932002/1 |future |complete if dist() > 60
 step
 goto 58.02,44.97
 .talk Hunt-Wife Lurgush##2932015
 ..accept Daughter of Seamount##2932002
 step
 goto 55.88,47.44
-.' Follow the path |goto 55.88,47.44 < 10 |c |noway |complete if dist() > 65 or completedquest("Daughter of Seamount##2932002/1")
+.' Follow the path |goto 55.88,47.44 < 10 |c |noway |q Daughter of Seamount##2932002/1 |complete if dist() > 65
 step
 goto 54.10,51.15
-.' Follow the path |goto 54.10,51.15 < 10 |c |noway |complete if dist() > 80 or completedquest("Daughter of Seamount##2932002/1")
+.' Follow the path |goto 54.10,51.15 < 10 |c |noway |q Daughter of Seamount##2932002/1 |complete if dist() > 80
 step
 goto 58.98,52.78
-.' Follow the path |goto 58.98,52.78 < 10 |c |noway |complete if dist() > 100 or completedquest("Daughter of Seamount##2932002/1")
+.' Follow the path |goto 58.98,52.78 < 10 |c |noway |q Daughter of Seamount##2932002/1 |complete if dist() > 100
 step
 goto 61.37,54.28
 .talk Lokra##2932016 |q Daughter of Seamount##2932002/1
@@ -808,19 +805,19 @@ goto 51.82,48.48
 .talk Hearth-Wife Sholg##2932024 |q Daughter of Seamount##2932002/2/1/Talk to Sholg##1 |tip She walks around.
 step
 goto 51.92,47.81
-.' Follow the path up |goto 51.92,47.81 < 3 |c |noway |complete if dist() > 15 or completedquest("Daughter of Seamount##2932002")
+.' Follow the path up |goto 51.92,47.81 < 3 |c |noway |q Daughter of Seamount##2932002 |complete if dist() > 30
 step
 goto 51.00,47.41
-.' Follow the path |goto 51.00,47.41 < 5 |c |noway |complete if dist() > 30 or completedquest("Daughter of Seamount##2932002")
+.' Follow the path |goto 51.00,47.41 < 5 |c |noway |q Daughter of Seamount##2932002 |complete if dist() > 45
 step
 goto 48.86,49.02
-.' Leave the building |goto 48.86,49.02 < 10 |c |noway |complete if dist() > 55 or completedquest("Daughter of Seamount##2932002")
+.' Leave the building |goto 48.86,49.02 < 10 |c |noway |q Daughter of Seamount##2932002 |complete if dist() > 80
 step
 goto 50.79,51.79
-.' Follow the path |goto 50.79,51.79 < 10 |c |noway |complete if dist() > 70 or completedquest("Daughter of Seamount##2932002")
+.' Follow the path |goto 50.79,51.79 < 10 |c |noway |q Daughter of Seamount##2932002 |complete if dist() > 90
 step
 goto 58.98,52.78
-.' Follow the path |goto 58.98,52.78 < 10 |c |noway |complete if dist() > 145 or completedquest("Daughter of Seamount##2932002")
+.' Follow the path |goto 58.98,52.78 < 10 |c |noway |q Daughter of Seamount##2932002 |complete if dist() > 150
 step
 goto 61.37,54.28
 .talk Lokra##2932016
@@ -828,17 +825,17 @@ goto 61.37,54.28
 ..turnin Daughter of Seamount##2932002
 step
 goto 57.85,53.37
-.' Follow the path |goto 57.85,53.37 < 10 |c |noway |complete if dist() > 70 or completedquest("Into the Hills##2932003/1")
+.' Follow the path |goto 57.85,53.37 < 10 |c |noway |q Into the Hills##2932003/1 |complete if dist() > 70
 step
 goto 53.14,56.53
-.' Follow the path |goto 53.14,56.53 < 10 |c |noway |complete if dist() > 110 or completedquest("Into the Hills##2932003/1")
+.' Follow the path |goto 53.14,56.53 < 10 |c |noway |q Into the Hills##2932003/1 |complete if dist() > 110
 step
 goto 52.11,59.84
 .click Vision Totem##2932002
 .' Use the Vision Totem |q Into the Hills##2932003/1
 step
 goto 59.94,60.79
-.' Follow the path |goto 59.94,60.79 < 10 |c |noway |q Into the Hills##2932003/2 |future
+.' Go up the stairs here |goto 59.94,60.79 < 10 |c |noway |q Into the Hills##2932003/2 |future
 step
 goto 62.19,62.29
 .' Learn the Bloodthorn Plot |q Into the Hills##2932003/2
@@ -846,10 +843,10 @@ goto 62.19,62.29
 .' Listen to the Bloodthorn Cultists |q Into the Hills##2932003/3
 step
 goto 58.34,62.30
-.' Follow the path |goto 58.34,62.30 < 10 |c |noway |complete if dist() > 75 or completedquest("Into the Hills##2932003/5")
+.' Follow the path |goto 58.34,62.30 < 10 |c |noway |q Into the Hills##2932003/5 |future |complete if dist() > 75
 step
 goto 56.77,68.23
-.' Follow the path |goto 56.77,68.23 < 10 |c |noway |complete if dist() > 115 or completedquest("Into the Hills##2932003/5")
+.' Follow the path |goto 56.77,68.23 < 10 |c |noway |q Into the Hills##2932003/5 |future |complete if dist() > 115
 step
 goto 52.82,69.85
 .' Reach the Ayleid Site |q Into the Hills##2932003/4
@@ -857,7 +854,7 @@ goto 52.82,69.85
 .' Listen to the Bloodthorn Leader |q Into the Hills##2932003/5
 step
 goto 52.68,71.75
-.' Follow the path |goto 52.68,71.75 < 10 |c |noway |complete if dist() > 40 or completedquest("Farsight##2932004/1")
+.' Follow the path |goto 52.68,71.75 < 10 |c |noway |q Farsight##2932004/1 |future |complete if dist() > 40
 step
 goto 49.92,73.66
 .wayshrine Carved Hills
@@ -909,7 +906,7 @@ goto betnihk_base 53.31,73.37
 ..turnin Into the Hills##2932003
 step
 goto 45.15,69.96
-.' Follow the road |goto 45.15,69.96 < 10 |c |noway |complete if dist() > 160 or completedquest("Farsight##2932004/1")
+.' Follow the road |goto 45.15,69.96 < 10 |c |noway |q Farsight##2932004/1 |complete if dist() > 160
 step
 goto 40.68,70.83
 .' Follow the path |goto 40.68,70.83 < 10 |c |noway |q Farsight##2932004/1 |future
@@ -920,10 +917,10 @@ goto 34.92,73.61
 .' Activate the Western Shrine |q Farsight##2932004/1/1/Activate Western Shrine##2
 step
 goto 33.79,72.85
-.' Jump down here |goto 33.79,72.85 < 10 |c |noway |complete if dist() > 30 or completedquest("Prove Your Worth##2932005/1")
+.' Jump down here |goto 33.79,72.85 < 10 |c |noway |q Prove Your Worth##2932005/1 |future |complete if dist() > 30
 step
 goto 29.41,72.19
-.' Follow the path |goto 29.41,72.19 < 10 |c |noway |complete if dist() > 90 or completedquest("Prove Your Worth##2932005/1")
+.' Follow the path |goto 29.41,72.19 < 10 |c |noway |q Prove Your Worth##2932005/1 |future |complete if dist() > 90
 step
 goto 29.39,70.44
 .talk Garnikh##2932039
@@ -943,7 +940,7 @@ goto 29.63,65.02
 ..accept Unearthing the Past##2932006
 step
 goto 29.72,60.79
-.' Follow the path |goto 29.72,60.79 < 10 |c |noway |complete if dist() > 75 or completedquest("Unearthing the Past##2932006/1")
+.' Follow the path |goto 29.72,60.79 < 10 |c |noway |q Unearthing the Past##2932006/1 |complete if dist() > 75
 step
 goto 33.47,58.10
 .' Follow the path |goto 33.47,58.10 < 10 |c |noway |q Unearthing the Past##2932006/4 |future
@@ -965,7 +962,7 @@ goto 36.87,61.18
 .talk Crafty Lerisa##2922021 |q Unearthing the Past##2932006/4
 step
 goto 36.74,60.69
-.' Follow the path up |goto 36.74,60.69 < 5 |c |noway |complete if dist() > 20 or completedquest("Unearthing the Past##2932006/5")
+.' Follow the path up |goto 36.74,60.69 < 5 |c |noway |q Unearthing the Past##2932006/5 |complete if dist() > 20
 step
 goto 31.42,57.80
 .' Kill Bloodthorn Cultists and Assassin |tip They are all around this area.  Kill the ones standing next to burning ritual symbols on the ground.
@@ -976,15 +973,15 @@ goto 29.46,57.38
 .talk Frederique Lynielle##2932047 |q Unearthing the Past##2932006/6
 step
 goto 26.58,52.22
-.' Use the Staff of Arkay
+.' Press _E_ to use the Staff of Arkay
 .kill Abomination of Wrath##2932049 |q Unearthing the Past##2932006/7/1/Kill Abomination of Wrath##2
 step
 goto 23.56,57.00
-.' Use the Staff of Arkay
+.' Press _E_ to use the Staff of Arkay
 .kill Abomination of Fear##2932050 |q Unearthing the Past##2932006/7/1/Kill Abomination of Wrath##3
 step
 goto 25.72,61.73
-.' Use the Staff of Arkay
+.' Press _E_ to use the Staff of Arkay
 .kill Abomination of Hate##2932051 |q Unearthing the Past##2932006/7/1/Kill Abomination of Wrath##1
 step
 goto 24.57,61.60
@@ -1046,13 +1043,13 @@ goto betnihk_base 20.19,57.07
 ..turnin Unearthing the Past##2932006
 step
 goto 22.38,58.39
-.' Follow the path |goto 22.38,58.39 < 10 |c |noway |complete if dist() > 55 or completedquest("Farsight##2932004/1")
+.' Follow the path |goto 22.38,58.39 < 10 |c |noway |q Farsight##2932004/1 |complete if dist() > 55
 step
 goto 23.75,57.57
-.' Follow the path |goto 23.75,57.57 < 10 |c |noway |complete if dist() > 40 or completedquest("Farsight##2932004/1")
+.' Follow the path |goto 23.75,57.57 < 10 |c |noway |q Farsight##2932004/1 |complete if dist() > 40
 step
 goto 22.70,47.66
-.' Follow the path |goto 22.70,47.66 < 10 |c |noway |complete if dist() > 185 or completedquest("Farsight##2932004/1")
+.' Follow the path |goto 22.70,47.66 < 10 |c |noway |q Farsight##2932004/1 |complete if dist() > 185
 step
 goto 25.61,46.91
 .wayshrine Grimfield
@@ -1139,7 +1136,7 @@ goto 45.30,53.83
 step
 goto 45.77,53.11
 .click Betnikh##2932005
-.' Leave Magula's Longhouse |goto 45.87,53.01 < 1 |c |noway |complete if dist() > 25 or completedquest("The Bloodthorn Plot##2932001")
+.' Leave Magula's Longhouse |goto 45.87,53.01 < 1 |c |noway |q The Bloodthorn Plot##2932001 |complete if dist() > 40
 step
 goto 48.47,49.50
 .' Follow the path up |goto 48.47,49.50 < 10 |c |noway |q The Bloodthorn Plot##2932001 |future
@@ -1177,9 +1174,9 @@ goto 63.82,31.34
 .talk Ayleid Spirit##2932063 |q Carzog's Demise##2932008/4
 step
 goto 65.34,28.54
-.' This step will complete strangele, but don't worry
+.' This step will complete strangely, but don't worry
 .' Lead the Spirit to the Door |q Carzog's Demise##2932008/5/2/Lead the Spirit to the Door##1
-.' Watch the Spirit cast the spell
+.' Watch the Spirit cast the spell |q Carzog's Demise##2932008/3
 .' Activate the Doorway Crystal |q Carzog's Demise##2932008/5/1/Activate Doorway Crystal##2
 step
 goto 60.80,27.48
@@ -1190,9 +1187,9 @@ goto 61.44,27.40
 .talk Ayleid Spirit##2932063 |q Carzog's Demise##2932008/7
 step
 goto 65.42,27.77
-.' This step will complete strangele, but don't worry
+.' This step will complete strangely, but don't worry
 .' Lead the Spirit to the Door |q Carzog's Demise##2932008/8/2/Lead the Spirit to the Door##1
-.' Watch the Spirit cast the spell
+.' Watch the Spirit cast the spell |q Carzog's Demise##2932008/6
 .' Activate the Doorway Crystal |q Carzog's Demise##2932008/8/1/Activate Doorway Crystal##2
 step
 goto 66.71,27.63
@@ -1279,7 +1276,7 @@ goto 47.02,51.20
 step
 goto 46.91,42.24
 .click Carzog's Demise##2952007
-.' Leave Carzog's Demise |goto betnihk_base 62.48,22.93 < 1 |c |noway |complete if dist("carzogsdemise_base",46.91,42.24) > 60 or completedquest("Carzog's Demise##2932008")
+.' Leave Carzog's Demise |goto betnihk_base 62.48,22.93 < 1 |c |noway |q Carzog's Demise##2932008 |complete if dist("carzogsdemise_base",46.91,42.24) > 60
 step
 'Open your map:
 .' Click the Stonetooth Wayshrine
@@ -1297,13 +1294,13 @@ goto 52.60,48.13
 ..accept On to Glenumbra##2932009
 step
 goto 50.53,47.20
-.' Follow the path |goto 50.53,47.20 < 10 |c |noway |complete if dist() > 50 or completedquest("On to Glenumbra##2932009/1")
+.' Follow the path |goto 50.53,47.20 < 10 |c |noway |q On to Glenumbra##2932009/1 |complete if dist() > 50
 step
 goto 48.47,49.50
-.' Follow the path up |goto 48.47,49.50 < 10 |c |noway |complete if dist() > 65 or completedquest("On to Glenumbra##2932009/1")
+.' Follow the path up |goto 48.47,49.50 < 10 |c |noway |q On to Glenumbra##2932009/1 |complete if dist() > 65
 step
 goto 63.01,53.44
-.' Board the ship |goto 63.01,53.44 < 5 |c |noway |complete if dist() > 265 or completedquest("On to Glenumbra##2932009/1")
+.' Board the ship |goto 63.01,53.44 < 5 |c |noway |q On to Glenumbra##2932009/1 |complete if dist() > 265
 step
 goto 64.03,53.14
 .talk Captain Kaleen##2922005 |q On to Glenumbra##2932009/1 |next Daggerfall Covenant Leveling Guides\\Glenumbra (8-16)
@@ -1326,7 +1323,7 @@ goto 71.79,65.73
 .talk Sir Lanis Shaldon##0022009
 ..turnin On to Glenumbra##2932009
 step
-.' The Prophet will appear next to you if you're at least level 5:
+'The Prophet will appear next to you if you're at least level 5:
 ..accept The Harborage##2922013
 .talk The Prophet##3362001 |q The Harborage##2922013/1/1/Talk to The Prophet##1
 step
@@ -1916,8 +1913,7 @@ goto 48.43,67.19
 .click Red Rook Trap##0022043 |tip They look like ropes on the ground forming squares all around this area.
 .' Disarm 5 Red Rook Traps |q Disorganized Crime##0022022/2/1/Disarm Red Rook Traps##3
 step
-.' Press E to:
-.' Use the Hunting Horn
+.' Press _E_ to use the Hunting Horn.
 .' Sound the Hunting Horn |q Disorganized Crime##0022022/3/1/Sound the Hunting Horn##1
 step
 goto 50.26,64.24
@@ -13102,13 +13098,13 @@ goto alikr_base 26.38,68.24
 ..accept Ash'abah Rising##0172013
 step
 goto 26.70,66.71
-.' Follow the road |goto 26.70,66.71 < 10 |c |noway |complete if dist() > 500 or completedquest("Satak was the First Serpent##0172016/1")
+.' Follow the road |goto 26.70,66.71 < 10 |c |noway |complete if dist() > 500 |q Satak was the First Serpent##0172016/1
 step
 goto 33.58,64.03
-.' Follow the road |goto 33.58,64.03 < 10 |c |noway |complete if dist() > 500 or completedquest("Satak was the First Serpent##0172016/1")
+.' Follow the road |goto 33.58,64.03 < 10 |c |noway |complete if dist() > 500 |q Satak was the First Serpent##0172016/1
 step
 goto 33.22,68.16
-.' Follow the road |goto 33.22,68.16 < 10 |c |noway |complete if dist() > 500 or completedquest("Satak was the First Serpent##0172016/1")
+.' Follow the road |goto 33.22,68.16 < 10 |c |noway |complete if dist() > 500 |q Satak was the First Serpent##0172016/1
 step
 goto 37.95,67.81
 .wayshrine Divad's Chagrin Mine
@@ -13780,7 +13776,7 @@ goto 60.76,48.85
 .' Answer the Third Riddle from Smith Nabeenam |q Master of Leki's Blade##0172023/7
 step
 goto 63.28,50.61
-.' Follow the path |goto 63.28,50.61 < 10 |c |noway |q Master of Leki's Blade##0172023/9 |future
+.' Follow the path through the archway |goto 63.28,50.61 < 10 |c |noway |q Master of Leki's Blade##0172023/9 |future
 step
 goto 63.98,50.90
 .talk Disciple Raifa af-Haba##0172305 |q Master of Leki's Blade##0172023/8
@@ -13889,7 +13885,7 @@ goto 65.08,48.90
 ..turnin Master of Leki's Blade##0172023
 step
 goto 60.47,50.61
-.' Follow the path |goto 60.47,50.61 < 10 |c |noway |complete if dist() > 300
+.' Follow the path through the archway |goto 60.47,50.61 < 10 |c |noway |complete if dist() > 300
 step
 goto 59.57,50.39
 .talk Zanyar##0172565
@@ -14247,7 +14243,7 @@ goto 57.27,33.49
 ..accept Shiri's Research##0172902
 step
 goto 64.55,32.02
-.' Follow the path |goto 64.55,32.02 < 10 |c |noway |complete if dist() > 400 or completedquest("Malignant Militia##0172158/1")
+.' Follow the path |goto 64.55,32.02 < 10 |c |noway |complete if dist() > 400 |q Malignant Militia##0172158/1
 step
 goto 68.47,37.26
 .wayshrine Sep's Spine
@@ -16912,10 +16908,10 @@ goto 38.75,51.26
 .kill Aspect of Strength##0142230 |q The Heart of the Beast##0142898/13/1/Defeat Hircine's Aspect of Strength##2
 step
 goto 39.55,56.15
-.kill Aspect of Guile##0142232 |q The Heart of the Beast##0142898/13/1/Defeat Hircine's Aspect of Guile##3
+.kill Aspect of Speed##0142231 |q The Heart of the Beast##0142898/13/1/Defeat Hircine's Aspect of Speed##1
 step
 goto 37.22,58.40
-.kill Aspect of Speed##0142231 |q The Heart of the Beast##0142898/13/1/Defeat Hircine's Aspect of Speed##1
+.kill Aspect of Guile##0142232|q The Heart of the Beast##0142898/13/1/Defeat Hircine's Aspect of Guile##3
 step
 goto 38.56,54.39
 .talk Spirit of the Hunt##0142233 |q The Heart of the Beast##0142898/14

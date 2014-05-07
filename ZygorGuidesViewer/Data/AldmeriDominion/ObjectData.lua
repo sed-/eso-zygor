@@ -5,10 +5,10 @@ ZGV._ObjectDataAD = [[
 
 Shrine to Stendarr=-21474836481001
 Vuldngrav Great Hall=-21474836481001
-Ruined Door=-21474836481001
 Fort Grimwatch=-21474836481001
-Dark Source=-21474836481001
 Corrupted Guardian Senche=-21474836481001
+Dark Source=-21474836481001
+Ruined Door=-21474836481001
 
 The Reality of Spirits=0021147
 The Hotspur=0021148
@@ -413,8 +413,8 @@ Lyris' Axe=0461007
 Prison of Echoes=0461008
 Door Lever=0461009
 Crucible of Terror=0461010
-Lyris's Axe=0461011
 Portal to the Harborage=0461011
+Lyris's Axe=0461011
 
 Wretched Squalor=0471001
 Castle Cistern=0471002
@@ -1422,6 +1422,7 @@ Letter from Camarino=1841002
 Letter from Lenwe=1841003
 Inner Chamber=1841004
 Tancano's Journal=1841005
+Phaer Catacombs Graveyard=1841006
 
 Redfur Journal, v. 1=1851001
 Flesh Gardens=1851002
@@ -1752,6 +1753,11 @@ Alchemy For My Apprentice=2941091
 Alchemy For My Apprentice=2941092
 Zaban-ma's Journal=2941093
 Brazier Fire=2941094
+Order of Battle (Partial)=2941095
+The Little Alkosh's Log=2941096
+The Prowler's Log=2941097
+Dread Halcyon=2941098
+Sky and Storm=2941099
 
 Bloodthorn Satchel=2951010
 

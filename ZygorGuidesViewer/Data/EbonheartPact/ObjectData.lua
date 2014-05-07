@@ -242,8 +242,8 @@ Plateau=0093425
 To My Pash-Riha=0093426
 Argonians Among Us=0093427
 Varieties of Faith: The Nords=0093428
-Portal to Valley of Blades=0093429
 Mystery Meat=0093429
+Portal to Valley of Blades=0093429
 Origin of the Mages Guild=0093430
 
 Hlan House=0103001
@@ -791,6 +791,9 @@ Ascendancy: Pathway to Lichdom=0163147
 Salvageable Goods=0163148
 Song of the Askelde Men=0163149
 Effigy=0163150
+Proper-Life: Three Chants=0163151
+Anirione's Pack=0163152
+Unexpected Allies=0163153
 
 Loriasel=0191001
 Stormhold Wayshrine=0193001
@@ -1572,6 +1575,9 @@ Notes on the Mortuum Vivicus=2993001
 Doshia's Journal=2993002
 
 Nimalten Crypt=3143001
+Ode to Oinkers=3143002
+There Are Ways=3143003
+Aera's Letter to Denskar=3143004
 
 Unstable Rift=3243001
 Portal Valley=3243002

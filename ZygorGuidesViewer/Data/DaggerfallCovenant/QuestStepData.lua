@@ -14453,6 +14453,11 @@ ZGV._QuestStepDataDC = {
 		},
 		[2]={
 			[[Q1 ]],
+			[[S1 I found Jakarn in one of Headman ___ Kaleen's heist.<119>]],
+			[[S1C0 Talk to Jakarn]],
+		},
+		[3]={
+			[[Q1 ]],
 			[[S1 Tumma-Shah said Captain Kaleen saved my ___e crew's latest job.<120>]],
 			[[S1C0 Talk to Captain Kaleen]],
 			[[S1C1 Talk to Captain Kaleen]],
@@ -14460,14 +14465,14 @@ ZGV._QuestStepDataDC = {
 			[[S2 NO TEXT]],
 			[[S2C1 TRACKER GOAL TEXT]],
 		},
-		[3]={
+		[4]={
 			[[Q1 ]],
 			[[S1 Captain Kaleen needs some folks with spe___, I'm in on the job.<178>]],
 			[[S1C0 Talk to Captain Kaleen]],
 			[[S1C1 Talk to Captain Kaleen]],
 			[[S1C2 Talk to Captain Kaleen]],
 		},
-		[4]={
+		[5]={
 			[[Q1 ]],
 			[[S1 Crafty Lerisa's in Saintsport, Jakarn's ___t Kaleen's planning.<161>]],
 			[[S1C0 Look for Lerisa, Jakarn, or Neramo]],
@@ -14476,12 +14481,12 @@ ZGV._QuestStepDataDC = {
 			[[S1C3 Look for Lerisa, Jakarn, or Neramo]],
 			[[S1C4 Look for Lerisa, Jakarn, or Neramo]],
 		},
-		[5]={
+		[6]={
 			[[Q1 ]],
 			[[S1 Captain Kaleen asked me to find a pirate___ her monkey, Howler.<164>]],
 			[[S1C1 Find Howler]],
 		},
-		[6]={
+		[7]={
 			[[Q1 ]],
 			[[S1 I've found Captain Lerisa, who appears t___e what her story is.<82>]],
 			[[S1C0 Talk to Crafty Lerisa]],
@@ -14892,6 +14897,13 @@ ZGV._QuestStepDataDC = {
 			[[S1C0 Talk to Jakarn]],
 			[[S1C1 Talk to Jakarn]],
 			[[S1C2 Talk to Jakarn]],
+		},
+		[21]={
+			[[Q1 A man named Jakarn was thrown into the ___ a valuable gem.<149>]],
+			[[S1 Talk to Jakarn at the inn.]],
+			[[S1C1 Meet Jakarn at the Inn]],
+			[[S2 NO TEXT]],
+			[[S2C1 TRACKER GOAL TEXT]],
 		},
 	},
 	[2922009] = {
@@ -15859,8 +15871,7 @@ ZGV._QuestStepDataDC = {
 			[[S1C0 Destroy a Coldharbour Sentinel]],
 			[[S1C1 Destroy a Coldharbour Sentinel]],
 			[[S1C2 Destroy a Coldharbour Sentinel]],
-			[[S2 We've entered a new area. I should see what Lyris knows.]],
-			[[S2C1 == EMPTY]],
+			[[S2 NO TEXT]],
 		},
 		[13]={
 			[[Q1 I died, but___eternity.<241>]],

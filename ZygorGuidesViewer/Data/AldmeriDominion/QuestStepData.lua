@@ -14579,6 +14579,11 @@ ZGV._QuestStepDataAD = {
 			[[S1 Hazak is dead. I should find Khari and let him know it's over.]],
 			[[S1C0 Talk to Zulana]],
 		},
+		[10]={
+			[[Q1 A Khajiit named Khari was taken by ___ and rescue her son.<141>]],
+			[[S1 Zulana knows where the bandits took her ___ search for Khari.<101>]],
+			[[S1C1 Enter Hazak's Hollow]],
+		},
 	},
 	[2941006] = {
 		[1]={
@@ -15071,6 +15076,12 @@ ZGV._QuestStepDataAD = {
 			[[Q1 The Prophet contacted me through a magic___ure that he is safe.<182>]],
 			[[S1 I should talk to The Prophet to learn what I should do next.]],
 			[[S1C0 Talk to The Prophet]],
+		},
+		[15]={
+			[[Q1 The Prophet contacted me through a ___ that he is safe.<182>]],
+			[[S1 A projection of The Prophet appeared to me. I should speak to it.]],
+			[[S1C1 Talk to The Prophet]],
+			[[S1C2 ]],
 		},
 	},
 	[2941010] = {
