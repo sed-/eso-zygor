@@ -103,6 +103,8 @@ local defaultAccount = {
 	Zones = {},
 	ZoneNameToTex = {},
 
+	minibutanchor = {},
+
 	-- Real Options?
 	viewerProgBar = "steps",
 
@@ -599,10 +601,12 @@ function SavedVars:InitializeOptions()
 			desc = O["opt_newprof_desc"],
 			func = function()
 				if not SavedVars.NewProfilePopup then
-					local popup = ZGV.Popup:New("Zygor_New_Profile_Popup")
+					local popup = Zygor_New_Profile_Popup or ZGV.Popup:New("Zygor_New_Profile_Popup")
+
+					d(popup or "no popup")
 
 					-- Only allow alphanumeric characters... Don't want to let users screw up their SV files by naming it with strange characters.
-					popup.edit = CHAIN(ui:Create("EditBox",popup,"Zygor_New_Profile_Popup_Edit"))
+					popup.edit = CHAIN(Zygor_New_Profile_Popup_Edit or ui:Create("EditBox",popup,"Zygor_New_Profile_Popup_Edit"))
 						:SetPoint(TOP,popup.text,BOTTOM,0,5)
 						:SetText("Set Name")
 						:HookHandler("OnMouseDown",function(me) me:SelectAll() end)

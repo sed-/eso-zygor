@@ -192,6 +192,8 @@ ZygorGuidesViewer_L("Main", "enUS", function() local f = {
 	["bind_tog"] = "Toggle Guide Viewer",
 	["bind_next"] = "Advance Step",
 	["bind_prev"] = "Previous Step",
+	["bind_waypointcycle_next"] = "Cycle multiple waypoints",
+	["bind_waypointcycle_prev"] = "Cycle multiple waypoints backwards",
 
 	-- STATIC POPUPS
 	['static_accept'] = "Accept",

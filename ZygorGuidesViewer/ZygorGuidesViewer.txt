@@ -1,6 +1,6 @@
-## Title: |cff8800Zygor |cddddddGuides|r |c888888v1.0.9151
+## Title: |cff8800Zygor |cddddddGuides|r |c888888v1.0.9226
 ## Author: Erich Weiss for Zygor Guides
-## Version: 1.0.9151
+## Version: 1.0.9226
 ## APIVersion: 100003
 ## SavedVariables: ZygorGuidesViewerSettings
 
@@ -21,6 +21,7 @@ Dev/Dev.lua
 Functions.lua
 
 -- Main Utilities?
+UiWidgets/Main.lua
 Class.lua
 Globals.lua
 Ver.lua
@@ -74,13 +75,13 @@ Goal.lua
 Quest.lua
 QuestTracker.lua
 
-UiWidgets/Main.lua
 UiWidgets/Base.lua
 UiWidgets/Label.lua
 UiWidgets/Backdrop.lua
 UiWidgets/Texture.lua
 UiWidgets/Frame.lua
 UiWidgets/Button.lua
+UiWidgets/Editbox.lua
 UiWidgets/Tooltip.lua
 UiWidgets/Slider.lua
 UiWidgets/ColorPicker.lua
@@ -117,6 +118,7 @@ Guides/LevelingEbonheartPact_MASTER.lua
 Guides/LevelingEbonheartPact.lua
 Guides/LevelingEbonheartPactTrial.lua
 
+Guides/SkyShards.lua
 
 
 Testing/Main.lua

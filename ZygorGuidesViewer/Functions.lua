@@ -63,14 +63,10 @@ end
 --TODO better than strings pls
 function Utils.IsFaction(faction)
 	local fac = Utils.GetFaction()
-	if fac == "DC" and faction == "Daggerfall Covenant"
-	or fac == "EP" and faction == "Ebonheart Pact"
-	or fac == "AD" and faction == "Aldmeri Dominion"
-	then
-		return true
-	end
-
-	return
+	return (fac==faction)
+	or (fac == "DC" and faction == "Daggerfall Covenant")
+	or (fac == "EP" and faction == "Ebonheart Pact")
+	or (fac == "AD" and faction == "Aldmeri Dominion")
 end
 
 function Utils.FormatLevel(l,...)

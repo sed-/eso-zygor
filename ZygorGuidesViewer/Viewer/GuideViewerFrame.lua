@@ -835,19 +835,21 @@ function Viewer:Update(full)
 
 						-- Backdrops
 
+						local arr = (ZGV.Pointer.ArrowFrame and ZGV.Pointer.ArrowFrame.waypoint and ZGV.Pointer.ArrowFrame.waypoint.goalnum==goal.num and 0.3) or 0
+
 						if goal:IsCompletable() then
 							local complete,possible = goal:IsComplete()
 							if complete=="past" then
 								goalframe:SetBackdropColor(0,1,0,.5)  -- saving this for future use, I guess. We don't really show many CURRENT and COMPLETE steps, they're usually past already.
 							elseif complete then
-								goalframe:SetBackdropColor(0,1,0,.5)
+								goalframe:SetBackdropColor(arr,1,arr,.5)
 							elseif possible then
-								goalframe:SetBackdropColor(1,0,0,.5)
+								goalframe:SetBackdropColor(1,arr,arr,.5)
 							else
-								goalframe:SetBackdropColor(1,1,1,.2)
+								goalframe:SetBackdropColor(0.6+arr,0.6+arr,0.6+arr,.5)
 							end
 						else
-							goalframe:SetBackdropColor(0,0,0,0)
+							goalframe:SetBackdropColor(1,1,1,arr/2)
 						end
 
 

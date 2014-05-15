@@ -81,6 +81,13 @@ function Step:SetAsCurrent()
 	ZGV.sv.char.step = self.num
 	ZGV.CurrentStep = ZGV.CurrentGuide.steps[self.num]
 	ZGV.CurrentGuide.CurrentStepNum = self.num
+
+	for gi,go in ipairs(self.goals) do
+		go.sticky_complete=nil
+		go.was_complete=nil
+		go.was_visited=nil
+	end
+	self.current_waypoint_goal=nil
 end
 
 function Step:IsComplete(cache)

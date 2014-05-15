@@ -32,6 +32,16 @@
 	  <Action name="ZYGOR_FREE_MOUSE">
         <Down>SetGameCameraUIMode(true)	--Free da mouse!</Down>
       </Action>
+      <Action name="ZYGOR_WAYPOINT_NEXT">
+        <Down>
+          ZGV.Pointer:CycleWaypoint(1)
+        </Down>
+      </Action>
+      <Action name="ZYGOR_WAYPOINT_PREV">
+        <Down>
+          ZGV.Pointer:CycleWaypoint(-1)
+        </Down>
+      </Action>
     </Category>
   </Layer>
 </Bindings>

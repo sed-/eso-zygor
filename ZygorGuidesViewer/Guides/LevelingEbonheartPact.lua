@@ -8,129 +8,96 @@ step
 .' You'll be able to invest them into the Intimidate and Persuade skills soon, which will save you a lot of gold and time on certain quests coming up soon.
 |confirm
 step
-goto davonswatch_base 58.26,64.59
-.click Davon's Watch##0093009
-.' Leave the house |goto 58.19,64.35 < 1 |c |noway |q A Beginning at Bleakrock##1093001/1 |future
-step
-goto 59.15,61.95
+.' Leave the house |goto davonswatch_base 58.19,64.35 < 2 |only if dist() < 50
 .talk Riurik##0093429
-..accept A Beginning at Bleakrock##1093001
+..accept A Beginning at Bleakrock##1093001 |goto 59.15,61.95
 step
-goto davonswatch_base 70.12,56.44
-'Go up the stairs |goto davonswatch_base 70.12,56.44 <5 |c |noway |q A Beginning at Bleakrock##1093001/1
-step
-goto 67.39,48.81
-'Go down the stairs |goto 67.39,48.81 < 5 |c |noway |q A Beginning at Bleakrock##1093001/1
-step
-goto 81.81,33.70
-.talk Liezl##0093450 |q A Beginning at Bleakrock##1093001/1/1/Talk to Liezl##1
+.' Go _up_ the stairs |goto davonswatch_base 70.12,56.44 <5 |only if dist() < 135
+.' Go _down_ the stairs |goto 67.39,48.81 < 5 |only if dist() < 220
+.talk Liezl##0093450 |q A Beginning at Bleakrock##1093001/1/1/Talk to Liezl##1 |goto 81.81,33.70
 step
 goto bleakrockvillage_base 75.03,44.78
 .click Captain Rana's Office##1093033
-.' Enter Captain Rana's Office |goto 76.25,44.90 < 1 |c |noway |q A Beginning at Bleakrock##1093001/3 |future
+.' Enter Captain Rana's Office |goto 76.25,44.90 < 1 |c |noway |travelfor 1
 step
-goto 78.79,47.18
-.talk Captain Rana##1093002 |q A Beginning at Bleakrock##1093001/2/1/Talk to Rana##1
+.talk Captain Rana##1093002 |q A Beginning at Bleakrock##1093001/2/1/Talk to Rana##1 |goto 78.79,47.18
 step
-goto 78.79,47.18
-.talk Captain Rana##1093002 |q A Beginning at Bleakrock##1093001/3/1/Talk to Rana##1
+.talk Captain Rana##1093002 |q A Beginning at Bleakrock##1093001/3/1/Talk to Rana##1 |goto 78.79,47.18
 step
-goto 75.95,44.90
-.click Bleakrock Isle##1093001
-.' Leave Captain Rana's Office |goto 74.95,44.76 < 1 |c |noway |q A Beginning at Bleakrock##1093001
-step
-goto 14.34,43.35
+.' Leave Captain Rana's Office |goto 74.95,44.76 < 1 |only if dist() < 10
 .talk Halmaera##1093040
-..accept Lost on Bleakrock##1093010
+..accept Lost on Bleakrock##1093010 |goto 14.34,43.35
 step
-goto 12.62,27.62
 .' Press _E_ to use your Dog Whistle
-.' Use the Dog Whistle |q Lost on Bleakrock##1093010/1/1/Use Dog Whistle##1
+.' Use the Dog Whistle |q Lost on Bleakrock##1093010/1/1/Use Dog Whistle##1 |goto 12.62,27.62
 step
-goto 13.09,27.90
 .talk Rexus##1093041
-.' Pet Rexus |q Lost on Bleakrock##1093010/2/1/Pet Rexus##1
+.' Pet Rexus |q Lost on Bleakrock##1093010/2/1/Pet Rexus##1 |goto 13.09,27.90
 step
-goto bleakrock_base 21.18,68.60
-'Follow Rexus |q Lost on Bleakrock##1093010/3/1/Follow Rexus##1
+'Follow Rexus |q Lost on Bleakrock##1093010/3/1/Follow Rexus##1 |goto bleakrock_base 21.18,68.60
 step
-goto 20.96,68.80
 .talk Geilund##1093043
-..turnin Lost on Bleakrock##1093010
+..turnin Lost on Bleakrock##1093010 |goto 20.96,68.80
 step
-goto bleakrock_base 27.52,51.69
 .talk Sergeant Seyne##1093035
-..accept Hozzin's Folly##1093009
+..accept Hozzin's Folly##1093009 |goto bleakrock_base 27.52,51.69
 step
-goto 26.81,52.18
 .click Frostedge Brigand##1093036
-.' Get a Disguise from a Corpse |q Hozzin's Folly##1093009/1/1/Get a Disguise from a Corpse##1
+.' Get a Disguise from a Corpse |q Hozzin's Folly##1093009/1/1/Get a Disguise from a Corpse##1 |goto 26.81,52.18
 step
-goto 26.26,45.73
 .' Equip the Frostedge Bandit Disguise in your bags |tip This will disguise you, but watch out for Frostedge Sentries, as they can se through your disguise.
 .click Contract Scroll##1093021
-.' Inspect the Contract Scroll |q Hozzin's Folly##1093009/2/1/Investigate Hozzin's Folly##1 |count 1
+.' Inspect the Contract Scroll |q Hozzin's Folly##1093009/2/1/Investigate Hozzin's Folly##1 |count 1 |goto 26.26,45.73
 step
-goto 30.49,42.53
 .click Cracked Rune Ward##1093020
-.' Inspect the Cracked Rune Ward |q Hozzin's Folly##1093009/2/1/Investigate Hozzin's Folly##1 |count 2
+.' Inspect the Cracked Rune Ward |q Hozzin's Folly##1093009/2/1/Investigate Hozzin's Folly##1 |count 2 |goto 30.49,42.53
 step
-goto 33.93,44.78
 .click Dark Ministrations##1093022
-.' Inspect the Dark Ministrations |q Hozzin's Folly##1093009/2/1/Investigate Hozzin's Folly##1 |count 3
+.' Inspect the Dark Ministrations |q Hozzin's Folly##1093009/2/1/Investigate Hozzin's Folly##1 |count 3 |goto 33.93,44.78
 step
-goto 25.46,39.66
+.' Equip the _Frostedge Bandit Disguise_ in your inventory
 .click Mine Door##1093044
-.' Get Inside the Mine |q Hozzin's Folly##1093009/3
-.'You need to have your disguise on.
+..' Tell him _"[Lie] The boss wants me to check on the relics we already found."_
+.' Get Inside the Mine |q Hozzin's Folly##1093009/3 |goto 25.46,39.66
 step
-goto hozzinsfolley_base 41.53,12.28
-.' Follow the path |tip Avoid Frostedge Sentries.
-.' Find a Way into the Tomb |q Hozzin's Folly##1093009/4/1/Find a Way into the Tomb##1
+.' Follow the path through the cave |tip Avoid the Frostedge Sentries
+.' Find a Way into the Tomb |q Hozzin's Folly##1093009/4/1/Find a Way into the Tomb##1 |goto hozzinsfolley_base 41.53,12.28
 step
-goto 59.75,39.68
-.' Bypass the Fire Traps |q Hozzin's Folly##1093009/5/1/Bypass the Fire Traps##1
+.' Bypass the Fire Traps |q Hozzin's Folly##1093009/5/1/Bypass the Fire Traps##1 |goto 59.75,39.68 |tip When the vents on the ground start to smoke, fire will shoot out
 step
-goto 59.99,47.04
-.click Portal to Oblivion##1093023
-.' Use the Portal to Enter Oblivion |q Hozzin's Folly##1093009/6/1/Use the Portal to Enter Oblivion##1
+.' Use the Portal to Enter Oblivion |q Hozzin's Folly##1093009/6/1/Use the Portal to Enter Oblivion##1 |goto 59.99,47.04
 step
-.' Follow the path into the open room and go down the stairs
+' Follow the path into the open room and go down the stairs
 .click Unspeakable Sigil##1093024
 .' Destroy the Unspeakable Sigil |q Hozzin's Folly##1093009/7/1/Destroy the Unspeakable Sigil##1
 step
-goto 73.37,71.77
 .click Bleakrock Isle##1093001
-.' Leave the Mine |q Hozzin's Folly##1093009/9/1/Leave the Mine##1
+.' Leave the Mine |q Hozzin's Folly##1093009/9/1/Leave the Mine##1 |goto 73.37,71.77
 step
-goto bleakrock_base 25.99,39.69
 .talk Sergeant Seyne##1093035
 ..turnin Hozzin's Folly##1093009
-..accept The Missing of Bleakrock##1093004
+..accept The Missing of Bleakrock##1093004 |goto bleakrock_base 25.99,39.69
 step
-goto 38.31,38.21
-'Follow the path North |goto 38.31,38.21 < 5 |c |noway |q Dangerous Webs##1093008/1 |future
-step
-goto 30.73,24.89
+.' Follow the path North |goto 38.31,38.21 |complete if dist() < 10
 .talk Bura-Natoo##1093031
-..accept Dangerous Webs##1093008
+..accept Dangerous Webs##1093008 |goto 30.73,24.89
 step
 goto 26.40,24.77
-.' Enter the cave |goto 26.40,24.77 < 10 |c |noway |q Dangerous Webs##1093008/1
+.' Enter the cave |goto 26.40,24.77 < 5 |c |noway |travelfor 1
 step
 goto 25.42,22.16
 .click Cocoon##1093019
 .' Save Tethis |q Dangerous Webs##1093008/1/1/Save Tethis##1
 step
 goto 25.94,28.31
-.' Enter the cave |goto 25.94,28.31 < 10 |c |noway |q Dangerous Webs##1093008/1
+.' Enter the cave |goto 25.94,28.31 < 5 |c |noway |travelfor 1
 step
 goto 22.67,29.32
 .click Cocoon##1093019
 .' Save Naer |q Dangerous Webs##1093008/1/1/Save Naer##2
 step
 goto 29.32,30.85
-.' Enter the Cave |goto 29.32,30.85 <10 |c |noway |q Dangerous Webs##1093008/1
+.' Enter the Cave |goto 29.32,30.85 < 5 |c |noway |travelfor 1
 step
 goto 28.90,33.22
 .click Cocoon##1093019
@@ -159,7 +126,7 @@ goto 25.09,61.86
 .' Save Brend |q Underfoot##1093007/4/1/Save Brend##3
 step
 goto 38.83,38.81
-.' Follow the path |goto 38.83,38.81 < 10 |c |noway |q Underfoot##1093007/4
+.' Follow the path to the Northeast |goto 38.83,38.81 < 10 |c |noway |complete if dist() > 180 or completedquest("Underfoot##1093007/4")
 step
 goto 36.03,23.34
 .' Use the Gnarled Wand on the Skeever
@@ -169,9 +136,6 @@ goto 49.09,22.75
 .talk Rolunda##1093024
 ..accept The Frozen Man##1093006
 step
-goto bleakrock_base 49.49,21.39
-'Follow the path to the mine |goto bleakrock_base 49.49,21.39 <5 |c |noway |q The Frozen Man##1093006
-step
 goto 51.01,18.45
 .click Orkey's Hollow##1093009
 .' Enter Orkey's Hollow |q The Frozen Man##1093006/1/1/Enter Orkey's Hollow##1
@@ -180,7 +144,7 @@ goto orkeyshollow_base 36.25,82.06
 'Find Eiman |q The Frozen Man##1093006/2/1/Find Eiman##1
 step
 goto 83.10,69.93
-.click Battered Chest##1093013
+.click Battered Chest##1093013 |tip Use the platforms to reach the Battered Chest
 .' Search For Clues |q The Frozen Man##1093006/3/2/Search For Clues##1
 step
 goto 62.15,41.40
@@ -188,32 +152,35 @@ goto 62.15,41.40
 .' Search For Clues |q The Frozen Man##1093006/4/1/Find Clues to the Frozen Man's Identity##1
 step
 goto orkeyshollow_base 32.06,30.70
-'Follow the path |goto orkeyshollow_base 32.06,30.70 < 5 |c |noway |q The Frozen Man##1093006/5
+'Follow the path |goto orkeyshollow_base 32.06,30.70 < 5 |c |noway |complete if dist() > 55 or completedquest("The Frozen Man##1093006/5")
 step
 goto 21.05,49.44
-.' Follow the path |goto 21.05,49.44 < 5 |c |noway |q The Frozen Man##1093006/5
+.' Follow the path |goto 21.05,49.44 < 5 |c |noway |complete if dist() > 40 or completedquest("The Frozen Man##1093006/5")
 step
 goto Orkey's Hollow 16.78,56.91
 .click Weathered Pack##1093010
 .' Search for clues |q The Frozen Man##1093006/5/1/Find Clues to the Frozen Man's Identity##1
 step
 goto orkeyshollow_base 24.97,32.55
-.' Follow the path back this way |goto orkeyshollow_base 24.97,32.55 < 5 |c |noway |q The Frozen Man##1093006/6
+.' Follow the path to the Northeast |goto orkeyshollow_base 24.97,32.55 < 5 |c |noway |complete if dist() > 48 or completedquest("The Frozen Man##1093006/6")
 step
 goto 45.53,46.96
 .talk The Frozen Man##1093025 |q The Frozen Man##1093006/6/1/Talk to the Frozen Man##2
 step
 goto 45.23,47.49
 .click Frozen Man's Lair##1093011
-.' Enter the Frozen Man's Lair |goto orkeyshollow_base 45.86,49.66 |c |noway |q The Frozen Man##1093006/9 |future
+.' Enter the Frozen Man's Lair |q The Frozen Man##1093006/7
 step
 goto 48.31,61.27
 .talk The Frozen Man##1093025 |tip The Real Frozen Man could be any of the visions within this room, keep talking to them until you find the real one.
 .' Find the Real Frozen Man |q The Frozen Man##1093006/8/1/Find the Real Frozen Man##1
 step
 goto 44.16,69.03
+.talk The Frozen Man##1093025 |q The Frozen Man##1093006/9/1/Talk to The Frozen Man##1
+step
+goto orkeyshollow_base 44.24,69.05
 .talk The Frozen Man##1093025
-.' Convince the Frozen Man to Free Eiman |q The Frozen Man##1093006/9/1/Talk to The Frozen Man##1
+.' Convince the Frozen Man to Free Eiman |q The Frozen Man##1093006/10
 step
 goto 36.45,81.16
 .talk Eiman##1093026
@@ -221,18 +188,18 @@ goto 36.45,81.16
 step
 goto 45.45,94.21
 .click Bleakrock Isle##1093001
-.' Exit Orkey's Hollow |goto 50.96,18.53 < 1 |c |noway |q The Frozen Man##1093006
+.' Exit Orkey's Hollow |goto bleakrock_base 50.99,18.45 < 1 |c |noway |travelfor 1
 step
 goto bleakrock_base 49.87,20.80
 .talk Rolunda##1093024
 ..turnin The Frozen Man##1093006
 step
 goto 57.10,23.83
-.' Use the Gnarled Wand on the Skeever
+.' Press _E_ to use the Gnarled Wand on the Skeever
 .' Save Runs-in-Wild |q Underfoot##1093007/4/1/Save Runs-in-Wild##2
 step
 goto 69.78,28.23
-.click Bandit Note##1093008
+.click Bandit Note##1093008 |tip It's inside of the tent
 ..accept At Frost's Edge##1093005
 step
 goto 64.50,29.08
@@ -244,18 +211,12 @@ goto 69.51,25.62
 ..turnin At Frost's Edge##1093005
 step
 goto 77.31,30.25
-.talk Darj the Hunter##1093009 |tip He runs up to you.
+.talk Darj the Hunter##1093009 |tip He runs up to you
 ..turnin A Beginning at Bleakrock##1093001
 ..accept What Waits Beneath##1093003
 step
 goto 75.99,32.54
-.' Follow the path up |goto 75.99,32.54 < 10 |c |noway |q What Waits Beneath##1093003/5 |future
-step
-goto 76.39,37.30
-.' Follow the path up |goto 76.39,37.30 < 10 |c |noway |q What Waits Beneath##1093003/5 |future
-step
-goto 72.03,41.57
-.' Follow the path up |goto 72.03,41.57 < 10 |c |noway |q What Waits Beneath##1093003/5 |future
+.' Follow the path up |goto 75.99,32.54 < 10 |c |noway |travelfor 1
 step
 goto 66.77,39.03
 .click Brazier##0093019
@@ -265,28 +226,28 @@ goto 66.77,39.03
 .talk Haldriin##1093011 |q What Waits Beneath##1093003/2/1/Talk to Dragon Priest Haldriin##1
 step
 goto 77.30,35.43
-.' Follow the path |goto 77.30,35.43 < 10 |c |noway |q What Waits Beneath##1093003/3
+.' Follow the path |goto 77.30,35.43 < 10 |c |noway |travelfor 1
 step
 goto 78.48,32.81
 .click Eagle Runestone##1093003
 .' Collect the Eagle Runestone |q What Waits Beneath##1093003/3/1/Collect the Eagle Runestone##3
 step
 goto 72.04,41.58
-.' Follow the path |goto 72.04,41.58 < 10 |c |noway |q What Waits Beneath##1093003/3
+.' Follow the path |goto 72.04,41.58 < 10 |c |noway |travelfor 1
 step
 goto 69.49,40.31
 .click Snake Runestone##1093004
 .' Collect the Snake Runestone |q What Waits Beneath##1093003/3/1/Collect the Snake Runestone##2
 step
 goto 70.87,49.05
-.' Follow the path |goto 70.87,49.05 < 10 |c |noway |q What Waits Beneath##1093003/3
+.' Follow the path |goto 70.87,49.05 < 10 |c |noway |travelfor 1
 step
 goto 69.65,51.63
 .click Whale Runestone##1093005
 .' Collect the Whale Runestone |q What Waits Beneath##1093003/3/1/Collect the Whale Runestone##1
 step
 goto 71.49,47.53
-.' Follow the path up |goto 71.49,47.53 < 10 |c |noway |q What Waits Beneath##1093003/4
+.' Follow the path up |goto 71.49,47.53 < 10 |c |noway |complete if dist() > 35 or completedquest("What Waits Beneath##1093003/4")
 step
 goto 78.56,45.12
 .click Eagle Runestone Column##1093046
@@ -302,7 +263,7 @@ goto 78.93,44.22
 step
 goto 79.19,44.81
 .click Skyshroud Barrow##1093006
-.' Enter Skyshroud Barrow |goto bleakrock_base 76.12,44.97 |c |noway |q What Waits Beneath##1093003/8 |future
+.' Enter Skyshroud Barrow |q What Waits Beneath##1093003/5
 step
 goto 76.17,40.64
 .talk Haldriin##1093011
@@ -335,15 +296,15 @@ goto 62.42,60.06
 ..turnin Tracking the Game##1093002
 step
 goto bleakrock_base 58.04,58.37
-.' Follow the path here |goto bleakrock_base 58.04,58.37 < 5 |c |noway |q Underfoot##1093007
+.' Follow the path here |goto bleakrock_base 58.04,58.37 < 5 |c |noway |complete if dist() > 35 or completedquest("Underfoot##1093007/4")
 step
 goto bleakrockvillage_base 59.62,56.83
-.talk Molla##1093027
+.talk Molla##1093027 |q The Missing of Bleakrock##1093004/1/5/Find Missing People##1
 ..turnin Underfoot##1093007
 step
 goto 75.31,44.80
 .click Captain Rana's Office##1093033
-.' Enter Captain Rana's Office |goto 76.25,44.90 < 1 |c |noway |q Sparking the Flame##1093012/1 |future
+.' Enter Captain Rana's Office |goto 76.25,44.90 < 1 |c |noway |travelfor 1
 step
 goto 78.47,47.48
 .talk Captain Rana##1093002
@@ -352,16 +313,13 @@ goto 78.47,47.48
 step
 goto 76.25,44.90
 .click Bleakrock Isle##1093001
-.' Leave Captain Rana's Office |goto 75.31,44.80 < 1 |c |q Sparking the Flame##1093012/1
+.' Leave Captain Rana's Office |goto 75.31,44.80 < 1 |c |noway |complete if dist() > 10 or completedquest("Sparking the Flame##1093012/1")
 step
 goto 81.98,70.25
-.' Follow the path up |goto 81.98,70.25 < 10 |c |noway |q Sparking the Flame##1093012/1
-step
-goto bleakrock_base 46.81,71.17
-.' Follow the path up |goto bleakrock_base 46.81,71.17 < 10 |c |noway |q Sparking the Flame##1093012/1
+.' Follow the path up |goto 81.98,70.25 < 10 |c |noway |complete if dist() > 95 or completedquest("Sparking the Flame##1093012/1")
 step
 goto bleakrock_base 45.72,71.50
-'Go up the stairs |goto bleakrock_base 45.72,71.50 < 5 |c |noway |q Sparking the Flame##1093012/1
+'Go up the stairs |goto bleakrock_base 45.72,71.50 < 5 |c |noway |complete if dist() > 75 or completedquest("Sparking the Flame##1093012/1")
 step
 goto 45.72,71.96
 .click Signal Fire##1093034
@@ -375,11 +333,12 @@ goto 68.66,39.29
 .' Collect the Bucket of Water |q Sparking the Flame##1093012/3/1/Collect Bucket of Water##1
 step
 goto 57.03,28.18
+.' Press _E_ to extinguise the House Fire
 .' Extinguish the House Fire |q Sparking the Flame##1093012/4/1/Extinguish the House Fire##1
 step
 goto 57.03,28.18
 .click Earth-Turner House##1093036
-.' Enter the Earth-Turner House |goto 56.72,27.77 < 1 |c |noway |q Sparking the Flame##1093012/5
+.' Enter the Earth-Turner House |goto 56.72,27.77 < 1 |c |noway |travelfor 1
 step
 goto 54.69,27.98
 .talk Denskar Earth-Turner##1093049
@@ -387,14 +346,14 @@ goto 54.69,27.98
 step
 goto 56.72,27.77
 .click Bleakrock Isle##1093001
-.' Leave the Earth-Turner House |goto 57.20,28.32 < 1 |c |noway |q Sparking the Flame##1093012/6
+.' Leave the Earth-Turner House |goto 57.20,28.32 < 1 |c |noway |complete if dist() > 10 or completedquest("Sparking the Flame##1093012/6")
 step
 goto 70.16,26.64
 .' Extinguish the House Fire |q Sparking the Flame##1093012/6/1/Extinguish the House Fire##1
 step
 goto 70.34,26.38
 .click Snow-Bourne House##1093028
-.' Enter the Snow-Bourne House |goto 70.83,25.80 < 1 |c |noway |q Sparking the Flame##1093012/7
+.' Enter the Snow-Bourne House |goto 70.83,25.80 < 1 |c |noway |travelfor 1
 step
 goto 70.76,24.31
 .talk Aera Earth-Turner##1093045
@@ -402,7 +361,7 @@ goto 70.76,24.31
 step
 goto 70.55,26.22
 .click Bleakrock Isle##1093001
-.' Leave the Snow-Bourne House |goto 70.13,26.64 < 1 |c |noway |q Sparking the Flame##1093012/8
+.' Leave the Snow-Bourne House |goto 70.13,26.64 < 1 |c |noway |complete if dist() > 8 or completedquest("Sparking the Flame##1093012/8")
 step
 goto bleakrockvillage_base 53.48,17.84
 .talk Littrek Earth-Turner##1093058
@@ -419,7 +378,7 @@ goto 61.89,62.92
 step
 goto 62.46,68.81
 .click Last Rest##1093037
-.' Enter Last Rest |goto lastresortbarrow_base 60.87,11.44 |c |noway |q Escape from Bleakrock##1093013/13 |future
+.' Enter Last Rest |goto lastresortbarrow_base 60.87,11.44 |c |noway |travelfor 1
 step
 goto lastresortbarrow_base 59.75,12.08
 .talk Captain Rana##1093002 |q Escape from Bleakrock##1093013/2/1/Talk to Captain Rana##1
@@ -8787,7 +8746,7 @@ goto 37.15,54.30
 .' Use the intimidate option when prompted |q King of Dust##0193036/2/1/Talk to Drillk##1
 step
 goto 37.00,54.15
-.click Dominion Soldier's Journal � Zuuk##190070
+.click Dominion Soldier's Journal - Zuuk##190070
 .' Leave the house here |goto 36.95,54.07 |c |noway |q King of Dust##190036/3 |complete if dist() > 100
 step
 goto 33.01,52.52

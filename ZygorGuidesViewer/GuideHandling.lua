@@ -264,25 +264,40 @@ function ZGV:FocusStep(num,quiet)
 end
 
 function ZGV:FocusStepUnquiet()
-	Viewer:Update(true)
-
 	self:SetWaypoint()
 
+	Viewer:Update(true)
 	PlaySound(SOUNDS.NOTE_PAGE_TURN)
 end
 
 function ZGV:SetWaypoint(what)
+	local set=false
 	if what==false then
 		ZGV.Pointer:ClearWaypoints()
+		set=true
 	else
 		ZGV.Pointer:ClearWaypoints("way")
-		for gi,goal in ipairs(self.CurrentStep.goals) do
-			if goal.x and goal.y and not goal.force_noway then
+		if tonumber(what) then
+			local goal=self.CurrentStep.goals[tonumber(what)]
+			if goal and goal.x then
 				ZGV.Pointer:SetWaypoint(goal.map or nil,goal.floor or 0,goal.x,goal.y,{title=goal:GetText()})
+				set=true
 			end
+		else
+			-- set up waypoints
+			for gi,goal in ipairs(self.CurrentStep.goals) do
+				if goal.x and goal.y and not goal.force_noway then --and not goal:IsComplete()
+					ZGV.Pointer:SetWaypoint(goal.map or nil,goal.floor or 0,goal.x,goal.y,{title=goal:GetText(),goalnum=gi})
+					set=true
+					--break
+				end
+			end
+			-- point to first completable
+			ZGV.Pointer:SetArrowToFirstCompletableGoal()
 		end
-		ZO_WorldMap_UpdateMap()
 	end
+	ZO_WorldMap_UpdateMap()
+	return set
 end
 
 -- TODO skipping always super fast atm

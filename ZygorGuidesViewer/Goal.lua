@@ -125,6 +125,19 @@ GOALTYPES['next'] = {
 	end,
 }
 
+GOALTYPES['travelfor'] = {
+	parse = function(self,params,step,data)
+		self.travelfor = tonumber(params)  --TODO: this is just a stub.
+		self.travelfor_is_just_a_dummy=true
+	end,
+}
+
+GOALTYPES['sticky'] = {
+	parse = function(self,params,step,data)
+		self.sticky = true
+	end,
+}
+
 GOALTYPES['n'] = {
 	parse = function(self,params,step,data)
 		self.force_nocomplete = true
@@ -153,7 +166,7 @@ GOALTYPES['next'] = {
 
 GOALTYPES['opt'] = {
 	parse = function(self,params,step,data)
-		self.optstep = true
+		self.optional = true
 	end,
 }
 
@@ -364,7 +377,10 @@ GOALTYPES['goto'] = {
 	iscomplete = function(self)
 		local dist = ZGV.Pointer:GetDistToCoords(self.map,self.x,self.y)
 
-		if self.dist and dist < self.dist then
+		if self.dist and (
+			 (self.dist>0 and dist < self.dist)
+		or (self.dist<0 and dist > self.dist)
+		) then
 			return true,true
 		end
 
@@ -513,8 +529,12 @@ GOALTYPES['lorebook'] = {
 GOALTYPES['achieve'] = {
 	parse = function(self,params,step,data)
 		if not params then return "no achieve parameter" end
-		local name,id = ParseId(params)
-		self.achieve_id=tonumber(id)
+		self.achieve_id,self.achieve_crit = params:match("(%d+)/(%d+)$")
+		if not self.achieve_crit then
+			self.achieve_id = params:match("(%d+)$")
+		end
+		self.achieve_id = tonumber(self.achieve_id)
+		self.achieve_crit = tonumber(self.achieve_crit)
 		if not self.achieve_id then return "no achieve id" end
 
 		--if self.questid then
@@ -523,10 +543,17 @@ GOALTYPES['achieve'] = {
 	end,
 	iscomplete = function(self)
 		local name,desc,points,icon,isCompleted,date,time = GetAchievementInfo(self.achieve_id)
-		return isCompleted , true
+		if isCompleted or not achieve_crit then
+			return isCompleted , true
+		else
+			local desc,numcom,numreq = GetAchievementCriterion(self.achieve_id,self.achieve_crit)
+			return numcom==numreq , true , (numcom/(numreq or 1))
+		end
 	end,
 	gettext = function(self)
-		local name = GetAchievementInfo(self.achieve_id)
+		local name
+		if not self.achieve_crit then name = GetAchievementInfo(self.achieve_id)
+		else name = GetAchievementCriterion(self.achieve_id,self.achieve_crit) end
 		return L['stepgoal_achieve']:format(name)
 	end
 }
@@ -757,7 +784,7 @@ function Goal:GetText()
 	end
 
 
-
+	--[[
 	-- trickiness: coordinates. Add (x,y) when needed
 	if self.x and self.y -- if there's a coordinate
 	and not (self.action=="goto" or self.action=="fly") -- but it's not a plain goto   --and not self.text
@@ -765,6 +792,7 @@ function Goal:GetText()
 	and not self.force_noway then
 		text = text .. L['stepgoal_at_suff']:format(COLOR_LOC(L['coords']:format(self.x*100,self.y*100)))
 	end
+	--]]
 
 
 	-- Add the indent!
@@ -829,6 +857,52 @@ end
 -- returns: true = complete, false = incomplete
 -- second return: true = completable, false = incompletable
 function Goal:IsComplete()
+	-- is now a wrapper for sticky reasons.
+	if self.sticky_complete then return true,true end
+	local iscomplete,ispossible,v1,v2,v3 = self:IsCompleteCheck()
+	if iscomplete and self.sticky then self.sticky_complete=true end
+	if self:IsCompletable() then
+		if iscomplete and not self.was_complete then
+			self:OnComplete()
+		elseif not iscomplete and self.was_complete then
+			self:OnDiscomplete()
+		end
+		self.was_complete=iscomplete
+	end
+
+	if self.map then self:CheckVisited() end  -- TODO: this is a bad place to call other checks.
+
+	return iscomplete,ispossible,v1,v2,v3
+end
+
+function Goal:OnComplete()
+end
+
+function Goal:OnDiscomplete()
+end
+
+function Goal:CheckVisited()
+	if self.map then
+		if self.status=="incomplete" then return end
+		local isvisited = GOALTYPES['goto'].iscomplete(self)  -- "test as if it's a goto step"
+		if isvisited and not self.was_visited then
+			self:OnVisited()
+		elseif not isvisited and self.was_visited then
+			self:OnDevisited()
+		end
+		self.was_visited=isvisited
+	end
+end
+
+function Goal:OnVisited()
+	self.parentStep.current_waypoint_goal = self.num
+	ZGV.Pointer:CycleWaypoint(1,"no cycle")
+end
+
+function Goal:OnDevisited()
+end
+
+function Goal:IsCompleteCheck()
 	-- If the quest is complete then all related goals are complete.
 	local iscomplete,ispossible,explanation,curv,maxv,debugs
 
@@ -847,7 +921,7 @@ function Goal:IsComplete()
 	end
 
 	if self.questid and self.action~="accept" and self.action~="turnin" then  -- let accept goals complete on their own
-	while 1 do
+	repeat
 		ZGV:Debug("&goal completing..............")
 		iscomplete,ispossible,explanation,curv,maxv,debugs = ZGV.Quests:GetCompletionStatus(self.quest,self.questid, self.queststagetxt,self.queststagenum, self.queststeptxt,self.queststepnum, self.questcondtxt,self.questcondnum)
 		ZGV:Debug("&goal completion: complete:|cffffff%s|r, possible:|cffffff%s|r, why:|cffffff%s|r ... match: |cffaaee%s|r",tostring(iscomplete),tostring(ispossible),tostring(explanation),tostring(debugs))
@@ -922,9 +996,14 @@ function Goal:IsComplete()
 		end
 		-- this is NOT how a .future is to work! It's to ALLOW natural completion of something.
 		--]]
-	break end
+	until false
 	end
-
+	
+	if self.lorebook_book then  -- it's lore-based, then?
+		local iscomplete,ispossible = GOALTYPES['lorebook'].iscomplete(self)
+		if iscomplete then return true,true end
+	end
+	
 	-- Not quest related (or fell through) so time to resort to GOALTYPES
 	-- Use the individual goal completion routine
 

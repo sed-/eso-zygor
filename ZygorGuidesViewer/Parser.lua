@@ -74,10 +74,17 @@ local ConditionEnv = {
 		local _  if type(id)=="string" then _,id,_,stage=Parser.ParseQuest(id) end
 		return ZGV.Quests:IsQuestStageComplete(id,stage)
 	end,
-	havequest = function(id)
-		local _  if type(id)=="string" then _,id=Parser.ParseQuest(id) end
+	havequest = function(id,stage)
+		local _  if type(id)=="string" then _,id,_,stage=Parser.ParseQuest(id) end
 		local q=ZGV.Quests[id]
+		if stage then return q and (q:GetCurrentStageNum()==stage) end
 		return q
+	end,
+	queststage = function(id)
+		local _  if type(id)=="string" then _,id=Parser.ParseQuest(id) end
+		if ZGV.Quests:IsQuestComplete(id) then return 0/0 end  -- how's THIS for a hack! This will fail comparison to any number.
+		local q=ZGV.Quests[id]
+		if q then  return q:GetCurrentStageNum()  else  return 0  end --not in journal, never done: stage 0.
 	end,
 	dist = function(map,x,y)
 		local step=Parser.ConditionEnv.step

@@ -3191,8 +3191,6 @@ function Pointer:SurveyMap(specific,force,quiet)
 	end
 	--]]
 
-
-
 	if not (Z.lx1 and Z.ly1 and Z.px1 and Z.py1) then
 		-- first point
 		local lx1,ly1 = GetMapPlayerPosition("player")
@@ -3206,14 +3204,29 @@ function Pointer:SurveyMap(specific,force,quiet)
 
 		Z.scouttime=GetTimeStamp()
 
-	else
+		Z.scale = nil
+		Z.lx2,Z.ly2,Z.px2,Z.py2 = nil,nil,nil,nil
+
+	end
+
+	if Z.lx1 and Z.ly1 and Z.px1 and Z.py1 then
+
+		if specific then
+			local map=specific:match("map (%d+)")
+			--local zone=specific:match("id (%d+)") or specific:match("zone (%d+)")
+			if map then SetMapToMapListIndex(tonumber(map)) end
+		else SetMapToPlayerLocation() ZO_WorldMap_UpdateMap() end
 
 		-- second point
 		local lx2,ly2 = GetMapPlayerWaypoint()  if lx2==0 then lx2,ly2=GetMapPlayerPosition("player") end
 
 		if not lx2 or lx1==0 then qd("|cff0000No player coords on |cff5500"..tex) return end
-		if math.abs(lx2-Z.lx1)<0.05 and math.abs(ly2-Z.ly1)<0.05 then
-			qd("Still trying to survey, keep walking...")
+		local rawdist = math.sqrt((lx2-Z.lx1)*(lx2-Z.lx1) + (ly2-Z.ly1)*(ly2-Z.ly1))
+
+		if rawdist<0.001 then return end  -- standing still
+		
+		if rawdist<0.05 then
+			qd("Still trying to survey, keep walking, or set a map waypoint elsewhere... (required distance: "..math.floor(rawdist/0.05*100).."%)")
 			return
 		end
 		local parentWorld = ZoomOutToWorld()
@@ -3240,6 +3253,8 @@ function Pointer:SurveyMap(specific,force,quiet)
 		DEVd(("|c88ff88Surveyed |cffffff%s|r! Offsets: %.3f %.3f, scale: %.3f"):format(tex,Z.xoffset,Z.yoffset,Z.scale))
 
 		Z.scouttime=GetTimeStamp()
+
+		Pointer.do_autosurvey = false
 	end
 
 	if specific=="here" and quiet then SetMapToPlayerLocation() ZO_WorldMap_UpdateMap() end
@@ -3264,7 +3279,7 @@ function Pointer:SurveyClickAllOver(map)
 	end
 end
 
-SLASH_COMMANDS["/zgsurvey"] = function() ZGV.Pointer:SurveyMap(nil,"force") end
+SLASH_COMMANDS["/zgsurvey"] = function() ZGV.Pointer:SurveyMap(nil,"force") Pointer.do_autosurvey = true end
 
 
 --[[
@@ -4097,6 +4112,59 @@ function Pointer:FindTravelPath(way)
 	end
 end
 
+
+--local lastCycleMilli=GetFrameTimeMilliseconds()
+--local lastCycles=0
+
+-- WAYPOINT CYCLING
+function Pointer:CycleWaypoint(delta,nocycle)
+	--if lastCycleMilli==GetFrameTimeMilliseconds() then lastCycles=lastCycles+1 end  if lastCycles>10 then return end
+	--lastCycleMilli=GetFrameTimeMilliseconds()  lastCycles=0
+
+	local CS=ZGV.CurrentStep
+	CS.current_waypoint_goal = CS.current_waypoint_goal or (delta>1 and 0 or #CS.goals)
+	local oldgoal = CS.current_waypoint_goal
+	local goal
+	local cycles=0
+	repeat
+		cycles=cycles+1
+		if cycles>50 then return end  --cycling forever
+
+		CS.current_waypoint_goal = CS.current_waypoint_goal + delta
+
+		-- do cycle, or not
+		if nocycle then CS.current_waypoint_goal = zo_min(zo_max(CS.current_waypoint_goal,1),#CS.goals) end
+		if CS.current_waypoint_goal>#CS.goals then CS.current_waypoint_goal=1 end
+		if CS.current_waypoint_goal<1 then CS.current_waypoint_goal=#CS.goals end
+		
+		if CS.current_waypoint_goal==oldgoal then return end --full cycle or no change at all, abort
+		
+		goal=CS.goals[CS.current_waypoint_goal]
+		if not goal then return end
+
+	until goal and goal.x and not goal.force_noway and goal:IsVisible()
+	
+	if self.waypoints then for wi,way in ipairs(self.waypoints) do
+		if way.goalnum==goal.num then
+			self:ShowArrow(way)
+			break
+		end
+	end end
+
+	--ZGV:SetWaypoint(CS.current_waypoint_goal)
+	zo_callLater(function() ZGV.Viewer:Update() end,1)
+end
+
+function Pointer:SetArrowToFirstCompletableGoal()
+	local CSg=ZGV.CurrentStep.goals
+	if not CSg or #CSg==0 or #self.waypoints==0 then return end
+	for wi,way in ipairs(self.waypoints) do
+		if way.goalnum and CSg[way.goalnum] and CSg[way.goalnum].status=="incomplete" then
+			return self:ShowArrow(way)
+		end
+	end
+	return self:ShowArrow(self.waypoints[1])
+end
 
 
 -- ESO MAPLOCATIONS-BASED POINTERS ARE SO COOL.  ~sinus
