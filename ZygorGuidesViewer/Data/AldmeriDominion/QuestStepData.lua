@@ -4756,8 +4756,8 @@ ZGV._QuestStepDataAD = {
 	[1781006] = {
 		[1]={
 			[[Q1 The Guildmaster of the Fighters Guild wa___form a task for her.<73>]],
-			[[S1 I'm supposed to meet with Merric and Ael___nchor near the city.<140>]],
-			[[S1C1 Find Merric and Aelif]],
+			[[S1 == I'm supposed to meet with Merric and Ael___nchor near the city.<140>]],
+			[[S1C1 == Find Merric and Aelif]],
 			[[S2 NO TEXT]],
 			[[S2C1 TRACKER GOAL TEXT]],
 		},
@@ -5373,6 +5373,11 @@ ZGV._QuestStepDataAD = {
 			[[Q1 Velatosse is suspicious about the plague___ mysterious illness.<118>]],
 			[[S1 I've told Netanwe about Hendil's madness___ her one final time.<79>]],
 			[[S1C0 Speak to Netanwe]],
+		},
+		[19]={
+			[[Q1 Velatosse is suspicious about the ___ mysterious illness.<118>]],
+			[[S1 I've decided to allow Velatosse to ___ her one final time.<101>]],
+			[[S1C0 Speak to Velatosse]],
 		},
 	},
 	[1781016] = {
@@ -14850,6 +14855,13 @@ ZGV._QuestStepDataAD = {
 		[32]={
 			[[Q1 The Aldmeri Dominion seeks to secure ___ prevents this.<120>]],
 			[[S1 I took Ulondil into custody, preventing ___ town any longer.<156>]],
+			[[S1C1 Talk to Harrani]],
+		},
+		[33]={
+			[[Q1 The Aldmeri Dominion seeks to secure ___ prevents this.<120>]],
+			[[S1 I let the Green Lady kill Ulondil.
+
+I ___ town any longer.<111>]],
 			[[S1C1 Talk to Harrani]],
 		},
 	},

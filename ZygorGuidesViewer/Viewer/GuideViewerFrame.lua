@@ -918,15 +918,16 @@ function Viewer:UpdateProgressBar()
 	if not self.Frame or not self.Frame:IsShown() then return end
 	local progressbar = self.Frame.progress
 	local curGuide = ZGV.CurrentGuide
-	local progBarType = ZGV.sv.profile.viewerProgBar
+	local progBarType = ZGV.sv.profile.viewerProgBar or PROG_BAR_TYPE_STEP
 
 	local progressText, tooltip, progress, label
+
+	progress = 0
 
 	self:Debug("Updating Progress Bar")
 
 	if not curGuide then
 		-- No guide, no progress
-		progress = 0
 		label = L['frame_guide_none']
 	elseif progBarType == PROG_BAR_TYPE_STEP
 	or progBarType == PROG_BAR_TYPE_LEVEL

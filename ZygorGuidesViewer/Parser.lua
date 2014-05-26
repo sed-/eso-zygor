@@ -86,6 +86,9 @@ local ConditionEnv = {
 		local q=ZGV.Quests[id]
 		if q then  return q:GetCurrentStageNum()  else  return 0  end --not in journal, never done: stage 0.
 	end,
+	achieved = function(id,cond)
+		return ZGV.GOALTYPES['achieve'].iscomplete(ZGV,id,cond)
+	end,
 	dist = function(map,x,y)
 		local step=Parser.ConditionEnv.step
 		local goal=Parser.ConditionEnv.goal
@@ -347,6 +350,29 @@ StepCommands['only'] = function(step,params)
 		--params = params:gsub("%s*,%s*",",")
 	end
 end
+
+local function travelfor_is_valid_func(step)
+	local guide = Parser.ConditionEnv.guide  if not guide then return true,"no guide" end  -- yes, return "it's valid"!
+	local steps = guide.steps  if not steps then return true,"no steps" end
+	local step = Parser.ConditionEnv.step  if not step then return true,"no step" end
+	local stepnum = step.num  if not stepnum then return true,"no num" end
+	local travelfor = step.travelfor  if not travelfor then return true,"no travelfor" end
+
+	repeat
+		stepnum=stepnum+1  travelfor=travelfor-1
+		local step = steps[stepnum]
+		if step and not step:IsTravel() and step:IsIncomplete() then return true,stepnum end
+	until not step or travelfor<=0
+	return false,"all bad"
+end
+
+StepCommands['travelfor'] = function(step,params)
+	step.travelfor = tonumber(params)
+
+	step.condition_visible_raw="using travelfor_is_valid_func"
+	step.condition_visible=travelfor_is_valid_func
+end
+
 
 
 -----------------------------------------

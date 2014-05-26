@@ -72,7 +72,7 @@ end
 
 -- Percentages must be passed in integer form.
 function ProgressBar:SetPercent(num)
-	assert(num > -1 or num < 101, "Num 0-100 pls")
+	assert(num and num>=0 and num<=100, "Num 0-100 pls")
 	local color
 
 	if self.colorByPercent then		-- TODO this is not widely implemented yet.

@@ -4,11 +4,11 @@ if not ZGV then return end
 ZGV._ObjectDataAD = [[
 
 Shrine to Stendarr=-21474836481001
+Dark Source=-21474836481001
+Corrupted Guardian Senche=-21474836481001
+Ruined Door=-21474836481001
 Vuldngrav Great Hall=-21474836481001
 Fort Grimwatch=-21474836481001
-Corrupted Guardian Senche=-21474836481001
-Dark Source=-21474836481001
-Ruined Door=-21474836481001
 
 The Reality of Spirits=0021147
 The Hotspur=0021148
@@ -959,10 +959,10 @@ Vulkhel Guard Lighthouse=1781255
 Vulkhel Guard Lighthouse Tower=1781256
 Abandoned Cellar=1781257
 Entila's Folly=1781258
-Basic Provisioning Guide=1781259
 Portal to Alliance Capital=1781259
-Gilded Letter=1781260
+Basic Provisioning Guide=1781259
 Portal to Stirk=1781260
+Gilded Letter=1781260
 Starfall Arcana=1781261
 A Clothier's Primer=1781261
 Centurion Control Lever=1781262
@@ -992,6 +992,8 @@ Del's Claim=1781310
 Regarding the Ebonheart Pact=1781311
 Wansalen=1781312
 Prowler Cabin=1781313
+The Crystal Vial=1781314
+Teldur's Journal=1781315
 
 Ancient Scrolls of the Dwemer IV=1791001
 Spidersilk=1791002
@@ -1758,6 +1760,7 @@ The Little Alkosh's Log=2941096
 The Prowler's Log=2941097
 Dread Halcyon=2941098
 Sky and Storm=2941099
+Helmsman's Wheel=2941100
 
 Bloodthorn Satchel=2951010
 

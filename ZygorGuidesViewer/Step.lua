@@ -269,6 +269,20 @@ function Step:GetNextStep(nextlabel)
 	end
 end
 
+function Step:IsTravel()
+	for gi,goal in ipairs(self.goals) do
+		if goal.action and goal.action~="goto" and goal.action~="text" then return false end
+	end
+	return true
+end
+
+function Step:IsIncomplete()
+	for gi,goal in ipairs(self.goals) do
+		if goal.status and goal.status=="incomplete" then return true end
+	end
+	return false
+end
+
 function Step:GetNextValidStep()
 	local step=self
 	local numskips=1

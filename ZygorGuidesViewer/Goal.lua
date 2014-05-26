@@ -125,13 +125,6 @@ GOALTYPES['next'] = {
 	end,
 }
 
-GOALTYPES['travelfor'] = {
-	parse = function(self,params,step,data)
-		self.travelfor = tonumber(params)  --TODO: this is just a stub.
-		self.travelfor_is_just_a_dummy=true
-	end,
-}
-
 GOALTYPES['sticky'] = {
 	parse = function(self,params,step,data)
 		self.sticky = true
@@ -541,13 +534,13 @@ GOALTYPES['achieve'] = {
 		--	ZGV.mentionedQuests[self.questid] = 1
 		--end
 	end,
-	iscomplete = function(self)
-		local name,desc,points,icon,isCompleted,date,time = GetAchievementInfo(self.achieve_id)
-		if isCompleted or not achieve_crit then
+	iscomplete = function(self,override_achieve_id,override_achieve_crit)
+		local name,desc,points,icon,isCompleted,date,time = GetAchievementInfo(override_achieve_id or self.achieve_id)
+		if isCompleted or not (override_achieve_crit or self.achieve_crit) then
 			return isCompleted , true
 		else
-			local desc,numcom,numreq = GetAchievementCriterion(self.achieve_id,self.achieve_crit)
-			return numcom==numreq , true , (numcom/(numreq or 1))
+			local desc,numcom,numreq = GetAchievementCriterion(override_achieve_id or self.achieve_id,override_achieve_crit or self.achieve_crit)
+			return numcom==numreq , true , (numcom/zo_max(1,(numreq or 1)))
 		end
 	end,
 	gettext = function(self)
@@ -556,6 +549,15 @@ GOALTYPES['achieve'] = {
 		else name = GetAchievementCriterion(self.achieve_id,self.achieve_crit) end
 		return L['stepgoal_achieve']:format(name)
 	end
+}
+
+GOALTYPES['ding'] = {
+	parse = function(self,params)
+		self.dinglevel = tonumber(params)
+	end,
+	iscomplete = function(self)
+		return ZGV.Utils.GetPlayerPreciseLevel()>=self.dinglevel,true
+	end,
 }
 
 GOALTYPES['text'] = {
@@ -998,9 +1000,14 @@ function Goal:IsCompleteCheck()
 		--]]
 	until false
 	end
+
+	if self.achieve_id then
+		iscomplete,ispossible = GOALTYPES['achieve'].iscomplete(self)
+		if iscomplete then return true,true end
+	end
 	
 	if self.lorebook_book then  -- it's lore-based, then?
-		local iscomplete,ispossible = GOALTYPES['lorebook'].iscomplete(self)
+		iscomplete,ispossible = GOALTYPES['lorebook'].iscomplete(self)
 		if iscomplete then return true,true end
 	end
 	
@@ -1010,8 +1017,8 @@ function Goal:IsCompleteCheck()
 	--if not self:IsCompletable() then return false,false end
 	local giscomplete,gispossible
 
-	local GOAL = GOALTYPES[self.action]
-	if GOAL and GOAL.iscomplete then giscomplete,gispossible = GOAL.iscomplete(self) end
+	local GOALTYPE = GOALTYPES[self.action]
+	if GOALTYPE and GOALTYPE.iscomplete then giscomplete,gispossible = GOALTYPE.iscomplete(self) end
 
 	return giscomplete or iscomplete,gispossible or ispossible
 end
@@ -1022,7 +1029,9 @@ function Goal:IsCompletable(by_type)
 	if self.force_nocomplete then return false end	-- the almighty |n
 	if self.condition_complete then return true end  -- we have a script, so obey
 
-	if not by_type and self.questid and self.action~="goto" then return true end	-- there is a quest associated with this goal so can be completed. Unless it's a goto. These are only completed by |c.
+	if not by_type and self.action~="goto" then
+		if self.questid or self.lorebook or self.achieve_id then return true end	-- there is a quest/lore/achieve associated with this goal so can be completed. Unless it's a goto. These are only completed by |c.
+	end
 
 	if GOALTYPE.iscompletable then return GOALTYPE.iscompletable(self) end		-- This may or maynot be there if it is only sometimes completable.
 	if --[[exists--]] GOALTYPE.iscomplete then return true end	-- There is a way to complete this goal
@@ -1041,7 +1050,7 @@ function Goal:GetQuest()
 	if self.questid then return ZGV.Quests:GetQuest(self.questid) end
 end
 
-function Goal:GetStatus()		--TODO
+function Goal:GetStatus()
 
 	-- a good place to check for quest coordinates as any...
 	if self.action=="goto" and self.questid and self.queststepnum and self.questcondnum then
