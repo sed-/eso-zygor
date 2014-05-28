@@ -541,7 +541,7 @@ function Quest:FillFromJournal(journalIndex)
 		end
 		self.currentstage = currentStage
 	else
-		if ZgWriter then
+		if ZgWriter and not ZGV.db.profile.dontrecordnewquests then
 			-- New stage! Store Data into SV.
 			local snapshot = self:GetStageSnapshot()
 
@@ -555,7 +555,7 @@ function Quest:FillFromJournal(journalIndex)
 				ShowFloatingMessage(("Quest |cffff00%s|r |cff0000FAILED TO MAKE A NEW STAGE |cff5500%d|r"):format(self.name,#self:GetAllStages()+1),nil,nil,SOUNDS.QUEST_ABANDONED)
 			end
 		else
-			d("|cffaa00ZYGOR|r: Cannot determine the current stage of quest |cffffff"..self.name.."|r, the addon is likely to fail guiding you through it.")
+			d("|cffaa00ZYGOR|r: Cannot determine the current stage of quest |cffffff"..self.name.."|r.\nThe addon will fail to detect its progress.\nPlease report this on the forum.")
 		end
 	end
 

@@ -28,7 +28,7 @@ ZGV._QuestStepDataCommon = {
 		},
 		[4]={
 			[[Q1 I died, but___eternity.<241>]],
-			[[S1 I need to find a weapon. There are some ___. I should take one.<84>]],
+			[[S1 I need to find a weapon. There are some ___ with it.]],
 			[[S1C1 Take and Equip a Weapon]],
 			[[S2 NO TEXT]],
 			[[S2C1 Equip a Sword]],
@@ -66,7 +66,7 @@ ZGV._QuestStepDataCommon = {
 		},
 		[10]={
 			[[Q1 I died, but___eternity.<241>]],
-			[[S1 It looks like we're going to have to fig___ should lead us out.<124>]],
+			[[S1 It looks like we're going to have to fight ___ to the Tower of Eyes.]],
 			[[S1C1 Reach the Towers of Eyes]],
 		},
 		[11]={

@@ -1,6 +1,6 @@
-## Title: |cff8800Zygor |cddddddGuides|r |c888888v1.0.9275
+## Title: |cff8800Zygor |cddddddGuides|r |c888888v1.0.9285
 ## Author: Erich Weiss and Sinus Pi for Zygor Guides
-## Version: 1.0.9275
+## Version: 1.0.9285
 ## APIVersion: 100004
 ## SavedVariables: ZygorGuidesViewerSettings
 
@@ -118,7 +118,8 @@ Guides/LevelingEbonheartPact_MASTER.lua
 Guides/LevelingEbonheartPact.lua
 Guides/LevelingEbonheartPactTrial.lua
 
-Guides/SkyShards.lua
+Guides/Skyshards.lua
+Guides/Lorebooks.lua
 
 
 Testing/Main.lua
