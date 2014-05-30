@@ -540,6 +540,11 @@ function Quest:FillFromJournal(journalIndex)
 			end
 		end
 		self.currentstage = currentStage
+
+		-- record recent proper stage, in case we need context for bug reporting
+		self.recentStages = self.recentStages or {}
+		if self.recentStages[#self.recentStages]~=currentStage then table.insert(self.recentStages,currentStage) end
+
 	else
 		if ZgWriter and not ZGV.db.profile.dontrecordnewquests then
 			-- New stage! Store Data into SV.
@@ -555,7 +560,12 @@ function Quest:FillFromJournal(journalIndex)
 				ShowFloatingMessage(("Quest |cffff00%s|r |cff0000FAILED TO MAKE A NEW STAGE |cff5500%d|r"):format(self.name,#self:GetAllStages()+1),nil,nil,SOUNDS.QUEST_ABANDONED)
 			end
 		else
-			d("|cffaa00ZYGOR|r: Cannot determine the current stage of quest |cffffff"..self.name.."|r.\nThe addon will fail to detect its progress.\nPlease report this on the forum.")
+			--ZGV.Utils.ShowFloatingMessage("Zygor error detected!", nil,nil,nil,"public")
+			ZGV.Utils.ShowFloatingMessage("Bad stage in quest: |cffee88"..self.name.."|r. Use the Bug Report button to report this.", nil,nil,nil,"public")
+			--ZGV.Utils.ShowFloatingMessage("The addon will fail to detect its progress.", nil,nil,nil,"public")
+			--ZGV.Utils.ShowFloatingMessage("Please file a Bug Report to Zygor about this.", nil,nil,nil,"public")
+			
+			ZGV.BugReport:AddToReport(self:GetReport())
 		end
 	end
 
@@ -801,6 +811,28 @@ function Quest:FindAllStages()  -- should return just one! Otherwise we're ambig
 		if self:IsStageMatch(stage) then ret.num=ret.num+1  ret[stagenum]=stage  end
 	end  end
 	return ret
+end
+
+function Quest:GetReport()
+	self.recentStages = self.recentStages or {}
+
+	local s = "--- QUEST STAGE REPORT ---\n"
+	s = s .. ("QUEST: %s ##%d\n"):format(self.name,self.id)
+
+	local currentStage = self:GetCurrentStageNum()
+	if currentStage then
+		s = s .. "CURRENT STAGE:\n"
+	else
+		s = s .. ([[RECENT STAGES: %s
+POSSIBLE STAGE:
+]]):format(table.concat(self.recentStages,","))
+	end
+	s = s .. ("		[%d] = {\n"):format((self.recentStages[#self.recentStages] or -1)+1)
+	for i,r in ipairs(self:GetStageSnapshot()) do
+		s = s .. ("			[[%s]],\n"):format(r)
+	end
+	s = s .. "		},"
+	return s
 end
 
 -- qstepdata is formatted like savedquests in options. [1] = { [1] = step1text, [2] = cond1text }, [2] = step2
@@ -1231,16 +1263,19 @@ tinsert(ZGV.startups,function(self)
 	savedquests = svchardata.savedquests	-- Used for collect new data on quests
 	svcompletedquests = svchardata.completedquests
 
-	local fac = ZGV.Utils.GetFaction()
-	fac = (fac=="AD" and 1) or (fac=="DC" and 2) or (fac=="EP" and 3) or 0
+	--[[
+		-- not needed anymore
 
-	if ZGV.DEV then d("Converting completed quests to faction "..fac) end	
-	for qid,qdata in pairs(svcompletedquests) do
-		if tostring(qid):match("0...$") then
-			svcompletedquests[qid]=nil
-			svcompletedquests[tonumber(qid)+fac*1000]=qdata
+		if ZGV.DEV then d("[DEV] Converting completed quests to faction "..fac) end	
+		local fac = ZGV.Utils.GetFaction()
+		fac = (fac=="AD" and 1) or (fac=="DC" and 2) or (fac=="EP" and 3) or 0
+		for qid,qdata in pairs(svcompletedquests) do
+			if tostring(qid):match("0...$") then
+				svcompletedquests[qid]=nil
+				svcompletedquests[tonumber(qid)+fac*1000]=qdata
+			end
 		end
-	end
+	--]]
 
 	-- clear empty savedquests
 	for qid,qdata in pairs(savedquests) do if type(qdata)=="table" then

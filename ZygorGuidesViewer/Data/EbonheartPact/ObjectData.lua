@@ -245,6 +245,13 @@ Varieties of Faith: The Nords=0093428
 Mystery Meat=0093429
 Portal to Valley of Blades=0093429
 Origin of the Mages Guild=0093430
+Crow's Wood=0093431
+The Brothers of Strife=0093432
+Hightide Hollow=0093433
+Varieties of Faith: The Argonians=0093434
+With Regards to the Ebony Blade=0093435
+The Girded Lion Hold=0093436
+Skeletal Remains=0093437
 
 Hlan House=0103001
 The Serk=0103002
@@ -1075,6 +1082,10 @@ The Dark Husband=0533005
 Hist Vat=0543001
 Portal to Ten-Maur-Wolk=0543002
 
+Charred Notes=0563001
+Silver Arrow=0563002
+Crow's Wood Traveler's Log=0563003
+
 Brimstone Steppes=0573001
 Chamber of Dark Seduction=0573002
 Shielding Stone=0573003
@@ -1276,18 +1287,24 @@ Enchanting Table=1103023
 Alchemy Station=1103024
 Clothing Station=1103025
 Alchemy For My Apprentice=1103026
+Dhalmora Wayshrine=1103027
 
 The Winds of Change=1133001
 Untold Legends=1133002
 The Hidden Twilight=1133003
 Summoning Rituals of the Arch-Mage=1133004
 Tattered Note=1133005
+Locked=1133006
 
 General's Orders=1153001
 Monomyth: Dragon God & Missing God=1153002
 
+Non-Standard Techniques=1163001
+
 Stolen Potion Barrels=1173001
 Kennixa's List=1173002
+
+Cult Screed=1183001
 
 The Shining Star=1543001
 Hollow City Wayshrine=1543002
@@ -1449,6 +1466,8 @@ Brave Sir Cadwell=1543157
 How We Came to Coldharbour=1543158
 The Values of Haj Uxith=1543159
 Daedric Sap Collection Facility=1543160
+A Life of Strife and Struggle=1543161
+Oath of a Dishonored Clan=1543162
 
 If You Can Read This, Open It=1633001
 Knights of the Gleaming Blade=1633002

@@ -132,5 +132,5 @@ end
 -----------------------------------------
 
 function ZGV:Dump(str,title)
-	self:ShowDump(str,title)
+	self.BugReport:ShowDump(str,title)
 end

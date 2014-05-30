@@ -236,6 +236,9 @@ Striking Back=0142915
 Trials and Tribulations=0142916
 To Walk on Far Shores=0142917
 Messages Across Tamriel=0142918
+Scion of the Blood Matron=0142919
+
+Finding Winter's Hammer=0163061
 
 Risen From the Depths=0172001
 Rise of the Dead=0172002
@@ -306,6 +309,18 @@ Fadeel's Freedom=1342001
 Shedding the Past=1362001
 
 Tharayya's Trail=1412001
+
+Lost Crown=1513001
+On a Dare=1513002
+
+A Valuable Distraction=1523001
+Prisoner Dilemma=1523002
+
+Dear Cousins=1583001
+
+Drink, Drink, and Be Merry=2633001
+
+Beneath the Surface=2653001
 
 The Broken Spearhead=2922001
 Sphere Assembly=2922002

@@ -8,9 +8,9 @@ Sen Dres=-21474836483008
 Taril Randoro=-21474836483003
 Doril Randoro=-21474836483002
 Vanguard Cryomancer=-21474836483001
+The Spider's Essence=-21474836483001
 The Scorpion's Essence=-21474836483001
 Geril Randoro=-21474836483001
-The Spider's Essence=-21474836483001
 
 Balzag gro-Gruumsh=0023502
 Balrook gro-Mak=0023503
@@ -534,6 +534,14 @@ Milva Githalvel=0093516
 Littorn=0093517
 Mrylav Aralor=0093518
 Hranasgi=0093519
+Nikulund=0093520
+Dread Storm Atronach=0093521
+Narirold the Lost=0093522
+Daymi Githalvel=0093523
+Asheemar=0093524
+Lukiul Uxith Warrior=0093525
+Scout Galsar=0093526
+Ebonheart Soldier=0093527
 
 Wasp=0103001
 Dandrii Dran=0103002
@@ -1447,8 +1455,8 @@ Rorthor=0153322
 Baxrold=0153323
 Lobamob gra-Bar=0153324
 Aleeto=0153325
-Frena Firecloak=0153326
 Khizuna=0153326
+Frena Firecloak=0153326
 Gudaric the Silent=0153327
 Sergeant Yringor=0153328
 Juda=0153329
@@ -1510,6 +1518,7 @@ Seducer Assassin=0153384
 Lich=0153385
 Dread Ogrim=0153386
 Scared-of-Snow=0153387
+Mjornys Bitterblade=0153388
 
 Vigrod Wraithbane=0163001
 Centurion Gjakil=0163002
@@ -2151,14 +2160,14 @@ Bimee-Kas=0193216
 Captain Henaamo=0193217
 Tribal Warrior=0193218
 Tribal Berserker=0193219
-Jaraleet=0193220
 Born-Under-Stars=0193220
+Jaraleet=0193220
 Betzi=0193221
 Sharp-Eye=0193221
 Fills-Up-on-Fish=0193222
 Kothringi Renegade=0193222
-Rising-in-Still-Waters=0193223
 Awas=0193223
+Rising-in-Still-Waters=0193223
 Far-Walker=0193224
 Lodyna Arethi=0193225
 Kudleez=0193226
@@ -2487,6 +2496,7 @@ Dremora Kyngald=0483003
 Dremora Caitiff=0483004
 Gutsripper=0483005
 Sheogorath=0483006
+Sainted Incendiary=0483007
 
 Endarre=0493001
 Curano=0493002
@@ -2514,6 +2524,11 @@ Maulborn Commander Kalara=0523002
 Corrupt Sentinel=0533001
 
 Sarshar=0543001
+
+Telbaril Oran=0563001
+Knave of Rooks=0563002
+Slain Adventurer=0563003
+Grizzlehide=0563004
 
 Skeletal Brute=0573001
 Skeletal Assassin=0573002
@@ -2784,6 +2799,8 @@ Covenant Mage=1103072
 Sergeant Duren=1103073
 Bar-Beekus=1103074
 Hyfta=1103075
+Eleven-Skips=1103076
+Terameen=1103077
 
 Vila Theran=1113001
 Gamyne Bandu=1113002
@@ -2804,11 +2821,18 @@ Gozzak=1143001
 
 Dugrul=1153001
 
+Oodegu=1163001
+
 Speaker Ravager=1173001
 Speaker Archer=1173002
 Speaker Assassin=1173003
 Calls-to-Nature=1173004
 Dezanu=1173005
+
+Stonefire Butcher=1183001
+Stonefire Slayer=1183002
+Stonefire Infernal=1183003
+Maebomaz=1183004
 
 The Groundskeeper=1543001
 Mages Guild=1543002
@@ -3013,6 +3037,7 @@ Frost Troll=1543200
 Grundskar=1543201
 Angof=1543202
 Fighters Guild Soldier=1543203
+Fleet Soldier=1543204
 
 Leimaer the Raven=1553001
 Stormfist Slayer=1553002

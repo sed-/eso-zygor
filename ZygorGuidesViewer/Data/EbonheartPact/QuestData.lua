@@ -316,6 +316,9 @@ Welcome to Cyrodiil=0373001
 
 Chasing the Magistrix=0403001
 
+A Son's Promise=0563001
+Decree of the Court=0563002
+
 Captured Time=0703001
 
 The Ones Left Behind=0713001

@@ -196,6 +196,7 @@ The Weight of Three Crowns=1781053
 Cadwell's Silver=1781054
 Trouble at Tava's Blessing=1781055
 The Heart of the Beast=1781056
+To Firsthold=1781057
 
 Oath of Excision=1791001
 The Colovian Occupation=1791002

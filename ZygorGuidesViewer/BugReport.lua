@@ -34,7 +34,7 @@ ZGV.BugReport = BugReport
 -- CREATE FUNCTION
 -----------------------------------------
 -- misc:
-function CreateDumpFrameBasic()
+local function CreateDumpFrameBasic()
 	local name = "ZygorGuidesViewer_DumpFrameBasic"
 
 	local frame = CHAIN(ui:Create("Frame",GuiRoot,name))
@@ -58,19 +58,19 @@ function CreateDumpFrameBasic()
 		:SetHeight(50)
 	.__END
 
-	frame.edit = CHAIN(ui:Create("Label",frame.scroll.scrollchild,name.."edit"))
+	frame.display = CHAIN(ui:Create("Label",frame.scroll.scrollchild,name.."display"))
 		:SetAnchor(TOPLEFT,frame.scroll.scrollchild)
 		:SetAnchor(TOPRIGHT,frame.scroll.scrollchild)
 		:SetCanWrap(true)
 	.__END
---[[
+
 	-- hidden edit box
-	frame.hiddenedit = CHAIN(WM:CreateControl(name.."_RealEdit",frame,CT_EDITBOX))
+	frame.edit = CHAIN(WM:CreateControl(name.."edit",frame,CT_EDITBOX))
 		:SetMultiLine(true)
 		:SetMaxInputChars(999999)
 		:SetHidden(true)
 	.__END
---]]
+
 	--[[
 	-- TODO real edit box only handles 1000 char???
 	frame.edit = CHAIN(WM:CreateControlFromVirtual(name.."_edit",frame ,"ZO_DefaultEditMultiLineForBackdrop"))
@@ -108,22 +108,7 @@ function CreateDumpFrameBasic()
 		end)
 	.__END
 --]]
-	frame.edit.back = ui:Create("SecBackdrop",frame.edit,name.."bd")
-
-	frame.editcopy = CHAIN(ui:Create("Button",frame,name.."_Copy"))
-		:SetText("Export")
-		:SetPoint(BOTTOMLEFT,5,-5)
-		:SetHandler("OnClicked",function(me,but)
-			-- dance with pipes...
-			--[[
-			frame.hiddenedit:SetText(frame.edit:GetText():gsub("||","|"))
-			frame.hiddenedit:CopyAllTextToClipboard()
-			frame.hiddenedit:SetText(frame.edit:GetText():gsub("|","||"))
-			--]]
-			ZGV.sv.char.DATAZ = frame.edit:GetText()
-		end)
-		:AddTooltip("Copy data into Saved variables for copy pasting.")
-	.__END
+	frame.display.back = ui:Create("SecBackdrop",frame.display,name.."bd")
 
 	--[[
 	local scroll = CHAIN(ui:Create("ScrollChild",frame,name.."Scroll","editbox"))
@@ -142,6 +127,10 @@ function CreateDumpFrameBasic()
 		:SetPoint(TOPRIGHT, frame, -5, 5)
 		--:SetScript("OnEnter",function(self) CHAIN(GameTooltip):SetOwner(popup,"ANCHOR_BOTTOM") :SetText(L['static_minimize_tip']) :Show() end)
 		--:SetScript("OnLeave",function(self) GameTooltip:Hide() end)
+		:SetHandler("OnClicked",function(self)
+			frame:Hide()
+			BugReport.report = ""
+		end)
 	.__END
 
 	frame.title = CHAIN(ui:Create("Label",frame,name.."_MainText",14,"bold"))
@@ -149,18 +138,28 @@ function CreateDumpFrameBasic()
 		:SetText("No text")
 	.__END
 
-	frame.OKButton = CHAIN(ui:Create("Button",frame,name.."_Okay"))
+	frame.CopyButton = CHAIN(ui:Create("Button",frame,name.."_Copy"))
 		:SetSize(200,25)
-		:SetText("OK")
+		:SetText("Copy to Clipboard")
 		:SetPoint(BOTTOM, frame,0,-5)
-		--		:SetScript("OnClick",function(self) if frame.save and frame.timestamp then ZGV:SaveDump(frame.editBox:GetText(),frame.timestamp) frame.save=nil frame.timestamp=nil end  frame:Hide()  end)
-		:SetHandler("OnClicked",function(me)
-		--	if ZygorGuidesViewer_DumpFrameReport and ZygorGuidesViewer_DumpFrameReport:IsShown() then
-		--		ZygorGuidesViewer_DumpFrameReport.text = frame.editBox:GetText()  -- save modified text
-		--	end
-			frame:Hide()
+		:SetHandler("OnClicked",function(me,but)
+			ZGV.BugReport:CopyToClipboard()
 		end)
+		:AddTooltip("Copy report into system clipboard.")
+		--		:SetScript("OnClick",function(self) if frame.save and frame.timestamp then ZGV:SaveDump(frame.editBox:GetText(),frame.timestamp) frame.save=nil frame.timestamp=nil end  frame:Hide()  end)
 	.__END
+
+	frame.CloseButton = CHAIN(ui:Create("Button",frame,name.."_Close2"))
+		:SetSize(100,25)
+		:SetText("Close")
+		:SetPoint(BOTTOMRIGHT, frame,-5,-5)
+		:SetHandler("OnClicked",function(me,but)
+			frame:Hide()
+			BugReport.report = ""
+		end)
+		--		:SetScript("OnClick",function(self) if frame.save and frame.timestamp then ZGV:SaveDump(frame.editBox:GetText(),frame.timestamp) frame.save=nil frame.timestamp=nil end  frame:Hide()  end)
+	.__END
+
 	--[[
 	if ZGV.DEV then
 		local oldreports = CHAIN(ui:Create("DropDown",frame))
@@ -187,22 +186,147 @@ end
 -- FUNCTION
 -----------------------------------------
 
-function ZGV:ShowDump(text,title,editable,action,cursorpos)
+function BugReport:ShowDump(text,title,editable,action,cursorpos)
 	local f
 
-	if not BugReport.BasicFrame then CreateDumpFrameBasic() end
-	f = BugReport.BasicFrame
+	if not self.BasicFrame then CreateDumpFrameBasic() end
+	f = self.BasicFrame
 
-	f.edit:SetText(text)
+	self.text = text
+
+	f.display:SetText(text:gsub("|","||"))
 	f.title:SetText(title or "Generic dump:")
 
+	--[[
 	if action == "copy" then
-		self.dumpFrame.editBox:HighlightText(0)
-		self.dumpFrame.editBox:SetFocus(true)
+		f.editBox:HighlightText(0)
+		f.editBox:SetFocus(true)
 	end
+	--]]
 
 	f:Show()
+
+	self:CalculatePagination()
+
+	self:CopyToClipboard()
 end
+
+function BugReport:AddToReport(text)
+	self.report = self.report or ""
+	self.report = self.report .. "\n" .. text
+end
+
+function BugReport:GetReport()
+	local s = ""
+
+	s = s .. ("FACTION: %s\n"):format(ZGV.Utils.GetFaction())
+	s = s .. ("LEVEL: %s\n"):format(GetUnitLevel("player"))
+	s = s .. ("GUIDE: %s\n"):format(ZGV.CurrentGuide.title)
+	
+	local step = ZGV.CurrentStep
+	if not step then
+		s = s .. ("STEP: NONE\n")
+	else
+		s = s .. ("STEP: %s\n"):format(step.num)
+		if not step.goals then
+			s = s .. "GOALS: NONE\n"
+		else
+			s = s .. "GOALS:\n"
+			for gi,go in ipairs(step.goals) do
+				s = s .. (" - %d. %s  <%s> [%s]"):format(gi,go:GetText():gsub("|c......",""):gsub("|r",""),go.action,go:GetStatus())
+				if go.x then  s = s .. (" [%s %.2f,%.2f <%d]"):format(go.map or "?",go.x*100,go.y*100,go.dist)  end
+				if go.quest then  s = s .. (" [quest %s##%s/%s/%s/%s]"):format(go.quest,go.questid,go.queststagenum or "-",go.queststepnum or "-",go.questcondnum or "-")  end
+				for k,v in pairs(go) do
+					if type(v)~="function" and type(v)~="table"
+					and k~="x" and k~="y" and k~="map" and k~="dist"
+					and k~="indent" and k~="text" and k~="action" and k~="num" and k~="status"
+					and k~="quest" and k~="questid" and k~="queststagenum" and k~="queststepnum" and k~="questcondnum" and k~="questcondtxt"
+					then
+						s = s .. " " .. k .. "=" .. tostring(v)
+					end
+				end
+				s = s .. "\n"
+			end
+			s = s .. "\n"
+		end
+	end
+
+	self.report = self.report or ""
+	s = s .. self.report
+
+	if self.report=="" then s = s .. "- no detailed report available -" end
+
+	return s
+end
+
+function BugReport:ShowReport()
+	self:ShowDump(self:GetReport(),"Bug Report")
+end
+
+local PAGELEN=1020
+function BugReport:CalculatePagination()
+	local text = self.text
+	self.pagetotal=zo_ceil(#text/PAGELEN)
+	self.pagenum=self.pagenum or 1
+	if self.pagetotal==1 then
+		self.BasicFrame.CopyButton:SetText("Copy to Clipboard")
+	else
+		self.BasicFrame.CopyButton:SetText(("Copy to Clipboard (page |cffee88%d|r of |cffee88%d|r)"):format(self.pagenum,self.pagetotal))
+	end
+end
+
+function BugReport:CopyToClipboard()
+	local frame = self.BasicFrame
+	-- dance with pipes...
+
+	local text = self.text
+	ZGV.sv.char.bugreport = text:gsub("%[","\\["):gsub("%]","\\]")
+	
+	local offset = (self.pagenum-1)*PAGELEN+1
+	local pagetext = text:sub(offset,offset+PAGELEN-1)
+	frame.edit:SetText(pagetext)
+
+	-- Sanity check
+	if #frame.edit:GetText()<#pagetext then
+		-- What the fuck, they lowered the limit even more???
+		ZGV.Utils.ShowFloatingMessage("Failed to paginate bug report!\nThis is serious, please report it to Zygor.",nil,nil,nil,"public")
+		return
+	end
+
+	frame.edit:CopyAllTextToClipboard()
+
+	if self.pagetotal==1 then
+		ZGV.Utils.ShowFloatingMessage("Bug report copied to clipboard.\nPlease paste it to the Zygor forums.\nThank you!", nil,nil,nil,"public")
+		self.pagenum=1
+	else
+		local remain=self.pagetotal-self.pagenum
+		if remain>0 then
+			ZGV.Utils.ShowFloatingMessage(("Page |cffee88%d|r of |cffee88%d|r of the report copied to clipboard, |cffdd33%d|r %s."):format(
+				self.pagenum,self.pagetotal,
+				remain,
+				remain>1 and "pages remain" or "page remains"),
+				nil,nil,nil,"public")
+			if self.pagenum==1 then
+				ZGV.Utils.ShowFloatingMessage("You have to paste it somewhere before copying the next page.",nil,nil,nil,"public")
+				ZGV.Utils.ShowFloatingMessage("Click Copy again to copy the next page.",nil,nil,nil,"public")
+			end
+
+			self.pagenum = self.pagenum + 1
+		else
+			ZGV.Utils.ShowFloatingMessage(("Page |cffee88%d|r of |cffee88%d|r of the report copied to clipboard, that's it!"):format(self.pagenum,self.pagetotal),nil,nil,nil,"public")
+			ZGV.Utils.ShowFloatingMessage("Please paste all the pages to the Zygor forums.\nThank you and sorry for the inconvenience.",nil,nil,nil,"public")
+			self.pagenum = 1
+		end
+	end
+
+	self:CalculatePagination()
+end
+
+function BugReport:Debug_GetLongReport()
+	local long = ("Lorem ipsum dolor blabla. "):rep(200)
+	self:ShowDump(long,"LONG Bug Report")
+end
+
 -----------------------------------------
 -- DEBUG
 -----------------------------------------

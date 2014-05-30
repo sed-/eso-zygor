@@ -197,19 +197,27 @@ function Viewer:CreateZGVF()
 			:SetHandler("OnClicked",function(me) self:HelpButton_OnClick() end)
 		.__END
 
-		if Zgoo and ZGV.DEV then
-			titlebar.zgoo = CHAIN(ui:Create("GuideButton",titlebar,tname.."_zgoo","Debug"))
-				:SetPoint(LEFT, titlebar.help, RIGHT, BIG_PADDING, 0 )
-				:SetHandler("OnClicked",function(me,but)
-					if but == RIGHT_MOUSE_BUTTON then
+		titlebar.bug = CHAIN(ui:Create("GuideButton",titlebar,tname.."_bug","Debug"))
+			:SetPoint(LEFT, titlebar.help, RIGHT, BIG_PADDING, 0 )
+			:SetHandler("OnClicked",function(me,but)
+				if but == RIGHT_MOUSE_BUTTON then
+					if Zgoo and IsShiftKeyDown() then
 						Zgoo(ZGV.CurrentGuide)
 					else
 						Zgoo(ZGV.CurrentStep)
 					end
-				end)
-			.__END
-			add_tooltip(titlebar.zgoo,"Left click to Zgoo the current step.\nRight click to Zgoo current guide.")
+				else
+					-- normal report
+					ZGV.BugReport:ShowReport()
+				end
+			end)
+		.__END
+
+		local s = "Click to generate a bug report."
+		if Zgoo and ZGV.DEV then
+			s = s .. "\nDEV:\nRight click to Zgoo the current step.\nShift-Right click to Zgoo current guide."
 		end
+		add_tooltip(titlebar.bug,s)
 
 		titlebar.title = CHAIN(ui:Create("Logo",titlebar,tname.."_Title"))
 			:SetPoint(TOP,titlebar,0,SMALL_PADDING)
@@ -502,6 +510,17 @@ function FrameUI:GetStepUI(stepnum)
 end
 
 function FrameUI:OnUpdate(time)
+
+	local bug = Viewer.Frame.TitleBar.bug
+	if ZGV.BugReport.report and #ZGV.BugReport.report>0 then
+		local time = GetFrameTimeMilliseconds()%500
+		bug:SetAlpha(time<250 and 1 or 0.5)
+		-- TODO: BLINK THE BUG
+	else
+		bug:SetAlpha(1)
+	end
+
+
 	if (Viewer.prevDownTime or Viewer.nextDownTime) and (time - (self.lastArrowSurfUpdate or 0) > ARROW_DOWN_REPETITION) then  -- time for next repetition click!
 		-- and now the FAST step surfing
 		if Viewer.prevDownTime and (time - Viewer.prevDownTime) > ARROW_DOWN_STARTTIMER then
