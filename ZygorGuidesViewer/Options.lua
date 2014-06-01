@@ -351,6 +351,20 @@ function SavedVars:InitializeOptions()
 				 ZGV.Viewer:ResetAllViewerSettings()
 			end,
 		})
+
+		AddOption(nil,{
+			type = "desc",
+			width = 150,
+		})
+
+		AddOption("bugreports",{
+			type = "toggle",
+			name = O["opt_bugreports"],
+			desc = O["opt_bugreports_desc"],
+			_default = true,
+			set = function(i,v) if ZGV.Viewer.Frame then ZGV.Viewer.Frame.TitleBar.bug:SetHidden(not ZGV.db.profile.bugreports) end end,
+		})
+
 	end
 
 	-- VIEWER
@@ -810,12 +824,13 @@ function SavedVars:InitializeOptions()
 
 	-- DEVELOPER
 	if ZGV.DEV then
-	AddOptionGroup("dev")
-	do
-		AddOption("debug",{
-			type = "toggle",
-		})
-	end
+		AddOptionGroup("dev")
+		do
+			AddOption("debug",{
+				type = "toggle",
+				name = "Debug Mode"
+			})
+		end
 	end
 
 	--[[

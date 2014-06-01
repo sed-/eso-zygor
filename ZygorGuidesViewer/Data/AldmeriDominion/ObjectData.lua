@@ -4,11 +4,11 @@ if not ZGV then return end
 ZGV._ObjectDataAD = [[
 
 Shrine to Stendarr=-21474836481001
-Vuldngrav Great Hall=-21474836481001
-Corrupted Guardian Senche=-21474836481001
-Ruined Door=-21474836481001
 Dark Source=-21474836481001
+Vuldngrav Great Hall=-21474836481001
+Ruined Door=-21474836481001
 Fort Grimwatch=-21474836481001
+Corrupted Guardian Senche=-21474836481001
 
 The Reality of Spirits=0021147
 The Hotspur=0021148
@@ -244,6 +244,8 @@ Firuin's Journal=0111166
 Ode to the Tundrastriders=0111167
 Baandari Mutton Stew=0111168
 The Adabal-A=0111169
+Black Vine Ruins=0111170
+One Wilding Night=0111171
 
 Primary Vault=0181001
 Relic Room=0181002
@@ -413,8 +415,8 @@ Lyris' Axe=0461007
 Prison of Echoes=0461008
 Door Lever=0461009
 Crucible of Terror=0461010
-Portal to the Harborage=0461011
 Lyris's Axe=0461011
+Portal to the Harborage=0461011
 
 Wretched Squalor=0471001
 Castle Cistern=0471002
@@ -961,12 +963,12 @@ Abandoned Cellar=1781257
 Entila's Folly=1781258
 Basic Provisioning Guide=1781259
 Portal to Alliance Capital=1781259
-Portal to Stirk=1781260
 Gilded Letter=1781260
-A Clothier's Primer=1781261
+Portal to Stirk=1781260
 Starfall Arcana=1781261
-Woodworking For Simpletons=1781262
+A Clothier's Primer=1781261
 Centurion Control Lever=1781262
+Woodworking For Simpletons=1781262
 Blacksmithing Station (Death's Wind)=1781263
 Clothing Station (Death's Wind)=1781274
 Woodworking Station (Death's Wind)=1781286
@@ -1008,6 +1010,11 @@ Military Deployment Across Auridon=1781326
 Brief Letter to an Aldarch=1781327
 Blessed Waters=1781328
 Bones of the Forest=1781329
+West Supply Building=1781330
+Spellscarred Ward=1781331
+Spellplagued Ward=1781332
+Portal to the Refuge of Dread=1781333
+Kinlord Rilis and the Mages Guild=1781334
 
 Ancient Scrolls of the Dwemer IV=1791001
 Spidersilk=1791002
@@ -1226,6 +1233,8 @@ Portal to The Demi-Plane of Jode=1791214
 Ayrenn's Last Stand=1791215
 Summerset Isles=1791216
 Portal to the Den of Lorkhaj=1791217
+Fadir's Folly=1791218
+The Vile Manse=1791219
 
 Prowler Deck=1801001
 High Iron Ore=1801002

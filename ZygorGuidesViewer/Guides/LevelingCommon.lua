@@ -3148,8 +3148,32 @@ step
 .talk Cadwell##3362010
 ..turnin God of Schemes##1540027
 ..accept Cadwell's Silver##0022071
+|only Daggerfall Covenant
 step
 'In the small camp in the Harborage:
 .click Light of Meridia##1542011
 .' Use the Light of Meridia |q Cadwell's Silver##0022071/1 |next Aldmeri Dominion Leveling Guides\\Khenarthi's Roost (3-7)
+|only Daggerfall Covenant
+step
+'In the small camp in the Harborage:
+.talk Cadwell##3362010
+..turnin God of Schemes##1540027
+..accept Cadwell's Silver##0093126
+|only Ebonheart Pact
+step
+'In the small camp in the Harborage:
+.click Light of Meridia##1542011
+.' Use the Light of Meridia |q Cadwell's Silver##0093126/1 |next Daggerfall Covenant Leveling Guides\\Stros M'Kai (3-7)
+|only Ebonheart Pact
+step
+'In the small camp in the Harborage:
+.talk Cadwell##3362010
+..turnin God of Schemes##1540027
+..accept Cadwell's Silver##1781054
+|only Aldmeri Dominion
+step
+'In the small camp in the Harborage:
+.click Light of Meridia##1542011
+.' Use the Light of Meridia |q Cadwell's Silver##1781054/1 |next Ebonheart Pact Leveling Guides\\Bleakrock Isle (3-6)
+|only Aldmeri Dominion
 ]])

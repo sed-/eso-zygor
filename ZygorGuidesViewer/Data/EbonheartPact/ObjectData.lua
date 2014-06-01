@@ -252,6 +252,7 @@ Varieties of Faith: The Argonians=0093434
 With Regards to the Ebony Blade=0093435
 The Girded Lion Hold=0093436
 Skeletal Remains=0093437
+Letter from Vila=0093438
 
 Hlan House=0103001
 The Serk=0103002

@@ -208,10 +208,13 @@ function BugReport:ShowDump(text,title,editable,action,cursorpos)
 
 	self:CalculatePagination()
 
-	self:CopyToClipboard()
+	--self:CopyToClipboard()
 end
 
+local lastreport
 function BugReport:AddToReport(text)
+	if text==lastreport then return end
+	lastreport=text
 	self.report = self.report or ""
 	self.report = self.report .. "\n" .. text
 end
@@ -219,6 +222,7 @@ end
 function BugReport:GetReport()
 	local s = ""
 
+	s = s .. ("VERSION: %s\n"):format(ZGV.version)
 	s = s .. ("FACTION: %s\n"):format(ZGV.Utils.GetFaction())
 	s = s .. ("LEVEL: %s\n"):format(GetUnitLevel("player"))
 	s = s .. ("GUIDE: %s\n"):format(ZGV.CurrentGuide.title)

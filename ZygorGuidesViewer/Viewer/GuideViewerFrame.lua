@@ -218,6 +218,7 @@ function Viewer:CreateZGVF()
 			s = s .. "\nDEV:\nRight click to Zgoo the current step.\nShift-Right click to Zgoo current guide."
 		end
 		add_tooltip(titlebar.bug,s)
+		titlebar.bug:SetHidden(not ZGV.db.profile.bugreports)
 
 		titlebar.title = CHAIN(ui:Create("Logo",titlebar,tname.."_Title"))
 			:SetPoint(TOP,titlebar,0,SMALL_PADDING)

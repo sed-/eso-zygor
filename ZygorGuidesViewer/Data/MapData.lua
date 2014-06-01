@@ -674,7 +674,7 @@ ZGV.MapData = {
 		["firshold_base"] = { },
 		["firsthold_base"] = { name = "Firsthold", xoffset = 0.169259, yoffset = 0.613203, scale = 0.026211, },
 		["firsthold_base firsthold_base"] = { },
-		["fistofstone_base"] = { name = "The Fist of Stone", noParent = true, parentWorld = "coldharbour_base", },
+		["fistofstone_base"] = { name = "The Fist of Stone", parentWorld = "coldharbour_base", noParent = true, },
 		["flyleafcatacombs_base"] = { name = "Flyleaf Catacombs", id = 134, xoffset = 0.139386, yoffset = 0.250583, scale = 0.00793, },
 		["forelhost_base"] = { name = "Forelhost", xoffset = 0.654922, yoffset = 0.390111, scale = 0.006055, },
 		["forgottencrypts_base"] = { name = "Forgotten Crypts", id = 119, xoffset = 0.722265, yoffset = 0.490623, scale = 0.013281, },
