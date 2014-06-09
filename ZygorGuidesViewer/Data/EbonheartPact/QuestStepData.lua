@@ -135,11 +135,6 @@ ZGV._QuestStepDataEP = {
 		},
 	},
 	[0093005] = {
-		[0] = {
-			[[Q1 The Guildmaster of the Fighters Guild ___ a task for her.<73>]],
-			[[S1 I have been asked to report to ___ soon as possible.<110>]],
-			[[S1C1 Talk to Sees-All-Colors]],
-		}, 
 		[1]={
 			[[Q1 The Guildmaster of the Fighters Guild wa___form a task for her.<73>]],
 			[[S1 == I'm supposed to meet with Merric and Ael___nchor near the city.<140>]],
@@ -234,9 +229,9 @@ ZGV._QuestStepDataEP = {
 			[[S1C1 == Enter Fungal Grotto]],
 		},
 		[2]={
-			[[Q1 Kailstig the Axe has invited me to join ___alled the Undaunted.<84>]],
-			[[S1 I agreed to meet Kailstig the Axe at the___ into the Undaunted.<106>]],
-			[[S1C1 == Talk to Kailstig the Axe in Stonefalls]],
+			[[Q1 Kailstig the Axe has invited me to join ___ the Undaunted.<84>]],
+			[[S1 I agreed to meet Kailstig the Axe at ___ into the Undaunted.<106>]],
+			[[S1C1 == Talk to Kailstig the Axe in Davon's Watch]],
 		},
 		[3]={
 			[[Q1 Kailstig the Axe has invited me to join ___alled the Undaunted.<84>]],
@@ -2066,6 +2061,11 @@ ZGV._QuestStepDataEP = {
 			[[S1 I found J'kur's body. He was holding a n___and look for Vahara.<192>]],
 			[[S1C1 == Deliver Letter to Vahara]],
 		},
+		[5]={
+			[[Q1 I found a note on a dead Khajiit with ___ of prisoners.<136>]],
+			[[S1 I found J'kur's body. He was holding a ___ look for Vahara.<192>]],
+			[[S1C0 == Talk to Vahara]],
+		},
 	},
 	[0093053] = {
 		[1]={
@@ -2871,21 +2871,19 @@ ZGV._QuestStepDataEP = {
 	[0093133] = {
 		[1]={
 			[[Q1 Laughs-at-All is struggling to ___ the distant past.<124>]],
-			[[S1 I should be able to find clues to the ___ for performing it.<183>]],
-			[[S1C1 == Learn Opening Performance]],
-			[[S1C2 Learn Follow-Up Performance]],
-			[[S1C3 Learn Closing Performance]],
-			[[S2 NO TEXT]],
-			[[S2C1 !! Go to the Tunnel to the Tomb]],
+			[[S1 == I need to search the tombs near ___ to Laughs-at-All.<163>]],
+			[[S1C1 == Find Clue to Opening Performance]],
+			[[S1C2 == Find Clue to Follow-Up Performance]],
+			[[S1C3 == Find Clue to Closing Performance]],
 		},
 		[2]={
 			[[Q1 Laughs-at-All is struggling to ___ the distant past.<124>]],
-			[[S1 I should be able to find clues to the ___ for performing it.<183>]],
+			[[S1 == I should be able to find clues to the ___ for performing it.<183>]],
 			[[S1C1 == Learn Opening Performance]],
 			[[S1C2 Learn Follow-Up Performance]],
 			[[S1C3 Learn Closing Performance]],
 			[[S2 NO TEXT]],
-			[[S2C1 !! Find the Tomb Entrance]],
+			[[S2C1 == Find the Tomb Entrance]],
 		},
 		[3]={
 			[[Q1 Laughs-at-All is struggling to ___ the distant past.<124>]],
@@ -2900,9 +2898,9 @@ ZGV._QuestStepDataEP = {
 		},
 		[4]={
 			[[Q1 Laughs-at-All is struggling to ___ the distant past.<124>]],
-			[[S1 The ghosts made it clear that if ___ keep him alive.<225>]],
-			[[S1C1 == Tell Laughs-at-All the Joke]],
-			[[S1C2 Keep the Joke from Laughs-at-All]],
+			[[S1 The ghosts made it clear that if ___ save his life.<224>]],
+			[[S1C1 == Give Laughs-at-All the Performance Notes]],
+			[[S1C2 Don't Tell Laughs-at-All about the Performance]],
 		},
 		[5]={
 			[[Q1 Laughs-at-All is struggling to ___ the distant past.<124>]],
@@ -2941,6 +2939,11 @@ ZGV._QuestStepDataEP = {
 			[[S1 I should talk to Grandmaster Omin Dres about the Vanguard.]],
 			[[S1C0 == Speak with Grandmaster Omin Dres]],
 		},
+		[7]={
+			[[Q1 I've discovered where Grandmaster Omin ___ west of Kragenmoor.<142>]],
+			[[S1 I should talk to Grandmaster Omin Dres about the Vanguard.]],
+			[[S1C0 == Talk to Grandmaster Omin Dres]],
+		},
 	},
 	[0093135] = {
 		[1]={
@@ -2952,6 +2955,11 @@ ZGV._QuestStepDataEP = {
 			[[Q1 The Grandmaster of House Dres wants ___ slay their leader.<131>]],
 			[[S1 I've slain the Vanguard's commander. I ___ Omin Dres.<79>]],
 			[[S1C0 == Return to Grandmaster Omin Dres]],
+		},
+		[3]={
+			[[Q1 The grandmaster of House Dres wants ___ slay their leader.<131>]],
+			[[S1 I've slain the Vanguard's commander. I ___ Omin Dres.<79>]],
+			[[S1C0 == Talk to Grandmaster Omin Dres]],
 		},
 	},
 	[0093136] = {
@@ -3029,8 +3037,8 @@ ZGV._QuestStepDataEP = {
 		},
 		[13]={
 			[[Q1 Tanval Indoril is inside the Tormented ___ destroy Stonefalls.<193>]],
-			[[S1 The key to lowering the final ward ___ and claim the key.<150>]],
-			[[S1C1 == Kill Flamespinner and Collect Her Key]],
+			[[S1 The key to lowering the final ward ___ and claim the key.<131>]],
+			[[S1C1 == Kill the Daedra and Collect Her Key]],
 			[[S2 I can use the summoning bowl on the spire to summon Flamespinner.]],
 			[[S2C1 Use the Summoning Bowl]],
 		},
@@ -3059,7 +3067,7 @@ ZGV._QuestStepDataEP = {
 		[1]={
 			[[Q1 With Tanval's help, we've lowered the ___ by Tanval's ritual.<213>]],
 			[[S1 == Tanval said the first spirit is waiting ___ of the caldera.<92>]],
-			[[S1C1 == Speak with Genvis Faledran]],
+			[[S1C1 == Talk to Genvis Faledran]],
 		},
 		[2]={
 			[[Q1 With Tanval's help, we've lowered the ___ by Tanval's ritual.<213>]],
@@ -3069,12 +3077,12 @@ ZGV._QuestStepDataEP = {
 		[3]={
 			[[Q1 With Tanval's help, we've lowered the ___ by Tanval's ritual.<213>]],
 			[[S1 == I have the first Focus Stone. I must return it to Genvis Faledran.]],
-			[[S1C1 == Speak with Genvis Faledran]],
+			[[S1C1 == Talk to Genvis Faledran]],
 		},
 		[4]={
 			[[Q1 With Tanval's help, we've lowered the ___ by Tanval's ritual.<213>]],
-			[[S1 == Genvis Faledran said another trial ___ into the caldera.<126>]],
-			[[S1C1 == Speak with Levisii Gilvayn]],
+			[[S1 Genvis Faledran said another trial ___ into the caldera.<126>]],
+			[[S1C1 == Talk to Levisii Gilvayn]],
 		},
 		[5]={
 			[[Q1 With Tanval's help, we've lowered the ___ by Tanval's ritual.<213>]],
@@ -3090,7 +3098,7 @@ ZGV._QuestStepDataEP = {
 		[7]={
 			[[Q1 With Tanval's help, we've lowered the ___ by Tanval's ritual.<213>]],
 			[[S1 == I must complete one final trial. I'll ___ above the caldera.<90>]],
-			[[S1C1 == Speak with Mavos Siloreth]],
+			[[S1C1 == Talk to Mavos Siloreth]],
 		},
 		[8]={
 			[[Q1 With Tanval's help, we've lowered the ___ by Tanval's ritual.<213>]],
@@ -3100,7 +3108,7 @@ ZGV._QuestStepDataEP = {
 		[9]={
 			[[Q1 With Tanval's help, we've lowered the ___ by Tanval's ritual.<213>]],
 			[[S1 == I have the final Focus Stone. I must return to Mavos Siloreth.]],
-			[[S1C1 == Speak with Mavos Siloreth]],
+			[[S1C1 == Talk to Mavos Siloreth]],
 		},
 		[10]={
 			[[Q1 With Tanval's help, we've lowered the ___ by Tanval's ritual.<213>]],
@@ -3188,9 +3196,8 @@ ZGV._QuestStepDataEP = {
 			[[S1 Aerona Berendas wants me to help her ___ he disappeared.<167>]],
 			[[S1C1 == Talk to Serk Townsfolk]],
 			[[S2 NO TEXT]],
-			[[S2C1 !! EMPTY]],
 			[[S3 NO TEXT]],
-			[[S3C1 !! Talk to Serk Townsfolk]],
+			[[S3C1 Talk to Serk Townsfolk]],
 			[[S4 NO TEXT]],
 			[[S4C1 Talk to Serk Townsfolk]],
 			[[S5 NO TEXT]],
@@ -3198,36 +3205,24 @@ ZGV._QuestStepDataEP = {
 		},
 		[3]={
 			[[Q1 The virulent Llodos plague spreads ___ true intentions.<250>]],
-			[[S1 Aerona Berendas wants me to help her ___ he disappeared.<167>]],
-			[[S1C1 == Talk to Serk Townsfolk]],
-			[[S2 NO TEXT]],
-			[[S3 NO TEXT]],
-			[[S3C1 !! EMPTY]],
-			[[S4 NO TEXT]],
-			[[S4C1 Talk to Serk Townsfolk]],
-			[[S5 NO TEXT]],
-			[[S5C1 TRACKER GOAL TEXT]],
-		},
-		[4]={
-			[[Q1 The virulent Llodos plague spreads ___ true intentions.<250>]],
-			[[S1 We've talked to a few townsfolk and ___ should talk to her.<210>]],
+			[[S1 == We've talked to a few townsfolk and ___ should talk to her.<210>]],
 			[[S1C1 == Talk to Aerona]],
 		},
-		[5]={
+		[4]={
 			[[Q1 The virulent Llodos plague spreads ___ true intentions.<250>]],
 			[[S1 Aerona says that her brother gave the ___ to the back gate.<248>]],
 			[[S1C1 == Find the Old Graveyard Key]],
 			[[S2 NO TEXT]],
 			[[S2C1 TRACKER GOAL TEXT]],
 		},
-		[6]={
+		[5]={
 			[[Q1 The virulent Llodos plague spreads ___ true intentions.<250>]],
 			[[S1 The Maulborn attacked us, but I found ___ hiding in there.<144>]],
 			[[S1C1 == Enter the Maulborn Quarantine]],
 			[[S2 NO TEXT]],
 			[[S2C1 TRACKER GOAL TEXT]],
 		},
-		[7]={
+		[6]={
 			[[Q1 The virulent Llodos plague spreads ___ true intentions.<250>]],
 			[[S1 We're inside the Maulborn quarantine. I ___ activities here.<108>]],
 			[[S1C0 == Investigate the Maulborn Quarantine]],
@@ -3245,7 +3240,7 @@ ZGV._QuestStepDataEP = {
 			[[S5 NO TEXT]],
 			[[S5C1 Uncover Evidence Against the Maulborn]],
 		},
-		[8]={
+		[7]={
 			[[Q1 The virulent Llodos plague spreads ___ true intentions.<250>]],
 			[[S1 The Maulborn are producing the Llodos ___ facilities.<218>]],
 			[[S1C1 == Enter the Plague Production Chamber]],
@@ -3254,7 +3249,7 @@ ZGV._QuestStepDataEP = {
 			[[S3 NO TEXT]],
 			[[S3C1 TRACKER GOAL TEXT]],
 		},
-		[9]={
+		[8]={
 			[[Q1 The virulent Llodos plague spreads ___ true intentions.<250>]],
 			[[S1 I need to destroy the Maulborn ___ eliminate her.<222>]],
 			[[S1C1 == Destroy Maulborn Research]],
@@ -3268,17 +3263,22 @@ ZGV._QuestStepDataEP = {
 			[[S4 NO TEXT]],
 			[[S4C1 TRACKER GOAL TEXT]],
 		},
-		[10]={
+		[9]={
 			[[Q1 The virulent Llodos plague spreads ___ true intentions.<250>]],
 			[[S1 I destroyed the Maulborn production ___ escaped safely.<123>]],
 			[[S1C1 == Exit the Maulborn Quarantine]],
 		},
-		[11]={
+		[10]={
 			[[Q1 The virulent Llodos plague spreads ___ true intentions.<250>]],
 			[[S1 I need to find Aerona Berendas and make ___ with her uncle.<129>]],
 			[[S1C0 == Talk to Aerona]],
 			[[S1C1 == Talk to Aerona]],
 			[[S1C2 Talk to Aerona]],
+		},
+		[11]={
+			[[Q1 The virulent Llodos plague spreads ___ true intentions.<250>]],
+			[[S1 I need to find Aerona Berendas and make ___ with her uncle.<129>]],
+			[[S1C0 == Talk to Aerona]],
 		},
 	},
 	[0103002] = {
@@ -3470,7 +3470,7 @@ ZGV._QuestStepDataEP = {
 			[[S2C1 Search Southern Narsis for Clues]],
 			[[S2C2 ]],
 			[[S3 NO TEXT]],
-			[[S3C1 !! Search Eastern Narsis for Clues]],
+			[[S3C1 == Search Eastern Narsis for Clues]],
 			[[S3C2 ]],
 			[[S4 NO TEXT]],
 			[[S4C1 Search Western Narsis for Clues]],
@@ -3482,10 +3482,9 @@ ZGV._QuestStepDataEP = {
 			[[S1 Councilor Ralden of House Hlaalu hired ___ the guards missed.<225>]],
 			[[S1C1 == Investigate Disappearances]],
 			[[S2 NO TEXT]],
-			[[S2C1 !! Search Southern Narsis for Clues]],
+			[[S2C1 == Search Southern Narsis for Clues]],
 			[[S2C2 ]],
 			[[S3 NO TEXT]],
-			[[S3C1 !! EMPTY]],
 			[[S4 NO TEXT]],
 			[[S4C1 Search Western Narsis for Clues]],
 			[[S4C2 ]],
@@ -3544,6 +3543,11 @@ ZGV._QuestStepDataEP = {
 			[[Q1 I shared everything I learned with ___ for the councilor.<174>]],
 			[[S1 I returned to the kinhouse, but Ralden ___ to speak to me.<108>]],
 			[[S1C1 == Talk to Varon Davel]],
+		},
+		[7]={
+			[[Q1 I shared everything I learned with ___ for the councilor.<174>]],
+			[[S1 I returned to the kinhouse, but Ralden ___ to speak to me.<108>]],
+			[[S1C0 == Talk to Varon Davel]],
 		},
 	},
 	[0103011] = {
@@ -3694,6 +3698,11 @@ ZGV._QuestStepDataEP = {
 			[[S1C1 == Talk to Commander Renli at Obsidian Gorge]],
 			[[S1C2 Talk to Commander Renli at Obsidian Gorge]],
 		},
+		[3]={
+			[[Q1 The mysterious operative called Naryu ___ the Maulborn camp.<108>]],
+			[[S1 The alchemist who created the Llodos ___ to Commander Renli.<148>]],
+			[[S1C0 == Talk to Commander Renli at Obsidian Gorge]],
+		},
 	},
 	[0103015] = {
 		[1]={
@@ -3839,6 +3848,16 @@ ZGV._QuestStepDataEP = {
 			[[Q1 The Llodos plague has been unleashed ___ Maulborn alchemist.<149>]],
 			[[S1 I killed Merdyndril, the creator of the ___ know what I found.<154>]],
 			[[S1C1 == Find a Hlaalu Officer]],
+		},
+		[7]={
+			[[Q1 The Llodos plague has been unleashed ___ Maulborn alchemist.<149>]],
+			[[S1 I killed Merdyndril, the creator of the ___ know what I found.<154>]],
+			[[S1C1 == Talk to Scout Mamyne]],
+		},
+		[8]={
+			[[Q1 The Llodos plague has been unleashed ___ Maulborn alchemist.<149>]],
+			[[S1 I killed Merdyndril, the creator of the ___ know what I found.<154>]],
+			[[S1C0 == Talk to Scout Mamyne]],
 		},
 	},
 	[0103020] = {
@@ -4079,6 +4098,11 @@ ZGV._QuestStepDataEP = {
 			[[S1 I completed the memory challenge. I ___ me to do next.<109>]],
 			[[S1C1 == Talk to Arch-Mage Valeyn]],
 		},
+		[8]={
+			[[Q1 Deshaan's Academy of Magic, Shad ___ special invitation.<196>]],
+			[[S1 I completed the memory challenge. I ___ me to do next.<109>]],
+			[[S1C0 == Talk to Arch-Mage Valeyn]],
+		},
 	},
 	[0103027] = {
 		[1]={
@@ -4210,29 +4234,34 @@ ZGV._QuestStepDataEP = {
 		},
 		[3]={
 			[[Q1 I used the key to search the House Dres ___ down there.<197>]],
-			[[S1 Something certainly has Naryu ___ into the sewers.<82>]],
-			[[S1C1 == Follow Naryu Into the Sewers]],
-			[[S1C2 ]],
-			[[S1C3 ]],
-			[[S1C4 ]],
-		},
-		[4]={
-			[[Q1 I used the key to search the House Dres ___ down there.<197>]],
 			[[S1 Naryu thinks there's a hidden door ___ on my own for now.<170>]],
 			[[S1C1 == Search for the Hidden Door]],
 		},
-		[5]={
+		[4]={
 			[[Q1 I used the key to search the House Dres ___ down there.<197>]],
-			[[S1 I found the hidden door that Naryu ___ to open this door.<197>]],
+			[[S1 == I found the hidden door that Naryu ___ to open this door.<197>]],
 			[[S1C1 == Open the Hidden Door]],
 			[[S2 NO TEXT]],
-			[[S2C1 !! Open the Hidden Door]],
+			[[S2C1 == Open the Hidden Door]],
 			[[S3 NO TEXT]],
-			[[S3C1 Open the Hidden Door]],
+			[[S3C1 == Open the Hidden Door]],
 			[[S4 NO TEXT]],
-			[[S4C1 Open the Hidden Door]],
+			[[S4C1 == Open the Hidden Door]],
 			[[S5 NO TEXT]],
-			[[S5C1 Loosen the Stuck Lever]],
+			[[S5C1 == Loosen the Stuck Lever]],
+		},
+		[5]={
+			[[Q1 I used the key to search the House Dres ___ down there.<197>]],
+			[[S1 == I found the hidden door that Naryu ___ to open this door.<197>]],
+			[[S1C1 == Open the Hidden Door]],
+			[[S2 NO TEXT]],
+			[[S2C1 == Open the Hidden Door]],
+			[[S3 NO TEXT]],
+			[[S3C1 == Open the Hidden Door]],
+			[[S4 NO TEXT]],
+			[[S4C1 == Loosen the Stuck Lever]],
+			[[S5 NO TEXT]],
+			[[S5C1 == Loosen the Stuck Lever]],
 		},
 		[6]={
 			[[Q1 I used the key to search the House Dres ___ down there.<197>]],
@@ -4240,9 +4269,9 @@ ZGV._QuestStepDataEP = {
 			[[S1C1 == Open the Hidden Door]],
 			[[S2 NO TEXT]],
 			[[S3 NO TEXT]],
-			[[S3C1 !! Open the Hidden Door]],
+			[[S3C1 == Open the Hidden Door]],
 			[[S4 NO TEXT]],
-			[[S4C1 Open the Hidden Door]],
+			[[S4C1 Loosen the Stuck Lever]],
 			[[S5 NO TEXT]],
 			[[S5C1 Loosen the Stuck Lever]],
 		},
@@ -4253,7 +4282,7 @@ ZGV._QuestStepDataEP = {
 			[[S2 NO TEXT]],
 			[[S3 NO TEXT]],
 			[[S4 NO TEXT]],
-			[[S4C1 Open the Hidden Door]],
+			[[S4C1 Loosen the Stuck Lever]],
 			[[S5 NO TEXT]],
 			[[S5C1 Loosen the Stuck Lever]],
 		},
@@ -4293,30 +4322,35 @@ ZGV._QuestStepDataEP = {
 	[0103029] = {
 		[1]={
 			[[Q1 My first trial in Sheogorath's realm ___ where I need to go.<125>]],
+			[[S1 Shalidor appeared and told me Valaste ___ Mages Guildhall.<121>]],
+			[[S1C1 == Talk to Valaste]],
+		},
+		[2]={
+			[[Q1 My first trial in Sheogorath's realm ___ where I need to go.<125>]],
 			[[S1 == Shalidor has made preparations to ___ of the Mages Guild.<117>]],
 			[[S1C1 == Talk to Shalidor]],
 		},
-		[2]={
+		[3]={
 			[[Q1 My first trial in Sheogorath's realm ___ where I need to go.<125>]],
 			[[S1 Shalidor is casting the spell to open a ___ he's finished.<106>]],
 			[[S1C1 == Wait for Shalidor to Open the Portal]],
 		},
-		[3]={
-			[[Q1 My first trial in Sheogorath's realm ___ where I need to go.<125>]],
-			[[S1 == I should enter the portal Shalidor created.]],
-			[[S1C1 == Enter Portal]],
-		},
 		[4]={
 			[[Q1 My first trial in Sheogorath's realm ___ where I need to go.<125>]],
+			[[S1 I should enter the portal Shalidor created.]],
+			[[S1C1 == Enter Portal]],
+		},
+		[5]={
+			[[Q1 == My first trial in Sheogorath's realm ___ where I need to go.<125>]],
 			[[S1 == Haskill awaited my arrival in the ___ has planned for me.<104>]],
 			[[S1C1 == Talk to Haskill]],
 		},
-		[5]={
+		[6]={
 			[[Q1 My first trial in Sheogorath's realm ___ where I need to go.<125>]],
 			[[S1 == Haskill is sending me to a place called ___ he created for me.<118>]],
 			[[S1C1 == Enter the Portal]],
 		},
-		[6]={
+		[7]={
 			[[Q1 My first trial in Sheogorath's realm ___ where I need to go.<125>]],
 			[[S1 == I need to explore Vuldngrav to see if I ___ misplaced.<84>]],
 			[[S1C1 == Explore Vuldngrav]],
@@ -4324,132 +4358,136 @@ ZGV._QuestStepDataEP = {
 			[[S2C1 TRACKER GOAL TEXT]],
 			[[S2C2 TRACKER GOAL TEXT]],
 		},
-		[7]={
-			[[Q1 My first trial in Sheogorath's realm ___ where I need to go.<125>]],
-			[[S1 Shalidor pointed out some kind of crown ___ check it out.<89>]],
-			[[S1C1 == Examine the Chest]],
-		},
 		[8]={
 			[[Q1 My first trial in Sheogorath's realm ___ where I need to go.<125>]],
-			[[S1 Examining the crown angered the Dragon ___ sending after me.<111>]],
-			[[S1C1 == Defeat the Draugr]],
+			[[S1 Shalidor pointed out some kind of chest ___ check it out.<89>]],
+			[[S1C1 == Examine the Chest]],
 		},
 		[9]={
 			[[Q1 My first trial in Sheogorath's realm ___ where I need to go.<125>]],
-			[[S1 == After surviing the draugr, Korthor ___ I'm looking for.<116>]],
-			[[S1C1 == Explore Vuldngrav]],
+			[[S1 Examining the chest angered the Dragon ___ sending after me.<111>]],
+			[[S1C1 == Defeat the Draugr]],
 		},
 		[10]={
+			[[Q1 My first trial in Sheogorath's realm ___ where I need to go.<125>]],
+			[[S1 == After surviving the draugr, Korthor ___ I'm looking for.<117>]],
+			[[S1C1 == Explore Vuldngrav]],
+		},
+		[11]={
 			[[Q1 My first trial in Sheogorath's realm ___ where I need to go.<125>]],
 			[[S1 I've made it to Korthor's tomb. Time to ___ whatever it takes.<80>]],
 			[[S1C1 == Retrieve the Fork]],
 		},
-		[11]={
+		[12]={
 			[[Q1 My first trial in Sheogorath's realm ___ where I need to go.<125>]],
 			[[S1 == Haskill appeared after I obtained the ___ what he has to say.<76>]],
 			[[S1C1 == Talk to Haskill]],
 		},
-		[12]={
+		[13]={
 			[[Q1 My first trial in Sheogorath's realm ___ where I need to go.<125>]],
 			[[S1 == Haskill is sending me to a place called ___ to get there.<122>]],
 			[[S1C1 == Enter the Portal]],
 		},
-		[13]={
+		[14]={
 			[[Q1 My first trial in Sheogorath's realm ___ where I need to go.<125>]],
 			[[S1 == Now that I've arrived at Asakala, I ___ about this place.<78>]],
 			[[S1C1 == Talk to Shalidor]],
 		},
-		[14]={
+		[15]={
 			[[Q1 My first trial in Sheogorath's realm ___ where I need to go.<125>]],
 			[[S1 I need to collect essence to deposit ___ four at a time.<191>]],
 			[[S1C1 == Collect Essence]],
 		},
-		[15]={
+		[16]={
 			[[Q1 My first trial in Sheogorath's realm ___ where I need to go.<125>]],
 			[[S1 I have the essence I need to activate ___ I've collected.<111>]],
 			[[S1C0 == Activate a Scarab Seal]],
-			[[S1C1 == Activate a Scarab Seal]],
+			[[S1C1 Activate a Scarab Seal]],
 			[[S1C2 Activate a Scarab Seal]],
-		},
-		[16]={
-			[[Q1 My first trial in Sheogorath's realm ___ where I need to go.<125>]],
-			[[S1 Shalidor appeared and told me Valaste ___ Mages Guildhall.<121>]],
-			[[S1C1 == Talk to Valaste]],
 		},
 		[17]={
 			[[Q1 My first trial in Sheogorath's realm ___ where I need to go.<125>]],
 			[[S1 I have the essence I need to activate ___ I've collected.<113>]],
 			[[S1C1 == Activate a Scarab Seal]],
 			[[S2 NO TEXT]],
-			[[S2C1 Activate a Scarab Seal]],
+			[[S2C1 TRACKER GOAL TEXT]],
 			[[S3 NO TEXT]],
-			[[S3C1 TRACKER GOAL TEXT]],
+			[[S3C1 Activate a Scarab Seal]],
 		},
 		[18]={
 			[[Q1 My first trial in Sheogorath's realm ___ where I need to go.<125>]],
-			[[S1 == I've activated the two seals near the ___ the two rear seals.<113>]],
+			[[S1 I've activated the two seals near the ___ the two rear seals.<113>]],
 			[[S1C1 == Talk to Shalidor]],
 		},
 		[19]={
 			[[Q1 My first trial in Sheogorath's realm ___ where I need to go.<125>]],
-			[[S1 I need to activate one of the two Seals ___ in the valley.<74>]],
+			[[S1 == I need to activate one of the two Seals ___ in the valley.<74>]],
 			[[S1C1 == Activate the Spider Seal]],
 			[[S1C2 Activate Scorpion Seal]],
-			[[S2 I'll need to kill Sahdina, Maleel's general, to gather his essence.]],
+			[[S2 I'll need to kill Sahdina, Maleel's general, to gather her essence.]],
 			[[S2C1 Kill Sahdina the Scorpion]],
-			[[S3 I'll need to kill Rashtoma, Maleel's general, to gather his essence.]],
-			[[S3C1 Kill Rashomta the Spider]],
+			[[S3 I'll need to kill Rashtoma, Maleel's general, to gather her essence.]],
+			[[S3C1 == Kill Rashomta the Spider]],
 		},
 		[20]={
+			[[Q1 My first trial in Sheogorath's realm ___ where I need to go.<125>]],
+			[[S1 == I need to activate one of the two Seals ___ in the valley.<74>]],
+			[[S1C1 == Activate the Spider Seal]],
+			[[S1C2 Activate Scorpion Seal]],
+			[[S2 I'll need to kill Sahdina, Maleel's general, to gather her essence.]],
+			[[S2C1 Kill Sahdina the Scorpion]],
+			[[S3 NO TEXT]],
+		},
+		[21]={
 			[[Q1 My first trial in Sheogorath's realm ___ where I need to go.<125>]],
 			[[S1 With all the statues activated, a ___ al-Akir's tomb.<126>]],
 			[[S1C1 == Use the Key Ritual Orb]],
 		},
-		[21]={
+		[22]={
 			[[Q1 My first trial in Sheogorath's realm ___ where I need to go.<125>]],
 			[[S1 I need to wait for the tomb to open.]],
 			[[S1C1 == Wait For the Tomb to Open]],
 		},
-		[22]={
+		[23]={
 			[[Q1 My first trial in Sheogorath's realm ___ where I need to go.<125>]],
 			[[S1 With the tomb open, I can now enter and kill Maleel for the staff.]],
 			[[S1C1 == Retrieve the Staff]],
 			[[S2 NO TEXT]],
 			[[S2C1 TRACKER GOAL TEXT]],
 		},
-		[23]={
+		[24]={
 			[[Q1 My first trial in Sheogorath's realm ___ where I need to go.<125>]],
-			[[S1 == Haskill appeared once I obtained the staff. I should speak to him.]],
+			[[S1 Haskill appeared once I obtained the staff. I should speak to him.]],
 			[[S1C1 == Talk to Haskill]],
 		},
-		[24]={
+		[25]={
 			[[Q1 My first trial in Sheogorath's realm ___ where I need to go.<125>]],
 			[[S1 I need to enter the portal to return to the Shivering Isles.]],
 			[[S1C1 == Return to the Shivering Isles]],
 		},
-		[25]={
+		[26]={
 			[[Q1 My first trial in Sheogorath's realm ___ where I need to go.<125>]],
 			[[S1 == When I returned to the Shivering Isles, ___ speak to him.<93>]],
 			[[S1C1 == Talk to Sheogorath]],
 		},
-		[26]={
+		[27]={
 			[[Q1 My first trial in Sheogorath's realm ___ where I need to go.<125>]],
 			[[S1 Sheogorath wants me to test out his staff on the "people" of the Isles.]],
 			[[S1C1 == Test the Wabbajack]],
 			[[S2 In order to use the Wabbajack, I'll have to equip it.]],
 			[[S2C1 Equip the Wabbajack]],
 		},
-		[27]={
+		[28]={
 			[[Q1 My first trial in Sheogorath's realm ___ where I need to go.<125>]],
 			[[S1 == I've tested out Sheogorath's staff. I should speak to him.]],
 			[[S1C1 == Talk to Sheogorath]],
 		},
-		[28]={
+		[29]={
 			[[Q1 My first trial in Sheogorath's realm ___ where I need to go.<125>]],
 			[[S1 Sheogorath told me to take the book. ___ it and move on.<74>]],
 			[[S1C1 == Collect the Book]],
 		},
-		[29]={
+		[30]={
 			[[Q1 My first trial in Sheogorath's realm ___ where I need to go.<125>]],
 			[[S1 I should return to Valaste at the Mages Guild with the book.]],
 			[[S1C0 == Talk to Valaste]],
@@ -4468,7 +4506,7 @@ ZGV._QuestStepDataEP = {
 		},
 		[3]={
 			[[Q1 A large Maulborn force used the sewers ___ nefarious plan.<130>]],
-			[[S1 Daedra have invaded the Tribunal ___ that spawn them.<99>]],
+			[[S1 Daedra have invaded the Tribunal ___ that spawn them.<102>]],
 			[[S1C1 == Close the Daedric Portals]],
 			[[S2 NO TEXT]],
 			[[S2C1 Portal]],
@@ -4495,34 +4533,40 @@ ZGV._QuestStepDataEP = {
 			[[Q1 A large Maulborn force used the sewers ___ nefarious plan.<130>]],
 			[[S1 I need to find a way to repair the ___ of Sotha Sil.<147>]],
 			[[S1C1 == Pass Sotha Sil's Trial]],
-			[[S2 !! NO TEXT]],
-			[[S2C1 !! Talk to Almalexia]],
+			[[S2 == NO TEXT]],
+			[[S2C1 == Talk to Almalexia]],
 		},
 		[8]={
 			[[Q1 A large Maulborn force used the sewers ___ nefarious plan.<130>]],
 			[[S1 I need to find a way to repair the ___ of Sotha Sil.<147>]],
 			[[S1C1 == Pass Sotha Sil's Trial]],
 			[[S2 The trial of Sotha Sil involves ___ to get started.<158>]],
-			[[S2C1 Repair the Arbiter of Perfection]],
+			[[S2C1 == Repair the Arbiter of Perfection]],
 		},
 		[9]={
 			[[Q1 A large Maulborn force used the sewers ___ nefarious plan.<130>]],
-			[[S1 I should speak with the Enigma of Sotha Sil to receive its blessing.]],
-			[[S1C0 == Receive Sotha Sil's Blessing]],
-			[[S1C1 == Receive Sotha Sil's Blessing]],
-			[[S1C2 Receive Sotha Sil's Blessing]],
+			[[S1 I need to find a way to repair the ___ of Sotha Sil.<147>]],
+			[[S1C1 == Pass Sotha Sil's Trial]],
+			[[S2 == NO TEXT]],
 		},
 		[10]={
+			[[Q1 A large Maulborn force used the sewers ___ nefarious plan.<130>]],
+			[[S1 I should speak with the Enigma of Sotha Sil to receive its blessing.]],
+			[[S1C0 == Receive Sotha Sil's Blessing]],
+			[[S1C1 Receive Sotha Sil's Blessing]],
+			[[S1C2 Receive Sotha Sil's Blessing]],
+		},
+		[11]={
 			[[Q1 A large Maulborn force used the sewers ___ nefarious plan.<130>]],
 			[[S1 I received Sotha Sil's blessing. Now I ___ to start his trial.<110>]],
 			[[S1C1 == Find Vivec's Cloister]],
 		},
-		[11]={
+		[12]={
 			[[Q1 A large Maulborn force used the sewers ___ nefarious plan.<130>]],
-			[[S1 In order to recieve Vivec's blessing, I ___ to ask for advice.<112>]],
+			[[S1 In order to receive Vivec's blessing, I ___ to ask for advice.<112>]],
 			[[S1C1 == Pass Vivec's Trial]],
 			[[S2 NO TEXT]],
-			[[S2C1 !! Talk to Almalexia]],
+			[[S2C1 == Talk to Almalexia]],
 			[[S2C2 ]],
 			[[S3 NO TEXT]],
 			[[S3C1 TRACKER GOAL TEXT]],
@@ -4532,9 +4576,9 @@ ZGV._QuestStepDataEP = {
 			[[S4 NO TEXT]],
 			[[S4C1 TRACKER GOAL TEXT]],
 		},
-		[12]={
+		[13]={
 			[[Q1 A large Maulborn force used the sewers ___ nefarious plan.<130>]],
-			[[S1 In order to recieve Vivec's blessing, I ___ to ask for advice.<112>]],
+			[[S1 In order to receive Vivec's blessing, I ___ to ask for advice.<112>]],
 			[[S1C1 == Pass Vivec's Trial]],
 			[[S2 I need to find the one in Vivec's trial ___ what happened.<145>]],
 			[[S2C1 Investigate the Scene]],
@@ -4545,26 +4589,26 @@ ZGV._QuestStepDataEP = {
 			[[S3C4 TRACKER GOAL TEXT]],
 			[[S4 NO TEXT]],
 			[[S4C1 TRACKER GOAL TEXT]],
-			[[S4C2 !! EMPTY]],
-		},
-		[13]={
-			[[Q1 A large Maulborn force used the sewers ___ nefarious plan.<130>]],
-			[[S1 In order to recieve Vivec's blessing, I ___ to ask for advice.<112>]],
-			[[S1C1 == Pass Vivec's Trial]],
-			[[S2 I need to find the one in Vivec's trial ___ what happened.<145>]],
-			[[S2C1 Investigate the Scene]],
-			[[S3 NO TEXT]],
-			[[S3C1 !! TRACKER GOAL TEXT]],
-			[[S3C2 !! TRACKER GOAL TEXT]],
-			[[S3C3 !! TRACKER GOAL TEXT]],
-			[[S3C4 !! TRACKER GOAL TEXT]],
-			[[S4 NO TEXT]],
-			[[S4C1 TRACKER GOAL TEXT]],
-			[[S4C2 TRACKER GOAL TEXT]],
+			[[S4C2 == EMPTY]],
 		},
 		[14]={
 			[[Q1 A large Maulborn force used the sewers ___ nefarious plan.<130>]],
-			[[S1 In order to recieve Vivec's blessing, I ___ to ask for advice.<112>]],
+			[[S1 In order to receive Vivec's blessing, I ___ to ask for advice.<112>]],
+			[[S1C1 == Pass Vivec's Trial]],
+			[[S2 I need to find the one in Vivec's trial ___ what happened.<145>]],
+			[[S2C1 == Investigate the Scene]],
+			[[S3 NO TEXT]],
+			[[S3C1 TRACKER GOAL TEXT]],
+			[[S3C2 TRACKER GOAL TEXT]],
+			[[S3C3 TRACKER GOAL TEXT]],
+			[[S3C4 TRACKER GOAL TEXT]],
+			[[S4 NO TEXT]],
+			[[S4C1 TRACKER GOAL TEXT]],
+			[[S4C2 == TRACKER GOAL TEXT]],
+		},
+		[15]={
+			[[Q1 A large Maulborn force used the sewers ___ nefarious plan.<130>]],
+			[[S1 In order to receive Vivec's blessing, I ___ to ask for advice.<112>]],
 			[[S1C1 == Pass Vivec's Trial]],
 			[[S2 I need to find the one in Vivec's trial ___ what happened.<145>]],
 			[[S2C1 Uncover the Traitor]],
@@ -4573,24 +4617,24 @@ ZGV._QuestStepDataEP = {
 			[[S4C1 TRACKER GOAL TEXT]],
 			[[S4C2 TRACKER GOAL TEXT]],
 		},
-		[15]={
+		[16]={
 			[[Q1 A large Maulborn force used the sewers ___ nefarious plan.<130>]],
 			[[S1 I should speak with the Enigma of Vivec to receive its blessing.]],
 			[[S1C0 == Receive Vivec's Blessing]],
-			[[S1C1 == Receive Vivec's Blessing]],
+			[[S1C1 Receive Vivec's Blessing]],
 			[[S1C2 Receive Vivec's Blessing]],
 		},
-		[16]={
+		[17]={
 			[[Q1 A large Maulborn force used the sewers ___ nefarious plan.<130>]],
 			[[S1 I received the three blessings of the ___ invasion force.<131>]],
 			[[S1C1 == Enter the High Chapel of the Three]],
 		},
-		[17]={
+		[18]={
 			[[Q1 A large Maulborn force used the sewers ___ nefarious plan.<130>]],
 			[[S1 I found a Maulborn high priest in the ___ pay for his crimes.<101>]],
 			[[S1C1 == Defeat Maulborn Priest Sathram]],
 		},
-		[18]={
+		[19]={
 			[[Q1 A large Maulborn force used the sewers ___ nefarious plan.<130>]],
 			[[S1 I defeated Vanus Sathram and saved the ___ what happened.<139>]],
 			[[S1C0 == Talk to Almalexia]],
@@ -4619,7 +4663,7 @@ ZGV._QuestStepDataEP = {
 		},
 		[5]={
 			[[Q1 I must find a way into the Castle of the___ sure I am prepared.<115>]],
-			[[S1 Abnur is here at my arrival point. I should talk with him.]],
+			[[S1 == Abnur is here at my arrival point. I should talk with him.]],
 			[[S1C1 == Talk to Abnur]],
 		},
 		[6]={
@@ -4628,18 +4672,18 @@ ZGV._QuestStepDataEP = {
 			[[S1C1 == Talk to Lyris]],
 		},
 		[7]={
-			[[Q1 I must find a way into the Castle of the___ sure I am prepared.<115>]],
-			[[S1 We need to find a way into the Castle of___omeone who can help.<96>]],
+			[[Q1 I must find a way into the Castle of ___ sure I am prepared.<115>]],
+			[[S1 == We need to find a way into the Castle ___ who can help.<96>]],
 			[[S1C1 == Find a Way into the Castle]],
-			[[S2 I can talk to slaves in the town to get ___r the castle safely.<86>]],
-			[[S2C1 !! Speak to Slaves to Get Information]],
+			[[S2 == I can talk to slaves in the town to get ___ the castle safely.<86>]],
+			[[S2C1 Talk to Slaves]],
 		},
 		[8]={
 			[[Q1 I must find a way into the Castle of the___ sure I am prepared.<115>]],
-			[[S1 We need to find a way into the Castle of___omeone who can help.<96>]],
+			[[S1 == We need to find a way into the Castle of___omeone who can help.<96>]],
 			[[S1C1 == Find a Way into the Castle]],
-			[[S2 One of the slaves mentioned that Sir Cad___. I should find him.<134>]],
-			[[S2C1 Find Cadwell]],
+			[[S2 == One of the slaves mentioned that Sir Cad___. I should find him.<134>]],
+			[[S2C1 == Find Cadwell]],
 		},
 		[9]={
 			[[Q1 I must find a way into the Castle of the___ sure I am prepared.<115>]],
@@ -4648,7 +4692,7 @@ ZGV._QuestStepDataEP = {
 		},
 		[10]={
 			[[Q1 I must find a way into the Castle of the___ sure I am prepared.<115>]],
-			[[S1 I must go to the castle cistern and meet Cadwell.]],
+			[[S1 == I must go to the castle cistern and meet Cadwell.]],
 			[[S1C1 == Go to the Cistern]],
 		},
 		[11]={
@@ -4657,9 +4701,10 @@ ZGV._QuestStepDataEP = {
 			[[S1C1 == Talk to Cadwell]],
 		},
 		[12]={
-			[[Q1 I must find a way into the Castle of the___ sure I am prepared.<115>]],
-			[[S1 == Cadwell will need to work on the ___ look after him.]],
+			[[Q1 I must find a way into the Castle of ___ sure I am prepared.<115>]],
+			[[S1 Cadwell needs to work on the steam ___ and look after him.<133>]],
 			[[S1C1 == Follow Cadwell]],
+			[[S1C2 ]],
 		},
 		[13]={
 			[[Q1 I must find a way into the Castle of the___ sure I am prepared.<115>]],
@@ -4770,11 +4815,11 @@ ZGV._QuestStepDataEP = {
 			[[S1C1 == Observe the Scene]],
 		},
 		[32]={
-			[[Q1 I must find a way into the Castle of the___ sure I am prepared.<115>]],
-			[[S1 The Prophet and I need to have words.]],
-			[[S1C0 == Talk to the Prophet]],
-			[[S1C1 == Talk to the Prophet]],
-			[[S1C2 Talk to the Prophet]],
+			[[Q1 I must find a way into the Castle of ___ sure I am prepared.<115>]],
+			[[S1 I learned that the Prophet is actually ___ need to have words.<85>]],
+			[[S1C0 == Talk to Varen Aquilarios]],
+			[[S1C1 Talk to Varen Aquilarios]],
+			[[S1C2 Talk to Varen Aquilarios]],
 		},
 		[33]={
 			[[Q1 I must find a way into the Castle of the___ sure I am prepared.<115>]],
@@ -5071,6 +5116,11 @@ ZGV._QuestStepDataEP = {
 			[[S1 Shad Astula is safe again, and it's ___ back to Mournhold.<180>]],
 			[[S1C1 == Talk to Students at the Dock]],
 		},
+		[18]={
+			[[Q1 Arch-Mage Valeyn thinks his visions are ___ blocked his magic.<156>]],
+			[[S1 Shad Astula is safe again, and it's ___ back to Mournhold.<180>]],
+			[[S1C0 == Talk to Lena Dalvel]],
+		},
 	},
 	[0103037] = {
 		[1]={
@@ -5199,6 +5249,11 @@ ZGV._QuestStepDataEP = {
 			[[Q1 I found a battered journal while ___ one of the snakes.<158>]],
 			[[S1 I found Risa's amulet and returned it to her mother.]],
 			[[S1C0 == Give Amulet to Aneyda Uvaril]],
+		},
+		[4]={
+			[[Q1 I found a battered journal while ___ one of the snakes.<158>]],
+			[[S1 I found Risa's amulet and returned it to her mother.]],
+			[[S1C0 == Talk to Aneyda Uvaril]],
 		},
 	},
 	[0103040] = {
@@ -5348,6 +5403,11 @@ ZGV._QuestStepDataEP = {
 			[[S1 == Selfora is safe now. I should return to ___ about her father.<82>]],
 			[[S1C1 == Talk to Elynisi Arthalen]],
 		},
+		[13]={
+			[[Q1 The Forlorn One asked me to use the ___ by the fires.<101>]],
+			[[S1 Selfora is safe now. I should return to ___ about her father.<82>]],
+			[[S1C0 == Talk to Elynisi Arthalen]],
+		},
 	},
 	[0103043] = {
 		[1]={
@@ -5433,7 +5493,7 @@ ZGV._QuestStepDataEP = {
 			[[S1C1 == Recover Sacred Stones]],
 			[[S1C2 Recover the Hist Branch]],
 			[[S2 NO TEXT]],
-			[[S2C1 !! Kill Marra'Var]],
+			[[S2C1 == Kill Marra'Var]],
 		},
 		[3]={
 			[[Q1 I encountered Vara-Zeen, the leader of ___ my assistance.<160>]],
@@ -5441,7 +5501,6 @@ ZGV._QuestStepDataEP = {
 			[[S1C1 == Recover Sacred Stones]],
 			[[S1C2 Recover the Hist Branch]],
 			[[S2 NO TEXT]],
-			[[S2C1 !! EMPTY]],
 		},
 		[4]={
 			[[Q1 I encountered Vara-Zeen, the leader of ___ my assistance.<160>]],
@@ -5702,6 +5761,11 @@ ZGV._QuestStepDataEP = {
 			[[S1C1 == Talk to Ordinator Gorili]],
 			[[S1C2 Talk to Ordinator Eron]],
 		},
+		[3]={
+			[[Q1 The Ordinators are outnumbered. They ___ things up a bit.<98>]],
+			[[S1 I killed a number of Vox's troops. When ___ I accomplished.<184>]],
+			[[S1C0 == Talk to Ordinator Eron]],
+		},
 	},
 	[0103054] = {
 		[1]={
@@ -5751,6 +5815,11 @@ ZGV._QuestStepDataEP = {
 			[[Q1 Blessed by Veloth, I've come to ___ once and for all.<121>]],
 			[[S1 The path opened and a projection of ___ into the cave.<130>]],
 			[[S1C0 == Talk to Aspera the Forgotten]],
+		},
+		[8]={
+			[[Q1 Blessed by Veloth, I've come to ___ once and for all.<121>]],
+			[[S1 The barrier to Vox's cave has been ___ see what awaits.<78>]],
+			[[S1C1 == Enter the Hollow Cave]],
 		},
 	},
 	[0103055] = {
@@ -11270,7 +11339,7 @@ I can kill her, try to bring her back to face justice, or let her go.]],
 		},
 		[2]={
 			[[Q1 The Council of Province Generals has ___ Jofnir Iceblade.<120>]],
-			[[S1 == Merric wants Aelif and I to lead the ___ to her nearby.<114>]],
+			[[S1 == Merric wants Aelif ___ to her nearby.]],
 			[[S1C1 == Talk to Aelif]],
 		},
 		[3]={
@@ -12680,6 +12749,81 @@ I can kill her, try to bring her back to face justice, or let her go.]],
 			[[S1 I should talk to Valaste at the Mages Guild.]],
 			[[S1C1 == Talk to Valaste]],
 		},
+		[2]={
+			[[Q1 Sheogorath's book is supposed to lead ___ for me this time.<152>]],
+			[[S1 I should examine the book on the table nearby.]],
+			[[S1C1 == Read "Circus of Cheerful Slaughter"]],
+		},
+		[3]={
+			[[Q1 Sheogorath's book is supposed to lead ___ for me this time.<152>]],
+			[[S1 == The book has transported me to one of ___ the next trial.<122>]],
+			[[S1C1 == Talk to Sheogorath]],
+		},
+		[4]={
+			[[Q1 Sheogorath's book is supposed to lead ___ for me this time.<152>]],
+			[[S1 I need to follow the path to a town held by the Ebonheart Pact.]],
+			[[S1C1 == Find Sheogorath in Heartholdhelm]],
+		},
+		[5]={
+			[[Q1 Sheogorath's book is supposed to lead ___ for me this time.<152>]],
+			[[S1 Sheogorath has created these actors ___ Mad God's whims.<136>]],
+			[[S1C1 == Kill Ebonheart Pact Actors]],
+		},
+		[6]={
+			[[Q1 Sheogorath's book is supposed to lead ___ for me this time.<152>]],
+			[[S1 Sheogorath has summoned actors that ___ this insane trial.<136>]],
+			[[S1C1 == Kill Pact Lead Roles]],
+		},
+		[7]={
+			[[Q1 Sheogorath's book is supposed to lead ___ for me this time.<152>]],
+			[[S1 Sheogorath has moved on. I'll need to ___ Aldmeri Dominion.<101>]],
+			[[S1C1 == Find Sheogorath in Skyroot Hearth]],
+		},
+		[8]={
+			[[Q1 Sheogorath's book is supposed to lead ___ for me this time.<152>]],
+			[[S1 Sheogorath has written a speech for ___ she has to say.<114>]],
+			[[S1C1 == Watch Queen Ayrenn's Speech]],
+		},
+		[9]={
+			[[Q1 Sheogorath's book is supposed to lead ___ for me this time.<152>]],
+			[[S1 Once again, Sheogorath has pitted me ___ continue my trial.<136>]],
+			[[S1C1 == Kill Aldmeri Dominion Actors]],
+		},
+		[10]={
+			[[Q1 Sheogorath's book is supposed to lead ___ for me this time.<152>]],
+			[[S1 The "Queen Ayrenn" actress is the only ___ her to move on.<92>]],
+			[[S1C1 == Kill Queen Ayrenn]],
+		},
+		[11]={
+			[[Q1 Sheogorath's book is supposed to lead ___ for me this time.<152>]],
+			[[S1 Sheogorath has moved on to the final ___ meet him there.<119>]],
+			[[S1C1 == Find Sheogorath in Daggerwaymore]],
+		},
+		[12]={
+			[[Q1 Sheogorath's book is supposed to lead ___ for me this time.<152>]],
+			[[S1 The actors representing important ___ for me to move on.<93>]],
+			[[S1C1 == Save the Guild Members]],
+		},
+		[13]={
+			[[Q1 Sheogorath's book is supposed to lead ___ for me this time.<152>]],
+			[[S1 The only opponent still standing in my ___ complete my trial.<174>]],
+			[[S1C1 == Kill High King Emeric]],
+		},
+		[14]={
+			[[Q1 Sheogorath's book is supposed to lead ___ for me this time.<152>]],
+			[[S1 == I think I've managed to complete ___ to get my reward.<99>]],
+			[[S1C1 == Talk to Sheogorath]],
+		},
+		[15]={
+			[[Q1 Sheogorath's book is supposed to lead ___ for me this time.<152>]],
+			[[S1 After stepping through this tiresome ___ get out of here.<145>]],
+			[[S1C1 == Collect the Book]],
+		},
+		[16]={
+			[[Q1 Sheogorath's book is supposed to lead ___ for me this time.<152>]],
+			[[S1 I should give Sheogorath's book to Valaste.]],
+			[[S1C0 == Return to Valaste]],
+		},
 	},
 	[0193034] = {
 		[1]={
@@ -13168,6 +13312,11 @@ I can kill her, try to bring her back to face justice, or let her go.]],
 			[[Q1 Vicecanon Heita-Meen wants me to look ___ Vicecanon Hrondar.<82>]],
 			[[S1 Now that I've released all the ___ outside the ruins.<92>]],
 			[[S1C1 == Find Vicecanon Hrondar]],
+		},
+		[8]={
+			[[Q1 Vicecanon Heita-Meen wants me to look ___ Vicecanon Hrondar.<82>]],
+			[[S1 Now that I've released all the ___ outside the ruins.<92>]],
+			[[S1C0 == Talk to Vicecanon Hrondar]],
 		},
 	},
 	[0193545] = {
@@ -13820,7 +13969,7 @@ I can kill her, try to bring her back to face justice, or let her go.]],
 			[[S1 == I should attune myself to the anima ___ projection.<140>]],
 			[[S1C1 == Use the Anima Crystal and Witness Vox's Memory]],
 			[[S2 NO TEXT]],
-			[[S2C1 !! Use the Anima Crystal and Witness Vox's Memory]],
+			[[S2C1 = Use the Anima Crystal and Witness Vox's Memory]],
 			[[S2C2 ]],
 		},
 		[3]={
@@ -13828,48 +13977,56 @@ I can kill her, try to bring her back to face justice, or let her go.]],
 			[[S1 == I should attune myself to the anima ___ projection.<140>]],
 			[[S1C1 == Use the Anima Crystal and Witness Vox's Memory]],
 			[[S2 NO TEXT]],
-			[[S2C1 !! TRACKER GOAL TEXT]],
+			[[S2C1 == Talk to Aspera]],
+			[[S2C2 ]],
+		},
+		[4]={
+			[[Q1 With Vox's wards shattered, the path to ___ strange projection.<184>]],
+			[[S1 == I should attune myself to the anima ___ projection.<140>]],
+			[[S1C1 == Use the Anima Crystal and Witness Vox's Memory]],
+			[[S2 NO TEXT]],
+			[[S2C1 == TRACKER GOAL TEXT]],
 			[[S2C2 ]],
 			[[S2C3 ]],
 			[[S2C4 ]],
 		},
-		[4]={
+		[5]={
 			[[Q1 With Vox's wards shattered, the path to ___ strange projection.<184>]],
 			[[S1 I need to find the eastern anima ___ Vox's next memory.<73>]],
 			[[S1C1 == Find the Eastern Anima Archive]],
-		},
-		[5]={
-			[[Q1 With Vox's wards shattered, the path to ___ strange projection.<184>]],
-			[[S1 == I should attune myself to the anima ___ projection.<136>]],
-			[[S1C1 == Use the Anima Crystal and Witness Vox's Memory]],
-			[[S2 NO TEXT]],
-			[[S2C1 !! Use the Anima Crystal and Witness Vox's Memory]],
-			[[S2C2 ]],
 		},
 		[6]={
 			[[Q1 With Vox's wards shattered, the path to ___ strange projection.<184>]],
 			[[S1 == I should attune myself to the anima ___ projection.<136>]],
 			[[S1C1 == Use the Anima Crystal and Witness Vox's Memory]],
 			[[S2 NO TEXT]],
-			[[S2C1 TRACKER GOAL TEXT]],
+			[[S2C1 == Use the Anima Crystal and Witness Vox's Memory]],
+			[[S2C2 ]],
+		},
+		[7]={
+			[[Q1 With Vox's wards shattered, the path to ___ strange projection.<184>]],
+			[[S1 == I should attune myself to the anima ___ projection.<136>]],
+			[[S1C1 == Use the Anima Crystal and Witness Vox's Memory]],
+			[[S2 NO TEXT]],
+			[[S2C1 == Talk to Aspera]],
+			[[S2C2 ]],
+		},
+		[8]={
+			[[Q1 With Vox's wards shattered, the path to ___ strange projection.<184>]],
+			[[S1 == I should attune myself to the anima ___ projection.<136>]],
+			[[S1C1 == Use the Anima Crystal and Witness Vox's Memory]],
+			[[S2 NO TEXT]],
+			[[S2C1 == TRACKER GOAL TEXT]],
 			[[S2C2 ]],
 			[[S2C3 ]],
 			[[S2C4 ]],
 		},
-		[7]={
+		[9]={
 			[[Q1 With Vox's wards shattered, the path to ___ strange projection.<184>]],
 			[[S1 I need to find the central anima ___ Vox's final memory.<74>]],
 			[[S1C1 == Find the Central Anima Archive]],
 		},
-		[8]={
-			[[Q1 With Vox's wards shattered, the path to ___ strange projection.<184>]],
-			[[S1 == I should attune myself to the anima ___ projection.<137>]],
-			[[S1C1 == Use the Anima Crystal and Witness Vox's Memory]],
-			[[S2 NO TEXT]],
-			[[S2C1 !! Use the Anima Crystal and Witness Vox's Memory]],
-			[[S2C2 ]],
-		},
-		[9]={
+		[10]={
 			[[Q1 With Vox's wards shattered, the path to ___ strange projection.<184>]],
 			[[S1 == I should attune myself to the anima ___ projection.<137>]],
 			[[S1C1 == Use the Anima Crystal and Witness Vox's Memory]],
@@ -13879,7 +14036,7 @@ I can kill her, try to bring her back to face justice, or let her go.]],
 			[[S2C3 ]],
 			[[S2C4 ]],
 		},
-		[10]={
+		[11]={
 			[[Q1 With Vox's wards shattered, the path to ___ strange projection.<184>]],
 			[[S1 I experienced memories of Vox's past ___ Aspera about this.<109>]],
 			[[S1C0 == Talk to Aspera the Forgotten]],
@@ -13959,6 +14116,11 @@ I can kill her, try to bring her back to face justice, or let her go.]],
 			[[S1 Vox is dead. Almalexia recovered the hammer. I should speak to her.]],
 			[[S1C1 == Talk to Almalexia]],
 		},
+		[12]={
+			[[Q1 The time to confront Vox has ___ from the dead?<174>]],
+			[[S1 Vox is dead. Almalexia recovered the hammer. I should speak to her.]],
+			[[S1C0 == Talk to Almalexia]],
+		},
 	},
 	[0863001] = {
 		[1]={
@@ -14011,6 +14173,11 @@ I can kill her, try to bring her back to face justice, or let her go.]],
 			[[Q1 A Dwarven device fills a chamber deep wi___set around the room.<152>]],
 			[[S1 I recovered a broken Dwarven relic from ___ll want to see this.<93>]],
 			[[S1C1 == Talk to Kireth Vanos]],
+		},
+		[7]={
+			[[Q1 A Dwarven device fills a chamber deep ___ around the room.<152>]],
+			[[S1 I recovered a broken Dwarven relic from ___ want to see this.<93>]],
+			[[S1C0 == Talk to Kireth Vanos]],
 		},
 	},
 	[0923001] = {

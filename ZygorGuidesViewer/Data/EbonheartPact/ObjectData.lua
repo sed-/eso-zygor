@@ -478,6 +478,23 @@ Kwama Mining for Fun and Profit=0103221
 Deepcrag Den=0103222
 A Pocket Guide to Mournhold=0103223
 Quarantine Serk Wayshrine=0103224
+The Living Gods=0103225
+The Year 2920, Vol. 2=0103226
+Netches! Netches! All Around!=0103227
+Dark Ruins=0103228
+Muth Gnaar Hills Wayshrine=0103229
+Trial Torch=0103230
+Odd-Shaped Egg=0103231
+Legend of the Ghost Snake=0103232
+Lady Llarel's Shelter=0103233
+Forgotten Crypts=0103234
+Taleon's Crag=0103235
+Betharvel House=0103236
+Selfora Wayshrine=0103237
+Dungeon: Darkshade Caverns=0103238
+Chanaius's Hut=0103239
+The Crafty Monkey=0103240
+Memo to Captain Doronil=0103241
 
 Cold Moon Inn=0153001
 Leimaer the Raven's Journal=0153002
@@ -986,6 +1003,8 @@ Rituals of Contempt=0193179
 The Lamia Threat=0193180
 The Knighting Ceremony=0193181
 The Green Singing=0193182
+A Final Appeal=0193183
+Knahaten Flu Confirmed=0193184
 
 Transitus Shrine=0373001
 North Morrowind Wayshrine=0373002
@@ -1093,6 +1112,8 @@ Shielding Stone=0573003
 Proper Torture Techniques, Volume 8=0573004
 Chamber of Agony=0573005
 Sai Sahan=0573006
+
+The Folly of Isolation, Part the Last=0583001
 
 Chateau Guesthouse=0593001
 Portal to Chateau Gardens=0593002

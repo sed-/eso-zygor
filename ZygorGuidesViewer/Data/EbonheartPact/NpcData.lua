@@ -7,10 +7,10 @@ Uncle Leo=-21474836483050
 Sen Dres=-21474836483008
 Taril Randoro=-21474836483003
 Doril Randoro=-21474836483002
-Vanguard Cryomancer=-21474836483001
-Geril Randoro=-21474836483001
-The Spider's Essence=-21474836483001
 The Scorpion's Essence=-21474836483001
+The Spider's Essence=-21474836483001
+Geril Randoro=-21474836483001
+Vanguard Cryomancer=-21474836483001
 
 Balzag gro-Gruumsh=0023502
 Balrook gro-Mak=0023503
@@ -547,6 +547,11 @@ Sheathed-in-Silk=0093529
 Aanthis Fadas=0093530
 Dread Clannfear=0093531
 Indel Swollen-Foot=0093532
+Silent-Cry=0093533
+Dasila Selobar=0093534
+Ashenfur=0093535
+Helgana Hroason=0093536
+Sadal's Warrior=0093537
 
 Wasp=0103001
 Dandrii Dran=0103002
@@ -1134,6 +1139,12 @@ Edrasa Drelas=0103587
 Merona=0103588
 Nelvana=0103589
 Martos=0103590
+Luranor Areloth=0103591
+Dres Warrior=0103592
+Overseer Melur=0103593
+Salina Salen=0103594
+Anther=0103595
+Nurona Henim=0103596
 
 Ganord Dull-Axe=0153001
 Windhelm Guard=0153002
@@ -1460,8 +1471,8 @@ Rorthor=0153322
 Baxrold=0153323
 Lobamob gra-Bar=0153324
 Aleeto=0153325
-Frena Firecloak=0153326
 Khizuna=0153326
+Frena Firecloak=0153326
 Gudaric the Silent=0153327
 Sergeant Yringor=0153328
 Juda=0153329
@@ -2422,6 +2433,9 @@ Melil Beleth=0193516
 Villa=0193517
 Owai-La=0193518
 Shadowscale Deadeye=0193519
+Iflin=0193520
+Skin-Stealer Pyromage=0193521
+Nerys=0193522
 
 Seducer Trilvath=0243001
 Honest-Feet=0243002
@@ -2555,6 +2569,7 @@ Madman=0593003
 
 Skin-Stealer Cutthroat=0673001
 Skin-Stealer Mender=0673002
+Captain Velya=0673003
 
 Lyranth=0683001
 Bijot=0683002
@@ -2839,6 +2854,10 @@ Stonefire Slayer=1183002
 Stonefire Infernal=1183003
 Maebomaz=1183004
 
+Sela=1193001
+Skeletal Ranger=1193002
+Forgotten Sheriff=1193003
+
 The Groundskeeper=1543001
 Mages Guild=1543002
 King Laloriaran Dynar=1543003
@@ -3108,7 +3127,12 @@ Matriarch Kasmira=1983005
 Lessa Frostfang=1993001
 Ysgramor=1993002
 
+Dark Elf=2003001
+Lady Llarel=2003002
+
 Bthanual Centurion=2013001
+
+Egg-Eater=2033001
 
 Guild Mage=2043001
 Drulshasa=2043002

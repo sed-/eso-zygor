@@ -102,11 +102,11 @@ function Utils:IsPlayerInCombat()
 	return ZGV.db.profile.fakecombat or IsUnitInCombat("player")
 end
 
-function Utils.ShowFloatingMessage(msg,event,font,sound,public)
-	if ZGV.DEV or public then
+function Utils.ShowFloatingMessage(msg,event,font,sound,publicfloat,publictext)
+	if ZGV.DEV or publicfloat then
 		ZO_CenterScreenAnnounce_GetAnnounceObject():AddMessage(event or EVENT_OBJECTIVE_COMPLETED,font or CSA_EVENT_SMALL_TEXT,sound or SOUNDS.QUEST_OBJECTIVE_STARTED,"|cffaa00[|cf8fbffZ|cffaa00]|r "..msg)
-		print(msg)
 	end
+	if ZGV.DEV or publictext then	print(msg) end
 end
 
 function Utils.escape(s)

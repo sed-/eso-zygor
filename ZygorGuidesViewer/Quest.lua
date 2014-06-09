@@ -478,6 +478,7 @@ function Quest:New(journalIndex)
 		name=name,
 		id=Data:GetQuestIdByName(name),
 		steps={},
+		currentstageflags = {}
 	}
 	setmetatable(quest,Quest_mt)
 
@@ -528,7 +529,7 @@ function Quest:FillFromJournal(journalIndex)
 
 
 
-	local oldStage = self.currentstage
+	local oldStage = self.currentstagenum
 	local currentStage = self:GetCurrentStageNum("force")
 	if currentStage then
 		--ZO_CenterScreenAnnounce_GetAnnounceObject():AddMessage(EVENT_OBJECTIVE_COMPLETED,CSA_EVENT_SMALL_TEXT,SOUNDS.QUEST_OBJECTIVE_STARTED,"Quest |cffff00"..self.name.."|r is at stage "..currentStage)
@@ -539,7 +540,7 @@ function Quest:FillFromJournal(journalIndex)
 			elseif currentStage<oldStage then ShowFloatingMessage(("Quest |cffff00%s|r |cff0000REVERTS|r from stage |caaff00%s|r to |c66ff00%s|r"):format(self.name,oldStage,currentStage),nil,nil,SOUNDS.QUEST_ABANDONED)
 			end
 		end
-		self.currentstage = currentStage
+		self.currentstagenum = currentStage
 
 		-- record recent proper stage, in case we need context for bug reporting
 		self.recentStages = self.recentStages or {}
@@ -559,13 +560,6 @@ function Quest:FillFromJournal(journalIndex)
 				-- FAAAIL
 				ShowFloatingMessage(("Quest |cffff00%s|r |cff0000FAILED TO MAKE A NEW STAGE |cff5500%d|r"):format(self.name,#self:GetAllStages()+1),nil,nil,SOUNDS.QUEST_ABANDONED)
 			end
-		else
-			--ZGV.Utils.ShowFloatingMessage("Zygor error detected!", nil,nil,nil,"public")
-			ZGV.Utils.ShowFloatingMessage("Bad stage in quest: |cffee88"..self.name.."|r. Use the Bug Report button to report this.", nil,nil,nil)
-			--ZGV.Utils.ShowFloatingMessage("The addon will fail to detect its progress.", nil,nil,nil,"public")
-			--ZGV.Utils.ShowFloatingMessage("Please file a Bug Report to Zygor about this.", nil,nil,nil,"public")
-			
-			ZGV.BugReport:AddToReport(self:GetReport())
 		end
 	end
 
@@ -603,8 +597,21 @@ function Quest:CloneStageDataForEditing()
 	Quests:CloneQuestStageDataForEditing(self.id)
 end
 
+function Quest:GetLastStageNum()
+	local maxnum=0
+	for si,stage in ipairs(self:GetAllStages()) do
+		local num = stage[1]:match("STAGE ([%d.])+")
+		num=tonumber(num) or si
+		if num and num>maxnum then maxnum=num end
+	end
+	return maxnum
+end
+
 function Quest:GetStageSnapshot(strict)
 	local snap = {}
+	
+	--tinsert(snap,("STAGE %d"):format(zo_floor(self:GetLastStageNum())+1))
+
 	tinsert(snap,("Q1 %s"):format(MakeExcerpt(self.bgtext)))
 	local ji = self:GetJournalIndex()
 	local trackered
@@ -656,13 +663,21 @@ end
 -- /dump ZGV.Quests:IsStageMatch(3,1100011,ZGV.Quests[1100011].bgtext,ZGV.Quests[1100011]:GetText())
 function Quest:IsStageMatch(stage,verbose)
 	if not stage then return false,"no stage" end
+
+	local stageindex
+
 	if type(stage)=="string" then
-		stage={zo_strsplit("\n",stage)}
+		stagedata={zo_strsplit("\n",stage)}
+		stageindex=0
 	elseif type(stage)=="number" then
 		local data = self:GetAllStages()
-		stage = data[stage]
+		stagedata = data[stage]
+		stageindex = stage
+	else
+		stagedata = stage
+		stageindex = 0
 	end
-	if type(stage)~="table" then return false,"stage data invalid" end
+	if type(stagedata)~="table" then return false,"stage data invalid" end
 
 	local matches
 	if verbose then matches={} end
@@ -673,13 +688,15 @@ function Quest:IsStageMatch(stage,verbose)
 
 	local stepnum,condnum=1,1
 
-	for i,line in ipairs(stage) do repeat
-		if verbose then matches[i]={[1]=nil,[2]=line} end
+	for i,line in ipairs(stagedata) do repeat
+		if verbose then matches[i]={_1_ismatch=false,_2_line=line} end
 
 		local q,qnum,s,snum,c,cnum,forced,text = line:match("^(Q?)(%d?)(S?)(%d*)(C?)(%d*)%s*([!=]*)%s*(.*)$")
 
+		if not text then break end
+
 		-- hello, optimization. What's not forced is ignored!
-		if forced=="" then  if verbose then matches[i][3]="ignored" end  break end
+		if forced=="" then  if verbose then matches[i]._3_ignored="ignored" end  break end
 
 		stepnum = tonumber(snum) or stepnum
 		condnum = tonumber(cnum) or condnum
@@ -692,19 +709,20 @@ function Quest:IsStageMatch(stage,verbose)
 		elseif s=="S" then
 			typ="S"
 		end
-			
 
 		if typ=="Q" then
 			compares=compares+1
 			local match = MatchExcerpt(text,self.bgtext)
+			if forced=="!=" then match=not match end
 			if not match and not verbose then return false,"Q1 mismatch" end ----- fast return
 			if match then successes=successes+1 else fails=fails+1 end
-			if verbose then matches[i]={match,line,text,self.bgtext} end
+			if verbose then matches[i]={_1_ismatch=match,_2_line=line,_3_cond=text,_4_qtext=self.bgtext} end
 		
 		elseif typ=="S" then
 		
 			compares=compares+1
-			local match,reason
+			local match=false
+			local reason
 			local steptxt = self.steps[stepnum] and self.steps[stepnum].text
 			if text=="!EMPTY!" or text=="EMPTY" then
 				match = not steptxt
@@ -714,16 +732,21 @@ function Quest:IsStageMatch(stage,verbose)
 				match = MatchExcerpt(text,steptxt)
 				if verbose then reason="matchex?" end
 			end
+			if forced=="!=" then match=not match end
 			if not match and not verbose then return false,"S"..snum.." mismatch" end ----- fast return
 			if match then successes=successes+1 else fails=fails+1 end
-			if verbose then matches[i]={match,line,text,"step "..stepnum,tostring(steptxt),reason} end
+			if verbose then matches[i]={_1_ismatch=match,_2_line=line,_3_cond=text,["_4_tested_step_"..stepnum]=tostring(steptxt),_5_reason=reason} end
 		
 		elseif typ=="C" and condnum==0 then  --tracker text match
 		
 			compares=compares+1
-			local match,reason
-			local trackertxt = self.steps[stepnum] and self.steps[stepnum].trackerText
-			if text=="!EMPTY!" or text=="EMPTY" then
+			local match=false
+			local reason
+			local step = self.steps[stepnum]
+			local trackertxt = step and step.trackerText
+			if not step then
+				reason="no step "..tostring(stepnum)
+			elseif text=="!EMPTY!" or text=="EMPTY" then
 				match = not trackertxt
 				if verbose then reason="empty?" end
 			else
@@ -731,17 +754,24 @@ function Quest:IsStageMatch(stage,verbose)
 				match = MatchExcerpt(text,trackertxt)
 				if verbose then reason="matchex?" end
 			end
+			if forced=="!=" then match=not match end
 			if not match and not verbose then return false,"C0 mismatch" end ----- fast return
 			if match then successes=successes+1 else fails=fails+1 end
-			if verbose then matches[i]={match,line,text,"steptracker "..stepnum,tostring(steptxt),reason} end
+			if verbose then matches[i]={_1_ismatch=match,_2_line=line,_3_cond=text,["_4_tested_steptracker_"..stepnum]=tostring(trackertxt),_5_reason=reason} end
 		
 		elseif typ=="C" then
 		
 			compares=compares+1
-			local cond = self.steps[stepnum] and self.steps[stepnum].conditions and self.steps[stepnum].conditions[condnum]
+			local step = self.steps[stepnum]
+			local cond = step and step.conditions and step.conditions[condnum]
 			local condtxt = cond and cond.text
-			local match
-			if text=="!EMPTY!" or text=="EMPTY" then
+			local match=false
+			local reason
+			if not step then
+				reason="no step S"..tostring(stepnum)
+			elseif not cond then
+				reason="no cond S"..tostring(stepnum).."C"..tostring(condnum)
+			elseif text=="!EMPTY!" or text=="EMPTY" then
 				match = not condtxt
 				if verbose then reason="empty?" end
 			elseif text=="!COMPLETE!" or text=="COMPLETE" then
@@ -783,20 +813,18 @@ function Quest:IsStageMatch(stage,verbose)
 				match = MatchExcerpt(text,condtxt)
 				if verbose then reason="matchex? "..tostring(condtxt) end
 			end
+			if forced=="!=" then match=not match end
 			if not verbose and not match then return false,"C"..condnum.." mismatch" end ----- fast return
 			if match then successes=successes+1 else fails=fails+1 end
-			if verbose then matches[i]={match,line,text,"step "..tostring(stepnum).." cond "..tostring(condnum),tostring(condtxt),reason} end
+			if verbose then matches[i]={_1_ismatch=match,_2_line=line,_3_cond=text,["_4_tested_S"..tostring(stepnum).."C"..tostring(condnum)]=tostring(condtxt),_5_reason=reason} end
 		
-		elseif not typ and i==1 then
+		else
 		
-			compares=compares+1
-			local match = MatchExcerpt(line,self:GetText())
-			if not match and not verbose then return false,"[1] mismatch" end ----- fast return
-			if match then successes=successes+1 else fails=fails+1 end
-			if verbose then matches[i]={match,line,line,self:GetText()} end
-
+			if verbose then matches[i]={_1_ismatch=false,_2_line=line,_3_wtf="bad syntax"} end
+			
 		end
 	until true end
+
 	return (compares>0 and successes==compares),verbose and "verbose" or "fallthrough",successes,compares,matches
 end
 
@@ -810,24 +838,29 @@ function Quest:TestAllStageMatches()
 end
 
 function Quest:FindStage()
-	local data = self:GetAllStages()  if not data then 		ZGV:Debug("&quest FindStageBQT qid=|cffddff%d|r |cff0000NO DATA|r",self.id) return false,"no data" end
+	local data = self:GetAllStages()  if not data then 		ZGV:Debug("&quest FindStage qid=|cffddff%d|r |cff0000NO DATA|r",self.id) return false,"no data" end
 	for stagenum,stage in ipairs(data) do  if type(stage)=="table" then
-		if self:IsStageMatch(stage) then return stagenum end
+		if self:IsStageMatch(stagenum) then
+			return stagenum,stage
+		end
 	end  end
 	return false
 end
 
+--[[
 function Quest:FindAllStages()  -- should return just one! Otherwise we're ambiguous.
 	local data = self:GetAllStages(self.id)  if not data then 		ZGV:Debug("&quest FindAllStages qid=|cffddff%d|r |cff0000NO DATA|r",self.id) return false,"no data" end
 	local ret={num=0}
 	for stagenum,stage in ipairs(data) do  if type(stage)=="table" then
-		if self:IsStageMatch(stage) then ret.num=ret.num+1  ret[stagenum]=stage  end
+		local num = self:IsStageMatch(stage)
+		if num then ret.num=ret.num+1  ret[num]=stage  end
 	end  end
 	return ret
 end
+--]]
 
 function Quest:GetReport()
-	self.recentStages = self.recentStages or {}
+	self.recentStages = self.recentStages or {"unknown"}
 
 	local s = "--- QUEST STAGE REPORT ---\n"
 	s = s .. ("QUEST: %s ##%d\n"):format(self.name,self.id)
@@ -837,12 +870,15 @@ function Quest:GetReport()
 		s = s .. "CURRENT STAGE:\n"
 	else
 		s = s .. ([[RECENT STAGES: %s
-POSSIBLE STAGE:
+CURRENT QUEST STATE:
 ]]):format(table.concat(self.recentStages,","))
 	end
-	s = s .. ("		[%d] = {\n"):format((self.recentStages[#self.recentStages] or -1)+1)
+	local lastrecent = self.recentStages[#self.recentStages]
+	s = s .. ("		[%d] = {\n"):format(tonumber(lastrecent) and lastrecent+1 or 0)
 	for i,r in ipairs(self:GetStageSnapshot()) do
-		s = s .. ("			[[%s]],\n"):format(r)
+		s = s .. ("			[[%s]],"):format(r)
+		--if r:match("STAGE %d") then s = s .. " --MAYBE" end
+		s = s .. "\n";
 	end
 	s = s .. "		},"
 	return s
@@ -1032,6 +1068,17 @@ end
 	end
 --]]
 
+function Quest:ParseStageFlags(data,tab)
+	tab = tab or {}
+	if stagedata then
+		for k,line in ipairs(stagedata) do
+			local n = line:match("STAGE ([%d.-]+)")  n=tonumber(n)  if n then tab.stagenum=n end
+			local f = line:match("FLAG ([^%s]+)")  if f then tab[f]=true end
+		end
+	end
+	return tab
+end
+
 function Quest:GetFreshCurrentStageNum()
 	return self:GetCurrentStageNum("force")
 end
@@ -1044,17 +1091,26 @@ function Quest:GetCurrentStageNum(force)
 		return self.currentstagenum
 	end
 
-	self.currentstagenum = self:FindStage()  -- this now covers both old and new style matching
+	local stagedata
+	
+	local num,stagedata = self:FindStage()  -- this now covers both old and new style matching
+
+	local flags = self:ParseStageFlags(stagedata)
+	self.currentstageflags = flags
+	self.currentstagenum = flags.stagenum or num
+	
 	return self.currentstagenum
 
 	-- resort to just the text, if that failed.
 	--return Quests:FindStagesByText(self.id,self:GetText(),"justfirst")
 end
 
+--[[
 function Quest:GetCurrentStage()
 	local stagenum = self:GetCurrentStageNum()
 	if stagenum then return self:GetAllStages()[stagenum] end
 end
+--]]
 
 function Quest:GetText()
 	return self.steps and self.steps[1] and self.steps[1].text or "NO TEXT??"
@@ -1125,7 +1181,7 @@ function QuestStep:FillFromJournal(journalIndex, stepIndex)  -- MAKE SURE WE'RE 
 	self.visibility = stepVisibilityTypes[visibility] or visibility
 	self.trackerText = trackerOverrideText
 	self.num = stepIndex
-
+	
 	self:FillConditionsFromJournal(journalIndex,self.num)
 
 	return self

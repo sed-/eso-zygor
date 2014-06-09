@@ -4,11 +4,11 @@ if not ZGV then return end
 ZGV._ObjectDataAD = [[
 
 Shrine to Stendarr=-21474836481001
-Dark Source=-21474836481001
 Vuldngrav Great Hall=-21474836481001
-Ruined Door=-21474836481001
-Fort Grimwatch=-21474836481001
 Corrupted Guardian Senche=-21474836481001
+Fort Grimwatch=-21474836481001
+Dark Source=-21474836481001
+Ruined Door=-21474836481001
 
 The Reality of Spirits=0021147
 The Hotspur=0021148
@@ -386,6 +386,7 @@ Modern Heretics=0181136
 Muddy Prints=0181137
 Hanging Vine=0181138
 Bloodstained Leaves=0181139
+Varieties of Daedra, Part 1=0181140
 
 Arx Corinium Dungeons=0301001
 
@@ -1427,6 +1428,13 @@ Enthoras' Journal=1801188
 Earthenware Pot=1801189
 Vinedeath Cave=1801190
 Arcana Restored=1801191
+Sack of Moon Sugar=1801192
+Bone Orchard Research Log 2=1801193
+Varieties of Faith: The Khajiit=1801194
+Portal to Cormount=1801195
+Fang of Chaos=1801196
+Ancient Scrolls of the Dwemer V=1801197
+What Comes Next=1801198
 
 Glister Vale=1831001
 Royal Decree=1831002
@@ -1548,6 +1556,7 @@ Battering Ram=2291012
 Siege Weapon=2291013
 Sunken Hold=2291014
 Teldius's Skull=2291015
+Bella Dama=2291016
 
 Vastarie's Journal=2301001
 Glowy Vial=2301002
@@ -1557,6 +1566,9 @@ The Atronach's Altar=2301005
 The Lord's Altar=2301006
 Telacar's Inner Sanctum=2301007
 Portal to Ossuary of Telacar=2301008
+The Warrior's Altar=2301009
+The Steed's Altar=2301010
+The Lady's Altar=2301011
 
 A Smuggler's Plan=2311001
 Fort=2311002
@@ -1808,6 +1820,7 @@ Silatar=3031001
 Dresser=3031002
 Study=3031003
 Guest House=3031004
+Story Exit=3031005
 
 Ode to the Elden Tree=3041001
 
@@ -1871,4 +1884,6 @@ The Tower of Eyes=3361021
 Spike Trap=3361022
 
 Portal to the Earth Forge=3451001
+
+Shrine to Auriel=9991001
 ]]

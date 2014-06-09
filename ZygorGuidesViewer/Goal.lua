@@ -928,6 +928,13 @@ function Goal:IsCompleteCheck()
 		iscomplete,ispossible,explanation,curv,maxv,debugs = ZGV.Quests:GetCompletionStatus(self.quest,self.questid, self.queststagetxt,self.queststagenum, self.queststeptxt,self.queststepnum, self.questcondtxt,self.questcondnum)
 		ZGV:Debug("&goal completion: complete:|cffffff%s|r, possible:|cffffff%s|r, why:|cffffff%s|r ... match: |cffaaee%s|r",tostring(iscomplete),tostring(ispossible),tostring(explanation),tostring(debugs))
 
+		local quest = ZGV.Quests[self.questid]
+		if ZGV.CurrentStep==self.parentStep and quest and quest.currentstageflags and quest.currentstageflags.OFFBEAT and not self.was_offbeat_stage then
+			-- whoa, "off the beaten path" stage!
+			self.was_offbeat_stage = true
+			ZGV:Print("The quest fell out of sync with the guide. Try to complete its objective on your own, as the guide tries to sync again.");
+		end
+
 		if iscomplete then
 
 			-- complete means complete, leave it at that!
@@ -949,6 +956,7 @@ function Goal:IsCompleteCheck()
 
 		elseif explanation=="future stage"
 		then
+
 			if self.future then break end  -- fall through
 			return false,false
 
@@ -980,6 +988,20 @@ function Goal:IsCompleteCheck()
 			if iscomplete then return true, ispossible, (curv and curv/(self.count or maxv or 1)) end
 			if self:IsCompletable("by type") then break end -- let the goto complete it!
 			return false, ispossible, (curv and curv/(self.count or maxv or 1))
+
+		elseif explanation=="current stage unknown" then
+			-- RAISE ALARM?
+
+			if quest and not self.was_bad_quest_stage and ZGV.CurrentStep==self.parentStep then
+				--ZGV.Utils.ShowFloatingMessage("Zygor error detected!", nil,nil,nil,"public")
+				ZGV.Utils.ShowFloatingMessage("Bad stage in quest: |cffee88"..self.quest.."|r. Use the Bug Report button to report this.", nil,nil,nil, false,true)
+				--ZGV.Utils.ShowFloatingMessage("The addon will fail to detect its progress.", nil,nil,nil,"public")
+				--ZGV.Utils.ShowFloatingMessage("Please file a Bug Report to Zygor about this.", nil,nil,nil,"public")
+				ZGV.BugReport:AddToReport(quest:GetReport())
+				self.was_bad_quest_stage = true
+			end
+
+			return false,false
 
 		elseif self.future then -- how did we end up here?
 			break
